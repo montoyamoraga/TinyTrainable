@@ -1,0 +1,6 @@
+# KEYWORD1 is for datatypes
+TinyTrainable KEYWORD1
+
+# KEYWORD2 is for methods and functions
+setupBuiltInLED KEYWORD2
+setColorBuiltInLED KEYWORD2

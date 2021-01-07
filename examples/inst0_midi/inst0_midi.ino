@@ -1,6 +1,6 @@
 // include libraries
-#include "TinyTrainable.h"
-#include "Inst0.h"
+#include <TinyTrainable.h>
+#include <Inst0.h>
 
 int snare = 38;
 

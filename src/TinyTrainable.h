@@ -26,14 +26,15 @@ class TinyTrainable {
       }
     };
 
-  // TODO: why protected instead of private
-  protected:
     // TODO: why static void instead of void
     static void setupLED();
-    void setupSerial1();
     void setColorBuiltInLED(Colors color);
     void turnOffBuiltInLED();
+    void setupSerial1();
     void midiCommand(byte midiNote);
+
+  // TODO: why protected instead of private
+  protected:
     bool _serialDebugging;
     byte _midiChannelDec;
     byte _midiVelocity;

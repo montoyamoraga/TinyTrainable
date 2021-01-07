@@ -63,7 +63,7 @@ void TinyTrainable::setColorBuiltInLED(Colors color) {
 }
 
 // turn off the built in LED
-void TinyTrainable::setColorBuiltInLED() {
+void TinyTrainable::turnOffBuiltInLED() {
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
   digitalWrite(LEDB, HIGH);

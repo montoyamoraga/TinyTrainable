@@ -7,14 +7,14 @@
 // local libraries included with ""
 #include "Inst0.h"
 
-// constructor for the Inst0 class, using USB serial output
-// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
+// constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {}
 
-// sets up Serial, proximity/color sensor, and LEDs
+// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
+// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
 void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
   _serialDebugging = serialDebugging;
-  _outputMode = usbOut;
+  _outputMode = mode;
 
   if (_serialDebugging || _outputMode == usbOut) {
     Serial.begin(9600);
@@ -34,6 +34,8 @@ void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
   _previousClassification = -1;
 }
 
+// sets midi channel number (in decimal) and note velocity to send commands 
+// over Serial1
 void Inst0::setupMidi(byte midiChannelDec, byte midiVelocity) {
   _midiChannelDec = midiChannelDec;
   _midiVelocity = midiVelocity;
@@ -44,6 +46,7 @@ void Inst0::setupMidi(byte midiChannelDec, byte midiVelocity) {
 //   _noteDuration = noteDuration;
 // }
 
+// set note frequencies for pin/buzzer output, or note numbers for midi output 
 void Inst0::setNotes(int note1, int note2, int note3) {
   _notes[0] = note1;
   _notes[1] = note2;

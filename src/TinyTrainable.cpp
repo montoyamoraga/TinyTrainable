@@ -50,7 +50,23 @@ void TinyTrainable::setColorBuiltInLED(Colors color) {
     digitalWrite(LEDG, LOW);
   } else if (color == blue) {
     digitalWrite(LEDB, LOW);
+  } else if (color == yellow) {
+    digitalWrite(LEDR, LOW);
+    digitalWrite(LEDG, LOW);
+  } else if (color == magenta) {
+    digitalWrite(LEDR, LOW);
+    digitalWrite(LEDB, LOW);
+  } else if (color == cyan) {
+    digitalWrite(LEDG, LOW);
+    digitalWrite(LEDB, LOW);
   }
+}
+
+// turn off the built in LED
+void TinyTrainable::setColorBuiltInLED() {
+  digitalWrite(LEDR, HIGH);
+  digitalWrite(LEDG, HIGH);
+  digitalWrite(LEDB, HIGH);
 }
 
 // send 3 byte midi message over Serial1 (pins)

@@ -1,5 +1,5 @@
-#include "TinyTrainable.h"  // TODO switch to <>
-#include "Inst0.h"
+#include <TinyTrainable.h>
+#include <Inst0.h>
 
 Inst0 myInst0;
 

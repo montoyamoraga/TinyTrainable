@@ -26,7 +26,6 @@ class TinyTrainable {
       }
     };
 
-  // TODO: why protected instead of private
   protected:
     // TODO: why static void instead of void
     static void setupLED();

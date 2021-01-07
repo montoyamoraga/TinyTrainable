@@ -11,7 +11,7 @@
 #include <Arduino.h>
 
 // colors for setting the embedded LED
-enum Colors {red, green, blue};
+enum Colors {red, green, blue, yellow, magenta, cyan};
 
 class TinyTrainable {
   public:
@@ -26,12 +26,14 @@ class TinyTrainable {
       }
     };
 
+  // TODO: why protected instead of private
   protected:
+    // TODO: why static void instead of void
     static void setupLED();
     void setupSerial1();
     void setColorBuiltInLED(Colors color);
+    void turnOffBuiltInLED();
     void midiCommand(byte midiNote);
-
     bool _serialDebugging;
     byte _midiChannelDec;
     byte _midiVelocity;

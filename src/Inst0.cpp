@@ -9,46 +9,20 @@
 
 // constructor for the Inst0 class, using USB serial output
 // if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
-Inst0::Inst0(bool serialDebugging) : _myKNN(3)
-{
-  _serialDebugging = serialDebugging;
-  _outputMode = usbOut;
-}
-
-// constructor for the Inst0 class, using MIDI output over Serial1
-// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
-// 'midiChannelDec' is the decimal representation of the note-on command
-// 'midiVelocity' is the velocity of the note
-// midiNotes are the midi note numbers corresponding to the sounds for each 
-// object classified by the KNN algorithm (in decimal)
-Inst0::Inst0(bool serialDebugging, byte midiChannelDec, byte midiVelocity, int midiNote1, int midiNote2, int midiNote3)  : _myKNN(3)
-{
-  _serialDebugging = serialDebugging;
-  _outputMode = midiOut;
-  _midiChannelDec = midiChannelDec;
-  _midiVelocity = midiVelocity;
-  _notes[0] = midiNote1;
-  _notes[1] = midiNote2;
-  _notes[2] = midiNote3;
-  setupSerial1();
-}
-
-//Inst0::Inst0(bool serialDebugging, int outputPin, long noteDuration, int noteFreq1, int noteFreq2, int noteFreq3)  : _myKNN(3)
-//{
-//    _serialDebugging = serialDebugging;
-//    _outputMode = pin;
-//    _outputPin = outputPin;
-//    _noteDuration = noteDuration;
-//    _notes[0] = noteFreq1;
-//    _notes[1] = noteFreq2;
-//    _notes[2] = noteFreq3;
-//}
+Inst0::Inst0() : _myKNN(3) {}
 
 // sets up Serial, proximity/color sensor, and LEDs
-void Inst0::setupInstrument() {
+void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
+  _serialDebugging = serialDebugging;
+  _outputMode = usbOut;
+
   if (_serialDebugging || _outputMode == usbOut) {
     Serial.begin(9600);
     while (!Serial);
+  }
+
+  if (_outputMode == midiOut) {
+    setupSerial1();
   }
 
   if (!APDS.begin()) {
@@ -58,6 +32,22 @@ void Inst0::setupInstrument() {
   setupLED();
 
   _previousClassification = -1;
+}
+
+void Inst0::setupMidi(byte midiChannelDec, byte midiVelocity) {
+  _midiChannelDec = midiChannelDec;
+  _midiVelocity = midiVelocity;
+}
+
+// void Inst0::setupPin(int outputPin, long noteDuration) {
+//   _outputPin = outputPin;
+//   _noteDuration = noteDuration;
+// }
+
+void Inst0::setNotes(int note1, int note2, int note3) {
+  _notes[0] = note1;
+  _notes[1] = note2;
+  _notes[2] = note3;
 }
 
 // sets the labels of the objects for identification by the KNN algorithm

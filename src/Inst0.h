@@ -16,12 +16,11 @@ enum OutputMode {usbOut, midiOut, pinOut};
 class Inst0 : public TinyTrainable
 {
   public:
-    Inst0(bool serialDebugging);
-    Inst0(bool serialDebugging, byte midiChannelDec, byte midiVelocity, int midiNote1, int midiNote2, int midiNote3);
-
-    //    Instrument0(bool serialDebugging, int outputPin, long noteDuration, int noteFreq1, int noteFreq2, int noteFreq3);
-    
-    void setupInstrument();
+    Inst0();    
+    void setupInstrument(OutputMode mode, bool serialDebugging);
+    void setupMidi(byte midiChannelDec, byte midiVelocity);
+    void setupPin(int outputPin, long noteDuration);
+    void setNotes(int note1, int note2, int note3);
     void setLabels(String object1, String object2, String object3);
     void trainKNN(int k, int examplesPerClass, float colorThreshold);
     void identify();

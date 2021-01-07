@@ -4,6 +4,12 @@
 
 int snare = 38;
 
+int K = 5;
+int EXAMPLES_PER_CLASS = 10;
+float COLOR_THRESHOLD = 0.5;
+
+TinyTrainable myTiny;
+
 void setup() {
 
   Serial1.begin(9600);

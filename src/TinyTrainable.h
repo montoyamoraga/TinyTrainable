@@ -27,7 +27,6 @@ class TinyTrainable {
     };
 
   protected:
-    // TODO: why static void instead of void
     static void setupLED();
     void setupSerial1();
     void setColorBuiltInLED(Colors color);

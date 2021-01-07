@@ -4,20 +4,17 @@
 // this sketch cycles through all the lights
 // on the arduino nano 33 ble sense
 
+// include libraries
+#include "TinyTrainable.h"
+#include "Inst0.h"
+
 int timeOn = 500;
 int timeOff = 250;
 
-void setup() {
-  // initialize digital pins as outputs
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(LEDR, OUTPUT);
-  pinMode(LEDG, OUTPUT);
-  pinMode(LEDB, OUTPUT);
+TinyTrainable myTiny;
 
-  // turn off the RGB LEDs
-  digitalWrite(LEDR, HIGH);
-  digitalWrite(LEDG, HIGH);
-  digitalWrite(LEDB, HIGH);
+void setup() {
+  myTine.setupLED(); 
 }
 
 void loop() {
@@ -30,9 +27,9 @@ void loop() {
 
   // turn on and off the pull-down red, green, blue LEDs
 
-  digitalWrite(LEDR, LOW);
+  myTiny.setColorBuiltInLED("red");
   delay(timeOn);
-  digitalWrite(LEDR, HIGH);
+  myTiny.turnOffBuiltInLED();
   delay(timeOff);
 
   digitalWrite(LEDG, LOW);

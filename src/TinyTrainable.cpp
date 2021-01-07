@@ -22,8 +22,8 @@ void TinyTrainable::setupLED()
   digitalWrite(LEDB, HIGH);
 }
 
-// TODO - note which pins
-// sets up Serial1 (serial output over pins)
+// sets up Serial1 (serial output over pins - TX pin on Arduino Nano
+// 33 BLE Sense)
 void TinyTrainable::setupSerial1() {
   Serial1.begin(9600);
 

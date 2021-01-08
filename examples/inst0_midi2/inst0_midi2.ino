@@ -12,8 +12,8 @@ void setup() {
     // setup instrument to output over midi, and printing debug statements
     myInst0.setupInstrument(midiOut, true);
 
-    // midi channel is 153 in hex
-    myInst0.setupMidi(0x99, 127);
+    // midi channel is 153 (0x99 in hex)
+    myInst0.setupMidi(153, 127);
 
     // midi note numbers
     myInst0.setNotes(37, 38, 39);

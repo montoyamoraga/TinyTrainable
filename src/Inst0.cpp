@@ -117,21 +117,19 @@ void Inst0::identify() {
 
   setColorBuiltInLED(Colors(classification));
 
-  if (classification != _previousClassification) {
-    switch (_outputMode) {
-      case usbOut:
-        Serial.println(classification);
-        break;
-      case midiOut:
-        midiCommand(_notes[classification]);
-        break;
-      // case pinOut:
-      //   tone(_outputPin, _notes[classification], _noteDuration);
-      //   break;
-    }
-
-    _previousClassification = classification;
+  switch (_outputMode) {
+    case usbOut:
+      Serial.println(classification);
+      break;
+    case midiOut:
+      midiCommand(_notes[classification]);
+      break;
+    // case pinOut:
+    //   tone(_outputPin, _notes[classification], _noteDuration);
+    //   break;
   }
+
+  _previousClassification = classification;
 }
 
 // reads the color from the color sensor

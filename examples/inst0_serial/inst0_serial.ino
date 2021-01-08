@@ -1,3 +1,4 @@
+// include libraries
 #include <TinyTrainable.h>
 #include <Inst0.h>
 
@@ -9,6 +10,7 @@ int EXAMPLES_PER_CLASS = 10;
 float COLOR_THRESHOLD = 0.5;
 
 void setup() {
+  
     // setup instrument to output over USB serial, and printing debug statements
     myInst0.setupInstrument(usbOut, true);
 

@@ -25,12 +25,11 @@ class TinyTrainable {
         Serial.println(message);
       }
     };
-
-  protected:
+    
     void setupLED();
-    void setupSerial1();
     void setColorBuiltInLED(Colors color);
     void turnOffBuiltInLED();
+    void setupSerial1();
     void midiCommand(byte midiNote);
     bool _serialDebugging;
     byte _midiChannelDec;

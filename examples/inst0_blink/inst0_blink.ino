@@ -27,9 +27,9 @@ void loop() {
 
   // turn on and off the pull-down red, green, blue LEDs
 
-  myInstrument.setColorBuiltInLED("red");
+ myInstrument.setColorBuiltInLED(red);
   delay(timeOn);
-  myInstrument.turnOffBuiltInLED();
+ myInstrument.turnOffBuiltInLED();
   delay(timeOff);
 
   digitalWrite(LEDG, LOW);

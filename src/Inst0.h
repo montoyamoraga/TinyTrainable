@@ -16,7 +16,7 @@ enum OutputMode {usbOut, midiOut, pinOut};
 class Inst0 : public TinyTrainable
 {
   public:
-    Inst0();    
+    Inst0();
     void setupInstrument(OutputMode mode, bool serialDebugging);
     void setupMidi(byte midiChannelDec, byte midiVelocity);
     void setupPin(int outputPin, long noteDuration);
@@ -26,7 +26,6 @@ class Inst0 : public TinyTrainable
     void identify();
   private:
     void readColor(float color[]);
-
     OutputMode _outputMode;
     KNNClassifier _myKNN;
     //    long _noteDuration;

@@ -11,10 +11,10 @@
 int timeOn = 500;
 int timeOff = 250;
 
-Inst0 myInstrument;
+TinyTrainable myTiny;
 
 void setup() {
-    myInstrument.setupLED();
+    myTiny.setupLED();
 }
 
 void loop() {

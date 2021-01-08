@@ -27,7 +27,7 @@ class TinyTrainable {
     };
 
   protected:
-    static void setupLED();
+    void setupLED();
     void setupSerial1();
     void setColorBuiltInLED(Colors color);
     void turnOffBuiltInLED();
@@ -35,7 +35,7 @@ class TinyTrainable {
     bool _serialDebugging;
     byte _midiChannelDec;
     byte _midiVelocity;
-    //    int _outputPin;
+    // int _outputPin;
 };
 
 #endif

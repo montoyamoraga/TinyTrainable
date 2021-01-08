@@ -14,7 +14,7 @@ int timeOff = 250;
 TinyTrainable myTiny;
 
 void setup() {
-    myTiny.setupLED();
+  myTiny.setupLED(); 
 }
 
 void loop() {
@@ -27,9 +27,9 @@ void loop() {
 
   // turn on and off the pull-down red, green, blue LEDs
 
- myInstrument.setColorBuiltInLED(red);
+  myTiny.setColorBuiltInLED(red);
   delay(timeOn);
- myInstrument.turnOffBuiltInLED();
+  myTiny.turnOffBuiltInLED();
   delay(timeOff);
 
   digitalWrite(LEDG, LOW);

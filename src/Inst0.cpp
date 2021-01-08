@@ -41,10 +41,11 @@ void Inst0::setupMidi(byte midiChannelDec, byte midiVelocity) {
   _midiVelocity = midiVelocity;
 }
 
-// void Inst0::setupPin(int outputPin, long noteDuration) {
-//   _outputPin = outputPin;
-//   _noteDuration = noteDuration;
-// }
+void Inst0::setupPin(int outputPin, long noteDuration) {
+  _outputPin = outputPin;
+  _noteDuration = noteDuration;
+  pinMode(_outputPin, OUTPUT);
+}
 
 // set note frequencies for pin/buzzer output, or note numbers for midi output 
 void Inst0::setNotes(int note1, int note2, int note3) {
@@ -124,9 +125,9 @@ void Inst0::identify() {
     case midiOut:
       midiCommand(_notes[classification]);
       break;
-    // case pinOut:
-    //   tone(_outputPin, _notes[classification], _noteDuration);
-    //   break;
+    case pinOut:
+      tone(_outputPin, _notes[classification], _noteDuration);
+      break;
   }
 
   _previousClassification = classification;

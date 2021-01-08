@@ -28,7 +28,7 @@ class Inst0 : public TinyTrainable
     void readColor(float color[]);
     OutputMode _outputMode;
     KNNClassifier _myKNN;
-    //    long _noteDuration;
+    long _noteDuration;
     int _notes[3];
     int _previousClassification;
     String _labels[3];

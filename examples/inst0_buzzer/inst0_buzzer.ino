@@ -1,6 +1,7 @@
-#include <TinyTrainable.h>
+// include library
 #include <Inst0.h>
 
+// declare instance of the instrument0
 Inst0 myInst0;
 
 // constants for the KNN algorithm

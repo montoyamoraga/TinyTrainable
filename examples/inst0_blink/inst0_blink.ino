@@ -1,71 +1,45 @@
 // this code is based on the Blink example
 // http://www.arduino.cc/en/Tutorial/Blink
 
-// this sketch cycles through all the lights
-// on the arduino nano 33 ble sense
+// this sketch cycles through all the possible LED colors
 
-// include libraries
-#include "TinyTrainable.h"
+// include library
 #include "Inst0.h"
 
+// variables for time LEDs are on and off
+// measured in milliseconds
 int timeOn = 500;
 int timeOff = 250;
 
-TinyTrainable myTiny;
+// declare instance of the instrument0
+Inst0 myTiny;
 
 void setup() {
-  myTiny.setupLED(); 
+  myTiny.setupLEDBuiltIn();
+  myTiny.setupLEDRGB();
 }
 
 void loop() {
 
-  // turn on and off the pull-up orange LED
-  digitalWrite(LED_BUILTIN, HIGH);
+  // turn on and off builtin LED, it is orange
+  myTiny.turnOnLEDBuiltIn();
   delay(timeOn);
-  digitalWrite(LED_BUILTIN, LOW);
+  myTiny.turnOffLEDBuiltIn();
   delay(timeOff);
-
-  // turn on and off the pull-down red, green, blue LEDs
-
-  myTiny.setColorBuiltInLED(red);
+  
+  myTiny.turnOnLEDRGB(red);
   delay(timeOn);
-  myTiny.turnOffBuiltInLED();
-  delay(timeOff);
-
-  digitalWrite(LEDG, LOW);
+  myTiny.turnOnLEDRGB(green);
   delay(timeOn);
-  digitalWrite(LEDG, HIGH);
-  delay(timeOff);
-
-  digitalWrite(LEDB, LOW);
+  myTiny.turnOnLEDRGB(blue);
   delay(timeOn);
-  digitalWrite(LEDB, HIGH);
-  delay(timeOff);
-
-  // turn on and off the pull-down red, green, blue LEDs
-  // now combined to form different colors
-
-  // red + green = yellow
-  digitalWrite(LEDR, LOW);
-  digitalWrite(LEDG, LOW);
+  myTiny.turnOnLEDRGB(yellow);
   delay(timeOn);
-  digitalWrite(LEDR, HIGH);
-  digitalWrite(LEDG, HIGH);
-  delay(timeOff);
-
-  // red + blue = magenta
-  digitalWrite(LEDB, LOW);
-  digitalWrite(LEDR, LOW);
+  myTiny.turnOnLEDRGB(magenta);
   delay(timeOn);
-  digitalWrite(LEDB, HIGH);
-  digitalWrite(LEDR, HIGH);
-  delay(timeOff);
-
-  // green + blue = cyan
-  digitalWrite(LEDG, LOW);
-  digitalWrite(LEDB, LOW);
+  myTiny.turnOnLEDRGB(cyan);
   delay(timeOn);
-  digitalWrite(LEDG, HIGH);
-  digitalWrite(LEDB, HIGH);
+
+  myTiny.turnOffLEDRGB();
   delay(timeOff);
 }

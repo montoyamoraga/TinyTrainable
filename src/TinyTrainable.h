@@ -11,24 +11,31 @@
 #include <Arduino.h>
 
 // colors for setting the embedded LED
-enum Colors {red, green, blue, yellow, magenta, cyan};
+enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
 
 class TinyTrainable {
   public:
+    // constructor method
     TinyTrainable();
     
     // template datatypes allows any datatype as an argument, like Serial.println().
     // it is defined here in the header file so it compiles at the beginning
-    // and it can be used on inst0.cpp, among other
     template <typename T> void debugPrint(T message) {
       if (_serialDebugging) {
         Serial.println(message);
       }
     };
 
-    static void setupLED();
-    void setColorBuiltInLED(Colors color);
-    void turnOffBuiltInLED();
+    void setupLEDBuiltIn();
+    void turnOnLEDBuiltIn();
+    void turnOffLEDBuiltIn();
+
+    void setupLEDRGB();
+    void turnOnLEDRGB(Colors color);
+    void turnOffLEDRGB();
+
+
+
     void setupSerial1();
     void midiCommand(byte midiNote);
 

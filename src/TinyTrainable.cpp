@@ -7,16 +7,64 @@ TinyTrainable::TinyTrainable()
   _serialDebugging = true;  // hardcoded for now
 }
 
-// sets up the LEDS on the Arduino Nano 33 BLE Sense
-void TinyTrainable::setupLED()
-{
+
+void TinyTrainable:: setupLEDBuiltIn() {
+  
   pinMode(LED_BUILTIN, OUTPUT);
+  
+  // start with everything off
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+void TinyTrainable::turnOnLEDBuiltIn() {
+  digitalWrite(LED_BUILTIN, HIGH);
+}
+
+void TinyTrainable::turnOffLEDBuiltIn() {
+  digitalWrite(LED_BUILTIN, LOW);
+}
+
+void TinyTrainable::setupLEDRGB() {
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
   pinMode(LEDB, OUTPUT);
 
   // start with everything off
-  digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(LEDR, HIGH);
+  digitalWrite(LEDG, HIGH);
+  digitalWrite(LEDB, HIGH);
+}
+
+void TinyTrainable::turnOnLEDRGB(Colors color) {
+
+    if (color == red) {
+    digitalWrite(LEDR, LOW);
+    digitalWrite(LEDG, HIGH);
+    digitalWrite(LEDB, HIGH);
+  } else if (color == green) {
+    digitalWrite(LEDR, HIGH);
+    digitalWrite(LEDG, LOW);
+    digitalWrite(LEDB, HIGH);
+  } else if (color == blue) {
+    digitalWrite(LEDR, HIGH);
+    digitalWrite(LEDG, HIGH);
+    digitalWrite(LEDB, LOW);
+  } else if (color == yellow) {
+    digitalWrite(LEDR, LOW);
+    digitalWrite(LEDG, LOW);
+    digitalWrite(LEDB, HIGH);
+  } else if (color == magenta) {
+    digitalWrite(LEDR, LOW);
+    digitalWrite(LEDG, HIGH);
+    digitalWrite(LEDB, LOW);
+  } else if (color == cyan) {
+    digitalWrite(LEDR, HIGH);
+    digitalWrite(LEDG, LOW);
+    digitalWrite(LEDB, LOW);
+  }
+}
+
+void TinyTrainable::turnOffLEDRGB() {
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
   digitalWrite(LEDB, HIGH);
@@ -37,37 +85,6 @@ void TinyTrainable::setupSerial1() {
   *pointerBaudrate = baudrate;
 }
 
-// sets the color of the built in LED on the Arduino Nano 33 BLE Sense
-void TinyTrainable::setColorBuiltInLED(Colors color) {
-  // turn everything off
-  digitalWrite(LEDR, HIGH);
-  digitalWrite(LEDG, HIGH);
-  digitalWrite(LEDB, HIGH);
-
-  if (color == red) {
-    digitalWrite(LEDR, LOW);
-  } else if (color == green) {
-    digitalWrite(LEDG, LOW);
-  } else if (color == blue) {
-    digitalWrite(LEDB, LOW);
-  } else if (color == yellow) {
-    digitalWrite(LEDR, LOW);
-    digitalWrite(LEDG, LOW);
-  } else if (color == magenta) {
-    digitalWrite(LEDR, LOW);
-    digitalWrite(LEDB, LOW);
-  } else if (color == cyan) {
-    digitalWrite(LEDG, LOW);
-    digitalWrite(LEDB, LOW);
-  }
-}
-
-// turn off the built in LED
-void TinyTrainable::turnOffBuiltInLED() {
-  digitalWrite(LEDR, HIGH);
-  digitalWrite(LEDG, HIGH);
-  digitalWrite(LEDB, HIGH);
-}
 
 // send 3 byte midi message over Serial1 (pins)
 // 'midiNote' is the midi note number in decimal

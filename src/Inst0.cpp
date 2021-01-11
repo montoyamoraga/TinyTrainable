@@ -74,7 +74,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
 
   for (int currentClass = 0; currentClass < 3; currentClass++) {
 
-    setColorBuiltInLED(Colors(currentClass));
+    turnOnLEDRGB(Colors(currentClass));
 
     // ask the user to show examples of each object
     for (int currentExample = 0; currentExample < examplesPerClass; currentExample++) {
@@ -116,7 +116,7 @@ void Inst0::identify() {
   debugPrint("You showed me:");
   debugPrint(_labels[classification]);
 
-  setColorBuiltInLED(Colors(classification));
+  turnOnLEDRGB(Colors(classification));
 
   switch (_outputMode) {
     case usbOut:

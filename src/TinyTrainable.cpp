@@ -7,6 +7,11 @@ TinyTrainable::TinyTrainable()
   _serialDebugging = true;  // hardcoded for now
 }
 
+void TinyTrainable:: setupLEDs() {
+  setupLEDBuiltIn();
+  setupLEDRGB();
+}
+
 
 void TinyTrainable:: setupLEDBuiltIn() {
   

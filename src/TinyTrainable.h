@@ -26,15 +26,13 @@ class TinyTrainable {
       }
     };
 
+    void setupLEDs();
     void setupLEDBuiltIn();
     void turnOnLEDBuiltIn();
     void turnOffLEDBuiltIn();
-
     void setupLEDRGB();
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();
-
-
 
     void setupSerial1();
     void midiCommand(byte midiNote);

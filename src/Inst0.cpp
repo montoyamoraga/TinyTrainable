@@ -29,7 +29,7 @@ void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
     while (1);
   }
 
-  setupLED();
+  setupLEDs();
 
   _previousClassification = -1;
 }

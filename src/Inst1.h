@@ -11,7 +11,6 @@ class Inst1:public TinyTrainable {
     Inst1();
     // placeholder dummy function
     void print1();
-  
 };
 
 #endif

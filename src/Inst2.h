@@ -7,9 +7,10 @@
 // inheritance
 class Inst2:public TinyTrainable {
   public:
+    // constructor
     Inst2();
+    // placeholder dummy function
     void print2();
-  
 };
 
 #endif

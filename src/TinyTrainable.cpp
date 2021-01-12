@@ -4,7 +4,8 @@
 // constructor for the TinyTrainable class
 TinyTrainable::TinyTrainable()
 {
-  _serialDebugging = true;  // hardcoded for now
+  // hardcoded for now
+  _serialDebugging = true;
 }
 
 void TinyTrainable:: setupLEDs() {
@@ -14,10 +15,8 @@ void TinyTrainable:: setupLEDs() {
 
 
 void TinyTrainable:: setupLEDBuiltIn() {
-  
   pinMode(LED_BUILTIN, OUTPUT);
-  
-  // start with everything off
+  // default state off is LOW
   digitalWrite(LED_BUILTIN, LOW);
 }
 
@@ -34,7 +33,7 @@ void TinyTrainable::setupLEDRGB() {
   pinMode(LEDG, OUTPUT);
   pinMode(LEDB, OUTPUT);
 
-  // start with everything off
+  // default state off is HIGH
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
   digitalWrite(LEDB, HIGH);
@@ -75,27 +74,44 @@ void TinyTrainable::turnOffLEDRGB() {
   digitalWrite(LEDB, HIGH);
 }
 
-// sets up Serial1 (serial output over pins - TX pin on Arduino Nano
-// 33 BLE Sense)
-void TinyTrainable::setupSerial1() {
+// sets up Serial MIDI output on TX pin
+void TinyTrainable::setupSerialMIDI() {
+
+  // open serial tranmission on TX pin
   Serial1.begin(9600);
 
-  // desired baudrate
+  // desired baudrate for MIDI
   uint32_t baudrate = 0x800000;
 
-  // pointer to the memory address that stores the baudrate
+  // declare pointer to the memory address that stores the baudrate
   uint32_t *pointerBaudrate = ( uint32_t * )0x40002524;
 
   // replace the value at the pointer with the desired baudrate
   *pointerBaudrate = baudrate;
 }
 
+void TinyTrainable::setSerialMIDIChannel(byte midiChannel) {
+ _midiChannel = midiChannel;
+    
+}
+void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
+  _midiVelocity = midiVelocity;
+}
 
-// send 3 byte midi message over Serial1 (pins)
+// TODO: make sure this one works, and then delete midiCommand
+// and delete global variables for channel and velocity
+void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
+  Serial1.write(143 + channel);
+  Serial1.write(note);
+  Serial1.write(velocity);
+}
+
+
+// send 3 byte MIDI message over Serial1 (pins)
 // 'midiNote' is the midi note number in decimal
 // midi channel and note velocity are preset
-void TinyTrainable::midiCommand(byte midiNote) {
-  Serial1.write(_midiChannelDec);
-  Serial1.write(midiNote);
-  Serial1.write(_midiVelocity);
-}
+// void TinyTrainable::midiCommand(byte midiNote) {
+//   Serial1.write(_midiChannelDec);
+//   Serial1.write(midiNote);
+//   Serial1.write(_midiVelocity);
+// }

@@ -19,10 +19,11 @@ void setup() {
   myInstrument.setSerialMIDIChannel(10);
   myInstrument.setSerialMIDIVelocity(127);
 
-  // set MIDI note numbers
-  myInstrument.setMIDINotes(37, 38, 39);
+  // set MIDI notes
+  myInstrument.setFrequencies(37, 38, 39);
 
   myInstrument.setLabels("Object 0", "Object 1", "Object 2");
+
   myInstrument.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
 }
 

@@ -1,10 +1,4 @@
-// installed libraries included with <>
-// include Arduino library for proximity sensor
-// more information at
-// https://www.arduino.cc/en/Reference/ArduinoAPDS9960
-#include <Arduino_APDS9960.h>
-
-// local libraries included with ""
+// include header file
 #include "Inst0.h"
 
 // constructor for the Inst0 class
@@ -22,24 +16,25 @@ void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
   }
 
   if (_outputMode == midiOut) {
-    setupSerial1();
+    setupSerialMIDI();
   }
 
   if (!APDS.begin()) {
     while (1);
   }
 
-  setupLED();
+  setupLEDs();
 
   _previousClassification = -1;
 }
 
-// sets midi channel number (in decimal) and note velocity to send commands 
+// sets MIDI channel number (in decimal)
+// and note velocity to send commands 
 // over Serial1
-void Inst0::setupMidi(byte midiChannelDec, byte midiVelocity) {
-  _midiChannelDec = midiChannelDec;
-  _midiVelocity = midiVelocity;
-}
+// void Inst0::setupMIDI(byte midiChannelDec, byte midiVelocity) {
+//   _midiChannelDec = midiChannelDec;
+//   _midiVelocity = midiVelocity;
+// }
 
 void Inst0::setupPin(int outputPin, long noteDuration) {
   _outputPin = outputPin;
@@ -48,18 +43,18 @@ void Inst0::setupPin(int outputPin, long noteDuration) {
 }
 
 // set note frequencies for pin/buzzer output, or note numbers for midi output 
-void Inst0::setNotes(int note1, int note2, int note3) {
-  _notes[0] = note1;
-  _notes[1] = note2;
-  _notes[2] = note3;
+void Inst0::setFrequencies(int note0, int note1, int note2) {
+  _notes[0] = note0;
+  _notes[1] = note1;
+  _notes[2] = note2;
 }
 
 // sets the labels of the objects for identification by the KNN algorithm
-void Inst0::setLabels(String object1, String object2, String object3) {
-  _labels[0] = object1;
-  _labels[1] = object2;
-  _labels[2] = object3;
-  debugPrint("labels for Inst0:");
+void Inst0::setLabels(String object0, String object1, String object2) {
+  _labels[0] = object0;
+  _labels[1] = object1;
+  _labels[2] = object2;
+  debugPrint("Labels for Inst0:");
   debugPrint(_labels[0]);
   debugPrint(_labels[1]);
   debugPrint(_labels[2]);
@@ -74,7 +69,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
 
   for (int currentClass = 0; currentClass < 3; currentClass++) {
 
-    setColorBuiltInLED(Colors(currentClass));
+    turnOnLEDRGB(Colors(currentClass));
 
     // ask the user to show examples of each object
     for (int currentExample = 0; currentExample < examplesPerClass; currentExample++) {
@@ -116,14 +111,15 @@ void Inst0::identify() {
   debugPrint("You showed me:");
   debugPrint(_labels[classification]);
 
-  setColorBuiltInLED(Colors(classification));
+  turnOnLEDRGB(Colors(classification));
 
   switch (_outputMode) {
     case usbOut:
       Serial.println(classification);
       break;
     case midiOut:
-      midiCommand(_notes[classification]);
+      sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
+      // midiCommand(_notes[classification]);
       break;
     case pinOut:
       tone(_outputPin, _notes[classification], _noteDuration);
@@ -154,11 +150,6 @@ void Inst0::readColor(float colorReading[]) {
       _colorReading[1] = green;
       _colorReading[2] = blue;
 
-    //   debugPrint("color reading:");
-    //   debugPrint(colorTotal);
-    //   debugPrint(_colorReading[0]);
-    //   debugPrint(_colorReading[1]);
-    //   debugPrint(_colorReading[2]);
     }
   }
 }

@@ -15,7 +15,7 @@ void setup() {
     myInst0.setupInstrument(usbOut, true);
 
     // set object labels for the KNN classification
-    myInst0.setLabels("Object 1", "Object 2", "Object 3");
+    myInst0.setLabels("Object 0", "Object 1", "Object 2");
 
     // train the KNN algorithm with your objects
     myInst0.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);

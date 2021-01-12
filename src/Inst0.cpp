@@ -43,7 +43,7 @@ void Inst0::setupPin(int outputPin, long noteDuration) {
 }
 
 // set note frequencies for pin/buzzer output, or note numbers for midi output 
-void Inst0::setMIDINotes(int note0, int note1, int note2) {
+void Inst0::setFrequencies(int note0, int note1, int note2) {
   _notes[0] = note0;
   _notes[1] = note1;
   _notes[2] = note2;

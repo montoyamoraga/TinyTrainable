@@ -17,9 +17,9 @@ void setup() {
     myInst0.setupPin(8, 1000);
 
     // set note frequencies for buzzer
-    myInst0.setNotes(1000, 1200, 1400);
+    myInst0.setFrequencies(1000, 1200, 1400);
 
-    myInst0.setLabels("Object 1", "Object 2", "Object 3");
+    myInst0.setLabels("Object 0", "Object 1", "Object 2");
     myInst0.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
 }
 

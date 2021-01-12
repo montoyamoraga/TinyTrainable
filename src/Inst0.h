@@ -21,7 +21,7 @@ class Inst0:public TinyTrainable
     void setupInstrument(OutputMode mode, bool serialDebugging);
     // void setupMIDI(byte midiChannelDec, byte midiVelocity);
     void setupPin(int outputPin, long noteDuration);
-    void setMIDINotes(int note0, int note1, int note2);
+    void setFrequencies(int note0, int note1, int note2);
     void setLabels(String object0, String object1, String object2);
     void trainKNN(int k, int examplesPerClass, float colorThreshold);
     void identify();

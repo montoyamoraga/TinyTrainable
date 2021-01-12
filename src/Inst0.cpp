@@ -50,7 +50,7 @@ void Inst0::setMIDINotes(int note0, int note1, int note2) {
 }
 
 // sets the labels of the objects for identification by the KNN algorithm
-void Inst0::setLabels(String object0, String object1, String object1) {
+void Inst0::setLabels(String object0, String object1, String object2) {
   _labels[0] = object0;
   _labels[1] = object1;
   _labels[2] = object2;
@@ -118,7 +118,7 @@ void Inst0::identify() {
       Serial.println(classification);
       break;
     case midiOut:
-      sendSerialMIDINote(_notes[classification], );
+      sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
       // midiCommand(_notes[classification]);
       break;
     case pinOut:

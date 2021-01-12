@@ -1,6 +1,6 @@
 #include "Inst2.h"
 
-Inst1::Inst2() {
+Inst2::Inst2() {
   
 }
 

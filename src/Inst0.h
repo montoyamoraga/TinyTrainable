@@ -23,6 +23,8 @@ class Inst0:public TinyTrainable
     void setupPin(int outputPin, long noteDuration);
     void setFrequencies(int note0, int note1, int note2);
     void setLabels(String object0, String object1, String object2);
+    // TODO: use the builtin LED to signal if instrument is trained or not
+    // TODO: maybe use two blinks after it is trained?
     void trainKNN(int k, int examplesPerClass, float colorThreshold);
     void identify();
   private:

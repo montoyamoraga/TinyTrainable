@@ -2,7 +2,14 @@
 #include "Inst0.h"
 
 // constructor for the Inst0 class
-Inst0::Inst0() : _myKNN(3) {}
+Inst0::Inst0() : _myKNN(3) {
+
+    setupSensorAPDS9960();
+    
+    setupLEDs();
+
+    _previousClassification = -1;
+}
 
 // sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
 // if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
@@ -18,11 +25,6 @@ void Inst0::setupInstrument(OutputMode mode) {
     setupSerialMIDI();
   }
 
-  setupSensorAPDS9960();
-
-  setupLEDs();
-
-  _previousClassification = -1;
 }
 
 void Inst0::setupPin(int outputPin, long noteDuration) {

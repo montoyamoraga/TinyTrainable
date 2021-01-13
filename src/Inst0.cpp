@@ -28,14 +28,6 @@ void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
   _previousClassification = -1;
 }
 
-// sets MIDI channel number (in decimal)
-// and note velocity to send commands 
-// over Serial1
-// void Inst0::setupMIDI(byte midiChannelDec, byte midiVelocity) {
-//   _midiChannelDec = midiChannelDec;
-//   _midiVelocity = midiVelocity;
-// }
-
 void Inst0::setupPin(int outputPin, long noteDuration) {
   _outputPin = outputPin;
   _noteDuration = noteDuration;

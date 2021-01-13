@@ -27,6 +27,9 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
+// include Servo library
+#include <Servo.h>
+
 // colors for setting the RGB LED
 enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
 

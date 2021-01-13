@@ -64,7 +64,8 @@ class TinyTrainable {
 
     // methods for input sensors
     // TODO: add all sensors on the Arduino Nano BLE 33 Sense
-    void setupGestureSensor();
+    // APDS9960 sensor for gestures, color, light intensity and proximity 
+    void setupSensorAPDS9960();
 
     // TODO: methods for sound output
     // TODO: methods for light output

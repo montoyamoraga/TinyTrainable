@@ -86,7 +86,7 @@ void TinyTrainable::setSerialDebugging(bool serialDebugging) {
 
 }
 
-void TinyTrainable::setupGestureSensor() {
+void TinyTrainable::setupSensorAPDS9960() {
     if (!APDS.begin()) {
     while (1);
   }

@@ -18,7 +18,7 @@ void Inst0::setupInstrument(OutputMode mode) {
     setupSerialMIDI();
   }
 
-  setupGestureSensor();
+  setupSensorAPDS9960();
 
   setupLEDs();
 

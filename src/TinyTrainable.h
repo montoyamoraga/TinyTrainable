@@ -62,7 +62,6 @@ class TinyTrainable {
     // methods for 
     void setSerialDebugging(bool serialDebugging);
 
-
     // TODO: methods for sound output
     // TODO: methods for light output
     // TODO: methods for servo output

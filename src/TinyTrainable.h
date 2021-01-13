@@ -59,11 +59,17 @@ class TinyTrainable {
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();
 
-    // methods for
+    // methods for 
     void setSerialDebugging(bool serialDebugging);
 
-    // methods for MIDI output
 
+    // TODO: methods for sound output
+    // TODO: methods for light output
+    // TODO: methods for servo output
+    // TODO: methods for LCD screen output
+    // TODO: methods for thermal print output
+
+    // methods for output MIDI
     void setupSerialMIDI();
     void setSerialMIDIChannel(byte midiChannel);
     void setSerialMIDIVelocity(byte midiVelocity);

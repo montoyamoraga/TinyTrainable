@@ -27,24 +27,22 @@ void loop() {
   tiny.turnOffLEDBuiltIn();
   delay(timeOff);
 
-	for (Colors i = red; i <= cyan; i++) {
-		tiny.turnOnLEDRGB(i);
-		delay(timeOn);
-	}
-  
-  
-  // delay(timeOn);
-  // tiny.turnOnLEDRGB(green);
-  // delay(timeOn);
-  // tiny.turnOnLEDRGB(blue);
-  // delay(timeOn);
-  // tiny.turnOnLEDRGB(yellow);
-  // delay(timeOn);
-  // tiny.turnOnLEDRGB(magenta);
-  // delay(timeOn);
-  // tiny.turnOnLEDRGB(cyan);
-  // delay(timeOn);
+  // turn on the RGB LED in all six available colors  
+  // red, green, blue, yellow, magenta, cyan
+  tiny.turnOnLEDRGB(red);
+  delay(timeOn);
+  tiny.turnOnLEDRGB(green);
+  delay(timeOn);
+  tiny.turnOnLEDRGB(blue);
+  delay(timeOn);
+  tiny.turnOnLEDRGB(yellow);
+  delay(timeOn);
+  tiny.turnOnLEDRGB(magenta);
+  delay(timeOn);
+  tiny.turnOnLEDRGB(cyan);
+  delay(timeOn);
 
+  // turn off the RGB LED
   tiny.turnOffLEDRGB();
   delay(timeOff);
 }

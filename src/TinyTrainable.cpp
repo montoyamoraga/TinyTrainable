@@ -105,13 +105,3 @@ void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(note);
   Serial1.write(velocity);
 }
-
-
-// send 3 byte MIDI message over Serial1 (pins)
-// 'midiNote' is the midi note number in decimal
-// midi channel and note velocity are preset
-// void TinyTrainable::midiCommand(byte midiNote) {
-//   Serial1.write(_midiChannelDec);
-//   Serial1.write(midiNote);
-//   Serial1.write(_midiVelocity);
-// }

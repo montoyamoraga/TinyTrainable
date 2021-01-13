@@ -30,6 +30,9 @@
 // include Servo library
 #include <Servo.h>
 
+// include Adafruit Thermal Printer library
+#include <Adafruit_Thermal.h>
+
 // colors for setting the RGB LED
 enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
 
@@ -58,9 +61,6 @@ class TinyTrainable {
     void setSerialMIDIChannel(byte midiChannel);
     void setSerialMIDIVelocity(byte midiVelocity);
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
-
-
-    // void midiCommand(byte midiNote);
 
   protected:
     bool _serialDebugging;

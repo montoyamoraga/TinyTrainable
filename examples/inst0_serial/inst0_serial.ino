@@ -11,7 +11,7 @@ float COLOR_THRESHOLD = 0.5;
 void setup() {
   
     // setup instrument to output over USB serial, and printing debug statements
-    tiny.setupInstrument(usbOut, true);
+    tiny.setupInstrument(usbOut);
 
     // set object labels for the KNN classification
     tiny.setLabels("Object 0", "Object 1", "Object 2");

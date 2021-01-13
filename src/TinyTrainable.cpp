@@ -73,6 +73,19 @@ void TinyTrainable::turnOffLEDRGB() {
   digitalWrite(LEDB, HIGH);
 }
 
+void TinyTrainable::setSerialDebugging(bool serialDebugging) {
+  
+  // update boolean
+  _serialDebugging = serialDebugging;
+
+  if (_serialDebugging) {
+        Serial.begin(9600);
+        while (!Serial);
+  }
+
+
+}
+
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {
 

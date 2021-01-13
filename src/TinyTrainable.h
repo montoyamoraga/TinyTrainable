@@ -48,7 +48,9 @@ class TinyTrainable {
         Serial.println(message);
       }
     };
-
+    
+    // methods for LEDs
+    // there are two: built-in orange and RGB
     void setupLEDs();
     void setupLEDBuiltIn();
     void turnOnLEDBuiltIn();
@@ -57,15 +59,22 @@ class TinyTrainable {
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();
 
+    // methods for
+    void setSerialDebugging(bool serialDebugging);
+
+    // methods for MIDI output
+
     void setupSerialMIDI();
     void setSerialMIDIChannel(byte midiChannel);
     void setSerialMIDIVelocity(byte midiVelocity);
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
   protected:
-    bool _serialDebugging;
-    byte _midiChannel;
-    byte _midiVelocity;
+    // true: instrument outputs debugging messages over USB serial
+    // false: standalone instrument, no debugging message
+    bool _serialDebugging = false;
+    byte _midiChannel = 1;
+    byte _midiVelocity = 127;
     int _outputPin;
 };
 

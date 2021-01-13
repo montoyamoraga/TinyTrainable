@@ -59,8 +59,12 @@ class TinyTrainable {
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();
 
-    // methods for 
+    // methods for debugging
     void setSerialDebugging(bool serialDebugging);
+
+    // methods for input sensors
+    // TODO: add all sensors on the Arduino Nano BLE 33 Sense
+    void setupGestureSensor();
 
     // TODO: methods for sound output
     // TODO: methods for light output

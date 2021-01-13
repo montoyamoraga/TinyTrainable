@@ -86,6 +86,12 @@ void TinyTrainable::setSerialDebugging(bool serialDebugging) {
 
 }
 
+void TinyTrainable::setupGestureSensor() {
+    if (!APDS.begin()) {
+    while (1);
+  }
+}
+
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {
 

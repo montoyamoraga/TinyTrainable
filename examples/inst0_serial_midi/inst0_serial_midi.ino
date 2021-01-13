@@ -12,9 +12,6 @@ void setup() {
   // setup instrument to output over midi, and printing debug statements
   myInstrument.setupInstrument(midiOut, true);
 
-  // midi channel is 153 (0x99 in hex)
-  // myInst0.setupMidi(153, 127);
-
   // setup global MIDI variables
   myInstrument.setSerialMIDIChannel(10);
   myInstrument.setSerialMIDIVelocity(127);

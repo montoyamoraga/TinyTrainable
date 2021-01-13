@@ -1,17 +1,17 @@
 # KEYWORD1 is for datatypes, color orange
-TinyTrainable KEYWORD1
-Inst0 KEYWORD1
-Inst1 KEYWORD1
-Inst2 KEYWORD1
+TinyTrainable	KEYWORD1
+Inst0					KEYWORD1
+Inst1					KEYWORD1
+Inst2					KEYWORD1
 
 # KEYWORD2 is for functions, color brown
-setupLEDs KEYWORD2
-setupLEDBuiltIn KEYWORD2
-turnOnLEDBuiltIn KEYWORD2
-turnOnLEDBuiltIn KEYWORD2
-turnOffLEDBuiltIn KEYWORD2
-setupLEDRGB KEYWORD2
-turnOnLEDRGB KEYWORD2
-turnOffLEDRGB KEYWORD2
+setupLEDs					KEYWORD2
+setupLEDBuiltIn		KEYWORD2
+turnOnLEDBuiltIn	KEYWORD2
+turnOnLEDBuiltIn	KEYWORD2
+turnOffLEDBuiltIn	KEYWORD2
+setupLEDRGB				KEYWORD2
+turnOnLEDRGB			KEYWORD2
+turnOffLEDRGB			KEYWORD2
 
 # LITERAL1 is for constants

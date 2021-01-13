@@ -1,7 +1,7 @@
 // include library
 #include <Inst0.h>
 
-Inst0 myInstrument;
+Inst0 tiny;
 
 // constants for the KNN algorithm
 int K = 5;
@@ -10,20 +10,20 @@ float COLOR_THRESHOLD = 0.5;
 
 void setup() {
   // setup instrument to output over midi, and printing debug statements
-  myInstrument.setupInstrument(midiOut, true);
+  tiny.setupInstrument(midiOut, true);
 
   // setup global MIDI variables
-  myInstrument.setSerialMIDIChannel(10);
-  myInstrument.setSerialMIDIVelocity(127);
+  tiny.setSerialMIDIChannel(10);
+  tiny.setSerialMIDIVelocity(127);
 
   // set MIDI notes
-  myInstrument.setFrequencies(37, 38, 39);
+  tiny.setFrequencies(37, 38, 39);
 
-  myInstrument.setLabels("Object 0", "Object 1", "Object 2");
+  tiny.setLabels("Object 0", "Object 1", "Object 2");
 
-  myInstrument.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
+  tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
 }
 
 void loop() {
-  myInstrument.identify();
+  tiny.identify();
 }

@@ -12,34 +12,39 @@ int timeOn = 500;
 int timeOff = 250;
 
 // declare instance of the instrument0
-Inst0 myTiny;
+Inst0 tiny;
 
 void setup() {
-  myTiny.setupLEDBuiltIn();
-  myTiny.setupLEDRGB();
+  tiny.setupLEDBuiltIn();
+  tiny.setupLEDRGB();
 }
 
 void loop() {
 
   // turn on and off builtin LED, it is orange
-  myTiny.turnOnLEDBuiltIn();
+  tiny.turnOnLEDBuiltIn();
   delay(timeOn);
-  myTiny.turnOffLEDBuiltIn();
+  tiny.turnOffLEDBuiltIn();
   delay(timeOff);
-  
-  myTiny.turnOnLEDRGB(red);
-  delay(timeOn);
-  myTiny.turnOnLEDRGB(green);
-  delay(timeOn);
-  myTiny.turnOnLEDRGB(blue);
-  delay(timeOn);
-  myTiny.turnOnLEDRGB(yellow);
-  delay(timeOn);
-  myTiny.turnOnLEDRGB(magenta);
-  delay(timeOn);
-  myTiny.turnOnLEDRGB(cyan);
-  delay(timeOn);
 
-  myTiny.turnOffLEDRGB();
+	for (Colors i = red; i <= cyan; i++) {
+		tiny.turnOnLEDRGB(i);
+		delay(timeOn);
+	}
+  
+  
+  // delay(timeOn);
+  // tiny.turnOnLEDRGB(green);
+  // delay(timeOn);
+  // tiny.turnOnLEDRGB(blue);
+  // delay(timeOn);
+  // tiny.turnOnLEDRGB(yellow);
+  // delay(timeOn);
+  // tiny.turnOnLEDRGB(magenta);
+  // delay(timeOn);
+  // tiny.turnOnLEDRGB(cyan);
+  // delay(timeOn);
+
+  tiny.turnOffLEDRGB();
   delay(timeOff);
 }

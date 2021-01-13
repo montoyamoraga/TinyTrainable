@@ -1,5 +1,4 @@
-// include libraries
-#include <TinyTrainable.h>
+// include library
 #include <Inst0.h>
 
 Inst0 tiny;

@@ -2,15 +2,17 @@
 #include "Inst0.h"
 
 // constructor for the Inst0 class
-Inst0::Inst0() : _myKNN(3) {}
+Inst0::Inst0() : _myKNN(3) {
+
+
+}
 
 // sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
 // if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
-void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
-  _serialDebugging = serialDebugging;
+void Inst0::setupInstrument(OutputMode mode) {
   _outputMode = mode;
 
-  if (_serialDebugging || _outputMode == usbOut) {
+  if (_outputMode == usbOut) {
     Serial.begin(9600);
     while (!Serial);
   }
@@ -19,22 +21,14 @@ void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
     setupSerialMIDI();
   }
 
-  if (!APDS.begin()) {
-    while (1);
-  }
+    // TODO: i tried to move these 3 lines to the constructor and it broke
+    // if we can move things to the constructor
+    // this function setupInstrument can be renamed to setupOutput or similar
+    setupSensorAPDS9960();
+    setupLEDs();
+    _previousClassification = -1;
 
-  setupLEDs();
-
-  _previousClassification = -1;
 }
-
-// sets MIDI channel number (in decimal)
-// and note velocity to send commands 
-// over Serial1
-// void Inst0::setupMIDI(byte midiChannelDec, byte midiVelocity) {
-//   _midiChannelDec = midiChannelDec;
-//   _midiVelocity = midiVelocity;
-// }
 
 void Inst0::setupPin(int outputPin, long noteDuration) {
   _outputPin = outputPin;
@@ -149,7 +143,6 @@ void Inst0::readColor(float colorReading[]) {
       _colorReading[0] = red;
       _colorReading[1] = green;
       _colorReading[2] = blue;
-
     }
   }
 }

@@ -18,7 +18,7 @@ class Inst0:public TinyTrainable
   public:
     // constructor
     Inst0();
-    void setupInstrument(OutputMode mode, bool serialDebugging);
+    void setupInstrument(OutputMode mode);
     // void setupMIDI(byte midiChannelDec, byte midiVelocity);
     void setupPin(int outputPin, long noteDuration);
     void setFrequencies(int note0, int note1, int note2);

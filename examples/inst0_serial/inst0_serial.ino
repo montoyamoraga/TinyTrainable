@@ -1,8 +1,7 @@
-// include libraries
-#include <TinyTrainable.h>
+// include library
 #include <Inst0.h>
 
-Inst0 myInst0;
+Inst0 tiny;
 
 // constants for the KNN algorithm
 int K = 5;
@@ -12,16 +11,16 @@ float COLOR_THRESHOLD = 0.5;
 void setup() {
   
     // setup instrument to output over USB serial, and printing debug statements
-    myInst0.setupInstrument(usbOut, true);
+    tiny.setupInstrument(usbOut);
 
     // set object labels for the KNN classification
-    myInst0.setLabels("Object 0", "Object 1", "Object 2");
+    tiny.setLabels("Object 0", "Object 1", "Object 2");
 
     // train the KNN algorithm with your objects
-    myInst0.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
+    tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
 }
 
 void loop() {
     // identify the item shown to the arduino
-    myInst0.identify();
+    tiny.identify();
 }

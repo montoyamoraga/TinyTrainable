@@ -13,7 +13,6 @@ void TinyTrainable:: setupLEDs() {
   setupLEDRGB();
 }
 
-
 void TinyTrainable:: setupLEDBuiltIn() {
   pinMode(LED_BUILTIN, OUTPUT);
   // default state off is LOW
@@ -74,6 +73,25 @@ void TinyTrainable::turnOffLEDRGB() {
   digitalWrite(LEDB, HIGH);
 }
 
+void TinyTrainable::setSerialDebugging(bool serialDebugging) {
+  
+  // update boolean
+  _serialDebugging = serialDebugging;
+
+  if (_serialDebugging) {
+        Serial.begin(9600);
+        while (!Serial);
+  }
+
+
+}
+
+void TinyTrainable::setupSensorAPDS9960() {
+    if (!APDS.begin()) {
+    while (1);
+  }
+}
+
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {
 
@@ -98,20 +116,8 @@ void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
   _midiVelocity = midiVelocity;
 }
 
-// TODO: make sure this one works, and then delete midiCommand
-// and delete global variables for channel and velocity
 void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(143 + channel);
   Serial1.write(note);
   Serial1.write(velocity);
 }
-
-
-// send 3 byte MIDI message over Serial1 (pins)
-// 'midiNote' is the midi note number in decimal
-// midi channel and note velocity are preset
-// void TinyTrainable::midiCommand(byte midiNote) {
-//   Serial1.write(_midiChannelDec);
-//   Serial1.write(midiNote);
-//   Serial1.write(_midiVelocity);
-// }

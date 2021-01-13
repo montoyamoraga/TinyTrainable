@@ -27,6 +27,12 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
+// include Servo library
+#include <Servo.h>
+
+// include Adafruit Thermal Printer library
+#include <Adafruit_Thermal.h>
+
 // colors for setting the RGB LED
 enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
 
@@ -42,7 +48,9 @@ class TinyTrainable {
         Serial.println(message);
       }
     };
-
+    
+    // methods for LEDs
+    // there are two: built-in orange and RGB
     void setupLEDs();
     void setupLEDBuiltIn();
     void turnOnLEDBuiltIn();
@@ -51,18 +59,32 @@ class TinyTrainable {
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();
 
+    // methods for debugging
+    void setSerialDebugging(bool serialDebugging);
+
+    // methods for input sensors
+    // TODO: add all sensors on the Arduino Nano BLE 33 Sense
+    // APDS9960 sensor for gestures, color, light intensity and proximity 
+    void setupSensorAPDS9960();
+
+    // TODO: methods for sound output
+    // TODO: methods for light output
+    // TODO: methods for servo output
+    // TODO: methods for LCD screen output
+    // TODO: methods for thermal print output
+
+    // methods for output MIDI
     void setupSerialMIDI();
     void setSerialMIDIChannel(byte midiChannel);
     void setSerialMIDIVelocity(byte midiVelocity);
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
-
-    // void midiCommand(byte midiNote);
-
   protected:
-    bool _serialDebugging;
-    byte _midiChannel;
-    byte _midiVelocity;
+    // true: instrument outputs debugging messages over USB serial
+    // false: standalone instrument, no debugging message
+    bool _serialDebugging = false;
+    byte _midiChannel = 1;
+    byte _midiVelocity = 127;
     int _outputPin;
 };
 

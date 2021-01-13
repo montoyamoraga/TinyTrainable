@@ -13,7 +13,6 @@ void TinyTrainable:: setupLEDs() {
   setupLEDRGB();
 }
 
-
 void TinyTrainable:: setupLEDBuiltIn() {
   pinMode(LED_BUILTIN, OUTPUT);
   // default state off is LOW
@@ -98,8 +97,6 @@ void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
   _midiVelocity = midiVelocity;
 }
 
-// TODO: make sure this one works, and then delete midiCommand
-// and delete global variables for channel and velocity
 void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(143 + channel);
   Serial1.write(note);

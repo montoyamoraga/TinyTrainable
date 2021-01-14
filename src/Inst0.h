@@ -10,6 +10,10 @@
 
 // instead of using numbers to represent the different output modes,
 // enum makes the code more readable in if and switch statements
+// TODO: i think this should go on TinyTrainable, not here
+// since we will be using the same outputs on all the instruments
+// and instead of this modes, i would have all the different outputs
+// we have so far for inst0, such as: buzzer, midi, servo, etc
 enum OutputMode {usbOut = 0, midiOut = 1, pinOut = 2};
 
 // inheriting the class TinyTrainable as public

@@ -10,8 +10,12 @@ int EXAMPLES_PER_CLASS = 10;
 float COLOR_THRESHOLD = 0.5;
 
 void setup() {
+
+  tiny.setupLEDs();
+  tiny.setupSensorAPDS9960();
+
     // setup instrument to output over midi, and printing debug statements
-    tiny.setupInstrument(pinOut, true);
+    tiny.setupInstrument(pinOut);
 
     // set pin for buzzer and note length
     tiny.setupPin(8, 1000);

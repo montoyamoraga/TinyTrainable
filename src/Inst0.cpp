@@ -4,7 +4,6 @@
 // constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {
 
-
 }
 
 // sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
@@ -24,8 +23,8 @@ void Inst0::setupInstrument(OutputMode mode) {
     // TODO: i tried to move these 3 lines to the constructor and it broke
     // if we can move things to the constructor
     // this function setupInstrument can be renamed to setupOutput or similar
-    setupSensorAPDS9960();
-    setupLEDs();
+    // setupSensorAPDS9960();
+    // setupLEDs();
     _previousClassification = -1;
 
 }

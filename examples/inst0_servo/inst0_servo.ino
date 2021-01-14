@@ -10,8 +10,11 @@ float COLOR_THRESHOLD = 0.5;
 
 void setup() {
 
-  // setup instrument to output over midi, and printing debug statements
-  tiny.setupInstrument(midiOut, true);
+  tiny.setupLEDs();
+  tiny.setupSensorAPDS9960();
+
+  // setup instrument to output over midi
+  // tiny.setupInstrument(midiOut);
 
   tiny.setLabels("Object 0", "Object 1", "Object 2");
 

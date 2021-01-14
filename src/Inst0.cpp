@@ -3,7 +3,7 @@
 
 // constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {
-
+  _previousClassification = -1;
 
 }
 
@@ -24,9 +24,9 @@ void Inst0::setupInstrument(OutputMode mode) {
     // TODO: i tried to move these 3 lines to the constructor and it broke
     // if we can move things to the constructor
     // this function setupInstrument can be renamed to setupOutput or similar
-    setupSensorAPDS9960();
-    setupLEDs();
-    _previousClassification = -1;
+    // setupSensorAPDS9960();
+    // setupLEDs();
+    // _previousClassification = -1;
 
 }
 
@@ -113,7 +113,6 @@ void Inst0::identify() {
       break;
     case midiOut:
       sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
-      // midiCommand(_notes[classification]);
       break;
     case pinOut:
       tone(_outputPin, _notes[classification], _noteDuration);
@@ -126,6 +125,7 @@ void Inst0::identify() {
 // reads the color from the color sensor
 // stores the rgb values in 'colorReading[]'
 void Inst0::readColor(float colorReading[]) {
+  // TODO: maybe lets delete proximity, since we are not using it
   int red, green, blue, proximity, colorTotal = 0;
 
   // wait for the object to move close enough

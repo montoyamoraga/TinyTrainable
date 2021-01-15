@@ -10,6 +10,7 @@ setupLEDBuiltIn				KEYWORD2
 turnOnLEDBuiltIn			KEYWORD2
 turnOnLEDBuiltIn			KEYWORD2
 turnOffLEDBuiltIn			KEYWORD2
+blinkLEDBuiltIn				KEYWORD2
 setupLEDRGB						KEYWORD2
 turnOnLEDRGB					KEYWORD2
 turnOffLEDRGB					KEYWORD2

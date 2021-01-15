@@ -3,8 +3,9 @@
 
 // constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {
+  // default, no classification
   _previousClassification = -1;
-
+  // default built in LED is on
 }
 
 // sets the labels of the objects for identification by the KNN algorithm
@@ -50,6 +51,13 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
     while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
   }
   debugPrint("Finished training");
+
+  // blink twice
+  blinkLEDBuiltIn(2);
+
+  // turn off the LED built in
+  turnOffLEDBuiltIn();
+
 }
 
 // uses the trained KNN algorithm to identify objects the user shows

@@ -57,6 +57,7 @@ class TinyTrainable {
     void setupLEDBuiltIn();
     void turnOnLEDBuiltIn();
     void turnOffLEDBuiltIn();
+    void blinkLEDBuiltIn(int blinks);
     void setupLEDRGB();
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();

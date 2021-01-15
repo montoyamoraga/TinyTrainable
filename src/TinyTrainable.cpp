@@ -13,8 +13,8 @@ void TinyTrainable:: setupLEDs() {
 
 void TinyTrainable:: setupLEDBuiltIn() {
   pinMode(LED_BUILTIN, OUTPUT);
-  // default state off is LOW
-  digitalWrite(LED_BUILTIN, LOW);
+  // initial state off is HIGH for on
+  digitalWrite(LED_BUILTIN, HIGH);
 }
 
 void TinyTrainable::turnOnLEDBuiltIn() {
@@ -23,6 +23,18 @@ void TinyTrainable::turnOnLEDBuiltIn() {
 
 void TinyTrainable::turnOffLEDBuiltIn() {
   digitalWrite(LED_BUILTIN, LOW);
+}
+
+void TinyTrainable::blinkLEDBuiltIn(int blinks) {
+
+  turnOffLEDBuiltIn();
+
+  for (int i = 0; i < blinks; i++) {
+    turnOnLEDBuiltIn();
+    delay(500);
+    turnOffLEDBuiltIn();
+    delay(500);
+  }
 }
 
 void TinyTrainable::setupLEDRGB() {

@@ -83,7 +83,6 @@ void TinyTrainable::setSerialDebugging(bool serialDebugging) {
         while (!Serial);
   }
 
-
 }
 
 void TinyTrainable::setupSensorAPDS9960() {
@@ -93,7 +92,7 @@ void TinyTrainable::setupSensorAPDS9960() {
 }
 
 void TinyTrainable::setupSensorLSM9DS1() {
-  if (!LSM9DS1.begin()) {
+  if (!IMU.begin()) {
     while(1);
   }
 }

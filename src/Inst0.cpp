@@ -126,7 +126,7 @@ void Inst0::identify() {
 // stores the rgb values in 'colorReading[]'
 void Inst0::readColor(float colorReading[]) {
   // TODO: maybe lets delete proximity, since we are not using it
-  int red, green, blue, proximity, colorTotal = 0;
+  int red, green, blue, colorTotal = 0;
 
   // wait for the object to move close enough
   while (!APDS.proximityAvailable() || APDS.readProximity() > 0) {}

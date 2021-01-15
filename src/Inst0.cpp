@@ -21,13 +21,11 @@ void Inst0::setupInstrument(OutputMode mode) {
     setupSerialMIDI();
   }
 
-    // TODO: i tried to move these 3 lines to the constructor and it broke
+    // TODO: i tried to move these lines to the constructor and it broke
     // if we can move things to the constructor
     // this function setupInstrument can be renamed to setupOutput or similar
     // setupSensorAPDS9960();
     // setupLEDs();
-    // _previousClassification = -1;
-
 }
 
 void Inst0::setupPin(int outputPin, long noteDuration) {
@@ -105,6 +103,7 @@ void Inst0::identify() {
   debugPrint("You showed me:");
   debugPrint(_labels[classification]);
 
+  // turn on the corresponding light
   turnOnLEDRGB(Colors(classification));
 
   switch (_outputMode) {

@@ -2,10 +2,8 @@
 #include "TinyTrainable.h"
 
 // constructor for the TinyTrainable class
-TinyTrainable::TinyTrainable()
-{
-  // hardcoded for now
-  _serialDebugging = true;
+TinyTrainable::TinyTrainable() {
+
 }
 
 void TinyTrainable:: setupLEDs() {

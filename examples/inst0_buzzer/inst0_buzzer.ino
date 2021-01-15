@@ -18,6 +18,8 @@ void setup() {
   // configure all LEDs on the microcontroller
   tiny.setupLEDs();
 
+  tiny.setSerialDebugging(true);
+
   // turn on the sensor to measure
   // gestures, color, light intensity and proximity
   tiny.setupSensorAPDS9960();

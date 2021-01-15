@@ -125,8 +125,6 @@ class TinyTrainable {
     // TODO: variables for outputSerialUSB
     // TODO: variables for outputServo
 
-
-
 };
 
 #endif

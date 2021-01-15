@@ -125,7 +125,8 @@ void Inst0::identify() {
 // reads the color from the color sensor
 // stores the rgb values in 'colorReading[]'
 void Inst0::readColor(float colorReading[]) {
-  // TODO: maybe lets delete proximity, since we are not using it
+
+  // declare and initialize local variables for color
   int red, green, blue, colorTotal = 0;
 
   // wait for the object to move close enough
@@ -133,13 +134,15 @@ void Inst0::readColor(float colorReading[]) {
 
   // wait until the color is bright enough
   while (colorTotal < _colorThreshold) {
+
     // sample if the color is available and the object is close
     if (APDS.colorAvailable()) {
 
-      // Read color and proximity
+      // read color and proximity
       APDS.readColor(red, green, blue);
       colorTotal = (red + green + blue);
 
+      // update readings
       _colorReading[0] = red;
       _colorReading[1] = green;
       _colorReading[2] = blue;

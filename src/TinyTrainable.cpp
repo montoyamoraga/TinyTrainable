@@ -82,11 +82,22 @@ void TinyTrainable::setSerialDebugging(bool serialDebugging) {
         Serial.begin(9600);
         while (!Serial);
   }
-
 }
 
 void TinyTrainable::setupSensorAPDS9960() {
     if (!APDS.begin()) {
+    while (1);
+  }
+}
+
+void TinyTrainable::setupSensorHTS221() {
+    if (!HTS.begin()) {
+    while (1);
+  }
+}
+
+void TinyTrainable::setupSensorLPS22HB() {
+    if (!BARO.begin()) {
     while (1);
   }
 }

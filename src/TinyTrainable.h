@@ -34,7 +34,21 @@
 #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
-enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
+enum Colors { red = 0,
+              green = 1,
+              blue = 2,
+              yellow = 3,
+              magenta = 4,
+              cyan = 5
+};
+
+enum OutputMode { outputBuzzer = 0,
+                  outputLED = 1,
+                  outputMIDI = 2,
+                  outputPrinter = 3,
+                  outputSerial = 4,
+                  outputServo = 5,
+};
 
 class TinyTrainable {
   public:
@@ -66,6 +80,14 @@ class TinyTrainable {
     // TODO: add all sensors on the Arduino Nano BLE 33 Sense
     // APDS9960 sensor for gestures, color, light intensity, proximity 
     void setupSensorAPDS9960();
+
+    // include library for temperature and humidity sensor
+    // https://www.arduino.cc/en/Reference/ArduinoHTS221
+    void setupSensorHTS221();
+
+    // include library for pressure sensor
+    // https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
+    void setupSensorLPS22HB();
     
     // LSM9DS1 sensor for IMU (inertial measurement unit)
     //  3-axis accelerometer, gyroscope, magnetometer
@@ -87,6 +109,7 @@ class TinyTrainable {
     // true: instrument outputs debugging messages over USB serial
     // false: standalone instrument, no debugging message
     bool _serialDebugging = false;
+    OutputMode _outputMode;
     byte _midiChannel = 1;
     byte _midiVelocity = 127;
     int _outputPin;

@@ -14,6 +14,7 @@ setupLEDRGB					KEYWORD2
 turnOnLEDRGB				KEYWORD2
 turnOffLEDRGB				KEYWORD2
 setupSensorAPDS9960	KEYWORD2
+setupSensorLSM9DS1	KEYWORD2
 setLabels						KEYWORD2
 trainKNN						KEYWORD2
 identify						KEYWORD2

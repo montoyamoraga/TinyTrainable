@@ -18,6 +18,7 @@ void setup() {
   // configure all LEDs on the microcontroller
   tiny.setupLEDs();
 
+  // set debugging on over serial port
   tiny.setSerialDebugging(true);
 
   // turn on the sensor to measure

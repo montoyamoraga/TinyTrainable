@@ -32,8 +32,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
     // ask the user to show examples of each object
     for (int currentExample = 0; currentExample < examplesPerClass; currentExample++) {
 
-      debugPrint("Show me an example of:");
-      debugPrint(_labels[currentClass]);
+      debugPrint("Show me an example of: " + _labels[currentClass]);
 
       // wait for an object then read its color
       readColor(_colorReading);
@@ -66,8 +65,7 @@ void Inst0::identify() {
   // classify the object
   int classification = _myKNN.classify(_colorReading, _k);
 
-  debugPrint("You showed me:");
-  debugPrint(_labels[classification]);
+  debugPrint("You showed me: " + _labels[classification]);
 
   // turn on the corresponding light
   turnOnLEDRGB(Colors(classification));

@@ -43,11 +43,12 @@ enum Colors { red = 0,
 };
 
 enum OutputMode { outputBuzzer = 0,
-                  outputLED = 1,
-                  outputMIDI = 2,
-                  outputPrinter = 3,
-                  outputSerial = 4,
-                  outputServo = 5,
+                  outputLCD = 1,
+                  outputLED = 2,
+                  outputMIDI = 3,
+                  outputPrinter = 4,
+                  outputSerial = 5,
+                  outputServo = 6,
 };
 
 class TinyTrainable {
@@ -94,7 +95,7 @@ class TinyTrainable {
     void setupSensorLSM9DS1();
 
     // TODO: methods for sound output
-    // TODO: methods for light output
+    // TODO: methods for LED output
     // TODO: methods for servo output
     // TODO: methods for LCD screen output
     // TODO: methods for thermal print output

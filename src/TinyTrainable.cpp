@@ -126,8 +126,8 @@ void TinyTrainable::setupSerialMIDI() {
 
 void TinyTrainable::setSerialMIDIChannel(byte midiChannel) {
  _midiChannel = midiChannel;
-    
 }
+
 void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
   _midiVelocity = midiVelocity;
 }

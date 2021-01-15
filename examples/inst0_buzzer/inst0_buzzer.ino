@@ -12,14 +12,19 @@ const float COLOR_THRESHOLD = 0.5;
 // constants for the hardware
 const int outputPin = 8;
 
+// constant for debugging
+// true: the instrument needs to be connected to serial port
+// false: the instrument is standalone
+const bool tinyDebugging = true;
+
 // setup() runs once, at the beginning
 void setup() {
 
   // configure all LEDs on the microcontroller
   tiny.setupLEDs();
 
-  // set debugging on over serial port
-  tiny.setSerialDebugging(true);
+  // set debugging over serial port
+  tiny.setSerialDebugging(tinyDebugging);
 
   // turn on the sensor to measure
   // gestures, color, light intensity and proximity

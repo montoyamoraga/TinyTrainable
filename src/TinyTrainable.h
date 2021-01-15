@@ -64,8 +64,12 @@ class TinyTrainable {
 
     // methods for input sensors
     // TODO: add all sensors on the Arduino Nano BLE 33 Sense
-    // APDS9960 sensor for gestures, color, light intensity and proximity 
+    // APDS9960 sensor for gestures, color, light intensity, proximity 
     void setupSensorAPDS9960();
+    
+    // LSM9DS1 sensor for IMU (inertial measurement unit)
+    //  3-axis accelerometer, gyroscope, magnetometer
+    void setupSensorLSM9DS1();
 
     // TODO: methods for sound output
     // TODO: methods for light output

@@ -92,6 +92,12 @@ void TinyTrainable::setupSensorAPDS9960() {
   }
 }
 
+void TinyTrainable::setupSensorLSM9DS1() {
+  if (!LSM9DS1.begin()) {
+    while(1);
+  }
+}
+
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {
 

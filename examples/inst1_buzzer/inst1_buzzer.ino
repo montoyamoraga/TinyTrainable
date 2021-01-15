@@ -16,8 +16,8 @@ void setup() {
   tiny.setupLEDs();
 
   // turn on the sensor to measure
-  // gestures, color, light intensity and proximity
-  tiny.setupSensorAPDS9960();
+  // 3-axis accelerometer, gyroscope, magnetometer
+  tiny.setupSensorLSM9DS1();
 
   // setup instrument to output over midi
   tiny.setupInstrument(pinOut);

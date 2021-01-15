@@ -21,3 +21,15 @@ identify						KEYWORD2
 
 
 # LITERAL1 is for constants
+red									LITERAL1
+green								LITERAL1
+blue								LITERAL1
+yellow							LITERAL1
+magenta							LITERAL1
+cyan								LITERAL1
+outputBuzzer				LITERAL1
+outputLED						LITERAL1
+outputMIDI					LITERAL1
+outputPrinter				LITERAL1
+outputSerial				LITERAL1
+outputServo					LITERAL1

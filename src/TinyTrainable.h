@@ -34,22 +34,9 @@
 #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
-enum Colors { red = 0,
-              green = 1,
-              blue = 2,
-              yellow = 3,
-              magenta = 4,
-              cyan = 5
-};
+enum Colors {red = 0, green = 1, blue= 2, yellow = 3, magenta = 4, cyan = 5};
 
-enum OutputMode { outputBuzzer = 0,
-                  outputLCD = 1,
-                  outputLED = 2,
-                  outputMIDI = 3,
-                  outputPrinter = 4,
-                  outputSerial = 5,
-                  outputServo = 6,
-};
+enum OutputMode {outputBuzzer = 0, outputLCD = 1, outputLED = 2, outputMIDI = 3, outputPrinter = 4, outputSerialUSB = 5, outputServo = 6};
 
 class TinyTrainable {
   public:
@@ -94,11 +81,19 @@ class TinyTrainable {
     //  3-axis accelerometer, gyroscope, magnetometer
     void setupSensorLSM9DS1();
 
-    // TODO: methods for sound output
-    // TODO: methods for LED output
-    // TODO: methods for servo output
-    // TODO: methods for LCD screen output
-    // TODO: methods for thermal print output
+    // TODO: moved from Inst0.h, refactor
+    void setOutputMode(OutputMode mode);
+
+    // TODO: methods for outputBuzzer
+    void setBuzzerPin(int pin);
+    void setBuzzerFrequencies(int freq0, int freq1, int freq2);
+    void setBuzzerDurations(long newDuration);
+    // TODO: methods for outputLCD
+    // TODO: methods for outputLED
+    // TODO: methods for outputMIDI
+    // TODO: methods for outputPrinter
+    // TODO: methods for outputSerialUSB
+    // TODO: methods for outputServo
 
     // methods for output MIDI
     void setupSerialMIDI();
@@ -107,13 +102,31 @@ class TinyTrainable {
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
   protected:
+    
     // true: instrument outputs debugging messages over USB serial
     // false: standalone instrument, no debugging message
     bool _serialDebugging = false;
+    // variable to store the output mode of the instrument
     OutputMode _outputMode;
+
+    int _outputPin = -1;
+
+    // TODO: variables for outputBuzzer
+    int _buzzerFrequencies[3];
+    // TODO: does this need to be a long? can it be an int?
+    long _buzzerDuration = 1000;
+    // TODO: variables for outputLCD
+    // TODO: variables for outputLED
+    // TODO: variables for outputMIDI
+    int _midiNotes[3];
     byte _midiChannel = 1;
     byte _midiVelocity = 127;
-    int _outputPin;
+    // TODO: variables for outputPrinter
+    // TODO: variables for outputSerialUSB
+    // TODO: variables for outputServo
+
+
+
 };
 
 #endif

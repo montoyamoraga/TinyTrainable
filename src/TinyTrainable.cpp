@@ -108,6 +108,41 @@ void TinyTrainable::setupSensorLSM9DS1() {
   }
 }
 
+// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
+// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
+void TinyTrainable::setOutputMode(OutputMode mode) {
+  _outputMode = mode;
+
+  if (_outputMode == outputSerialUSB) {
+    Serial.begin(9600);
+    while (!Serial);
+  }
+
+  if (_outputMode == outputMIDI) {
+    setupSerialMIDI();
+  }
+
+}
+
+void TinyTrainable::setBuzzerPin(int outputPin) {
+  _outputPin = outputPin;
+  pinMode(_outputPin, OUTPUT);
+}
+
+// set note frequencies for buzzer output
+void TinyTrainable::setBuzzerFrequencies(int freq0, int freq1, int freq2) {
+  _buzzerFrequencies[0] = freq0;
+  _buzzerFrequencies[1] = freq1;
+  _buzzerFrequencies[2] = freq2;
+}
+
+// TODO: why long and not int?
+// TODO: for now lets just have one of these functions
+// ideally this function could have the slots i mentioned
+void TinyTrainable::setBuzzerDurations(long buzzerDuration) {
+  _buzzerDuration = buzzerDuration;
+}
+
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {
 

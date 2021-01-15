@@ -14,10 +14,6 @@ class Inst0:public TinyTrainable
   public:
     // constructor
     Inst0();
-    void setupInstrument(OutputMode mode);
-    // void setupMIDI(byte midiChannelDec, byte midiVelocity);
-    void setupPin(int outputPin, long noteDuration);
-    void setFrequencies(int note0, int note1, int note2);
     void setLabels(String object0, String object1, String object2);
     // TODO: use the builtin LED to signal if instrument is trained or not
     // TODO: maybe use two blinks after it is trained?
@@ -26,8 +22,8 @@ class Inst0:public TinyTrainable
   private:
     void readColor(float color[]);
     KNNClassifier _myKNN;
-    long _noteDuration;
-    int _notes[3];
+
+
     int _previousClassification;
     String _labels[3];
     int _k;

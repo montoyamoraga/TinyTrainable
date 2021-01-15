@@ -9,6 +9,9 @@ const int K = 5;
 const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
 
+// constants for the hardware
+const int outputPin = 8;
+
 // setup() runs once, at the beginning
 void setup() {
 
@@ -19,14 +22,17 @@ void setup() {
   // gestures, color, light intensity and proximity
   tiny.setupSensorAPDS9960();
 
-  // setup instrument to output over midi
-  tiny.setupInstrument(pinOut);
+  // setup instrument to output over buzzer
+  tiny.setOutputMode(outputBuzzer);
 
-  // set pin for buzzer and note length
-  tiny.setupPin(8, 1000);
+  // setup the hardware pin for the output
+  tiny.setBuzzerPin(outputPin);
 
-  // set note frequencies for buzzer
-  tiny.setFrequencies(1000, 1200, 1400);
+    // set frequencies for buzzer sounds
+  tiny.setBuzzerFrequencies(1000, 1200, 1400);
+
+  // set duration for buzzer soudns
+  tiny.setBuzzerDurations(1000);
 
   // set labels for each of the three classes
   tiny.setLabels("Object 0", "Object 1", "Object 2");

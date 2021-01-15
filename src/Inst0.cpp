@@ -7,40 +7,6 @@ Inst0::Inst0() : _myKNN(3) {
 
 }
 
-// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
-// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
-void Inst0::setupInstrument(OutputMode mode) {
-  _outputMode = mode;
-
-  if (_outputMode == usbOut) {
-    Serial.begin(9600);
-    while (!Serial);
-  }
-
-  if (_outputMode == midiOut) {
-    setupSerialMIDI();
-  }
-
-    // TODO: i tried to move these lines to the constructor and it broke
-    // if we can move things to the constructor
-    // this function setupInstrument can be renamed to setupOutput or similar
-    // setupSensorAPDS9960();
-    // setupLEDs();
-}
-
-void Inst0::setupPin(int outputPin, long noteDuration) {
-  _outputPin = outputPin;
-  _noteDuration = noteDuration;
-  pinMode(_outputPin, OUTPUT);
-}
-
-// set note frequencies for pin/buzzer output, or note numbers for midi output 
-void Inst0::setFrequencies(int note0, int note1, int note2) {
-  _notes[0] = note0;
-  _notes[1] = note1;
-  _notes[2] = note2;
-}
-
 // sets the labels of the objects for identification by the KNN algorithm
 void Inst0::setLabels(String object0, String object1, String object2) {
   _labels[0] = object0;
@@ -106,17 +72,34 @@ void Inst0::identify() {
   // turn on the corresponding light
   turnOnLEDRGB(Colors(classification));
 
+  // TODO: add the corresponding calls to functions
   switch (_outputMode) {
-    case usbOut:
-      Serial.println(classification);
+    case outputBuzzer:
+      tone(_outputPin, _buzzerFrequencies[classification], _buzzerDuration);
       break;
-    case midiOut:
-      sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
+    case outputLCD:
       break;
-    case pinOut:
-      tone(_outputPin, _notes[classification], _noteDuration);
+    case outputLED:
+      break;
+    case outputMIDI:
+      break;
+    case outputPrinter:
+      break;
+    case outputSerialUSB:
+      break;
+    case outputServo:
       break;
   }
+
+  // TODO: delete this legacy code,
+  // it is here as reference for now
+  //   case usbOut:
+  //     Serial.println(classification);
+  //     break;
+  //   case midiOut:
+  //     sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
+  //     break;
+  // }
 
   _previousClassification = classification;
 }

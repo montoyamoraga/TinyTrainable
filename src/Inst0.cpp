@@ -58,6 +58,9 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
   // turn off the LED built in
   turnOffLEDBuiltIn();
 
+  // turn off the LED RGB
+  turnOffLEDRGB();
+
 }
 
 // uses the trained KNN algorithm to identify objects the user shows

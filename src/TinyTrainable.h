@@ -86,7 +86,7 @@ class TinyTrainable {
     void setOutputMode(OutputMode mode);
 
     // TODO: methods for outputBuzzer
-    void setBuzzerPin(int pin);
+    void setBuzzerPin(int outputPin);
     void setBuzzerFrequencies(int freq0, int freq1, int freq2);
     void setBuzzerDurations(long newDuration);
     // TODO: methods for outputLCD
@@ -95,7 +95,8 @@ class TinyTrainable {
     // TODO: methods for outputPrinter
     // TODO: methods for outputSerialUSB
     // TODO: methods for outputServo
-
+    void setServoPin(int outputPin);
+    void setServoAngles(int angle0, int angle1, int angle2);
     // methods for output MIDI
     void setupSerialMIDI();
     void setSerialMIDIChannel(byte midiChannel);
@@ -110,7 +111,16 @@ class TinyTrainable {
     // variable to store the output mode of the instrument
     OutputMode _outputMode;
 
-    int _outputPin = -1;
+    // variables for outputs
+    int _outputPinBuzzer = -1;
+    int _outputPinLCD = -1;
+    int _outputPinLED = -1;
+    int _outputPinMIDI = -1;
+    // TODO: this might need to be several variables
+    int _outputPinPrinter = -1;
+    // TODO: delete _outputSerialUSB? since we don't need a pin for USB
+    int _outputSerialUSB = -1;
+    int _outputPinServo = -1;
 
     // TODO: variables for outputBuzzer
     int _buzzerFrequencies[3];
@@ -125,6 +135,8 @@ class TinyTrainable {
     // TODO: variables for outputPrinter
     // TODO: variables for outputSerialUSB
     // TODO: variables for outputServo
+    Servo _servo;
+    int _servoAngles[3];
 
 };
 

@@ -135,8 +135,8 @@ void TinyTrainable::setOutputMode(OutputMode mode) {
 }
 
 void TinyTrainable::setBuzzerPin(int outputPin) {
-  _outputPin = outputPin;
-  pinMode(_outputPin, OUTPUT);
+  _outputPinBuzzer = outputPin;
+  pinMode(_outputPinBuzzer, OUTPUT);
 }
 
 // set note frequencies for buzzer output
@@ -151,6 +151,17 @@ void TinyTrainable::setBuzzerFrequencies(int freq0, int freq1, int freq2) {
 // ideally this function could have the slots i mentioned
 void TinyTrainable::setBuzzerDurations(long buzzerDuration) {
   _buzzerDuration = buzzerDuration;
+}
+
+void TinyTrainable::setServoPin(int pin) {
+  _outputPinServo = pin;
+  pinMode(_outputPinServo, OUTPUT);
+}
+
+void TinyTrainable::setServoAngles(int angle0, int angle1, int angle2) {
+  _servoAngles[0] = angle0;
+  _servoAngles[1] = angle1;
+  _servoAngles[2] = angle2;
 }
 
 // sets up Serial MIDI output on TX pin

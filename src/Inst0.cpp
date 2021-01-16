@@ -84,7 +84,7 @@ void Inst0::identify() {
   // TODO: add the corresponding calls to functions
   switch (_outputMode) {
     case outputBuzzer:
-      tone(_outputPin, _buzzerFrequencies[classification], _buzzerDuration);
+      tone(_outputPinBuzzer, _buzzerFrequencies[classification], _buzzerDuration);
       break;
     case outputLCD:
       break;
@@ -97,6 +97,7 @@ void Inst0::identify() {
     case outputSerialUSB:
       break;
     case outputServo:
+      _servo.write(_servoAngles[classification]);
       break;
   }
 

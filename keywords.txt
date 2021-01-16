@@ -41,3 +41,8 @@ outputMIDI						LITERAL1
 outputPrinter					LITERAL1
 outputSerialUSB				LITERAL1
 outputServo						LITERAL1
+_servo								LITERAL1
+_servoAngles					LITERAL1
+_servoAngleCurrent		LITERAL1
+_servoAngleMin				LITERAL1
+_servoAngleMax				LITERAL1

@@ -91,26 +91,19 @@ void Inst0::identify() {
     case outputLED:
       break;
     case outputMIDI:
+      // sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
       break;
     case outputPrinter:
       break;
     case outputSerialUSB:
+      Serial.println(classification);
       break;
     case outputServo:
-      _servo.write(_servoAngles[classification]);
+      setServoAngle(_servoAngles[classification]);
       break;
   }
 
-  // TODO: delete this legacy code,
-  // it is here as reference for now
-  //   case usbOut:
-  //     Serial.println(classification);
-  //     break;
-  //   case midiOut:
-  //     sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
-  //     break;
-  // }
-
+  // update previous classification
   _previousClassification = classification;
 }
 

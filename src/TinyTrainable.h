@@ -97,6 +97,7 @@ class TinyTrainable {
     // TODO: methods for outputServo
     void setServoPin(int outputPin);
     void setServoAngles(int angle0, int angle1, int angle2);
+    void setServoAngle(int angle);
     // methods for output MIDI
     void setupSerialMIDI();
     void setSerialMIDIChannel(byte midiChannel);
@@ -136,8 +137,10 @@ class TinyTrainable {
     // TODO: variables for outputSerialUSB
     // TODO: variables for outputServo
     Servo _servo;
+    int _servoAngleCurrent = 0;
+    int _servoAngleMin = 0;
+    int _servoAngleMax = 180;
     int _servoAngles[3];
-
 };
 
 #endif

@@ -164,6 +164,21 @@ void TinyTrainable::setServoAngles(int angle0, int angle1, int angle2) {
   _servoAngles[2] = angle2;
 }
 
+void TinyTrainable::setServoAngle(int angle) {
+  if (_servoAngleCurrent < angle) {
+    for (int i = _servoAngleCurrent; i < angle; i++) {
+      _servo.write(i);
+      delay(15);
+    }
+  }
+  else {
+    for (int i = _servoAngleCurrent; i > angle; i--) {
+      _servo.write(i);
+      delay(15);
+    }
+  }
+}
+
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {
 

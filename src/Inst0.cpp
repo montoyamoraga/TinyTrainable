@@ -3,8 +3,20 @@
 
 // constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {
+  _outputMode = undefined;
+  _labels[0], _labels[1], _labels[2] = "";
+  _k = -1;
+  
+  _midiChannel = 16;
+  _midiVelocity = 0;
+
+  _outputPin = -1;
+
+  _notes[0], _notes[1], _notes[2] = -1;
+
   _previousClassification = -1;
 
+  _checkedSetup = false;
 }
 
 // sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
@@ -58,6 +70,7 @@ void Inst0::setLabels(String object0, String object1, String object2) {
 // algorithm will use the 'k' nearest neighbors for classification
 // 'examplesPerClass' examples that pass 'colorThreshold' are collected per class
 void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
+
   _k = k;
   _colorThreshold = colorThreshold;
 
@@ -91,6 +104,9 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
 
 // uses the trained KNN algorithm to identify objects the user shows
 void Inst0::identify() {
+  if (!_checkedSetup) {
+    checkInst0Setup();
+  }
   // wait for the object to move away again
   while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
 
@@ -143,6 +159,62 @@ void Inst0::readColor(float colorReading[]) {
       _colorReading[0] = red;
       _colorReading[1] = green;
       _colorReading[2] = blue;
+    }
+  }
+}
+
+// TODO: docstring, call this at the beginning of identify() once
+// red is general missing setup
+//    1 blink - setupInstrument() not called
+//    2 blinks - setLabels() not called
+//    3 blinks - trainKNN() not called
+// green is usb output missing setup
+//    none
+// blue is midi output missing setup
+//    1 blink - setSerialMIDIChannel() or setSerialMIDIVelocity not called
+//    2 blinks - setFrequencies() not called
+// yellow is buzzer output missing setup
+//    1 blink - setupPin() not called
+//    2 blinks - setFrequencies() not called
+void Inst0::checkInst0Setup(){
+  // checking setupInstrument()
+  if (_outputMode == undefined) {
+    errorBlink(red, 1);
+  }
+
+  // checking setLabels()
+  if (_labels[0] == "" || _labels[1] == "" || _labels[2] == "") {
+    errorBlink(red, 2);
+  }
+
+  // checking trainKNN()
+  if (_k == -1) {
+    errorBlink(red, 3);
+  }
+
+  // checking output-specific setup
+  switch (_outputMode) {
+    case midiOut:
+      if (_midiChannel > 15 || _midiVelocity == 0) {
+        errorBlink(blue, 1);
+      }
+      break;
+    case pinOut:
+      if (_outputPin == -1 || _noteDuration == 0) {
+        errorBlink(yellow, 1);
+      }
+      break;
+  }
+
+  // checking setFrequencies()
+  if (_notes[0] == -1 || _notes[1] == -1 || _notes[2] == -1) {
+    switch (_outputMode) {
+      case midiOut:
+        errorBlink(blue, 2);
+        break;
+      case pinOut:
+        errorBlink(yellow, 2);
+        break;
     }
   }
 }

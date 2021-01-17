@@ -38,6 +38,7 @@ void TinyTrainable::setupLEDRGB() {
   digitalWrite(LEDB, HIGH);
 }
 
+// TODO change this to a switch statement
 void TinyTrainable::turnOnLEDRGB(Colors color) {
 
     if (color == red) {
@@ -71,6 +72,22 @@ void TinyTrainable::turnOffLEDRGB() {
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
   digitalWrite(LEDB, HIGH);
+}
+
+// TODO documentation
+void TinyTrainable::errorBlink(Colors color, int blinkNum) {
+  while (true) {
+    for (int i = 0; i <= blinkNum; i++) {
+      turnOnLEDRGB(color);
+      delay(1000);
+      turnOffLEDRGB();
+      delay(1000);
+    }
+    turnOnLEDBuiltIn();
+    delay(1000);
+    turnOffLEDBuiltIn();
+    delay(1000);
+  }
 }
 
 void TinyTrainable::setSerialDebugging(bool serialDebugging) {

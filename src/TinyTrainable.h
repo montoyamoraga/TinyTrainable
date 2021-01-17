@@ -28,13 +28,21 @@
 #include <Arduino_LSM9DS1.h>
 
 // include Servo library
-#include <Servo.h>
+// #include <Servo.h>
 
 // include Adafruit Thermal Printer library
 #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
 enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
+
+// instead of using numbers to represent the different output modes,
+// enum makes the code more readable in if and switch statements
+// TODO: i think this should go on TinyTrainable, not here
+// since we will be using the same outputs on all the instruments
+// and instead of this modes, i would have all the different outputs
+// we have so far for inst0, such as: buzzer, midi, servo, etc
+enum OutputMode {undefined = 0, usbOut = 1, midiOut = 2, pinOut = 3};
 
 class TinyTrainable {
   public:
@@ -58,6 +66,7 @@ class TinyTrainable {
     void setupLEDRGB();
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();
+    void errorBlink(Colors color, int blinkNum);
 
     // methods for debugging
     void setSerialDebugging(bool serialDebugging);
@@ -83,6 +92,7 @@ class TinyTrainable {
     // true: instrument outputs debugging messages over USB serial
     // false: standalone instrument, no debugging message
     bool _serialDebugging = false;
+    OutputMode _outputMode;
     byte _midiChannel = 1;
     byte _midiVelocity = 127;
     int _outputPin;

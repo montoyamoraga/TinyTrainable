@@ -81,8 +81,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
     // ask the user to show examples of each object
     for (int currentExample = 0; currentExample < examplesPerClass; currentExample++) {
 
-      debugPrint("Show me an example of:");
-      debugPrint(_labels[currentClass]);
+      debugPrint("Show me an example of: " + _labels[currentClass]);
 
       // wait for an object then read its color
       readColor(_colorReading);
@@ -100,6 +99,16 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
     while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
   }
   debugPrint("Finished training");
+
+  // blink twice
+  blinkLEDBuiltIn(2);
+
+  // turn off the LED built in
+  turnOffLEDBuiltIn();
+
+  // turn off the LED RGB
+  turnOffLEDRGB();
+
 }
 
 // uses the trained KNN algorithm to identify objects the user shows
@@ -118,44 +127,58 @@ void Inst0::identify() {
   // classify the object
   int classification = _myKNN.classify(_colorReading, _k);
 
-  debugPrint("You showed me:");
-  debugPrint(_labels[classification]);
+  debugPrint("You showed me: " + _labels[classification]);
 
+  // turn on the corresponding light
   turnOnLEDRGB(Colors(classification));
 
+  // TODO: add the corresponding calls to functions
   switch (_outputMode) {
-    case usbOut:
+    case outputBuzzer:
+      tone(_outputPinBuzzer, _buzzerFrequencies[classification], _buzzerDuration);
+      break;
+    case outputLCD:
+      break;
+    case outputLED:
+      break;
+    case outputMIDI:
+      // sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
+      break;
+    case outputPrinter:
+      break;
+    case outputSerialUSB:
       Serial.println(classification);
       break;
-    case midiOut:
-      sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
-      break;
-    case pinOut:
-      tone(_outputPin, _notes[classification], _noteDuration);
+    case outputServo:
+      setServoAngle(_servoAngles[classification]);
       break;
   }
 
+  // update previous classification
   _previousClassification = classification;
 }
 
 // reads the color from the color sensor
 // stores the rgb values in 'colorReading[]'
 void Inst0::readColor(float colorReading[]) {
-  // TODO: maybe lets delete proximity, since we are not using it
-  int red, green, blue, proximity, colorTotal = 0;
+
+  // declare and initialize local variables for color
+  int red, green, blue, colorTotal = 0;
 
   // wait for the object to move close enough
   while (!APDS.proximityAvailable() || APDS.readProximity() > 0) {}
 
   // wait until the color is bright enough
   while (colorTotal < _colorThreshold) {
+
     // sample if the color is available and the object is close
     if (APDS.colorAvailable()) {
 
-      // Read color and proximity
+      // read color and proximity
       APDS.readColor(red, green, blue);
       colorTotal = (red + green + blue);
 
+      // update readings
       _colorReading[0] = red;
       _colorReading[1] = green;
       _colorReading[2] = blue;

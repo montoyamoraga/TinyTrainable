@@ -1,27 +1,57 @@
 // include library
 #include <Inst0.h>
 
+// declare instance of the instrument0
 Inst0 tiny;
 
 // constants for the KNN algorithm
-int K = 5;
-int EXAMPLES_PER_CLASS = 10;
-float COLOR_THRESHOLD = 0.5;
+const int K = 5;
+const int EXAMPLES_PER_CLASS = 10;
+const float COLOR_THRESHOLD = 0.5;
 
+// constants for the hardware
+const int outputPin = 9;
+
+// constant for debugging
+// true: the instrument needs to be connected to serial port
+// false: the instrument is standalone
+const bool tinyDebugging = true;
+
+// setup() runs once, at the beginning
 void setup() {
 
+  // configure all LEDs on the microcontroller
   tiny.setupLEDs();
+
+  // set debugging over serial port
+  tiny.setSerialDebugging(tinyDebugging);
+
+  // turn on the sensor to measure
+  // gestures, color, light intensity and proximity
   tiny.setupSensorAPDS9960();
 
-  // setup instrument to output over midi
-  // tiny.setupInstrument(midiOut);
+  // setup instrument to output over servo
+  tiny.setOutputMode(outputServo);
 
-  tiny.setLabels("Object 0", "Object 1", "Object 2");
+  // setup the hardware pin for the output
+  tiny.setServoPin(outputPin);
 
+  // set angles for servo
+  tiny.setServoAngles(0, 60, 120);
 
-  tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
+  // set duration for buzzer soudns
+  // tiny.setBuzzerDurations(1000);
+
+  // set labels for each of the three classes
+   tiny.setLabels("Object 0", "Object 1", "Object 2");
+
+  // train the KNN algorithm
+   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
 }
 
+// loop() runs after setup(), on a loop
 void loop() {
-  tiny.identify();
+
+  // identify the input and respond
+   tiny.identify();
 }

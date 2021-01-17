@@ -2,10 +2,8 @@
 #include "TinyTrainable.h"
 
 // constructor for the TinyTrainable class
-TinyTrainable::TinyTrainable()
-{
-  // hardcoded for now
-  _serialDebugging = true;
+TinyTrainable::TinyTrainable() {
+
 }
 
 void TinyTrainable:: setupLEDs() {
@@ -15,8 +13,8 @@ void TinyTrainable:: setupLEDs() {
 
 void TinyTrainable:: setupLEDBuiltIn() {
   pinMode(LED_BUILTIN, OUTPUT);
-  // default state off is LOW
-  digitalWrite(LED_BUILTIN, LOW);
+  // initial state off is HIGH for on
+  digitalWrite(LED_BUILTIN, HIGH);
 }
 
 void TinyTrainable::turnOnLEDBuiltIn() {
@@ -25,6 +23,18 @@ void TinyTrainable::turnOnLEDBuiltIn() {
 
 void TinyTrainable::turnOffLEDBuiltIn() {
   digitalWrite(LED_BUILTIN, LOW);
+}
+
+void TinyTrainable::blinkLEDBuiltIn(int blinks) {
+
+  turnOffLEDBuiltIn();
+
+  for (int i = 0; i < blinks; i++) {
+    turnOnLEDBuiltIn();
+    delay(500);
+    turnOffLEDBuiltIn();
+    delay(500);
+  }
 }
 
 void TinyTrainable::setupLEDRGB() {
@@ -99,13 +109,90 @@ void TinyTrainable::setSerialDebugging(bool serialDebugging) {
         Serial.begin(9600);
         while (!Serial);
   }
-
-
 }
 
 void TinyTrainable::setupSensorAPDS9960() {
     if (!APDS.begin()) {
     while (1);
+  }
+}
+
+void TinyTrainable::setupSensorHTS221() {
+    if (!HTS.begin()) {
+    while (1);
+  }
+}
+
+void TinyTrainable::setupSensorLPS22HB() {
+    if (!BARO.begin()) {
+    while (1);
+  }
+}
+
+void TinyTrainable::setupSensorLSM9DS1() {
+  if (!IMU.begin()) {
+    while(1);
+  }
+}
+
+// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
+// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
+void TinyTrainable::setOutputMode(OutputMode mode) {
+  _outputMode = mode;
+
+  if (_outputMode == outputSerialUSB) {
+    Serial.begin(9600);
+    while (!Serial);
+  }
+
+  if (_outputMode == outputMIDI) {
+    setupSerialMIDI();
+  }
+
+}
+
+void TinyTrainable::setBuzzerPin(int outputPin) {
+  _outputPinBuzzer = outputPin;
+  pinMode(_outputPinBuzzer, OUTPUT);
+}
+
+// set note frequencies for buzzer output
+void TinyTrainable::setBuzzerFrequencies(int freq0, int freq1, int freq2) {
+  _buzzerFrequencies[0] = freq0;
+  _buzzerFrequencies[1] = freq1;
+  _buzzerFrequencies[2] = freq2;
+}
+
+// TODO: why long and not int?
+// TODO: for now lets just have one of these functions
+// ideally this function could have the slots i mentioned
+void TinyTrainable::setBuzzerDurations(long buzzerDuration) {
+  _buzzerDuration = buzzerDuration;
+}
+
+void TinyTrainable::setServoPin(int pin) {
+  _outputPinServo = pin;
+  pinMode(_outputPinServo, OUTPUT);
+}
+
+void TinyTrainable::setServoAngles(int angle0, int angle1, int angle2) {
+  _servoAngles[0] = angle0;
+  _servoAngles[1] = angle1;
+  _servoAngles[2] = angle2;
+}
+
+void TinyTrainable::setServoAngle(int angle) {
+  if (_servoAngleCurrent < angle) {
+    for (int i = _servoAngleCurrent; i < angle; i++) {
+      _servo.write(i);
+      delay(15);
+    }
+  }
+  else {
+    for (int i = _servoAngleCurrent; i > angle; i--) {
+      _servo.write(i);
+      delay(15);
+    }
   }
 }
 
@@ -127,8 +214,8 @@ void TinyTrainable::setupSerialMIDI() {
 
 void TinyTrainable::setSerialMIDIChannel(byte midiChannel) {
  _midiChannel = midiChannel;
-    
 }
+
 void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
   _midiVelocity = midiVelocity;
 }

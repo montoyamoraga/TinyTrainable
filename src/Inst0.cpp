@@ -3,9 +3,9 @@
 
 // constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {
-  // default, no classification
-  _previousClassification = -1;
-  // default built in LED is on
+  _labels[0], _labels[1], _labels[2] = "";
+  _buzzerFrequencies[0], _buzzerFrequencies[1], _buzzerFrequencies[2] = -1;
+  _midiNotes[0], _midiNotes[1], _midiNotes[2] = -1;
 }
 
 // sets the labels of the objects for identification by the KNN algorithm
@@ -23,6 +23,7 @@ void Inst0::setLabels(String object0, String object1, String object2) {
 // algorithm will use the 'k' nearest neighbors for classification
 // 'examplesPerClass' examples that pass 'colorThreshold' are collected per class
 void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
+
   _k = k;
   _colorThreshold = colorThreshold;
 
@@ -65,6 +66,10 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
 
 // uses the trained KNN algorithm to identify objects the user shows
 void Inst0::identify() {
+  if (!_checkedSetup) {
+    checkInst0Setup();
+  }
+
   // wait for the object to move away again
   while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
 
@@ -91,7 +96,7 @@ void Inst0::identify() {
     case outputLED:
       break;
     case outputMIDI:
-      // sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
+      sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
       break;
     case outputPrinter:
       break;
@@ -99,7 +104,7 @@ void Inst0::identify() {
       Serial.println(classification);
       break;
     case outputServo:
-      setServoAngle(_servoAngles[classification]);
+      // setServoAngle(_servoAngles[classification]);
       break;
   }
 
@@ -132,5 +137,55 @@ void Inst0::readColor(float colorReading[]) {
       _colorReading[1] = green;
       _colorReading[2] = blue;
     }
+  }
+}
+
+// TODO: docstring, call this at the beginning of identify() once
+// red is general missing setup
+//    1 blink - setupInstrument() not called
+//    2 blinks - setLabels() not called
+//    3 blinks - trainKNN() not called
+// green is usb output missing setup
+//    none
+// blue is midi output missing setup
+//    1 blink - setSerialMIDIChannel() or setSerialMIDIVelocity not called
+//    2 blinks - setFrequencies() not called
+// yellow is buzzer output missing setup
+//    1 blink - setupPin() not called
+//    2 blinks - setFrequencies() not called
+void Inst0::checkInst0Setup(){
+  // checking setupInstrument()
+  if (_outputMode == outputUndefined) {
+    errorBlink(red, 1);
+  }
+
+  // checking setLabels()
+  if (_labels[0] == "" || _labels[1] == "" || _labels[2] == "") {
+    errorBlink(red, 2);
+  }
+
+  // checking trainKNN()
+  if (_k == -1) {
+    errorBlink(red, 3);
+  }
+
+  // checking output-specific setup
+  switch (_outputMode) {
+    case outputMIDI:
+      if (_midiChannel > 15 || _midiVelocity == 0) {
+        errorBlink(blue, 1);
+      }
+      if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
+        errorBlink(blue, 2);
+      }
+      break;
+    case outputBuzzer:
+      if (_outputPinBuzzer == -1 || _buzzerDuration == 0) {
+        errorBlink(yellow, 1);
+      }
+      if (_buzzerFrequencies[0] == -1 || _buzzerFrequencies[1] == -1 || _buzzerFrequencies[2] == -1) {
+        errorBlink(yellow, 2);
+      }
+      break;
   }
 }

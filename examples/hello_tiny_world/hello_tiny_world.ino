@@ -4,9 +4,9 @@
 // this sketch cycles through all the possible LED colors
 
 // include all libraries
-#include "Inst0.h"
-#include "Inst1.h"
-#include "Inst2.h"
+#include <Inst0.h>
+#include <Inst1.h>
+#include <Inst2.h>
 
 // variables for time LEDs are on and off
 // measured in milliseconds
@@ -18,8 +18,7 @@ int timeOff = 250;
 Inst0 tiny;
 
 void setup() {
-  tiny.setupLEDBuiltIn();
-  tiny.setupLEDRGB();
+  tiny.setupLEDs();
 }
 
 void loop() {

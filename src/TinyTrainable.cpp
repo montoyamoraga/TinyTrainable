@@ -7,14 +7,19 @@ TinyTrainable::TinyTrainable() {
 }
 
 void TinyTrainable:: setupLEDs() {
-  setupLEDBuiltIn();
-  setupLEDRGB();
-}
-
-void TinyTrainable:: setupLEDBuiltIn() {
+  // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);
   // initial state off is HIGH for on
   digitalWrite(LED_BUILTIN, HIGH);
+  
+  // setting up RGB LED
+  pinMode(LEDR, OUTPUT);
+  pinMode(LEDG, OUTPUT);
+  pinMode(LEDB, OUTPUT);
+  // default state off is HIGH
+  digitalWrite(LEDR, HIGH);
+  digitalWrite(LEDG, HIGH);
+  digitalWrite(LEDB, HIGH);
 }
 
 void TinyTrainable::turnOnLEDBuiltIn() {
@@ -37,44 +42,30 @@ void TinyTrainable::blinkLEDBuiltIn(int blinks) {
   }
 }
 
-void TinyTrainable::setupLEDRGB() {
-  pinMode(LEDR, OUTPUT);
-  pinMode(LEDG, OUTPUT);
-  pinMode(LEDB, OUTPUT);
-
-  // default state off is HIGH
-  digitalWrite(LEDR, HIGH);
-  digitalWrite(LEDG, HIGH);
-  digitalWrite(LEDB, HIGH);
-}
-
-// TODO change this to a switch statement
 void TinyTrainable::turnOnLEDRGB(Colors color) {
-
-    if (color == red) {
-    digitalWrite(LEDR, LOW);
-    digitalWrite(LEDG, HIGH);
-    digitalWrite(LEDB, HIGH);
-  } else if (color == green) {
-    digitalWrite(LEDR, HIGH);
-    digitalWrite(LEDG, LOW);
-    digitalWrite(LEDB, HIGH);
-  } else if (color == blue) {
-    digitalWrite(LEDR, HIGH);
-    digitalWrite(LEDG, HIGH);
-    digitalWrite(LEDB, LOW);
-  } else if (color == yellow) {
-    digitalWrite(LEDR, LOW);
-    digitalWrite(LEDG, LOW);
-    digitalWrite(LEDB, HIGH);
-  } else if (color == magenta) {
-    digitalWrite(LEDR, LOW);
-    digitalWrite(LEDG, HIGH);
-    digitalWrite(LEDB, LOW);
-  } else if (color == cyan) {
-    digitalWrite(LEDR, HIGH);
-    digitalWrite(LEDG, LOW);
-    digitalWrite(LEDB, LOW);
+  turnOffLEDRGB();
+  switch (color) {
+    case red:
+      digitalWrite(LEDR, LOW);
+      break;
+    case green:
+      digitalWrite(LEDG, LOW);
+      break;
+    case blue:
+      digitalWrite(LEDB, LOW);
+      break;
+    case yellow:
+      digitalWrite(LEDR, LOW);
+      digitalWrite(LEDG, LOW);
+      break;
+    case magenta:
+      digitalWrite(LEDR, LOW);
+      digitalWrite(LEDB, LOW);
+      break;
+    case cyan:
+      digitalWrite(LEDG, LOW);
+      digitalWrite(LEDB, LOW);
+      break;
   }
 }
 
@@ -84,7 +75,8 @@ void TinyTrainable::turnOffLEDRGB() {
   digitalWrite(LEDB, HIGH);
 }
 
-// TODO documentation
+// traps the arduino in an infinite loop with RGB LED blinking, to signal 
+// some setup missing. explanations in docs by instrument.
 void TinyTrainable::errorBlink(Colors color, int blinkNum) {
   while (true) {
     for (int i = 0; i <= blinkNum; i++) {
@@ -93,42 +85,46 @@ void TinyTrainable::errorBlink(Colors color, int blinkNum) {
       turnOffLEDRGB();
       delay(1000);
     }
-    turnOnLEDBuiltIn();
-    delay(1000);
-    turnOffLEDBuiltIn();
-    delay(1000);
+    blinkLEDBuiltIn(1);
   }
 }
 
+// true: instrument outputs debugging messages over USB serial
+// false: standalone instrument, no debugging message
 void TinyTrainable::setSerialDebugging(bool serialDebugging) {
-  
-  // update boolean
   _serialDebugging = serialDebugging;
 
   if (_serialDebugging) {
-        Serial.begin(9600);
-        while (!Serial);
+    Serial.begin(9600);
+    while (!Serial);
   }
 }
 
+// APDS9960 sensor for gestures, color, light intensity, proximity 
 void TinyTrainable::setupSensorAPDS9960() {
     if (!APDS.begin()) {
     while (1);
   }
 }
 
+// include library for temperature and humidity sensor
+// https://www.arduino.cc/en/Reference/ArduinoHTS221
 void TinyTrainable::setupSensorHTS221() {
     if (!HTS.begin()) {
     while (1);
   }
 }
 
+// include library for pressure sensor
+// https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
 void TinyTrainable::setupSensorLPS22HB() {
     if (!BARO.begin()) {
     while (1);
   }
 }
 
+// LSM9DS1 sensor for IMU (inertial measurement unit)
+//  3-axis accelerometer, gyroscope, magnetometer
 void TinyTrainable::setupSensorLSM9DS1() {
   if (!IMU.begin()) {
     while(1);
@@ -136,7 +132,6 @@ void TinyTrainable::setupSensorLSM9DS1() {
 }
 
 // sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
-// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
 void TinyTrainable::setOutputMode(OutputMode mode) {
   _outputMode = mode;
 
@@ -148,7 +143,6 @@ void TinyTrainable::setOutputMode(OutputMode mode) {
   if (_outputMode == outputMIDI) {
     setupSerialMIDI();
   }
-
 }
 
 void TinyTrainable::setBuzzerPin(int outputPin) {
@@ -163,10 +157,9 @@ void TinyTrainable::setBuzzerFrequencies(int freq0, int freq1, int freq2) {
   _buzzerFrequencies[2] = freq2;
 }
 
-// TODO: why long and not int?
 // TODO: for now lets just have one of these functions
 // ideally this function could have the slots i mentioned
-void TinyTrainable::setBuzzerDurations(long buzzerDuration) {
+void TinyTrainable::setBuzzerDurations(int buzzerDuration) {
   _buzzerDuration = buzzerDuration;
 }
 

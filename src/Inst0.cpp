@@ -3,56 +3,9 @@
 
 // constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {
-  _outputMode = undefined;
   _labels[0], _labels[1], _labels[2] = "";
-  _k = -1;
-  
-  _midiChannel = 16;
-  _midiVelocity = 0;
-
-  _outputPin = -1;
-
-  _notes[0], _notes[1], _notes[2] = -1;
-
-  _previousClassification = -1;
-
-  _checkedSetup = false;
-}
-
-// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
-// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
-void Inst0::setupInstrument(OutputMode mode) {
-  _outputMode = mode;
-
-  if (_outputMode == usbOut) {
-    Serial.begin(9600);
-    while (!Serial);
-  }
-
-  if (_outputMode == midiOut) {
-    setupSerialMIDI();
-  }
-
-    // TODO: i tried to move these 3 lines to the constructor and it broke
-    // if we can move things to the constructor
-    // this function setupInstrument can be renamed to setupOutput or similar
-    // setupSensorAPDS9960();
-    // setupLEDs();
-    // _previousClassification = -1;
-
-}
-
-void Inst0::setupPin(int outputPin, long noteDuration) {
-  _outputPin = outputPin;
-  _noteDuration = noteDuration;
-  pinMode(_outputPin, OUTPUT);
-}
-
-// set note frequencies for pin/buzzer output, or note numbers for midi output 
-void Inst0::setFrequencies(int note0, int note1, int note2) {
-  _notes[0] = note0;
-  _notes[1] = note1;
-  _notes[2] = note2;
+  _buzzerFrequencies[0], _buzzerFrequencies[1], _buzzerFrequencies[2] = -1;
+  _midiNotes[0], _midiNotes[1], _midiNotes[2] = -1;
 }
 
 // sets the labels of the objects for identification by the KNN algorithm
@@ -116,6 +69,7 @@ void Inst0::identify() {
   if (!_checkedSetup) {
     checkInst0Setup();
   }
+
   // wait for the object to move away again
   while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
 
@@ -201,7 +155,7 @@ void Inst0::readColor(float colorReading[]) {
 //    2 blinks - setFrequencies() not called
 void Inst0::checkInst0Setup(){
   // checking setupInstrument()
-  if (_outputMode == undefined) {
+  if (_outputMode == outputUndefined) {
     errorBlink(red, 1);
   }
 
@@ -217,27 +171,21 @@ void Inst0::checkInst0Setup(){
 
   // checking output-specific setup
   switch (_outputMode) {
-    case midiOut:
+    case outputMIDI:
       if (_midiChannel > 15 || _midiVelocity == 0) {
         errorBlink(blue, 1);
       }
-      break;
-    case pinOut:
-      if (_outputPin == -1 || _noteDuration == 0) {
-        errorBlink(yellow, 1);
+      if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
+        errorBlink(blue, 2);
       }
       break;
-  }
-
-  // checking setFrequencies()
-  if (_notes[0] == -1 || _notes[1] == -1 || _notes[2] == -1) {
-    switch (_outputMode) {
-      case midiOut:
-        errorBlink(blue, 2);
-        break;
-      case pinOut:
+    case outputBuzzer:
+      if (_outputPinBuzzer == -1 || _buzzerDuration == 0) {
+        errorBlink(yellow, 1);
+      }
+      if (_buzzerFrequencies[0] == -1 || _buzzerFrequencies[1] == -1 || _buzzerFrequencies[2] == -1) {
         errorBlink(yellow, 2);
-        break;
-    }
+      }
+      break;
   }
 }

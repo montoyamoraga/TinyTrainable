@@ -104,7 +104,7 @@ class TinyTrainable {
     // TODO: methods for outputServo
     void setServoPin(int outputPin);
     void setServoAngles(int angle0, int angle1, int angle2);
-    void setServoAngle(int angle);
+    // void setServoAngle(int angle);
 
     // TODO: methods for outputLCD
     // TODO: methods for outputLED

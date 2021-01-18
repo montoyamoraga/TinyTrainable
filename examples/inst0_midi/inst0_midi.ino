@@ -9,15 +9,21 @@ int EXAMPLES_PER_CLASS = 10;
 float COLOR_THRESHOLD = 0.5;
 
 void setup() {
-  // setup instrument to output over midi, and printing debug statements
-  tiny.setupInstrument(midiOut, true);
+  tiny.setupLEDs();
 
-  // setup global MIDI variables
+  tiny.setSerialDebugging(true);
+
+  tiny.setupSensorAPDS9960();
+
+  tiny.setOutputMode(outputMIDI);
+
+  tiny.setupSerialMIDI();
+
   tiny.setSerialMIDIChannel(10);
+
   tiny.setSerialMIDIVelocity(127);
 
-  // set MIDI notes
-  tiny.setFrequencies(37, 38, 39);
+  tiny.setSerialMIDINotes(37, 38, 39);
 
   tiny.setLabels("Object 0", "Object 1", "Object 2");
 

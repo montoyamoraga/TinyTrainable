@@ -49,6 +49,9 @@ enum OutputMode {
   outputUndefined = 7
 };
 
+// COMMENT - i don't think these are in the same order as in the cpp file.
+// choose an order you like and then we should get them to match for readibility.
+
 class TinyTrainable {
   public:
     // constructor
@@ -94,6 +97,7 @@ class TinyTrainable {
     void setupSerialMIDI();
     void setSerialMIDIChannel(byte midiChannel);
     void setSerialMIDIVelocity(byte midiVelocity);
+    void setSerialMIDINotes(int note0, int note1, int note2);
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
     // TODO: methods for outputBuzzer

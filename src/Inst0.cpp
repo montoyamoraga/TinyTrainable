@@ -96,7 +96,7 @@ void Inst0::identify() {
     case outputLED:
       break;
     case outputMIDI:
-      // sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
+      sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
       break;
     case outputPrinter:
       break;

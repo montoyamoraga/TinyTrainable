@@ -213,6 +213,12 @@ void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
   _midiVelocity = midiVelocity;
 }
 
+void TinyTrainable::setSerialMIDINotes(int note0, int note1, int note2) {
+  _midiNotes[0] = note0;
+  _midiNotes[1] = note1;
+  _midiNotes[2] = note2;
+}
+
 void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(143 + channel);
   Serial1.write(note);

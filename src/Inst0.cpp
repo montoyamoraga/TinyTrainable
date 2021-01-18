@@ -104,7 +104,7 @@ void Inst0::identify() {
       Serial.println(classification);
       break;
     case outputServo:
-      setServoAngle(_servoAngles[classification]);
+      // setServoAngle(_servoAngles[classification]);
       break;
   }
 

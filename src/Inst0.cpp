@@ -2,51 +2,10 @@
 #include "Inst0.h"
 
 // constructor for the Inst0 class
-Inst0::Inst0() : _myKNN(3) {}
-
-// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
-// if 'serialDebugging' is true, debugPrint() statements will be printed over Serial
-void Inst0::setupInstrument(OutputMode mode, bool serialDebugging) {
-  _serialDebugging = serialDebugging;
-  _outputMode = mode;
-
-  if (_serialDebugging || _outputMode == usbOut) {
-    Serial.begin(9600);
-    while (!Serial);
-  }
-
-  if (_outputMode == midiOut) {
-    setupSerialMIDI();
-  }
-
-  if (!APDS.begin()) {
-    while (1);
-  }
-
-  setupLEDs();
-
-  _previousClassification = -1;
-}
-
-// sets MIDI channel number (in decimal)
-// and note velocity to send commands 
-// over Serial1
-// void Inst0::setupMIDI(byte midiChannelDec, byte midiVelocity) {
-//   _midiChannelDec = midiChannelDec;
-//   _midiVelocity = midiVelocity;
-// }
-
-void Inst0::setupPin(int outputPin, long noteDuration) {
-  _outputPin = outputPin;
-  _noteDuration = noteDuration;
-  pinMode(_outputPin, OUTPUT);
-}
-
-// set note frequencies for pin/buzzer output, or note numbers for midi output 
-void Inst0::setFrequencies(int note0, int note1, int note2) {
-  _notes[0] = note0;
-  _notes[1] = note1;
-  _notes[2] = note2;
+Inst0::Inst0() : _myKNN(3) {
+  _labels[0], _labels[1], _labels[2] = "";
+  _buzzerFrequencies[0], _buzzerFrequencies[1], _buzzerFrequencies[2] = -1;
+  _midiNotes[0], _midiNotes[1], _midiNotes[2] = -1;
 }
 
 // sets the labels of the objects for identification by the KNN algorithm
@@ -64,6 +23,7 @@ void Inst0::setLabels(String object0, String object1, String object2) {
 // algorithm will use the 'k' nearest neighbors for classification
 // 'examplesPerClass' examples that pass 'colorThreshold' are collected per class
 void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
+
   _k = k;
   _colorThreshold = colorThreshold;
 
@@ -74,8 +34,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
     // ask the user to show examples of each object
     for (int currentExample = 0; currentExample < examplesPerClass; currentExample++) {
 
-      debugPrint("Show me an example of:");
-      debugPrint(_labels[currentClass]);
+      debugPrint("Show me an example of: " + _labels[currentClass]);
 
       // wait for an object then read its color
       readColor(_colorReading);
@@ -93,10 +52,24 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
     while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
   }
   debugPrint("Finished training");
+
+  // blink twice
+  blinkLEDBuiltIn(2);
+
+  // turn off the LED built in
+  turnOffLEDBuiltIn();
+
+  // turn off the LED RGB
+  turnOffLEDRGB();
+
 }
 
 // uses the trained KNN algorithm to identify objects the user shows
 void Inst0::identify() {
+  if (!_checkedSetup) {
+    checkInst0Setup();
+  }
+
   // wait for the object to move away again
   while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
 
@@ -108,48 +81,111 @@ void Inst0::identify() {
   // classify the object
   int classification = _myKNN.classify(_colorReading, _k);
 
-  debugPrint("You showed me:");
-  debugPrint(_labels[classification]);
+  debugPrint("You showed me: " + _labels[classification]);
 
+  // turn on the corresponding light
   turnOnLEDRGB(Colors(classification));
 
+  // TODO: add the corresponding calls to functions
   switch (_outputMode) {
-    case usbOut:
+    case outputBuzzer:
+      tone(_outputPinBuzzer, _buzzerFrequencies[classification], _buzzerDuration);
+      break;
+    case outputLCD:
+      break;
+    case outputLED:
+      break;
+    case outputMIDI:
+      sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
+      break;
+    case outputPrinter:
+      break;
+    case outputSerialUSB:
       Serial.println(classification);
       break;
-    case midiOut:
-      sendSerialMIDINote(_midiChannel, _notes[classification], _midiVelocity);
-      // midiCommand(_notes[classification]);
-      break;
-    case pinOut:
-      tone(_outputPin, _notes[classification], _noteDuration);
+    case outputServo:
+      // setServoAngle(_servoAngles[classification]);
       break;
   }
 
+  // update previous classification
   _previousClassification = classification;
 }
 
 // reads the color from the color sensor
 // stores the rgb values in 'colorReading[]'
 void Inst0::readColor(float colorReading[]) {
-  int red, green, blue, proximity, colorTotal = 0;
+
+  // declare and initialize local variables for color
+  int red, green, blue, colorTotal = 0;
 
   // wait for the object to move close enough
   while (!APDS.proximityAvailable() || APDS.readProximity() > 0) {}
 
   // wait until the color is bright enough
   while (colorTotal < _colorThreshold) {
+
     // sample if the color is available and the object is close
     if (APDS.colorAvailable()) {
 
-      // Read color and proximity
+      // read color and proximity
       APDS.readColor(red, green, blue);
       colorTotal = (red + green + blue);
 
+      // update readings
       _colorReading[0] = red;
       _colorReading[1] = green;
       _colorReading[2] = blue;
-
     }
+  }
+}
+
+// TODO: docstring, call this at the beginning of identify() once
+// red is general missing setup
+//    1 blink - setupInstrument() not called
+//    2 blinks - setLabels() not called
+//    3 blinks - trainKNN() not called
+// green is usb output missing setup
+//    none
+// blue is midi output missing setup
+//    1 blink - setSerialMIDIChannel() or setSerialMIDIVelocity not called
+//    2 blinks - setFrequencies() not called
+// yellow is buzzer output missing setup
+//    1 blink - setupPin() not called
+//    2 blinks - setFrequencies() not called
+void Inst0::checkInst0Setup(){
+  // checking setupInstrument()
+  if (_outputMode == outputUndefined) {
+    errorBlink(red, 1);
+  }
+
+  // checking setLabels()
+  if (_labels[0] == "" || _labels[1] == "" || _labels[2] == "") {
+    errorBlink(red, 2);
+  }
+
+  // checking trainKNN()
+  if (_k == -1) {
+    errorBlink(red, 3);
+  }
+
+  // checking output-specific setup
+  switch (_outputMode) {
+    case outputMIDI:
+      if (_midiChannel > 15 || _midiVelocity == 0) {
+        errorBlink(blue, 1);
+      }
+      if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
+        errorBlink(blue, 2);
+      }
+      break;
+    case outputBuzzer:
+      if (_outputPinBuzzer == -1 || _buzzerDuration == 0) {
+        errorBlink(yellow, 1);
+      }
+      if (_buzzerFrequencies[0] == -1 || _buzzerFrequencies[1] == -1 || _buzzerFrequencies[2] == -1) {
+        errorBlink(yellow, 2);
+      }
+      break;
   }
 }

@@ -1,6 +1,48 @@
-# KEYWORD1 is for datatypes
-TinyTrainable KEYWORD1
+# KEYWORD1 is for datatypes, color orange
+TinyTrainable					KEYWORD1
+Inst0									KEYWORD1
+Inst1									KEYWORD1
+Inst2									KEYWORD1
 
-# KEYWORD2 is for methods and functions
-setupBuiltInLED KEYWORD2
-setColorBuiltInLED KEYWORD2
+# KEYWORD2 is for functions, color brown
+setupLEDs							KEYWORD2
+setupLEDBuiltIn				KEYWORD2
+turnOnLEDBuiltIn			KEYWORD2
+turnOnLEDBuiltIn			KEYWORD2
+turnOffLEDBuiltIn			KEYWORD2
+blinkLEDBuiltIn				KEYWORD2
+setupLEDRGB						KEYWORD2
+turnOnLEDRGB					KEYWORD2
+turnOffLEDRGB					KEYWORD2
+setSerialDebugging		KEYWORD2
+setupSensorAPDS9960		KEYWORD2
+setupSensorHTS221			KEYWORD2
+setupSensorLPS22HB		KEYWORD2
+setupSensorLSM9DS1		KEYWORD2
+setOutputMode					KEYWORD2
+setBuzzerPin					KEYWORD2
+setBuzzerFrequencies	KEYWORD2
+setBuzzerDurations		KEYWORD2
+setLabels							KEYWORD2
+trainKNN							KEYWORD2
+identify							KEYWORD2
+
+# LITERAL1 is for constants
+red										LITERAL1
+green									LITERAL1
+blue									LITERAL1
+yellow								LITERAL1
+magenta								LITERAL1
+cyan									LITERAL1
+outputBuzzer					LITERAL1
+outputLCD							LITERAL1
+outputLED							LITERAL1
+outputMIDI						LITERAL1
+outputPrinter					LITERAL1
+outputSerialUSB				LITERAL1
+outputServo						LITERAL1
+_servo								LITERAL1
+_servoAngles					LITERAL1
+_servoAngleCurrent		LITERAL1
+_servoAngleMin				LITERAL1
+_servoAngleMax				LITERAL1

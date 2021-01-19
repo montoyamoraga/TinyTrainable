@@ -1,2 +1,8 @@
+# Apple
 .DS_Store
+
+# Visual Studio Code
 .vscode/
+
+# Testing
+src/src.ino

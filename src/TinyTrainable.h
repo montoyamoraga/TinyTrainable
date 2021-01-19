@@ -27,12 +27,34 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
+// COMMENT - was giving me compiler errors even though i had it installed?
+// include Servo library
+// #include <Servo.h>
+
+// include Adafruit Thermal Printer library
+#include <Adafruit_Thermal.h>
+
 // colors for setting the RGB LED
-enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
+enum Colors {red = 0, green = 1, blue= 2, yellow = 3, magenta = 4, cyan = 5};
+
+// different instrument output modes
+enum OutputMode {
+  outputBuzzer = 0, 
+  outputLCD = 1, 
+  outputLED = 2, 
+  outputMIDI = 3, 
+  outputPrinter = 4, 
+  outputSerialUSB = 5, 
+  outputServo = 6,
+  outputUndefined = 7
+};
+
+// COMMENT - i don't think these are in the same order as in the cpp file.
+// choose an order you like and then we should get them to match for readibility.
 
 class TinyTrainable {
   public:
-    // constructor method
+    // constructor
     TinyTrainable();
     
     // template datatypes allows any datatype as an argument, like Serial.println().
@@ -42,28 +64,94 @@ class TinyTrainable {
         Serial.println(message);
       }
     };
-
+    
+    // methods for LEDs
+    // there are two: a built-in orange one and an RGB LED
     void setupLEDs();
-    void setupLEDBuiltIn();
+    // COMMENT - instead of having two methods to turn the led on or off, i think it 
+    // would be cleaner to have just one "setLEDBuiltInState(bool on)"
     void turnOnLEDBuiltIn();
     void turnOffLEDBuiltIn();
-    void setupLEDRGB();
+    void blinkLEDBuiltIn(int blinks);
+    // COMMENT - same comment as above, merge on and off?
     void turnOnLEDRGB(Colors color);
     void turnOffLEDRGB();
+    void errorBlink(Colors color, int blinkNum);
 
+    // methods for debugging
+    void setSerialDebugging(bool serialDebugging);
+
+    // methods for input sensors
+    // COMMENT - i moved all the links from here to docstrings in the cpp file,
+    // to keep the files more readable
+    // TODO: add all sensors on the Arduino Nano BLE 33 Sense
+    void setupSensorAPDS9960();
+    void setupSensorHTS221();
+    void setupSensorLPS22HB();
+    void setupSensorLSM9DS1();
+
+    // methods for outputs
+    void setOutputMode(OutputMode mode);
+
+    // methods for output MIDI
     void setupSerialMIDI();
     void setSerialMIDIChannel(byte midiChannel);
     void setSerialMIDIVelocity(byte midiVelocity);
+    void setSerialMIDINotes(int note0, int note1, int note2);
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
+    // TODO: methods for outputBuzzer
+    void setBuzzerPin(int outputPin);
+    void setBuzzerFrequencies(int freq0, int freq1, int freq2);
+    void setBuzzerDurations(int newDuration);
 
-    // void midiCommand(byte midiNote);
+    // TODO: methods for outputServo
+    void setServoPin(int outputPin);
+    void setServoAngles(int angle0, int angle1, int angle2);
+    // void setServoAngle(int angle);
+
+    // TODO: methods for outputLCD
+    // TODO: methods for outputLED
+    // TODO: methods for outputPrinter
+    // TODO: methods for outputSerialUSB
 
   protected:
-    bool _serialDebugging;
-    byte _midiChannel;
-    byte _midiVelocity;
-    int _outputPin;
+    // COMMENT - i moved all comments from here into the cpp file for readability
+    bool _serialDebugging = false;
+
+    // variables for outputs
+    OutputMode _outputMode = outputUndefined;
+    // COMMENT - since these variables are protected and not exposed to the user, 
+    // all these pin variables can be condensed to one variable (that might get set 
+    // through different methods)
+    int _outputPinBuzzer = -1;
+    int _outputPinLCD = -1;
+    int _outputPinLED = -1;
+    int _outputPinMIDI = -1;
+    int _outputPinPrinter = -1;  // TODO: this might need to be several variables
+    int _outputPinServo = -1;
+
+    // TODO: variables for outputBuzzer
+    int _buzzerFrequencies[3];
+    int _buzzerDuration = 0;
+
+    // TODO: variables for outputMIDI
+    int _midiNotes[3];
+    byte _midiChannel = 16;
+    byte _midiVelocity = 0;
+
+    // TODO: variables for outputServo
+    // Servo _servo;
+    int _servoAngleCurrent = 0;
+    // COMMENT - can these min and maxes be constants?
+    int _servoAngleMin = 0;
+    int _servoAngleMax = 180;
+    int _servoAngles[3];
+
+    // TODO: variables for outputLCD
+    // TODO: variables for outputLED
+    // TODO: variables for outputPrinter
+    // TODO: variables for outputSerialUSB
 };
 
 #endif

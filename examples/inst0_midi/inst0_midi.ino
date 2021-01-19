@@ -15,16 +15,21 @@ void setup() {
 
   tiny.setupSensorAPDS9960();
 
-  tiny.setOutputMode(outputSerialUSB);
+  tiny.setOutputMode(outputMIDI);
 
-  // set object labels for the KNN classification
+  tiny.setupSerialMIDI();
+
+  tiny.setSerialMIDIChannel(10);
+
+  tiny.setSerialMIDIVelocity(127);
+
+  tiny.setSerialMIDINotes(37, 38, 39);
+
   tiny.setLabels("Object 0", "Object 1", "Object 2");
 
-  // train the KNN algorithm with your objects
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
 }
 
 void loop() {
-    // identify the item shown to the arduino
-    tiny.identify();
+  tiny.identify();
 }

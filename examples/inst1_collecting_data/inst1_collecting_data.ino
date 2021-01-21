@@ -68,7 +68,7 @@ void loop() {
       
       // read accelation data and store in variables aX, aY, aZ
       IMU.readAcceleration(aX, aY, aZ);
-
+\
       // read gyroscope data and store in variables gX, gY, gZ
       IMU.readGyroscope(gX, gY, gZ);
 

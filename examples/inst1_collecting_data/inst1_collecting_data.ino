@@ -14,10 +14,13 @@ const float accelerationThreshold = 2.5;
 // number of samples
 const int numSamples = 119;
 
+// initialize as if sampling has already been done
+int samplesRead = numSamples;
+
 // number of decimals for floating point numbers
 const int floatDecimals = 3;
 
-int samplesRead = numSamples;
+
 
 // variables for reading
 float aX, aY, aZ, gX, gY, gZ;

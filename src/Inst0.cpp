@@ -8,24 +8,36 @@ Inst0::Inst0() : _myKNN(3) {
   _midiNotes[0], _midiNotes[1], _midiNotes[2] = -1;
 }
 
-// sets the labels of the objects for identification by the KNN algorithm
-void Inst0::setLabels(String object0, String object1, String object2) {
-  _labels[0] = object0;
-  _labels[1] = object1;
-  _labels[2] = object2;
-  debugPrint("Labels for Inst0:");
-  debugPrint(_labels[0]);
-  debugPrint(_labels[1]);
-  debugPrint(_labels[2]);
+// true: instrument outputs debugging messages over USB serial
+// false: standalone instrument, no debugging message
+void Inst0::setupInstrument(bool serialDebugging) {
+  setupLEDs();
+  setupSensorAPDS9960();
+
+  _serialDebugging = serialDebugging;
+
+  if (_serialDebugging) {
+    Serial.begin(9600);
+    while (!Serial);
+  }
 }
 
 // trains the KNN algorithm with examples provided by the user
 // algorithm will use the 'k' nearest neighbors for classification
 // 'examplesPerClass' examples that pass 'colorThreshold' are collected per class
-void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold) {
+// sets the labels of the objects for identification by the KNN algorithm
+void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]) {
 
   _k = k;
   _colorThreshold = colorThreshold;
+
+  _labels[0] = objects[0];
+  _labels[1] = objects[1];
+  _labels[2] = objects[2];
+  debugPrint("Labels for Inst0:");
+  debugPrint(_labels[0]);
+  debugPrint(_labels[1]);
+  debugPrint(_labels[2]);
 
   for (int currentClass = 0; currentClass < 3; currentClass++) {
 

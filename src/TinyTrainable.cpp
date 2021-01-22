@@ -89,17 +89,6 @@ void TinyTrainable::errorBlink(Colors color, int blinkNum) {
   }
 }
 
-// true: instrument outputs debugging messages over USB serial
-// false: standalone instrument, no debugging message
-void TinyTrainable::setSerialDebugging(bool serialDebugging) {
-  _serialDebugging = serialDebugging;
-
-  if (_serialDebugging) {
-    Serial.begin(9600);
-    while (!Serial);
-  }
-}
-
 // APDS9960 sensor for gestures, color, light intensity, proximity 
 void TinyTrainable::setupSensorAPDS9960() {
     if (!APDS.begin()) {
@@ -131,44 +120,40 @@ void TinyTrainable::setupSensorLSM9DS1() {
   }
 }
 
-// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
-void TinyTrainable::setOutputMode(OutputMode mode) {
-  _outputMode = mode;
-
-  if (_outputMode == outputSerialUSB) {
-    Serial.begin(9600);
-    while (!Serial);
-  }
-
-  if (_outputMode == outputMIDI) {
-    setupSerialMIDI();
-  }
-}
-
-void TinyTrainable::setBuzzerPin(int outputPin) {
+void TinyTrainable::setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2) {
+  _outputMode = outputBuzzer;
   _outputPinBuzzer = outputPin;
   pinMode(_outputPinBuzzer, OUTPUT);
-}
+  _buzzerDuration = buzzerDuration;
 
-// set note frequencies for buzzer output
-void TinyTrainable::setBuzzerFrequencies(int freq0, int freq1, int freq2) {
   _buzzerFrequencies[0] = freq0;
   _buzzerFrequencies[1] = freq1;
   _buzzerFrequencies[2] = freq2;
 }
 
-// TODO: for now lets just have one of these functions
-// ideally this function could have the slots i mentioned
-void TinyTrainable::setBuzzerDurations(int buzzerDuration) {
-  _buzzerDuration = buzzerDuration;
+void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2) {
+  _outputMode = outputMIDI;
+  _midiChannel = midiChannel;
+  _midiVelocity = midiVelocity;
+
+  _midiNotes[0] = note0;
+  _midiNotes[1] = note1;
+  _midiNotes[2] = note2;
+
+  setupSerialMIDI();
 }
 
-void TinyTrainable::setServoPin(int pin) {
-  _outputPinServo = pin;
+void TinyTrainable::setupOutputSerialUSB() {
+  _outputMode = outputSerialUSB;
+
+  Serial.begin(9600);
+  while (!Serial);
+}
+
+void TinyTrainable::setupOutputServo(int outputPin, int angle0, int angle1, int angle2) {
+  _outputPinServo = outputServo;
   pinMode(_outputPinServo, OUTPUT);
-}
 
-void TinyTrainable::setServoAngles(int angle0, int angle1, int angle2) {
   _servoAngles[0] = angle0;
   _servoAngles[1] = angle1;
   _servoAngles[2] = angle2;
@@ -203,20 +188,6 @@ void TinyTrainable::setupSerialMIDI() {
 
   // replace the value at the pointer with the desired baudrate
   *pointerBaudrate = baudrate;
-}
-
-void TinyTrainable::setSerialMIDIChannel(byte midiChannel) {
- _midiChannel = midiChannel;
-}
-
-void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
-  _midiVelocity = midiVelocity;
-}
-
-void TinyTrainable::setSerialMIDINotes(int note0, int note1, int note2) {
-  _midiNotes[0] = note0;
-  _midiNotes[1] = note1;
-  _midiNotes[2] = note2;
 }
 
 void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {

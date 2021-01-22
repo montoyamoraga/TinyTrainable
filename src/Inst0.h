@@ -15,8 +15,8 @@ class Inst0:public TinyTrainable
     // constructor
     Inst0();
 
-    void setLabels(String object0, String object1, String object2);
-    void trainKNN(int k, int examplesPerClass, float colorThreshold);
+    void setupInstrument(bool serialDebugging);
+    void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]);
     void identify();
   private:
     void readColor(float color[]);

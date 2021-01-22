@@ -65,9 +65,6 @@ class TinyTrainable {
       }
     };
     
-    // methods for LEDs
-    // there are two: a built-in orange one and an RGB LED
-    void setupLEDs();
     // COMMENT - instead of having two methods to turn the led on or off, i think it 
     // would be cleaner to have just one "setLEDBuiltInState(bool on)"
     void turnOnLEDBuiltIn();
@@ -78,8 +75,22 @@ class TinyTrainable {
     void turnOffLEDRGB();
     void errorBlink(Colors color, int blinkNum);
 
-    // methods for debugging
-    void setSerialDebugging(bool serialDebugging);
+    // methods for outputs
+    void setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2);
+    void setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2);
+    void setupOutputSerialUSB();
+    void setupOutputServo(int outputPin, int angle0, int angle1, int angle2);
+
+    // COMMENT - not sure what this is for, leaving it here for the moment!
+    // void setServoAngle(int angle);
+
+    // TODO: methods for outputLCD
+    // TODO: methods for outputLED
+    // TODO: methods for outputPrinter
+    // TODO: methods for outputSerialUSB
+
+  protected:
+    void setupLEDs();
 
     // methods for input sensors
     // COMMENT - i moved all the links from here to docstrings in the cpp file,
@@ -91,31 +102,9 @@ class TinyTrainable {
     void setupSensorLSM9DS1();
 
     // methods for outputs
-    void setOutputMode(OutputMode mode);
-
-    // methods for output MIDI
     void setupSerialMIDI();
-    void setSerialMIDIChannel(byte midiChannel);
-    void setSerialMIDIVelocity(byte midiVelocity);
-    void setSerialMIDINotes(int note0, int note1, int note2);
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
-    // TODO: methods for outputBuzzer
-    void setBuzzerPin(int outputPin);
-    void setBuzzerFrequencies(int freq0, int freq1, int freq2);
-    void setBuzzerDurations(int newDuration);
-
-    // TODO: methods for outputServo
-    void setServoPin(int outputPin);
-    void setServoAngles(int angle0, int angle1, int angle2);
-    // void setServoAngle(int angle);
-
-    // TODO: methods for outputLCD
-    // TODO: methods for outputLED
-    // TODO: methods for outputPrinter
-    // TODO: methods for outputSerialUSB
-
-  protected:
     // COMMENT - i moved all comments from here into the cpp file for readability
     bool _serialDebugging = false;
 

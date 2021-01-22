@@ -19,34 +19,13 @@ const bool tinyDebugging = true;
 
 // setup() runs once, at the beginning
 void setup() {
+  tiny.setupInstrument(true);
 
-  // configure all LEDs on the microcontroller
-  tiny.setupLEDs();
+  tiny.setupOutputServo(outputPin, 0, 60, 120);
 
-  // set debugging over serial port
-  tiny.setSerialDebugging(tinyDebugging);
-
-  // turn on the sensor to measure
-  // gestures, color, light intensity and proximity
-  tiny.setupSensorAPDS9960();
-
-  // setup instrument to output over servo
-  tiny.setOutputMode(outputServo);
-
-  // setup the hardware pin for the output
-  tiny.setServoPin(outputPin);
-
-  // set angles for servo
-  tiny.setServoAngles(0, 60, 120);
-
-  // set duration for buzzer soudns
-  // tiny.setBuzzerDurations(1000);
-
-  // set labels for each of the three classes
-   tiny.setLabels("Object 0", "Object 1", "Object 2");
-
+  String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   // train the KNN algorithm
-   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
+   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop

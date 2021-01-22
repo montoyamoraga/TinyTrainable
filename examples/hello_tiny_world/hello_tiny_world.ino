@@ -18,7 +18,7 @@ int timeOff = 250;
 Inst0 tiny;
 
 void setup() {
-  tiny.setupLEDs();
+  tiny.setupInstrument(true);
 }
 
 void loop() {

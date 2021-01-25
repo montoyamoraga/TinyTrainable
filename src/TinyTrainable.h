@@ -1,6 +1,7 @@
 // TinyTrainable.h - a library for Tiny Trainable Instruments
 // a project by Aarón Montoya-Moraga
-// with assistance by Peter Tone
+// with assistance by undergrad researchers Peter Tone, Maxwell Wang
+// Master's thesis at MIT Media Lab, Opera of the Future / Future Sketches
 // Started in November 2020
 // MIT License
 

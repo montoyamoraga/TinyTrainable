@@ -41,7 +41,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
 
   for (int currentClass = 0; currentClass < 3; currentClass++) {
 
-    turnOnLEDRGB(Colors(currentClass));
+    setStateLEDRGB(true, Colors(currentClass));
 
     // ask the user to show examples of each object
     for (int currentExample = 0; currentExample < examplesPerClass; currentExample++) {
@@ -69,10 +69,10 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
   blinkLEDBuiltIn(2);
 
   // turn off the LED built in
-  turnOffLEDBuiltIn();
+  setStateLEDBuiltIn(false);
 
   // turn off the LED RGB
-  turnOffLEDRGB();
+  setStateLEDRGB(false, red);
 
 }
 
@@ -96,7 +96,7 @@ void Inst0::identify() {
   debugPrint("You showed me: " + _labels[classification]);
 
   // turn on the corresponding light
-  turnOnLEDRGB(Colors(classification));
+  setStateLEDRGB(true, Colors(classification));
 
   // TODO: add the corresponding calls to functions
   switch (_outputMode) {

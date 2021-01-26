@@ -24,27 +24,27 @@ void setup() {
 void loop() {
 
   // turn on and off builtin LED, it is orange
-  tiny.turnOnLEDBuiltIn();
+  tiny.setStateLEDBuiltIn(true);
   delay(timeOn);
-  tiny.turnOffLEDBuiltIn();
+  tiny.setStateLEDBuiltIn(false);
   delay(timeOff);
 
   // turn on the RGB LED in all six available colors  
   // red, green, blue, yellow, magenta, cyan
-  tiny.turnOnLEDRGB(red);
+  tiny.setStateLEDRGB(true, red);
   delay(timeOn);
-  tiny.turnOnLEDRGB(green);
+  tiny.setStateLEDRGB(true, green);
   delay(timeOn);
-  tiny.turnOnLEDRGB(blue);
+  tiny.setStateLEDRGB(true, blue);
   delay(timeOn);
-  tiny.turnOnLEDRGB(yellow);
+  tiny.setStateLEDRGB(true, yellow);
   delay(timeOn);
-  tiny.turnOnLEDRGB(magenta);
+  tiny.setStateLEDRGB(true, magenta);
   delay(timeOn);
-  tiny.turnOnLEDRGB(cyan);
+  tiny.setStateLEDRGB(true, cyan);
   delay(timeOn);
 
   // turn off the RGB LED
-  tiny.turnOffLEDRGB();
+  tiny.setStateLEDRGB(false, red);
   delay(timeOff);
 }

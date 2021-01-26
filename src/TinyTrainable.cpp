@@ -134,25 +134,32 @@ void TinyTrainable::setupOutputBuzzer(int outputPin) {
   pinMode(_outputPinBuzzer, OUTPUT);
 }
 
-void TinyTrainable::setupBuzzerFrequency(int object, int frequency) {
+void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
   _buzzerFrequencies[object] = frequency;
 }
 
-void TinyTrainable::setupBuzzerFrequency(int object, int freqMin, int freqMax) {
+void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
   _buzzerFrequencies[object] = random(freqMin, freqMax);
 }
 
-void TinyTrainable::setupBuzzerFrequency(int object, int arrayFrequencies[]) {
-
+void TinyTrainable::setBuzzerFrequency(int object, int arrayFrequencies[]) {
+  // int randomIndex = sizeof(arrayFrequencies) / sizeof(arrayFrequencies[0]);
+  int randomIndex = sizeof(arrayFrequencies);
+  debugPrint(randomIndex);
+  _buzzerFrequencies[object] = arrayFrequencies[0];
 }
 
 
-void TinyTrainable::setupBuzzerDuration(int object, int duration) {
+void TinyTrainable::setBuzzerDuration(int object, int duration) {
   _buzzerDurations[object] = duration;
 }
 
-void TinyTrainable::setupBuzzerDuration(int object, int durationMin, int durationMax) {
+void TinyTrainable::setBuzzerDuration(int object, int durationMin, int durationMax) {
   _buzzerDurations[object] = random(durationMin, durationMax);
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
+
 }
 
 // TODO: legacy code, delete later

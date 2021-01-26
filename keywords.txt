@@ -19,8 +19,8 @@ setupSensorLPS22HB		KEYWORD2
 setupSensorLSM9DS1		KEYWORD2
 setOutputMode					KEYWORD2
 setBuzzerPin					KEYWORD2
-setBuzzerFrequencies	KEYWORD2
-setBuzzerDurations		KEYWORD2
+setBuzzerFrequency		KEYWORD2
+setBuzzerDuration			KEYWORD2
 # Instrument0
 setupInstrument				KEYWORD2
 setLabels							KEYWORD2

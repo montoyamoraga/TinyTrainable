@@ -85,12 +85,13 @@ class TinyTrainable {
 
     // methods for buzzer
     // for frequencies
-    void setupBuzzerFrequency(int object, int frequency);
-    void setupBuzzerFrequency(int object, int freqMin, int freqMax);
-    void setupBuzzerFrequency(int object, int arrayFrequencies[]);
+    void setBuzzerFrequency(int object, int frequency);
+    void setBuzzerFrequency(int object, int freqMin, int freqMax);
+    void setBuzzerFrequency(int object, int arrayFrequencies[]);
     // for durations
-    void setupBuzzerDuration(int object, int duration);
-    void setupBuzzerDuration(int object, int durationMin, int durationMax);
+    void setBuzzerDuration(int object, int duration);
+    void setBuzzerDuration(int object, int durationMin, int durationMax);
+    void setBuzzerDuration(int object, int arrayDurations[]);
 
     // COMMENT - not sure what this is for, leaving it here for the moment!
     // void setServoAngle(int angle);

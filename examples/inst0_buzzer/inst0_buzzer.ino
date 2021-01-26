@@ -21,29 +21,30 @@ const bool tinyDebugging = true;
 void setup() {
   tiny.setupInstrument(tinyDebugging);
 
+  Serial.println("size of integer");
+  Serial.println(sizeof(0));
+  Serial.println("right?");
+
   tiny.setupOutputBuzzer(outputPin);
   // TODO: delete old version
   // tiny.setupOutputBuzzer(outputPin, 1000, 1000, 1200, 1400);
 
   // set fixed frequencies
-  tiny.setupBuzzerFrequency(0, 1000);
-  tiny.setupBuzzerFrequency(1, 1200);
-  tiny.setupBuzzerFrequency(2, 1400);
+  tiny.setBuzzerFrequency(0, 1000);
+  tiny.setBuzzerFrequency(1, 1200);
+  tiny.setBuzzerFrequency(2, 1400);
 
   // or define ranges of frequencies
   // tiny.setupBuzzerFrequency(0, 1000, 1500);
-  // tiny.setupBuzzerFrequency(1, 2000, 2500);
-  // tiny.setupBuzzerFrequency(2, 3000, 3500);
-
   // or define arrays of frequencies
-  // tiny.setupBuzzerFrequency(0, [1000, 1500]);
-  // tiny.setupBuzzerFrequency(1, 2000, 2500);
-  // tiny.setupBuzzerFrequency(2, 3000, 3500);
+  // TODO: cleanup this test
+  int testing[] = {1000, 2000, 300, 4000, 5000, 6000};
+  tiny.setBuzzerFrequency(0, testing);
 
   // set duratons, easy
-  tiny.setupBuzzerDuration(0, 1000);
-  tiny.setupBuzzerDuration(1, 1000);
-  tiny.setupBuzzerDuration(2, 1000);
+  tiny.setBuzzerDuration(0, 1000);
+  tiny.setBuzzerDuration(1, 1000);
+  tiny.setBuzzerDuration(2, 1000);
 
   String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   // train the KNN algorithm

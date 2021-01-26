@@ -8,20 +8,22 @@
 #include <Inst1.h>
 #include <Inst2.h>
 
-// variables for time LEDs are on and off
+// constants for time LEDs are on and off
 // measured in milliseconds
-int timeOn = 500;
-int timeOff = 250;
+const int timeOn = 500;
+const int timeOff = 250;
 
 // declare instance of the instrument
 // default is Inst0, change Inst0 to Inst1 or Inst2 if necessary
 Inst0 tiny;
 
+// constant for debugging
+// true: the instrument needs to be connected to serial port
+// false: the instrument is standalone
+const bool tinyDebugging = false;
+
 void setup() {
-  // argument is for toggling USB serial debugging
-  // default false, instrument is standalone
-  // if true, you have to open the serial monitor
-  tiny.setupInstrument(false);
+  tiny.setupInstrument(tinyDebugging);
 }
 
 void loop() {
@@ -32,8 +34,7 @@ void loop() {
   tiny.setStateLEDBuiltIn(false);
   delay(timeOff);
 
-  // turn on the RGB LED in all six available colors  
-  // red, green, blue, yellow, magenta, cyan
+  // turn on the RGB LED in all 6 available colors
   tiny.setStateLEDRGB(true, red);
   delay(timeOn);
   tiny.setStateLEDRGB(true, green);
@@ -47,8 +48,7 @@ void loop() {
   tiny.setStateLEDRGB(true, cyan);
   delay(timeOn);
 
-  // turn off the RGB LED
-  // you can use any color when turning off
+  // turn off the RGB LED, color is irrelevant
   tiny.setStateLEDRGB(false, red);
   delay(timeOff);
 }

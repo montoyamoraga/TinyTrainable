@@ -18,7 +18,10 @@ int timeOff = 250;
 Inst0 tiny;
 
 void setup() {
-  tiny.setupInstrument(true);
+  // argument is for toggling USB serial debugging
+  // default false, instrument is standalone
+  // if true, you have to open the serial monitor
+  tiny.setupInstrument(false);
 }
 
 void loop() {
@@ -45,6 +48,7 @@ void loop() {
   delay(timeOn);
 
   // turn off the RGB LED
+  // you can use any color when turning off
   tiny.setStateLEDRGB(false, red);
   delay(timeOff);
 }

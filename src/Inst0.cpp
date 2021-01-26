@@ -3,9 +3,18 @@
 
 // constructor for the Inst0 class
 Inst0::Inst0() : _myKNN(3) {
-  _labels[0], _labels[1], _labels[2] = "";
-  _buzzerFrequencies[0], _buzzerFrequencies[1], _buzzerFrequencies[2] = -1;
-  _midiNotes[0], _midiNotes[1], _midiNotes[2] = -1;
+  _labels[0] = "";
+  _labels[1] = "";
+  _labels[2] = "";
+
+  _buzzerFrequencies[0] = -1;
+  _buzzerFrequencies[1] = -1;
+  _buzzerFrequencies[2] = -1;
+
+   _midiNotes[0] = -1;
+   _midiNotes[1] = -1;
+   _midiNotes[2] = -1;
+
 }
 
 // true: instrument outputs debugging messages over USB serial
@@ -41,6 +50,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
 
   for (int currentClass = 0; currentClass < 3; currentClass++) {
 
+    // turn on the LED according to which class we are training
     setStateLEDRGB(true, Colors(currentClass));
 
     // ask the user to show examples of each object
@@ -55,10 +65,21 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
       _myKNN.addExample(_colorReading, currentClass);
     }
 
-    // TODO - maybe move to after LED change, since Serial doesn't always work 
-    // and won't always be used
-    debugPrint("Prepare next object");
-    delay(1000);  // so the object readings don't overlap
+    // only show for objects 0 and 1
+    if (currentClass < 2) {
+      // TODO - maybe move to after LED change, since Serial doesn't always work 
+      // and won't always be used
+      debugPrint("Prepare next object");
+    }
+    // message to sginal that all objects are ready
+    else {
+      debugPrint("All objects ready");
+    }
+    
+    // delay so the object readings don't overlap
+    // TODO: add to markdown documentation
+    // TODO: maybe instead of hardcoded its a variable for advanced users
+    delay(1000);  
 
     // wait for the object to move away again
     while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
@@ -101,7 +122,7 @@ void Inst0::identify() {
   // TODO: add the corresponding calls to functions
   switch (_outputMode) {
     case outputBuzzer:
-      tone(_outputPinBuzzer, _buzzerFrequencies[classification], _buzzerDuration);
+      tone(_outputPinBuzzer, _buzzerFrequencies[classification], _buzzerDurations[classification]);
       break;
     case outputLCD:
       break;
@@ -192,7 +213,7 @@ void Inst0::checkInst0Setup(){
       }
       break;
     case outputBuzzer:
-      if (_outputPinBuzzer == -1 || _buzzerDuration == 0) {
+      if (_outputPinBuzzer == -1 || _buzzerDurations[0] == 0 || _buzzerDurations[1] == 0 || _buzzerDurations[2] == 0) {
         errorBlink(yellow, 1);
       }
       if (_buzzerFrequencies[0] == -1 || _buzzerFrequencies[1] == -1 || _buzzerFrequencies[2] == -1) {

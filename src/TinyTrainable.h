@@ -76,10 +76,21 @@ class TinyTrainable {
     void errorBlink(Colors color, int blinkNum);
 
     // methods for outputs
-    void setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2);
+    void setupOutputBuzzer(int outputPin);
+    // TODO: delete this legacy code when ready
+    // void setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2);
     void setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2);
     void setupOutputSerialUSB();
     void setupOutputServo(int outputPin, int angle0, int angle1, int angle2);
+
+    // methods for buzzer
+    // for frequencies
+    void setupBuzzerFrequency(int object, int frequency);
+    void setupBuzzerFrequency(int object, int freqMin, int freqMax);
+    void setupBuzzerFrequency(int object, int arrayFrequencies[]);
+    // for durations
+    void setupBuzzerDuration(int object, int duration);
+    void setupBuzzerDuration(int object, int durationMin, int durationMax);
 
     // COMMENT - not sure what this is for, leaving it here for the moment!
     // void setServoAngle(int angle);
@@ -120,9 +131,9 @@ class TinyTrainable {
     int _outputPinPrinter = -1;  // TODO: this might need to be several variables
     int _outputPinServo = -1;
 
-    // TODO: variables for outputBuzzer
+    // TODO: methods and variables for outputBuzzer
     int _buzzerFrequencies[3];
-    int _buzzerDuration = 0;
+    int _buzzerDurations[3];
 
     // TODO: variables for outputMIDI
     int _midiNotes[3];

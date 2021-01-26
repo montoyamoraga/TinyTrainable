@@ -22,57 +22,62 @@ void TinyTrainable:: setupLEDs() {
   digitalWrite(LEDB, HIGH);
 }
 
-void TinyTrainable::turnOnLEDBuiltIn() {
-  digitalWrite(LED_BUILTIN, HIGH);
-}
-
-void TinyTrainable::turnOffLEDBuiltIn() {
-  digitalWrite(LED_BUILTIN, LOW);
+// function for turning on and off the built-in LED
+void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
+  if (turnOn) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  }
+  else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
 }
 
 void TinyTrainable::blinkLEDBuiltIn(int blinks) {
 
-  turnOffLEDBuiltIn();
+  setStateLEDBuiltIn(false);
 
   for (int i = 0; i < blinks; i++) {
-    turnOnLEDBuiltIn();
+    setStateLEDBuiltIn(true);
     delay(500);
-    turnOffLEDBuiltIn();
+    setStateLEDBuiltIn(false);
     delay(500);
   }
 }
 
-void TinyTrainable::turnOnLEDRGB(Colors color) {
-  turnOffLEDRGB();
-  switch (color) {
-    case red:
-      digitalWrite(LEDR, LOW);
-      break;
-    case green:
-      digitalWrite(LEDG, LOW);
-      break;
-    case blue:
-      digitalWrite(LEDB, LOW);
-      break;
-    case yellow:
-      digitalWrite(LEDR, LOW);
-      digitalWrite(LEDG, LOW);
-      break;
-    case magenta:
-      digitalWrite(LEDR, LOW);
-      digitalWrite(LEDB, LOW);
-      break;
-    case cyan:
-      digitalWrite(LEDG, LOW);
-      digitalWrite(LEDB, LOW);
-      break;
-  }
-}
-
-void TinyTrainable::turnOffLEDRGB() {
+// function for turning on and off the RGB LED
+void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
+  
+  // first turn off
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
   digitalWrite(LEDB, HIGH);
+
+  // then turn on according to color
+  if (turnOn) {
+    switch (color) {
+      case red:
+        digitalWrite(LEDR, LOW);
+        break;
+      case green:
+        digitalWrite(LEDG, LOW);
+        break;
+      case blue:
+        digitalWrite(LEDB, LOW);
+        break;
+      case yellow:
+        digitalWrite(LEDR, LOW);
+        digitalWrite(LEDG, LOW);
+        break;
+      case magenta:
+        digitalWrite(LEDR, LOW);
+        digitalWrite(LEDB, LOW);
+        break;
+      case cyan:
+        digitalWrite(LEDG, LOW);
+        digitalWrite(LEDB, LOW);
+        break;
+    }
+  }
 }
 
 // traps the arduino in an infinite loop with RGB LED blinking, to signal 
@@ -80,9 +85,11 @@ void TinyTrainable::turnOffLEDRGB() {
 void TinyTrainable::errorBlink(Colors color, int blinkNum) {
   while (true) {
     for (int i = 0; i <= blinkNum; i++) {
-      turnOnLEDRGB(color);
+      // turn on with the color
+      setStateLEDRGB(true, color);
       delay(1000);
-      turnOffLEDRGB();
+      // turn off
+      setStateLEDRGB(false, color);
       delay(1000);
     }
     blinkLEDBuiltIn(1);
@@ -120,16 +127,54 @@ void TinyTrainable::setupSensorLSM9DS1() {
   }
 }
 
-void TinyTrainable::setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2) {
+// TODO: add comments
+void TinyTrainable::setupOutputBuzzer(int outputPin) {
   _outputMode = outputBuzzer;
   _outputPinBuzzer = outputPin;
   pinMode(_outputPinBuzzer, OUTPUT);
-  _buzzerDuration = buzzerDuration;
-
-  _buzzerFrequencies[0] = freq0;
-  _buzzerFrequencies[1] = freq1;
-  _buzzerFrequencies[2] = freq2;
 }
+
+void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
+  _buzzerFrequencies[object] = frequency;
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
+  _buzzerFrequencies[object] = random(freqMin, freqMax);
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int arrayFrequencies[]) {
+  // int randomIndex = sizeof(arrayFrequencies) / sizeof(arrayFrequencies[0]);
+  int randomIndex = sizeof(arrayFrequencies);
+  debugPrint(randomIndex);
+  _buzzerFrequencies[object] = arrayFrequencies[0];
+}
+
+
+void TinyTrainable::setBuzzerDuration(int object, int duration) {
+  _buzzerDurations[object] = duration;
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int durationMin, int durationMax) {
+  _buzzerDurations[object] = random(durationMin, durationMax);
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
+
+}
+
+// TODO: legacy code, delete later
+// void TinyTrainable::setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2) {
+//   _outputMode = outputBuzzer;
+//   _outputPinBuzzer = outputPin;
+//   pinMode(_outputPinBuzzer, OUTPUT);
+//   _buzzerDuration = buzzerDuration;
+
+//   _buzzerFrequencies[0] = freq0;
+//   _buzzerFrequencies[1] = freq1;
+//   _buzzerFrequencies[2] = freq2;
+// }
+
+
 
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2) {
   _outputMode = outputMIDI;

@@ -5,15 +5,13 @@ Inst1									KEYWORD1
 Inst2									KEYWORD1
 
 # KEYWORD2 is for functions, color brown
+# TinyTrainable
 setupLEDs							KEYWORD2
 setupLEDBuiltIn				KEYWORD2
-turnOnLEDBuiltIn			KEYWORD2
-turnOnLEDBuiltIn			KEYWORD2
-turnOffLEDBuiltIn			KEYWORD2
 blinkLEDBuiltIn				KEYWORD2
 setupLEDRGB						KEYWORD2
-turnOnLEDRGB					KEYWORD2
-turnOffLEDRGB					KEYWORD2
+setStateLEDBuiltIn		KEYWORD2
+setStateLEDRGB				KEYWORD2
 setSerialDebugging		KEYWORD2
 setupSensorAPDS9960		KEYWORD2
 setupSensorHTS221			KEYWORD2
@@ -21,11 +19,15 @@ setupSensorLPS22HB		KEYWORD2
 setupSensorLSM9DS1		KEYWORD2
 setOutputMode					KEYWORD2
 setBuzzerPin					KEYWORD2
-setBuzzerFrequencies	KEYWORD2
-setBuzzerDurations		KEYWORD2
+setBuzzerFrequency		KEYWORD2
+setBuzzerDuration			KEYWORD2
+# Instrument0
+setupInstrument				KEYWORD2
 setLabels							KEYWORD2
 trainKNN							KEYWORD2
 identify							KEYWORD2
+# Instrument1
+# Instrument2
 
 # LITERAL1 is for constants
 red										LITERAL1

@@ -1,9 +1,10 @@
 // TinyTrainable.h - a library for Tiny Trainable Instruments
-// a project by Aarón Montoya-Moraga
-// with assistance by Peter Tone
-// Started in November 2020
+// a project by Aarón Montoya-Moraga, started in November 2020
+// with assistance by undergrad researchers Peter Tone, Maxwell Wang
+// master's thesis,  MIT Media Lab, Opera of the Future / Future Sketches
 // MIT License
 
+// conditional compilation
 #ifndef TINY_TRAINABLE_H
 #define TINY_TRAINABLE_H
 
@@ -27,17 +28,18 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-// COMMENT - was giving me compiler errors even though i had it installed?
-// include Servo library
+// include library for servo motors
+// TODO: right now it might give compiler errors, even if installed
 // #include <Servo.h>
 
-// include Adafruit Thermal Printer library
+// include library for Adafruit thermal printer
 #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
 enum Colors {red = 0, green = 1, blue= 2, yellow = 3, magenta = 4, cyan = 5};
 
 // different instrument output modes
+// TODO - check they are the same order as .cpp file
 enum OutputMode {
   outputBuzzer = 0, 
   outputLCD = 1, 
@@ -49,14 +51,16 @@ enum OutputMode {
   outputUndefined = 7
 };
 
-// COMMENT - i don't think these are in the same order as in the cpp file.
-// choose an order you like and then we should get them to match for readibility.
 
+// define base class TinyTrainable
 class TinyTrainable {
+
+  // public methods
   public:
+
     // constructor
     TinyTrainable();
-    
+
     // template datatypes allows any datatype as an argument, like Serial.println().
     // it is defined here in the header file so it compiles at the beginning
     template <typename T> void debugPrint(T message) {
@@ -65,21 +69,29 @@ class TinyTrainable {
       }
     };
     
-    // COMMENT - instead of having two methods to turn the led on or off, i think it 
-    // would be cleaner to have just one "setLEDBuiltInState(bool on)"
-    void turnOnLEDBuiltIn();
-    void turnOffLEDBuiltIn();
+    void setStateLEDBuiltIn(bool turnOn);
     void blinkLEDBuiltIn(int blinks);
-    // COMMENT - same comment as above, merge on and off?
-    void turnOnLEDRGB(Colors color);
-    void turnOffLEDRGB();
+    void setStateLEDRGB(bool turnOn, Colors color);
+    // TODO: maybe change name, still thinking about it
     void errorBlink(Colors color, int blinkNum);
 
     // methods for outputs
-    void setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2);
+    void setupOutputBuzzer(int outputPin);
+    // TODO: delete this legacy code when ready
+    // void setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2);
     void setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2);
     void setupOutputSerialUSB();
     void setupOutputServo(int outputPin, int angle0, int angle1, int angle2);
+
+    // methods for buzzer
+    // for frequencies
+    void setBuzzerFrequency(int object, int frequency);
+    void setBuzzerFrequency(int object, int freqMin, int freqMax);
+    void setBuzzerFrequency(int object, int arrayFrequencies[]);
+    // for durations
+    void setBuzzerDuration(int object, int duration);
+    void setBuzzerDuration(int object, int durationMin, int durationMax);
+    void setBuzzerDuration(int object, int arrayDurations[]);
 
     // COMMENT - not sure what this is for, leaving it here for the moment!
     // void setServoAngle(int angle);
@@ -105,7 +117,7 @@ class TinyTrainable {
     void setupSerialMIDI();
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
-    // COMMENT - i moved all comments from here into the cpp file for readability
+    // variable for debugging
     bool _serialDebugging = false;
 
     // variables for outputs
@@ -120,9 +132,9 @@ class TinyTrainable {
     int _outputPinPrinter = -1;  // TODO: this might need to be several variables
     int _outputPinServo = -1;
 
-    // TODO: variables for outputBuzzer
+    // TODO: methods and variables for outputBuzzer
     int _buzzerFrequencies[3];
-    int _buzzerDuration = 0;
+    int _buzzerDurations[3];
 
     // TODO: variables for outputMIDI
     int _midiNotes[3];
@@ -132,7 +144,7 @@ class TinyTrainable {
     // TODO: variables for outputServo
     // Servo _servo;
     int _servoAngleCurrent = 0;
-    // COMMENT - can these min and maxes be constants?
+    // TODO: - should these min and maxes be constants?
     int _servoAngleMin = 0;
     int _servoAngleMax = 180;
     int _servoAngles[3];
@@ -143,4 +155,5 @@ class TinyTrainable {
     // TODO: variables for outputSerialUSB
 };
 
+// conditional compilation
 #endif

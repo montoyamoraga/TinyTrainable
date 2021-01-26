@@ -8,43 +8,47 @@
 #include <Inst1.h>
 #include <Inst2.h>
 
-// variables for time LEDs are on and off
+// constants for time LEDs are on and off
 // measured in milliseconds
-int timeOn = 500;
-int timeOff = 250;
+const int timeOn = 500;
+const int timeOff = 250;
 
 // declare instance of the instrument
 // default is Inst0, change Inst0 to Inst1 or Inst2 if necessary
 Inst0 tiny;
 
+// constant for debugging
+// true: the instrument needs to be connected to serial port
+// false: the instrument is standalone
+const bool tinyDebugging = false;
+
 void setup() {
-  tiny.setupInstrument(true);
+  tiny.setupInstrument(tinyDebugging);
 }
 
 void loop() {
 
   // turn on and off builtin LED, it is orange
-  tiny.turnOnLEDBuiltIn();
+  tiny.setStateLEDBuiltIn(true);
   delay(timeOn);
-  tiny.turnOffLEDBuiltIn();
+  tiny.setStateLEDBuiltIn(false);
   delay(timeOff);
 
-  // turn on the RGB LED in all six available colors  
-  // red, green, blue, yellow, magenta, cyan
-  tiny.turnOnLEDRGB(red);
+  // turn on the RGB LED in all 6 available colors
+  tiny.setStateLEDRGB(true, red);
   delay(timeOn);
-  tiny.turnOnLEDRGB(green);
+  tiny.setStateLEDRGB(true, green);
   delay(timeOn);
-  tiny.turnOnLEDRGB(blue);
+  tiny.setStateLEDRGB(true, blue);
   delay(timeOn);
-  tiny.turnOnLEDRGB(yellow);
+  tiny.setStateLEDRGB(true, yellow);
   delay(timeOn);
-  tiny.turnOnLEDRGB(magenta);
+  tiny.setStateLEDRGB(true, magenta);
   delay(timeOn);
-  tiny.turnOnLEDRGB(cyan);
+  tiny.setStateLEDRGB(true, cyan);
   delay(timeOn);
 
-  // turn off the RGB LED
-  tiny.turnOffLEDRGB();
+  // turn off the RGB LED, color is irrelevant
+  tiny.setStateLEDRGB(false, red);
   delay(timeOff);
 }

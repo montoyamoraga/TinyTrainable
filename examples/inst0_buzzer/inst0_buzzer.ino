@@ -26,10 +26,8 @@ void setup() {
   Serial.println("right?");
 
   tiny.setupOutputBuzzer(outputPin);
-  // TODO: delete old version
-  // tiny.setupOutputBuzzer(outputPin, 1000, 1000, 1200, 1400);
 
-  // set fixed frequencies
+  // set fixed frequencies, easy version
   tiny.setBuzzerFrequency(0, 1000);
   tiny.setBuzzerFrequency(1, 1200);
   tiny.setBuzzerFrequency(2, 1400);
@@ -38,10 +36,10 @@ void setup() {
   // tiny.setupBuzzerFrequency(0, 1000, 1500);
   // or define arrays of frequencies
   // TODO: cleanup this test
-  int testing[] = {1000, 2000, 300, 4000, 5000, 6000};
-  tiny.setBuzzerFrequency(0, testing);
+  // int testing[] = {1000, 2000, 300, 4000, 5000, 6000};
+  // tiny.setBuzzerFrequency(0, testing);
 
-  // set duratons, easy
+  // set durations, easy version
   tiny.setBuzzerDuration(0, 1000);
   tiny.setBuzzerDuration(1, 1000);
   tiny.setBuzzerDuration(2, 1000);

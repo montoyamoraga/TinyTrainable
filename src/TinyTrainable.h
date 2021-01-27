@@ -29,8 +29,7 @@
 #include <Arduino_LSM9DS1.h>
 
 // include library for servo motors
-// TODO: right now it might give compiler errors, even if installed
-// #include <Servo.h>
+#include <Servo.h>
 
 // include library for Adafruit thermal printer
 #include <Adafruit_Thermal.h>
@@ -140,9 +139,8 @@ class TinyTrainable {
     byte _midiVelocity = 0;
 
     // TODO: variables for outputServo
-    // Servo _servo;
+    Servo _servo;
     int _servoAngleCurrent = 0;
-    // TODO: - should these min and maxes be constants?
     int _servoAngleMin = 0;
     int _servoAngleMax = 180;
     int _servoAngles[3];

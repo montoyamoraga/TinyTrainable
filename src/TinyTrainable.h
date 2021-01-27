@@ -77,8 +77,6 @@ class TinyTrainable {
 
     // methods for outputs
     void setupOutputBuzzer(int outputPin);
-    // TODO: delete this legacy code when ready
-    // void setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2);
     void setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2);
     void setupOutputSerialUSB();
     void setupOutputServo(int outputPin, int angle0, int angle1, int angle2);

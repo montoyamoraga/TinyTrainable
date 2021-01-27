@@ -162,20 +162,6 @@ void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
 
 }
 
-// TODO: legacy code, delete later
-// void TinyTrainable::setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2) {
-//   _outputMode = outputBuzzer;
-//   _outputPinBuzzer = outputPin;
-//   pinMode(_outputPinBuzzer, OUTPUT);
-//   _buzzerDuration = buzzerDuration;
-
-//   _buzzerFrequencies[0] = freq0;
-//   _buzzerFrequencies[1] = freq1;
-//   _buzzerFrequencies[2] = freq2;
-// }
-
-
-
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2) {
   _outputMode = outputMIDI;
   _midiChannel = midiChannel;

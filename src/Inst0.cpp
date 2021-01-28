@@ -100,7 +100,8 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
 // uses the trained KNN algorithm to identify objects the user shows
 void Inst0::identify() {
   if (!_checkedSetup) {
-    checkInst0Setup();
+    // TODO: finish this check routine
+    // checkInst0Setup();
   }
 
   // wait for the object to move away again

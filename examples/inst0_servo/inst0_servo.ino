@@ -19,7 +19,7 @@ const bool tinyDebugging = true;
 
 // setup() runs once, at the beginning
 void setup() {
-  tiny.setupInstrument(true);
+  tiny.setupInstrument(tinyDebugging);
 
   tiny.setupOutputServo(outputPin);
 

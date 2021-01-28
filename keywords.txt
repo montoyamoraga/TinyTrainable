@@ -23,7 +23,7 @@ setBuzzerPin					KEYWORD2
 setBuzzerFrequency		KEYWORD2
 setBuzzerDuration			KEYWORD2
 # output servo
-setupOutputServo    	KEYWORD2
+setupOutputServo			KEYWORD2
 # Instrument0
 setupInstrument				KEYWORD2
 setLabels							KEYWORD2

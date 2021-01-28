@@ -143,10 +143,10 @@ void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int arrayFrequencies[]) {
-  // int randomIndex = sizeof(arrayFrequencies) / sizeof(arrayFrequencies[0]);
-  int randomIndex = sizeof(arrayFrequencies);
-  debugPrint(randomIndex);
-  _buzzerFrequencies[object] = arrayFrequencies[0];
+  // TODO: this is alpha version, just a test
+  // int randomIndex = sizeof(arrayFrequencies);
+  // debugPrint(randomIndex);
+  // _buzzerFrequencies[object] = arrayFrequencies[0];
 }
 
 
@@ -159,7 +159,7 @@ void TinyTrainable::setBuzzerDuration(int object, int durationMin, int durationM
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
-
+  // TODO
 }
 
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2) {
@@ -181,29 +181,38 @@ void TinyTrainable::setupOutputSerialUSB() {
   while (!Serial);
 }
 
-void TinyTrainable::setupOutputServo(int outputPin, int angle0, int angle1, int angle2) {
+void TinyTrainable::setupOutputServo(int outputPin) {
   _outputPinServo = outputServo;
   pinMode(_outputPinServo, OUTPUT);
 
-  _servoAngles[0] = angle0;
-  _servoAngles[1] = angle1;
-  _servoAngles[2] = angle2;
 }
 
-// void TinyTrainable::setServoAngle(int angle) {
-//   if (_servoAngleCurrent < angle) {
-//     for (int i = _servoAngleCurrent; i < angle; i++) {
-//       _servo.write(i);
-//       delay(15);
-//     }
-//   }
-//   else {
-//     for (int i = _servoAngleCurrent; i > angle; i--) {
-//       _servo.write(i);
-//       delay(15);
-//     }
-//   }
-// }
+void TinyTrainable::setServoAngle(int object, int angle) {
+  _servoAngles[object] = angle;
+}
+
+void TinyTrainable::setServoAngle(int object, int angleMin, int angleMax) {
+  _servoAngles[object] = random(angleMin, angleMax);
+}
+
+void TinyTrainable::setServoAngle(int object, int arrayAngles[]) {
+  // TODO
+}
+
+void TinyTrainable::moveServoAngle(int angle) {
+  if (_servoAngleCurrent < angle) {
+    for (int i = _servoAngleCurrent; i < angle; i++) {
+      _servo.write(i);
+      delay(15);
+    }
+  }
+  else {
+    for (int i = _servoAngleCurrent; i > angle; i--) {
+      _servo.write(i);
+      delay(15);
+    }
+  }
+}
 
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {

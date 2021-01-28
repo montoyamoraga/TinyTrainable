@@ -50,7 +50,6 @@ enum OutputMode {
   outputUndefined = 7
 };
 
-
 // define base class TinyTrainable
 class TinyTrainable {
 
@@ -78,7 +77,7 @@ class TinyTrainable {
     void setupOutputBuzzer(int outputPin);
     void setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2);
     void setupOutputSerialUSB();
-    void setupOutputServo(int outputPin, int angle0, int angle1, int angle2);
+    void setupOutputServo(int outputPin);
 
     // methods for buzzer
     // for frequencies
@@ -90,8 +89,14 @@ class TinyTrainable {
     void setBuzzerDuration(int object, int durationMin, int durationMax);
     void setBuzzerDuration(int object, int arrayDurations[]);
 
-    // COMMENT - not sure what this is for, leaving it here for the moment!
-    // void setServoAngle(int angle);
+    // methods for servo
+    // for setting angle
+    void setServoAngle(int object, int angle);
+    void setServoAngle(int object, int angleMin, int angleMax);
+    void setServoAngle(int object, int arrayAngles[]);
+    // for servo movement
+    void moveServoAngle(int angle);    
+    // for servo tempo
 
     // TODO: methods for outputLCD
     // TODO: methods for outputLED

@@ -182,9 +182,10 @@ void TinyTrainable::setupOutputSerialUSB() {
 }
 
 void TinyTrainable::setupOutputServo(int outputPin) {
-  _outputPinServo = outputServo;
+  // TODO: add comments about each line
+  _outputMode = outputBuzzer;
+  _outputPinServo = outputPin;
   pinMode(_outputPinServo, OUTPUT);
-
 }
 
 void TinyTrainable::setServoAngle(int object, int angle) {

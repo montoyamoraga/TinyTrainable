@@ -14,46 +14,45 @@ int timeDelta = 1000;
 
 int tempos[] = {60, 120, 240};
 
+// percentage, between 0.0 and 1.0
+float servoChance = 0.5;
+
 int servoPositions[] = {0, 30};
+
+int servoPositionsIndex = 0;
+
+unsigned long timePrevious = 0;
+unsigned long timeNow = 0;
+
 
 // NOTES
 // TODO add notes about range of servo, min and max angles between 0 and 180
+  // tempo between 10 and 120
+
 
 void setup() {
 
-  //  Serial.begin(9600);
+   Serial.begin(9600);
   //  while (!Serial);
-  //  Serial.println("hello world");
 
   // TODO: maybe this step is unnecesary?
   pinMode (servoPin, OUTPUT);
 
   myServo.attach(servoPin);
 
-  // move to angle 0 at beginning?
-  servoInitialize(0);
 }
 
 void loop() {
 
-  //  Serial.println("another loop");
 
   // retrieve one
-  int servoPause = bpmToMs(tempos[0]);
+  // int servoPause = bpmToMs(tempos[2]);
 
-  for (int i = 0; i < 2; i++) {
-    servoMoveTo(servoPositions[i], servoPause);
+   int servoPause = bpmToMs(60);
+
+    servoMoveTo(servoPositions[servoPositionsIndex], servoPause);
     //    delay(servoPause / 2);
     //    delay(servoPause/2 + random(100));
-  }
-
-
-  //    for (int i = 0; i < 6; i++) {
-  //      servoMoveTo(30 * i);
-  //      delay(2000);
-  //    }
-
-
 
   //  angleCurrent = angleCurrent + angleDelta * angleDirection;
   //
@@ -72,21 +71,36 @@ void loop() {
 
 }
 
-void servoInitialize(int initAngle) {
-  //  Serial.println("start servoInitialize");
-  myServo.write(initAngle);
-  delay(2000);
-  //  Serial.println("end servoInitialize");
-
-}
-
 void servoMoveTo(int angleNew, int servoPause) {
 
-  myServo.write(angleNew);
-  delay(servoPause / 2);
+  
+  // myServo.write(angleNew);
+  // delay(servoPause / 2);
+
+  // update timeNow
+  timeNow = millis();
+
+  // add randomness
+  // int randomRange = int(servoPause * tempoRandomness);
+  // int randomNumber = random(-randomRange/2, randomRange/2);
 
 
 
+  // if enought time has passed
+  if (timeNow - timePrevious >= servoPause) {
+
+    // update timePrevious
+    timePrevious = timeNow;
+
+    // add chance
+    Serial.println(random());
+    if (random(1000)/1000.0 < servoChance) {
+      servoPositionsIndex = (servoPositionsIndex + 1);
+      servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
+      myServo.write(angleNew);
+    }
+
+  }
 
 
   // update
@@ -108,7 +122,9 @@ void servoMoveTo(int angleNew, int servoPause) {
 }
 
 // function for converting from tempo in bpm to milliseconds
+// we divide by 2 because servo moves twice per cycle
 int bpmToMs(int tempo) {
   int ms = 60000 / tempo;
+  ms = ms /2;
   return ms;
 }

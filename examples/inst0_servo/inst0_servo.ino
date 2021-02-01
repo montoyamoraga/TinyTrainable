@@ -24,9 +24,9 @@ void setup() {
   tiny.setupOutputServo(outputPin);
 
   // set fixed angles, easy version
-  tiny.setServoAngle(0, 0);
-  tiny.setServoAngle(1, 60);
-  tiny.setServoAngle(2, 120);
+  tiny.setServoTempo(0, 30);
+  tiny.setServoTempo(1, 60);
+  tiny.setServoTempo(2, 90);
 
   String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   // train the KNN algorithm

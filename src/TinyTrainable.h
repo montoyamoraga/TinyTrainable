@@ -124,14 +124,16 @@ class TinyTrainable {
 
     // variables for outputs
     OutputMode _outputMode = outputUndefined;
-    // COMMENT - since these variables are protected and not exposed to the user, 
-    // all these pin variables can be condensed to one variable (that might get set 
-    // through different methods)
+    // TODO - these variables are not exposed to the user, 
+    // peter suggests that all these pin variables be condensed to one variable
+    // that get set through different methods
+    // i rather not for now, so that the instrument can have different outputs at the same time
     int _outputPinBuzzer = -1;
     int _outputPinLCD = -1;
     int _outputPinLED = -1;
     int _outputPinMIDI = -1;
-    int _outputPinPrinter = -1;  // TODO: this might need to be several variables
+    // TODO: for printer we need several variables
+    int _outputPinPrinter = -1;  
     int _outputPinServo = -1;
 
     // TODO: methods and variables for outputBuzzer

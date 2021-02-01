@@ -7,10 +7,6 @@ int angleMin = 30;
 int angleMax = 180;
 
 int angleCurrent = 0;
-int angleDirection = 1;
-int angleDelta = 30;
-
-int timeDelta = 1000;
 
 int tempos[] = {60, 120, 240};
 
@@ -24,11 +20,9 @@ int servoPositionsIndex = 0;
 unsigned long timePrevious = 0;
 unsigned long timeNow = 0;
 
-
 // NOTES
 // TODO add notes about range of servo, min and max angles between 0 and 180
-  // tempo between 10 and 120
-
+// tempo between 10 and 120
 
 void setup() {
 
@@ -44,7 +38,6 @@ void setup() {
 
 void loop() {
 
-
   // retrieve one
   // int servoPause = bpmToMs(tempos[2]);
 
@@ -54,26 +47,10 @@ void loop() {
     //    delay(servoPause / 2);
     //    delay(servoPause/2 + random(100));
 
-  //  angleCurrent = angleCurrent + angleDelta * angleDirection;
-  //
-  //  if (angleCurrent <= angleMin) {
-  //    angleCurrent = angleMin;
-  //    angleDirection = 1;
-  //  }
-  //  else if (angleCurrent >= angleMax) {
-  //    angleCurrent = angleMax;
-  //    angleDirection = -1;
-  //  }
-  //
-  //  Serial.println(angleCurrent);
-  //  myServo.write(angleCurrent);
-  //  delay(2000);
-
 }
 
 void servoMoveTo(int angleNew, int servoPause) {
 
-  
   // myServo.write(angleNew);
   // delay(servoPause / 2);
 
@@ -83,8 +60,6 @@ void servoMoveTo(int angleNew, int servoPause) {
   // add randomness
   // int randomRange = int(servoPause * tempoRandomness);
   // int randomNumber = random(-randomRange/2, randomRange/2);
-
-
 
   // if enought time has passed
   if (timeNow - timePrevious >= servoPause) {
@@ -99,26 +74,7 @@ void servoMoveTo(int angleNew, int servoPause) {
       servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
       myServo.write(angleNew);
     }
-
   }
-
-
-  // update
-  //  angleCurrent = myServo.read();
-
-  //  // move forwards
-  //  while (angleCurrent < angleNew) {
-  //    angleCurrent = angleCurrent + 1;
-  //    myServo.write(angleCurrent);
-  //    delay(10);
-  //  }
-  //  // move backwards
-  //  while (angleCurrent > angleNew) {
-  //    angleCurrent = angleCurrent - 1;
-  //    myServo.write(angleCurrent);
-  //    delay(10);
-  //  }
-
 }
 
 // function for converting from tempo in bpm to milliseconds

@@ -17,11 +17,13 @@
 
 // include library for temperature and humidity sensor
 // https://www.arduino.cc/en/Reference/ArduinoHTS221
-#include <Arduino_HTS221.h>
+// TODO: decide if this library is needed
+// #include <Arduino_HTS221.h>
 
 // include library for pressure sensor
 // https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
-#include <Arduino_LPS22HB.h>
+// TODO: decide if this library is needed
+// #include <Arduino_LPS22HB.h>
 
 // include library for IMU sensor
 // 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer
@@ -32,7 +34,8 @@
 #include <Servo.h>
 
 // include library for Adafruit thermal printer
-#include <Adafruit_Thermal.h>
+// TODO: uncomment later when this is being tested
+// #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
 enum Colors {red = 0, green = 1, blue= 2, yellow = 3, magenta = 4, cyan = 5};
@@ -90,13 +93,12 @@ class TinyTrainable {
     void setBuzzerDuration(int object, int arrayDurations[]);
 
     // methods for servo
-    // for setting angle
-    void setServoAngle(int object, int angle);
-    void setServoAngle(int object, int angleMin, int angleMax);
-    void setServoAngle(int object, int arrayAngles[]);
+    // for setting minimum and maximum angles
+    void setServoAngleRange(int angleMin, int angleMax);
     // for servo movement
     void moveServoAngle(int angle);    
     // for servo tempo
+    void setServoTempo(int object, int tempo);
 
     // TODO: methods for outputLCD
     // TODO: methods for outputLED
@@ -107,12 +109,10 @@ class TinyTrainable {
     void setupLEDs();
 
     // methods for input sensors
-    // COMMENT - i moved all the links from here to docstrings in the cpp file,
-    // to keep the files more readable
-    // TODO: add all sensors on the Arduino Nano BLE 33 Sense
+    // TODO: decide which sensors will be used
     void setupSensorAPDS9960();
-    void setupSensorHTS221();
-    void setupSensorLPS22HB();
+    // void setupSensorHTS221();
+    // void setupSensorLPS22HB();
     void setupSensorLSM9DS1();
 
     // methods for outputs
@@ -150,7 +150,8 @@ class TinyTrainable {
     int _servoAngleCurrent = 0;
     int _servoAngleMin = 0;
     int _servoAngleMax = 180;
-    int _servoAngles[3];
+    int _servoTempos[3];
+    float _servoChances[3];
 
     // TODO: variables for outputLCD
     // TODO: variables for outputLED

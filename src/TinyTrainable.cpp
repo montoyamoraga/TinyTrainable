@@ -105,19 +105,19 @@ void TinyTrainable::setupSensorAPDS9960() {
 
 // include library for temperature and humidity sensor
 // https://www.arduino.cc/en/Reference/ArduinoHTS221
-void TinyTrainable::setupSensorHTS221() {
-    if (!HTS.begin()) {
-    while (1);
-  }
-}
+// void TinyTrainable::setupSensorHTS221() {
+//     if (!HTS.begin()) {
+//     while (1);
+//   }
+// }
 
 // include library for pressure sensor
 // https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
-void TinyTrainable::setupSensorLPS22HB() {
-    if (!BARO.begin()) {
-    while (1);
-  }
-}
+// void TinyTrainable::setupSensorLPS22HB() {
+//     if (!BARO.begin()) {
+//     while (1);
+//   }
+// }
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer
@@ -188,16 +188,9 @@ void TinyTrainable::setupOutputServo(int outputPin) {
   pinMode(_outputPinServo, OUTPUT);
 }
 
-void TinyTrainable::setServoAngle(int object, int angle) {
-  _servoAngles[object] = angle;
-}
-
-void TinyTrainable::setServoAngle(int object, int angleMin, int angleMax) {
-  _servoAngles[object] = random(angleMin, angleMax);
-}
-
-void TinyTrainable::setServoAngle(int object, int arrayAngles[]) {
-  // TODO
+void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
+  _servoAngleMin = angleMin;
+  _servoAngleMax = angleMax;
 }
 
 void TinyTrainable::moveServoAngle(int angle) {
@@ -213,6 +206,10 @@ void TinyTrainable::moveServoAngle(int angle) {
       delay(15);
     }
   }
+}
+
+void TinyTrainable::setServoTempo(int object, int tempo) {
+    _servoTempos[object] = tempo;
 }
 
 // sets up Serial MIDI output on TX pin

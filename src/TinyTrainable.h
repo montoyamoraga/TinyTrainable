@@ -77,12 +77,9 @@ class TinyTrainable {
     void errorBlink(Colors color, int blinkNum);
 
     // methods for outputs
-    void setupOutputBuzzer(int outputPin);
-    void setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2);
-    void setupOutputSerialUSB();
-    void setupOutputServo(int outputPin);
 
     // methods for buzzer
+    void setupOutputBuzzer(int outputPin);
     // for frequencies
     void setBuzzerFrequency(int object, int frequency);
     void setBuzzerFrequency(int object, int freqMin, int freqMax);
@@ -93,17 +90,27 @@ class TinyTrainable {
     void setBuzzerDuration(int object, int arrayDurations[]);
 
     // methods for servo
+    void setupOutputServo(int outputPin);
     // for setting minimum and maximum angles
     void setServoAngleRange(int angleMin, int angleMax);
     // for servo movement
-    void moveServoAngle(int angle);    
+    void moveServoAngleTempo(int angle, int tempo);
     // for servo tempo
     void setServoTempo(int object, int tempo);
+    int bpmToMs(int tempo);
 
     // TODO: methods for outputLCD
+
     // TODO: methods for outputLED
+
+    // TODO: methods for MIDI
+    void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+    void setMIDINotes(int object, int note);
+
     // TODO: methods for outputPrinter
+
     // TODO: methods for outputSerialUSB
+    void setupOutputSerialUSB();
 
   protected:
     void setupLEDs();
@@ -152,6 +159,8 @@ class TinyTrainable {
     int _servoAngleMax = 180;
     int _servoTempos[3];
     float _servoChances[3];
+    unsigned long _servoTimePrevious = 0;
+    unsigned long _servoTimeNow = 0;
 
     // TODO: variables for outputLCD
     // TODO: variables for outputLED

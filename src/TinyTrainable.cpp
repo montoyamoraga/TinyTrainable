@@ -162,16 +162,17 @@ void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
   // TODO
 }
 
-void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2) {
+
+void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
   _outputMode = outputMIDI;
   _midiChannel = midiChannel;
   _midiVelocity = midiVelocity;
 
-  _midiNotes[0] = note0;
-  _midiNotes[1] = note1;
-  _midiNotes[2] = note2;
-
   setupSerialMIDI();
+}
+
+void TinyTrainable::setMIDINotes(int object, int note) {
+  _midiNotes[object] = note;
 }
 
 void TinyTrainable::setupOutputSerialUSB() {
@@ -186,6 +187,7 @@ void TinyTrainable::setupOutputServo(int outputPin) {
   _outputMode = outputBuzzer;
   _outputPinServo = outputPin;
   pinMode(_outputPinServo, OUTPUT);
+  _servo.attach(_outputPinServo);
 }
 
 void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
@@ -193,23 +195,40 @@ void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
   _servoAngleMax = angleMax;
 }
 
-void TinyTrainable::moveServoAngle(int angle) {
-  if (_servoAngleCurrent < angle) {
-    for (int i = _servoAngleCurrent; i < angle; i++) {
-      _servo.write(i);
-      delay(15);
+void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
+
+  // update current time
+  _servoTimeNow = millis();
+
+  // divide by 2 because servo moves twice per cycle
+  int servoPause = bpmToMs(tempo) / 2;
+
+  // if enought time has passed
+  if (_servoTimeNow - _servoTimePrevious >= servoPause) {
+
+    // update _servoTimePrevious
+    _servoTimePrevious = _servoTimeNow;
+
+    if (random(1000)/1000.0 < servoChance) {
+      servoPositionsIndex = (servoPositionsIndex + 1);
+      servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
+      myServo.write(angleNew);
     }
+
   }
-  else {
-    for (int i = _servoAngleCurrent; i > angle; i--) {
-      _servo.write(i);
-      delay(15);
-    }
-  }
+
 }
 
 void TinyTrainable::setServoTempo(int object, int tempo) {
     _servoTempos[object] = tempo;
+}
+
+// helper function for transforming between
+// beats per minute to ms per beat
+int TinyTrainable::bpmToMs(int tempo) {
+  int ms = 60000 / tempo;
+  // return result
+  return ms;
 }
 
 // sets up Serial MIDI output on TX pin

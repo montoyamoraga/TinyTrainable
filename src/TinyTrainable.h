@@ -145,6 +145,8 @@ class TinyTrainable {
 
     // TODO: methods and variables for outputBuzzer
     int _buzzerFrequencies[3];
+    int _buzzerFrequenciesMin[3];
+    int _buzzerFrequenciesMax[3];
     int _buzzerDurations[3];
 
     // TODO: variables for outputMIDI

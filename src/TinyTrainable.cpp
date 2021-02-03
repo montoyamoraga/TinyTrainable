@@ -201,7 +201,7 @@ void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
   _servoTimeNow = millis();
 
   // divide by 2 because servo moves twice per cycle
-  int servoPause = bpmToMs(tempo) / 2;
+  unsigned long servoPause = bpmToMs(tempo) / 2;
 
   // if enought time has passed
   if (_servoTimeNow - _servoTimePrevious >= servoPause) {
@@ -209,11 +209,11 @@ void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
     // update _servoTimePrevious
     _servoTimePrevious = _servoTimeNow;
 
-    if (random(1000)/1000.0 < servoChance) {
-      servoPositionsIndex = (servoPositionsIndex + 1);
-      servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
-      myServo.write(angleNew);
-    }
+    // if (random(1000)/1000.0 < servoChance) {
+      // servoPositionsIndex = (servoPositionsIndex + 1);
+      // servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
+    _servo.write(angle);
+    // }
 
   }
 

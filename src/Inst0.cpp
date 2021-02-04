@@ -100,7 +100,8 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
 // uses the trained KNN algorithm to identify objects the user shows
 void Inst0::identify() {
   if (!_checkedSetup) {
-    checkInst0Setup();
+    // TODO: finish this check routine
+    // checkInst0Setup();
   }
 
   // wait for the object to move away again
@@ -125,19 +126,25 @@ void Inst0::identify() {
       tone(_outputPinBuzzer, _buzzerFrequencies[classification], _buzzerDurations[classification]);
       break;
     case outputLCD:
+      Serial.println("TODO");
       break;
     case outputLED:
+      Serial.println("TODO");
       break;
     case outputMIDI:
       sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
       break;
     case outputPrinter:
+      Serial.println("TODO");
       break;
     case outputSerialUSB:
-      Serial.println(classification);
+      Serial.println("TODO");
       break;
     case outputServo:
-      // setServoAngle(_servoAngles[classification]);
+      Serial.println("TODO");
+      break;
+    case outputUndefined:
+      Serial.println("TODO");
       break;
   }
 
@@ -204,14 +211,6 @@ void Inst0::checkInst0Setup(){
 
   // checking output-specific setup
   switch (_outputMode) {
-    case outputMIDI:
-      if (_midiChannel > 15 || _midiVelocity == 0) {
-        errorBlink(blue, 1);
-      }
-      if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
-        errorBlink(blue, 2);
-      }
-      break;
     case outputBuzzer:
       if (_outputPinBuzzer == -1 || _buzzerDurations[0] == 0 || _buzzerDurations[1] == 0 || _buzzerDurations[2] == 0) {
         errorBlink(yellow, 1);
@@ -220,5 +219,32 @@ void Inst0::checkInst0Setup(){
         errorBlink(yellow, 2);
       }
       break;
+    case outputLCD:
+      Serial.println("TODO");
+      break;
+    case outputLED:
+      Serial.println("TODO");
+      break;
+    case outputMIDI:
+      if (_midiChannel > 15 || _midiVelocity == 0) {
+        errorBlink(blue, 1);
+      }
+      if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
+        errorBlink(blue, 2);
+      }
+      break;
+    case outputPrinter:
+      Serial.println("TODO");
+      break;
+    case outputSerialUSB:
+      Serial.println("TODO");
+      break;
+    case outputServo:
+      Serial.println("TODO");
+      break;
+    case outputUndefined:
+      Serial.println("TODO");
+      break;
+
   }
 }

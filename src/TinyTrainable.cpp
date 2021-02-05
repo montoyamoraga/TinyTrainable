@@ -149,7 +149,6 @@ void TinyTrainable::setBuzzerFrequency(int object, int arrayFrequencies[]) {
   _buzzerFrequencies[object] = arrayFrequencies[0];
 }
 
-
 void TinyTrainable::setBuzzerDuration(int object, int duration) {
   _buzzerDurations[object] = duration;
 }

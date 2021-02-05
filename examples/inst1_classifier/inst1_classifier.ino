@@ -57,9 +57,8 @@ const char* GESTURES[] = {
 
 void setup() {
 
-  tiny.setupLEDs();
-  tiny.setupSensorLSM9DS1();
-  tiny.setOutputMode(outputSerialUSB);
+  tiny.setupInstrument();
+  tiny.setupOutputSerialUSB();
 
   // print out the samples rates of the IMUs
   // Serial.print("Accelerometer sample rate = ");

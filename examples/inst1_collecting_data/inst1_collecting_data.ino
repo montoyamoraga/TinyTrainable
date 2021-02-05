@@ -11,7 +11,7 @@ Inst1 tiny;
 // threshold of significant in G's
 const float accelerationThreshold = 2.5;
 
-// number of samples
+// number of samples per motion
 const int numSamples = 119;
 
 // initialize as if sampling has already been done
@@ -20,16 +20,13 @@ int samplesRead = numSamples;
 // number of decimals for floating point numbers
 const int floatDecimals = 3;
 
-
-
 // variables for reading
 float aX, aY, aZ, gX, gY, gZ;
 
 void setup() {
 
-  tiny.setupLEDs();
-  tiny.setupSensorLSM9DS1();
-  tiny.setOutputMode(outputSerialUSB);
+  tiny.setupInstrument();
+  tiny.setupOutputSerialUSB();
 
   // print the header
   Serial.println("aX,aY,aZ,gX,gY,gZ");
@@ -37,7 +34,8 @@ void setup() {
 
 void loop() {
 
-  // while we have read as many samples as wanted
+  // while we have read as many samples as wanted for a certain motion
+  // reset the IMU reader variables
   while (samplesRead == numSamples) {
 
     // if there is acceleration data available from the sensor
@@ -55,6 +53,7 @@ void loop() {
         // reset the sample read count
         samplesRead = 0;
 
+        Serial.println("aX,aY,aZ,gX,gY,gZ");
         // exit the while loop
         break;
       }
@@ -71,7 +70,7 @@ void loop() {
       
       // read accelation data and store in variables aX, aY, aZ
       IMU.readAcceleration(aX, aY, aZ);
-\
+
       // read gyroscope data and store in variables gX, gY, gZ
       IMU.readGyroscope(gX, gY, gZ);
 

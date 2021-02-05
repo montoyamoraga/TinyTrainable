@@ -19,9 +19,14 @@ const bool tinyDebugging = true;
 
 // setup() runs once, at the beginning
 void setup() {
-  tiny.setupInstrument(true);
+  tiny.setupInstrument(tinyDebugging);
 
-  tiny.setupOutputServo(outputPin, 0, 60, 120);
+  tiny.setupOutputServo(outputPin);
+
+  // set fixed angles, easy version
+  tiny.setServoTempo(0, 30);
+  tiny.setServoTempo(1, 60);
+  tiny.setServoTempo(2, 90);
 
   String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   // train the KNN algorithm

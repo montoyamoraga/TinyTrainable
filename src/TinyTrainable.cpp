@@ -105,19 +105,19 @@ void TinyTrainable::setupSensorAPDS9960() {
 
 // include library for temperature and humidity sensor
 // https://www.arduino.cc/en/Reference/ArduinoHTS221
-void TinyTrainable::setupSensorHTS221() {
-    if (!HTS.begin()) {
-    while (1);
-  }
-}
+// void TinyTrainable::setupSensorHTS221() {
+//     if (!HTS.begin()) {
+//     while (1);
+//   }
+// }
 
 // include library for pressure sensor
 // https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
-void TinyTrainable::setupSensorLPS22HB() {
-    if (!BARO.begin()) {
-    while (1);
-  }
-}
+// void TinyTrainable::setupSensorLPS22HB() {
+//     if (!BARO.begin()) {
+//     while (1);
+//   }
+// }
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer
@@ -143,10 +143,10 @@ void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int arrayFrequencies[]) {
-  // int randomIndex = sizeof(arrayFrequencies) / sizeof(arrayFrequencies[0]);
-  int randomIndex = sizeof(arrayFrequencies);
-  debugPrint(randomIndex);
-  _buzzerFrequencies[object] = arrayFrequencies[0];
+  // TODO: this is alpha version, just a test
+  // int randomIndex = sizeof(arrayFrequencies);
+  // debugPrint(randomIndex);
+  // _buzzerFrequencies[object] = arrayFrequencies[0];
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int duration) {
@@ -158,33 +158,20 @@ void TinyTrainable::setBuzzerDuration(int object, int durationMin, int durationM
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
-
+  // TODO
 }
 
-// TODO: legacy code, delete later
-// void TinyTrainable::setupOutputBuzzer(int outputPin, int buzzerDuration, int freq0, int freq1, int freq2) {
-//   _outputMode = outputBuzzer;
-//   _outputPinBuzzer = outputPin;
-//   pinMode(_outputPinBuzzer, OUTPUT);
-//   _buzzerDuration = buzzerDuration;
 
-//   _buzzerFrequencies[0] = freq0;
-//   _buzzerFrequencies[1] = freq1;
-//   _buzzerFrequencies[2] = freq2;
-// }
-
-
-
-void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity, int note0, int note1, int note2) {
+void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
   _outputMode = outputMIDI;
   _midiChannel = midiChannel;
   _midiVelocity = midiVelocity;
 
-  _midiNotes[0] = note0;
-  _midiNotes[1] = note1;
-  _midiNotes[2] = note2;
-
   setupSerialMIDI();
+}
+
+void TinyTrainable::setMIDINotes(int object, int note) {
+  _midiNotes[object] = note;
 }
 
 void TinyTrainable::setupOutputSerialUSB() {
@@ -194,29 +181,54 @@ void TinyTrainable::setupOutputSerialUSB() {
   while (!Serial);
 }
 
-void TinyTrainable::setupOutputServo(int outputPin, int angle0, int angle1, int angle2) {
-  _outputPinServo = outputServo;
+void TinyTrainable::setupOutputServo(int outputPin) {
+  // TODO: add comments about each line
+  _outputMode = outputBuzzer;
+  _outputPinServo = outputPin;
   pinMode(_outputPinServo, OUTPUT);
-
-  _servoAngles[0] = angle0;
-  _servoAngles[1] = angle1;
-  _servoAngles[2] = angle2;
+  _servo.attach(_outputPinServo);
 }
 
-// void TinyTrainable::setServoAngle(int angle) {
-//   if (_servoAngleCurrent < angle) {
-//     for (int i = _servoAngleCurrent; i < angle; i++) {
-//       _servo.write(i);
-//       delay(15);
-//     }
-//   }
-//   else {
-//     for (int i = _servoAngleCurrent; i > angle; i--) {
-//       _servo.write(i);
-//       delay(15);
-//     }
-//   }
-// }
+void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
+  _servoAngleMin = angleMin;
+  _servoAngleMax = angleMax;
+}
+
+void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
+
+  // update current time
+  _servoTimeNow = millis();
+
+  // divide by 2 because servo moves twice per cycle
+  unsigned long servoPause = bpmToMs(tempo) / 2;
+
+  // if enought time has passed
+  if (_servoTimeNow - _servoTimePrevious >= servoPause) {
+
+    // update _servoTimePrevious
+    _servoTimePrevious = _servoTimeNow;
+
+    // if (random(1000)/1000.0 < servoChance) {
+      // servoPositionsIndex = (servoPositionsIndex + 1);
+      // servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
+    _servo.write(angle);
+    // }
+
+  }
+
+}
+
+void TinyTrainable::setServoTempo(int object, int tempo) {
+    _servoTempos[object] = tempo;
+}
+
+// helper function for transforming between
+// beats per minute to ms per beat
+int TinyTrainable::bpmToMs(int tempo) {
+  int ms = 60000 / tempo;
+  // return result
+  return ms;
+}
 
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {

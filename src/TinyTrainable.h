@@ -31,14 +31,14 @@
 #include <Arduino_LSM9DS1.h>
 
 // include library for servo motors
-#include <Servo.h>
+// #include <Servo.h>  // keeps giving me compilation errors
 
 // include library for Adafruit thermal printer
 // TODO: uncomment later when this is being tested
 // #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
-enum Colors {red = 0, green = 1, blue= 2, yellow = 3, magenta = 4, cyan = 5};
+enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
 
 // different instrument output modes
 // TODO - check they are the same order as .cpp file
@@ -83,7 +83,7 @@ class TinyTrainable {
     // for frequencies
     void setBuzzerFrequency(int object, int frequency);
     void setBuzzerFrequency(int object, int freqMin, int freqMax);
-    void setBuzzerFrequency(int object, int arrayFrequencies[]);
+    void setBuzzerFrequency(int object, int* arrayFrequencies);
     // for durations
     void setBuzzerDuration(int object, int duration);
     void setBuzzerDuration(int object, int durationMin, int durationMax);
@@ -125,6 +125,7 @@ class TinyTrainable {
     // methods for outputs
     void setupSerialMIDI();
     void sendSerialMIDINote(byte channel, byte note, byte velocity);
+    void getBuzzerParam(int object, int buzzerParamArray[]);
 
     // variable for debugging
     bool _serialDebugging = false;
@@ -144,9 +145,17 @@ class TinyTrainable {
     int _outputPinServo = -1;
 
     // TODO: methods and variables for outputBuzzer
-    int _buzzerFrequencies[3];
+    enum BuzzerMode {singleParam, rangeParam, randomParam, undefParam};
+    BuzzerMode _buzzerMode = undefParam;
+    int _buzzerParams[2];  // to hold the freq and duration each loop
+    // for singleParam
+    int _buzzerFrequencies[3]; 
+    // for rangeParam 
     int _buzzerFrequenciesMin[3];
     int _buzzerFrequenciesMax[3];
+    // for randomParam
+    int *_buzzerFrequenciesArrays[3];
+
     int _buzzerDurations[3];
 
     // TODO: variables for outputMIDI
@@ -155,7 +164,7 @@ class TinyTrainable {
     byte _midiVelocity = 0;
 
     // TODO: variables for outputServo
-    Servo _servo;
+    // Servo _servo;
     int _servoAngleCurrent = 0;
     int _servoAngleMin = 0;
     int _servoAngleMax = 180;

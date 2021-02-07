@@ -1,7 +1,7 @@
 var searchData=
 [
   ['identify_44',['identify',['../class_inst0.html#a23c6eecd7f4aa99284b578ad719acce0',1,'Inst0']]],
-  ['inst0_45',['Inst0',['../class_inst0.html',1,'Inst0'],['../class_inst0.html#aee30b297392cdfa51fcd0786a45bb623',1,'Inst0::Inst0()']]],
+  ['inst0_45',['Inst0',['../class_inst0.html#aee30b297392cdfa51fcd0786a45bb623',1,'Inst0::Inst0()'],['../class_inst0.html',1,'Inst0']]],
   ['inst0_2ecpp_46',['Inst0.cpp',['../_inst0_8cpp.html',1,'']]],
   ['inst0_2eh_47',['Inst0.h',['../_inst0_8h.html',1,'']]],
   ['inst0_5fbuzzer_2eino_48',['inst0_buzzer.ino',['../inst0__buzzer_8ino.html',1,'']]],

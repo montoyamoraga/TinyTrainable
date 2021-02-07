@@ -135,20 +135,29 @@ void TinyTrainable::setupOutputBuzzer(int outputPin) {
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
+  _buzzerMode = singleParam;
   _buzzerFrequencies[object] = frequency;
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
-  _buzzerFrequencies[object] = random(freqMin, freqMax);
+  // _buzzerFrequencies[object] = random(freqMin, freqMax);
+  _buzzerMode = rangeParam;
+  _buzzerFrequenciesMin[object] = freqMin;
+  _buzzerFrequenciesMax[object] = freqMax;
 }
 
-void TinyTrainable::setBuzzerFrequency(int object, int arrayFrequencies[]) {
+void TinyTrainable::setBuzzerFrequency(int object, int* arrayFrequencies) {
   // TODO: this is alpha version, just a test
   // int randomIndex = sizeof(arrayFrequencies);
   // debugPrint(randomIndex);
   // _buzzerFrequencies[object] = arrayFrequencies[0];
-}
 
+  // NOTE: this might not work!! pointer magic is happening to save the user array
+  _buzzerMode = randomParam;
+  _buzzerFrequenciesArrays[object] = arrayFrequencies;
+  debugPrint("BUZZER FREQ ARRAY");
+  debugPrint(_buzzerFrequenciesArrays[0][0]);
+}
 
 void TinyTrainable::setBuzzerDuration(int object, int duration) {
   _buzzerDurations[object] = duration;
@@ -162,6 +171,26 @@ void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
   // TODO
 }
 
+// modifies the input array to contain a buzzer frequency and duration (in that order) 
+// for the indicated object
+void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
+  switch (_buzzerMode) {
+    case singleParam:
+      buzzerParamArray[0] = _buzzerFrequencies[object];
+      break;
+    case rangeParam:
+      buzzerParamArray[0] = random(
+        _buzzerFrequenciesMin[object], 
+        _buzzerFrequenciesMax[object]
+      );
+      break;
+    case randomParam:
+      int arraySize = sizeof(_buzzerFrequenciesArrays[object]);
+      buzzerParamArray[0] = _buzzerFrequenciesArrays[object][rand()%arraySize];
+      break;
+  }
+  buzzerParamArray[1] = _buzzerDurations[object];  // placeholder until duration code in place
+}
 
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
   _outputMode = outputMIDI;
@@ -184,10 +213,10 @@ void TinyTrainable::setupOutputSerialUSB() {
 
 void TinyTrainable::setupOutputServo(int outputPin) {
   // TODO: add comments about each line
-  _outputMode = outputBuzzer;
-  _outputPinServo = outputPin;
-  pinMode(_outputPinServo, OUTPUT);
-  _servo.attach(_outputPinServo);
+  // _outputMode = outputBuzzer;
+  // _outputPinServo = outputPin;
+  // pinMode(_outputPinServo, OUTPUT);
+  // _servo.attach(_outputPinServo);
 }
 
 void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
@@ -212,7 +241,7 @@ void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
     // if (random(1000)/1000.0 < servoChance) {
       // servoPositionsIndex = (servoPositionsIndex + 1);
       // servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
-    _servo.write(angle);
+    // _servo.write(angle);
     // }
 
   }

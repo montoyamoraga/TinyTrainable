@@ -18,6 +18,9 @@ class Inst1:public TinyTrainable {
   public:
     // constructor method
     Inst1();
+
+    void setupInstrument();
+
     // placeholder dummy function
     void print1();
 };

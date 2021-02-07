@@ -25,9 +25,9 @@ void setup() {
   tiny.setupOutputBuzzer(outputPin);
 
   // set fixed frequencies, in Hz
-  tiny.setBuzzerFrequency(0, 1000);
-  tiny.setBuzzerFrequency(1, 1500);
-  tiny.setBuzzerFrequency(2, 2000);
+  // tiny.setBuzzerFrequency(0, 1000);
+  // tiny.setBuzzerFrequency(1, 1500);
+  // tiny.setBuzzerFrequency(2, 2000);
 
   // or define ranges of frequencies
   // tiny.setBuzzerFrequency(0, 500, 1000);
@@ -36,8 +36,10 @@ void setup() {
 
   // or define arrays of frequencies
   // TODO: cleanup this test
-  // int testing[] = {1000, 2000, 300, 4000, 5000, 6000};
-  // tiny.setBuzzerFrequency(0, testing);
+  int testing[] = {1000, 2000, 300, 4000, 5000, 6000};
+  tiny.setBuzzerFrequency(0, testing);
+  tiny.setBuzzerFrequency(1, testing);
+  tiny.setBuzzerFrequency(2, testing);
 
   // set durations, in milliseconds
   tiny.setBuzzerDuration(0, 300);

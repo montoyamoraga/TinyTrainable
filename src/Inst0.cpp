@@ -123,7 +123,11 @@ void Inst0::identify() {
   // TODO: add the corresponding calls to functions
   switch (_outputMode) {
     case outputBuzzer:
-      tone(_outputPinBuzzer, _buzzerFrequencies[classification], _buzzerDurations[classification]);
+      getBuzzerParam(classification, _buzzerParams);
+      tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
+      debugPrint("OUTPUT BUZZER");
+      debugPrint(_buzzerParams[0]);
+      debugPrint(_buzzerParams[1]);
       break;
     case outputLCD:
       Serial.println("TODO");

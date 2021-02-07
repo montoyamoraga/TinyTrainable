@@ -25,10 +25,10 @@ jobs:
         # uses: mattnotmitt/doxygen-action@26c5585d9d0077c5c6f6c700bc6434ef03956fd4
         uses: mattnotmitt/doxygen-action@v1.2.1
         with:
-          # Path to Doxyfile
-          doxyfile-path: "./DoxyFile"
           # Working directory
           working-directory: "."
+          # Path to Doxyfile
+          doxyfile-path: "./DoxyFile"
           # Generate latex documentation
           enable-latex: False
 
@@ -37,4 +37,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: "./docs"
+          publish_dir: ./docs

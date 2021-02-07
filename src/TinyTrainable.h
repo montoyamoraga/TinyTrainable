@@ -1,4 +1,8 @@
-// TinyTrainable.h - a library for Tiny Trainable Instruments
+/// \file TinyTrainable.h
+/// \brief Arduino library for Tiny Trainable Instruments
+/// \author montoyamoraga, peter-parque, maxzwang
+/// \date 
+
 // a project by Aarón Montoya-Moraga, started in November 2020
 // with assistance by undergrad researchers Peter Tone, Maxwell Wang
 // master's thesis,  MIT Media Lab, Opera of the Future / Future Sketches

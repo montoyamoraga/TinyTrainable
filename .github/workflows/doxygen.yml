@@ -28,9 +28,9 @@ jobs:
           # Path to Doxyfile
           doxyfile-path: ./DoxyFile
           # Working directory
-          working-directory: .
+          working-directory: ./
           # Generate latex documentation
-          enable-latex: False # optional
+          enable-latex: False
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

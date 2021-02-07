@@ -83,7 +83,7 @@ class TinyTrainable {
     // for frequencies
     void setBuzzerFrequency(int object, int frequency);
     void setBuzzerFrequency(int object, int freqMin, int freqMax);
-    void setBuzzerFrequency(int object, int* arrayFrequencies);
+    void setBuzzerFrequency(int object, int* arrayFrequencies, int arrayFreqCount);
     // for durations
     void setBuzzerDuration(int object, int duration);
     void setBuzzerDuration(int object, int durationMin, int durationMax);
@@ -155,6 +155,7 @@ class TinyTrainable {
     int _buzzerFrequenciesMax[3];
     // for randomParam
     int *_buzzerFrequenciesArrays[3];
+    int _buzzerFrequenciesArraysSizes[3];
 
     int _buzzerDurations[3];
 

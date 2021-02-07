@@ -140,23 +140,15 @@ void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
-  // _buzzerFrequencies[object] = random(freqMin, freqMax);
   _buzzerMode = rangeParam;
   _buzzerFrequenciesMin[object] = freqMin;
   _buzzerFrequenciesMax[object] = freqMax;
 }
 
-void TinyTrainable::setBuzzerFrequency(int object, int* arrayFrequencies) {
-  // TODO: this is alpha version, just a test
-  // int randomIndex = sizeof(arrayFrequencies);
-  // debugPrint(randomIndex);
-  // _buzzerFrequencies[object] = arrayFrequencies[0];
-
-  // NOTE: this might not work!! pointer magic is happening to save the user array
+void TinyTrainable::setBuzzerFrequency(int object, int* arrayFrequencies, int arrayFreqCount) {
   _buzzerMode = randomParam;
   _buzzerFrequenciesArrays[object] = arrayFrequencies;
-  debugPrint("BUZZER FREQ ARRAY");
-  debugPrint(_buzzerFrequenciesArrays[0][0]);
+  _buzzerFrequenciesArraysSizes[object] = arrayFreqCount;
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int duration) {
@@ -185,8 +177,8 @@ void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
       );
       break;
     case randomParam:
-      int arraySize = sizeof(_buzzerFrequenciesArrays[object]);
-      buzzerParamArray[0] = _buzzerFrequenciesArrays[object][rand()%arraySize];
+      int randomIndex = rand() % _buzzerFrequenciesArraysSizes[object];
+      buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomIndex);
       break;
   }
   buzzerParamArray[1] = _buzzerDurations[object];  // placeholder until duration code in place

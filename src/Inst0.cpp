@@ -125,9 +125,6 @@ void Inst0::identify() {
     case outputBuzzer:
       getBuzzerParam(classification, _buzzerParams);
       tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
-      debugPrint("OUTPUT BUZZER");
-      debugPrint(_buzzerParams[0]);
-      debugPrint(_buzzerParams[1]);
       break;
     case outputLCD:
       Serial.println("TODO");

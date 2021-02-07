@@ -17,6 +17,11 @@ const bool tinyDebugging = true;
 
 String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
+// array of frequencies
+int freqArray[] = {1000, 2000, 3000, 4000, 5000, 6000};
+// the following looks funny since sizeof returns byte size
+int freqArrayLength = sizeof(freqArray)/sizeof(*freqArray);
+
 // setup() runs once, at the beginning
 void setup() {
 
@@ -34,12 +39,11 @@ void setup() {
   // tiny.setBuzzerFrequency(1, 1000, 1500);
   // tiny.setBuzzerFrequency(2, 2000, 2500);
 
-  // or define arrays of frequencies
+  // or use arrays of frequencies (WHICH MUST BE DECLARED IN THE GLOBAL SCOPE!)
   // TODO: cleanup this test
-  int testing[] = {1000, 2000, 300, 4000, 5000, 6000};
-  tiny.setBuzzerFrequency(0, testing);
-  tiny.setBuzzerFrequency(1, testing);
-  tiny.setBuzzerFrequency(2, testing);
+  tiny.setBuzzerFrequency(0, freqArray, freqArrayLength);
+  tiny.setBuzzerFrequency(1, freqArray, freqArrayLength);
+  tiny.setBuzzerFrequency(2, freqArray, freqArrayLength);
 
   // set durations, in milliseconds
   tiny.setBuzzerDuration(0, 300);

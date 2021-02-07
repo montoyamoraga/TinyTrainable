@@ -1,7 +1,7 @@
-// this code is based on the Blink example
-// http://www.arduino.cc/en/Tutorial/Blink
-
-// this sketch cycles through all the possible LED colors
+/// \file hello_tiny_world.ino
+/// \brief Cycle through all the LED colors
+/// this code is based on the Blink example
+/// http://www.arduino.cc/en/Tutorial/Blink
 
 // include all libraries
 #include <Inst0.h>

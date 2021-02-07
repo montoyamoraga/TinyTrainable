@@ -34,3 +34,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - name: Doxygen Action
+      # You may pin to the exact commit or the version.
+      # uses: mattnotmitt/doxygen-action@26c5585d9d0077c5c6f6c700bc6434ef03956fd4
+      uses: mattnotmitt/doxygen-action@v1.2.1
+      with:
+        # Path to Doxyfile
+        doxyfile-path: # default is ./Doxyfile
+        # Working directory
+        working-directory: # default is .
+        # Generate latex documentation
+        enable-latex: # optional
+

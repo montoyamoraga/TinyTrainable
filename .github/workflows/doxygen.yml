@@ -37,9 +37,9 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.2.1
         with:
           # Path to Doxyfile
-          doxyfile-path: ./DoxyFile
+          doxyfile-path: "./DoxyFile"
           # Working directory
-          working-directory: .
+          working-directory: "."
           # Generate latex documentation
           enable-latex: False # optional
 
@@ -47,6 +47,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main
+          publish_branch: gh-pages
           publish_dir: ./docs
-          destination_dir: docs

@@ -1,0 +1,40 @@
+# Build docs with Doxygen and publish to Github Pages
+
+name: Doxygen Deploy
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "deploy"
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Doxygen Action
+        # You may pin to the exact commit or the version.
+        # uses: mattnotmitt/doxygen-action@26c5585d9d0077c5c6f6c700bc6434ef03956fd4
+        uses: mattnotmitt/doxygen-action@v1.2.1
+        with:
+          # Path to Doxyfile
+          doxyfile-path: "./Doxyfile"
+          # Working directory
+          working-directory: "."
+          # Generate latex documentation
+          enable-latex: False
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./html

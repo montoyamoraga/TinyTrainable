@@ -1,13 +1,11 @@
-# testing GitHub actions
+# Build docs with Doxygen and publish to Github Pages
 
-name: CI
+name: Doxygen Deploy
 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -48,4 +46,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          # publish_dir: ./docs
+          publish_dir: ./docs

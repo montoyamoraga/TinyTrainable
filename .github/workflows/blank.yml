@@ -30,7 +30,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          
+
       - name: Doxygen Action
         # You may pin to the exact commit or the version.
         # uses: mattnotmitt/doxygen-action@26c5585d9d0077c5c6f6c700bc6434ef03956fd4
@@ -42,7 +42,7 @@ jobs:
           working-directory: .
           # Generate latex documentation
           enable-latex: False # optional
-      
+
       - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

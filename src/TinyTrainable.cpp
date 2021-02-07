@@ -6,7 +6,9 @@
 // include local library
 #include "TinyTrainable.h"
 
-// constructor for the TinyTrainable class
+/// \brief Constructor method
+/// \param [in] none
+/// \param [out] none
 TinyTrainable::TinyTrainable() {
 
 }

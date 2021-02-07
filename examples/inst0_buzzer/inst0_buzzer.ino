@@ -17,10 +17,13 @@ const bool tinyDebugging = true;
 
 String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
-// array of frequencies
-int freqArray[] = {1000, 2000, 3000, 4000, 5000, 6000};
+// arrays of frequencies
+int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
+int freqArray1[] = {2100, 2200, 2300, 2400, 2500, 2600};
+int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 // the following looks funny since sizeof returns byte size
-int freqArrayLength = sizeof(freqArray)/sizeof(*freqArray);
+// int freqArrayLength = sizeof(freqArray0)/sizeof(*freqArray0);
+int paramArrayLength = 6;
 
 // setup() runs once, at the beginning
 void setup() {
@@ -40,10 +43,10 @@ void setup() {
   // tiny.setBuzzerFrequency(2, 2000, 2500);
 
   // or use arrays of frequencies (WHICH MUST BE DECLARED IN THE GLOBAL SCOPE!)
-  // TODO: cleanup this test
-  tiny.setBuzzerFrequency(0, freqArray, freqArrayLength);
-  tiny.setBuzzerFrequency(1, freqArray, freqArrayLength);
-  tiny.setBuzzerFrequency(2, freqArray, freqArrayLength);
+  // TODO: cleanup this example, add different duration modes
+  tiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
+  tiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
+  tiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
 
   // set durations, in milliseconds
   tiny.setBuzzerDuration(0, 300);

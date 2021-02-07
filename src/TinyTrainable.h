@@ -87,7 +87,7 @@ class TinyTrainable {
     // for durations
     void setBuzzerDuration(int object, int duration);
     void setBuzzerDuration(int object, int durationMin, int durationMax);
-    void setBuzzerDuration(int object, int arrayDurations[]);
+    void setBuzzerDuration(int object, int* arrayDurations, int arrayDurationCount);
 
     // methods for servo
     void setupOutputServo(int outputPin);
@@ -146,18 +146,24 @@ class TinyTrainable {
 
     // TODO: methods and variables for outputBuzzer
     enum BuzzerMode {singleParam, rangeParam, randomParam, undefParam};
-    BuzzerMode _buzzerMode = undefParam;
+    BuzzerMode _buzzerFreqMode = undefParam;
+    BuzzerMode _buzzerDurationMode = undefParam;
     int _buzzerParams[2];  // to hold the freq and duration each loop
     // for singleParam
-    int _buzzerFrequencies[3]; 
+    int _buzzerFrequencies[3];
+    int _buzzerDurations[3];
     // for rangeParam 
     int _buzzerFrequenciesMin[3];
     int _buzzerFrequenciesMax[3];
+    int _buzzerDurationsMin[3];
+    int _buzzerDurationsMax[3];
     // for randomParam
     int *_buzzerFrequenciesArrays[3];
     int _buzzerFrequenciesArraysSizes[3];
+    int *_buzzerDurationsArrays[3];
+    int _buzzerDurationsArraysSizes[3];
 
-    int _buzzerDurations[3];
+    
 
     // TODO: variables for outputMIDI
     int _midiNotes[3];

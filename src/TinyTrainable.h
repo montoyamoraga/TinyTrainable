@@ -55,7 +55,6 @@ enum OutputMode {
 /// \class TinyTrainable
 /// \brief TinyTrainable base class
 ///
-
 class TinyTrainable {
 
   // public methods

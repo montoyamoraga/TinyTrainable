@@ -1,9 +1,6 @@
 # Apple
 .DS_Store
 
-# Doxygen
-docs/
-
 # Visual Studio Code
 .vscode/
 

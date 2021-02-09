@@ -1,5 +1,4 @@
 /// @file inst0_buzzer.ino
-/// @mainpage inst0_buzzer.ino
 /// @brief Example: Instrument0 with output buzzer
 /// @author montoyamoraga, peter-parque, maxzwang
 /// @date November 2020

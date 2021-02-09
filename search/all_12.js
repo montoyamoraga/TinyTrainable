@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['tensorarena_118',['tensorArena',['../inst1__classifier_8ino.html#a33f47409176d53d561c6dc58791c90f5',1,'inst1_classifier.ino']]],
+  ['tensorarenasize_119',['tensorArenaSize',['../inst1__classifier_8ino.html#ab83f793b297e72891af0857f023b6dfa',1,'inst1_classifier.ino']]],
+  ['tflerrorreporter_120',['tflErrorReporter',['../inst1__classifier_8ino.html#afd21e4745a6bc764dc29dba4bcd172d1',1,'inst1_classifier.ino']]],
+  ['tflinputtensor_121',['tflInputTensor',['../inst1__classifier_8ino.html#a4a3df4e36fd7aa60039fb2af94b66d1e',1,'inst1_classifier.ino']]],
+  ['tflinterpreter_122',['tflInterpreter',['../inst1__classifier_8ino.html#ac8e6eb3787fa36b2e67fb8ba7d8b14ab',1,'inst1_classifier.ino']]],
+  ['tflmodel_123',['tflModel',['../inst1__classifier_8ino.html#a687598768a6abae5d64e0f346e9c4bbd',1,'inst1_classifier.ino']]],
+  ['tflopsresolver_124',['tflOpsResolver',['../inst1__classifier_8ino.html#a6cb8eb4b0ada79e3443155cbf922c37c',1,'inst1_classifier.ino']]],
+  ['tfloutputtensor_125',['tflOutputTensor',['../inst1__classifier_8ino.html#a0127371319b96dd6713ba8014b544b7a',1,'inst1_classifier.ino']]],
+  ['timeoff_126',['timeOff',['../hello__tiny__world_8ino.html#a51a6515534636c93e21b1788e90bf6b3',1,'hello_tiny_world.ino']]],
+  ['timeon_127',['timeOn',['../hello__tiny__world_8ino.html#a3b01afb2c51fd3f60c914c95f1475c15',1,'hello_tiny_world.ino']]],
+  ['tiny_128',['tiny',['../inst1__classifier_8ino.html#a5a7021718dc934bdde5aed1b2503d39a',1,'tiny():&#160;inst1_classifier.ino'],['../inst1__buzzer_8ino.html#a5a7021718dc934bdde5aed1b2503d39a',1,'tiny():&#160;inst1_buzzer.ino'],['../inst0__servo_8ino.html#a9bfd3554c9be6a2e10db0dc34ea68031',1,'tiny():&#160;inst0_servo.ino'],['../inst0__serial_8ino.html#a9bfd3554c9be6a2e10db0dc34ea68031',1,'tiny():&#160;inst0_serial.ino'],['../inst0__midi_8ino.html#a9bfd3554c9be6a2e10db0dc34ea68031',1,'tiny():&#160;inst0_midi.ino'],['../inst0__buzzer_8ino.html#a9bfd3554c9be6a2e10db0dc34ea68031',1,'tiny():&#160;inst0_buzzer.ino'],['../hello__tiny__world_8ino.html#a9bfd3554c9be6a2e10db0dc34ea68031',1,'tiny():&#160;hello_tiny_world.ino'],['../inst1__collecting__data_8ino.html#a5a7021718dc934bdde5aed1b2503d39a',1,'tiny():&#160;inst1_collecting_data.ino']]],
+  ['tinydebugging_129',['tinyDebugging',['../hello__tiny__world_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0',1,'tinyDebugging():&#160;hello_tiny_world.ino'],['../inst0__buzzer_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0',1,'tinyDebugging():&#160;inst0_buzzer.ino'],['../inst0__servo_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0',1,'tinyDebugging():&#160;inst0_servo.ino'],['../inst1__buzzer_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0',1,'tinyDebugging():&#160;inst1_buzzer.ino']]],
+  ['tinytrainable_130',['TinyTrainable',['../class_tiny_trainable.html#a088a969dd049b431aad8d24dca2fb3a7',1,'TinyTrainable::TinyTrainable()'],['../class_tiny_trainable.html',1,'TinyTrainable']]],
+  ['tinytrainable_2ecpp_131',['TinyTrainable.cpp',['../_tiny_trainable_8cpp.html',1,'']]],
+  ['tinytrainable_2eh_132',['TinyTrainable.h',['../_tiny_trainable_8h.html',1,'']]],
+  ['trainknn_133',['trainKNN',['../class_inst0.html#a069ab36db0c5473d743eb0c5da626b67',1,'Inst0']]]
+];

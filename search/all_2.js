@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['checkinst0setup_36',['checkInst0Setup',['../class_inst0.html#a4930a97ed04d32ca1638af5d18213b81',1,'Inst0']]],
-  ['colors_37',['Colors',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967',1,'TinyTrainable.h']]],
-  ['cyan_38',['cyan',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967af86e4e7e79173ee87c1976080bb250b7',1,'TinyTrainable.h']]]
+  ['blinkledbuiltin_36',['blinkLEDBuiltIn',['../class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810',1,'TinyTrainable']]],
+  ['blue_37',['blue',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a8f5fa6b484ac7e2a97943d915cf224e2',1,'TinyTrainable.h']]],
+  ['bpmtoms_38',['bpmToMs',['../class_tiny_trainable.html#a221585d11c9f71c6cc9e20ef2ef56acb',1,'TinyTrainable']]],
+  ['buzzermode_39',['BuzzerMode',['../class_tiny_trainable.html#abf98deee9f2d3ec7687ef4fa750e074a',1,'TinyTrainable']]]
 ];

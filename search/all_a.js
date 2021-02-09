@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['randomparam_66',['randomParam',['../class_tiny_trainable.html#abf98deee9f2d3ec7687ef4fa750e074aab2684bb7dc082b17d8952d61e4e7ea37',1,'TinyTrainable']]],
-  ['rangeparam_67',['rangeParam',['../class_tiny_trainable.html#abf98deee9f2d3ec7687ef4fa750e074aa70200a29fdc040a1c8eb266809685cee',1,'TinyTrainable']]],
-  ['readcolor_68',['readColor',['../class_inst0.html#a1efdfcd673c6d8543870ac458cb320aa',1,'Inst0']]],
-  ['red_69',['red',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967aace9033470c7bfe9523c814271251908',1,'TinyTrainable.h']]]
+  ['k_73',['K',['../inst0__buzzer_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;inst0_buzzer.ino'],['../inst0__midi_8ino.html#a2689c4b3931025b79053532a5f1b0a85',1,'K():&#160;inst0_midi.ino'],['../inst0__serial_8ino.html#a2689c4b3931025b79053532a5f1b0a85',1,'K():&#160;inst0_serial.ino'],['../inst0__servo_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;inst0_servo.ino'],['../inst1__buzzer_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;inst1_buzzer.ino']]]
 ];

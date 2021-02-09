@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errorblink_40',['errorBlink',['../class_tiny_trainable.html#a7457173cd710e18ee19f98544ea480ed',1,'TinyTrainable']]]
+  ['debugprint_44',['debugPrint',['../class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5',1,'TinyTrainable']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['tinytrainable_88',['TinyTrainable',['../class_tiny_trainable.html',1,'TinyTrainable'],['../class_tiny_trainable.html#a088a969dd049b431aad8d24dca2fb3a7',1,'TinyTrainable::TinyTrainable()']]],
-  ['tinytrainable_2ecpp_89',['TinyTrainable.cpp',['../_tiny_trainable_8cpp.html',1,'']]],
-  ['tinytrainable_2eh_90',['TinyTrainable.h',['../_tiny_trainable_8h.html',1,'']]],
-  ['trainknn_91',['trainKNN',['../class_inst0.html#a069ab36db0c5473d743eb0c5da626b67',1,'Inst0']]]
+  ['magenta_75',['magenta',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a997d39850948cc1baf6bd0cfd791d95d',1,'TinyTrainable.h']]],
+  ['model_76',['model',['../model_8h.html#ae142afd8c2e2c711c1c62440deebe03c',1,'model.h']]],
+  ['model_2eh_77',['model.h',['../model_8h.html',1,'']]],
+  ['moveservoangletempo_78',['moveServoAngleTempo',['../class_tiny_trainable.html#accab1cf9d22ed26326a0bafd24ead67d',1,'TinyTrainable']]]
 ];

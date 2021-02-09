@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['blinkledbuiltin_32',['blinkLEDBuiltIn',['../class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810',1,'TinyTrainable']]],
-  ['blue_33',['blue',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a8f5fa6b484ac7e2a97943d915cf224e2',1,'TinyTrainable.h']]],
-  ['bpmtoms_34',['bpmToMs',['../class_tiny_trainable.html#a221585d11c9f71c6cc9e20ef2ef56acb',1,'TinyTrainable']]],
-  ['buzzermode_35',['BuzzerMode',['../class_tiny_trainable.html#abf98deee9f2d3ec7687ef4fa750e074a',1,'TinyTrainable']]]
+  ['accelerationthreshold_32',['accelerationThreshold',['../inst1__classifier_8ino.html#a128d9c651abe6ce6229d846d4dcb7490',1,'accelerationThreshold():&#160;inst1_classifier.ino'],['../inst1__collecting__data_8ino.html#a128d9c651abe6ce6229d846d4dcb7490',1,'accelerationThreshold():&#160;inst1_collecting_data.ino']]],
+  ['ax_33',['aX',['../inst1__collecting__data_8ino.html#aa9f27499fb09c5c31ec7281bc79cf972',1,'inst1_collecting_data.ino']]],
+  ['ay_34',['aY',['../inst1__collecting__data_8ino.html#a7b573a84378f78cbf2bfee9ca304f2d0',1,'inst1_collecting_data.ino']]],
+  ['az_35',['aZ',['../inst1__collecting__data_8ino.html#a7e0dee32de8773dd38898016117686ee',1,'inst1_collecting_data.ino']]]
 ];

@@ -1,7 +1,7 @@
-/// \file TinyTrainable.h
-/// \brief Arduino library for Tiny Trainable Instruments
-/// \author montoyamoraga, peter-parque, maxzwang 
-/// \date November 2020
+/// @file TinyTrainable.h
+/// @brief Arduino library for Tiny Trainable Instruments
+/// @author montoyamoraga, peter-parque, maxzwang 
+/// @date November 2020
 
 // conditional compilation
 #ifndef TINY_TRAINABLE_H

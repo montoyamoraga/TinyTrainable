@@ -1,14 +1,14 @@
-/// \file TinyTrainable.h
-/// \brief Arduino library for Tiny Trainable Instruments
-/// \author montoyamoraga, peter-parque, maxzwang 
-/// \date November 2020
+/// @file TinyTrainable.h
+/// @brief Arduino library for Tiny Trainable Instruments
+/// @author montoyamoraga, peter-parque, maxzwang 
+/// @date November 2020
 
 // include local library
 #include "TinyTrainable.h"
 
-/// \brief Constructor method
-/// \param [in] none
-/// \param [out] none
+/// @brief Constructor method
+/// @param [in] none
+/// @param [out] none
 TinyTrainable::TinyTrainable() {
 
 }

@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['magenta_62',['magenta',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a997d39850948cc1baf6bd0cfd791d95d',1,'TinyTrainable.h']]],
-  ['model_63',['model',['../model_8h.html#ae142afd8c2e2c711c1c62440deebe03c',1,'model.h']]],
-  ['model_2eh_64',['model.h',['../model_8h.html',1,'']]],
-  ['moveservoangletempo_65',['moveServoAngleTempo',['../class_tiny_trainable.html#accab1cf9d22ed26326a0bafd24ead67d',1,'TinyTrainable']]]
+  ['outputbuzzer_55',['outputBuzzer',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33cab3f03ffa283d0a85d3ae1bb3edacb5d7',1,'TinyTrainable.h']]],
+  ['outputlcd_56',['outputLCD',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33cab3bd004f8d02d669077b5f4e89f14b1c',1,'TinyTrainable.h']]],
+  ['outputled_57',['outputLED',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33cac90e97cf5938d9b38456df3b667903b5',1,'TinyTrainable.h']]],
+  ['outputmidi_58',['outputMIDI',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33ca3e2eb8bea8411e9dd9b1e02c1de81754',1,'TinyTrainable.h']]],
+  ['outputmode_59',['OutputMode',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33c',1,'TinyTrainable.h']]],
+  ['outputprinter_60',['outputPrinter',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33caaffb513b4bd1ff9a0504a2e076dae131',1,'TinyTrainable.h']]],
+  ['outputserialusb_61',['outputSerialUSB',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33ca2d58b61f401ea47500f220228b96f999',1,'TinyTrainable.h']]],
+  ['outputservo_62',['outputServo',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33ca6d4397afc594c4ae256f8e1dffd1c248',1,'TinyTrainable.h']]],
+  ['outputundefined_63',['outputUndefined',['../_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33ca70ae01028ddcc4983a661b2f63df52dd',1,'TinyTrainable.h']]]
 ];

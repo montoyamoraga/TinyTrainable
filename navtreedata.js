@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "TinyTrainable", "index.html", [
+    [ "TinyTrainable.h", "_tiny_trainable_8h.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

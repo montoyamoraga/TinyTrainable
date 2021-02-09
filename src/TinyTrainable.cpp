@@ -1,4 +1,4 @@
-/// @file TinyTrainable.h
+/// @file TinyTrainable.cpp
 /// @brief Arduino library for Tiny Trainable Instruments
 /// @author montoyamoraga, peter-parque, maxzwang 
 /// @date November 2020

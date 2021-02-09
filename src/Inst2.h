@@ -1,3 +1,8 @@
+/// @file Inst2.h
+/// @brief Arduino library for Tiny Trainable Instruments
+/// @author montoyamoraga, peter-parque, maxzwang 
+/// @date November 2020
+
 #ifndef INST2_H
 #define INST2_H
 

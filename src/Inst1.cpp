@@ -1,3 +1,8 @@
+/// @file Inst1.cpp
+/// @brief Arduino library for Tiny Trainable Instruments
+/// @author montoyamoraga, peter-parque, maxzwang 
+/// @date November 2020
+
 #include "Inst1.h"
 
 Inst1::Inst1() {

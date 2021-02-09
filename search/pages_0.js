@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inst0_2eh_276',['Inst0.h',['../index.html',1,'']]]
+  ['inst0_5fbuzzer_2eino_276',['inst0_buzzer.ino',['../index.html',1,'']]]
 ];

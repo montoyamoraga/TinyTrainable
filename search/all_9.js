@@ -1,9 +1,9 @@
 var searchData=
 [
   ['identify_55',['identify',['../class_inst0.html#a23c6eecd7f4aa99284b578ad719acce0',1,'Inst0']]],
-  ['inst0_56',['Inst0',['../class_inst0.html#aee30b297392cdfa51fcd0786a45bb623',1,'Inst0::Inst0()'],['../class_inst0.html',1,'Inst0']]],
+  ['inst0_56',['Inst0',['../class_inst0.html',1,'Inst0'],['../class_inst0.html#aee30b297392cdfa51fcd0786a45bb623',1,'Inst0::Inst0()']]],
   ['inst0_2ecpp_57',['Inst0.cpp',['../_inst0_8cpp.html',1,'']]],
-  ['inst0_2eh_58',['Inst0.h',['../_inst0_8h.html',1,'']]],
+  ['inst0_2eh_58',['Inst0.h',['../index.html',1,'(Global Namespace)'],['../_inst0_8h.html',1,'(Global Namespace)']]],
   ['inst0_5fbuzzer_2eino_59',['inst0_buzzer.ino',['../inst0__buzzer_8ino.html',1,'']]],
   ['inst0_5fled_2eino_60',['inst0_led.ino',['../inst0__led_8ino.html',1,'']]],
   ['inst0_5fmidi_2eino_61',['inst0_midi.ino',['../inst0__midi_8ino.html',1,'']]],

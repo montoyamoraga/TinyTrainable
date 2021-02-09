@@ -6,6 +6,8 @@
 #ifndef INST0_H
 #define INST0_H
 
+/// @ section 
+
 // installed libraries included with <>
 #include <Arduino.h>
 #include <Arduino_KNN.h>

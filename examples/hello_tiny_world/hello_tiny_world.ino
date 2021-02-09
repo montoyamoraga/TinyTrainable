@@ -1,5 +1,5 @@
-/// \file hello_tiny_world.ino
-/// \brief Cycle through all the LED colors
+/// @file hello_tiny_world.ino
+/// @brief Cycle through all the LED colors
 /// this code is based on the Blink example
 /// http://www.arduino.cc/en/Tutorial/Blink
 

@@ -23,7 +23,7 @@ const bool tinyDebugging = true;
 
 String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
-// setup() runs once, at the beginning
+/// setup() runs once, at the beginning
 void setup() {
 
   tiny.setupInstrument(tinyDebugging);
@@ -56,9 +56,9 @@ void setup() {
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
-// loop() runs after setup(), on a loop
+/// loop() runs after setup(), on a loop
 void loop() {
 
-  // identify the input and respond
+  /// identify the input and respond
   tiny.identify();
 }

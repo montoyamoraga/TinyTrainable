@@ -1,6 +1,6 @@
 /// @file Inst0.cpp
 /// @brief Arduino library for Tiny Trainable Instruments
-/// @author montoyamoraga, peter-parque, maxzwang 
+/// @author montoyamoraga, peter-parque, maxzwang
 /// @date November 2020
 
 // include header file
@@ -16,10 +16,9 @@ Inst0::Inst0() : _myKNN(3) {
   _buzzerFrequencies[1] = -1;
   _buzzerFrequencies[2] = -1;
 
-   _midiNotes[0] = -1;
-   _midiNotes[1] = -1;
-   _midiNotes[2] = -1;
-
+  _midiNotes[0] = -1;
+  _midiNotes[1] = -1;
+  _midiNotes[2] = -1;
 }
 
 // true: instrument outputs debugging messages over USB serial
@@ -32,15 +31,17 @@ void Inst0::setupInstrument(bool serialDebugging) {
 
   if (_serialDebugging) {
     Serial.begin(9600);
-    while (!Serial);
+    while (!Serial)
+      ;
   }
 }
 
 // trains the KNN algorithm with examples provided by the user
 // algorithm will use the 'k' nearest neighbors for classification
-// 'examplesPerClass' examples that pass 'colorThreshold' are collected per class
-// sets the labels of the objects for identification by the KNN algorithm
-void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]) {
+// 'examplesPerClass' examples that pass 'colorThreshold' are collected per
+// class sets the labels of the objects for identification by the KNN algorithm
+void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold,
+                     String objects[3]) {
 
   _k = k;
   _colorThreshold = colorThreshold;
@@ -59,7 +60,8 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
     setStateLEDRGB(true, Colors(currentClass));
 
     // ask the user to show examples of each object
-    for (int currentExample = 0; currentExample < examplesPerClass; currentExample++) {
+    for (int currentExample = 0; currentExample < examplesPerClass;
+         currentExample++) {
 
       debugPrint("Show me an example of: " + _labels[currentClass]);
 
@@ -72,7 +74,7 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
 
     // only show for objects 0 and 1
     if (currentClass < 2) {
-      // TODO - maybe move to after LED change, since Serial doesn't always work 
+      // TODO - maybe move to after LED change, since Serial doesn't always work
       // and won't always be used
       debugPrint("Prepare next object");
     }
@@ -80,14 +82,15 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
     else {
       debugPrint("All objects ready");
     }
-    
+
     // delay so the object readings don't overlap
     // TODO: add to markdown documentation
     // TODO: maybe instead of hardcoded its a variable for advanced users
-    delay(1000);  
+    delay(1000);
 
     // wait for the object to move away again
-    while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
+    while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
+    }
   }
   debugPrint("Finished training");
 
@@ -99,7 +102,6 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold, String o
 
   // turn off the LED RGB
   setStateLEDRGB(false, red);
-
 }
 
 // uses the trained KNN algorithm to identify objects the user shows
@@ -110,7 +112,8 @@ void Inst0::identify() {
   }
 
   // wait for the object to move away again
-  while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {}
+  while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
+  }
 
   debugPrint("Let me guess your object");
 
@@ -127,34 +130,34 @@ void Inst0::identify() {
 
   // TODO: add the corresponding calls to functions
   switch (_outputMode) {
-    case outputBuzzer:
-      getBuzzerParam(classification, _buzzerParams);
-      tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
-      debugPrint("OUTPUT BUZZER");
-      debugPrint(_buzzerParams[0]);
-      debugPrint(_buzzerParams[1]);
-      break;
-    case outputLCD:
-      Serial.println("TODO");
-      break;
-    case outputLED:
-      Serial.println("TODO");
-      break;
-    case outputMIDI:
-      sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
-      break;
-    case outputPrinter:
-      Serial.println("TODO");
-      break;
-    case outputSerialUSB:
-      Serial.println("TODO");
-      break;
-    case outputServo:
-      Serial.println("TODO");
-      break;
-    case outputUndefined:
-      Serial.println("TODO");
-      break;
+  case outputBuzzer:
+    getBuzzerParam(classification, _buzzerParams);
+    tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
+    debugPrint("OUTPUT BUZZER");
+    debugPrint(_buzzerParams[0]);
+    debugPrint(_buzzerParams[1]);
+    break;
+  case outputLCD:
+    Serial.println("TODO");
+    break;
+  case outputLED:
+    Serial.println("TODO");
+    break;
+  case outputMIDI:
+    sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
+    break;
+  case outputPrinter:
+    Serial.println("TODO");
+    break;
+  case outputSerialUSB:
+    Serial.println("TODO");
+    break;
+  case outputServo:
+    Serial.println("TODO");
+    break;
+  case outputUndefined:
+    Serial.println("TODO");
+    break;
   }
 
   // update previous classification
@@ -169,7 +172,8 @@ void Inst0::readColor(float colorReading[]) {
   int red, green, blue, colorTotal = 0;
 
   // wait for the object to move close enough
-  while (!APDS.proximityAvailable() || APDS.readProximity() > 0) {}
+  while (!APDS.proximityAvailable() || APDS.readProximity() > 0) {
+  }
 
   // wait until the color is bright enough
   while (colorTotal < _colorThreshold) {
@@ -202,7 +206,7 @@ void Inst0::readColor(float colorReading[]) {
 // yellow is buzzer output missing setup
 //    1 blink - setupPin() not called
 //    2 blinks - setFrequencies() not called
-void Inst0::checkInst0Setup(){
+void Inst0::checkInst0Setup() {
   // checking setupInstrument()
   if (_outputMode == outputUndefined) {
     errorBlink(red, 1);
@@ -220,40 +224,41 @@ void Inst0::checkInst0Setup(){
 
   // checking output-specific setup
   switch (_outputMode) {
-    case outputBuzzer:
-      if (_outputPinBuzzer == -1 || _buzzerDurations[0] == 0 || _buzzerDurations[1] == 0 || _buzzerDurations[2] == 0) {
-        errorBlink(yellow, 1);
-      }
-      if (_buzzerFrequencies[0] == -1 || _buzzerFrequencies[1] == -1 || _buzzerFrequencies[2] == -1) {
-        errorBlink(yellow, 2);
-      }
-      break;
-    case outputLCD:
-      Serial.println("TODO");
-      break;
-    case outputLED:
-      Serial.println("TODO");
-      break;
-    case outputMIDI:
-      if (_midiChannel > 15 || _midiVelocity == 0) {
-        errorBlink(blue, 1);
-      }
-      if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
-        errorBlink(blue, 2);
-      }
-      break;
-    case outputPrinter:
-      Serial.println("TODO");
-      break;
-    case outputSerialUSB:
-      Serial.println("TODO");
-      break;
-    case outputServo:
-      Serial.println("TODO");
-      break;
-    case outputUndefined:
-      Serial.println("TODO");
-      break;
-
+  case outputBuzzer:
+    if (_outputPinBuzzer == -1 || _buzzerDurations[0] == 0 ||
+        _buzzerDurations[1] == 0 || _buzzerDurations[2] == 0) {
+      errorBlink(yellow, 1);
+    }
+    if (_buzzerFrequencies[0] == -1 || _buzzerFrequencies[1] == -1 ||
+        _buzzerFrequencies[2] == -1) {
+      errorBlink(yellow, 2);
+    }
+    break;
+  case outputLCD:
+    Serial.println("TODO");
+    break;
+  case outputLED:
+    Serial.println("TODO");
+    break;
+  case outputMIDI:
+    if (_midiChannel > 15 || _midiVelocity == 0) {
+      errorBlink(blue, 1);
+    }
+    if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
+      errorBlink(blue, 2);
+    }
+    break;
+  case outputPrinter:
+    Serial.println("TODO");
+    break;
+  case outputSerialUSB:
+    Serial.println("TODO");
+    break;
+  case outputServo:
+    Serial.println("TODO");
+    break;
+  case outputUndefined:
+    Serial.println("TODO");
+    break;
   }
 }

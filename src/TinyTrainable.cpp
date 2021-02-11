@@ -1,17 +1,22 @@
+/// @file TinyTrainable.cpp
+/// @brief Arduino library for Tiny Trainable Instruments
+/// @author montoyamoraga, peter-parque, maxzwang
+/// @date November 2020
+
 // include local library
 #include "TinyTrainable.h"
 
-// constructor for the TinyTrainable class
-TinyTrainable::TinyTrainable() {
+/// @brief Constructor method
+/// @param [in] none
+/// @param [out] none
+TinyTrainable::TinyTrainable() {}
 
-}
-
-void TinyTrainable:: setupLEDs() {
+void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);
   // initial state off is HIGH for on
   digitalWrite(LED_BUILTIN, HIGH);
-  
+
   // setting up RGB LED
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
@@ -22,29 +27,38 @@ void TinyTrainable:: setupLEDs() {
   digitalWrite(LEDB, HIGH);
 }
 
-void TinyTrainable::turnOnLEDBuiltIn() {
-  digitalWrite(LED_BUILTIN, HIGH);
-}
-
-void TinyTrainable::turnOffLEDBuiltIn() {
-  digitalWrite(LED_BUILTIN, LOW);
+// function for turning on and off the built-in LED
+void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
+  if (turnOn) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
 }
 
 void TinyTrainable::blinkLEDBuiltIn(int blinks) {
 
-  turnOffLEDBuiltIn();
+  setStateLEDBuiltIn(false);
 
   for (int i = 0; i < blinks; i++) {
-    turnOnLEDBuiltIn();
+    setStateLEDBuiltIn(true);
     delay(500);
-    turnOffLEDBuiltIn();
+    setStateLEDBuiltIn(false);
     delay(500);
   }
 }
 
-void TinyTrainable::turnOnLEDRGB(Colors color) {
-  turnOffLEDRGB();
-  switch (color) {
+// function for turning on and off the RGB LED
+void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
+
+  // first turn off
+  digitalWrite(LEDR, HIGH);
+  digitalWrite(LEDG, HIGH);
+  digitalWrite(LEDB, HIGH);
+
+  // then turn on according to color
+  if (turnOn) {
+    switch (color) {
     case red:
       digitalWrite(LEDR, LOW);
       break;
@@ -66,128 +80,192 @@ void TinyTrainable::turnOnLEDRGB(Colors color) {
       digitalWrite(LEDG, LOW);
       digitalWrite(LEDB, LOW);
       break;
+    }
   }
 }
 
-void TinyTrainable::turnOffLEDRGB() {
-  digitalWrite(LEDR, HIGH);
-  digitalWrite(LEDG, HIGH);
-  digitalWrite(LEDB, HIGH);
-}
-
-// traps the arduino in an infinite loop with RGB LED blinking, to signal 
+// traps the arduino in an infinite loop with RGB LED blinking, to signal
 // some setup missing. explanations in docs by instrument.
 void TinyTrainable::errorBlink(Colors color, int blinkNum) {
   while (true) {
     for (int i = 0; i <= blinkNum; i++) {
-      turnOnLEDRGB(color);
+      // turn on with the color
+      setStateLEDRGB(true, color);
       delay(1000);
-      turnOffLEDRGB();
+      // turn off
+      setStateLEDRGB(false, color);
       delay(1000);
     }
     blinkLEDBuiltIn(1);
   }
 }
 
-// true: instrument outputs debugging messages over USB serial
-// false: standalone instrument, no debugging message
-void TinyTrainable::setSerialDebugging(bool serialDebugging) {
-  _serialDebugging = serialDebugging;
-
-  if (_serialDebugging) {
-    Serial.begin(9600);
-    while (!Serial);
-  }
-}
-
-// APDS9960 sensor for gestures, color, light intensity, proximity 
+// APDS9960 sensor for gestures, color, light intensity, proximity
 void TinyTrainable::setupSensorAPDS9960() {
-    if (!APDS.begin()) {
-    while (1);
+  if (!APDS.begin()) {
+    while (1)
+      ;
   }
 }
 
 // include library for temperature and humidity sensor
 // https://www.arduino.cc/en/Reference/ArduinoHTS221
-void TinyTrainable::setupSensorHTS221() {
-    if (!HTS.begin()) {
-    while (1);
-  }
-}
+// void TinyTrainable::setupSensorHTS221() {
+//     if (!HTS.begin()) {
+//     while (1);
+//   }
+// }
 
 // include library for pressure sensor
 // https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
-void TinyTrainable::setupSensorLPS22HB() {
-    if (!BARO.begin()) {
-    while (1);
-  }
-}
+// void TinyTrainable::setupSensorLPS22HB() {
+//     if (!BARO.begin()) {
+//     while (1);
+//   }
+// }
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer
 void TinyTrainable::setupSensorLSM9DS1() {
   if (!IMU.begin()) {
-    while(1);
+    while (1)
+      ;
   }
 }
 
-// sets up Serial, Serial1, proximity/color sensor, and LEDs based on 'mode'
-void TinyTrainable::setOutputMode(OutputMode mode) {
-  _outputMode = mode;
-
-  if (_outputMode == outputSerialUSB) {
-    Serial.begin(9600);
-    while (!Serial);
-  }
-
-  if (_outputMode == outputMIDI) {
-    setupSerialMIDI();
-  }
-}
-
-void TinyTrainable::setBuzzerPin(int outputPin) {
+// TODO: add comments
+void TinyTrainable::setupOutputBuzzer(int outputPin) {
+  _outputMode = outputBuzzer;
   _outputPinBuzzer = outputPin;
   pinMode(_outputPinBuzzer, OUTPUT);
 }
 
-// set note frequencies for buzzer output
-void TinyTrainable::setBuzzerFrequencies(int freq0, int freq1, int freq2) {
-  _buzzerFrequencies[0] = freq0;
-  _buzzerFrequencies[1] = freq1;
-  _buzzerFrequencies[2] = freq2;
+void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
+  _buzzerMode = singleParam;
+  _buzzerFrequencies[object] = frequency;
 }
 
-// TODO: for now lets just have one of these functions
-// ideally this function could have the slots i mentioned
-void TinyTrainable::setBuzzerDurations(int buzzerDuration) {
-  _buzzerDuration = buzzerDuration;
+void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
+  // _buzzerFrequencies[object] = random(freqMin, freqMax);
+  _buzzerMode = rangeParam;
+  _buzzerFrequenciesMin[object] = freqMin;
+  _buzzerFrequenciesMax[object] = freqMax;
 }
 
-void TinyTrainable::setServoPin(int pin) {
-  _outputPinServo = pin;
-  pinMode(_outputPinServo, OUTPUT);
+void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies) {
+  // TODO: this is alpha version, just a test
+  // int randomIndex = sizeof(arrayFrequencies);
+  // debugPrint(randomIndex);
+  // _buzzerFrequencies[object] = arrayFrequencies[0];
+
+  // NOTE: this might not work!! pointer magic is happening to save the user
+  // array
+  _buzzerMode = randomParam;
+  _buzzerFrequenciesArrays[object] = arrayFrequencies;
+  debugPrint("BUZZER FREQ ARRAY");
+  debugPrint(_buzzerFrequenciesArrays[0][0]);
 }
 
-void TinyTrainable::setServoAngles(int angle0, int angle1, int angle2) {
-  _servoAngles[0] = angle0;
-  _servoAngles[1] = angle1;
-  _servoAngles[2] = angle2;
+void TinyTrainable::setBuzzerDuration(int object, int duration) {
+  _buzzerDurations[object] = duration;
 }
 
-// void TinyTrainable::setServoAngle(int angle) {
-//   if (_servoAngleCurrent < angle) {
-//     for (int i = _servoAngleCurrent; i < angle; i++) {
-//       _servo.write(i);
-//       delay(15);
-//     }
-//   }
-//   else {
-//     for (int i = _servoAngleCurrent; i > angle; i--) {
-//       _servo.write(i);
-//       delay(15);
-//     }
-//   }
-// }
+void TinyTrainable::setBuzzerDuration(int object, int durationMin,
+                                      int durationMax) {
+  _buzzerDurations[object] = random(durationMin, durationMax);
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
+  // TODO
+}
+
+// modifies the input array to contain a buzzer frequency and duration (in that
+// order) for the indicated object
+void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
+  switch (_buzzerMode) {
+  case singleParam:
+    buzzerParamArray[0] = _buzzerFrequencies[object];
+    break;
+  case rangeParam:
+    buzzerParamArray[0] =
+        random(_buzzerFrequenciesMin[object], _buzzerFrequenciesMax[object]);
+    break;
+  case randomParam:
+    int arraySize = sizeof(_buzzerFrequenciesArrays[object]);
+    buzzerParamArray[0] = _buzzerFrequenciesArrays[object][rand() % arraySize];
+    break;
+  }
+  buzzerParamArray[1] =
+      _buzzerDurations[object]; // placeholder until duration code in place
+}
+
+void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
+  _outputMode = outputMIDI;
+  _midiChannel = midiChannel;
+  _midiVelocity = midiVelocity;
+
+  setupSerialMIDI();
+}
+
+void TinyTrainable::setMIDINotes(int object, int note) {
+  _midiNotes[object] = note;
+}
+
+void TinyTrainable::setupOutputSerialUSB() {
+  _outputMode = outputSerialUSB;
+
+  Serial.begin(9600);
+  while (!Serial)
+    ;
+}
+
+void TinyTrainable::setupOutputServo(int outputPin) {
+  // TODO: add comments about each line
+  // _outputMode = outputBuzzer;
+  // _outputPinServo = outputPin;
+  // pinMode(_outputPinServo, OUTPUT);
+  // _servo.attach(_outputPinServo);
+}
+
+void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
+  _servoAngleMin = angleMin;
+  _servoAngleMax = angleMax;
+}
+
+void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
+
+  // update current time
+  _servoTimeNow = millis();
+
+  // divide by 2 because servo moves twice per cycle
+  unsigned long servoPause = bpmToMs(tempo) / 2;
+
+  // if enought time has passed
+  if (_servoTimeNow - _servoTimePrevious >= servoPause) {
+
+    // update _servoTimePrevious
+    _servoTimePrevious = _servoTimeNow;
+
+    // if (random(1000)/1000.0 < servoChance) {
+    // servoPositionsIndex = (servoPositionsIndex + 1);
+    // servoPositionsIndex = servoPositionsIndex %
+    // (sizeof(servoPositions)/sizeof(servoPositions[0]));
+    // _servo.write(angle);
+    // }
+  }
+}
+
+void TinyTrainable::setServoTempo(int object, int tempo) {
+  _servoTempos[object] = tempo;
+}
+
+// helper function for transforming between
+// beats per minute to ms per beat
+int TinyTrainable::bpmToMs(int tempo) {
+  int ms = 60000 / tempo;
+  // return result
+  return ms;
+}
 
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {
@@ -199,24 +277,10 @@ void TinyTrainable::setupSerialMIDI() {
   uint32_t baudrate = 0x800000;
 
   // declare pointer to the memory address that stores the baudrate
-  uint32_t *pointerBaudrate = ( uint32_t * )0x40002524;
+  uint32_t *pointerBaudrate = (uint32_t *)0x40002524;
 
   // replace the value at the pointer with the desired baudrate
   *pointerBaudrate = baudrate;
-}
-
-void TinyTrainable::setSerialMIDIChannel(byte midiChannel) {
- _midiChannel = midiChannel;
-}
-
-void TinyTrainable::setSerialMIDIVelocity(byte midiVelocity) {
-  _midiVelocity = midiVelocity;
-}
-
-void TinyTrainable::setSerialMIDINotes(int note0, int note1, int note2) {
-  _midiNotes[0] = note0;
-  _midiNotes[1] = note1;
-  _midiNotes[2] = note2;
 }
 
 void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {

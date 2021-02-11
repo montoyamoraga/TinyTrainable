@@ -6,3 +6,5 @@
 
 # Testing
 src/src.ino
+examples/inst1_classifier/my-model.h
+examples/inst1_collecting_data/data

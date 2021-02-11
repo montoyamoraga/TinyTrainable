@@ -40,7 +40,7 @@ void loop() {
 
     // if there is acceleration data available from the sensor
     if (IMU.accelerationAvailable()) {
-      
+
       // read it and store it on variables aX, aY, aZ
       IMU.readAcceleration(aX, aY, aZ);
 
@@ -67,7 +67,7 @@ void loop() {
     // check if both new acceleration and gyroscope data is
     // available
     if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
-      
+
       // read accelation data and store in variables aX, aY, aZ
       IMU.readAcceleration(aX, aY, aZ);
 
@@ -90,7 +90,7 @@ void loop() {
       Serial.print(',');
       Serial.print(gZ, floatDecimals);
       Serial.println();
-      
+
       // check if it is the last sample
       if (samplesRead == numSamples) {
 

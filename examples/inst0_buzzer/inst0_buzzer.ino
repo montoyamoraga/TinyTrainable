@@ -50,7 +50,7 @@ void setup() {
   tiny.setBuzzerDuration(0, 300);
   tiny.setBuzzerDuration(1, 600);
   tiny.setBuzzerDuration(2, 900);
-  
+
   // train the KNN algorithm
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }

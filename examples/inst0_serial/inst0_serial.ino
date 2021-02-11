@@ -10,7 +10,7 @@ float COLOR_THRESHOLD = 0.5;
 
 void setup() {
   tiny.setupInstrument(true);
-  
+
   tiny.setupOutputSerialUSB();
 
   String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
@@ -19,6 +19,6 @@ void setup() {
 }
 
 void loop() {
-    // identify the item shown to the arduino
-    tiny.identify();
+  // identify the item shown to the arduino
+  tiny.identify();
 }

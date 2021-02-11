@@ -22,9 +22,7 @@ Inst0 tiny;
 // false: the instrument is standalone
 const bool tinyDebugging = false;
 
-void setup() {
-  tiny.setupInstrument(tinyDebugging);
-}
+void setup() { tiny.setupInstrument(tinyDebugging); }
 
 void loop() {
 

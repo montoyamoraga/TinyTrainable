@@ -36,10 +36,10 @@ tflite::MicroErrorReporter tflErrorReporter;
 // // the compiled size of the sketch.
 tflite::AllOpsResolver tflOpsResolver;
 
-const tflite::Model* tflModel = nullptr;
-tflite::MicroInterpreter* tflInterpreter = nullptr;
-TfLiteTensor* tflInputTensor = nullptr;
-TfLiteTensor* tflOutputTensor = nullptr;
+const tflite::Model *tflModel = nullptr;
+tflite::MicroInterpreter *tflInterpreter = nullptr;
+TfLiteTensor *tflInputTensor = nullptr;
+TfLiteTensor *tflOutputTensor = nullptr;
 
 // // Create a static memory buffer for TFLM, the size may need to
 // // be adjusted based on the model you are using
@@ -47,11 +47,7 @@ constexpr int tensorArenaSize = 8 * 1024;
 byte tensorArena[tensorArenaSize];
 
 // // array to map gesture index to a name
-const char* GESTURES[] = {
-  "gesture0",
-  "gesture1",
-  "gesture2"
-};
+const char *GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
 #define NUM_GESTURES (sizeof(GESTURES) / sizeof(GESTURES[0]))
 
@@ -73,19 +69,21 @@ void setup() {
   tflModel = tflite::GetModel(model);
   if (tflModel->version() != TFLITE_SCHEMA_VERSION) {
     Serial.println("Model schema mismatch!");
-    while (1);
+    while (1)
+      ;
   }
 
-// Create an interpreter to run the model
-tflInterpreter = new tflite::MicroInterpreter(tflModel, tflOpsResolver, tensorArena, tensorArenaSize, &tflErrorReporter);
+  // Create an interpreter to run the model
+  tflInterpreter =
+      new tflite::MicroInterpreter(tflModel, tflOpsResolver, tensorArena,
+                                   tensorArenaSize, &tflErrorReporter);
 
-// Allocate memory for the model's input and output tensors
-tflInterpreter->AllocateTensors();
+  // Allocate memory for the model's input and output tensors
+  tflInterpreter->AllocateTensors();
 
-// Get pointers for the model's input and output tensors
-tflInputTensor = tflInterpreter->input(0);
-tflOutputTensor = tflInterpreter->output(0);
-
+  // Get pointers for the model's input and output tensors
+  tflInputTensor = tflInterpreter->input(0);
+  tflOutputTensor = tflInterpreter->output(0);
 }
 
 void loop() {
@@ -134,7 +132,8 @@ void loop() {
         TfLiteStatus invokeStatus = tflInterpreter->Invoke();
         if (invokeStatus != kTfLiteOk) {
           Serial.println("Invoke failed!");
-          while (1);
+          while (1)
+            ;
           return;
         }
 
@@ -148,5 +147,4 @@ void loop() {
       }
     }
   }
-
 }

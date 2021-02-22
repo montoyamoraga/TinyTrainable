@@ -1,5 +1,5 @@
-/// \file hello_tiny_world.ino
-/// \brief Cycle through all the LED colors
+/// @file hello_tiny_world.ino
+/// @brief Cycle through all the LED colors
 /// this code is based on the Blink example
 /// http://www.arduino.cc/en/Tutorial/Blink
 
@@ -22,9 +22,7 @@ Inst0 tiny;
 // false: the instrument is standalone
 const bool tinyDebugging = false;
 
-void setup() {
-  tiny.setupInstrument(tinyDebugging);
-}
+void setup() { tiny.setupInstrument(tinyDebugging); }
 
 void loop() {
 

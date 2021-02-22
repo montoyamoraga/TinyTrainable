@@ -1,24 +1,22 @@
-/// \file TinyTrainable.h
-/// \brief Arduino library for Tiny Trainable Instruments
-/// \author montoyamoraga, peter-parque, maxzwang 
-/// \date November 2020
+/// @file TinyTrainable.cpp
+/// @brief Arduino library for Tiny Trainable Instruments
+/// @author montoyamoraga, peter-parque, maxzwang
+/// @date November 2020
 
 // include local library
 #include "TinyTrainable.h"
 
-/// \brief Constructor method
-/// \param [in] none
-/// \param [out] none
-TinyTrainable::TinyTrainable() {
+/// @brief Constructor method
+/// @param [in] none
+/// @param [out] none
+TinyTrainable::TinyTrainable() {}
 
-}
-
-void TinyTrainable:: setupLEDs() {
+void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);
   // initial state off is HIGH for on
   digitalWrite(LED_BUILTIN, HIGH);
-  
+
   // setting up RGB LED
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
@@ -33,8 +31,7 @@ void TinyTrainable:: setupLEDs() {
 void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
   if (turnOn) {
     digitalWrite(LED_BUILTIN, HIGH);
-  }
-  else {
+  } else {
     digitalWrite(LED_BUILTIN, LOW);
   }
 }
@@ -53,7 +50,7 @@ void TinyTrainable::blinkLEDBuiltIn(int blinks) {
 
 // function for turning on and off the RGB LED
 void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
-  
+
   // first turn off
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
@@ -62,32 +59,32 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
   // then turn on according to color
   if (turnOn) {
     switch (color) {
-      case red:
-        digitalWrite(LEDR, LOW);
-        break;
-      case green:
-        digitalWrite(LEDG, LOW);
-        break;
-      case blue:
-        digitalWrite(LEDB, LOW);
-        break;
-      case yellow:
-        digitalWrite(LEDR, LOW);
-        digitalWrite(LEDG, LOW);
-        break;
-      case magenta:
-        digitalWrite(LEDR, LOW);
-        digitalWrite(LEDB, LOW);
-        break;
-      case cyan:
-        digitalWrite(LEDG, LOW);
-        digitalWrite(LEDB, LOW);
-        break;
+    case red:
+      digitalWrite(LEDR, LOW);
+      break;
+    case green:
+      digitalWrite(LEDG, LOW);
+      break;
+    case blue:
+      digitalWrite(LEDB, LOW);
+      break;
+    case yellow:
+      digitalWrite(LEDR, LOW);
+      digitalWrite(LEDG, LOW);
+      break;
+    case magenta:
+      digitalWrite(LEDR, LOW);
+      digitalWrite(LEDB, LOW);
+      break;
+    case cyan:
+      digitalWrite(LEDG, LOW);
+      digitalWrite(LEDB, LOW);
+      break;
     }
   }
 }
 
-// traps the arduino in an infinite loop with RGB LED blinking, to signal 
+// traps the arduino in an infinite loop with RGB LED blinking, to signal
 // some setup missing. explanations in docs by instrument.
 void TinyTrainable::errorBlink(Colors color, int blinkNum) {
   while (true) {
@@ -103,10 +100,11 @@ void TinyTrainable::errorBlink(Colors color, int blinkNum) {
   }
 }
 
-// APDS9960 sensor for gestures, color, light intensity, proximity 
+// APDS9960 sensor for gestures, color, light intensity, proximity
 void TinyTrainable::setupSensorAPDS9960() {
-    if (!APDS.begin()) {
-    while (1);
+  if (!APDS.begin()) {
+    while (1)
+      ;
   }
 }
 
@@ -130,7 +128,8 @@ void TinyTrainable::setupSensorAPDS9960() {
 //  3-axis accelerometer, gyroscope, magnetometer
 void TinyTrainable::setupSensorLSM9DS1() {
   if (!IMU.begin()) {
-    while(1);
+    while (1)
+      ;
   }
 }
 
@@ -175,8 +174,8 @@ void TinyTrainable::setBuzzerDuration(int object, int* arrayDurations, int array
   _buzzerDurationsArraysSizes[object] = arrayDurationCount;
 }
 
-// modifies the input array to contain a buzzer frequency and duration (in that order) 
-// for the indicated object
+// modifies the input array to contain a buzzer frequency and duration (in that
+// order) for the indicated object
 void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
   switch (_buzzerFreqMode) {
     case singleParam:
@@ -226,7 +225,8 @@ void TinyTrainable::setupOutputSerialUSB() {
   _outputMode = outputSerialUSB;
 
   Serial.begin(9600);
-  while (!Serial);
+  while (!Serial)
+    ;
 }
 
 void TinyTrainable::setupOutputServo(int outputPin) {
@@ -257,17 +257,16 @@ void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
     _servoTimePrevious = _servoTimeNow;
 
     // if (random(1000)/1000.0 < servoChance) {
-      // servoPositionsIndex = (servoPositionsIndex + 1);
-      // servoPositionsIndex = servoPositionsIndex % (sizeof(servoPositions)/sizeof(servoPositions[0]));
+    // servoPositionsIndex = (servoPositionsIndex + 1);
+    // servoPositionsIndex = servoPositionsIndex %
+    // (sizeof(servoPositions)/sizeof(servoPositions[0]));
     // _servo.write(angle);
     // }
-
   }
-
 }
 
 void TinyTrainable::setServoTempo(int object, int tempo) {
-    _servoTempos[object] = tempo;
+  _servoTempos[object] = tempo;
 }
 
 // helper function for transforming between
@@ -288,7 +287,7 @@ void TinyTrainable::setupSerialMIDI() {
   uint32_t baudrate = 0x800000;
 
   // declare pointer to the memory address that stores the baudrate
-  uint32_t *pointerBaudrate = ( uint32_t * )0x40002524;
+  uint32_t *pointerBaudrate = (uint32_t *)0x40002524;
 
   // replace the value at the pointer with the desired baudrate
   *pointerBaudrate = baudrate;

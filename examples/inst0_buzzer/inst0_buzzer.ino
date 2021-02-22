@@ -1,3 +1,8 @@
+/// @file inst0_buzzer.ino
+/// @brief Example: Instrument0 with output buzzer
+/// @author montoyamoraga, peter-parque, maxzwang
+/// @date November 2020
+
 // include library
 #include <Inst0.h>
 
@@ -26,6 +31,7 @@ int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 int paramArrayLength = 6;
 
 // setup() runs once, at the beginning
+
 void setup() {
 
   tiny.setupInstrument(tinyDebugging);
@@ -52,14 +58,14 @@ void setup() {
   tiny.setBuzzerDuration(0, 300);
   tiny.setBuzzerDuration(1, 600);
   tiny.setBuzzerDuration(2, 900);
-  
+
   // train the KNN algorithm
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
-// loop() runs after setup(), on a loop
+/// loop() runs after setup(), on a loop
 void loop() {
 
-  // identify the input and respond
+  /// identify the input and respond
   tiny.identify();
 }

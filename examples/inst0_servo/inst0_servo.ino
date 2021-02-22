@@ -30,12 +30,12 @@ void setup() {
 
   String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   // train the KNN algorithm
-   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
 
   // identify the input and respond
-   tiny.identify();
+  tiny.identify();
 }

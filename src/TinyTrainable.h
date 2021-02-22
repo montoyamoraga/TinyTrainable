@@ -1,7 +1,8 @@
-/// \file TinyTrainable.h
-/// \brief Arduino library for Tiny Trainable Instruments
-/// \author montoyamoraga, peter-parque, maxzwang 
-/// \date November 2020
+/// @file TinyTrainable.h
+/// @page TinyTrainable.h
+/// @brief Arduino library for Tiny Trainable Instruments
+/// @author montoyamoraga, peter-parque, maxzwang
+/// @date November 2020
 
 // conditional compilation
 #ifndef TINY_TRAINABLE_H
@@ -37,17 +38,17 @@
 // #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
-enum Colors {red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5};
+enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
 
 // different instrument output modes
 // TODO - check they are the same order as .cpp file
 enum OutputMode {
-  outputBuzzer = 0, 
-  outputLCD = 1, 
-  outputLED = 2, 
-  outputMIDI = 3, 
-  outputPrinter = 4, 
-  outputSerialUSB = 5, 
+  outputBuzzer = 0,
+  outputLCD = 1,
+  outputLED = 2,
+  outputMIDI = 3,
+  outputPrinter = 4,
+  outputSerialUSB = 5,
   outputServo = 6,
   outputUndefined = 7
 };

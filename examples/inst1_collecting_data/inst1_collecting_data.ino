@@ -53,7 +53,6 @@ void loop() {
         // reset the sample read count
         samplesRead = 0;
 
-        Serial.println("aX,aY,aZ,gX,gY,gZ");
         // exit the while loop
         break;
       }

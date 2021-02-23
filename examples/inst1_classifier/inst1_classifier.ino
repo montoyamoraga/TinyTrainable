@@ -14,7 +14,7 @@
 #include <Inst1.h>
 
 // include machine learning model
-#include "model.h"
+#include "../modelInst1.h"
 
 // instance of Inst1
 Inst1 tiny;

@@ -141,62 +141,72 @@ void TinyTrainable::setupOutputBuzzer(int outputPin) {
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
-  _buzzerMode = singleParam;
+  _buzzerFreqMode = singleParam;
   _buzzerFrequencies[object] = frequency;
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
-  // _buzzerFrequencies[object] = random(freqMin, freqMax);
-  _buzzerMode = rangeParam;
+  _buzzerFreqMode = rangeParam;
   _buzzerFrequenciesMin[object] = freqMin;
   _buzzerFrequenciesMax[object] = freqMax;
 }
 
-void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies) {
-  // TODO: this is alpha version, just a test
-  // int randomIndex = sizeof(arrayFrequencies);
-  // debugPrint(randomIndex);
-  // _buzzerFrequencies[object] = arrayFrequencies[0];
-
-  // NOTE: this might not work!! pointer magic is happening to save the user
-  // array
-  _buzzerMode = randomParam;
+void TinyTrainable::setBuzzerFrequency(int object, int* arrayFrequencies, int arrayFreqCount) {
+  _buzzerFreqMode = randomParam;
   _buzzerFrequenciesArrays[object] = arrayFrequencies;
-  debugPrint("BUZZER FREQ ARRAY");
-  debugPrint(_buzzerFrequenciesArrays[0][0]);
+  _buzzerFrequenciesArraysSizes[object] = arrayFreqCount;
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int duration) {
+  _buzzerDurationMode = singleParam;
   _buzzerDurations[object] = duration;
 }
 
-void TinyTrainable::setBuzzerDuration(int object, int durationMin,
-                                      int durationMax) {
-  _buzzerDurations[object] = random(durationMin, durationMax);
+void TinyTrainable::setBuzzerDuration(int object, int durationMin, int durationMax) {
+  _buzzerDurationMode = rangeParam;
+  _buzzerDurationsMin[object] = durationMin;
+  _buzzerDurationsMax[object] = durationMax;
 }
 
-void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
-  // TODO
+void TinyTrainable::setBuzzerDuration(int object, int* arrayDurations, int arrayDurationCount) {
+  _buzzerDurationMode = randomParam;
+  _buzzerDurationsArrays[object] = arrayDurations;
+  _buzzerDurationsArraysSizes[object] = arrayDurationCount;
 }
 
 // modifies the input array to contain a buzzer frequency and duration (in that
 // order) for the indicated object
 void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
-  switch (_buzzerMode) {
-  case singleParam:
-    buzzerParamArray[0] = _buzzerFrequencies[object];
-    break;
-  case rangeParam:
-    buzzerParamArray[0] =
-        random(_buzzerFrequenciesMin[object], _buzzerFrequenciesMax[object]);
-    break;
-  case randomParam:
-    int arraySize = sizeof(_buzzerFrequenciesArrays[object]);
-    buzzerParamArray[0] = _buzzerFrequenciesArrays[object][rand() % arraySize];
-    break;
+  switch (_buzzerFreqMode) {
+    case singleParam:
+      buzzerParamArray[0] = _buzzerFrequencies[object];
+      break;
+    case rangeParam:
+      buzzerParamArray[0] = random(
+        _buzzerFrequenciesMin[object], 
+        _buzzerFrequenciesMax[object]
+      );
+      break;
+    case randomParam:
+      int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
+      buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
+      break;
   }
-  buzzerParamArray[1] =
-      _buzzerDurations[object]; // placeholder until duration code in place
+  switch (_buzzerDurationMode) {
+    case singleParam:
+      buzzerParamArray[1] = _buzzerDurations[object];
+      break;
+    case rangeParam:
+      buzzerParamArray[1] = random(
+        _buzzerDurationsMin[object],
+        _buzzerFrequenciesMax[object]
+      );
+      break;
+    case randomParam:
+      int randomDurationIndex = rand() % _buzzerDurationsArraysSizes[object];
+      buzzerParamArray[1] = *(_buzzerDurationsArrays[object] + randomDurationIndex);
+      break;
+  }
 }
 
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {

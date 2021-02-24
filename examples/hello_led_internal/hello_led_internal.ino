@@ -22,8 +22,13 @@ Inst0 tiny;
 // false: the instrument is standalone
 const bool tinyDebugging = false;
 
-void setup() { tiny.setupInstrument(tinyDebugging); }
+// setup() runs once, at the beginning
+void setup() {
+  // initialize instrument
+  tiny.setupInstrument(tinyDebugging);
+}
 
+// loop() runs in a loop, after setup()
 void loop() {
 
   // turn on and off builtin LED, it is orange

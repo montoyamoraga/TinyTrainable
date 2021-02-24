@@ -1,9 +1,15 @@
+/// @file hello_servo.ino
+/// @brief Test servo output
+
+// include all libraries
+#include <Inst0.h>
+#include <Inst1.h>
+#include <Inst2.h>
+
 void setup() {
-  // put your setup code here, to run once:
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
 }

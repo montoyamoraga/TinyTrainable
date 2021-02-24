@@ -59,133 +59,134 @@ enum OutputMode {
 class TinyTrainable {
 
   // public methods
-  public:
+public:
+  // constructor
+  TinyTrainable();
 
-    // constructor
-    TinyTrainable();
+  // template datatypes allows any datatype as an argument, like
+  // Serial.println(). it is defined here in the header file so it compiles at
+  // the beginning
+  template <typename T> void debugPrint(T message) {
+    if (_serialDebugging) {
+      Serial.println(message);
+    }
+  };
 
-    // template datatypes allows any datatype as an argument, like Serial.println().
-    // it is defined here in the header file so it compiles at the beginning
-    template <typename T> void debugPrint(T message) {
-      if (_serialDebugging) {
-        Serial.println(message);
-      }
-    };
-    
-    void setStateLEDBuiltIn(bool turnOn);
-    void blinkLEDBuiltIn(int blinks);
-    void setStateLEDRGB(bool turnOn, Colors color);
-    // TODO: maybe change name, still thinking about it
-    void errorBlink(Colors color, int blinkNum);
+  void setStateLEDBuiltIn(bool turnOn);
+  void blinkLEDBuiltIn(int blinks);
+  void setStateLEDRGB(bool turnOn, Colors color);
+  // TODO: maybe change name, still thinking about it
+  void errorBlink(Colors color, int blinkNum);
 
-    // methods for outputs
+  // methods for outputs
 
-    // methods for buzzer
-    void setupOutputBuzzer(int outputPin);
-    // for frequencies
-    void setBuzzerFrequency(int object, int frequency);
-    void setBuzzerFrequency(int object, int freqMin, int freqMax);
-    void setBuzzerFrequency(int object, int* arrayFrequencies, int arrayFreqCount);
-    // for durations
-    void setBuzzerDuration(int object, int duration);
-    void setBuzzerDuration(int object, int durationMin, int durationMax);
-    void setBuzzerDuration(int object, int* arrayDurations, int arrayDurationCount);
+  // methods for buzzer
+  void setupOutputBuzzer(int outputPin);
+  // for frequencies
+  void setBuzzerFrequency(int object, int frequency);
+  void setBuzzerFrequency(int object, int freqMin, int freqMax);
+  void setBuzzerFrequency(int object, int *arrayFrequencies,
+                          int arrayFreqCount);
+  // for durations
+  void setBuzzerDuration(int object, int duration);
+  void setBuzzerDuration(int object, int durationMin, int durationMax);
+  void setBuzzerDuration(int object, int *arrayDurations,
+                         int arrayDurationCount);
 
-    // methods for servo
-    void setupOutputServo(int outputPin);
-    // for setting minimum and maximum angles
-    void setServoAngleRange(int angleMin, int angleMax);
-    // for servo movement
-    void moveServoAngleTempo(int angle, int tempo);
-    // for servo tempo
-    void setServoTempo(int object, int tempo);
-    int bpmToMs(int tempo);
+  // methods for servo
+  void setupOutputServo(int outputPin);
+  // for setting minimum and maximum angles
+  void setServoAngleRange(int angleMin, int angleMax);
+  // for servo movement
+  void moveServoAngleTempo(int angle, int tempo);
+  // for servo tempo
+  void setServoTempo(int object, int tempo);
+  int bpmToMs(int tempo);
 
-    // TODO: methods for outputLCD
+  // TODO: methods for outputLCD
 
-    // TODO: methods for outputLED
+  // TODO: methods for outputLED
 
-    // TODO: methods for MIDI
-    void setupOutputMIDI(byte midiChannel, byte midiVelocity);
-    void setMIDINotes(int object, int note);
+  // TODO: methods for MIDI
+  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  void setMIDINotes(int object, int note);
 
-    // TODO: methods for outputPrinter
+  // TODO: methods for outputPrinter
 
-    // TODO: methods for outputSerialUSB
-    void setupOutputSerialUSB();
+  // TODO: methods for outputSerialUSB
+  void setupOutputSerialUSB();
 
-  protected:
-    void setupLEDs();
+protected:
+  void setupLEDs();
 
-    // methods for input sensors
-    // TODO: decide which sensors will be used
-    void setupSensorAPDS9960();
-    // void setupSensorHTS221();
-    // void setupSensorLPS22HB();
-    void setupSensorLSM9DS1();
+  // methods for input sensors
+  // TODO: decide which sensors will be used
+  void setupSensorAPDS9960();
+  // void setupSensorHTS221();
+  // void setupSensorLPS22HB();
+  void setupSensorLSM9DS1();
 
-    // methods for outputs
-    void setupSerialMIDI();
-    void sendSerialMIDINote(byte channel, byte note, byte velocity);
-    void getBuzzerParam(int object, int buzzerParamArray[]);
+  // methods for outputs
+  void setupSerialMIDI();
+  void sendSerialMIDINote(byte channel, byte note, byte velocity);
+  void getBuzzerParam(int object, int buzzerParamArray[]);
 
-    // variable for debugging
-    bool _serialDebugging = false;
+  // variable for debugging
+  bool _serialDebugging = false;
 
-    // variables for outputs
-    OutputMode _outputMode = outputUndefined;
-    // TODO - these variables are not exposed to the user, 
-    // peter suggests that all these pin variables be condensed to one variable
-    // that get set through different methods
-    // i rather not for now, so that the instrument can have different outputs at the same time
-    int _outputPinBuzzer = -1;
-    int _outputPinLCD = -1;
-    int _outputPinLED = -1;
-    int _outputPinMIDI = -1;
-    // TODO: for printer we need several variables
-    int _outputPinPrinter = -1;  
-    int _outputPinServo = -1;
+  // variables for outputs
+  OutputMode _outputMode = outputUndefined;
+  // TODO - these variables are not exposed to the user,
+  // peter suggests that all these pin variables be condensed to one variable
+  // that get set through different methods
+  // i rather not for now, so that the instrument can have different outputs at
+  // the same time
+  int _outputPinBuzzer = -1;
+  int _outputPinLCD = -1;
+  int _outputPinLED = -1;
+  int _outputPinMIDI = -1;
+  // TODO: for printer we need several variables
+  int _outputPinPrinter = -1;
+  int _outputPinServo = -1;
 
-    // TODO: methods and variables for outputBuzzer
-    enum BuzzerMode {singleParam, rangeParam, randomParam, undefParam};
-    BuzzerMode _buzzerFreqMode = undefParam;
-    BuzzerMode _buzzerDurationMode = undefParam;
-    int _buzzerParams[2];  // to hold the freq and duration each loop
-    // for singleParam
-    int _buzzerFrequencies[3];
-    int _buzzerDurations[3];
-    // for rangeParam 
-    int _buzzerFrequenciesMin[3];
-    int _buzzerFrequenciesMax[3];
-    int _buzzerDurationsMin[3];
-    int _buzzerDurationsMax[3];
-    // for randomParam
-    int *_buzzerFrequenciesArrays[3];
-    int _buzzerFrequenciesArraysSizes[3];
-    int *_buzzerDurationsArrays[3];
-    int _buzzerDurationsArraysSizes[3];
+  // TODO: methods and variables for outputBuzzer
+  enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
+  BuzzerMode _buzzerFreqMode = undefParam;
+  BuzzerMode _buzzerDurationMode = undefParam;
+  int _buzzerParams[2]; // to hold the freq and duration each loop
+  // for singleParam
+  int _buzzerFrequencies[3];
+  int _buzzerDurations[3];
+  // for rangeParam
+  int _buzzerFrequenciesMin[3];
+  int _buzzerFrequenciesMax[3];
+  int _buzzerDurationsMin[3];
+  int _buzzerDurationsMax[3];
+  // for randomParam
+  int *_buzzerFrequenciesArrays[3];
+  int _buzzerFrequenciesArraysSizes[3];
+  int *_buzzerDurationsArrays[3];
+  int _buzzerDurationsArraysSizes[3];
 
-    
+  // TODO: variables for outputMIDI
+  int _midiNotes[3];
+  byte _midiChannel = 16;
+  byte _midiVelocity = 0;
 
-    // TODO: variables for outputMIDI
-    int _midiNotes[3];
-    byte _midiChannel = 16;
-    byte _midiVelocity = 0;
+  // TODO: variables for outputServo
+  // Servo _servo;
+  int _servoAngleCurrent = 0;
+  int _servoAngleMin = 0;
+  int _servoAngleMax = 180;
+  int _servoTempos[3];
+  float _servoChances[3];
+  unsigned long _servoTimePrevious = 0;
+  unsigned long _servoTimeNow = 0;
 
-    // TODO: variables for outputServo
-    // Servo _servo;
-    int _servoAngleCurrent = 0;
-    int _servoAngleMin = 0;
-    int _servoAngleMax = 180;
-    int _servoTempos[3];
-    float _servoChances[3];
-    unsigned long _servoTimePrevious = 0;
-    unsigned long _servoTimeNow = 0;
-
-    // TODO: variables for outputLCD
-    // TODO: variables for outputLED
-    // TODO: variables for outputPrinter
-    // TODO: variables for outputSerialUSB
+  // TODO: variables for outputLCD
+  // TODO: variables for outputLED
+  // TODO: variables for outputPrinter
+  // TODO: variables for outputSerialUSB
 };
 
 // conditional compilation

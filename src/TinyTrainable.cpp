@@ -133,6 +133,11 @@ void TinyTrainable::setupSensorLSM9DS1() {
   }
 }
 
+// TODO
+void TinyTrainable::helloOutputs(OutputMode outputToTest) {
+  // TODO
+}
+
 // TODO: add comments
 void TinyTrainable::setupOutputBuzzer(int outputPin) {
   _outputMode = outputBuzzer;

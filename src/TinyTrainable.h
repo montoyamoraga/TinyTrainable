@@ -79,6 +79,7 @@ class TinyTrainable {
     void errorBlink(Colors color, int blinkNum);
 
     // methods for outputs
+    void helloOutputs(OutputMode outputToTest);
 
     // methods for buzzer
     void setupOutputBuzzer(int outputPin);

@@ -31,7 +31,6 @@ int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 int paramArrayLength = 6;
 
 // setup() runs once, at the beginning
-
 void setup() {
 
   tiny.setupInstrument(tinyDebugging);

@@ -151,7 +151,8 @@ void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
   _buzzerFrequenciesMax[object] = freqMax;
 }
 
-void TinyTrainable::setBuzzerFrequency(int object, int* arrayFrequencies, int arrayFreqCount) {
+void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies,
+                                       int arrayFreqCount) {
   _buzzerFreqMode = randomParam;
   _buzzerFrequenciesArrays[object] = arrayFrequencies;
   _buzzerFrequenciesArraysSizes[object] = arrayFreqCount;
@@ -162,13 +163,15 @@ void TinyTrainable::setBuzzerDuration(int object, int duration) {
   _buzzerDurations[object] = duration;
 }
 
-void TinyTrainable::setBuzzerDuration(int object, int durationMin, int durationMax) {
+void TinyTrainable::setBuzzerDuration(int object, int durationMin,
+                                      int durationMax) {
   _buzzerDurationMode = rangeParam;
   _buzzerDurationsMin[object] = durationMin;
   _buzzerDurationsMax[object] = durationMax;
 }
 
-void TinyTrainable::setBuzzerDuration(int object, int* arrayDurations, int arrayDurationCount) {
+void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
+                                      int arrayDurationCount) {
   _buzzerDurationMode = randomParam;
   _buzzerDurationsArrays[object] = arrayDurations;
   _buzzerDurationsArraysSizes[object] = arrayDurationCount;
@@ -178,34 +181,31 @@ void TinyTrainable::setBuzzerDuration(int object, int* arrayDurations, int array
 // order) for the indicated object
 void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
   switch (_buzzerFreqMode) {
-    case singleParam:
-      buzzerParamArray[0] = _buzzerFrequencies[object];
-      break;
-    case rangeParam:
-      buzzerParamArray[0] = random(
-        _buzzerFrequenciesMin[object], 
-        _buzzerFrequenciesMax[object]
-      );
-      break;
-    case randomParam:
-      int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
-      buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
-      break;
+  case singleParam:
+    buzzerParamArray[0] = _buzzerFrequencies[object];
+    break;
+  case rangeParam:
+    buzzerParamArray[0] =
+        random(_buzzerFrequenciesMin[object], _buzzerFrequenciesMax[object]);
+    break;
+  case randomParam:
+    int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
+    buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
+    break;
   }
   switch (_buzzerDurationMode) {
-    case singleParam:
-      buzzerParamArray[1] = _buzzerDurations[object];
-      break;
-    case rangeParam:
-      buzzerParamArray[1] = random(
-        _buzzerDurationsMin[object],
-        _buzzerFrequenciesMax[object]
-      );
-      break;
-    case randomParam:
-      int randomDurationIndex = rand() % _buzzerDurationsArraysSizes[object];
-      buzzerParamArray[1] = *(_buzzerDurationsArrays[object] + randomDurationIndex);
-      break;
+  case singleParam:
+    buzzerParamArray[1] = _buzzerDurations[object];
+    break;
+  case rangeParam:
+    buzzerParamArray[1] =
+        random(_buzzerDurationsMin[object], _buzzerFrequenciesMax[object]);
+    break;
+  case randomParam:
+    int randomDurationIndex = rand() % _buzzerDurationsArraysSizes[object];
+    buzzerParamArray[1] =
+        *(_buzzerDurationsArrays[object] + randomDurationIndex);
+    break;
   }
 }
 

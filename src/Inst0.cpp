@@ -130,31 +130,31 @@ void Inst0::identify() {
 
   // TODO: add the corresponding calls to functions
   switch (_outputMode) {
-    case outputBuzzer:
-      getBuzzerParam(classification, _buzzerParams);
-      tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
-      break;
-    case outputLCD:
-      Serial.println("TODO");
-      break;
-    case outputLED:
-      Serial.println("TODO");
-      break;
-    case outputMIDI:
-      sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
-      break;
-    case outputPrinter:
-      Serial.println("TODO");
-      break;
-    case outputSerialUSB:
-      Serial.println("TODO");
-      break;
-    case outputServo:
-      Serial.println("TODO");
-      break;
-    case outputUndefined:
-      Serial.println("TODO");
-      break;
+  case outputBuzzer:
+    getBuzzerParam(classification, _buzzerParams);
+    tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
+    break;
+  case outputLCD:
+    Serial.println("TODO");
+    break;
+  case outputLED:
+    Serial.println("TODO");
+    break;
+  case outputMIDI:
+    sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
+    break;
+  case outputPrinter:
+    Serial.println("TODO");
+    break;
+  case outputSerialUSB:
+    Serial.println("TODO");
+    break;
+  case outputServo:
+    Serial.println("TODO");
+    break;
+  case outputUndefined:
+    Serial.println("TODO");
+    break;
   }
 
   // update previous classification

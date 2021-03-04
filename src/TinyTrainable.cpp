@@ -148,7 +148,8 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
     setupOutputMIDI(10, 127);
     break;
   case outputSerialUSB:
-    /* code */
+    Serial.begin(9600);
+    while (!Serial);
     break;
   }
 }
@@ -199,7 +200,7 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     delay(timeDelay);
     break;
   case outputSerialUSB:
-    /* code */
+    Serial.println("hello world!");
     break;
   }
 }

@@ -141,8 +141,8 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
     _outputPinTest = outputPin;
     pinMode(_outputPinTest, OUTPUT);
     break;
-  case outputLCD:
-    /* code */
+  case outputLED:
+    setupLEDs();
     break;
   case outputMIDI:
     /* code */
@@ -155,17 +155,40 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
 
 // TODO
 void TinyTrainable::helloOutputs(OutputMode outputToTest) {
+  int timeInterval = 1000;
   switch (outputToTest)
   {
   case outputBuzzer:
-    tone(_outputPinTest, 260, 1000);
-    tone(_outputPinTest, 330, 1000);
-    tone(_outputPinTest, 392, 1000);
-    tone(_outputPinTest, 523, 1000);
-    delay(1000);
+    tone(_outputPinTest, 260, timeInterval);
+    tone(_outputPinTest, 330, timeInterval);
+    tone(_outputPinTest, 392, timeInterval);
+    tone(_outputPinTest, 523, timeInterval);
+    delay(timeInterval);
     break;
-  case outputLCD:
-    /* code */
+  case outputLED:
+    // turn on and off builtin LED, it is orange
+    setStateLEDBuiltIn(true);
+    delay(timeInterval);
+    setStateLEDBuiltIn(false);
+    delay(timeInterval);
+
+    // turn on the RGB LED in all 6 available colors
+    setStateLEDRGB(true, red);
+    delay(timeInterval);
+    setStateLEDRGB(true, green);
+    delay(timeInterval);
+    setStateLEDRGB(true, blue);
+    delay(timeInterval);
+    setStateLEDRGB(true, yellow);
+    delay(timeInterval);
+    setStateLEDRGB(true, magenta);
+    delay(timeInterval);
+    setStateLEDRGB(true, cyan);
+    delay(timeInterval);
+
+    // turn off the RGB LED, color is irrelevant
+    setStateLEDRGB(false, red);
+    delay(timeInterval);
     break;
   case outputMIDI:
     /* code */

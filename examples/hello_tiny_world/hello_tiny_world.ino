@@ -9,7 +9,7 @@ TinyTrainable tiny;
 
 // output mode to test!
 OutputMode outputToTest = outputBuzzer;
-// OutputMode outputToTest = outputLCD;
+// OutputMode outputToTest = outputLED;
 // OutputMode outputToTest = outputMIDI;
 // OutputMode outputToTest = outputSerialUSB;
 

@@ -134,8 +134,46 @@ void TinyTrainable::setupSensorLSM9DS1() {
 }
 
 // TODO
+void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
+  switch (outputToTest)
+  {
+  case outputBuzzer:
+    _outputPinTest = outputPin;
+    pinMode(_outputPinTest, OUTPUT);
+    break;
+  case outputLCD:
+    /* code */
+    break;
+  case outputMIDI:
+    /* code */
+    break;
+  case outputSerialUSB:
+    /* code */
+    break;
+  }
+}
+
+// TODO
 void TinyTrainable::helloOutputs(OutputMode outputToTest) {
-  // TODO
+  switch (outputToTest)
+  {
+  case outputBuzzer:
+    tone(_outputPinTest, 260, 1000);
+    tone(_outputPinTest, 330, 1000);
+    tone(_outputPinTest, 392, 1000);
+    tone(_outputPinTest, 523, 1000);
+    delay(1000);
+    break;
+  case outputLCD:
+    /* code */
+    break;
+  case outputMIDI:
+    /* code */
+    break;
+  case outputSerialUSB:
+    /* code */
+    break;
+  }
 }
 
 // TODO: add comments

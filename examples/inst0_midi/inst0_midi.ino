@@ -17,4 +17,7 @@ void setup() {
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
-void loop() { tiny.identify(); }
+void loop() {
+  // perform classification
+  tiny.identify();
+}

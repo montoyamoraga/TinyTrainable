@@ -133,6 +133,78 @@ void TinyTrainable::setupSensorLSM9DS1() {
   }
 }
 
+// TODO
+void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
+  switch (outputToTest)
+  {
+  case outputBuzzer:
+    _outputPinTest = outputPin;
+    pinMode(_outputPinTest, OUTPUT);
+    break;
+  case outputLED:
+    setupLEDs();
+    break;
+  case outputMIDI:
+    setupOutputMIDI(10, 127);
+    break;
+  case outputSerialUSB:
+    Serial.begin(9600);
+    while (!Serial);
+    break;
+  }
+}
+
+// TODO
+void TinyTrainable::helloOutputs(OutputMode outputToTest) {
+  int timeDelay = 1000;
+  switch (outputToTest)
+  {
+  case outputBuzzer:
+    tone(_outputPinTest, 260, timeDelay);
+    tone(_outputPinTest, 330, timeDelay);
+    tone(_outputPinTest, 392, timeDelay);
+    tone(_outputPinTest, 523, timeDelay);
+    delay(timeDelay);
+    break;
+  case outputLED:
+    // turn on and off builtin LED, it is orange
+    setStateLEDBuiltIn(true);
+    delay(timeDelay);
+    setStateLEDBuiltIn(false);
+    delay(timeDelay);
+
+    // turn on the RGB LED in all 6 available colors
+    setStateLEDRGB(true, red);
+    delay(timeDelay);
+    setStateLEDRGB(true, green);
+    delay(timeDelay);
+    setStateLEDRGB(true, blue);
+    delay(timeDelay);
+    setStateLEDRGB(true, yellow);
+    delay(timeDelay);
+    setStateLEDRGB(true, magenta);
+    delay(timeDelay);
+    setStateLEDRGB(true, cyan);
+    delay(timeDelay);
+
+    // turn off the RGB LED, color is irrelevant
+    setStateLEDRGB(false, red);
+    delay(timeDelay);
+    break;
+  case outputMIDI:
+    sendSerialMIDINote(_midiChannel, 37, _midiVelocity);
+    delay(timeDelay);
+    sendSerialMIDINote(_midiChannel, 38, _midiVelocity);
+    delay(timeDelay);
+    sendSerialMIDINote(_midiChannel, 39, _midiVelocity);
+    delay(timeDelay);
+    break;
+  case outputSerialUSB:
+    Serial.println("hello world!");
+    break;
+  }
+}
+
 // TODO: add comments
 void TinyTrainable::setupOutputBuzzer(int outputPin) {
   _outputMode = outputBuzzer;

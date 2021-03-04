@@ -79,6 +79,8 @@ public:
   void errorBlink(Colors color, int blinkNum);
 
   // methods for outputs
+  void helloOutputsSetup(OutputMode outputToTest, int outputPin);
+  void helloOutputs(OutputMode outputToTest);
 
   // methods for buzzer
   void setupOutputBuzzer(int outputPin);
@@ -141,6 +143,7 @@ protected:
   // that get set through different methods
   // i rather not for now, so that the instrument can have different outputs at
   // the same time
+  int _outputPinTest = -1;
   int _outputPinBuzzer = -1;
   int _outputPinLCD = -1;
   int _outputPinLED = -1;

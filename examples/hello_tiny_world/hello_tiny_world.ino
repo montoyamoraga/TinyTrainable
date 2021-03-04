@@ -17,11 +17,7 @@ OutputMode outputToTest = outputBuzzer;
 const int outputPin = 8;
 
 // setup() runs once, at the beginning
-void setup() {
-    tiny.helloOutputsSetup(outputToTest, outputPin);
-}
+void setup() { tiny.helloOutputsSetup(outputToTest, outputPin); }
 
 // loop() runs in a loop, after setup()
-void loop() {
-    tiny.helloOutputs(outputToTest);
-}
+void loop() { tiny.helloOutputs(outputToTest); }

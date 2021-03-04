@@ -145,7 +145,7 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
     setupLEDs();
     break;
   case outputMIDI:
-    /* code */
+    setupOutputMIDI(10, 127);
     break;
   case outputSerialUSB:
     /* code */

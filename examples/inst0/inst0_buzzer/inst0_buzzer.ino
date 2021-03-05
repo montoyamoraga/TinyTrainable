@@ -26,8 +26,10 @@ String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
 int freqArray1[] = {2100, 2200, 2300, 2400, 2500, 2600};
 int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
+
 // the following looks funny since sizeof returns byte size
 // int freqArrayLength = sizeof(freqArray0)/sizeof(*freqArray0);
+
 int paramArrayLength = 6;
 
 // setup() runs once, at the beginning

@@ -68,7 +68,8 @@ public:
   // the beginning
   template <typename T> void debugPrint(T message) {
     if (_serialDebugging) {
-      Serial.println("debug - :" + message);
+      Serial.print("debug- ");
+      Serial.println(message);
     }
   };
 

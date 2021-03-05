@@ -148,7 +148,8 @@ void Inst0::identify() {
     Serial.println("TODO");
     break;
   case outputSerialUSB:
-    Serial.println("TODO");
+    // print classification
+    Serial.println(classification);
     break;
   case outputServo:
     Serial.println("TODO");

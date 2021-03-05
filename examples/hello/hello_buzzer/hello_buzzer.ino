@@ -1,5 +1,7 @@
 /// @file hello_buzzer.ino
-/// @brief Test buzzer output
+/// @brief Example: Test output with buzzer
+/// @author montoyamoraga, peter-parque, maxzwang
+/// @date March 2021
 
 // include all libraries
 #include <Inst0.h>

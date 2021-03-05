@@ -6,10 +6,6 @@
 #include <Inst1.h>
 #include <Inst2.h>
 
-void setup() {
+void setup() {}
 
-}
-
-void loop() {
-
-}
+void loop() {}

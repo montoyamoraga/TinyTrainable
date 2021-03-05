@@ -135,8 +135,7 @@ void TinyTrainable::setupSensorLSM9DS1() {
 
 // TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
-  switch (outputToTest)
-  {
+  switch (outputToTest) {
   case outputBuzzer:
     _outputPinTest = outputPin;
     pinMode(_outputPinTest, OUTPUT);
@@ -149,7 +148,8 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
     break;
   case outputSerialUSB:
     Serial.begin(9600);
-    while (!Serial);
+    while (!Serial)
+      ;
     break;
   }
 }
@@ -157,8 +157,7 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
 // TODO
 void TinyTrainable::helloOutputs(OutputMode outputToTest) {
   int timeDelay = 1000;
-  switch (outputToTest)
-  {
+  switch (outputToTest) {
   case outputBuzzer:
     tone(_outputPinTest, 260, timeDelay);
     tone(_outputPinTest, 330, timeDelay);

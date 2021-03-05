@@ -25,7 +25,8 @@ void setup() {
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
+/// loop() runs after setup(), on a loop
 void loop() {
-  // identify the item shown to the arduino
+  // identify the item and respond
   tiny.identify();
 }

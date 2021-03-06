@@ -204,6 +204,38 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
   }
 }
 
+// TODO
+void TinyTrainable::playOutput(OutputMode outputMode, int classification) {
+  // TODO: add the corresponding calls to functions
+  switch (outputMode) {
+  case outputBuzzer:
+    getBuzzerParam(classification, _buzzerParams);
+    tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
+    break;
+  case outputLCD:
+    Serial.println("TODO");
+    break;
+  case outputLED:
+    Serial.println("TODO");
+    break;
+  case outputMIDI:
+    sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
+    break;
+  case outputPrinter:
+    Serial.println("TODO");
+    break;
+  case outputSerialUSB:
+    Serial.println("TODO");
+    break;
+  case outputServo:
+    Serial.println("TODO");
+    break;
+  case outputUndefined:
+    Serial.println("TODO");
+    break;
+  }
+}
+
 // TODO: add comments
 void TinyTrainable::setupOutputBuzzer(int outputPin) {
   _outputMode = outputBuzzer;

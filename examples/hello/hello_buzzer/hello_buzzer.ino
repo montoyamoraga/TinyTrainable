@@ -25,11 +25,16 @@ int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
 int freqArray1[] = {2100, 2200, 2300, 2400, 2500, 2600};
 int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 
+// length of above array
+int paramArrayLength = 6;
+
 // setup() runs once, at the beginning
 void setup() {
   // initialize instrument
   tiny.setupInstrument(tinyDebugging);
+  tiny.setupOutputBuzzer(outputPin);
 
+  // set frequencies, in hz
   tiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
   tiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
   tiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);

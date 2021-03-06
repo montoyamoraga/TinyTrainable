@@ -81,6 +81,7 @@ public:
   // methods for outputs
   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
   void helloOutputs(OutputMode outputToTest);
+  void playOutput(OutputMode outputMode, int classification);
 
   // methods for buzzer
   void setupOutputBuzzer(int outputPin);

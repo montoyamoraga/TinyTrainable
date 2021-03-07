@@ -32,7 +32,7 @@
 
 // include library for servo motors
 // TODO: keeps giving me compilation errors
-// #include <Servo.h>  
+// #include <Servo.h>
 
 // include library for Adafruit thermal printer
 // TODO: uncomment later when this is being tested

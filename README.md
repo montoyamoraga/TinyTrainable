@@ -11,7 +11,6 @@ This library is being written between December 2020 and August 2021, with help f
 The dependencies of this library are specified on the [library.properties](library.properties) file and included as Git submodules on the libraries/ folder, when possible.
 
 * [Arduino_APDS9960](https://github.com/arduino-libraries/Arduino_APDS9960): for the APDS9960 sensor, to read gestures, color, and proximity.
-* [Arduino_LPS22HB]()
 * [Arduino_LSM9DS1]()
 * [Servo]()
 * [Arduino_KNN]()

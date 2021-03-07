@@ -1,3 +1,6 @@
 [submodule "libraries/Arduino_KNN"]
 	path = libraries/Arduino_KNN
 	url = https://github.com/arduino-libraries/Arduino_KNN.git
+[submodule "libraries/Servo"]
+	path = libraries/Servo
+	url = https://github.com/arduino-libraries/Servo

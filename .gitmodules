@@ -4,3 +4,6 @@
 [submodule "libraries/Servo"]
 	path = libraries/Servo
 	url = https://github.com/arduino-libraries/Servo
+[submodule "Arduino_APDS9960"]
+	path = Arduino_APDS9960
+	url = https://github.com/arduino-libraries/Arduino_APDS9960.git

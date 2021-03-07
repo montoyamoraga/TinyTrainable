@@ -160,8 +160,11 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
   switch (outputToTest) {
   case outputBuzzer:
     tone(_outputPinTest, 260, timeDelay);
+    delay(timeDelay);
     tone(_outputPinTest, 330, timeDelay);
+    delay(timeDelay);
     tone(_outputPinTest, 392, timeDelay);
+    delay(timeDelay);
     tone(_outputPinTest, 523, timeDelay);
     delay(timeDelay);
     break;

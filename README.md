@@ -20,7 +20,7 @@ The dependencies of this library are specified on the [library.properties](libra
 
 ## Documentation
 
-The documentation can be accesed on the website [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable)
+The documentation is available on the website [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
 
 ## License
 

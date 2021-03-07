@@ -6,6 +6,21 @@ TinyTrainable is an Arduino library, part of the project Tiny Trainable Instrume
 
 This library is being written between December 2020 and August 2021, with help from undergrad researcher Peter Tone and Maxwell Wang.
 
+## Dependencies
+
+The dependencies of this library are specified on the [library.properties](library.properties) file and included as Git submodules on the libraries/ folder, when possible.
+
+* [Arduino_APDS9960]()
+* [Arduino_HTS221]()
+* [Arduino_HTS221]()
+* [Arduino_LPS22HB]()
+* [Arduino_LSM9DS1]()
+* [Servo]()
+* [Arduino_KNN]()
+* [Arduino_TensorFlowLite]()
+* [Adafruit_Thermal]()
+
+
 ## Documentation
 
 The documentation can be accesed on the website [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable)

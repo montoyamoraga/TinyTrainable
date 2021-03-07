@@ -7,3 +7,6 @@
 [submodule "Arduino_APDS9960"]
 	path = Arduino_APDS9960
 	url = https://github.com/arduino-libraries/Arduino_APDS9960.git
+[submodule "libraries/Arduino_APDS9960"]
+	path = libraries/Arduino_APDS9960
+	url = https://github.com/arduino-libraries/Arduino_APDS9960.git

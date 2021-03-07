@@ -10,10 +10,10 @@ This library is being written between December 2020 and August 2021, with help f
 
 The dependencies of this library are specified on the [library.properties](library.properties) file and included as Git submodules on the libraries/ folder, when possible.
 
-* [Arduino_APDS9960](https://github.com/arduino-libraries/Arduino_APDS9960): for the APDS9960 sensor, to read gestures, color, proximity.
-* [Arduino_LSM9DS1](https://github.com/arduino-libraries/Arduino_LSM9DS1): for the LSM9DS1 IMU, to read accelerometer, magnetometer, gyroscope.
-* [Servo]()
-* [Arduino_KNN]()
+* [Arduino_APDS9960](https://github.com/arduino-libraries/Arduino_APDS9960): APDS9960 sensor, to read gestures, color, proximity.
+* [Arduino_KNN](https://github.com/arduino-libraries/Arduino_KNN): K-Nearest Neighbors algorithm.
+* [Arduino_LSM9DS1](https://github.com/arduino-libraries/Arduino_LSM9DS1): LSM9DS1 IMU sensor, to read accelerometer, magnetometer, gyroscope.
+* [Servo](https://github.com/arduino-libraries/Servo): to control RC (hobby) servo motors.
 * [Arduino_TensorFlowLite]()
 * [Adafruit_Thermal]()
 

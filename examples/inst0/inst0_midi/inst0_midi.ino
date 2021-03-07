@@ -1,7 +1,5 @@
 /// @file inst0_midi.ino
-/// @brief Example: Instrument0 with output LED
-/// @author montoyamoraga, peter-parque, maxzwang
-/// @date March 2021
+/// @brief Example: Instrument0 with output MIDI
 
 // include library
 #include <Inst0.h>

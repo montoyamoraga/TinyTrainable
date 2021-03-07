@@ -1,3 +1,6 @@
+/// @file inst0_serial.ino
+/// @brief Example: Instrument0 with output serial
+
 // include library
 #include <Inst0.h>
 

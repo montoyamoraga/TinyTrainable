@@ -1,3 +1,6 @@
+/// @file inst1_classifier.ino
+/// @brief Example: Instrument1 classifier
+
 // this sketch is adapted from the GestureToEmoji example
 // from the repository ArduinoTensorFlowLiteTutorials by Arduino
 // https://github.com/arduino/ArduinoTensorFlowLiteTutorials

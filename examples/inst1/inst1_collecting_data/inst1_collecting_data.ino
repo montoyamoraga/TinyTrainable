@@ -1,3 +1,6 @@
+/// @file inst1_collecting_data.ino
+/// @brief Example: Instrument1 sketch for collecting data
+
 // this sketch is adapted from the GestureToEmoji example
 // from the repository ArduinoTensorFlowLiteTutorials by Arduino
 // https://github.com/arduino/ArduinoTensorFlowLiteTutorials

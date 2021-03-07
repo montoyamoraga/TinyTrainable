@@ -8,7 +8,7 @@ This library is being written between December 2020 and August 2021, with help f
 
 ## Documentation
 
-The documentation can be accesed on the website https://montoyamoraga.github.io/TinyTrainable
+The documentation can be accesed on the website [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable)
 
 ## License
 

@@ -14,7 +14,7 @@
 #include <Inst1.h>
 
 // include machine learning model
-#include "model.h"
+#include "../modelInst1.h"
 
 // instance of Inst1
 Inst1 tiny;
@@ -22,18 +22,18 @@ Inst1 tiny;
 // threshold of significant in G's
 const float accelerationThreshold = 2.5;
 
-// number of samples
+// number of samples per gesture
 const int numSamples = 119;
 
 // initialize as if sampling has already been done
 int samplesRead = numSamples;
 
-// // global variables used for TensorFlow Lite (Micro)
+// global variables used for TensorFlow Lite Micro
 tflite::MicroErrorReporter tflErrorReporter;
 
-// // pull in all the TFLM ops, you can remove this line and
-// // only pull in the TFLM ops you need, if would like to reduce
-// // the compiled size of the sketch.
+// pull in all the TFLM ops, you can remove this line and
+// only pull in the TFLM ops you need, if would like to reduce
+// the compiled size of the sketch.
 tflite::AllOpsResolver tflOpsResolver;
 
 const tflite::Model *tflModel = nullptr;
@@ -41,29 +41,23 @@ tflite::MicroInterpreter *tflInterpreter = nullptr;
 TfLiteTensor *tflInputTensor = nullptr;
 TfLiteTensor *tflOutputTensor = nullptr;
 
-// // Create a static memory buffer for TFLM, the size may need to
-// // be adjusted based on the model you are using
+// Create a static memory buffer for TFLM, the size may need to
+// be adjusted based on the model you are using
 constexpr int tensorArenaSize = 8 * 1024;
 byte tensorArena[tensorArenaSize];
 
-// // array to map gesture index to a name
+// array to map gesture index to a name
 const char *GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
+// define constant for number of gestures
 #define NUM_GESTURES (sizeof(GESTURES) / sizeof(GESTURES[0]))
 
 void setup() {
 
+  // setup instrument
   tiny.setupInstrument();
-  tiny.setupOutputSerialUSB();
 
-  // print out the samples rates of the IMUs
-  // Serial.print("Accelerometer sample rate = ");
-  // Serial.print(IMU.accelerationSampleRate());
-  // Serial.println(" Hz");
-  // Serial.print("Gyroscope sample rate = ");
-  // Serial.print(IMU.gyroscopeSampleRate());
-  // Serial.println(" Hz");
-  // Serial.println();
+  tiny.setupOutputSerialUSB();
 
   // get the TFL representation of the model byte array
   tflModel = tflite::GetModel(model);
@@ -73,25 +67,29 @@ void setup() {
       ;
   }
 
-  // Create an interpreter to run the model
+  // create an interpreter to run the model
   tflInterpreter =
       new tflite::MicroInterpreter(tflModel, tflOpsResolver, tensorArena,
                                    tensorArenaSize, &tflErrorReporter);
 
-  // Allocate memory for the model's input and output tensors
+  // allocate memory for the model's input and output tensors
   tflInterpreter->AllocateTensors();
 
-  // Get pointers for the model's input and output tensors
+  // get pointers for the model's input and output tensors
   tflInputTensor = tflInterpreter->input(0);
   tflOutputTensor = tflInterpreter->output(0);
 }
 
 void loop() {
+
+  // declare six variables
+  // acceleration and gravity in x, y, z
   float aX, aY, aZ, gX, gY, gZ;
 
-  // wait for significant motion
   while (samplesRead == numSamples) {
+    // wait for significant motion
     if (IMU.accelerationAvailable()) {
+
       // read the acceleration data
       IMU.readAcceleration(aX, aY, aZ);
 
@@ -110,8 +108,10 @@ void loop() {
   // check if the all the required samples have been read since
   // the last time the significant motion was detected
   while (samplesRead < numSamples) {
+
     // check if new acceleration AND gyroscope data is available
     if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
+
       // read the acceleration and gyroscope data
       IMU.readAcceleration(aX, aY, aZ);
       IMU.readGyroscope(gX, gY, gZ);
@@ -137,7 +137,7 @@ void loop() {
           return;
         }
 
-        // Loop through the output tensor values from the model
+        // loop through the output tensor values from the model
         for (int i = 0; i < NUM_GESTURES; i++) {
           Serial.print(GESTURES[i]);
           Serial.print(": ");

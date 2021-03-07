@@ -31,7 +31,8 @@
 #include <Arduino_LSM9DS1.h>
 
 // include library for servo motors
-// #include <Servo.h>  // keeps giving me compilation errors
+// TODO: keeps giving me compilation errors
+// #include <Servo.h>  
 
 // include library for Adafruit thermal printer
 // TODO: uncomment later when this is being tested
@@ -68,6 +69,7 @@ public:
   // the beginning
   template <typename T> void debugPrint(T message) {
     if (_serialDebugging) {
+      Serial.print("debug- ");
       Serial.println(message);
     }
   };
@@ -79,17 +81,21 @@ public:
   void errorBlink(Colors color, int blinkNum);
 
   // methods for outputs
+  void helloOutputsSetup(OutputMode outputToTest, int outputPin);
+  void helloOutputs(OutputMode outputToTest);
 
   // methods for buzzer
   void setupOutputBuzzer(int outputPin);
   // for frequencies
   void setBuzzerFrequency(int object, int frequency);
   void setBuzzerFrequency(int object, int freqMin, int freqMax);
-  void setBuzzerFrequency(int object, int *arrayFrequencies);
+  void setBuzzerFrequency(int object, int *arrayFrequencies,
+                          int arrayFreqCount);
   // for durations
   void setBuzzerDuration(int object, int duration);
   void setBuzzerDuration(int object, int durationMin, int durationMax);
-  void setBuzzerDuration(int object, int arrayDurations[]);
+  void setBuzzerDuration(int object, int *arrayDurations,
+                         int arrayDurationCount);
 
   // methods for servo
   void setupOutputServo(int outputPin);
@@ -139,6 +145,7 @@ protected:
   // that get set through different methods
   // i rather not for now, so that the instrument can have different outputs at
   // the same time
+  int _outputPinTest = -1;
   int _outputPinBuzzer = -1;
   int _outputPinLCD = -1;
   int _outputPinLED = -1;
@@ -149,17 +156,22 @@ protected:
 
   // TODO: methods and variables for outputBuzzer
   enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
-  BuzzerMode _buzzerMode = undefParam;
+  BuzzerMode _buzzerFreqMode = undefParam;
+  BuzzerMode _buzzerDurationMode = undefParam;
   int _buzzerParams[2]; // to hold the freq and duration each loop
   // for singleParam
   int _buzzerFrequencies[3];
+  int _buzzerDurations[3];
   // for rangeParam
   int _buzzerFrequenciesMin[3];
   int _buzzerFrequenciesMax[3];
+  int _buzzerDurationsMin[3];
+  int _buzzerDurationsMax[3];
   // for randomParam
   int *_buzzerFrequenciesArrays[3];
-
-  int _buzzerDurations[3];
+  int _buzzerFrequenciesArraysSizes[3];
+  int *_buzzerDurationsArrays[3];
+  int _buzzerDurationsArraysSizes[3];
 
   // TODO: variables for outputMIDI
   int _midiNotes[3];

@@ -133,6 +133,77 @@ void TinyTrainable::setupSensorLSM9DS1() {
   }
 }
 
+// TODO
+void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
+  switch (outputToTest) {
+  case outputBuzzer:
+    _outputPinTest = outputPin;
+    pinMode(_outputPinTest, OUTPUT);
+    break;
+  case outputLED:
+    setupLEDs();
+    break;
+  case outputMIDI:
+    setupOutputMIDI(10, 127);
+    break;
+  case outputSerialUSB:
+    Serial.begin(9600);
+    while (!Serial)
+      ;
+    break;
+  }
+}
+
+// TODO
+void TinyTrainable::helloOutputs(OutputMode outputToTest) {
+  int timeDelay = 1000;
+  switch (outputToTest) {
+  case outputBuzzer:
+    tone(_outputPinTest, 260, timeDelay);
+    tone(_outputPinTest, 330, timeDelay);
+    tone(_outputPinTest, 392, timeDelay);
+    tone(_outputPinTest, 523, timeDelay);
+    delay(timeDelay);
+    break;
+  case outputLED:
+    // turn on and off builtin LED, it is orange
+    setStateLEDBuiltIn(true);
+    delay(timeDelay);
+    setStateLEDBuiltIn(false);
+    delay(timeDelay);
+
+    // turn on the RGB LED in all 6 available colors
+    setStateLEDRGB(true, red);
+    delay(timeDelay);
+    setStateLEDRGB(true, green);
+    delay(timeDelay);
+    setStateLEDRGB(true, blue);
+    delay(timeDelay);
+    setStateLEDRGB(true, yellow);
+    delay(timeDelay);
+    setStateLEDRGB(true, magenta);
+    delay(timeDelay);
+    setStateLEDRGB(true, cyan);
+    delay(timeDelay);
+
+    // turn off the RGB LED, color is irrelevant
+    setStateLEDRGB(false, red);
+    delay(timeDelay);
+    break;
+  case outputMIDI:
+    sendSerialMIDINote(_midiChannel, 37, _midiVelocity);
+    delay(timeDelay);
+    sendSerialMIDINote(_midiChannel, 38, _midiVelocity);
+    delay(timeDelay);
+    sendSerialMIDINote(_midiChannel, 39, _midiVelocity);
+    delay(timeDelay);
+    break;
+  case outputSerialUSB:
+    Serial.println("hello world!");
+    break;
+  }
+}
+
 // TODO: add comments
 void TinyTrainable::setupOutputBuzzer(int outputPin) {
   _outputMode = outputBuzzer;
@@ -141,48 +212,46 @@ void TinyTrainable::setupOutputBuzzer(int outputPin) {
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
-  _buzzerMode = singleParam;
+  _buzzerFreqMode = singleParam;
   _buzzerFrequencies[object] = frequency;
 }
 
 void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
-  // _buzzerFrequencies[object] = random(freqMin, freqMax);
-  _buzzerMode = rangeParam;
+  _buzzerFreqMode = rangeParam;
   _buzzerFrequenciesMin[object] = freqMin;
   _buzzerFrequenciesMax[object] = freqMax;
 }
 
-void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies) {
-  // TODO: this is alpha version, just a test
-  // int randomIndex = sizeof(arrayFrequencies);
-  // debugPrint(randomIndex);
-  // _buzzerFrequencies[object] = arrayFrequencies[0];
-
-  // NOTE: this might not work!! pointer magic is happening to save the user
-  // array
-  _buzzerMode = randomParam;
+void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies,
+                                       int arrayFreqCount) {
+  _buzzerFreqMode = randomParam;
   _buzzerFrequenciesArrays[object] = arrayFrequencies;
-  debugPrint("BUZZER FREQ ARRAY");
-  debugPrint(_buzzerFrequenciesArrays[0][0]);
+  _buzzerFrequenciesArraysSizes[object] = arrayFreqCount;
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int duration) {
+  _buzzerDurationMode = singleParam;
   _buzzerDurations[object] = duration;
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int durationMin,
                                       int durationMax) {
-  _buzzerDurations[object] = random(durationMin, durationMax);
+  _buzzerDurationMode = rangeParam;
+  _buzzerDurationsMin[object] = durationMin;
+  _buzzerDurationsMax[object] = durationMax;
 }
 
-void TinyTrainable::setBuzzerDuration(int object, int arrayDurations[]) {
-  // TODO
+void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
+                                      int arrayDurationCount) {
+  _buzzerDurationMode = randomParam;
+  _buzzerDurationsArrays[object] = arrayDurations;
+  _buzzerDurationsArraysSizes[object] = arrayDurationCount;
 }
 
 // modifies the input array to contain a buzzer frequency and duration (in that
 // order) for the indicated object
 void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
-  switch (_buzzerMode) {
+  switch (_buzzerFreqMode) {
   case singleParam:
     buzzerParamArray[0] = _buzzerFrequencies[object];
     break;
@@ -191,12 +260,24 @@ void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
         random(_buzzerFrequenciesMin[object], _buzzerFrequenciesMax[object]);
     break;
   case randomParam:
-    int arraySize = sizeof(_buzzerFrequenciesArrays[object]);
-    buzzerParamArray[0] = _buzzerFrequenciesArrays[object][rand() % arraySize];
+    int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
+    buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
     break;
   }
-  buzzerParamArray[1] =
-      _buzzerDurations[object]; // placeholder until duration code in place
+  switch (_buzzerDurationMode) {
+  case singleParam:
+    buzzerParamArray[1] = _buzzerDurations[object];
+    break;
+  case rangeParam:
+    buzzerParamArray[1] =
+        random(_buzzerDurationsMin[object], _buzzerFrequenciesMax[object]);
+    break;
+  case randomParam:
+    int randomDurationIndex = rand() % _buzzerDurationsArraysSizes[object];
+    buzzerParamArray[1] =
+        *(_buzzerDurationsArrays[object] + randomDurationIndex);
+    break;
+  }
 }
 
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {

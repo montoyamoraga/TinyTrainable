@@ -128,7 +128,7 @@ void Inst0::identify() {
   // turn on the corresponding light
   setStateLEDRGB(true, Colors(classification));
 
-  playOutput(_outputMode, classification);
+  playOutput(classification);
 
   // update previous classification
   _previousClassification = classification;

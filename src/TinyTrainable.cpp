@@ -209,9 +209,9 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
 }
 
 // TODO
-void TinyTrainable::playOutput(OutputMode outputMode, int classification) {
+void TinyTrainable::playOutput(int classification) {
   // TODO: add the corresponding calls to functions
-  switch (outputMode) {
+  switch (_outputMode) {
   case outputBuzzer:
     getBuzzerParam(classification, _buzzerParams);
     tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
@@ -229,7 +229,7 @@ void TinyTrainable::playOutput(OutputMode outputMode, int classification) {
     Serial.println("TODO");
     break;
   case outputSerialUSB:
-    Serial.println("TODO");
+    Serial.println(classification);
     break;
   case outputServo:
     Serial.println("TODO");

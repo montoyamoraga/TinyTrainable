@@ -9,7 +9,7 @@ TinyTrainable tiny;
 
 // output mode to test, possible values:
 // outputBuzzer, outputLED, outputMIDI, outputSerialUSB
-OutputMode outputToTest = outputSerialUSB;
+OutputMode outputToTest = outputBuzzer;
 
 // hardware constants
 const int outputPin = 8;

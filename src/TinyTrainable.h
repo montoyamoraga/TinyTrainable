@@ -81,7 +81,7 @@ public:
   // methods for outputs
   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
   void helloOutputs(OutputMode outputToTest);
-  void playOutput(OutputMode outputMode, int classification);
+  void playOutput(int classification);
 
   // methods for buzzer
   void setupOutputBuzzer(int outputPin);
@@ -153,7 +153,7 @@ protected:
   int _outputPinPrinter = -1;
   int _outputPinServo = -1;
 
-  // TODO: methods and variables for outputBuzzer
+  // methods and variables for outputBuzzer
   enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
   BuzzerMode _buzzerFreqMode = undefParam;
   BuzzerMode _buzzerDurationMode = undefParam;

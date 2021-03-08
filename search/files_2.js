@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['model_2eh_155',['model.h',['../inst1__buzzer_2model_8h.html',1,'(Global Namespace)'],['../inst1__classifier_2model_8h.html',1,'(Global Namespace)']]]
+  ['tinytrainable_2ecpp_175',['TinyTrainable.cpp',['../_tiny_trainable_8cpp.html',1,'']]],
+  ['tinytrainable_2eh_176',['TinyTrainable.h',['../_tiny_trainable_8h.html',1,'']]]
 ];

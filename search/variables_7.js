@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['model_237',['model',['../inst1__buzzer_2model_8h.html#ae142afd8c2e2c711c1c62440deebe03c',1,'model():&#160;model.h'],['../inst1__classifier_2model_8h.html#ae142afd8c2e2c711c1c62440deebe03c',1,'model():&#160;model.h']]]
+  ['numsamples_268',['numSamples',['../inst1__classifier_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;inst1_classifier.ino'],['../inst1__collecting__data_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;inst1_collecting_data.ino']]]
 ];

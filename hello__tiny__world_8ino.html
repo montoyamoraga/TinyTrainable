@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyTrainable: examples/hello_tiny_world/hello_tiny_world.ino File Reference</title>
+<title>TinyTrainable: examples/hello/hello_tiny_world/hello_tiny_world.ino File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,11 +99,9 @@ $(document).ready(function(){initNavTree('hello__tiny__world_8ino.html',''); ini
 </div><!--header-->
 <div class="contents">
 
-<p>Cycle through all the LED colors this code is based on the Blink example <a href="http://www.arduino.cc/en/Tutorial/Blink">http://www.arduino.cc/en/Tutorial/Blink</a>.  
+<p>Test output modes.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="_inst0_8h_source.html">Inst0.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_inst1_8h_source.html">Inst1.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_inst2_8h_source.html">Inst2.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="_tiny_trainable_8h_source.html">TinyTrainable.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -114,17 +112,17 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3b01afb2c51fd3f60c914c95f1475c15"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a3b01afb2c51fd3f60c914c95f1475c15">timeOn</a> = 500</td></tr>
-<tr class="separator:a3b01afb2c51fd3f60c914c95f1475c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51a6515534636c93e21b1788e90bf6b3"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a51a6515534636c93e21b1788e90bf6b3">timeOff</a> = 250</td></tr>
-<tr class="separator:a51a6515534636c93e21b1788e90bf6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bfd3554c9be6a2e10db0dc34ea68031"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_inst0.html">Inst0</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a9bfd3554c9be6a2e10db0dc34ea68031">tiny</a></td></tr>
-<tr class="separator:a9bfd3554c9be6a2e10db0dc34ea68031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c8f6b6eb712c7c2c219723c7b05ef0"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0">tinyDebugging</a> = false</td></tr>
-<tr class="separator:a24c8f6b6eb712c7c2c219723c7b05ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9259a888c3fc1d4b52242d5b87014fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a9259a888c3fc1d4b52242d5b87014fcc">tiny</a></td></tr>
+<tr class="separator:a9259a888c3fc1d4b52242d5b87014fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaecd1d4cb87eea601847f21eee8e7078"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33c">OutputMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#aaecd1d4cb87eea601847f21eee8e7078">outputToTest</a> = <a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33cab3f03ffa283d0a85d3ae1bb3edacb5d7">outputBuzzer</a></td></tr>
+<tr class="separator:aaecd1d4cb87eea601847f21eee8e7078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34372894b2bb3820036f766b11588371"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a> = 8</td></tr>
+<tr class="separator:a34372894b2bb3820036f766b11588371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Cycle through all the LED colors this code is based on the Blink example <a href="http://www.arduino.cc/en/Tutorial/Blink">http://www.arduino.cc/en/Tutorial/Blink</a>. </p>
+<div class="textblock"><p>Test output modes. </p>
+<dl class="section author"><dt>Author</dt><dd>montoyamoraga, peter-parque, maxzwang </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>March 2021 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&nbsp;</a></span>loop()</h2>
@@ -161,56 +159,42 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a51a6515534636c93e21b1788e90bf6b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51a6515534636c93e21b1788e90bf6b3">&#9670;&nbsp;</a></span>timeOff</h2>
+<a id="a34372894b2bb3820036f766b11588371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34372894b2bb3820036f766b11588371">&#9670;&nbsp;</a></span>outputPin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int timeOff = 250</td>
+          <td class="memname">const int outputPin = 8</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a3b01afb2c51fd3f60c914c95f1475c15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b01afb2c51fd3f60c914c95f1475c15">&#9670;&nbsp;</a></span>timeOn</h2>
+<a id="aaecd1d4cb87eea601847f21eee8e7078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaecd1d4cb87eea601847f21eee8e7078">&#9670;&nbsp;</a></span>outputToTest</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int timeOn = 500</td>
+          <td class="memname"><a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33c">OutputMode</a> outputToTest = <a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33cab3f03ffa283d0a85d3ae1bb3edacb5d7">outputBuzzer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a9bfd3554c9be6a2e10db0dc34ea68031"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bfd3554c9be6a2e10db0dc34ea68031">&#9670;&nbsp;</a></span>tiny</h2>
+<a id="a9259a888c3fc1d4b52242d5b87014fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9259a888c3fc1d4b52242d5b87014fcc">&#9670;&nbsp;</a></span>tiny</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_inst0.html">Inst0</a> tiny</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a24c8f6b6eb712c7c2c219723c7b05ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24c8f6b6eb712c7c2c219723c7b05ef0">&#9670;&nbsp;</a></span>tinyDebugging</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool tinyDebugging = false</td>
+          <td class="memname"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a> tiny</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -222,7 +206,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_3685e44d6451f9820dd6930ec004d7fe.html">hello_tiny_world</a></li><li class="navelem"><a class="el" href="hello__tiny__world_8ino.html">hello_tiny_world.ino</a></li>
+    <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_3987f764e5cdcc180d43d3cbe9167956.html">hello</a></li><li class="navelem"><a class="el" href="dir_ee59074d232596913e3fe8aef4888f43.html">hello_tiny_world</a></li><li class="navelem"><a class="el" href="hello__tiny__world_8ino.html">hello_tiny_world.ino</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

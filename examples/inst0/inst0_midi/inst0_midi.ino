@@ -18,7 +18,10 @@ float COLOR_THRESHOLD = 0.5;
 void setup() {
   tiny.setupInstrument(true);
 
-  tiny.setupOutputMIDI(10, 127, 37, 38, 39);
+  tiny.setupOutputMIDI(10, 127);
+  tiny.setMIDINotes(0, 37);
+  tiny.setMIDINotes(1, 38);
+  tiny.setMIDINotes(2, 39);
 
   String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);

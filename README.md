@@ -8,16 +8,14 @@ This library is being written between December 2020 and August 2021, with help f
 
 ## Dependencies
 
-The dependencies of this library are specified on the [library.properties](library.properties) file and included as Git submodules on the libraries/ folder, when possible.
+The dependencies of this library are specified on the [library.properties](library.properties) file and included as Git submodules on libraries/.
 
-* [Adafruit_Thermal](https://github.com/adafruit/Adafruit-Thermal-Printer-Library): for the Adafruit Thermal Printer.
+* [Adafruit_Thermal](https://github.com/adafruit/Adafruit-Thermal-Printer-Library): for outputs with Adafruit Thermal Printer.
 * [Arduino_APDS9960](https://github.com/arduino-libraries/Arduino_APDS9960): APDS9960 sensor, to read gestures, color, proximity.
-* [Arduino_KNN](https://github.com/arduino-libraries/Arduino_KNN): K-Nearest Neighbors algorithm.
+* [Arduino_KNN](https://github.com/arduino-libraries/Arduino_KNN): for machine learning with K-Nearest Neighbors algorithm.
 * [Arduino_LSM9DS1](https://github.com/arduino-libraries/Arduino_LSM9DS1): LSM9DS1 IMU sensor, to read accelerometer, magnetometer, gyroscope.
-* [Servo](https://github.com/arduino-libraries/Servo): to control RC (hobby) servo motors.
-* [Arduino_TensorFlowLite](): 
-
-
+* [Servo](https://github.com/arduino-libraries/Servo): for outputs with servo motors.
+* [Arduino_TensorFlowLite](https://www.arduino.cc/reference/en/libraries/arduino_tensorflowlite/): for machine learning with TensorFlow.
 
 ## Documentation
 

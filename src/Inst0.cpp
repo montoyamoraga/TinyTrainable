@@ -49,10 +49,9 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold,
   _labels[0] = objects[0];
   _labels[1] = objects[1];
   _labels[2] = objects[2];
-  debugPrint("Labels for Inst0:");
-  debugPrint(_labels[0]);
-  debugPrint(_labels[1]);
-  debugPrint(_labels[2]);
+  
+  String debugMessage = "Labels for Inst0: " + _labels[0] + ", " + _labels[1] + ", " + _labels[2];
+  debugPrint(debugMessage);
 
   for (int currentClass = 0; currentClass < 3; currentClass++) {
 

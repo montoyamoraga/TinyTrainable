@@ -203,6 +203,7 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     break;
   case outputSerialUSB:
     Serial.println("hello world!");
+    delay(timeDelay);
     break;
   }
 }

@@ -13,3 +13,6 @@
 [submodule "libraries/Arduino_LSM9DS1"]
 	path = libraries/Arduino_LSM9DS1
 	url = https://github.com/arduino-libraries/Arduino_LSM9DS1
+[submodule "libraries/Adafruit-Thermal-Printer-Library"]
+	path = libraries/Adafruit-Thermal-Printer-Library
+	url = https://github.com/adafruit/Adafruit-Thermal-Printer-Library.git

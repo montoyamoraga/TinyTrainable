@@ -15,16 +15,6 @@
 // https://www.arduino.cc/en/Reference/ArduinoAPDS9960
 #include <Arduino_APDS9960.h>
 
-// include library for temperature and humidity sensor
-// https://www.arduino.cc/en/Reference/ArduinoHTS221
-// TODO: decide if this library is needed
-// #include <Arduino_HTS221.h>
-
-// include library for pressure sensor
-// https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
-// TODO: decide if this library is needed
-// #include <Arduino_LPS22HB.h>
-
 // include library for IMU sensor
 // 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/

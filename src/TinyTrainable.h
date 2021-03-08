@@ -20,13 +20,11 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-// include library for servo motors
-// TODO: keeps giving me compilation errors
-// #include <Servo.h>
+// include library for output with servo motors
+#include <Servo.h>
 
-// include library for Adafruit thermal printer
-// TODO: uncomment later when this is being tested
-// #include <Adafruit_Thermal.h>
+// include library for output with Adafruit thermal printer
+#include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };

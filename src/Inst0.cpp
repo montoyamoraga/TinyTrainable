@@ -49,11 +49,10 @@ void Inst0::trainKNN(int k, int examplesPerClass, float colorThreshold,
   _labels[0] = objects[0];
   _labels[1] = objects[1];
   _labels[2] = objects[2];
-
-  String debugMessage =
-      "Labels for Inst0: " + _labels[0] + ", " + _labels[1] + ", " + _labels[2];
-
-  debugPrint(debugMessage);
+  debugPrint("Labels for Inst0:");
+  debugPrint(_labels[0]);
+  debugPrint(_labels[1]);
+  debugPrint(_labels[2]);
 
   for (int currentClass = 0; currentClass < 3; currentClass++) {
 
@@ -129,35 +128,7 @@ void Inst0::identify() {
   // turn on the corresponding light
   setStateLEDRGB(true, Colors(classification));
 
-  // TODO: add the corresponding calls to functions
-  switch (_outputMode) {
-  case outputBuzzer:
-    getBuzzerParam(classification, _buzzerParams);
-    tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
-    break;
-  case outputLCD:
-    Serial.println("TODO");
-    break;
-  case outputLED:
-    Serial.println("TODO");
-    break;
-  case outputMIDI:
-    sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
-    break;
-  case outputPrinter:
-    Serial.println("TODO");
-    break;
-  case outputSerialUSB:
-    // print classification
-    Serial.println(classification);
-    break;
-  case outputServo:
-    Serial.println("TODO");
-    break;
-  case outputUndefined:
-    Serial.println("TODO");
-    break;
-  }
+  playOutput(classification);
 
   // update previous classification
   _previousClassification = classification;

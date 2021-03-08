@@ -160,8 +160,11 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
   switch (outputToTest) {
   case outputBuzzer:
     tone(_outputPinTest, 260, timeDelay);
+    delay(timeDelay);
     tone(_outputPinTest, 330, timeDelay);
+    delay(timeDelay);
     tone(_outputPinTest, 392, timeDelay);
+    delay(timeDelay);
     tone(_outputPinTest, 523, timeDelay);
     delay(timeDelay);
     break;
@@ -200,6 +203,39 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     break;
   case outputSerialUSB:
     Serial.println("hello world!");
+    delay(timeDelay);
+    break;
+  }
+}
+
+// TODO
+void TinyTrainable::playOutput(int classification) {
+  // TODO: add the corresponding calls to functions
+  switch (_outputMode) {
+  case outputBuzzer:
+    getBuzzerParam(classification, _buzzerParams);
+    tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
+    break;
+  case outputLCD:
+    Serial.println("TODO");
+    break;
+  case outputLED:
+    Serial.println("TODO");
+    break;
+  case outputMIDI:
+    sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
+    break;
+  case outputPrinter:
+    Serial.println("TODO");
+    break;
+  case outputSerialUSB:
+    Serial.println(classification);
+    break;
+  case outputServo:
+    Serial.println("TODO");
+    break;
+  case outputUndefined:
+    Serial.println("TODO");
     break;
   }
 }

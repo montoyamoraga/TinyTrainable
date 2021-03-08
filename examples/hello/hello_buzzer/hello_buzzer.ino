@@ -2,44 +2,88 @@
 /// @brief Example: Test output with buzzer
 
 // include all libraries
-#include <Inst0.h>
-#include <Inst1.h>
-#include <Inst2.h>
+#include <TinyTrainable.h>
 
 // declare instance of the instrument
-// default is Inst0, change Inst0 to Inst1 or Inst2 if necessary
-Inst0 tiny;
-
-// constant for debugging
-// true: the instrument needs to be connected to serial port
-// false: the instrument is standalone
-const bool tinyDebugging = false;
+// you can also do the same with Inst0, Inst1, or Inst2 instances
+TinyTrainable tiny;
 
 // constants for the hardware
 const int outputPin = 8;
 
 // arrays of frequencies
-int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
+int freqArray0[] = {1200, 1400, 1600};
 int freqArray1[] = {2100, 2200, 2300, 2400, 2500, 2600};
 int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
+
+// length of above arrays (can be of varying lengths)
+int shortParamArrayLength = 3;
+int longParamArrayLength = 6;
 
 // setup() runs once, at the beginning
 void setup() {
   // initialize instrument
-  tiny.setupInstrument(tinyDebugging);
+  tiny.setupOutputBuzzer(outputPin);
 
-  tiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
-  tiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
-  tiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
+  // for buzzer output, there are three options:
 
-  // set durations, in milliseconds
+  // 1. each classified item gets a sigle frequency (in Hz)
+
+  tiny.setBuzzerFrequency(0, 1000);
+  tiny.setBuzzerFrequency(1, 2000);
+  tiny.setBuzzerFrequency(2, 3000);
+
+  // 2. each classified item gets a random frequency within the given range
+  //    (the frequency will change each time the item is classified)
+
+  // tiny.setBuzzerFrequency(0, 1000, 2000);
+  // tiny.setBuzzerFrequency(1, 2000, 3000);
+  // tiny.setBuzzerFrequency(2, 3000, 4000);
+
+  // 3. each classified item gets a random frequency from a given array
+  //    (the frequency will change each time the item is classified)
+  // NOTE: though you call these arrays in setup(), they need to be 
+  //       declared in the global scope so they can be used after setup runs!
+
+  // tiny.setBuzzerFrequency(0, freqArray0, shortParamArrayLength);
+  // tiny.setBuzzerFrequency(1, freqArray1, longParamArrayLength);
+  // tiny.setBuzzerFrequency(2, freqArray2, longParamArrayLength);
+
+  // the same options also exist for buzzer durations (in milliseconds), in 
+  // the overloaded function setBuzzerDuration()
+
+  // 1.
+
   tiny.setBuzzerDuration(0, 300);
   tiny.setBuzzerDuration(1, 600);
   tiny.setBuzzerDuration(2, 900);
+
+  // 2.
+
+  // tiny.setBuzzerDuration(0, 1000, 2000);
+  // tiny.setBuzzerDuration(1, 2000, 3000);
+  // tiny.setBuzzerDuration(2, 3000, 4000);
+
+  // 3. (using the same arrays as above because the numbers also work in ms!)
+
+  // tiny.setBuzzerDuration(0, freqArray0, shortParamArrayLength);
+  // tiny.setBuzzerDuration(1, freqArray1, longParamArrayLength);
+  // tiny.setBuzzerDuration(2, freqArray2, longParamArrayLength);
+
+  // though the frequency and duration options can be different, you can't 
+  // do this:
+  // tiny.setBuzzerFrequency(0, 1000);
+  // tiny.setBuzzerFrequency(1, 2000, 3000);
+  // tiny.setBuzzerFrequency(2, freqArray2, longParamArrayLength);
 }
 
 // loop() runs in a loop, after setup()
 void loop() {
-
-  // TODO: add functions for testing buzzer
+  // cycle through the three possible classification outputs
+  tiny.playOutput(0);
+  delay(4000);  // long because tone isn't blocking - calls will override!
+  tiny.playOutput(1);
+  delay(4000);
+  tiny.playOutput(2);
+  delay(4000);
 }

@@ -9,8 +9,8 @@
 // declare instance of instrument
 TinyTrainable tiny;
 
-// output mode to test, other possible values:
-// outputLED, outputMIDI, outputSerialUSB
+// output mode to test, possible values:
+// outputBuzzer, outputLED, outputMIDI, outputSerialUSB
 OutputMode outputToTest = outputBuzzer;
 
 // hardware constants

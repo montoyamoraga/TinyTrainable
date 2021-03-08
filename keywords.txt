@@ -24,11 +24,21 @@ setBuzzerDuration		KEYWORD2
 #output-servo
 setupOutputServo		KEYWORD2
 setServoTempo			KEYWORD2
-#Instrument0
+#Instrument0-public
 setupInstrument			KEYWORD2
-setLabels				KEYWORD2
 trainKNN				KEYWORD2
 identify				KEYWORD2
+setLabels				KEYWORD2
+#Instrument0-private
+readColor				KEYWORD2
+checkInst0Setup			KEYWORD2
+-myKNN					KEYWORD2
+_previousClassification	KEYWORD2
+_labels					KEYWORD2
+_k						KEYWORD2
+_colorThreshold			KEYWORD2
+_colorReading			KEYWORD2
+_checkedSetup			KEYWORD2
 #Instrument1
 #Instrument2
 

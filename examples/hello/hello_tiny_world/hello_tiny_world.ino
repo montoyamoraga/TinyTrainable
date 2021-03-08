@@ -1,5 +1,7 @@
 /// @file hello_tiny_world.ino
 /// @brief Test output modes
+/// @author montoyamoraga, peter-parque, maxzwang
+/// @date March 2021
 
 // include main library
 #include <TinyTrainable.h>

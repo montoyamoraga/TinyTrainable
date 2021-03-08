@@ -31,7 +31,8 @@
 #include <Arduino_LSM9DS1.h>
 
 // include library for servo motors
-// #include <Servo.h>  // keeps giving me compilation errors
+// TODO: keeps giving me compilation errors
+// #include <Servo.h>
 
 // include library for Adafruit thermal printer
 // TODO: uncomment later when this is being tested
@@ -68,6 +69,7 @@ public:
   // the beginning
   template <typename T> void debugPrint(T message) {
     if (_serialDebugging) {
+      Serial.print("debug- ");
       Serial.println(message);
     }
   };

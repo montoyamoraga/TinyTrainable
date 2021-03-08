@@ -5,10 +5,6 @@ Inst2 tiny;
 
 // TODO: this is a placeholder
 
-void setup() {
+void setup() {}
 
-}
-
-void loop() {
-
-}
+void loop() {}

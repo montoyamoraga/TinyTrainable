@@ -1,18 +1,18 @@
 /// @file inst0_midi.ino
-/// @brief Example: Instrument0 with output LED
-/// @author montoyamoraga, peter-parque, maxzwang
-/// @date March 2021
+/// @brief Example: Instrument0 with output MIDI
 
 // include library
 #include <Inst0.h>
 
-// declare instrument
+// declare instance of the instrument0
 Inst0 tiny;
 
 // constants for the KNN algorithm
-int K = 5;
-int EXAMPLES_PER_CLASS = 10;
-float COLOR_THRESHOLD = 0.5;
+const int K = 5;
+const int EXAMPLES_PER_CLASS = 10;
+const float COLOR_THRESHOLD = 0.5;
+
+String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
 // setup() runs once, at the beginning
 void setup() {
@@ -23,12 +23,12 @@ void setup() {
   tiny.setMIDINotes(1, 38);
   tiny.setMIDINotes(2, 39);
 
-  String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
-// loop() runs once, after setup()
+/// loop() runs after setup(), on a loop
+
 void loop() {
-  // perform classification
+  /// identify the input and respond
   tiny.identify();
 }

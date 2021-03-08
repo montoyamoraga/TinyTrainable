@@ -5,7 +5,9 @@
 #include <Inst1.h>
 
 // include machine learning model
-#include "../../../assets/modelInst1.h"
+#include "../assets/modelInst1.h"
+// or include your own
+//#include "myModel.h"
 
 // declare instance of the instrument0
 Inst1 tiny;

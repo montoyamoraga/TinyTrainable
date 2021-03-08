@@ -36,7 +36,8 @@ void setup() {
   // and it's output
   tiny.setupOutputBuzzer(outputPin);
 
-  // see the hello_buzzer example for more frequency and duration parameter options
+  // see the hello_buzzer example for more frequency and duration parameter
+  // options
 
   // set frequencies, in Hz
   tiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);

@@ -42,14 +42,14 @@ void setup() {
 
   // 3. each classified item gets a random frequency from a given array
   //    (the frequency will change each time the item is classified)
-  // NOTE: though you call these arrays in setup(), they need to be 
+  // NOTE: though you call these arrays in setup(), they need to be
   //       declared in the global scope so they can be used after setup runs!
 
   // tiny.setBuzzerFrequency(0, freqArray0, shortParamArrayLength);
   // tiny.setBuzzerFrequency(1, freqArray1, longParamArrayLength);
   // tiny.setBuzzerFrequency(2, freqArray2, longParamArrayLength);
 
-  // the same options also exist for buzzer durations (in milliseconds), in 
+  // the same options also exist for buzzer durations (in milliseconds), in
   // the overloaded function setBuzzerDuration()
 
   // 1.
@@ -70,7 +70,7 @@ void setup() {
   // tiny.setBuzzerDuration(1, freqArray1, longParamArrayLength);
   // tiny.setBuzzerDuration(2, freqArray2, longParamArrayLength);
 
-  // though the frequency and duration options can be different, you can't 
+  // though the frequency and duration options can be different, you can't
   // do this:
   // tiny.setBuzzerFrequency(0, 1000);
   // tiny.setBuzzerFrequency(1, 2000, 3000);
@@ -85,7 +85,7 @@ void loop() {
   // it's demonstrated here in case to show what's possible
 
   tiny.playOutput(0);
-  delay(4000);  // long because tone isn't blocking - calls will override!
+  delay(4000); // long because tone isn't blocking - calls will override!
   tiny.playOutput(1);
   delay(4000);
   tiny.playOutput(2);

@@ -1,5 +1,5 @@
 /// @file Inst0.h
-/// @brief Arduino library for Tiny Trainable Instruments
+/// @brief K-nearest neighbors algorithm + color input
 
 #ifndef INST0_H
 #define INST0_H

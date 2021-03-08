@@ -1,14 +1,16 @@
 /// @file Inst1.cpp
-/// @brief Arduino library for Tiny Trainable Instruments
-/// @author montoyamoraga, peter-parque, maxzwang
-/// @date November 2020
+/// @brief gesture recognition using TensorFlow
 
+/// include library
 #include "Inst1.h"
 
+/// constructor method
 Inst1::Inst1() {}
 
 void Inst1::setupInstrument() {
+  // setup LEDs
   setupLEDs();
+  // turn on sensor
   setupSensorLSM9DS1();
 }
 

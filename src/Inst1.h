@@ -1,5 +1,5 @@
 /// @file Inst1.h
-/// @brief Arduino library for Tiny Trainable Instruments
+/// @brief gesture recognition using TensorFlow
 
 #ifndef INST1_H
 #define INST1_H

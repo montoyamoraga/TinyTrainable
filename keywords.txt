@@ -5,6 +5,7 @@ Inst1					KEYWORD1
 Inst2					KEYWORD1
 
 #KEYWORD2-functions-brown
+
 #TinyTrainable
 setupLEDs				KEYWORD2
 setupLEDBuiltIn			KEYWORD2
@@ -16,19 +17,23 @@ setSerialDebugging		KEYWORD2
 setupSensorAPDS9960		KEYWORD2
 setupSensorLSM9DS1		KEYWORD2
 setOutputMode			KEYWORD2
-#output-buzzer
+
+#TinyTrainable-output-buzzer
 setupOutputBuzzer		KEYWORD2
 setBuzzerPin			KEYWORD2
-setBuzzerFrequency	KEYWORD2
+setBuzzerFrequency		KEYWORD2
 setBuzzerDuration		KEYWORD2
-#output-servo
+
+#TinyTrainable-output-servo
 setupOutputServo		KEYWORD2
 setServoTempo			KEYWORD2
+
 #Instrument0-public
 setupInstrument			KEYWORD2
 trainKNN				KEYWORD2
 identify				KEYWORD2
 setLabels				KEYWORD2
+
 #Instrument0-private
 readColor				KEYWORD2
 checkInst0Setup			KEYWORD2
@@ -39,8 +44,16 @@ _k						KEYWORD2
 _colorThreshold			KEYWORD2
 _colorReading			KEYWORD2
 _checkedSetup			KEYWORD2
-#Instrument1
+
+#Instrument1-public
+Inst1					KEYWORD2
+setupInstrument			KEYWORD2
+
+#Instrument1-private
+print1					KEYWORD2
+
 #Instrument2
+Inst2					KEYWORD2
 
 #LITERAL1-constants
 red						LITERAL1

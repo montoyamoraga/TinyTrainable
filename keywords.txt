@@ -1,11 +1,11 @@
-# KEYWORD1 is for datatypes, color orange
+#KEYWORD1-datatypes-orange
 TinyTrainable			KEYWORD1
 Inst0					KEYWORD1
 Inst1					KEYWORD1
 Inst2					KEYWORD1
 
-# KEYWORD2 is for functions, color brown
-# TinyTrainable
+#KEYWORD2-functions-brown
+#TinyTrainable
 setupLEDs				KEYWORD2
 setupLEDBuiltIn			KEYWORD2
 blinkLEDBuiltIn			KEYWORD2
@@ -16,23 +16,23 @@ setSerialDebugging		KEYWORD2
 setupSensorAPDS9960		KEYWORD2
 setupSensorLSM9DS1		KEYWORD2
 setOutputMode			KEYWORD2
-# output buzzer
+#output-buzzer
 setupOutputBuzzer		KEYWORD2
 setBuzzerPin			KEYWORD2
 setBuzzerFrequency	KEYWORD2
 setBuzzerDuration		KEYWORD2
-# output servo
+#output-servo
 setupOutputServo		KEYWORD2
 setServoTempo			KEYWORD2
-# Instrument0
+#Instrument0
 setupInstrument			KEYWORD2
 setLabels				KEYWORD2
 trainKNN				KEYWORD2
 identify				KEYWORD2
-# Instrument1
-# Instrument2
+#Instrument1
+#Instrument2
 
-# LITERAL1 is for constants
+#LITERAL1-constants
 red						LITERAL1
 green					LITERAL1
 blue					LITERAL1

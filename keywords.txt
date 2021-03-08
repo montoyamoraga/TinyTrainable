@@ -14,8 +14,6 @@ setStateLEDBuiltIn	KEYWORD2
 setStateLEDRGB			KEYWORD2
 setSerialDebugging	KEYWORD2
 setupSensorAPDS9960	KEYWORD2
-setupSensorHTS221		KEYWORD2
-setupSensorLPS22HB	KEYWORD2
 setupSensorLSM9DS1	KEYWORD2
 setOutputMode			  KEYWORD2
 # output buzzer

@@ -80,6 +80,10 @@ void setup() {
 // loop() runs in a loop, after setup()
 void loop() {
   // cycle through the three possible classification outputs
+
+  // this will be taken care of by the instruments for base functionality!
+  // it's demonstrated here in case to show what's possible
+
   tiny.playOutput(0);
   delay(4000);  // long because tone isn't blocking - calls will override!
   tiny.playOutput(1);

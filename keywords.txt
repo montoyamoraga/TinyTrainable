@@ -1,12 +1,16 @@
-#KEYWORD1-datatypes-orange
-TinyTrainable			KEYWORD1
+##########################
+# Classes
+##########################
+
+TinyTrainable	KEYWORD1
 Inst0					KEYWORD1
 Inst1					KEYWORD1
 Inst2					KEYWORD1
 
-#KEYWORD2-functions-brown
+#######################
+# Methods and functions
+#######################
 
-#TinyTrainable
 setupLEDs				KEYWORD2
 setupLEDBuiltIn			KEYWORD2
 blinkLEDBuiltIn			KEYWORD2
@@ -18,23 +22,19 @@ setupSensorAPDS9960		KEYWORD2
 setupSensorLSM9DS1		KEYWORD2
 setOutputMode			KEYWORD2
 
-#TinyTrainable-output-buzzer
 setupOutputBuzzer		KEYWORD2
 setBuzzerPin			KEYWORD2
 setBuzzerFrequency		KEYWORD2
 setBuzzerDuration		KEYWORD2
 
-#TinyTrainable-output-servo
 setupOutputServo		KEYWORD2
 setServoTempo			KEYWORD2
 
-#Instrument0-public
 setupInstrument			KEYWORD2
 trainKNN				KEYWORD2
 identify				KEYWORD2
 setLabels				KEYWORD2
 
-#Instrument0-private
 readColor				KEYWORD2
 checkInst0Setup			KEYWORD2
 -myKNN					KEYWORD2
@@ -45,17 +45,17 @@ _colorThreshold			KEYWORD2
 _colorReading			KEYWORD2
 _checkedSetup			KEYWORD2
 
-#Instrument1-public
 Inst1					KEYWORD2
 setupInstrument			KEYWORD2
 
-#Instrument1-private
 print1					KEYWORD2
 
-#Instrument2
 Inst2					KEYWORD2
 
-#LITERAL1-constants
+###########
+# Constants
+###########
+
 red						LITERAL1
 green					LITERAL1
 blue					LITERAL1

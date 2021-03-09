@@ -31,13 +31,15 @@ int paramArrayLength = 6;
 
 // setup() runs once, at the beginning
 void setup() {
-  // setup the instrument...
+  
+  // setup the instrument
   tiny.setupInstrument(tinyDebugging);
-  // and it's output
+  
+  // set its output
   tiny.setupOutputBuzzer(outputPin);
 
-  // see the hello_buzzer example for more frequency and duration parameter
-  // options
+  // see the hello_buzzer example for more frequency
+  // and duration parameter options
 
   // set frequencies, in Hz
   tiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);

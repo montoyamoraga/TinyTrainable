@@ -20,6 +20,8 @@ int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 int shortParamArrayLength = 3;
 int longParamArrayLength = 6;
 
+int pauseTime = 2000;
+
 // setup() runs once, at the beginning
 void setup() {
   // initialize instrument
@@ -27,7 +29,7 @@ void setup() {
 
   // for buzzer output, there are 3 options:
 
-  // 1. each classified item gets a sigle frequency (in Hz)
+  // 1. each classified item gets a single frequency (in Hz)
 
   tiny.setBuzzerFrequency(0, 1000);
   tiny.setBuzzerFrequency(1, 2000);
@@ -83,11 +85,12 @@ void loop() {
 
   // this will be taken care of by the instruments for base functionality!
   // it's demonstrated here in case to show what's possible
-
+  
+  // long because tone isn't blocking - calls will override!
   tiny.playOutput(0);
-  delay(4000); // long because tone isn't blocking - calls will override!
+  delay(pauseTime); 
   tiny.playOutput(1);
-  delay(4000);
+  delay(pauseTime);
   tiny.playOutput(2);
-  delay(4000);
+  delay(pauseTime);
 }

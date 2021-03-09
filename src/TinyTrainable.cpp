@@ -121,7 +121,9 @@ void TinyTrainable::setupSensorLSM9DS1() {
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
   switch (outputToTest) {
   case outputBuzzer:
+    // update internal variable
     _outputPinTest = outputPin;
+    // setup pin
     pinMode(_outputPinTest, OUTPUT);
     break;
   case outputLED:

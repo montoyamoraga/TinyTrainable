@@ -23,6 +23,7 @@ setupSensorLSM9DS1	KEYWORD2
 setOutputMode		KEYWORD2
 
 helloOutputsSetup	KEYWORD2
+helloOutputs		KEYWORD2
 
 setupOutputBuzzer	KEYWORD2
 setBuzzerPin		KEYWORD2

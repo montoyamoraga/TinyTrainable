@@ -25,7 +25,7 @@ void setup() {
   // initialize instrument
   tiny.setupOutputBuzzer(outputPin);
 
-  // for buzzer output, there are three options:
+  // for buzzer output, there are 3 options:
 
   // 1. each classified item gets a sigle frequency (in Hz)
 
@@ -34,16 +34,16 @@ void setup() {
   tiny.setBuzzerFrequency(2, 3000);
 
   // 2. each classified item gets a random frequency within the given range
-  //    (the frequency will change each time the item is classified)
+  // (the frequency will change each time the item is classified)
 
   // tiny.setBuzzerFrequency(0, 1000, 2000);
   // tiny.setBuzzerFrequency(1, 2000, 3000);
   // tiny.setBuzzerFrequency(2, 3000, 4000);
 
   // 3. each classified item gets a random frequency from a given array
-  //    (the frequency will change each time the item is classified)
+  // (the frequency will change each time the item is classified)
   // NOTE: though you call these arrays in setup(), they need to be
-  //       declared in the global scope so they can be used after setup runs!
+  // declared in the global scope so they can be used after setup runs!
 
   // tiny.setBuzzerFrequency(0, freqArray0, shortParamArrayLength);
   // tiny.setBuzzerFrequency(1, freqArray1, longParamArrayLength);

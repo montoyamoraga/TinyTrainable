@@ -64,6 +64,7 @@ blue			LITERAL1
 yellow			LITERAL1
 magenta			LITERAL1
 cyan			LITERAL1
+OutputMode		LITERAL1
 outputBuzzer		LITERAL1
 outputLCD		LITERAL1
 outputLED		LITERAL1

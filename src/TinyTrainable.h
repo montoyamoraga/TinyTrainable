@@ -15,28 +15,16 @@
 // https://www.arduino.cc/en/Reference/ArduinoAPDS9960
 #include <Arduino_APDS9960.h>
 
-// include library for temperature and humidity sensor
-// https://www.arduino.cc/en/Reference/ArduinoHTS221
-// TODO: decide if this library is needed
-// #include <Arduino_HTS221.h>
-
-// include library for pressure sensor
-// https://www.arduino.cc/en/Reference/ArduinoLPS22HB/
-// TODO: decide if this library is needed
-// #include <Arduino_LPS22HB.h>
-
 // include library for IMU sensor
 // 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-// include library for servo motors
-// TODO: keeps giving me compilation errors
-// #include <Servo.h>
+// include library for output with servo motors
+#include <Servo.h>
 
-// include library for Adafruit thermal printer
-// TODO: uncomment later when this is being tested
-// #include <Adafruit_Thermal.h>
+// include library for output with Adafruit thermal printer
+#include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };

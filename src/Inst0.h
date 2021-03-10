@@ -1,20 +1,17 @@
 /// @file Inst0.h
-/// @brief Arduino library for Tiny Trainable Instruments
-/// @author montoyamoraga, peter-parque, maxzwang
-/// @date November 2020
+/// @brief K-nearest neighbors algorithm + color input
 
 #ifndef INST0_H
 #define INST0_H
 
-// installed libraries included with <>
+// import libraries
+#include "TinyTrainable.h"
 #include <Arduino.h>
 #include <Arduino_KNN.h>
 
-// local libraries included with ""
-#include "TinyTrainable.h"
-
-// inheriting the class TinyTrainable as public
+// inherit from the class TinyTrainable
 class Inst0 : public TinyTrainable {
+
 public:
   // constructor
   Inst0();

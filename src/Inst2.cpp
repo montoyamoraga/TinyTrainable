@@ -1,12 +1,13 @@
 /// @file Inst2.cpp
-/// @brief Arduino library for Tiny Trainable Instruments
-/// @author montoyamoraga, peter-parque, maxzwang
-/// @date November 2020
+/// @brief speech recognition with TensorFlow
 
 #include "Inst2.h"
 
+
+// constructor method
 Inst2::Inst2() {}
 
+// placeholder function
 void Inst2::print2() {
   Serial.begin(9600);
   while (!Serial)

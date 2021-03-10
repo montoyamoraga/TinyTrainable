@@ -1,55 +1,81 @@
-# KEYWORD1 is for datatypes, color orange
-TinyTrainable					KEYWORD1
-Inst0									KEYWORD1
-Inst1									KEYWORD1
-Inst2									KEYWORD1
+################################
+# Classes
+################################
 
-# KEYWORD2 is for functions, color brown
-# TinyTrainable
-setupLEDs							KEYWORD2
-setupLEDBuiltIn				KEYWORD2
-blinkLEDBuiltIn				KEYWORD2
-setupLEDRGB						KEYWORD2
-setStateLEDBuiltIn		KEYWORD2
-setStateLEDRGB				KEYWORD2
-setSerialDebugging		KEYWORD2
-setupSensorAPDS9960		KEYWORD2
-setupSensorHTS221			KEYWORD2
-setupSensorLPS22HB		KEYWORD2
-setupSensorLSM9DS1		KEYWORD2
-setOutputMode					KEYWORD2
-# output buzzer
-setupOutputBuzzer			KEYWORD2
-setBuzzerPin					KEYWORD2
-setBuzzerFrequency		KEYWORD2
-setBuzzerDuration			KEYWORD2
-# output servo
-setupOutputServo			KEYWORD2
-setServoTempo					KEYWORD2
-# Instrument0
-setupInstrument				KEYWORD2
-setLabels							KEYWORD2
-trainKNN							KEYWORD2
-identify							KEYWORD2
-# Instrument1
-# Instrument2
+TinyTrainable		KEYWORD1
+Inst0			KEYWORD1
+Inst1			KEYWORD1
+Inst2			KEYWORD1
 
-# LITERAL1 is for constants
-red										LITERAL1
-green									LITERAL1
-blue									LITERAL1
-yellow								LITERAL1
-magenta								LITERAL1
-cyan									LITERAL1
-outputBuzzer					LITERAL1
-outputLCD							LITERAL1
-outputLED							LITERAL1
-outputMIDI						LITERAL1
-outputPrinter					LITERAL1
-outputSerialUSB				LITERAL1
-outputServo						LITERAL1
-_servo								LITERAL1
-_servoAngles					LITERAL1
-_servoAngleCurrent		LITERAL1
-_servoAngleMin				LITERAL1
-_servoAngleMax				LITERAL1
+################################
+# Methods and functions
+################################
+
+setupLEDs		KEYWORD2
+setupLEDBuiltIn		KEYWORD2
+blinkLEDBuiltIn		KEYWORD2
+setupLEDRGB		KEYWORD2
+setStateLEDBuiltIn	KEYWORD2
+setStateLEDRGB		KEYWORD2
+setSerialDebugging	KEYWORD2
+setupSensorAPDS9960	KEYWORD2
+setupSensorLSM9DS1	KEYWORD2
+setOutputMode		KEYWORD2
+
+helloOutputsSetup	KEYWORD2
+helloOutputs		KEYWORD2
+playOutput		KEYWORD2
+
+setupOutputBuzzer	KEYWORD2
+setBuzzerPin		KEYWORD2
+setBuzzerFrequency	KEYWORD2
+setBuzzerDuration	KEYWORD2
+
+setupOutputServo	KEYWORD2
+setServoTempo		KEYWORD2
+
+setupInstrument		KEYWORD2
+trainKNN		KEYWORD2
+identify		KEYWORD2
+setLabels		KEYWORD2
+
+readColor		KEYWORD2
+checkInst0Setup		KEYWORD2
+-myKNN			KEYWORD2
+_previousClassification	KEYWORD2
+_labels			KEYWORD2
+_k			KEYWORD2
+_colorThreshold		KEYWORD2
+_colorReading		KEYWORD2
+_checkedSetup		KEYWORD2
+
+Inst1			KEYWORD2
+setupInstrument		KEYWORD2
+
+print1			KEYWORD2
+
+Inst2			KEYWORD2
+
+################################
+# Constants
+################################
+
+red			LITERAL1
+green			LITERAL1
+blue			LITERAL1
+yellow			LITERAL1
+magenta			LITERAL1
+cyan			LITERAL1
+OutputMode		LITERAL1
+outputBuzzer		LITERAL1
+outputLCD		LITERAL1
+outputLED		LITERAL1
+outputMIDI		LITERAL1
+outputPrinter		LITERAL1
+outputSerialUSB		LITERAL1
+outputServo		LITERAL1
+_servo			LITERAL1
+_servoAngles		LITERAL1
+_servoAngleCurrent	LITERAL1
+_servoAngleMin		LITERAL1
+_servoAngleMax		LITERAL1

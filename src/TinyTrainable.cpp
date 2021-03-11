@@ -206,7 +206,8 @@ void TinyTrainable::playOutput(int classification) {
     Serial.println("TODO");
     break;
   case outputLED:
-    Serial.println("TODO");
+    setStateLEDRGB(false, red);
+    setStateLEDRGB(true, Colors(classification));
     break;
   case outputMIDI:
     sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
@@ -390,4 +391,8 @@ void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(143 + channel);
   Serial1.write(note);
   Serial1.write(velocity);
+}
+
+void TinyTrainable::setupOutputLED() {
+  _outputMode = outputLED;
 }

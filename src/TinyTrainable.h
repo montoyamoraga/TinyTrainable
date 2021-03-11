@@ -99,6 +99,7 @@ public:
   // TODO: methods for outputLCD
 
   // TODO: methods for outputLED
+  void setupOutputLED();
 
   // TODO: methods for MIDI
   void setupOutputMIDI(byte midiChannel, byte midiVelocity);

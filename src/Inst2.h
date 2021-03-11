@@ -18,6 +18,9 @@ class Inst2 : public TinyTrainable {
 public:
   // constructor
   Inst2();
+
+  void setupInstrument(bool serialDebugging);
+
   // placeholder dummy function
   void print2();
 };

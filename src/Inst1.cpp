@@ -7,7 +7,7 @@
 /// constructor method
 Inst1::Inst1() {}
 
-void Inst1::setupInstrument() {
+void Inst1::setupInstrument(bool serialDebugging) {
   // setup LEDs
   setupLEDs();
   // turn on sensor

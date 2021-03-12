@@ -20,7 +20,7 @@ public:
   // constructor method
   Inst1();
 
-  void setupInstrument();
+  void setupInstrument(bool serialDebugging);
 
   // placeholder dummy function
   void print1();

@@ -57,7 +57,7 @@ public:
   // the beginning
   template <typename T> void debugPrint(T message) {
     if (_serialDebugging) {
-      Serial.print("debug- ");
+      Serial.print("debug - ");
       Serial.println(message);
     }
   };
@@ -99,7 +99,7 @@ public:
   // TODO: methods for outputLCD
 
   // TODO: methods for outputLED
-  void setupOutputLED();
+  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
 
   // TODO: methods for MIDI
   void setupOutputMIDI(byte midiChannel, byte midiVelocity);
@@ -132,21 +132,10 @@ protected:
 
   // variables for outputs
   OutputMode _outputMode = outputUndefined;
-  // TODO - these variables are not exposed to the user,
-  // peter suggests that all these pin variables be condensed to one variable
-  // that get set through different methods
-  // i rather not for now, so that the instrument can have different outputs at
-  // the same time
   int _outputPinTest = -1;
-  int _outputPinBuzzer = -1;
-  int _outputPinLCD = -1;
-  int _outputPinLED = -1;
-  int _outputPinMIDI = -1;
-  // TODO: for printer we need several variables
-  int _outputPinPrinter = -1;
-  int _outputPinServo = -1;
-
+  
   // methods and variables for outputBuzzer
+  int _outputPinBuzzer = -1;
   enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
   BuzzerMode _buzzerFreqMode = undefParam;
   BuzzerMode _buzzerDurationMode = undefParam;
@@ -166,6 +155,7 @@ protected:
   int _buzzerDurationsArraysSizes[3];
 
   // TODO: variables for outputMIDI
+  int _outputPinMIDI = -1;
   int _midiNotes[3];
   byte _midiChannel = 16;
   byte _midiVelocity = 0;
@@ -181,9 +171,15 @@ protected:
   unsigned long _servoTimeNow = 0;
 
   // TODO: variables for outputLCD
+  int _outputPinLCD = -1;
+
   // TODO: variables for outputLED
+  int _outputPinsLED[3];
+
   // TODO: variables for outputPrinter
-  // TODO: variables for outputSerialUSB
+  // TODO: for printer we need several variables
+  int _outputPinPrinter = -1;
+  int _outputPinServo = -1;
 };
 
 // conditional compilation

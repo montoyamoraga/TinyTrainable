@@ -127,7 +127,8 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
     pinMode(_outputPinTest, OUTPUT);
     break;
   case outputLED:
-    setupLEDs();
+    _outputPinTest = outputPin;
+    pinMode(outputPin, OUTPUT);
     break;
   case outputMIDI:
     setupOutputMIDI(10, 127);
@@ -155,28 +156,9 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     delay(timeDelay);
     break;
   case outputLED:
-    // turn on and off builtin LED, it is orange
-    setStateLEDBuiltIn(true);
+    digitalWrite(_outputPinTest, LOW);
     delay(timeDelay);
-    setStateLEDBuiltIn(false);
-    delay(timeDelay);
-
-    // turn on the RGB LED in all 6 available colors
-    setStateLEDRGB(true, red);
-    delay(timeDelay);
-    setStateLEDRGB(true, green);
-    delay(timeDelay);
-    setStateLEDRGB(true, blue);
-    delay(timeDelay);
-    setStateLEDRGB(true, yellow);
-    delay(timeDelay);
-    setStateLEDRGB(true, magenta);
-    delay(timeDelay);
-    setStateLEDRGB(true, cyan);
-    delay(timeDelay);
-
-    // turn off the RGB LED, color is irrelevant
-    setStateLEDRGB(false, red);
+    digitalWrite(_outputPinTest, HIGH);
     delay(timeDelay);
     break;
   case outputMIDI:
@@ -206,8 +188,10 @@ void TinyTrainable::playOutput(int classification) {
     Serial.println("TODO");
     break;
   case outputLED:
-    setStateLEDRGB(false, red);
-    setStateLEDRGB(true, Colors(classification));
+    digitalWrite(_outputPinsLED[0], LOW);
+    digitalWrite(_outputPinsLED[1], LOW);
+    digitalWrite(_outputPinsLED[2], LOW);
+    digitalWrite(_outputPinsLED[classification], HIGH);
     break;
   case outputMIDI:
     sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
@@ -393,6 +377,12 @@ void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(velocity);
 }
 
-void TinyTrainable::setupOutputLED() {
+void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
   _outputMode = outputLED;
+  _outputPinsLED[0] = outputPin0;
+  _outputPinsLED[1] = outputPin1;
+  _outputPinsLED[2] = outputPin2;
+  pinMode(outputPin0, OUTPUT);
+  pinMode(outputPin1, OUTPUT);
+  pinMode(outputPin2, OUTPUT);
 }

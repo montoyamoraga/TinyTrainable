@@ -110,6 +110,9 @@ public:
   // TODO: methods for outputSerialUSB
   void setupOutputSerialUSB();
 
+  // TODO: this is public now for testing, later move to protected
+  void sendSerialMIDINote(byte channel, byte note, byte velocity);
+
 protected:
   void setupLEDs();
 
@@ -122,7 +125,6 @@ protected:
 
   // methods for outputs
   void setupSerialMIDI();
-  void sendSerialMIDINote(byte channel, byte note, byte velocity);
   void getBuzzerParam(int object, int buzzerParamArray[]);
 
   // variable for debugging

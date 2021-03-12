@@ -7,6 +7,10 @@
 // constructor method
 Inst2::Inst2() {}
 
+void Inst2::setupInstrument(bool serialDebugging) {
+  setupLEDs();
+}
+
 // placeholder function
 void Inst2::print2() {
   Serial.begin(9600);

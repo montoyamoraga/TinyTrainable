@@ -1,7 +1,6 @@
 /// @file hello_buzzer.ino
 /// @brief Example: Test output with buzzer
 
-// include all libraries
 #include <TinyTrainable.h>
 
 // declare instance of the instrument
@@ -9,7 +8,7 @@
 TinyTrainable tiny;
 
 // constants for the hardware
-const int outputPin = 8;
+const int outputPin = 2;
 
 // arrays of frequencies
 int freqArray0[] = {1200, 1400, 1600};

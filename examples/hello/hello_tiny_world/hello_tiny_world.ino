@@ -9,10 +9,10 @@ TinyTrainable tiny;
 
 // output mode to test, possible values:
 // outputBuzzer, outputLED, outputMIDI, outputSerialUSB
-OutputMode outputToTest = outputBuzzer;
+OutputMode outputToTest = outputLED;
 
 // hardware constants
-const int outputPin = 8;
+const int outputPin = 3;
 
 // setup() runs once, at the beginning
 void setup() {

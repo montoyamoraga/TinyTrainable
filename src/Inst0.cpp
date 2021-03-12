@@ -10,13 +10,14 @@ Inst0::Inst0() : _myKNN(3) {
   _labels[1] = "";
   _labels[2] = "";
 
-  _buzzerFrequencies[0] = -1;
-  _buzzerFrequencies[1] = -1;
-  _buzzerFrequencies[2] = -1;
+  // TODO: maybe remove? maybe when on error blink re-eval
+  // _buzzerFrequencies[0] = -1;
+  // _buzzerFrequencies[1] = -1;
+  // _buzzerFrequencies[2] = -1;
 
-  _midiNotes[0] = -1;
-  _midiNotes[1] = -1;
-  _midiNotes[2] = -1;
+  // _midiNotes[0] = -1;
+  // _midiNotes[1] = -1;
+  // _midiNotes[2] = -1;
 }
 
 // true: instrument outputs debugging messages over USB serial

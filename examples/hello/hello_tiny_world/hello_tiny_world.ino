@@ -17,7 +17,11 @@ const int outputPin = 3;
 // setup() runs once, at the beginning
 void setup() {
   // setup the test
+
+  // setup for outputBuzzer and outputLED (that have pins)
   tiny.helloOutputsSetup(outputToTest, outputPin);
+  // setup for outputMIDI and outputSerialUSB (outputs without pins)
+  tiny.helloOutputsSetup(outputToTest);
 }
 
 // loop() runs in a loop, after setup()

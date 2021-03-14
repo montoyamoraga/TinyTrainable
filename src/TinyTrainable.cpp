@@ -128,6 +128,10 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
       while (!Serial)
         ;
       break;
+    case outputUndefined:
+      pinMode(LED_BUILTIN, OUTPUT);
+      digitalWrite(LED_BUILTIN, LOW);
+      break;
   }
 }
 
@@ -177,6 +181,10 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     break;
   case outputSerialUSB:
     Serial.println("hello world!");
+    delay(timeDelay);
+    break;
+  case outputUndefined:
+    blinkLEDBuiltIn(3);
     delay(timeDelay);
     break;
   }

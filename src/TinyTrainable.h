@@ -69,6 +69,7 @@ public:
   void errorBlink(Colors color, int blinkNum);
 
   // methods for outputs
+  void helloOutputsSetup(OutputMode outputToTest);
   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
   void helloOutputs(OutputMode outputToTest);
   void playOutput(int classification);

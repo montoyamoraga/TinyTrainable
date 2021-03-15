@@ -118,26 +118,36 @@ void TinyTrainable::setupSensorLSM9DS1() {
 }
 
 // TODO
+void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
+  switch (outputToTest) {
+    case outputMIDI:
+      setupOutputMIDI(10, 127);
+      break;
+    case outputSerialUSB:
+      Serial.begin(9600);
+      while (!Serial)
+        ;
+      break;
+    case outputUndefined:
+      pinMode(LED_BUILTIN, OUTPUT);
+      digitalWrite(LED_BUILTIN, LOW);
+      break;
+  }
+}
+
+// TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
   switch (outputToTest) {
-  case outputBuzzer:
-    // update internal variable
-    _outputPinTest = outputPin;
-    // setup pin
-    pinMode(_outputPinTest, OUTPUT);
-    break;
-  case outputLED:
-    _outputPinTest = outputPin;
-    pinMode(outputPin, OUTPUT);
-    break;
-  case outputMIDI:
-    setupOutputMIDI(10, 127);
-    break;
-  case outputSerialUSB:
-    Serial.begin(9600);
-    while (!Serial)
-      ;
-    break;
+    case outputBuzzer:
+      // update internal variable
+      _outputPinTest = outputPin;
+      // setup pin
+      pinMode(_outputPinTest, OUTPUT);
+      break;
+    case outputLED:
+      _outputPinTest = outputPin;
+      pinMode(outputPin, OUTPUT);
+      break;
   }
 }
 
@@ -171,6 +181,10 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     break;
   case outputSerialUSB:
     Serial.println("hello world!");
+    delay(timeDelay);
+    break;
+  case outputUndefined:
+    blinkLEDBuiltIn(3);
     delay(timeDelay);
     break;
   }

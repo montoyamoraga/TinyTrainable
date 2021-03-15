@@ -26,9 +26,8 @@ void setup() {
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
-/// loop() runs after setup(), on a loop
-
+// loop() runs after setup(), on a loop
 void loop() {
-  /// identify the input and respond
+  // identify the input and respond
   tiny.identify();
 }

@@ -148,12 +148,16 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
       _outputPinTest = outputPin;
       pinMode(outputPin, OUTPUT);
       break;
+    case outputServo:
+      setupOutputServo(outputPin);
+      // setServoAngleRange(-90, 90);  // default is 0, 180
+      break;
   }
 }
 
 // TODO
 void TinyTrainable::helloOutputs(OutputMode outputToTest) {
-  int timeDelay = 1000;
+  int timeDelay = 3000;
   switch (outputToTest) {
   case outputBuzzer:
     tone(_outputPinTest, 260, timeDelay);
@@ -181,6 +185,14 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     break;
   case outputSerialUSB:
     Serial.println("hello world!");
+    delay(timeDelay);
+    break;
+  case outputServo:
+    moveServoAngleTempo(0, 60);
+    delay(timeDelay);
+    moveServoAngleTempo(90, 60);
+    delay(timeDelay);
+    moveServoAngleTempo(180, 60);
     delay(timeDelay);
     break;
   case outputUndefined:
@@ -323,12 +335,13 @@ void TinyTrainable::setupOutputSerialUSB() {
 
 void TinyTrainable::setupOutputServo(int outputPin) {
   // TODO: add comments about each line
-  // _outputMode = outputBuzzer;
-  // _outputPinServo = outputPin;
-  // pinMode(_outputPinServo, OUTPUT);
-  // _servo.attach(_outputPinServo);
+  _outputMode = outputServo;
+  _outputPinServo = outputPin;
+  pinMode(_outputPinServo, OUTPUT);
+  _servo.attach(_outputPinServo);
 }
 
+// TODO move this into setupOutputServo if it's always -90, 90?
 void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
   _servoAngleMin = angleMin;
   _servoAngleMax = angleMax;
@@ -347,6 +360,7 @@ void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
 
     // update _servoTimePrevious
     _servoTimePrevious = _servoTimeNow;
+    _servo.write(angle);
 
     // if (random(1000)/1000.0 < servoChance) {
     // servoPositionsIndex = (servoPositionsIndex + 1);

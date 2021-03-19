@@ -24,7 +24,7 @@
 #include <Servo.h>
 
 // include library for output with Adafruit thermal printer
-#include <Adafruit_Thermal.h>
+// #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
@@ -93,7 +93,7 @@ public:
   void setServoAngleRange(int angleMin, int angleMax);
   // for servo movement
   void moveServoAngleTempo(int angle, int tempo);
-  // for servo tempo
+  // for servo tempo in bpm
   void setServoTempo(int object, int tempo);
   int bpmToMs(int tempo);
 
@@ -162,7 +162,8 @@ protected:
   byte _midiVelocity = 0;
 
   // TODO: variables for outputServo
-  // Servo _servo;
+  Servo _servo;
+  int _outputPinServo = -1;
   int _servoAngleCurrent = 0;
   int _servoAngleMin = 0;
   int _servoAngleMax = 180;
@@ -180,7 +181,6 @@ protected:
   // TODO: variables for outputPrinter
   // TODO: for printer we need several variables
   int _outputPinPrinter = -1;
-  int _outputPinServo = -1;
 };
 
 // conditional compilation

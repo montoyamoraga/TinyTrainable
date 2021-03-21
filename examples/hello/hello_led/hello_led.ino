@@ -1,6 +1,7 @@
 /// @file hello_led.ino
 /// @brief Example: Test output with LEDs
 
+// import library
 #include <TinyTrainable.h>
 
 // declare instance of the instrument

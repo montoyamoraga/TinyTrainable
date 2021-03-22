@@ -120,38 +120,38 @@ void TinyTrainable::setupSensorLSM9DS1() {
 // TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
   switch (outputToTest) {
-  case outputMIDI:
-    setupOutputMIDI(10, 127);
-    break;
-  case outputSerialUSB:
-    Serial.begin(9600);
-    while (!Serial)
-      ;
-    break;
-  case outputUndefined:
-    pinMode(LED_BUILTIN, OUTPUT);
-    digitalWrite(LED_BUILTIN, LOW);
-    break;
+    case outputMIDI:
+      setupOutputMIDI(10, 127);
+      break;
+    case outputSerialUSB:
+      Serial.begin(9600);
+      while (!Serial)
+        ;
+      break;
+    case outputUndefined:
+      pinMode(LED_BUILTIN, OUTPUT);
+      digitalWrite(LED_BUILTIN, LOW);
+      break;
   }
 }
 
 // TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
   switch (outputToTest) {
-  case outputBuzzer:
-    // update internal variable
-    _outputPinTest = outputPin;
-    // setup pin
-    pinMode(_outputPinTest, OUTPUT);
-    break;
-  case outputLED:
-    _outputPinTest = outputPin;
-    pinMode(outputPin, OUTPUT);
-    break;
-  case outputServo:
-    setupOutputServo(outputPin);
-    // setServoAngleRange(-90, 90);  // default is 0, 180
-    break;
+    case outputBuzzer:
+      // update internal variable
+      _outputPinTest = outputPin;
+      // setup pin
+      pinMode(_outputPinTest, OUTPUT);
+      break;
+    case outputLED:
+      _outputPinTest = outputPin;
+      pinMode(outputPin, OUTPUT);
+      break;
+    case outputServo:
+      setupOutputServo(outputPin, 0, 180);
+      setServoTempo(0, 20);
+      break;
   }
 }
 
@@ -188,12 +188,7 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     delay(timeDelay);
     break;
   case outputServo:
-    moveServoAngleTempo(0, 60);
-    delay(timeDelay);
-    moveServoAngleTempo(90, 60);
-    delay(timeDelay);
-    moveServoAngleTempo(180, 60);
-    delay(timeDelay);
+    moveServo(0);
     break;
   case outputUndefined:
     blinkLEDBuiltIn(3);
@@ -229,7 +224,7 @@ void TinyTrainable::playOutput(int classification) {
     Serial.println(classification);
     break;
   case outputServo:
-    Serial.println("TODO");
+    moveServo(classification);
     break;
   case outputUndefined:
     Serial.println("TODO");
@@ -333,34 +328,29 @@ void TinyTrainable::setupOutputSerialUSB() {
     ;
 }
 
-void TinyTrainable::setupOutputServo(int outputPin) {
+void TinyTrainable::setupOutputServo(int outputPin, int angleMin, int angleMax) {
   // TODO: add comments about each line
   _outputMode = outputServo;
   _outputPinServo = outputPin;
+  _servoAngleMin = angleMin;
+  _servoAngleMax = angleMax;
+
   pinMode(_outputPinServo, OUTPUT);
   _servo.attach(_outputPinServo);
 }
 
-// TODO move this into setupOutputServo if it's always -90, 90?
-void TinyTrainable::setServoAngleRange(int angleMin, int angleMax) {
-  _servoAngleMin = angleMin;
-  _servoAngleMax = angleMax;
-}
-
-void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
-
+void TinyTrainable::moveServo(int classification) {
+  unsigned long servoPause = _servoPauses[classification];
   // update current time
   _servoTimeNow = millis();
 
-  // divide by 2 because servo moves twice per cycle
-  unsigned long servoPause = bpmToMs(tempo) / 2;
-
-  // if enought time has passed
+  // if enough time has passed
   if (_servoTimeNow - _servoTimePrevious >= servoPause) {
-
+    int angle = _servoAngleCurrent == _servoAngleMin ? _servoAngleMax : _servoAngleMin;
     // update _servoTimePrevious
     _servoTimePrevious = _servoTimeNow;
     _servo.write(angle);
+    _servoAngleCurrent = angle;
 
     // if (random(1000)/1000.0 < servoChance) {
     // servoPositionsIndex = (servoPositionsIndex + 1);
@@ -372,7 +362,8 @@ void TinyTrainable::moveServoAngleTempo(int angle, int tempo) {
 }
 
 void TinyTrainable::setServoTempo(int object, int tempo) {
-  _servoTempos[object] = tempo;
+  // divide by 2 because servo moves twice per cycle
+  _servoPauses[object] = bpmToMs(tempo) / 2;
 }
 
 // helper function for transforming between
@@ -405,8 +396,7 @@ void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(velocity);
 }
 
-void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
-                                   int outputPin2) {
+void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
   _outputMode = outputLED;
   _outputPinsLED[0] = outputPin0;
   _outputPinsLED[1] = outputPin1;

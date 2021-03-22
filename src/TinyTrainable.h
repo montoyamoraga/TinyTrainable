@@ -88,13 +88,11 @@ public:
                          int arrayDurationCount);
 
   // methods for servo
-  void setupOutputServo(int outputPin);
-  // for setting minimum and maximum angles
-  void setServoAngleRange(int angleMin, int angleMax);
-  // for servo movement
-  void moveServoAngleTempo(int angle, int tempo);
+  void setupOutputServo(int outputPin, int angleMin, int angleMax);
   // for servo tempo in bpm
   void setServoTempo(int object, int tempo);
+  // for servo movement
+  void moveServo(int classification);
   int bpmToMs(int tempo);
 
   // TODO: methods for outputLCD
@@ -167,8 +165,8 @@ protected:
   int _servoAngleCurrent = 0;
   int _servoAngleMin = 0;
   int _servoAngleMax = 180;
-  int _servoTempos[3];
-  float _servoChances[3];
+  unsigned long _servoPauses[3];
+  // float _servoChances[3];
   unsigned long _servoTimePrevious = 0;
   unsigned long _servoTimeNow = 0;
 

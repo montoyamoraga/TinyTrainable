@@ -5,9 +5,7 @@
 
 TinyTrainable tiny;
 
-void setup() {
-  tiny.setupOutputSerialUSB();
-}
+void setup() { tiny.setupOutputSerialUSB(); }
 
 void loop() {
   // the object classification number is the only thing sent over serial

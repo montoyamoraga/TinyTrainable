@@ -134,7 +134,7 @@ protected:
   // variables for outputs
   OutputMode _outputMode = outputUndefined;
   int _outputPinTest = -1;
-  
+
   // methods and variables for outputBuzzer
   int _outputPinBuzzer = -1;
   enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };

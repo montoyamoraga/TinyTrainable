@@ -21,8 +21,8 @@ void setup() {
 
   // setup for outputBuzzer, outputLED, and outputServo (that have pins)
   tiny.helloOutputsSetup(outputToTest, outputPin);
-  // setup for outputMIDI, outputSerialUSB, and outputUndefined (outputs without pins)
-  // tiny.helloOutputsSetup(outputToTest);
+  // setup for outputMIDI, outputSerialUSB, and outputUndefined (outputs without
+  // pins) tiny.helloOutputsSetup(outputToTest);
 }
 
 // loop() runs in a loop, after setup()

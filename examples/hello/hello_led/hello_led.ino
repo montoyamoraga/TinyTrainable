@@ -21,7 +21,7 @@ void setup() {
 
 void loop() {
   tiny.playOutput(0);
-  delay(pauseTime); 
+  delay(pauseTime);
   tiny.playOutput(1);
   delay(pauseTime);
   tiny.playOutput(2);

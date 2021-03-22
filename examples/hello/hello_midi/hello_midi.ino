@@ -26,7 +26,7 @@ void setup() {
 void loop() {
   // play the output associated with each object
   tiny.playOutput(0);
-  delay(pauseTime); 
+  delay(pauseTime);
   tiny.playOutput(1);
   delay(pauseTime);
   tiny.playOutput(2);
@@ -35,9 +35,9 @@ void loop() {
   // or directly send a command to your MIDI device!
   // these parameters can be different from those above
   tiny.sendSerialMIDINote(midiChannel, 56, midiVelocity);
-  delay(pauseTime); 
+  delay(pauseTime);
   tiny.sendSerialMIDINote(midiChannel, 49, midiVelocity);
-  delay(pauseTime); 
+  delay(pauseTime);
   tiny.sendSerialMIDINote(midiChannel, 70, midiVelocity);
-  delay(pauseTime); 
+  delay(pauseTime);
 }

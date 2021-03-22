@@ -120,38 +120,38 @@ void TinyTrainable::setupSensorLSM9DS1() {
 // TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
   switch (outputToTest) {
-    case outputMIDI:
-      setupOutputMIDI(10, 127);
-      break;
-    case outputSerialUSB:
-      Serial.begin(9600);
-      while (!Serial)
-        ;
-      break;
-    case outputUndefined:
-      pinMode(LED_BUILTIN, OUTPUT);
-      digitalWrite(LED_BUILTIN, LOW);
-      break;
+  case outputMIDI:
+    setupOutputMIDI(10, 127);
+    break;
+  case outputSerialUSB:
+    Serial.begin(9600);
+    while (!Serial)
+      ;
+    break;
+  case outputUndefined:
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, LOW);
+    break;
   }
 }
 
 // TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
   switch (outputToTest) {
-    case outputBuzzer:
-      // update internal variable
-      _outputPinTest = outputPin;
-      // setup pin
-      pinMode(_outputPinTest, OUTPUT);
-      break;
-    case outputLED:
-      _outputPinTest = outputPin;
-      pinMode(outputPin, OUTPUT);
-      break;
-    case outputServo:
-      setupOutputServo(outputPin);
-      // setServoAngleRange(-90, 90);  // default is 0, 180
-      break;
+  case outputBuzzer:
+    // update internal variable
+    _outputPinTest = outputPin;
+    // setup pin
+    pinMode(_outputPinTest, OUTPUT);
+    break;
+  case outputLED:
+    _outputPinTest = outputPin;
+    pinMode(outputPin, OUTPUT);
+    break;
+  case outputServo:
+    setupOutputServo(outputPin);
+    // setServoAngleRange(-90, 90);  // default is 0, 180
+    break;
   }
 }
 
@@ -405,7 +405,8 @@ void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(velocity);
 }
 
-void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
+void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
+                                   int outputPin2) {
   _outputMode = outputLED;
   _outputPinsLED[0] = outputPin0;
   _outputPinsLED[1] = outputPin1;

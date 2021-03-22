@@ -31,10 +31,10 @@ int paramArrayLength = 6;
 
 // setup() runs once, at the beginning
 void setup() {
-  
+
   // setup the instrument
   tiny.setupInstrument(tinyDebugging);
-  
+
   // set its output
   tiny.setupOutputBuzzer(outputPin);
 

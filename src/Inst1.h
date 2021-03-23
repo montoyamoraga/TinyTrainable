@@ -4,17 +4,24 @@
 #ifndef INST1_H
 #define INST1_H
 
-#define TINY_INPUT "gesture"
+#define TINY_INPUT "GESTURE"
 
-// include libraries
-#include "TinyTrainable.h"
+// include Arduino libraries
 #include <Arduino.h>
-#include <TensorFlowLite.h>
-#include <tensorflow/lite/micro/all_ops_resolver.h>
-#include <tensorflow/lite/micro/micro_error_reporter.h>
-#include <tensorflow/lite/micro/micro_interpreter.h>
-#include <tensorflow/lite/schema/schema_generated.h>
-#include <tensorflow/lite/version.h>
+
+// include TinyTrainable library
+#include "TinyTrainable.h"
+
+
+// include libraries for gesture recognition
+#if TINY_INPUT == GESTURE
+  #include <TensorFlowLite.h>
+  #include <tensorflow/lite/micro/all_ops_resolver.h>
+  #include <tensorflow/lite/micro/micro_error_reporter.h>
+  #include <tensorflow/lite/micro/micro_interpreter.h>
+  #include <tensorflow/lite/schema/schema_generated.h>
+  #include <tensorflow/lite/version.h>
+#endif
 
 // inheritance
 class Inst1 : public TinyTrainable {

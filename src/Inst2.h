@@ -10,7 +10,7 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
-#define TINY_INPUT "speech"
+#define TINY_INPUT "SPEECH"
 
 // include TensorFlow Lite Micro library
 #include <TensorFlowLite.h>

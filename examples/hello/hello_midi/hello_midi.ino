@@ -3,7 +3,7 @@
 
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT "MIDI"
+#define TINY_OUTPUT MIDI
 
 TinyTrainable tiny;
 

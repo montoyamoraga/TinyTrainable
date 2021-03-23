@@ -8,7 +8,7 @@
 Inst0 tiny;
 
 // declare constants
-#define TINY_OUTPUT "BUZZER"
+#define TINY_OUTPUT BUZZER
 
 // constants for the KNN algorithm
 const int K = 5;

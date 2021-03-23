@@ -3,7 +3,7 @@
 
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT "SERIAL"
+#define TINY_OUTPUT SERIAL
 
 TinyTrainable tiny;
 

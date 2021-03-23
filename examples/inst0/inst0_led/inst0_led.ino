@@ -7,7 +7,7 @@
 // declare instance of instrument0
 Inst0 tiny;
 
-#define TINY_OUTPUT "LED"
+#define TINY_OUTPUT LED
 
 // constants for the hardware
 const int outputPinLED0 = 3;

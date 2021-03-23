@@ -4,8 +4,7 @@
 // include library
 #include <Inst0.h>
 
-#define TINY_OUTPUT "MIDI"
-
+#define TINY_OUTPUT MIDI
 
 // declare instance of the instrument0
 Inst0 tiny;

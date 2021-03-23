@@ -4,7 +4,7 @@
 // include all libraries
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT "SERVO"
+#define TINY_OUTPUT SERVO
 
 TinyTrainable tiny;
 

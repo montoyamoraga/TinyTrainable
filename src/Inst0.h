@@ -13,6 +13,8 @@
 // import Arduino KNN library
 #include <Arduino_KNN.h>
 
+#define TINY_INPUT "color"
+
 // inherit from the class TinyTrainable
 class Inst0 : public TinyTrainable {
 

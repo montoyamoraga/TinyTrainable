@@ -4,6 +4,8 @@
 #ifndef INST1_H
 #define INST1_H
 
+#define TINY_INPUT "gesture"
+
 // include libraries
 #include "TinyTrainable.h"
 #include <Arduino.h>

@@ -20,8 +20,10 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-// include library for output with servo motors
-#include <Servo.h>
+#if OUTPUT == "servo"
+  // include library for output with servo motors
+  #include <Servo.h>
+#endif
 
 // include library for output with Adafruit thermal printer
 // #include <Adafruit_Thermal.h>

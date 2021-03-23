@@ -4,9 +4,13 @@
 #ifndef INST0_H
 #define INST0_H
 
-// import libraries
-#include "TinyTrainable.h"
+// import Arduino library
 #include <Arduino.h>
+
+// import Tiny Trainable library
+#include "TinyTrainable.h"
+
+// import Arduino KNN library
 #include <Arduino_KNN.h>
 
 // inherit from the class TinyTrainable

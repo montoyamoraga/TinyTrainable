@@ -4,7 +4,7 @@
 #ifndef INST1_H
 #define INST1_H
 
-#define INPUT_GESTURE 1
+// #define INPUT_GESTURE 1
 
 // include Arduino libraries
 #include <Arduino.h>

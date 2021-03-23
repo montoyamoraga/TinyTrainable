@@ -4,7 +4,7 @@
 #ifndef INST2_H
 #define INST2_H
 
-#define INPUT_SPEECH 1
+// #define INPUT_SPEECH 1
 
 // include Arduino library
 #include <Arduino.h>

@@ -4,7 +4,7 @@
 #ifndef INST1_H
 #define INST1_H
 
-#define TINY_INPUT GESTURE
+#define TINY_INPUT 1
 
 // include Arduino libraries
 #include <Arduino.h>
@@ -13,7 +13,7 @@
 #include "TinyTrainable.h"
 
 // include libraries for gesture recognition
-#if TINY_INPUT == GESTURE
+#if TINY_INPUT == 1
   #include <TensorFlowLite.h>
   #include <tensorflow/lite/micro/all_ops_resolver.h>
   #include <tensorflow/lite/micro/micro_error_reporter.h>

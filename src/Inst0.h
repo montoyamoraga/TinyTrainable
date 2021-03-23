@@ -4,7 +4,7 @@
 #ifndef INST0_H
 #define INST0_H
 
-#define TINY_INPUT COLOR
+#define TINY_INPUT 1
 
 // import Arduino library
 #include <Arduino.h>
@@ -12,7 +12,7 @@
 // import Tiny Trainable library
 #include "TinyTrainable.h"
 
-#if TINY_INPUT == COLOR
+#if TINY_INPUT == 1
   // import Arduino KNN library
   #include <Arduino_KNN.h>
 #endif

@@ -11,6 +11,12 @@ const int K = 5;
 const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
 
+// for the supplies list servo, these values can be >= 0, <= 180
+// these are the values the servo will move between at the given bpm
+// going right to the limit can sometimes cause the servo to buzz
+const int servoAngleMin = 30;
+const int servoAngleMax = 60;
+
 // constants for the hardware
 const int outputPin = 9;
 
@@ -23,7 +29,7 @@ const bool tinyDebugging = true;
 void setup() {
   tiny.setupInstrument(tinyDebugging);
 
-  tiny.setupOutputServo(outputPin);
+  tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
   // set fixed angles, easy version
   tiny.setServoTempo(0, 30);

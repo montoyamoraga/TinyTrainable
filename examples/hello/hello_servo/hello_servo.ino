@@ -7,6 +7,7 @@
 TinyTrainable tiny;
 
 const int outputPin = 9;
+
 // for the supplies list servo, these values can be >= 0, <= 180
 // these are the values the servo will move between at the given bpm
 // going right to the limit can sometimes cause the servo to buzz

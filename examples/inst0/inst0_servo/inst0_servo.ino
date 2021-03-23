@@ -1,10 +1,9 @@
-// include library
-#include <Inst0.h>
+// import file for options
+#include "options.h"
 
 // declare instance of the instrument0
 Inst0 tiny;
 
-#define TINY_OUTPUT SERVO
 
 // constants for the KNN algorithm
 const int K = 5;

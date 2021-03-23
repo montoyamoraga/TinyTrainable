@@ -4,7 +4,7 @@
 #ifndef INST2_H
 #define INST2_H
 
-#define TINY_INPUT 2
+#define INPUT_SPEECH 1
 
 // include Arduino library
 #include <Arduino.h>
@@ -13,7 +13,7 @@
 #include "TinyTrainable.h"
 
 // include TensorFlow Lite Micro library
-#if TINY_INPUT == 2
+#ifdef INPUT_SPEECH
   #include <TensorFlowLite.h>
   #include <tensorflow/lite/micro/all_ops_resolver.h>
   #include <tensorflow/lite/micro/micro_error_reporter.h>

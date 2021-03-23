@@ -4,6 +4,8 @@
 // include library
 #include <Inst0.h>
 
+#define TINY_OUTPUT "SERIAL"
+
 // declare instance of the instrument0
 Inst0 tiny;
 

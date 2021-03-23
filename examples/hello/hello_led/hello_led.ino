@@ -4,6 +4,8 @@
 // import library
 #include <TinyTrainable.h>
 
+#define TINY_OUTPUT "LED"
+
 // declare instance of the instrument
 // you can also do the same with Inst0, Inst1, or Inst2 instances
 TinyTrainable tiny;

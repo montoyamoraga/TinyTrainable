@@ -4,6 +4,11 @@
 // include main library
 #include <TinyTrainable.h>
 
+// TODO: maybe change this example to only internal things
+// TODO: maybe change name to hello_none for consistency
+// should only flash internal LED lights and output serial messages
+#define TINY_OUTPUT "NONE"
+
 // declare instance of instrument
 TinyTrainable tiny;
 

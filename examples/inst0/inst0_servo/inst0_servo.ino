@@ -4,7 +4,7 @@
 // declare instance of the instrument0
 Inst0 tiny;
 
-#define OUTPUT "servo"
+#define TINY_OUTPUT "SERVO"
 
 // constants for the KNN algorithm
 const int K = 5;

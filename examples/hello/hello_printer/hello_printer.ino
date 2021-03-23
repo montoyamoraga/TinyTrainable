@@ -4,6 +4,8 @@
 // import library
 #include <TinyTrainable.h>
 
+#define TINY_OUTPUT "PRINTER"
+
 // TODO: move this to library
 #include "Adafruit_Thermal.h"
 

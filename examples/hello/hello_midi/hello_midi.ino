@@ -3,6 +3,8 @@
 
 #include <TinyTrainable.h>
 
+#define TINY_OUTPUT "MIDI"
+
 TinyTrainable tiny;
 
 // MIDI sound numbers

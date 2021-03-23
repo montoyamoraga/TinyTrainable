@@ -3,6 +3,8 @@
 
 #include <TinyTrainable.h>
 
+#define TINY_OUTPUT "SERIAL"
+
 TinyTrainable tiny;
 
 void setup() { tiny.setupOutputSerialUSB(); }

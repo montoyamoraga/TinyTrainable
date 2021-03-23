@@ -7,8 +7,8 @@
 // declare instance of the instrument0
 Inst0 tiny;
 
-// declare type of output
-#define OUTPUT "buzzer"
+// declare constants
+#define TINY_OUTPUT "BUZZER"
 
 // constants for the KNN algorithm
 const int K = 5;

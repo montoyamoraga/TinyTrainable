@@ -4,7 +4,7 @@
 #ifndef INST0_H
 #define INST0_H
 
-#define TINY_INPUT "COLOR"
+#define TINY_INPUT COLOR
 
 // import Arduino library
 #include <Arduino.h>

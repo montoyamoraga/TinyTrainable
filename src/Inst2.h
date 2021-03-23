@@ -4,21 +4,23 @@
 #ifndef INST2_H
 #define INST2_H
 
+#define TINY_INPUT SPEECH
+
 // include Arduino library
 #include <Arduino.h>
 
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
-#define TINY_INPUT "SPEECH"
-
 // include TensorFlow Lite Micro library
-#include <TensorFlowLite.h>
-#include <tensorflow/lite/micro/all_ops_resolver.h>
-#include <tensorflow/lite/micro/micro_error_reporter.h>
-#include <tensorflow/lite/micro/micro_interpreter.h>
-#include <tensorflow/lite/schema/schema_generated.h>
-#include <tensorflow/lite/version.h>
+#if TINY_INPUT == SPEECH
+  #include <TensorFlowLite.h>
+  #include <tensorflow/lite/micro/all_ops_resolver.h>
+  #include <tensorflow/lite/micro/micro_error_reporter.h>
+  #include <tensorflow/lite/micro/micro_interpreter.h>
+  #include <tensorflow/lite/schema/schema_generated.h>
+  #include <tensorflow/lite/version.h>
+#endif
 
 // inheritance
 class Inst2 : public TinyTrainable {

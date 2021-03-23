@@ -4,14 +4,13 @@
 #ifndef INST1_H
 #define INST1_H
 
-#define TINY_INPUT "GESTURE"
+#define TINY_INPUT GESTURE
 
 // include Arduino libraries
 #include <Arduino.h>
 
 // include TinyTrainable library
 #include "TinyTrainable.h"
-
 
 // include libraries for gesture recognition
 #if TINY_INPUT == GESTURE

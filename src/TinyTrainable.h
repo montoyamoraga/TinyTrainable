@@ -20,7 +20,7 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-#if OUTPUT == servo
+#if OUTPUT == SERVO
   // include library for output with servo motors
   #include <Servo.h>
 #endif

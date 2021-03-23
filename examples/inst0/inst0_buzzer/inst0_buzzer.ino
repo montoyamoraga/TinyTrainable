@@ -1,14 +1,11 @@
 /// @file inst0_buzzer.ino
 /// @brief Example: Instrument0 with output buzzer
 
-// include library
-#include <Inst0.h>
+// import file for options
+#include "options.h"
 
 // declare instance of the instrument0
 Inst0 tiny;
-
-// declare constants
-#define TINY_OUTPUT BUZZER
 
 // constants for the KNN algorithm
 const int K = 5;

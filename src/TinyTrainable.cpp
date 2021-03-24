@@ -149,8 +149,10 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
       pinMode(outputPin, OUTPUT);
       break;
     case outputServo:
+    #ifdef OUTPUT_SERVO
       setupOutputServo(outputPin, 0, 180);
       setServoTempo(0, 20);
+      #endif
       break;
   }
 }

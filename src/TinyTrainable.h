@@ -91,12 +91,14 @@ public:
                          int arrayDurationCount);
 
   // methods for servo
+  #ifdef OUTPUT_SERVO
   void setupOutputServo(int outputPin, int angleMin, int angleMax);
   // for servo tempo in bpm
   void setServoTempo(int object, int tempo);
   // for servo movement
   void moveServo(int classification);
   int bpmToMs(int tempo);
+  #endif
 
   // TODO: methods for outputLCD
 

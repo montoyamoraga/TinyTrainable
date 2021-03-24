@@ -6,6 +6,9 @@
 // include local library
 #include "TinyTrainable.h"
 
+// include options
+#include "options.h"
+
 /// @brief Constructor method
 /// @param [in] none
 /// @param [out] none
@@ -334,7 +337,7 @@ void TinyTrainable::setupOutputSerialUSB() {
     ;
 }
 
-#ifdef OUTPUT_SERVO_BLA
+#ifdef OUTPUT_SERVO
 void TinyTrainable::setupOutputServo(int outputPin, int angleMin,
                                      int angleMax) {
   // TODO: add comments about each line

@@ -25,7 +25,6 @@
 // include library for output with servo motors
 #ifdef OUTPUT_SERVO
 #include <Servo.h>
-#define OUTPUT_SERVO_BLA 1
 #endif
 
 // include library for output with Adafruit thermal printer

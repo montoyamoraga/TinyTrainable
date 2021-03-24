@@ -8,7 +8,7 @@
 #define TINY_TRAINABLE_H
 
 // TODO: quick fix
-// #define OUTPUT_SERVO 1
+#define OUTPUT_SERVO 1
 
 // include options
 // #include "options.h"

@@ -19,14 +19,14 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
- // include library for output with servo motors
+// include library for output with servo motors
 #ifdef OUTPUT_SERVO
-  #include <Servo.h>
+#include <Servo.h>
 #endif
 
 // include library for output with Adafruit thermal printer
 #ifdef OUTPUT_PRINTER
-  #include <Adafruit_Thermal.h>
+#include <Adafruit_Thermal.h>
 #endif
 
 // colors for setting the RGB LED
@@ -90,15 +90,15 @@ public:
   void setBuzzerDuration(int object, int *arrayDurations,
                          int arrayDurationCount);
 
-  // methods for servo
-  #ifdef OUTPUT_SERVO
+// methods for servo
+#ifdef OUTPUT_SERVO
   void setupOutputServo(int outputPin, int angleMin, int angleMax);
   // for servo tempo in bpm
   void setServoTempo(int object, int tempo);
   // for servo movement
   void moveServo(int classification);
   int bpmToMs(int tempo);
-  #endif
+#endif
 
   // TODO: methods for outputLCD
 
@@ -164,8 +164,8 @@ protected:
   byte _midiChannel = 16;
   byte _midiVelocity = 0;
 
-  // TODO: variables for outputServo
-  #ifdef OUTPUT_SERVO
+// TODO: variables for outputServo
+#ifdef OUTPUT_SERVO
   Servo _servo;
   int _outputPinServo = -1;
   int _servoAngleCurrent = 0;
@@ -175,7 +175,7 @@ protected:
   // float _servoChances[3];
   unsigned long _servoTimePrevious = 0;
   unsigned long _servoTimeNow = 0;
-  #endif
+#endif
 
   // TODO: variables for outputLCD
   int _outputPinLCD = -1;

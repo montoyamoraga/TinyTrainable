@@ -120,40 +120,40 @@ void TinyTrainable::setupSensorLSM9DS1() {
 // TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
   switch (outputToTest) {
-    case outputMIDI:
-      setupOutputMIDI(10, 127);
-      break;
-    case outputSerialUSB:
-      Serial.begin(9600);
-      while (!Serial)
-        ;
-      break;
-    case outputUndefined:
-      pinMode(LED_BUILTIN, OUTPUT);
-      digitalWrite(LED_BUILTIN, LOW);
-      break;
+  case outputMIDI:
+    setupOutputMIDI(10, 127);
+    break;
+  case outputSerialUSB:
+    Serial.begin(9600);
+    while (!Serial)
+      ;
+    break;
+  case outputUndefined:
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, LOW);
+    break;
   }
 }
 
 // TODO
 void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
   switch (outputToTest) {
-    case outputBuzzer:
-      // update internal variable
-      _outputPinTest = outputPin;
-      // setup pin
-      pinMode(_outputPinTest, OUTPUT);
-      break;
-    case outputLED:
-      _outputPinTest = outputPin;
-      pinMode(outputPin, OUTPUT);
-      break;
-    case outputServo:
-    #ifdef OUTPUT_SERVO
-      setupOutputServo(outputPin, 0, 180);
-      setServoTempo(0, 20);
-      #endif
-      break;
+  case outputBuzzer:
+    // update internal variable
+    _outputPinTest = outputPin;
+    // setup pin
+    pinMode(_outputPinTest, OUTPUT);
+    break;
+  case outputLED:
+    _outputPinTest = outputPin;
+    pinMode(outputPin, OUTPUT);
+    break;
+  case outputServo:
+#ifdef OUTPUT_SERVO
+    setupOutputServo(outputPin, 0, 180);
+    setServoTempo(0, 20);
+#endif
+    break;
   }
 }
 
@@ -190,9 +190,9 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     delay(timeDelay);
     break;
   case outputServo:
-  #ifdef OUTPUT_SERVO
+#ifdef OUTPUT_SERVO
     moveServo(0);
-    #endif
+#endif
     break;
   case outputUndefined:
     blinkLEDBuiltIn(3);
@@ -228,9 +228,9 @@ void TinyTrainable::playOutput(int classification) {
     Serial.println(classification);
     break;
   case outputServo:
-  #ifdef OUTPUT_SERVO
+#ifdef OUTPUT_SERVO
     moveServo(classification);
-    #endif
+#endif
     break;
   case outputUndefined:
     Serial.println("TODO");
@@ -335,7 +335,8 @@ void TinyTrainable::setupOutputSerialUSB() {
 }
 
 #ifdef OUTPUT_SERVO
-void TinyTrainable::setupOutputServo(int outputPin, int angleMin, int angleMax) {
+void TinyTrainable::setupOutputServo(int outputPin, int angleMin,
+                                     int angleMax) {
   // TODO: add comments about each line
   _outputMode = outputServo;
   _outputPinServo = outputPin;
@@ -353,7 +354,8 @@ void TinyTrainable::moveServo(int classification) {
 
   // if enough time has passed
   if (_servoTimeNow - _servoTimePrevious >= servoPause) {
-    int angle = _servoAngleCurrent == _servoAngleMin ? _servoAngleMax : _servoAngleMin;
+    int angle =
+        _servoAngleCurrent == _servoAngleMin ? _servoAngleMax : _servoAngleMin;
     // update _servoTimePrevious
     _servoTimePrevious = _servoTimeNow;
     _servo.write(angle);
@@ -404,7 +406,8 @@ void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(velocity);
 }
 
-void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
+void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
+                                   int outputPin2) {
   _outputMode = outputLED;
   _outputPinsLED[0] = outputPin0;
   _outputPinsLED[1] = outputPin1;

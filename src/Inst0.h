@@ -6,6 +6,8 @@
 
 // TODO: temporary fix
 #define INPUT_COLOR 1
+// include options
+#include "options.h"
 
 // import Arduino library
 #include <Arduino.h>

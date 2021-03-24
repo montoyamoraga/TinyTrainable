@@ -11,7 +11,7 @@
 // #define OUTPUT_SERVO 1
 
 // include options
-#include "options.h"
+// #include "options.h"
 
 // include Arduino library
 #include <Arduino.h>

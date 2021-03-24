@@ -4,7 +4,7 @@
 #ifndef INST0_H
 #define INST0_H
 
-// #define INPUT_COLOR 1
+#define INPUT_COLOR 1
 
 // import Arduino library
 #include <Arduino.h>

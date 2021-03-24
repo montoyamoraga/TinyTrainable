@@ -26,9 +26,14 @@
 #include <Arduino_LSM9DS1.h>
 
 // include library for output with servo motors
-#ifdef OUTPUT_SERVO
-#include <Servo.h>
-#endif
+// #ifdef OUTPUT_SERVO
+// #include <Servo.h>
+// #endif
+
+if (OUTPUT_SERVO == 1) {
+  #include <Servo.h>
+}
+// #endif
 
 // include library for output with Adafruit thermal printer
 #ifdef OUTPUT_PRINTER
@@ -97,15 +102,23 @@ public:
                          int arrayDurationCount);
 
 // methods for servo
-#ifdef OUTPUT_SERVO
+// #ifdef OUTPUT_SERVO
+//   void setupOutputServo(int outputPin, int angleMin, int angleMax);
+//   // for servo tempo in bpm
+//   void setServoTempo(int object, int tempo);
+//   // for servo movement
+//   void moveServo(int classification);
+//   int bpmToMs(int tempo);
+// #endif
+
+if (OUTPUT_SERVO == 1) {
   void setupOutputServo(int outputPin, int angleMin, int angleMax);
   // for servo tempo in bpm
   void setServoTempo(int object, int tempo);
   // for servo movement
   void moveServo(int classification);
   int bpmToMs(int tempo);
-#endif
-
+}
   // TODO: methods for outputLCD
 
   // TODO: methods for outputLED
@@ -170,8 +183,22 @@ protected:
   byte _midiChannel = 16;
   byte _midiVelocity = 0;
 
+
+// #ifdef OUTPUT_SERVO
+//   Servo _servo;
+//   int _outputPinServo = -1;
+//   int _servoAngleCurrent = 0;
+//   int _servoAngleMin = 0;
+//   int _servoAngleMax = 180;
+//   unsigned long _servoPauses[3];
+//   // float _servoChances[3];
+//   unsigned long _servoTimePrevious = 0;
+//   unsigned long _servoTimeNow = 0;
+// #endif
+
+
 // TODO: variables for outputServo
-#ifdef OUTPUT_SERVO
+if (OUTPUT_SERVO == 1) {
   Servo _servo;
   int _outputPinServo = -1;
   int _servoAngleCurrent = 0;
@@ -181,7 +208,7 @@ protected:
   // float _servoChances[3];
   unsigned long _servoTimePrevious = 0;
   unsigned long _servoTimeNow = 0;
-#endif
+}
 
   // TODO: variables for outputLCD
   int _outputPinLCD = -1;

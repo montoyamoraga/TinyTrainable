@@ -3,8 +3,6 @@
 /// @brief Arduino library for Tiny Trainable Instruments
 /// @author montoyamoraga, peter-parque, maxzwang
 
-
-
 // conditional compilation
 #ifndef TINY_TRAINABLE_H
 #define TINY_TRAINABLE_H
@@ -21,13 +19,15 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-// #ifdef OUTPUT_SERVO
-  // include library for output with servo motors
+ // include library for output with servo motors
+#ifdef OUTPUT_SERVO
   #include <Servo.h>
-// #endif
+#endif
 
 // include library for output with Adafruit thermal printer
-// #include <Adafruit_Thermal.h>
+#ifdef OUTPUT_PRINTER
+  #include <Adafruit_Thermal.h>
+#endif
 
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };

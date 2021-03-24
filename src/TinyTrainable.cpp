@@ -6,9 +6,6 @@
 // include local library
 #include "TinyTrainable.h"
 
-// include options
-#include "options.h"
-
 /// @brief Constructor method
 /// @param [in] none
 /// @param [out] none

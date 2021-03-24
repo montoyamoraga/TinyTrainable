@@ -3,10 +3,10 @@
 /// @brief Arduino library for Tiny Trainable Instruments
 /// @author montoyamoraga, peter-parque, maxzwang
 
-#ifdef OUTPUT_SERVO
+// #ifdef OUTPUT_SERVO
   // include library for output with servo motors
-  #include <Servo.h>
-#endif
+#include <Servo.h>
+// #endif
 
 // conditional compilation
 #ifndef TINY_TRAINABLE_H

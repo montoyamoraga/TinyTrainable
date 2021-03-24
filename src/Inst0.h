@@ -4,7 +4,8 @@
 #ifndef INST0_H
 #define INST0_H
 
-// #define INPUT_COLOR 1
+// TODO: temporary fix
+#define INPUT_COLOR 1
 
 // import Arduino library
 #include <Arduino.h>

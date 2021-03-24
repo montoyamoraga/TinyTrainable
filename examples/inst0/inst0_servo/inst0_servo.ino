@@ -1,8 +1,8 @@
 // import file for options
 #include "options.h"
 
-extern int INPUT_COLOR = 1;
-extern int OUTPUT_SERVO = 1;
+// extern int INPUT_COLOR = 1;
+// extern int OUTPUT_SERVO = 1;
 
 // include library
 #include <Inst0.h>

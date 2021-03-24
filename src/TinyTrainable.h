@@ -8,7 +8,7 @@
 #define TINY_TRAINABLE_H
 
 // TODO: quick fix
-#define OUTPUT_SERVO 1
+// #define OUTPUT_SERVO 1
 
 // include Arduino library
 #include <Arduino.h>
@@ -25,6 +25,7 @@
 // include library for output with servo motors
 #ifdef OUTPUT_SERVO
 #include <Servo.h>
+#define OUTPUT_SERVO 1
 #endif
 
 // include library for output with Adafruit thermal printer

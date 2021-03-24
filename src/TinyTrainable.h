@@ -3,10 +3,7 @@
 /// @brief Arduino library for Tiny Trainable Instruments
 /// @author montoyamoraga, peter-parque, maxzwang
 
-// #ifdef OUTPUT_SERVO
-  // include library for output with servo motors
-#include <Servo.h>
-// #endif
+
 
 // conditional compilation
 #ifndef TINY_TRAINABLE_H
@@ -24,7 +21,10 @@
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-
+// #ifdef OUTPUT_SERVO
+  // include library for output with servo motors
+  #include <Servo.h>
+// #endif
 
 // include library for output with Adafruit thermal printer
 // #include <Adafruit_Thermal.h>

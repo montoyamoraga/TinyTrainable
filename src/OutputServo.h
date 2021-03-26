@@ -4,5 +4,8 @@
 // include library for output with servo motors
 #include <Servo.h>
 
+class OutputPrinter : public TinyTrainable {
+
+};
 
 #endif

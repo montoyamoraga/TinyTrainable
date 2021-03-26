@@ -145,7 +145,6 @@ protected:
   byte _midiVelocity = 0;
 
 // TODO: variables for outputServo
-#ifdef OUTPUT_SERVO
   Servo _servo;
   int _outputPinServo = -1;
   int _servoAngleCurrent = 0;
@@ -155,7 +154,6 @@ protected:
   // float _servoChances[3];
   unsigned long _servoTimePrevious = 0;
   unsigned long _servoTimeNow = 0;
-#endif
 
   // TODO: variables for outputLCD
   int _outputPinLCD = -1;

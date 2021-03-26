@@ -149,10 +149,8 @@ void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin) {
     pinMode(outputPin, OUTPUT);
     break;
   case outputServo:
-#ifdef OUTPUT_SERVO
     setupOutputServo(outputPin, 0, 180);
     setServoTempo(0, 20);
-#endif
     break;
   }
 }
@@ -190,9 +188,7 @@ void TinyTrainable::helloOutputs(OutputMode outputToTest) {
     delay(timeDelay);
     break;
   case outputServo:
-#ifdef OUTPUT_SERVO
     moveServo(0);
-#endif
     break;
   case outputUndefined:
     blinkLEDBuiltIn(3);
@@ -228,9 +224,7 @@ void TinyTrainable::playOutput(int classification) {
     Serial.println(classification);
     break;
   case outputServo:
-#ifdef OUTPUT_SERVO
     moveServo(classification);
-#endif
     break;
   case outputUndefined:
     Serial.println("TODO");
@@ -382,7 +376,6 @@ int TinyTrainable::bpmToMs(int tempo) {
   // return result
   return ms;
 }
-#endif
 
 // sets up Serial MIDI output on TX pin
 void TinyTrainable::setupSerialMIDI() {

@@ -14,4 +14,8 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
+class InputGesture : public TinyTrainable {
+
+};
+
 #endif

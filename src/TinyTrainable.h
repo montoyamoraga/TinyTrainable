@@ -71,14 +71,13 @@ public:
   void setBuzzerDuration(int object, int *arrayDurations,
                          int arrayDurationCount);
 
-// methods for servo
+  // methods for servo
   void setupOutputServo(int outputPin, int angleMin, int angleMax);
   // for servo tempo in bpm
   void setServoTempo(int object, int tempo);
   // for servo movement
   void moveServo(int classification);
   int bpmToMs(int tempo);
-
 
   // TODO: methods for outputLCD
 
@@ -143,17 +142,6 @@ protected:
   int _midiNotes[3];
   byte _midiChannel = 16;
   byte _midiVelocity = 0;
-
-// TODO: variables for outputServo
-  Servo _servo;
-  int _outputPinServo = -1;
-  int _servoAngleCurrent = 0;
-  int _servoAngleMin = 0;
-  int _servoAngleMax = 180;
-  unsigned long _servoPauses[3];
-  // float _servoChances[3];
-  unsigned long _servoTimePrevious = 0;
-  unsigned long _servoTimeNow = 0;
 
   // TODO: variables for outputLCD
   int _outputPinLCD = -1;

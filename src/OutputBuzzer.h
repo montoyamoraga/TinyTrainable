@@ -7,8 +7,6 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
-class OutputBuzzer : public TinyTrainable {
-
-};
+class OutputBuzzer : public TinyTrainable {};
 
 #endif

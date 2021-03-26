@@ -15,8 +15,6 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
-class InputSpeech : public TinyTrainable {
-
-};
+class InputSpeech : public TinyTrainable {};
 
 #endif

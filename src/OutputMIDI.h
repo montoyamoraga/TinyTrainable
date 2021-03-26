@@ -7,8 +7,6 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
-class OutputMIDI : public TinyTrainable {
-
-};
+class OutputMIDI : public TinyTrainable {};
 
 #endif

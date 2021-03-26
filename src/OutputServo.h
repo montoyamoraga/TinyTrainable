@@ -10,8 +10,21 @@
 // include library for output with servo motors
 #include <Servo.h>
 
-class OutputPrinter : public TinyTrainable {
+class OutputServo : public TinyTrainable {
 
+  // variables for outputServo
+public:
+  Servo _servo;
+  int _outputPinServo = -1;
+  int _servoAngleCurrent = 0;
+  int _servoAngleMin = 0;
+  int _servoAngleMax = 180;
+  unsigned long _servoPauses[3];
+  // float _servoChances[3];
+  unsigned long _servoTimePrevious = 0;
+  unsigned long _servoTimeNow = 0;
+
+private:
 };
 
 #endif

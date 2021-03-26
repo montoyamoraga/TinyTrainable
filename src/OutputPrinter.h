@@ -10,8 +10,6 @@
 // include library for output with Adafruit thermal printer
 #include <Adafruit_Thermal.h>
 
-class OutputPrinter : public TinyTrainable {
-
-};
+class OutputPrinter : public TinyTrainable {};
 
 #endif

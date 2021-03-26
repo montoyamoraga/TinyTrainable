@@ -20,14 +20,10 @@
 #include <Arduino_LSM9DS1.h>
 
 // include library for output with servo motors
-#ifdef OUTPUT_SERVO
 #include <Servo.h>
-#endif
 
 // include library for output with Adafruit thermal printer
-#ifdef OUTPUT_PRINTER
 #include <Adafruit_Thermal.h>
-#endif
 
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
@@ -91,14 +87,12 @@ public:
                          int arrayDurationCount);
 
 // methods for servo
-#ifdef OUTPUT_SERVO
   void setupOutputServo(int outputPin, int angleMin, int angleMax);
   // for servo tempo in bpm
   void setServoTempo(int object, int tempo);
   // for servo movement
   void moveServo(int classification);
   int bpmToMs(int tempo);
-#endif
 
 
   // TODO: methods for outputLCD

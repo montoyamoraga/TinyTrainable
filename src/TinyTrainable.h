@@ -10,21 +10,6 @@
 // include Arduino library
 #include <Arduino.h>
 
-// include library for proximity and light sensor
-// https://www.arduino.cc/en/Reference/ArduinoAPDS9960
-#include <Arduino_APDS9960.h>
-
-// include library for IMU sensor
-// 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer
-// https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
-#include <Arduino_LSM9DS1.h>
-
-// include library for output with servo motors
-#include <Servo.h>
-
-// include library for output with Adafruit thermal printer
-#include <Adafruit_Thermal.h>
-
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
 

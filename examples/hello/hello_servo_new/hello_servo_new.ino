@@ -2,9 +2,10 @@
 /// @brief Test servo output
 
 // include all libraries
-#include <TinyTrainable.h>
+// #include <TinyTrainable.h>
+#include <InputColor.h>
+#include <OutputServo.h>
 
-#define TINY_OUTPUT SERVO
 
 TinyTrainable tiny;
 

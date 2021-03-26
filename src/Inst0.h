@@ -10,9 +10,6 @@
 // import Tiny Trainable library
 #include "TinyTrainable.h"
 
-// import Arduino KNN library
-#include <Arduino_KNN.h>
-
 // inherit from the class TinyTrainable
 class Inst0 : public TinyTrainable {
 

@@ -4,8 +4,6 @@
 // include all libraries
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT SERVO
-
 TinyTrainable tiny;
 
 const int outputPin = 9;

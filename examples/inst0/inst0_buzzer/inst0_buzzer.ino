@@ -1,8 +1,8 @@
 /// @file inst0_buzzer.ino
 /// @brief Example: Instrument0 with output buzzer
 
-// import file for options
-#include "options.h"
+// include library
+#include <Inst0.h>
 
 // declare instance of the instrument0
 Inst0 tiny;

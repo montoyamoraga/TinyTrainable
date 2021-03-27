@@ -1,3 +1,6 @@
+/// @file InputColor.h
+/// @brief K-nearest neighbors algorithm + color input
+
 #ifndef INPUT_COLOR_H
 #define INPUT_COLOR_H
 

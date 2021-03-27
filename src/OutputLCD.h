@@ -15,6 +15,7 @@ class OutputLCD : public Output {
 public:
   // constructor
   OutputLCD();
+  // variables
   int _outputPinLCD = -1;
 };
 

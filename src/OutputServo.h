@@ -18,6 +18,7 @@ class OutputServo : public Output {
   // variables for outputServo
 public:
   // constructor
+  OutputServo();
 
   Servo _servo;
   int _outputPinServo = -1;

@@ -15,6 +15,7 @@ class OutputLED : public Output {
 public:
   // constructor
   OutputLED();
+  // varaibles
   int _outputPinsLED[3];
 
   // TODO: methods for outputLED

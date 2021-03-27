@@ -14,7 +14,6 @@ class OutputPrinter : public TinyTrainable {
 public:
   // TODO: for printer we need several variables
   int _outputPinPrinter = -1;
-
 };
 
 #endif

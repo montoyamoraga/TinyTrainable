@@ -23,7 +23,6 @@ public:
   // float _servoChances[3];
   unsigned long _servoTimePrevious = 0;
   unsigned long _servoTimeNow = 0;
-
 };
 
 #endif

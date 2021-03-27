@@ -92,7 +92,7 @@ protected:
   void setupSensorLSM9DS1();
 
   // methods for outputs
-  
+
   void getBuzzerParam(int object, int buzzerParamArray[]);
 
   // variable for debugging
@@ -101,7 +101,6 @@ protected:
   // variables for outputs
   OutputMode _outputMode = outputUndefined;
   int _outputPinTest = -1;
-
 };
 
 // conditional compilation

@@ -11,7 +11,6 @@ class OutputLCD : public TinyTrainable {
 
 public:
   int _outputPinLCD = -1;
-
 };
 
 #endif

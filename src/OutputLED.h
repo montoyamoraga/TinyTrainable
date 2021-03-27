@@ -9,8 +9,8 @@
 
 class OutputLED : public TinyTrainable {
 
-        public:
-          int _outputPinsLED[3];
+public:
+  int _outputPinsLED[3];
 };
 
 #endif

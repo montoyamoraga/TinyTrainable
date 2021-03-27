@@ -15,6 +15,10 @@ public:
   int _midiNotes[3];
   byte _midiChannel = 16;
   byte _midiVelocity = 0;
+
+  // TODO: methods for MIDI
+  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  void setMIDINotes(int object, int note);
 };
 
 #endif

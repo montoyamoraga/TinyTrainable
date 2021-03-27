@@ -58,16 +58,6 @@ public:
   void helloOutputs(OutputMode outputToTest);
   void playOutput(int classification);
 
-
-  // TODO: methods for outputLED
-  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
-
-  // TODO: methods for MIDI
-  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
-  void setMIDINotes(int object, int note);
-
-  // TODO: methods for outputPrinter
-
   // TODO: methods for outputSerialUSB
   void setupOutputSerialUSB();
 
@@ -78,13 +68,8 @@ protected:
   void setupLEDs();
 
   // methods for input sensors
-  // TODO: decide which sensors will be used
   void setupSensorAPDS9960();
   void setupSensorLSM9DS1();
-
-  // methods for outputs
-
-  void getBuzzerParam(int object, int buzzerParamArray[]);
 
   // variable for debugging
   bool _serialDebugging = false;

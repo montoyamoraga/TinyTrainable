@@ -10,6 +10,8 @@
 class OutputBuzzer : public TinyTrainable {
 
 public: // methods for buzzer
+  void getBuzzerParam(int object, int buzzerParamArray[]);
+
   void setupOutputBuzzer(int outputPin);
   // for frequencies
   void setBuzzerFrequency(int object, int frequency);

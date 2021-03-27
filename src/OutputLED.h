@@ -11,6 +11,9 @@ class OutputLED : public TinyTrainable {
 
 public:
   int _outputPinsLED[3];
+
+  // TODO: methods for outputLED
+  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
 };
 
 #endif

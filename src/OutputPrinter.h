@@ -12,6 +12,8 @@
 
 class OutputPrinter : public Output {
 public:
+  // constructor
+  OutputPrinter();
   // TODO: for printer we need several variables
   int _outputPinPrinter = -1;
 };

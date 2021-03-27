@@ -9,7 +9,11 @@
 
 class OutputBuzzer : public Output {
 
-public: // methods for buzzer
+  // methods for buzzer
+public:
+  // constructor
+  OutputBuzzer();
+
   void getBuzzerParam(int object, int buzzerParamArray[]);
 
   void setupOutputBuzzer(int outputPin);

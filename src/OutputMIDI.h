@@ -10,6 +10,9 @@
 class OutputMIDI : public Output {
 
 public:
+  // constructor
+  OutputMIDI();
+
   void setupSerialMIDI();
   int _outputPinMIDI = -1;
   int _midiNotes[3];

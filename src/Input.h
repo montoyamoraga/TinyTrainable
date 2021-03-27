@@ -2,8 +2,8 @@
 #define INPUT_H
 
 class Input {
-    public:
-    Input();
+public:
+  Input();
 };
 
 #endif

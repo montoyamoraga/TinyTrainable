@@ -10,6 +10,8 @@
 class OutputLED : public Output {
 
 public:
+  // constructor
+  OutputLED();
   int _outputPinsLED[3];
 
   // TODO: methods for outputLED

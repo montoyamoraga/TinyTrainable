@@ -2,14 +2,15 @@
 /// @brief Test servo output
 
 // include all libraries
-//  #include <TinyTrainable.h>
-// #include <InputColor.h>
-// #include <OutputServo.h>
+ #include <TinyTrainable.h>
+#include <InputColor.h>
+#include <OutputServo.h>
 
-// InputColor myInput;
-// OutputServo myOutput;
+InputColor myInput;
+OutputServo myOutput;
 
 // TinyTrainable tiny;
+ TinyTrainable tiny(myInput, myOutput);
 
 const int outputPin = 9;
 

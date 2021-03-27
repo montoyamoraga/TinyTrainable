@@ -11,8 +11,6 @@
 
 // TinyTrainable tiny;
 
-
-
 const int outputPin = 9;
 
 // for the supplies list servo, these values can be >= 0, <= 180

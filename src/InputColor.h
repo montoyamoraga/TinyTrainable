@@ -26,22 +26,23 @@ public:
   // constructor
   InputColor();
 
-  void setupInstrument(bool serialDebugging);
-  void trainKNN(int k, int examplesPerClass, float colorThreshold,
-                String objects[3]);
-  void identify();
-
-private:
-  void readColor(float color[]);
-  void checkInst0Setup();
-
   KNNClassifier _myKNN;
-  int _previousClassification = -1;
   String _labels[3];
-  int _k = -1;
-  float _colorThreshold;
-  float _colorReading[3];
-  bool _checkedSetup = false;
+  int _previousClassification = -1;
+
+  //   void setupInstrument(bool serialDebugging);
+  //   void trainKNN(int k, int examplesPerClass, float colorThreshold,
+  //                 String objects[3]);
+  //   void identify();
+
+  // private:
+  //   void readColor(float color[]);
+  //   void checkInst0Setup();
+
+  //   int _k = -1;
+  //   float _colorThreshold;
+  //   float _colorReading[3];
+  //   bool _checkedSetup = false;
 };
 
 #endif

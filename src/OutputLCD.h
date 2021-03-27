@@ -7,6 +7,11 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
-class OutputLCD : public TinyTrainable {};
+class OutputLCD : public TinyTrainable {
+
+public:
+  int _outputPinLCD = -1;
+
+};
 
 #endif

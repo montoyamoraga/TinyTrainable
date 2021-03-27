@@ -17,17 +17,17 @@ const int servoAngleMin = 30;
 const int servoAngleMax = 60;
 
 void setup() {
-//  tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+  //  tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
   // set the tempo (in bpm) for each object
-//  tiny.setServoTempo(0, 60);
-//  tiny.setServoTempo(1, 90);
-//  tiny.setServoTempo(2, 120);
+  //  tiny.setServoTempo(0, 60);
+  //  tiny.setServoTempo(1, 90);
+  //  tiny.setServoTempo(2, 120);
 }
 
 void loop() {
   // to see the different tempos, try each output
-//  tiny.playOutput(0);
+  //  tiny.playOutput(0);
   // tiny.playOutput(1);
   // tiny.playOutput(2);
 }

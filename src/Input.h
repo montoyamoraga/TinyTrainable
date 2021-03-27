@@ -4,7 +4,6 @@
 // include Arduino library
 #include <Arduino.h>
 
-
 class Input {
 public:
   Input();

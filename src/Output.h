@@ -2,7 +2,9 @@
 #define OUTPUT_H
 
 class Output {
-    public;
+public:
+  // constructor
+  Output();
 };
 
 #endif

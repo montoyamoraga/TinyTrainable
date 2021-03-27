@@ -7,7 +7,7 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
-class OutputBuzzer : public TinyTrainable {
+class OutputBuzzer : public Output {
 
 public: // methods for buzzer
   void getBuzzerParam(int object, int buzzerParamArray[]);

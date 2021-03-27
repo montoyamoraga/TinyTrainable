@@ -157,7 +157,7 @@ void InputColor::identify() {
 // 'examplesPerClass' examples that pass 'colorThreshold' are collected per
 // class sets the labels of the objects for identification by the KNN algorithm
 void InputColor::trainKNN(int k, int examplesPerClass, float colorThreshold,
-                     String objects[3]) {
+                          String objects[3]) {
 
   _k = k;
   _colorThreshold = colorThreshold;

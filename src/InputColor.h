@@ -20,8 +20,8 @@
 class InputColor : public TinyTrainable {
 
 public:
-// constructor
-InputColor();
+  // constructor
+  InputColor();
 
   void setupInstrument(bool serialDebugging);
   void trainKNN(int k, int examplesPerClass, float colorThreshold,
@@ -39,8 +39,6 @@ private:
   float _colorThreshold;
   float _colorReading[3];
   bool _checkedSetup = false;
-
-
 };
 
 #endif

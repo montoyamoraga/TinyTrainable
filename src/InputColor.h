@@ -17,7 +17,7 @@
 // import Arduino KNN library
 #include <Arduino_KNN.h>
 
-class InputColor : public TinyTrainable {
+class InputColor : public Input {
 
 public:
   // constructor

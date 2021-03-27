@@ -20,6 +20,8 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
-class InputGesture : public TinyTrainable {};
+class InputGesture : public Input {
+public:
+};
 
 #endif

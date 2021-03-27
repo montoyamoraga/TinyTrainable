@@ -328,7 +328,6 @@ void TinyTrainable::setupOutputSerialUSB() {
     ;
 }
 
-#ifdef OUTPUT_SERVO
 void TinyTrainable::setupOutputServo(int outputPin, int angleMin,
                                      int angleMax) {
   // TODO: add comments about each line

@@ -4,8 +4,11 @@
 // include Arduino library
 #include <Arduino.h>
 
+// include Input library
+#include "Input.h"
+
 // include TinyTrainable library
-#include "TinyTrainable.h"
+// #include "TinyTrainable.h"
 
 // include library for IMU sensor
 // 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer

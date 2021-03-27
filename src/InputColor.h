@@ -7,8 +7,11 @@
 // include Arduino library
 #include <Arduino.h>
 
+// include Input library
+#include "Input.h"
+
 // include TinyTrainable library
-#include "TinyTrainable.h"
+// #include "TinyTrainable.h"
 
 // include library for proximity and light sensor
 // https://www.arduino.cc/en/Reference/ArduinoAPDS9960

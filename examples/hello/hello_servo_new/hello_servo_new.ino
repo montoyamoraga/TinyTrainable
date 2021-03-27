@@ -6,7 +6,12 @@
 // #include <InputColor.h>
 // #include <OutputServo.h>
 
+// InputColor myInput;
+// OutputServo myOutput;
+
 // TinyTrainable tiny;
+
+
 
 const int outputPin = 9;
 

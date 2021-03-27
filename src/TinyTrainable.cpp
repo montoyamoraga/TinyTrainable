@@ -6,10 +6,16 @@
 // include local library
 #include "TinyTrainable.h"
 
-/// @brief Constructor method
-/// @param [in] none
-/// @param [out] none
-TinyTrainable::TinyTrainable() {}
+TinyTrainable::TinyTrainable() {
+
+}
+
+TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
+        myInput = newInput;
+        myOutput = newOutput;
+}
+
+
 
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED

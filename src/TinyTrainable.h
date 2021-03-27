@@ -10,6 +10,9 @@
 // include Arduino library
 #include <Arduino.h>
 
+#include <Input.h>
+#include <Output.h>
+
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
 
@@ -32,8 +35,16 @@ class TinyTrainable {
 
   // public methods
 public:
+
+// member variables
+// input and output
+Input myInput;
+Output myOutput;
+
+
   // constructor
   TinyTrainable();
+  TinyTrainable(Input newInput, Output newOutput);
 
   // template datatypes allows any datatype as an argument, like
   // Serial.println(). it is defined here in the header file so it compiles at

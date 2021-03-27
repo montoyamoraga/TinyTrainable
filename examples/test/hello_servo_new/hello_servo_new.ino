@@ -6,11 +6,13 @@
 #include <InputColor.h>
 #include <OutputServo.h>
 
+// declare instance of input
 InputColor myInput;
+// declare instance of output
 OutputServo myOutput;
 
-// TinyTrainable tiny;
- TinyTrainable tiny(myInput, myOutput);
+// declare instance of a TinyTrainable instrument
+TinyTrainable tiny(myInput, myOutput);
 
 const int outputPin = 9;
 

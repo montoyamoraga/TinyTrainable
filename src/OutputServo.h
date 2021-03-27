@@ -10,7 +10,7 @@
 // include library for output with servo motors
 #include <Servo.h>
 
-class OutputServo : public TinyTrainable {
+class OutputServo : public Output {
 
   // variables for outputServo
 public:

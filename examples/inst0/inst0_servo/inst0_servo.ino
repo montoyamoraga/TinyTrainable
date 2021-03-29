@@ -11,24 +11,26 @@ const float COLOR_THRESHOLD = 0.5;
 
 // constants for the hardware
 const int outputPin = 9;
+const int servoAngleMin = 30;
+const int servoAngleMax = 60;
 
 // constant for debugging
 // true: the instrument needs to be connected to serial port
 // false: the instrument is standalone
 const bool tinyDebugging = true;
 
+String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+
 // setup() runs once, at the beginning
 void setup() {
   tiny.setupInstrument(tinyDebugging);
 
-  tiny.setupOutputServo(outputPin);
+  tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
-  // set fixed angles, easy version
-  tiny.setServoTempo(0, 30);
-  tiny.setServoTempo(1, 60);
-  tiny.setServoTempo(2, 90);
-
-  String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+  tiny.setServoTempo(0, 60);
+  tiny.setServoTempo(1, 90);
+  tiny.setServoTempo(2, 120);
+  
   // train the KNN algorithm
   tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }

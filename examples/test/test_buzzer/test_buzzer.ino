@@ -2,9 +2,9 @@
 /// @brief Test servo output
 
 // include all libraries
- #include <TinyTrainable.h>
 #include <InputColor.h>
 #include <OutputBuzzer.h>
+#include <TinyTrainable.h>
 
 // declare instance of input
 InputColor myInput;

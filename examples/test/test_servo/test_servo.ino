@@ -10,12 +10,12 @@
 #include <TinyTrainable.h>
 
 // declare instance of input
-InputColor myInput;
+//InputColor myInput;
 // declare instance of output
-OutputServo myOutput;
+//OutputServo myOutput;
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable tiny(myInput, myOutput);
+//TinyTrainable tiny(myInput, myOutput);
 
 const int outputPin = 9;
 

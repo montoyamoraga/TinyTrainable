@@ -15,10 +15,14 @@
 
 // include library for proximity and light sensor
 // https://www.arduino.cc/en/Reference/ArduinoAPDS9960
+#ifdef INPUT_COLOR
 #include <Arduino_APDS9960.h>
+#endif
 
 // import Arduino KNN library
+#ifdef INPUT_COLOR
 #include <Arduino_KNN.h>
+#endif
 
 class InputColor : public Input {
 

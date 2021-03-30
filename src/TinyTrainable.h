@@ -11,8 +11,8 @@
 #include <Arduino.h>
 
 // include base libraries for input and output
-#include <Input.h>
-#include <Output.h>
+#include <inputs/Input.h>
+#include <outputs/Output.h>
 
 // colors for setting the RGB LED
 // enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5

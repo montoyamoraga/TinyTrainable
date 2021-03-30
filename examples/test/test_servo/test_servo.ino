@@ -1,9 +1,12 @@
 /// @file hello_servo.ino
 /// @brief Test servo output
 
-// include all libraries
-#include <InputColor.h>
-#include <OutputServo.h>
+
+// define input and output
+#define INPUT_COLOR
+#define OUTPUT_BUZZER
+
+// include TinyTrainable library
 #include <TinyTrainable.h>
 
 // declare instance of input

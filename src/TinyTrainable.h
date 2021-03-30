@@ -11,8 +11,47 @@
 #include <Arduino.h>
 
 // include base libraries for input and output
-#include <inputs/Input.h>
-#include <outputs/Output.h>
+#include "inputs/Input.h"
+#include "outputs/Output.h"
+
+// conditionally include input libraries
+#ifdef INPUT_COLOR
+  #include "inputs/InputColor.h"
+#endif
+
+#ifdef INPUT_GESTURE
+  #include "inputs/InputGesture.h"
+#endif
+
+#ifdef INPUT_SPEECH
+  #include "inputs/InputSpeech.h"
+#endif
+
+// conditionally include output libraries
+
+#ifdef OUTPUT_BUZZER
+  #include "outputs/OutputBuzzer.h"
+#endif
+
+#ifdef OUTPUT_LCD
+  #include "outputs/OutputLCD.h"
+#endif
+
+#ifdef OUTPUT_LED
+  #include "outputs/OutputLED.h"
+#endif
+
+#ifdef OUTPUT_MIDI
+  #include "outputs/OutputMIDI.h"
+#endif
+
+#ifdef OUTPUT_PRINTER
+  #include "outputs/OutputPrinter.h"
+#endif
+
+#ifdef OUTPUT_SERVO
+  #include "outputs/OutputServo.h"
+#endif
 
 // colors for setting the RGB LED
 // enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5

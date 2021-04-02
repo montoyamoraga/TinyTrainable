@@ -20,10 +20,34 @@ public:
   // constructor method
   Inst1();
 
-  void setupInstrument(bool serialDebugging);
+  void setupInstrument(bool serialDebugging, String gestures[3]);
+  void setupTF(float accelerationThreshold, int numSamples);
+  void classify();
 
-  // placeholder dummy function
-  void print1();
+private:
+  // tflite setup
+  const int NUM_GESTURES = 3;
+  float _accelerationThreshold = -1;
+  int _numSamples = -1;
+  int _samplesRead = -1;
+  String _gestures[3];
+
+  // tflite variables
+  tflite::MicroErrorReporter tflErrorReporter;
+  tflite::AllOpsResolver tflOpsResolver;
+  const tflite::Model *tflModel = nullptr;
+  tflite::MicroInterpreter *tflInterpreter = nullptr;
+  TfLiteTensor *tflInputTensor = nullptr;
+  TfLiteTensor *tflOutputTensor = nullptr;
+
+  // TODO - account for this size needing to be changed? add a method?
+  // Create a static memory buffer for TFLM, the size may need to
+  // be adjusted based on the model you are using
+  static constexpr int tensorArenaSize = 8 * 1024;
+  byte tensorArena[tensorArenaSize];
+
+  // classification variables
+  float aX, aY, aZ, gX, gY, gZ;  // acceleration and gravity in x, y, z
 };
 
 #endif

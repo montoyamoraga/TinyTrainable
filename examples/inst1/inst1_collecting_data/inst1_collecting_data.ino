@@ -11,6 +11,9 @@
 // instance of Inst1
 Inst1 tiny;
 
+// debugging messages over usb serial
+bool serialDebugging = true;
+
 // threshold of significant in G's
 const float accelerationThreshold = 2.5;
 
@@ -28,7 +31,7 @@ float aX, aY, aZ, gX, gY, gZ;
 
 void setup() {
 
-  tiny.setupInstrument();
+  tiny.setupInstrument(serialDebugging);
   tiny.setupOutputSerialUSB();
 
   // print the header

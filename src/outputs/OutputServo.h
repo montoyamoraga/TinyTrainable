@@ -20,15 +20,15 @@ public:
   // constructor
   OutputServo();
 
-  //   Servo _servo;
-  //   int _outputPinServo = -1;
-  //   int _servoAngleCurrent = 0;
-  //   int _servoAngleMin = 0;
-  //   int _servoAngleMax = 180;
-  //   unsigned long _servoPauses[3];
-  //   // float _servoChances[3];
-  //   unsigned long _servoTimePrevious = 0;
-  //   unsigned long _servoTimeNow = 0;
+    Servo _servo;
+    int _outputPinServo = -1;
+    int _servoAngleCurrent = 0;
+    int _servoAngleMin = 0;
+    int _servoAngleMax = 180;
+    unsigned long _servoPauses[3];
+    // float _servoChances[3];
+    unsigned long _servoTimePrevious = 0;
+    unsigned long _servoTimeNow = 0;
 
   //   // methods for servo
   //   void setupOutputServo(int outputPin, int angleMin, int angleMax);

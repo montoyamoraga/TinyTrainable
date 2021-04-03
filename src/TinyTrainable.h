@@ -2,6 +2,7 @@
 /// @page TinyTrainable.h
 /// @brief Arduino library for Tiny Trainable Instruments
 /// @author montoyamoraga, peter-parque, maxzwang
+/// @date November 2020
 
 // conditional compilation
 #ifndef TINY_TRAINABLE_H
@@ -10,122 +11,174 @@
 // include Arduino library
 #include <Arduino.h>
 
-// include base libraries for input and output
-#include "inputs/Input.h"
-#include "outputs/Output.h"
+// include library for proximity and light sensor
+// https://www.arduino.cc/en/Reference/ArduinoAPDS9960
+#include <Arduino_APDS9960.h>
 
-// conditionally include input libraries
-#ifdef INPUT_COLOR
-  #include "inputs/InputColor.h"
-#endif
+// include library for IMU sensor
+// 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer
+// https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
+#include <Arduino_LSM9DS1.h>
 
-#ifdef INPUT_GESTURE
-  #include "inputs/InputGesture.h"
-#endif
+// include library for output with servo motors
+#include <Servo.h>
 
-#ifdef INPUT_SPEECH
-  #include "inputs/InputSpeech.h"
-#endif
-
-// conditionally include output libraries
-
-#ifdef OUTPUT_BUZZER
-  #include "outputs/OutputBuzzer.h"
-#endif
-
-#ifdef OUTPUT_LCD
-  #include "outputs/OutputLCD.h"
-#endif
-
-#ifdef OUTPUT_LED
-  #include "outputs/OutputLED.h"
-#endif
-
-#ifdef OUTPUT_MIDI
-  #include "outputs/OutputMIDI.h"
-#endif
-
-#ifdef OUTPUT_PRINTER
-  #include "outputs/OutputPrinter.h"
-#endif
-
-#ifdef OUTPUT_SERVO
-  #include "outputs/OutputServo.h"
-#endif
+// include library for output with Adafruit thermal printer
+// #include <Adafruit_Thermal.h>
 
 // colors for setting the RGB LED
-// enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5
-// };
+enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
 
 // different instrument output modes
 // TODO - check they are the same order as .cpp file
-// enum OutputMode {
-//   outputBuzzer = 0,
-//   outputLCD = 1,
-//   outputLED = 2,
-//   outputMIDI = 3,
-//   outputPrinter = 4,
-//   outputSerialUSB = 5,
-//   outputServo = 6,
-//   outputUndefined = 7
-// };
+enum OutputMode {
+  outputBuzzer = 0,
+  outputLCD = 1,
+  outputLED = 2,
+  outputMIDI = 3,
+  outputPrinter = 4,
+  outputSerialUSB = 5,
+  outputServo = 6,
+  outputUndefined = 7
+};
 
 /// \class TinyTrainable
 /// \brief TinyTrainable base class
+///
 class TinyTrainable {
 
   // public methods
 public:
-  // member variables
-  // input and output
-  Input myInput;
-  Output myOutput;
-
   // constructor
   TinyTrainable();
-  TinyTrainable(Input newInput, Output newOutput);
 
   // template datatypes allows any datatype as an argument, like
   // Serial.println(). it is defined here in the header file so it compiles at
   // the beginning
-  //   template <typename T> void debugPrint(T message) {
-  //     if (_serialDebugging) {
-  //       Serial.print("debug - ");
-  //       Serial.println(message);
-  //     }
-  //   };
+  template <typename T> void debugPrint(T message) {
+    if (_serialDebugging) {
+      Serial.print("debug - ");
+      Serial.println(message);
+    }
+  };
 
-  //   void setStateLEDBuiltIn(bool turnOn);
-  //   void blinkLEDBuiltIn(int blinks);
-  //   void setStateLEDRGB(bool turnOn, Colors color);
+  void setStateLEDBuiltIn(bool turnOn);
+  void blinkLEDBuiltIn(int blinks);
+  void setStateLEDRGB(bool turnOn, Colors color);
   // TODO: maybe change name, still thinking about it
-  //   void errorBlink(Colors color, int blinkNum);
+  void errorBlink(Colors color, int blinkNum);
 
   // methods for outputs
-  //   void helloOutputsSetup(OutputMode outputToTest);
-  //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
-  //   void helloOutputs(OutputMode outputToTest);
-  //   void playOutput(int classification);
+  void helloOutputsSetup(OutputMode outputToTest);
+  void helloOutputsSetup(OutputMode outputToTest, int outputPin);
+  void helloOutputs(OutputMode outputToTest);
+  void playOutput(int classification);
+
+  // methods for buzzer
+  void setupOutputBuzzer(int outputPin);
+  // for frequencies
+  void setBuzzerFrequency(int object, int frequency);
+  void setBuzzerFrequency(int object, int freqMin, int freqMax);
+  void setBuzzerFrequency(int object, int *arrayFrequencies,
+                          int arrayFreqCount);
+  // for durations
+  void setBuzzerDuration(int object, int duration);
+  void setBuzzerDuration(int object, int durationMin, int durationMax);
+  void setBuzzerDuration(int object, int *arrayDurations,
+                         int arrayDurationCount);
+
+  // methods for servo
+  void setupOutputServo(int outputPin, int angleMin, int angleMax);
+  // for servo tempo in bpm
+  void setServoTempo(int object, int tempo);
+  // for servo movement
+  void moveServo(int classification);
+  int bpmToMs(int tempo);
+
+  // TODO: methods for outputLCD
+
+  // TODO: methods for outputLED
+  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
+
+  // TODO: methods for MIDI
+  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  void setMIDINotes(int object, int note);
+
+  // TODO: methods for outputPrinter
 
   // TODO: methods for outputSerialUSB
-  //   void setupOutputSerialUSB();
+  void setupOutputSerialUSB();
 
   // TODO: this is public now for testing, later move to protected
-  //   void sendSerialMIDINote(byte channel, byte note, byte velocity);
+  void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
 protected:
-  //   void setupLEDs();
+  void setupLEDs();
 
   // methods for input sensors
-  //   void setupSensorAPDS9960();
-  //   void setupSensorLSM9DS1();
+  // TODO: decide which sensors will be used
+  void setupSensorAPDS9960();
+  // void setupSensorHTS221();
+  // void setupSensorLPS22HB();
+  void setupSensorLSM9DS1();
+
+  // methods for outputs
+  void setupSerialMIDI();
+  void getBuzzerParam(int object, int buzzerParamArray[]);
 
   // variable for debugging
-  //   bool _serialDebugging = false;
+  bool _serialDebugging = false;
 
   // variables for outputs
-  //   OutputMode _outputMode = outputUndefined;
-  //   int _outputPinTest = -1;
+  OutputMode _outputMode = outputUndefined;
+  int _outputPinTest = -1;
+  
+  // methods and variables for outputBuzzer
+  int _outputPinBuzzer = -1;
+  enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
+  BuzzerMode _buzzerFreqMode = undefParam;
+  BuzzerMode _buzzerDurationMode = undefParam;
+  int _buzzerParams[2]; // to hold the freq and duration each loop
+  // for singleParam
+  int _buzzerFrequencies[3];
+  int _buzzerDurations[3];
+  // for rangeParam
+  int _buzzerFrequenciesMin[3];
+  int _buzzerFrequenciesMax[3];
+  int _buzzerDurationsMin[3];
+  int _buzzerDurationsMax[3];
+  // for randomParam
+  int *_buzzerFrequenciesArrays[3];
+  int _buzzerFrequenciesArraysSizes[3];
+  int *_buzzerDurationsArrays[3];
+  int _buzzerDurationsArraysSizes[3];
+
+  // TODO: variables for outputMIDI
+  int _outputPinMIDI = -1;
+  int _midiNotes[3];
+  byte _midiChannel = 16;
+  byte _midiVelocity = 0;
+
+  // TODO: variables for outputServo
+  Servo _servo;
+  int _outputPinServo = -1;
+  int _servoAngleCurrent = 0;
+  int _servoAngleMin = 0;
+  int _servoAngleMax = 180;
+  unsigned long _servoPauses[3];
+  // float _servoChances[3];
+  unsigned long _servoTimePrevious = 0;
+  unsigned long _servoTimeNow = 0;
+
+  // TODO: variables for outputLCD
+  int _outputPinLCD = -1;
+
+  // TODO: variables for outputLED
+  int _outputPinsLED[3];
+
+  // TODO: variables for outputPrinter
+  // TODO: for printer we need several variables
+  int _outputPinPrinter = -1;
 };
 
 // conditional compilation

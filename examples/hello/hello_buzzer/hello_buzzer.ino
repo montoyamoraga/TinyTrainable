@@ -3,8 +3,6 @@
 
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT BUZZER
-
 // declare instance of the instrument
 // you can also do the same with Inst0, Inst1, or Inst2 instances
 TinyTrainable tiny;
@@ -86,10 +84,10 @@ void loop() {
 
   // this will be taken care of by the instruments for base functionality!
   // it's demonstrated here in case to show what's possible
-
+  
   // long because tone isn't blocking - calls will override!
   tiny.playOutput(0);
-  delay(pauseTime);
+  delay(pauseTime); 
   tiny.playOutput(1);
   delay(pauseTime);
   tiny.playOutput(2);

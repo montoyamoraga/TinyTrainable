@@ -4,11 +4,6 @@
 // include main library
 #include <TinyTrainable.h>
 
-// TODO: maybe change this example to only internal things
-// TODO: maybe change name to hello_none for consistency
-// should only flash internal LED lights and output serial messages
-#define TINY_OUTPUT NONE
-
 // declare instance of instrument
 TinyTrainable tiny;
 
@@ -26,8 +21,8 @@ void setup() {
 
   // setup for outputBuzzer, outputLED, and outputServo (that have pins)
   tiny.helloOutputsSetup(outputToTest, outputPin);
-  // setup for outputMIDI, outputSerialUSB, and outputUndefined (outputs without
-  // pins) tiny.helloOutputsSetup(outputToTest);
+  // setup for outputMIDI, outputSerialUSB, and outputUndefined (outputs without pins)
+  // tiny.helloOutputsSetup(outputToTest);
 }
 
 // loop() runs in a loop, after setup()

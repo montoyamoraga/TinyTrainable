@@ -1,10 +1,7 @@
 /// @file hello_led.ino
 /// @brief Example: Test output with LEDs
 
-// import library
 #include <TinyTrainable.h>
-
-#define TINY_OUTPUT LED
 
 // declare instance of the instrument
 // you can also do the same with Inst0, Inst1, or Inst2 instances
@@ -23,7 +20,7 @@ void setup() {
 
 void loop() {
   tiny.playOutput(0);
-  delay(pauseTime);
+  delay(pauseTime); 
   tiny.playOutput(1);
   delay(pauseTime);
   tiny.playOutput(2);

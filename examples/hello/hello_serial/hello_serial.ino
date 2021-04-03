@@ -3,11 +3,11 @@
 
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT SERIAL
-
 TinyTrainable tiny;
 
-void setup() { tiny.setupOutputSerialUSB(); }
+void setup() {
+  tiny.setupOutputSerialUSB();
+}
 
 void loop() {
   // the object classification number is the only thing sent over serial

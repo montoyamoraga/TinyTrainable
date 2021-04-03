@@ -4,8 +4,6 @@
 /// this code is based on the Blink example
 /// http://www.arduino.cc/en/Tutorial/Blink
 
-#define TINY_OUTPUT NONE
-
 // include all libraries
 #include <Inst0.h>
 #include <Inst1.h>

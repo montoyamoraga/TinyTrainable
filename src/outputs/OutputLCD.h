@@ -15,6 +15,10 @@ class OutputLCD : public Output {
 public:
   // constructor
   OutputLCD();
+
+  // TinyTrainable methods
+  void playOutput(int classification);
+
   // variables
   int _outputPinLCD = -1;
 };

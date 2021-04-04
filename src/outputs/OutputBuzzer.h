@@ -17,7 +17,10 @@ public:
   // constructor
   OutputBuzzer();
 
-  //   void getBuzzerParam(int object, int buzzerParamArray[]);
+  // TinyTrainable methods
+  void playOutput(int classification);
+
+ void getBuzzerParam(int object, int buzzerParamArray[]);
 
   //   void setupOutputBuzzer(int outputPin);
   //   // for frequencies
@@ -32,24 +35,24 @@ public:
   //                          int arrayDurationCount);
 
   //   // methods and variables for outputBuzzer
-  //   int _outputPinBuzzer = -1;
-  //   enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
-  //   BuzzerMode _buzzerFreqMode = undefParam;
-  //   BuzzerMode _buzzerDurationMode = undefParam;
-  //   int _buzzerParams[2]; // to hold the freq and duration each loop
+    int _outputPinBuzzer = -1;
+    enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
+    BuzzerMode _buzzerFreqMode = undefParam;
+    BuzzerMode _buzzerDurationMode = undefParam;
+    int _buzzerParams[2]; // to hold the freq and duration each loop
   //   // for singleParam
-  //   int _buzzerFrequencies[3];
-  //   int _buzzerDurations[3];
+    int _buzzerFrequencies[3];
+    int _buzzerDurations[3];
   //   // for rangeParam
-  //   int _buzzerFrequenciesMin[3];
-  //   int _buzzerFrequenciesMax[3];
-  //   int _buzzerDurationsMin[3];
-  //   int _buzzerDurationsMax[3];
+    int _buzzerFrequenciesMin[3];
+    int _buzzerFrequenciesMax[3];
+    int _buzzerDurationsMin[3];
+    int _buzzerDurationsMax[3];
   //   // for randomParam
-  //   int *_buzzerFrequenciesArrays[3];
-  //   int _buzzerFrequenciesArraysSizes[3];
-  //   int *_buzzerDurationsArrays[3];
-  //   int _buzzerDurationsArraysSizes[3];
+    int *_buzzerFrequenciesArrays[3];
+    int _buzzerFrequenciesArraysSizes[3];
+    int *_buzzerDurationsArrays[3];
+    int _buzzerDurationsArraysSizes[3];
 };
 
 #endif

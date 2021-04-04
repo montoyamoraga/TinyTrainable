@@ -72,8 +72,17 @@ public:
   TinyTrainable();
   TinyTrainable(Input newInput, Output newOutput);
 
-  // declaration of function
+    // methods for outputs
+  //   void helloOutputsSetup(OutputMode outputToTest);
+  //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
+  //   void helloOutputs(OutputMode outputToTest);
+  virtual void playOutput(int classification){};
+
+  // declaration of virtual functions for servo
   virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax){};
+  virtual void setServoTempo(int object, int tempo){};
+  virtual int bpmToMs(int tempo){}; 
+  virtual void moveServo(int classification){};
 
   // template datatypes allows any datatype as an argument, like
   // Serial.println(). it is defined here in the header file so it compiles at
@@ -91,17 +100,8 @@ public:
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
 
-  // methods for outputs
-  //   void helloOutputsSetup(OutputMode outputToTest);
-  //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
-  //   void helloOutputs(OutputMode outputToTest);
-  //   void playOutput(int classification);
-
   // TODO: methods for outputSerialUSB
   //   void setupOutputSerialUSB();
-
-  // TODO: this is public now for testing, later move to protected
-  //   void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
 protected:
   //   void setupLEDs();

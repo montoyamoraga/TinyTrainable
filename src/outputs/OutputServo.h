@@ -20,6 +20,11 @@ public:
   // constructor
   OutputServo();
 
+  // TinyTrainable methods
+  void playOutput(int classification);
+
+
+// variables for servo
     Servo _servo;
     int _outputPinServo = -1;
     int _servoAngleCurrent = 0;
@@ -31,12 +36,14 @@ public:
     unsigned long _servoTimeNow = 0;
 
   // methods for servo
+  // define servo output
   void setupOutputServo(int outputPin, int angleMin, int angleMax);
-  //   // for servo tempo in bpm
-  //   void setServoTempo(int object, int tempo);
+  //  define for servo tempo in bpm
+    void setServoTempo(int object, int tempo);
   //   // for servo movement
-  //   void moveServo(int classification);
-  //   int bpmToMs(int tempo);
+    void moveServo(int classification);
+//   function to convert from beats per minute to milliseconds
+    int bpmToMs(int tempo);
 
   
 };

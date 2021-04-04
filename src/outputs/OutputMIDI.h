@@ -16,11 +16,18 @@ public:
   // constructor
   OutputMIDI();
 
+  // TinyTrainable methods
+  void playOutput(int classification);
+
+
   //   void setupSerialMIDI();
-  //   int _outputPinMIDI = -1;
-  //   int _midiNotes[3];
-  //   byte _midiChannel = 16;
-  //   byte _midiVelocity = 0;
+    int _outputPinMIDI = -1;
+    int _midiNotes[3];
+    byte _midiChannel = 16;
+    byte _midiVelocity = 0;
+
+      // TODO: this is public now for testing, later move to protected
+    void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
   //   // TODO: methods for MIDI
   //   void setupOutputMIDI(byte midiChannel, byte midiVelocity);

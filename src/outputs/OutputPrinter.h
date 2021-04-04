@@ -17,6 +17,11 @@ class OutputPrinter : public Output {
 public:
   // constructor
   OutputPrinter();
+
+  // TinyTrainable methods
+  void playOutput(int classification);
+
+
   // TODO: for printer we need several variables
   int _outputPinPrinter = -1;
 };

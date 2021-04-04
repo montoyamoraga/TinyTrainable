@@ -200,41 +200,6 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 //   }
 // }
 
-// TODO
-// void TinyTrainable::playOutput(int classification) {
-//   // TODO: add the corresponding calls to functions
-//   switch (_outputMode) {
-//   case outputBuzzer:
-//     getBuzzerParam(classification, _buzzerParams);
-//     tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
-//     break;
-//   case outputLCD:
-//     Serial.println("TODO");
-//     break;
-//   case outputLED:
-//     digitalWrite(_outputPinsLED[0], LOW);
-//     digitalWrite(_outputPinsLED[1], LOW);
-//     digitalWrite(_outputPinsLED[2], LOW);
-//     digitalWrite(_outputPinsLED[classification], HIGH);
-//     break;
-//   case outputMIDI:
-//     sendSerialMIDINote(_midiChannel, _midiNotes[classification],
-//     _midiVelocity); break;
-//   case outputPrinter:
-//     Serial.println("TODO");
-//     break;
-//   case outputSerialUSB:
-//     Serial.println(classification);
-//     break;
-//   case outputServo:
-//     moveServo(classification);
-//     break;
-//   case outputUndefined:
-//     Serial.println("TODO");
-//     break;
-//   }
-// }
-
 // TODO: add comments
 // void TinyTrainable::setupOutputBuzzer(int outputPin) {
 //   _outputMode = outputBuzzer;
@@ -280,38 +245,6 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 //   _buzzerDurationsArraysSizes[object] = arrayDurationCount;
 // }
 
-// modifies the input array to contain a buzzer frequency and duration (in that
-// order) for the indicated object
-// void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
-//   switch (_buzzerFreqMode) {
-//   case singleParam:
-//     buzzerParamArray[0] = _buzzerFrequencies[object];
-//     break;
-//   case rangeParam:
-//     buzzerParamArray[0] =
-//         random(_buzzerFrequenciesMin[object], _buzzerFrequenciesMax[object]);
-//     break;
-//   case randomParam:
-//     int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
-//     buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] +
-//     randomFreqIndex); break;
-//   }
-//   switch (_buzzerDurationMode) {
-//   case singleParam:
-//     buzzerParamArray[1] = _buzzerDurations[object];
-//     break;
-//   case rangeParam:
-//     buzzerParamArray[1] =
-//         random(_buzzerDurationsMin[object], _buzzerFrequenciesMax[object]);
-//     break;
-//   case randomParam:
-//     int randomDurationIndex = rand() % _buzzerDurationsArraysSizes[object];
-//     buzzerParamArray[1] =
-//         *(_buzzerDurationsArrays[object] + randomDurationIndex);
-//     break;
-//   }
-// }
-
 // void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
 //   _outputMode = outputMIDI;
 //   _midiChannel = midiChannel;
@@ -332,44 +265,6 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 //     ;
 // }
 
-
-// void TinyTrainable::moveServo(int classification) {
-//   unsigned long servoPause = _servoPauses[classification];
-//   // update current time
-//   _servoTimeNow = millis();
-
-//   // if enough time has passed
-//   if (_servoTimeNow - _servoTimePrevious >= servoPause) {
-//     int angle =
-//         _servoAngleCurrent == _servoAngleMin ? _servoAngleMax :
-//         _servoAngleMin;
-//     // update _servoTimePrevious
-//     _servoTimePrevious = _servoTimeNow;
-//     _servo.write(angle);
-//     _servoAngleCurrent = angle;
-
-//     // if (random(1000)/1000.0 < servoChance) {
-//     // servoPositionsIndex = (servoPositionsIndex + 1);
-//     // servoPositionsIndex = servoPositionsIndex %
-//     // (sizeof(servoPositions)/sizeof(servoPositions[0]));
-//     // _servo.write(angle);
-//     // }
-//   }
-// }
-
-// void TinyTrainable::setServoTempo(int object, int tempo) {
-//   // divide by 2 because servo moves twice per cycle
-//   _servoPauses[object] = bpmToMs(tempo) / 2;
-// }
-
-// helper function for transforming between
-// beats per minute to ms per beat
-// int TinyTrainable::bpmToMs(int tempo) {
-//   int ms = 60000 / tempo;
-//   // return result
-//   return ms;
-// }
-
 // sets up Serial MIDI output on TX pin
 // void TinyTrainable::setupSerialMIDI() {
 
@@ -384,13 +279,6 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 
 //   // replace the value at the pointer with the desired baudrate
 //   *pointerBaudrate = baudrate;
-// }
-
-// void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte
-// velocity) {
-//   Serial1.write(143 + channel);
-//   Serial1.write(note);
-//   Serial1.write(velocity);
 // }
 
 // void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,

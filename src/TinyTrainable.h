@@ -72,7 +72,8 @@ public:
   TinyTrainable();
   TinyTrainable(Input newInput, Output newOutput);
 
-  virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax);
+  // declaration of function
+  virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax){};
 
   // template datatypes allows any datatype as an argument, like
   // Serial.println(). it is defined here in the header file so it compiles at

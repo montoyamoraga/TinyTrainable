@@ -57,19 +57,6 @@
 // enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5
 // };
 
-// different instrument output modes
-// TODO - check they are the same order as .cpp file
-// enum OutputMode {
-//   outputBuzzer = 0,
-//   outputLCD = 1,
-//   outputLED = 2,
-//   outputMIDI = 3,
-//   outputPrinter = 4,
-//   outputSerialUSB = 5,
-//   outputServo = 6,
-//   outputUndefined = 7
-// };
-
 /// \class TinyTrainable
 /// \brief TinyTrainable base class
 class TinyTrainable {
@@ -84,6 +71,8 @@ public:
   // constructor
   TinyTrainable();
   TinyTrainable(Input newInput, Output newOutput);
+
+  virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax);
 
   // template datatypes allows any datatype as an argument, like
   // Serial.println(). it is defined here in the header file so it compiles at
@@ -113,6 +102,15 @@ public:
   // TODO: this is public now for testing, later move to protected
   //   void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
+//   void setOutputMode(OutputMode outputMode)
+//     {
+//         _outputMode = outputMode;
+//     }
+// OutputMode getOutputMode()
+//     {
+//         return _outputMode;
+//     }
+
 protected:
   //   void setupLEDs();
 
@@ -124,7 +122,6 @@ protected:
   //   bool _serialDebugging = false;
 
   // variables for outputs
-  //   OutputMode _outputMode = outputUndefined;
   //   int _outputPinTest = -1;
 };
 

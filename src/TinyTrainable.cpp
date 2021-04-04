@@ -332,17 +332,6 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 //     ;
 // }
 
-// void TinyTrainable::setupOutputServo(int outputPin, int angleMin,
-//                                      int angleMax) {
-//   // TODO: add comments about each line
-//   _outputMode = outputServo;
-//   _outputPinServo = outputPin;
-//   _servoAngleMin = angleMin;
-//   _servoAngleMax = angleMax;
-
-//   pinMode(_outputPinServo, OUTPUT);
-//   _servo.attach(_outputPinServo);
-// }
 
 // void TinyTrainable::moveServo(int classification) {
 //   unsigned long servoPause = _servoPauses[classification];

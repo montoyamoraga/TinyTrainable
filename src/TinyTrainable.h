@@ -102,15 +102,6 @@ public:
   // TODO: this is public now for testing, later move to protected
   //   void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
-//   void setOutputMode(OutputMode outputMode)
-//     {
-//         _outputMode = outputMode;
-//     }
-// OutputMode getOutputMode()
-//     {
-//         return _outputMode;
-//     }
-
 protected:
   //   void setupLEDs();
 
@@ -122,7 +113,7 @@ protected:
   //   bool _serialDebugging = false;
 
   // variables for outputs
-  //   int _outputPinTest = -1;
+    int _outputPinTest = -1;
 };
 
 // conditional compilation

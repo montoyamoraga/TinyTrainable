@@ -14,7 +14,7 @@ InputColor myInput;
 OutputServo myOutput;
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable tiny(myInput, myOutput);
+TinyTrainable myTiny(myInput, myOutput);
 
 const int outputPin = 9;
 
@@ -25,7 +25,7 @@ const int servoAngleMin = 30;
 const int servoAngleMax = 60;
 
 void setup() {
-   tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+   myTiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
   // set the tempo (in bpm) for each object
   //  tiny.setServoTempo(0, 60);

@@ -1,31 +1,34 @@
 /// @file hello_led.ino
-/// @brief Example: Test output with LEDs
+/// @brief Test output with LED
 
-// import library
+// define input and output
+#define INPUT_COLOR
+#define OUTPUT_LED
+
+// include TinyTrainable library
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT LED
-
-// declare instance of the instrument
-// you can also do the same with Inst0, Inst1, or Inst2 instances
-TinyTrainable tiny;
+// declare instance of input
+InputColor myInput;
+// declare instance of output
+OutputLED myOutput;
 
 // constants for the hardware
 const int outputPinLED0 = 3;
 const int outputPinLED1 = 4;
 const int outputPinLED2 = 5;
 
-int pauseTime = 2000;
+const int pauseTime = 2000;
 
 void setup() {
-  tiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
+  myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
 }
 
 void loop() {
-  tiny.playOutput(0);
+  myTiny.playOutput(0);
   delay(pauseTime);
-  tiny.playOutput(1);
+  myTiny.playOutput(1);
   delay(pauseTime);
-  tiny.playOutput(2);
+  myTiny.playOutput(2);
   delay(pauseTime);
 }

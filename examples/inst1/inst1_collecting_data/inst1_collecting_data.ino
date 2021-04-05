@@ -11,6 +11,9 @@
 // instance of Inst1
 Inst1 tiny;
 
+// names of gestures
+String gestures[] = {"gesture0", "gesture1", "gesture2"};
+
 // debugging messages over usb serial
 bool serialDebugging = true;
 
@@ -31,7 +34,7 @@ float aX, aY, aZ, gX, gY, gZ;
 
 void setup() {
 
-  tiny.setupInstrument(serialDebugging);
+  tiny.setupInstrument(serialDebugging, gestures);
   tiny.setupOutputSerialUSB();
 
   // print the header

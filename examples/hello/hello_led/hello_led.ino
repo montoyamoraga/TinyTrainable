@@ -2,7 +2,7 @@
 /// @brief Test output with LED
 
 // define input and output
-#define INPUT_COLOR
+#define INPUT_NONE
 #define OUTPUT_LED
 
 // include TinyTrainable library
@@ -12,6 +12,9 @@
 InputColor myInput;
 // declare instance of output
 OutputLED myOutput;
+
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(myInput, myOutput);
 
 // constants for the hardware
 const int outputPinLED0 = 3;

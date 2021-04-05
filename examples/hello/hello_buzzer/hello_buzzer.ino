@@ -2,7 +2,7 @@
 /// @brief Test output with buzzer
 
 // define input and output
-#define INPUT_COLOR
+#define INPUT_NONE
 #define OUTPUT_BUZZER
 
 // include TinyTrainable library

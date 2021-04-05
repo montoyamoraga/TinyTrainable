@@ -11,32 +11,33 @@ TinyTrainable::TinyTrainable() {}
 TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
   myInput = newInput;
   myOutput = newOutput;
+  setupLEDs();
 }
 
-// void TinyTrainable::setupLEDs() {
-//   // setting up orange built-in LED
-//   pinMode(LED_BUILTIN, OUTPUT);
-//   // initial state off is HIGH for on
-//   digitalWrite(LED_BUILTIN, HIGH);
+void TinyTrainable::setupLEDs() {
+  // setting up orange built-in LED
+  pinMode(LED_BUILTIN, OUTPUT);
+  // initial state off is HIGH for on
+  digitalWrite(LED_BUILTIN, HIGH);
 
-//   // setting up RGB LED
-//   pinMode(LEDR, OUTPUT);
-//   pinMode(LEDG, OUTPUT);
-//   pinMode(LEDB, OUTPUT);
-//   // default state off is HIGH
-//   digitalWrite(LEDR, HIGH);
-//   digitalWrite(LEDG, HIGH);
-//   digitalWrite(LEDB, HIGH);
-// }
+  // setting up RGB LED
+  pinMode(LEDR, OUTPUT);
+  pinMode(LEDG, OUTPUT);
+  pinMode(LEDB, OUTPUT);
+  // default state off is HIGH
+  digitalWrite(LEDR, HIGH);
+  digitalWrite(LEDG, HIGH);
+  digitalWrite(LEDB, HIGH);
+}
 
 // function for turning on and off the built-in LED
-// void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
-//   if (turnOn) {
-//     digitalWrite(LED_BUILTIN, HIGH);
-//   } else {
-//     digitalWrite(LED_BUILTIN, LOW);
-//   }
-// }
+void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
+  if (turnOn) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+}
 
 // void TinyTrainable::blinkLEDBuiltIn(int blinks) {
 
@@ -51,40 +52,40 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 // }
 
 // function for turning on and off the RGB LED
-// void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
+void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 
-//   // first turn off
-//   digitalWrite(LEDR, HIGH);
-//   digitalWrite(LEDG, HIGH);
-//   digitalWrite(LEDB, HIGH);
+  // first turn off
+  digitalWrite(LEDR, HIGH);
+  digitalWrite(LEDG, HIGH);
+  digitalWrite(LEDB, HIGH);
 
-//   // then turn on according to color
-//   if (turnOn) {
-//     switch (color) {
-//     case red:
-//       digitalWrite(LEDR, LOW);
-//       break;
-//     case green:
-//       digitalWrite(LEDG, LOW);
-//       break;
-//     case blue:
-//       digitalWrite(LEDB, LOW);
-//       break;
-//     case yellow:
-//       digitalWrite(LEDR, LOW);
-//       digitalWrite(LEDG, LOW);
-//       break;
-//     case magenta:
-//       digitalWrite(LEDR, LOW);
-//       digitalWrite(LEDB, LOW);
-//       break;
-//     case cyan:
-//       digitalWrite(LEDG, LOW);
-//       digitalWrite(LEDB, LOW);
-//       break;
-//     }
-//   }
-// }
+  // then turn on according to color
+  if (turnOn) {
+    switch (color) {
+    case red:
+      digitalWrite(LEDR, LOW);
+      break;
+    case green:
+      digitalWrite(LEDG, LOW);
+      break;
+    case blue:
+      digitalWrite(LEDB, LOW);
+      break;
+    case yellow:
+      digitalWrite(LEDR, LOW);
+      digitalWrite(LEDG, LOW);
+      break;
+    case magenta:
+      digitalWrite(LEDR, LOW);
+      digitalWrite(LEDB, LOW);
+      break;
+    case cyan:
+      digitalWrite(LEDG, LOW);
+      digitalWrite(LEDB, LOW);
+      break;
+    }
+  }
+}
 
 // traps the arduino in an infinite loop with RGB LED blinking, to signal
 // some setup missing. explanations in docs by instrument.

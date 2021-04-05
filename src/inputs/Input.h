@@ -7,6 +7,7 @@
 class Input {
 public:
   Input();
+  void setupInstrument(bool serialDebugging);
 };
 
 #endif

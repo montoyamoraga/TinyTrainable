@@ -54,23 +54,40 @@
 #endif
 
 // colors for setting the RGB LED
-// enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5
-// };
+enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5
+};
 
 /// \class TinyTrainable
 /// \brief TinyTrainable base class
 class TinyTrainable {
 
-  // public methods
-public:
+// private methods
+  private:
   // member variables
   // input and output
   Input myInput;
   Output myOutput;
 
+  protected:
+
+  // methods for input sensors
+  //   void setupSensorAPDS9960();
+  //   void setupSensorLSM9DS1();
+
+  // variable for debugging
+  bool _serialDebugging = false;
+
+  // variables for outputs
+  int _outputPinTest = -1;
+
+public:
+
   // constructor
   TinyTrainable();
   TinyTrainable(Input newInput, Output newOutput);
+
+  // methods for inputs
+  virtual void setupInstrument(bool serialDebugging){};
 
   // methods for outputs
   //   void helloOutputsSetup(OutputMode outputToTest);
@@ -113,27 +130,22 @@ public:
   //     }
   //   };
 
-  //   void setStateLEDBuiltIn(bool turnOn);
+  void setStateLEDBuiltIn(bool turnOn);
   //   void blinkLEDBuiltIn(int blinks);
-  //   void setStateLEDRGB(bool turnOn, Colors color);
+    void setStateLEDRGB(bool turnOn, Colors color);
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
 
   // TODO: methods for outputSerialUSB
   //   void setupOutputSerialUSB();
 
-protected:
-  //   void setupLEDs();
 
-  // methods for input sensors
-  //   void setupSensorAPDS9960();
-  //   void setupSensorLSM9DS1();
+  // getter and setter for serialDebugging
+  // void getSerialDebugging();
+  // void setSerialDebugging();
 
-  // variable for debugging
-  //   bool _serialDebugging = false;
+  void setupLEDs();
 
-  // variables for outputs
-  int _outputPinTest = -1;
 };
 
 // conditional compilation

@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of input
-InputColor myInput;
+Input myInput;
 // declare instance of output
 OutputLED myOutput;
 

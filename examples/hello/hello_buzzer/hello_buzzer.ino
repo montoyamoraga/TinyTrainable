@@ -8,13 +8,8 @@
 // include TinyTrainable library
 #include <TinyTrainable.h>
 
-// declare instance of input
-Input myInput;
-// declare instance of output
-OutputBuzzer myOutput;
-
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(myInput, myOutput);
+TinyTrainable myTiny(new Input(), new OutputBuzzer());
 
 // constants for the hardware
 const int outputPin = 2;

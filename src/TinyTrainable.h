@@ -61,33 +61,40 @@ enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5
 /// \brief TinyTrainable base class
 class TinyTrainable {
 
-// private methods
-  private:
-  // member variables
-  // input and output
-  Input myInput;
-  Output myOutput;
-
   protected:
+
+  // input and output
+  // asterisks are pointers
+  Input* myInput = nullptr;
+  Output* myOutput = nullptr;
 
   // methods for input sensors
   //   void setupSensorAPDS9960();
   //   void setupSensorLSM9DS1();
 
-  // variable for debugging
-  bool _serialDebugging = false;
+
 
   // variables for outputs
   int _outputPinTest = -1;
 
 public:
 
+
+
   // constructor
   TinyTrainable();
-  TinyTrainable(Input newInput, Output newOutput);
+  TinyTrainable(Input* newInput, Output* newOutput);
 
-  // methods for inputs
-  virtual void setupInstrument(bool serialDebugging){};
+  // destructor
+  ~TinyTrainable();
+
+  // methods
+  void setupInstrument(bool serialDebugging);
+
+  // variable for debugging
+  // TODO: add explanation about static
+  // static makes this property to be global for all the instances of the class
+  static bool _serialDebugging;
 
   // methods for outputs
   //   void helloOutputsSetup(OutputMode outputToTest);

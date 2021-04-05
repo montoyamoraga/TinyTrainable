@@ -8,11 +8,52 @@
 
 TinyTrainable::TinyTrainable() {}
 
-TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
+// initialize static variables
+bool TinyTrainable::_serialDebugging = false;
+
+TinyTrainable::TinyTrainable(Input* newInput, Output* newOutput) {
+
   myInput = newInput;
   myOutput = newOutput;
+ 
+  // TODO: research the name of this linking way
+  if (myInput != nullptr) {
+  myInput->tiny = this;
+  }
+
+  if (myOutput != nullptr) {
+  myOutput->tiny = this;
+  }
+  
+
+  
   setupLEDs();
 }
+
+// destructor against memory leaks
+TinyTrainable::~TinyTrainable() {
+  if (myInput != nullptr) {
+    delete myInput;
+    myInput = nullptr;
+  }
+
+  if (myOutput != nullptr) {
+    delete myOutput;
+    myOutput = nullptr;
+  }
+}
+
+void TinyTrainable::setupInstrument(bool serialDebugging) {
+
+  _serialDebugging = serialDebugging;
+
+  if (_serialDebugging) {
+    Serial.begin(9600);
+    while (!Serial)
+      ;
+  }
+}
+
 
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED

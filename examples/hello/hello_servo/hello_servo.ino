@@ -9,12 +9,14 @@
 #include <TinyTrainable.h>
 
 // declare instance of input
-Input myInput;
+// Input myInput;
 // declare instance of output
-OutputServo myOutput;
+// OutputServo myOutput;
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(myInput, myOutput);
+// TinyTrainable myTiny(myInput, myOutput);
+// polymorphism
+TinyTrainable myTiny(new Input(), new OutputServo());
 
 const int outputPin = 9;
 

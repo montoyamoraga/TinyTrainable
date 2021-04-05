@@ -5,16 +5,14 @@ OutputBuzzer::OutputBuzzer() {}
 
 // methods for TinyTrainable
 void OutputBuzzer::playOutput(int classification) {
-    getBuzzerParam(classification, _buzzerParams);
-    tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
+  getBuzzerParam(classification, _buzzerParams);
+  tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);
 }
-
 
 void OutputBuzzer::setupOutputBuzzer(int outputPin) {
   _outputPinBuzzer = outputPin;
   pinMode(_outputPinBuzzer, OUTPUT);
 }
-
 
 // modifies the input array to contain a buzzer frequency and duration (in that
 // order) for the indicated object
@@ -29,8 +27,8 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
     break;
   case randomParam:
     int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
-    buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] +
-    randomFreqIndex); break;
+    buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
+    break;
   }
   switch (_buzzerDurationMode) {
   case singleParam:
@@ -53,15 +51,14 @@ void OutputBuzzer::setBuzzerFrequency(int object, int frequency) {
   _buzzerFrequencies[object] = frequency;
 }
 
-void OutputBuzzer::setBuzzerFrequency(int object, int freqMin, int freqMax)
-{
+void OutputBuzzer::setBuzzerFrequency(int object, int freqMin, int freqMax) {
   _buzzerFreqMode = rangeParam;
   _buzzerFrequenciesMin[object] = freqMin;
   _buzzerFrequenciesMax[object] = freqMax;
 }
 
 void OutputBuzzer::setBuzzerFrequency(int object, int *arrayFrequencies,
-                                       int arrayFreqCount) {
+                                      int arrayFreqCount) {
   _buzzerFreqMode = randomParam;
   _buzzerFrequenciesArrays[object] = arrayFrequencies;
   _buzzerFrequenciesArraysSizes[object] = arrayFreqCount;
@@ -73,14 +70,14 @@ void OutputBuzzer::setBuzzerDuration(int object, int duration) {
 }
 
 void OutputBuzzer::setBuzzerDuration(int object, int durationMin,
-                                      int durationMax) {
+                                     int durationMax) {
   _buzzerDurationMode = rangeParam;
   _buzzerDurationsMin[object] = durationMin;
   _buzzerDurationsMax[object] = durationMax;
 }
 
 void OutputBuzzer::setBuzzerDuration(int object, int *arrayDurations,
-                                      int arrayDurationCount) {
+                                     int arrayDurationCount) {
   _buzzerDurationMode = randomParam;
   _buzzerDurationsArrays[object] = arrayDurations;
   _buzzerDurationsArraysSizes[object] = arrayDurationCount;

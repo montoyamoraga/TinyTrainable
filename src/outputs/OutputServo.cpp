@@ -1,17 +1,13 @@
 // include header file
 #include "OutputServo.h"
 
-
 // constructor
 OutputServo::OutputServo() {}
 
 // methods for TinyTrainable
-void OutputServo::playOutput(int classification) {
-    moveServo(classification);
-}
+void OutputServo::playOutput(int classification) { moveServo(classification); }
 
-void OutputServo::setupOutputServo(int outputPin, int angleMin,
-                                     int angleMax) {
+void OutputServo::setupOutputServo(int outputPin, int angleMin, int angleMax) {
   // TODO: add comments about each line
 
   // define output servo
@@ -39,8 +35,7 @@ void OutputServo::moveServo(int classification) {
   // if enough time has passed
   if (_servoTimeNow - _servoTimePrevious >= servoPause) {
     int angle =
-        _servoAngleCurrent == _servoAngleMin ? _servoAngleMax :
-        _servoAngleMin;
+        _servoAngleCurrent == _servoAngleMin ? _servoAngleMax : _servoAngleMin;
     // update _servoTimePrevious
     _servoTimePrevious = _servoTimeNow;
     _servo.write(angle);

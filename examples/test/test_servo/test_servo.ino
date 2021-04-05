@@ -25,7 +25,7 @@ const int servoAngleMin = 30;
 const int servoAngleMax = 60;
 
 void setup() {
-   myTiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+  myTiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
   // set the tempo (in bpm) for each object
   //  myTiny.setServoTempo(0, 60);

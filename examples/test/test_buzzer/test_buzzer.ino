@@ -35,13 +35,13 @@ void setup() {
   // initialize output
   myTiny.setupOutputBuzzer(outputPin);
 
-    // for buzzer output, there are 3 options:
+  // for buzzer output, there are 3 options:
 
   // 1. each classified item gets a single frequency (in Hz)
 
-//   myTiny.setBuzzerFrequency(0, 1000);
-//   myTiny.setBuzzerFrequency(1, 2000);
-//   myTiny.setBuzzerFrequency(2, 3000);
+  //   myTiny.setBuzzerFrequency(0, 1000);
+  //   myTiny.setBuzzerFrequency(1, 2000);
+  //   myTiny.setBuzzerFrequency(2, 3000);
 
   // 2. each classified item gets a random frequency within the given range
   // (the frequency will change each time the item is classified)
@@ -85,7 +85,6 @@ void setup() {
   // myTiny.setBuzzerFrequency(0, 1000);
   // myTiny.setBuzzerFrequency(1, 2000, 3000);
   // myTiny.setBuzzerFrequency(2, freqArray2, longParamArrayLength);
-
 }
 
 // loop() runs in a loop, after setup()

@@ -5,5 +5,5 @@ OutputPrinter::OutputPrinter() {}
 
 // methods for TinyTrainable
 void OutputPrinter::playOutput(int classification) {
-    Serial.println("TODO OutputPrinter playOutput");
+  Serial.println("TODO OutputPrinter playOutput");
 }

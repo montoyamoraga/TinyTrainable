@@ -16,41 +16,41 @@
 
 // conditionally include input libraries
 #ifdef INPUT_COLOR
-  #include "inputs/InputColor.h"
+#include "inputs/InputColor.h"
 #endif
 
 #ifdef INPUT_GESTURE
-  #include "inputs/InputGesture.h"
+#include "inputs/InputGesture.h"
 #endif
 
 #ifdef INPUT_SPEECH
-  #include "inputs/InputSpeech.h"
+#include "inputs/InputSpeech.h"
 #endif
 
 // conditionally include output libraries
 
 #ifdef OUTPUT_BUZZER
-  #include "outputs/OutputBuzzer.h"
+#include "outputs/OutputBuzzer.h"
 #endif
 
 #ifdef OUTPUT_LCD
-  #include "outputs/OutputLCD.h"
+#include "outputs/OutputLCD.h"
 #endif
 
 #ifdef OUTPUT_LED
-  #include "outputs/OutputLED.h"
+#include "outputs/OutputLED.h"
 #endif
 
 #ifdef OUTPUT_MIDI
-  #include "outputs/OutputMIDI.h"
+#include "outputs/OutputMIDI.h"
 #endif
 
 #ifdef OUTPUT_PRINTER
-  #include "outputs/OutputPrinter.h"
+#include "outputs/OutputPrinter.h"
 #endif
 
 #ifdef OUTPUT_SERVO
-  #include "outputs/OutputServo.h"
+#include "outputs/OutputServo.h"
 #endif
 
 // colors for setting the RGB LED
@@ -72,30 +72,32 @@ public:
   TinyTrainable();
   TinyTrainable(Input newInput, Output newOutput);
 
-    // methods for outputs
+  // methods for outputs
   //   void helloOutputsSetup(OutputMode outputToTest);
   //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
   //   void helloOutputs(OutputMode outputToTest);
   virtual void playOutput(int classification){};
 
   // declaration of virtual functions for buzzer
-  virtual void setupOutputBuzzer(int outputPin){};  
+  virtual void setupOutputBuzzer(int outputPin){};
   virtual void getBuzzerParam(int object, int buzzerParamArray[]){};
   // for frequencies
   virtual void setBuzzerFrequency(int object, int frequency){};
-   virtual void setBuzzerFrequency(int object, int freqMin, int freqMax){};
-   virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
-                            int arrayFreqCount){};
-    // for durations
-   virtual void setBuzzerDuration(int object, int duration){};
-   virtual void setBuzzerDuration(int object, int durationMin, int durationMax){};
-   virtual void setBuzzerDuration(int object, int *arrayDurations,
-                           int arrayDurationCount){};
+  virtual void setBuzzerFrequency(int object, int freqMin, int freqMax){};
+  virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
+                                  int arrayFreqCount){};
+  // for durations
+  virtual void setBuzzerDuration(int object, int duration){};
+  virtual void setBuzzerDuration(int object, int durationMin,
+                                 int durationMax){};
+  virtual void setBuzzerDuration(int object, int *arrayDurations,
+                                 int arrayDurationCount){};
 
   // declaration of virtual functions for servo
-  virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax){};
+  virtual void setupOutputServo(int outputPin, int servoAngleMin,
+                                int servoAngleMax){};
   virtual void setServoTempo(int object, int tempo){};
-  virtual int bpmToMs(int tempo){}; 
+  virtual int bpmToMs(int tempo){};
   virtual void moveServo(int classification){};
 
   // template datatypes allows any datatype as an argument, like
@@ -128,7 +130,7 @@ protected:
   //   bool _serialDebugging = false;
 
   // variables for outputs
-    int _outputPinTest = -1;
+  int _outputPinTest = -1;
 };
 
 // conditional compilation

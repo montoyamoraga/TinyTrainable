@@ -16,7 +16,7 @@ public:
   // constructor
   OutputLED();
 
-    // TinyTrainable methods
+  // TinyTrainable methods
   void playOutput(int classification);
 
   // variables

@@ -1,5 +1,5 @@
 /// @file hello_buzzer.ino
-/// @brief Test buzzer output
+/// @brief Test output with buzzer
 
 // define input and output
 #define INPUT_COLOR

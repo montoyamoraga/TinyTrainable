@@ -1,5 +1,5 @@
 /// @file hello_servo.ino
-/// @brief Test servo output
+/// @brief Test output with servo
 
 // define input and output
 #define INPUT_COLOR

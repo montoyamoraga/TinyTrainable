@@ -78,6 +78,20 @@ public:
   //   void helloOutputs(OutputMode outputToTest);
   virtual void playOutput(int classification){};
 
+  // declaration of virtual functions for buzzer
+  virtual void setupOutputBuzzer(int outputPin){};  
+  virtual void getBuzzerParam(int object, int buzzerParamArray[]){};
+  // for frequencies
+  virtual void setBuzzerFrequency(int object, int frequency){};
+   virtual void setBuzzerFrequency(int object, int freqMin, int freqMax){};
+   virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
+                            int arrayFreqCount){};
+    // for durations
+   virtual void setBuzzerDuration(int object, int duration){};
+   virtual void setBuzzerDuration(int object, int durationMin, int durationMax){};
+   virtual void setBuzzerDuration(int object, int *arrayDurations,
+                           int arrayDurationCount){};
+
   // declaration of virtual functions for servo
   virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax){};
   virtual void setServoTempo(int object, int tempo){};

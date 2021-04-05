@@ -1,9 +1,11 @@
-/// @file hello_servo.ino
-/// @brief Test servo output
+/// @file hello_buzzer.ino
+/// @brief Test buzzer output
 
-// include all libraries
-#include <InputColor.h>
-#include <OutputBuzzer.h>
+// define input and output
+#define INPUT_COLOR
+#define OUTPUT_BUZZER
+
+// include TinyTrainable library
 #include <TinyTrainable.h>
 
 // declare instance of input
@@ -12,28 +14,92 @@ InputColor myInput;
 OutputBuzzer myOutput;
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable tiny(myInput, myOutput);
+TinyTrainable myTiny(myInput, myOutput);
 
-const int outputPin = 9;
+// constants for the hardware
+const int outputPin = 2;
 
-// for the supplies list servo, these values can be >= 0, <= 180
-// these are the values the servo will move between at the given bpm
-// going right to the limit can sometimes cause the servo to buzz
-const int servoAngleMin = 30;
-const int servoAngleMax = 60;
+// arrays of frequencies
+int freqArray0[] = {1200, 1400, 1600};
+int freqArray1[] = {2100, 2200, 2300, 2400, 2500, 2600};
+int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
+
+// length of above arrays (can be of varying lengths)
+int shortParamArrayLength = 3;
+int longParamArrayLength = 6;
+
+int pauseTime = 2000;
 
 void setup() {
-  //  tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
-  // set the tempo (in bpm) for each object
-  //  tiny.setServoTempo(0, 60);
-  //  tiny.setServoTempo(1, 90);
-  //  tiny.setServoTempo(2, 120);
+  // initialize output
+  myTiny.setupOutputBuzzer(outputPin);
+
+    // for buzzer output, there are 3 options:
+
+  // 1. each classified item gets a single frequency (in Hz)
+
+//   myTiny.setBuzzerFrequency(0, 1000);
+//   myTiny.setBuzzerFrequency(1, 2000);
+//   myTiny.setBuzzerFrequency(2, 3000);
+
+  // 2. each classified item gets a random frequency within the given range
+  // (the frequency will change each time the item is classified)
+
+  // myTiny.setBuzzerFrequency(0, 1000, 2000);
+  // myTiny.setBuzzerFrequency(1, 2000, 3000);
+  // myTiny.setBuzzerFrequency(2, 3000, 4000);
+
+  // 3. each classified item gets a random frequency from a given array
+  // (the frequency will change each time the item is classified)
+  // NOTE: though you call these arrays in setup(), they need to be
+  // declared in the global scope so they can be used after setup runs!
+
+  // myTiny.setBuzzerFrequency(0, freqArray0, shortParamArrayLength);
+  // myTiny.setBuzzerFrequency(1, freqArray1, longParamArrayLength);
+  // myTiny.setBuzzerFrequency(2, freqArray2, longParamArrayLength);
+
+  // the same options also exist for buzzer durations (in milliseconds), in
+  // the overloaded function setBuzzerDuration()
+
+  // 1.
+
+  myTiny.setBuzzerDuration(0, 300);
+  myTiny.setBuzzerDuration(1, 600);
+  myTiny.setBuzzerDuration(2, 900);
+
+  // 2.
+
+  // myTiny.setBuzzerDuration(0, 1000, 2000);
+  // myTiny.setBuzzerDuration(1, 2000, 3000);
+  // myTiny.setBuzzerDuration(2, 3000, 4000);
+
+  // 3. (using the same arrays as above because the numbers also work in ms!)
+
+  // myTiny.setBuzzerDuration(0, freqArray0, shortParamArrayLength);
+  // myTiny.setBuzzerDuration(1, freqArray1, longParamArrayLength);
+  // myTiny.setBuzzerDuration(2, freqArray2, longParamArrayLength);
+
+  // though the frequency and duration options can be different, you can't
+  // do this:
+  // myTiny.setBuzzerFrequency(0, 1000);
+  // myTiny.setBuzzerFrequency(1, 2000, 3000);
+  // myTiny.setBuzzerFrequency(2, freqArray2, longParamArrayLength);
+
 }
 
+// loop() runs in a loop, after setup()
 void loop() {
-  // to see the different tempos, try each output
-  //  tiny.playOutput(0);
-  // tiny.playOutput(1);
-  // tiny.playOutput(2);
+  // cycle through the three possible classification outputs
+
+  // this will be taken care of by the instruments for base functionality!
+  // it's demonstrated here in case to show what's possible
+
+  // long because tone isn't blocking - calls will override!
+  myTiny.playOutput(0);
+  delay(pauseTime);
+  myTiny.playOutput(1);
+  delay(pauseTime);
+  myTiny.playOutput(2);
+  delay(pauseTime);
 }

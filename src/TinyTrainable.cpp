@@ -200,51 +200,6 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 //   }
 // }
 
-// TODO: add comments
-// void TinyTrainable::setupOutputBuzzer(int outputPin) {
-//   _outputMode = outputBuzzer;
-//   _outputPinBuzzer = outputPin;
-//   pinMode(_outputPinBuzzer, OUTPUT);
-// }
-
-// void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
-//   _buzzerFreqMode = singleParam;
-//   _buzzerFrequencies[object] = frequency;
-// }
-
-// void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax)
-// {
-//   _buzzerFreqMode = rangeParam;
-//   _buzzerFrequenciesMin[object] = freqMin;
-//   _buzzerFrequenciesMax[object] = freqMax;
-// }
-
-// void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies,
-//                                        int arrayFreqCount) {
-//   _buzzerFreqMode = randomParam;
-//   _buzzerFrequenciesArrays[object] = arrayFrequencies;
-//   _buzzerFrequenciesArraysSizes[object] = arrayFreqCount;
-// }
-
-// void TinyTrainable::setBuzzerDuration(int object, int duration) {
-//   _buzzerDurationMode = singleParam;
-//   _buzzerDurations[object] = duration;
-// }
-
-// void TinyTrainable::setBuzzerDuration(int object, int durationMin,
-//                                       int durationMax) {
-//   _buzzerDurationMode = rangeParam;
-//   _buzzerDurationsMin[object] = durationMin;
-//   _buzzerDurationsMax[object] = durationMax;
-// }
-
-// void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
-//                                       int arrayDurationCount) {
-//   _buzzerDurationMode = randomParam;
-//   _buzzerDurationsArrays[object] = arrayDurations;
-//   _buzzerDurationsArraysSizes[object] = arrayDurationCount;
-// }
-
 // void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
 //   _outputMode = outputMIDI;
 //   _midiChannel = midiChannel;

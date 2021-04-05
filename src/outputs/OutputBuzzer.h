@@ -12,29 +12,31 @@
 
 class OutputBuzzer : public Output {
 
-  // methods for buzzer
+
 public:
   // constructor
   OutputBuzzer();
 
-  // TinyTrainable methods
+  // methods for TinyTrainable
   void playOutput(int classification);
 
+ // methods for buzzer    
+ void setupOutputBuzzer(int outputPin);  
  void getBuzzerParam(int object, int buzzerParamArray[]);
 
-  //   void setupOutputBuzzer(int outputPin);
-  //   // for frequencies
-  //   void setBuzzerFrequency(int object, int frequency);
-  //   void setBuzzerFrequency(int object, int freqMin, int freqMax);
-  //   void setBuzzerFrequency(int object, int *arrayFrequencies,
-  //                           int arrayFreqCount);
-  //   // for durations
-  //   void setBuzzerDuration(int object, int duration);
-  //   void setBuzzerDuration(int object, int durationMin, int durationMax);
-  //   void setBuzzerDuration(int object, int *arrayDurations,
-  //                          int arrayDurationCount);
 
-  //   // methods and variables for outputBuzzer
+    // for frequencies
+    void setBuzzerFrequency(int object, int frequency);
+    void setBuzzerFrequency(int object, int freqMin, int freqMax);
+    void setBuzzerFrequency(int object, int *arrayFrequencies,
+                            int arrayFreqCount);
+    // for durations
+    void setBuzzerDuration(int object, int duration);
+    void setBuzzerDuration(int object, int durationMin, int durationMax);
+    void setBuzzerDuration(int object, int *arrayDurations,
+                           int arrayDurationCount);
+
+    // methods and variables for outputBuzzer
     int _outputPinBuzzer = -1;
     enum BuzzerMode { singleParam, rangeParam, randomParam, undefParam };
     BuzzerMode _buzzerFreqMode = undefParam;

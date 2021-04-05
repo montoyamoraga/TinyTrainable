@@ -1,10 +1,20 @@
 /// @file hello_servo.ino
 /// @brief Test servo output
 
-// include all libraries
+// define input and output
+#define INPUT_COLOR
+#define OUTPUT_SERVO
+
+// include TinyTrainable library
 #include <TinyTrainable.h>
 
-TinyTrainable tiny;
+// declare instance of input
+InputColor myInput;
+// declare instance of output
+OutputServo myOutput;
+
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(myInput, myOutput);
 
 const int outputPin = 9;
 
@@ -15,17 +25,17 @@ const int servoAngleMin = 30;
 const int servoAngleMax = 60;
 
 void setup() {
-  tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+  myTiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
   // set the tempo (in bpm) for each object
-  tiny.setServoTempo(0, 60);
-  tiny.setServoTempo(1, 90);
-  tiny.setServoTempo(2, 120);
+  //  myTiny.setServoTempo(0, 60);
+  //  myTiny.setServoTempo(1, 90);
+  //  myTiny.setServoTempo(2, 120);
 }
 
 void loop() {
   // to see the different tempos, try each output
-  tiny.playOutput(0);
-  // tiny.playOutput(1);
-  // tiny.playOutput(2);
+  //  myTiny.playOutput(0);
+  // myTiny.playOutput(1);
+  // myTiny.playOutput(2);
 }

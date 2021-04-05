@@ -7,23 +7,21 @@
 // include Output library
 #include "Output.h"
 
-// include TinyTrainable library
-// #include "TinyTrainable.h"
-
 class OutputLED : public Output {
 
 public:
   // constructor
   OutputLED();
 
-  // TinyTrainable methods
+  // methods for TinyTrainable
   void playOutput(int classification);
 
   // variables
   int _outputPinsLED[3];
 
-  // TODO: methods for outputLED
-  //   void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
+// methods for LED
+void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
+
 };
 
 #endif

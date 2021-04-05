@@ -93,6 +93,9 @@ public:
   virtual void setBuzzerDuration(int object, int *arrayDurations,
                                  int arrayDurationCount){};
 
+   // declaration of virtual functions for LED
+   virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
+
   // declaration of virtual functions for servo
   virtual void setupOutputServo(int outputPin, int servoAngleMin,
                                 int servoAngleMax){};

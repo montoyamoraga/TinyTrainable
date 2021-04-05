@@ -235,14 +235,3 @@ TinyTrainable::TinyTrainable(Input newInput, Output newOutput) {
 //   // replace the value at the pointer with the desired baudrate
 //   *pointerBaudrate = baudrate;
 // }
-
-// void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
-//                                    int outputPin2) {
-//   _outputMode = outputLED;
-//   _outputPinsLED[0] = outputPin0;
-//   _outputPinsLED[1] = outputPin1;
-//   _outputPinsLED[2] = outputPin2;
-//   pinMode(outputPin0, OUTPUT);
-//   pinMode(outputPin1, OUTPUT);
-//   pinMode(outputPin2, OUTPUT);
-// }

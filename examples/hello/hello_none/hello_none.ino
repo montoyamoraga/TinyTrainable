@@ -10,13 +10,8 @@
 // include TinyTrainable library
 #include <TinyTrainable.h>
 
-// declare instance of input
-Input myInput;
-// declare instance of output
-Output myOutput;
-
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(myInput, myOutput);
+TinyTrainable myTiny(new Input(), new Output());
 
 // constants for time LEDs are on and off
 // measured in milliseconds

@@ -1,16 +1,20 @@
 /// @file gesture_buzzer.ino
 /// @brief input gesture with output buzzer
 
-// include library
-#include <Inst1.h>
+// define input and output
+#define INPUT_GESTURE
+#define OUTPUT_BUZZER
+
+// include library TinyTrainable
+#include <TinyTrainable.h>
 
 // include machine learning model
 #include "../assets/modelInst1.h"
 // or include your own
 //#include "myModel.h"
 
-// declare instance of the instrument0
-Inst1 tiny;
+// declare instance of the TinyTrainable instrument
+TinyTrainable myTiny(new InputGesture(), new OutputBuzzer());
 
 // constants for the KNN algorithm
 const int K = 5;
@@ -21,45 +25,45 @@ const float COLOR_THRESHOLD = 0.5;
 const int outputPin = 8;
 
 // constant for debugging
-// true: the instrument needs to be connected to serial port
-// false: the instrument is standalone
 const bool tinyDebugging = true;
+
+String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+
+
+// arrays of frequencies
+int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
+int freqArray1[] = {2100, 2200, 2300, 2400, 2500, 2600};
+int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
+
+// the following looks funny since sizeof returns byte size
+// int freqArrayLength = sizeof(freqArray0)/sizeof(*freqArray0);
+int paramArrayLength = 6;
 
 // setup() runs once, at the beginning
 void setup() {
 
-  // configure all LEDs on the microcontroller
-  tiny.setupLEDs();
-
   // set debugging over serial port
-  tiny.setSerialDebugging(tinyDebugging);
+  myTiny.setupInstrument(tinyDebugging);
 
-  // turn on the sensor to measure
-  // 3-axis accelerometer, gyroscope, magnetometer
-  tiny.setupSensorLSM9DS1();
+  // set its output
+  myTiny.setupOutputBuzzer(outputPin);
 
-  // setup instrument to output over buzzer
-  tiny.setOutputMode(outputBuzzer);
+  // set frequencies, in Hz
+  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
+  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
+  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
+  // set durations, in milliseconds
+  myTiny.setBuzzerDuration(0, 300);
+  myTiny.setBuzzerDuration(1, 600);
+  myTiny.setBuzzerDuration(2, 900);
 
-  // setup the hardware pin for the output
-  tiny.setBuzzerPin(outputPin);
-
-  // set frequencies for buzzer sounds
-  tiny.setBuzzerFrequencies(1000, 1200, 1400);
-
-  // set duration for buzzer soudns
-  tiny.setBuzzerDurations(1000);
-
-  // set labels for each of the three classes
-  //  tiny.setLabels("Object 0", "Object 1", "Object 2");
-
-  // train the KNN algorithm
-  //  tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
+  // train the algorithm
+  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
 
   // identify the input and respond
-  //  tiny.identify();
+  //  myTiny.identify();
 }

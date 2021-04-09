@@ -32,7 +32,8 @@ public:
 // constructor
 InputGesture();
 
-    void setupSensorLSM9DS1();
+void setupSensorLSM9DS1();
+void setupInstrument(bool serialDebugging);
 
 int _previousClassification = -1;
   String _labels[3];

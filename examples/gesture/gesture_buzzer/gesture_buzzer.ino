@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // include machine learning model
-#include "../assets/modelInst1.h"
+#include "../assets/modelGesture.h"
 // or include your own
 //#include "myModel.h"
 

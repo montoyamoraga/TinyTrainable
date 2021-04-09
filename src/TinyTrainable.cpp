@@ -141,23 +141,6 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //   }
 // }
 
-// APDS9960 sensor for gestures, color, light intensity, proximity
-// void TinyTrainable::setupSensorAPDS9960() {
-//   if (!APDS.begin()) {
-//     while (1)
-//       ;
-//   }
-// }
-
-// LSM9DS1 sensor for IMU (inertial measurement unit)
-//  3-axis accelerometer, gyroscope, magnetometer
-// void TinyTrainable::setupSensorLSM9DS1() {
-//   if (!IMU.begin()) {
-//     while (1)
-//       ;
-//   }
-// }
-
 // TODO
 // void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
 //   switch (outputToTest) {

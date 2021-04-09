@@ -70,10 +70,6 @@ protected:
   Input *myInput = nullptr;
   Output *myOutput = nullptr;
 
-  // methods for input sensors
-  //   void setupSensorAPDS9960();
-  //   void setupSensorLSM9DS1();
-
   // variables for outputs
   int _outputPinTest = -1;
 

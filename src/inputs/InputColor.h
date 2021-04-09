@@ -26,6 +26,9 @@ public:
   // constructor
   InputColor();
 
+  void setupSensorAPDS9960();
+  void setupInstrument(bool serialDebugging);
+
   KNNClassifier _myKNN;
   String _labels[3];
   int _previousClassification = -1;

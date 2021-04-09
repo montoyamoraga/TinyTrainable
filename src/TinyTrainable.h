@@ -131,10 +131,14 @@ public:
   virtual void setBuzzerDuration(int object, int *arrayDurations,
                                  int arrayDurationCount){};
 
-  // declaration of virtual functions for LED
+  // declaration of virtual functions for output LED
   virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
 
-  // declaration of virtual functions for servo
+    // declaration of virtual functions for output MIDI
+  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
+  virtual void setMIDINotes(int object, int note){};
+
+  // declaration of virtual functions for output servo
   virtual void setupOutputServo(int outputPin, int servoAngleMin,
                                 int servoAngleMax){};
   virtual void setServoTempo(int object, int tempo){};
@@ -146,6 +150,8 @@ public:
   void setStateLEDRGB(bool turnOn, Colors color);
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
+
+
 
   // TODO: methods for outputSerialUSB
   //   void setupOutputSerialUSB();

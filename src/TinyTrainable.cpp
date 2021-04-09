@@ -239,38 +239,10 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //   }
 // }
 
-// void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
-//   _outputMode = outputMIDI;
-//   _midiChannel = midiChannel;
-//   _midiVelocity = midiVelocity;
-
-//   setupSerialMIDI();
-// }
-
-// void TinyTrainable::setMIDINotes(int object, int note) {
-//   _midiNotes[object] = note;
-// }
-
 // void TinyTrainable::setupOutputSerialUSB() {
 //   _outputMode = outputSerialUSB;
 
 //   Serial.begin(9600);
 //   while (!Serial)
 //     ;
-// }
-
-// sets up Serial MIDI output on TX pin
-// void TinyTrainable::setupSerialMIDI() {
-
-//   // open serial tranmission on TX pin
-//   Serial1.begin(9600);
-
-//   // desired baudrate for MIDI
-//   uint32_t baudrate = 0x800000;
-
-//   // declare pointer to the memory address that stores the baudrate
-//   uint32_t *pointerBaudrate = (uint32_t *)0x40002524;
-
-//   // replace the value at the pointer with the desired baudrate
-//   *pointerBaudrate = baudrate;
 // }

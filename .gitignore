@@ -1,6 +1,10 @@
 # Apple
 .DS_Store
 
+# Arduino
+# this file allows you to edit the examples on the Arduino IDE
+.development
+
 # Visual Studio Code
 .vscode/
 

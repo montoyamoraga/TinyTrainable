@@ -1,5 +1,5 @@
 /// @file color_buzzer.ino
-/// @brief Example: color with output buzzer
+/// @brief input color with output buzzer
 
 // define input and output
 #define INPUT_COLOR

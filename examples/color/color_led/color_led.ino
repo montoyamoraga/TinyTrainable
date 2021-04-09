@@ -1,13 +1,15 @@
-/// @file inst0_led.ino
-/// @brief Example: Instrument0 with output LED
+/// @file color_led.ino
+/// @brief input color with output LED
 
-// include library
-#include <Inst0.h>
+// define input and output
+#define INPUT_COLOR
+#define OUTPUT_LED
 
-// declare instance of instrument0
-Inst0 tiny;
+// include library TinyTrainable
+#include <TinyTrainable.h>
 
-#define TINY_OUTPUT LED
+// declare instance of the TinyTrainable instrument
+TinyTrainable myTiny(new InputColor(), new OutputLED());
 
 // constants for the hardware
 const int outputPinLED0 = 3;
@@ -26,16 +28,16 @@ String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
 // setup() runs once, at the beginning
 void setup() {
-  tiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(tinyDebugging);
 
-  tiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
+  myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
 
   // train the KNN algorithm with your objects
-  tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
   // identify the item and respond
-  tiny.identify();
+    myTiny.identify();
 }

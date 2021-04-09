@@ -1,13 +1,22 @@
-// include library
-#include <Inst0.h>
+/// @file color_servo.ino
+/// @brief input color with output servo
 
-// declare instance of the instrument0
-Inst0 tiny;
+// define input and output
+#define INPUT_COLOR
+#define OUTPUT_SERVO
+
+// include library TinyTrainable
+#include <TinyTrainable.h>
+
+// declare instance of the TinyTrainable instrument
+TinyTrainable myTiny(new InputColor(), new OutputServo());
 
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
+
+String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
 // for the supplies list servo, these values can be >= 0, <= 180
 // these are the values the servo will move between at the given bpm
@@ -25,23 +34,22 @@ const bool tinyDebugging = true;
 
 // setup() runs once, at the beginning
 void setup() {
-  tiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(tinyDebugging);
 
-  tiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+  myTiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
   // set fixed angles, easy version
-  tiny.setServoTempo(0, 30);
-  tiny.setServoTempo(1, 60);
-  tiny.setServoTempo(2, 90);
+  myTiny.setServoTempo(0, 30);
+  myTiny.setServoTempo(1, 60);
+  myTiny.setServoTempo(2, 90);
 
-  String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
   // train the KNN algorithm
-  tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
 
   // identify the input and respond
-  tiny.identify();
+  myTiny.identify();
 }

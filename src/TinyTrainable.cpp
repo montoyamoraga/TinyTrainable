@@ -238,11 +238,3 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //     break;
 //   }
 // }
-
-// void TinyTrainable::setupOutputSerialUSB() {
-//   _outputMode = outputSerialUSB;
-
-//   Serial.begin(9600);
-//   while (!Serial)
-//     ;
-// }

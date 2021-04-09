@@ -49,6 +49,10 @@
 #include "outputs/OutputPrinter.h"
 #endif
 
+#ifdef OUTPUT_SERIAL
+#include "outputs/OutputSerial.h"
+#endif
+
 #ifdef OUTPUT_SERVO
 #include "outputs/OutputServo.h"
 #endif
@@ -138,6 +142,9 @@ public:
   virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
   virtual void setMIDINotes(int object, int note){};
 
+// declaration of virtual functions for output serial
+  virtual void setupOutputSerial(){};
+
   // declaration of virtual functions for output servo
   virtual void setupOutputServo(int outputPin, int servoAngleMin,
                                 int servoAngleMax){};
@@ -151,14 +158,6 @@ public:
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
 
-
-
-  // TODO: methods for outputSerialUSB
-  //   void setupOutputSerialUSB();
-
-  // getter and setter for serialDebugging
-  // void getSerialDebugging();
-  // void setSerialDebugging();
 
   void setupLEDs();
 };

@@ -1,5 +1,5 @@
-/// @file inst1_buzzer.ino
-/// @brief Example: Instrument1 with output buzzer
+/// @file gesture_buzzer.ino
+/// @brief input gesture with output buzzer
 
 // include library
 #include <Inst1.h>

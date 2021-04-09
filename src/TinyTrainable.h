@@ -54,19 +54,17 @@
 #endif
 
 // colors for setting the RGB LED
-enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5
-};
+enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
 
 /// \class TinyTrainable
 /// \brief TinyTrainable base class
 class TinyTrainable {
 
-  protected:
-
+protected:
   // input and output
   // asterisks are pointers
-  Input* myInput = nullptr;
-  Output* myOutput = nullptr;
+  Input *myInput = nullptr;
+  Output *myOutput = nullptr;
 
   // methods for input sensors
   //   void setupSensorAPDS9960();
@@ -76,23 +74,22 @@ class TinyTrainable {
   int _outputPinTest = -1;
 
 public:
-
   // constructor
   TinyTrainable();
-  TinyTrainable(Input* newInput, Output* newOutput);
+  TinyTrainable(Input *newInput, Output *newOutput);
 
   // destructor
   ~TinyTrainable();
 
-    // template datatypes allows any datatype as an argument, like
+  // template datatypes allows any datatype as an argument, like
   // Serial.println(). it is defined here in the header file so it compiles at
   // the beginning
-    template <typename T> void debugPrint(T message) {
-      if (_serialDebugging) {
-        Serial.print("debug - ");
-        Serial.println(message);
-      }
-    };
+  template <typename T> void debugPrint(T message) {
+    if (_serialDebugging) {
+      Serial.print("debug - ");
+      Serial.println(message);
+    }
+  };
 
   // methods
   void setupInstrument(bool serialDebugging);
@@ -106,9 +103,8 @@ public:
 
   // methods for input color
   virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
-                  String objects[3]){};
+                        String objects[3]){};
   virtual void identify(){};
-
 
   // methods for input gesture
 
@@ -135,8 +131,8 @@ public:
   virtual void setBuzzerDuration(int object, int *arrayDurations,
                                  int arrayDurationCount){};
 
-   // declaration of virtual functions for LED
-   virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
+  // declaration of virtual functions for LED
+  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
 
   // declaration of virtual functions for servo
   virtual void setupOutputServo(int outputPin, int servoAngleMin,
@@ -154,13 +150,11 @@ public:
   // TODO: methods for outputSerialUSB
   //   void setupOutputSerialUSB();
 
-
   // getter and setter for serialDebugging
   // void getSerialDebugging();
   // void setSerialDebugging();
 
   void setupLEDs();
-
 };
 
 // conditional compilation

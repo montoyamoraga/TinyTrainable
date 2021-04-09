@@ -11,18 +11,18 @@ TinyTrainable::TinyTrainable() {}
 // initialize static variables
 bool TinyTrainable::_serialDebugging = false;
 
-TinyTrainable::TinyTrainable(Input* newInput, Output* newOutput) {
+TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
 
   myInput = newInput;
   myOutput = newOutput;
- 
+
   // TODO: research the name of this linking way
   if (myInput != nullptr) {
-  myInput->tiny = this;
+    myInput->tiny = this;
   }
 
   if (myOutput != nullptr) {
-  myOutput->tiny = this;
+    myOutput->tiny = this;
   }
 
   setupLEDs();
@@ -51,7 +51,6 @@ void TinyTrainable::setupInstrument(bool serialDebugging) {
       ;
   }
 }
-
 
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED

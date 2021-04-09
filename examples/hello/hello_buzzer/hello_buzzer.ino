@@ -5,7 +5,7 @@
 #define INPUT_NONE
 #define OUTPUT_BUZZER
 
-// include library TinyTrainable 
+// include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument

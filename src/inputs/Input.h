@@ -12,8 +12,8 @@ class Input {
   // friend classes can access protected and private members
   friend class TinyTrainable;
 
-  protected:
-  TinyTrainable* tiny = nullptr;
+protected:
+  TinyTrainable *tiny = nullptr;
 
 public:
   Input();

@@ -19,9 +19,8 @@ public:
   // variables
   int _outputPinsLED[3];
 
-// methods for LED
-void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
-
+  // methods for LED
+  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
 };
 
 #endif

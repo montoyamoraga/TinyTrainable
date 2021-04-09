@@ -12,8 +12,8 @@ class Output {
 
   friend class TinyTrainable;
 
-  protected:
-  TinyTrainable* tiny = nullptr;
+protected:
+  TinyTrainable *tiny = nullptr;
 
 public:
   // constructor

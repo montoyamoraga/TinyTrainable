@@ -72,14 +72,10 @@ class TinyTrainable {
   //   void setupSensorAPDS9960();
   //   void setupSensorLSM9DS1();
 
-
-
   // variables for outputs
   int _outputPinTest = -1;
 
 public:
-
-
 
   // constructor
   TinyTrainable();
@@ -88,6 +84,16 @@ public:
   // destructor
   ~TinyTrainable();
 
+    // template datatypes allows any datatype as an argument, like
+  // Serial.println(). it is defined here in the header file so it compiles at
+  // the beginning
+    template <typename T> void debugPrint(T message) {
+      if (_serialDebugging) {
+        Serial.print("debug - ");
+        Serial.println(message);
+      }
+    };
+
   // methods
   void setupInstrument(bool serialDebugging);
 
@@ -95,6 +101,18 @@ public:
   // TODO: add explanation about static
   // static makes this property to be global for all the instances of the class
   static bool _serialDebugging;
+
+  // methods for input
+
+  // methods for input color
+  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
+                  String objects[3]){};
+  virtual void identify(){};
+
+
+  // methods for input gesture
+
+  // methods for input speech
 
   // methods for outputs
   //   void helloOutputsSetup(OutputMode outputToTest);
@@ -127,19 +145,9 @@ public:
   virtual int bpmToMs(int tempo){};
   virtual void moveServo(int classification){};
 
-  // template datatypes allows any datatype as an argument, like
-  // Serial.println(). it is defined here in the header file so it compiles at
-  // the beginning
-  //   template <typename T> void debugPrint(T message) {
-  //     if (_serialDebugging) {
-  //       Serial.print("debug - ");
-  //       Serial.println(message);
-  //     }
-  //   };
-
   void setStateLEDBuiltIn(bool turnOn);
-  //   void blinkLEDBuiltIn(int blinks);
-    void setStateLEDRGB(bool turnOn, Colors color);
+  void blinkLEDBuiltIn(int blinks);
+  void setStateLEDRGB(bool turnOn, Colors color);
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
 

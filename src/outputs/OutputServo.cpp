@@ -8,7 +8,6 @@ OutputServo::OutputServo() {}
 void OutputServo::playOutput(int classification) { moveServo(classification); }
 
 void OutputServo::setupOutputServo(int outputPin, int angleMin, int angleMax) {
-  // TODO: add comments about each line
 
   // define output servo
   _outputPinServo = outputPin;

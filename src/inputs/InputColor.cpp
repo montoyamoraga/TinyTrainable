@@ -23,34 +23,34 @@ InputColor::InputColor() : _myKNN(3) {
 //   }
 // }
 
-// // reads the color from the color sensor
-// // stores the rgb values in 'colorReading[]'
-// void InputColor::readColor(float colorReading[]) {
+// reads the color from the color sensor
+// stores the rgb values in 'colorReading[]'
+void InputColor::readColor(float colorReading[]) {
 
-//   // declare and initialize local variables for color
-//   int red, green, blue, colorTotal = 0;
+  // declare and initialize local variables for color
+  int red, green, blue, colorTotal = 0;
 
-//   // wait for the object to move close enough
-//   while (!APDS.proximityAvailable() || APDS.readProximity() > 0) {
-//   }
+  // wait for the object to move close enough
+  while (!APDS.proximityAvailable() || APDS.readProximity() > 0) {
+  }
 
-//   // wait until the color is bright enough
-//   while (colorTotal < _colorThreshold) {
+  // wait until the color is bright enough
+  while (colorTotal < _colorThreshold) {
 
-//     // sample if the color is available and the object is close
-//     if (APDS.colorAvailable()) {
+    // sample if the color is available and the object is close
+    if (APDS.colorAvailable()) {
 
-//       // read color and proximity
-//       APDS.readColor(red, green, blue);
-//       colorTotal = (red + green + blue);
+      // read color and proximity
+      APDS.readColor(red, green, blue);
+      colorTotal = (red + green + blue);
 
-//       // update readings
-//       _colorReading[0] = red;
-//       _colorReading[1] = green;
-//       _colorReading[2] = blue;
-//     }
-//   }
-// }
+      // update readings
+      _colorReading[0] = red;
+      _colorReading[1] = green;
+      _colorReading[2] = blue;
+    }
+  }
+}
 
 // // TODO: docstring, call this at the beginning of identify() once
 // // red is general missing setup
@@ -123,101 +123,99 @@ InputColor::InputColor() : _myKNN(3) {
 // }
 
 // // uses the trained KNN algorithm to identify objects the user shows
-// void InputColor::identify() {
-//   if (!_checkedSetup) {
-//     // TODO: finish this check routine
-//     // checkInst0Setup();
-//   }
+void InputColor::identify() {
+  if (!_checkedSetup) {
+    // TODO: finish this check routine
+    // checkInst0Setup();
+  }
 
-//   // wait for the object to move away again
-//   while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
-//   }
+  // wait for the object to move away again
+  while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
+  }
 
-//   debugPrint("Let me guess your object");
+  tiny->debugPrint("Let me guess your object");
 
-//   // wait for an object then read its color
-//   readColor(_colorReading);
+  // wait for an object then read its color
+  readColor(_colorReading);
 
-//   // classify the object
-//   int classification = _myKNN.classify(_colorReading, _k);
+  // classify the object
+  int classification = _myKNN.classify(_colorReading, _k);
 
-//   debugPrint("You showed me: " + _labels[classification]);
+  tiny->debugPrint("You showed me: " + _labels[classification]);
 
-//   // turn on the corresponding light
-//   setStateLEDRGB(true, Colors(classification));
+  // turn on the corresponding light
+  tiny->setStateLEDRGB(true, Colors(classification));
 
-//   playOutput(classification);
+  tiny->playOutput(classification);
 
-//   // update previous classification
-//   _previousClassification = classification;
-// }
+  // update previous classification
+  _previousClassification = classification;
+}
 
-// // trains the KNN algorithm with examples provided by the user
-// // algorithm will use the 'k' nearest neighbors for classification
-// // 'examplesPerClass' examples that pass 'colorThreshold' are collected per
-// // class sets the labels of the objects for identification by the KNN
-// algorithm void InputColor::trainKNN(int k, int examplesPerClass, float
-// colorThreshold,
-//                           String objects[3]) {
+// trains the KNN algorithm with examples provided by the user
+// algorithm will use the 'k' nearest neighbors for classification
+// 'examplesPerClass' examples that pass 'colorThreshold' are collected per
+// class sets the labels of the objects for identification by the KNN algorithm
+void InputColor::trainKNN(int k, int examplesPerClass, float
+colorThreshold, String objects[3]) {
 
-//   _k = k;
-//   _colorThreshold = colorThreshold;
+  _k = k;
+  _colorThreshold = colorThreshold;
 
-//   _labels[0] = objects[0];
-//   _labels[1] = objects[1];
-//   _labels[2] = objects[2];
+  _labels[0] = objects[0];
+  _labels[1] = objects[1];
+  _labels[2] = objects[2];
 
-//   String debugMessage =
-//       "Labels: " + _labels[0] + ", " + _labels[1] + ", " + _labels[2];
-//   debugPrint(debugMessage);
+  String debugMessage =
+      "Labels: " + _labels[0] + ", " + _labels[1] + ", " + _labels[2];
+  tiny->debugPrint(debugMessage);
 
-//   for (int currentClass = 0; currentClass < 3; currentClass++) {
+  for (int currentClass = 0; currentClass < 3; currentClass++) {
 
-//     // turn on the LED according to which class we are training
-//     setStateLEDRGB(true, Colors(currentClass));
+    // turn on the LED according to which class we are training
+    tiny->setStateLEDRGB(true, Colors(currentClass));
 
-//     // ask the user to show examples of each object
-//     for (int currentExample = 0; currentExample < examplesPerClass;
-//          currentExample++) {
+    // ask the user to show examples of each object
+    for (int currentExample = 0; currentExample < examplesPerClass;
+         currentExample++) {
 
-//       debugPrint("Show me an example of: " + _labels[currentClass]);
+      tiny->debugPrint("Show me an example of: " + _labels[currentClass]);
 
-//       // wait for an object then read its color
-//       readColor(_colorReading);
+      // wait for an object then read its color
+      readColor(_colorReading);
 
-//       // add example color to the k-NN model
-//       _myKNN.addExample(_colorReading, currentClass);
-//     }
+      // add example color to the k-NN model
+      _myKNN.addExample(_colorReading, currentClass);
+    }
 
-//     // only show for objects 0 and 1
-//     if (currentClass < 2) {
-//       // TODO - maybe move to after LED change, since Serial doesn't always
-//       work
-//       // and won't always be used
-//       debugPrint("Prepare next object");
-//     }
-//     // message to sginal that all objects are ready
-//     else {
-//       debugPrint("All objects ready");
-//     }
+    // only show for objects 0 and 1
+    if (currentClass < 2) {
+      // TODO - maybe move to after LED change, since Serial doesn't always work
+      // and won't always be used
+      tiny->debugPrint("Prepare next object");
+    }
+    // message to sginal that all objects are ready
+    else {
+      tiny->debugPrint("All objects ready");
+    }
 
-//     // delay so the object readings don't overlap
-//     // TODO: add to markdown documentation
-//     // TODO: maybe instead of hardcoded its a variable for advanced users
-//     delay(1000);
+    // delay so the object readings don't overlap
+    // TODO: add to markdown documentation
+    // TODO: maybe instead of hardcoded its a variable for advanced users
+    delay(1000);
 
-//     // wait for the object to move away again
-//     while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
-//     }
-//   }
-//   debugPrint("Finished training");
+    // wait for the object to move away again
+    while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
+    }
+  }
+  tiny->debugPrint("Finished training");
 
-//   // blink twice
-//   blinkLEDBuiltIn(2);
+  // blink twice
+  tiny->blinkLEDBuiltIn(2);
 
-//   // turn off the LED built in
-//   setStateLEDBuiltIn(false);
+  // turn off the LED built in
+  tiny->setStateLEDBuiltIn(false);
 
-//   // turn off the LED RGB
-//   setStateLEDRGB(false, red);
-// }
+  // turn off the LED RGB
+  tiny->setStateLEDRGB(false, red);
+}

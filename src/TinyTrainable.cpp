@@ -24,9 +24,7 @@ TinyTrainable::TinyTrainable(Input* newInput, Output* newOutput) {
   if (myOutput != nullptr) {
   myOutput->tiny = this;
   }
-  
 
-  
   setupLEDs();
 }
 
@@ -80,17 +78,17 @@ void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
   }
 }
 
-// void TinyTrainable::blinkLEDBuiltIn(int blinks) {
+void TinyTrainable::blinkLEDBuiltIn(int blinks) {
 
-//   setStateLEDBuiltIn(false);
+  setStateLEDBuiltIn(false);
 
-//   for (int i = 0; i < blinks; i++) {
-//     setStateLEDBuiltIn(true);
-//     delay(500);
-//     setStateLEDBuiltIn(false);
-//     delay(500);
-//   }
-// }
+  for (int i = 0; i < blinks; i++) {
+    setStateLEDBuiltIn(true);
+    delay(500);
+    setStateLEDBuiltIn(false);
+    delay(500);
+  }
+}
 
 // function for turning on and off the RGB LED
 void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {

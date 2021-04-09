@@ -1,11 +1,15 @@
-/// @file inst0_buzzer.ino
-/// @brief Example: Instrument0 with output buzzer
+/// @file color_buzzer.ino
+/// @brief Example: color with output buzzer
 
-// include library
-#include <Inst0.h>
+// define input and output
+#define INPUT_COLOR
+#define OUTPUT_BUZZER
 
-// declare instance of the instrument0
-Inst0 tiny;
+// include library TinyTrainable
+#include <TinyTrainable.h>
+
+// declare instance of the TinyTrainable instrument
+TinyTrainable myTiny(new InputColor(), new OutputBuzzer());
 
 // constants for the KNN algorithm
 const int K = 5;
@@ -33,29 +37,29 @@ int paramArrayLength = 6;
 void setup() {
 
   // setup the instrument
-  tiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(tinyDebugging);
 
   // set its output
-  tiny.setupOutputBuzzer(outputPin);
+  myTiny.setupOutputBuzzer(outputPin);
 
   // see the hello_buzzer example for more frequency
   // and duration parameter options
 
   // set frequencies, in Hz
-  tiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
-  tiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
-  tiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
+  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
+  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
+  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
   // set durations, in milliseconds
-  tiny.setBuzzerDuration(0, 300);
-  tiny.setBuzzerDuration(1, 600);
-  tiny.setBuzzerDuration(2, 900);
+  myTiny.setBuzzerDuration(0, 300);
+  myTiny.setBuzzerDuration(1, 600);
+  myTiny.setBuzzerDuration(2, 900);
 
   // train the instrument's KNN algorithm
-  tiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
   // identify the input and respond
-  tiny.identify();
+    myTiny.identify();
 }

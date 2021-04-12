@@ -32,5 +32,5 @@ jobs:
           - name: TinyTrainable
           - name: Servo
           - name: Arduino_KNN
-          - name: Arduino APDS9960
+          - name: Arduino_APDS9960
           - name: Arduino_LSM9DS1

@@ -27,7 +27,7 @@ jobs:
         fqbn: arduino:mbed_nano:nano33ble
         sketch-paths: |
           - examples/color/color_buzzer
-          - examples/color/color_Servo
+          - examples/color/color_servo
         libraries: |
           - name: TinyTrainable
           # - name: Arduino APDS9960

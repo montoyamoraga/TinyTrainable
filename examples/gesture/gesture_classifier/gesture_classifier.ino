@@ -13,16 +13,19 @@
 // and still without comments about what most lines mean
 // and without optimization
 
-// include library
-#include <Inst1.h>
+#define INPUT_GESTURE
+#define OUTPUT_SERIAL
+
+// include library TinyTrainable
+#include <TinyTrainable.h>
+
+// declare instance of the TinyTrainable instrument
+TinyTrainable myTiny(new InputGesture(), new Output());
 
 // include machine learning model
-#include "../assets/modelInst1.h"
+#include "../assets/modelGesture.h"
 // or include your own
 //#include "myModel.h"
-
-// instance of Inst1
-Inst1 tiny;
 
 // threshold of significant in G's
 const float accelerationThreshold = 2.5;

@@ -30,5 +30,7 @@ jobs:
           - examples/color/color_servo
         libraries: |
           - name: TinyTrainable
-          # - name: Arduino APDS9960
-          # - name: Arduino_LSM9DS1
+          - name: Servo
+          - name: Arduino_KNN
+          - name: Arduino APDS9960
+          - name: Arduino_LSM9DS1

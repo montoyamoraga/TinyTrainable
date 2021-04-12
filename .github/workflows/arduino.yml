@@ -35,4 +35,4 @@ jobs:
           - name: Arduino_APDS9960
           - name: Arduino_LSM9DS1
           - name: Arduino_TensorFlowLite
-          - name: Adafruit_Thermal
+          - name: Adafruit Thermal Printer Library

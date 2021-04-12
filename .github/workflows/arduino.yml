@@ -1,0 +1,37 @@
+# Check compilation of Arduino examples
+
+name: Arduino Compile
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  - push:
+    branches: [ main ]
+  - pull_request:
+    branches: [ main ]
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "compile-sketches"
+  compile-sketches:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Compile Sketches
+      uses: arduino/compile-sketches@v1
+      with:
+        fqbn: arduino:mbed_nano:nano33ble
+        sketch-paths: |
+          - examples/color/color_buzzer
+          - examples/color/color_Servo
+        libraries: |
+          - name: Arduino_KNN
+          - name: Arduino APDS9960
+          - name: Arduino_LSM9DS1

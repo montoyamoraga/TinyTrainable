@@ -24,6 +24,7 @@ jobs:
     - name: Compile Sketches
       uses: arduino/compile-sketches@v1
       with:
+        cli-version: latest
         fqbn: arduino:mbed_nano:nano33ble
         sketch-paths: |
           - examples/color/color_buzzer

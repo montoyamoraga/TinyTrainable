@@ -26,8 +26,9 @@ jobs:
       with:
         cli-version: latest
         platforms: |
-          - name: "arduino:mbed_nano"
+          - name: arduino:mbed_nano
         fqbn: arduino:mbed_nano:nano33ble
         sketch-paths: |
-          - examples/color/color_buzzer
-          - examples/color/color_servo
+          - examples/
+        libraries: |
+        - source-url: https://github.com/montoyamoraga/TinyTrainable

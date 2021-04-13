@@ -96,8 +96,15 @@ public:
     }
   };
 
-  // methods
-  virtual void setupInstrument(bool serialDebugging){};
+  // TODO: this override works, do it for other functions
+  // override magic by roy~
+  // MAKE THE VIRTUAL FUNCTIONS HERE on this .h file
+  // as this setupInstrument one, use this one as a template
+  void setupInstrument(bool serialDebugging){
+    if (myInput != nullptr) {
+      myInput->setupInstrument(serialDebugging);
+    }
+  };
 
   // variable for debugging
   // TODO: add explanation about static

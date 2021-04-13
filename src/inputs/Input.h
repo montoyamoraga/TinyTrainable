@@ -12,6 +12,8 @@ class Input {
   // friend classes can access protected and private members
   friend class TinyTrainable;
 
+  virtual void setupInstrument(bool serialDebugging){}
+
 protected:
   TinyTrainable *tiny = nullptr;
 

@@ -21,15 +21,16 @@
 #include <Arduino_KNN.h>
 
 class InputColor : public Input {
-  
+
 public:
   // constructor
   InputColor();
 
-
   void setupSensorAPDS9960();
   
-  void setupInstrument(bool serialDebugging);
+  // TODO: keyword override doesnt work with all compilers
+  // override is a help for debugging
+  virtual void setupInstrument(bool serialDebugging) override;
 
   KNNClassifier _myKNN;
   String _labels[3];

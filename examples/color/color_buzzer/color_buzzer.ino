@@ -40,7 +40,7 @@ void setup() {
   while (!Serial) {
     ;
   }
-  Serial.println("yo");
+
   myTiny.debugPrint("before");
 
   // setup the instrument

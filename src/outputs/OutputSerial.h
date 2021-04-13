@@ -7,6 +7,9 @@
 // include Output library
 #include "Output.h"
 
+// include library TinyTrainable
+#include "TinyTrainable.h"
+
 class OutputSerial : public Output {
 public:
   // constructor

@@ -12,6 +12,13 @@ void OutputBuzzer::playOutput(int classification) {
 void OutputBuzzer::setupOutputBuzzer(int outputPin) {
   _outputPinBuzzer = outputPin;
   pinMode(_outputPinBuzzer, OUTPUT);
+
+  tiny->debugPrint("setup output pin");
+
+  // if (tiny->_serialDebugging) {
+    Serial.println("setup output pin");
+  // }
+
 }
 
 // modifies the input array to contain a buzzer frequency and duration (in that

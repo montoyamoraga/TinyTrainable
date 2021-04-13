@@ -15,9 +15,9 @@
 #include "outputs/Output.h"
 
 // conditionally include input libraries
-#ifdef INPUT_COLOR
+// #ifdef INPUT_COLOR
 #include "inputs/InputColor.h"
-#endif
+// #endif
 
 #ifdef INPUT_GESTURE
 #include "inputs/InputGesture.h"
@@ -29,9 +29,9 @@
 
 // conditionally include output libraries
 
-#ifdef OUTPUT_BUZZER
+// #ifdef OUTPUT_BUZZER
 #include "outputs/OutputBuzzer.h"
-#endif
+// #endif
 
 #ifdef OUTPUT_LCD
 #include "outputs/OutputLCD.h"
@@ -85,7 +85,7 @@ public:
   // Serial.println(). it is defined here in the header file so it compiles at
   // the beginning
   template <typename T> void debugPrint(T message) {
-    if (_serialDebugging) {
+    if (this->_serialDebugging) {
       Serial.print("debug - ");
       Serial.println(message);
     }

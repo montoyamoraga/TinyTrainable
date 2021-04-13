@@ -28,6 +28,9 @@ void InputColor::setupSensorAPDS9960() {
   if (!APDS.begin()) {
     while (1)
       ;
+    if (tiny->_serialDebugging) {
+      Serial.println("setup sensor APDS9960");
+    }
   }
 }
 

@@ -63,7 +63,7 @@ const char *GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 void setup() {
 
   // setup instrument
-  tiny.setupInstrument();
+  // tiny.setupInstrument();
 
   tiny.setupOutputSerialUSB();
 

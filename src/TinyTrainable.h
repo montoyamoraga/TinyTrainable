@@ -75,7 +75,7 @@ protected:
 
 public:
   // constructor
-  TinyTrainable();
+  // TinyTrainable();
   TinyTrainable(Input *newInput, Output *newOutput);
 
   // destructor
@@ -85,14 +85,19 @@ public:
   // Serial.println(). it is defined here in the header file so it compiles at
   // the beginning
   template <typename T> void debugPrint(T message) {
+    // if (_serialDebugging) {
     if (this->_serialDebugging) {
       Serial.print("debug - ");
+      Serial.println(message);
+    }
+    else {
+      Serial.print("oh no - ");
       Serial.println(message);
     }
   };
 
   // methods
-  void setupInstrument(bool serialDebugging);
+  virtual void setupInstrument(bool serialDebugging){};
 
   // variable for debugging
   // TODO: add explanation about static

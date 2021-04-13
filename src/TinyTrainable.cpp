@@ -6,7 +6,7 @@
 // include local library
 #include "TinyTrainable.h"
 
-TinyTrainable::TinyTrainable() {}
+// TinyTrainable::TinyTrainable() {}
 
 // initialize static variables
 bool TinyTrainable::_serialDebugging = false;
@@ -38,17 +38,6 @@ TinyTrainable::~TinyTrainable() {
   if (myOutput != nullptr) {
     delete myOutput;
     myOutput = nullptr;
-  }
-}
-
-void TinyTrainable::setupInstrument(bool serialDebugging) {
-
-  _serialDebugging = serialDebugging;
-
-  if (_serialDebugging) {
-    Serial.begin(9600);
-    while (!Serial)
-      ;
   }
 }
 

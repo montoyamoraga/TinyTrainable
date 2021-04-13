@@ -36,30 +36,48 @@ int paramArrayLength = 6;
 // setup() runs once, at the beginning
 void setup() {
 
+  Serial.begin(9600);
+  while (!Serial) {
+    ;
+  }
+  Serial.println("yo");
+  myTiny.debugPrint("before");
+
   // setup the instrument
   myTiny.setupInstrument(tinyDebugging);
+  //  myTiny._serialDebugging = true;
+
+  myTiny.debugPrint("after");
 
   // set its output
-  myTiny.setupOutputBuzzer(outputPin);
+  //  myTiny.setupOutputBuzzer(outputPin);
 
   // see the hello_buzzer example for more frequency
   // and duration parameter options
 
   // set frequencies, in Hz
-  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
-  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
-  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
+  //  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
+  //  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
+  //  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
   // set durations, in milliseconds
-  myTiny.setBuzzerDuration(0, 300);
-  myTiny.setBuzzerDuration(1, 600);
-  myTiny.setBuzzerDuration(2, 900);
+  //  myTiny.setBuzzerDuration(0, 300);
+  //  myTiny.setBuzzerDuration(1, 600);
+  //  myTiny.setBuzzerDuration(2, 900);
 
   // train the instrument's KNN algorithm
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
+
+  myTiny.setStateLEDBuiltIn(true);
+  Serial.print("on, ");
+  delay(5000);
+  myTiny.setStateLEDBuiltIn(false);
+  Serial.println("off");
+  delay(5000);
+
   // identify the input and respond
-  myTiny.identify();
+  //  myTiny.identify();
 }

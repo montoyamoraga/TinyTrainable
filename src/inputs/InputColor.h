@@ -21,12 +21,14 @@
 #include <Arduino_KNN.h>
 
 class InputColor : public Input {
-
+  
 public:
   // constructor
   InputColor();
 
+
   void setupSensorAPDS9960();
+  
   void setupInstrument(bool serialDebugging);
 
   KNNClassifier _myKNN;

@@ -11,16 +11,20 @@ InputColor::InputColor() : _myKNN(3) {
 // // true: instrument outputs debugging messages over USB serial
 // // false: standalone instrument, no debugging message
 void InputColor::setupInstrument(bool serialDebugging) {
-  tiny->setupLEDs();
-  setupSensorAPDS9960();
-
+  
   tiny->_serialDebugging = serialDebugging;
+  Serial.println("tiny");
+  Serial.println(tiny->_serialDebugging);
 
   if (tiny->_serialDebugging) {
     Serial.begin(9600);
-    while (!Serial)
-      ;
+    while (!Serial){;}
+    Serial.println("InputColor setupInstrument");
   }
+
+  tiny->setupLEDs();
+  setupSensorAPDS9960();
+
 }
 
 // APDS9960 sensor for gestures, color, light intensity, proximity
@@ -29,7 +33,7 @@ void InputColor::setupSensorAPDS9960() {
     while (1)
       ;
     if (tiny->_serialDebugging) {
-      Serial.println("setup sensor APDS9960");
+      Serial.println("InputColor setupSensorAPDS9960");
     }
   }
 }
@@ -77,7 +81,6 @@ void InputColor::readColor(float colorReading[]) {
 // //    1 blink - setupPin() not called
 // //    2 blinks - setFrequencies() not called
 // void InputColor::checkInst0Setup() {
-//   // checking setupInstrument()
 //   if (_outputMode == outputUndefined) {
 //     errorBlink(red, 1);
 //   }

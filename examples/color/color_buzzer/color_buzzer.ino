@@ -42,7 +42,7 @@ void setup() {
   myTiny.debugPrint("after");
 
   // set its output
-    myTiny.setupOutputBuzzer(outputPin);
+  myTiny.setupOutputBuzzer(outputPin);
 
   // see the hello_buzzer example for more frequency
   // and duration parameter options

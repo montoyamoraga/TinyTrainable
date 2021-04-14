@@ -106,8 +106,12 @@ public:
   // methods for input
 
   // methods for input color
-  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
-                        String objects[3]){};
+  void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]){
+    if (myInput != nullptr) {
+      myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
+    }
+  };
+  
   virtual void identify(){};
 
   // methods for input gesture

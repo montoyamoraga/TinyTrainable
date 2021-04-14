@@ -1,0 +1,35 @@
+# Check compilation of Arduino examples
+
+name: Arduino Compile
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  - push
+  - pull_request
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "compile-sketches"
+  compile-sketches:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Compile Sketches
+      uses: arduino/compile-sketches@v1
+      with:
+        cli-version: latest
+        platforms: |
+          - name: arduino:mbed_nano
+        fqbn: arduino:mbed_nano:nano33ble
+        sketch-paths: |
+          - examples/color/color_buzzer
+          - examples/color/color_servo
+        libraries: |
+        - source-url: https://github.com/montoyamoraga/TinyTrainable

@@ -3,9 +3,6 @@
 ################################
 
 TinyTrainable		KEYWORD1
-Inst0			KEYWORD1
-Inst1			KEYWORD1
-Inst2			KEYWORD1
 
 ################################
 # Methods and functions
@@ -49,12 +46,7 @@ _colorThreshold		KEYWORD2
 _colorReading		KEYWORD2
 _checkedSetup		KEYWORD2
 
-Inst1			KEYWORD2
-setupInstrument		KEYWORD2
-
 print1			KEYWORD2
-
-Inst2			KEYWORD2
 
 ################################
 # Constants

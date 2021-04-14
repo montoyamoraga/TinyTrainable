@@ -15,10 +15,6 @@ void OutputBuzzer::setupOutputBuzzer(int outputPin) {
 
   tiny->debugPrint("setup output pin");
 
-  // if (tiny->_serialDebugging) {
-    Serial.println("setup output pin");
-  // }
-
 }
 
 // modifies the input array to contain a buzzer frequency and duration (in that

@@ -149,7 +149,7 @@ public:
   virtual void setupOutputServo(int outputPin, int servoAngleMin,
                                 int servoAngleMax){};
   virtual void setServoTempo(int object, int tempo){};
-  virtual int bpmToMs(int tempo){};
+  virtual int bpmToMs(int tempo){return 1;};
   virtual void moveServo(int classification){};
 
   void setStateLEDBuiltIn(bool turnOn);

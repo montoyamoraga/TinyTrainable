@@ -36,21 +36,13 @@ int paramArrayLength = 6;
 // setup() runs once, at the beginning
 void setup() {
 
-  Serial.begin(9600);
-  while (!Serial) {
-    ;
-  }
-
-  myTiny.debugPrint("before");
-
   // setup the instrument
   myTiny.setupInstrument(tinyDebugging);
-  //  myTiny._serialDebugging = true;
 
   myTiny.debugPrint("after");
 
   // set its output
-  //  myTiny.setupOutputBuzzer(outputPin);
+    myTiny.setupOutputBuzzer(outputPin);
 
   // see the hello_buzzer example for more frequency
   // and duration parameter options

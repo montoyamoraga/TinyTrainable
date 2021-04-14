@@ -75,23 +75,15 @@ protected:
 
 public:
   // constructor
-  // TinyTrainable();
   TinyTrainable(Input *newInput, Output *newOutput);
 
   // destructor
   ~TinyTrainable();
 
-  // template datatypes allows any datatype as an argument, like
-  // Serial.println(). it is defined here in the header file so it compiles at
-  // the beginning
+  // template datatypes allows any datatype as an argument
   template <typename T> void debugPrint(T message) {
-    // if (_serialDebugging) {
     if (this->_serialDebugging) {
       Serial.print("debug - ");
-      Serial.println(message);
-    }
-    else {
-      Serial.print("oh no - ");
       Serial.println(message);
     }
   };

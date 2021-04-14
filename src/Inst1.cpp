@@ -7,6 +7,9 @@
 // include your model file
 #include "../assets/modelInst1.h"
 
+tflite::MicroErrorReporter tflErrorReporter;
+tflite::AllOpsResolver tflOpsResolver;
+
 // constructor method
 Inst1::Inst1() {
   _gestures[0] = "";

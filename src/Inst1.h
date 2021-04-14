@@ -14,9 +14,6 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
-tflite::MicroErrorReporter tflErrorReporter;
-tflite::AllOpsResolver tflOpsResolver;
-
 // inheritance
 class Inst1 : public TinyTrainable {
 public:

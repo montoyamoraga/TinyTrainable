@@ -7,7 +7,7 @@
 // include your model file
 #include "../assets/modelInst1.h"
 
-/// constructor method
+// constructor method
 Inst1::Inst1() {
   _gestures[0] = "";
   _gestures[1] = "";
@@ -24,6 +24,14 @@ void Inst1::setupInstrument(bool serialDebugging, String gestures[3]) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];
+
+  _serialDebugging = serialDebugging;
+
+  if (_serialDebugging) {
+    Serial.begin(9600);
+    while (!Serial)
+      ;
+  }
 }
 
 void Inst1::setupTF(float accelerationThreshold, int numSamples) {
@@ -50,9 +58,12 @@ void Inst1::setupTF(float accelerationThreshold, int numSamples) {
   // get pointers for the model's input and output tensors
   tflInputTensor = tflInterpreter->input(0);
   tflOutputTensor = tflInterpreter->output(0);
+
+  Serial.println("successful tf setup");
 }
 
 void Inst1::classify() {
+  Serial.println("got to classify");
   while (_samplesRead == _numSamples) {
     // wait for significant motion
     if (IMU.accelerationAvailable()) {
@@ -95,6 +106,7 @@ void Inst1::classify() {
       _samplesRead++;
 
       if (_samplesRead == _numSamples) {
+        Serial.println("all samples read");
         // Run inferencing
         TfLiteStatus invokeStatus = tflInterpreter->Invoke();
         if (invokeStatus != kTfLiteOk) {
@@ -103,6 +115,8 @@ void Inst1::classify() {
             ;
           return;
         }
+
+        Serial.println("finished running inference");
 
         // loop through the output tensor values from the model
         for (int i = 0; i < NUM_GESTURES; i++) {

@@ -24,11 +24,14 @@
 // instance of Inst1
 Inst1 tiny;
 
+// tflite::MicroErrorReporter tflErrorReporter;
+// tflite::AllOpsResolver tflOpsResolver;
+
 // threshold of significant in G's
-// const float accelerationThreshold = 2.5;
+const float accelerationThreshold = 2.5;
 
 // number of samples per gesture
-// const int numSamples = 119;
+const int numSamples = 119;
 
 // initialize as if sampling has already been done
 // int samplesRead = numSamples;
@@ -52,7 +55,7 @@ Inst1 tiny;
 // byte tensorArena[tensorArenaSize];
 
 // array to map gesture index to a name
-// const char *GESTURES[] = {"gesture0", "gesture1", "gesture2"};
+String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
 // define constant for number of gestures
 // #define NUM_GESTURES (sizeof(GESTURES) / sizeof(GESTURES[0]))
@@ -60,9 +63,11 @@ Inst1 tiny;
 void setup() {
 
   // setup instrument
-  tiny.setupInstrument(true);
+  tiny.setupInstrument(true, GESTURES);
+  Serial.println("hello in setup");
+  tiny.setupTF(accelerationThreshold, numSamples);
 
-  tiny.setupOutputSerialUSB();
+  // tiny.setupOutputSerialUSB();
 
   // get the TFL representation of the model byte array
   // tflModel = tflite::GetModel(model);
@@ -86,6 +91,7 @@ void setup() {
 }
 
 void loop() {
+  tiny.classify();
 
   // declare six variables
   // acceleration and gravity in x, y, z

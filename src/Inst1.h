@@ -14,6 +14,9 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
+tflite::MicroErrorReporter tflErrorReporter;
+tflite::AllOpsResolver tflOpsResolver;
+
 // inheritance
 class Inst1 : public TinyTrainable {
 public:
@@ -33,8 +36,8 @@ private:
   String _gestures[3];
 
   // tflite variables
-  tflite::MicroErrorReporter tflErrorReporter;
-  tflite::AllOpsResolver tflOpsResolver;
+  // tflite::MicroErrorReporter tflErrorReporter;
+  // tflite::AllOpsResolver tflOpsResolver;
   const tflite::Model *tflModel = nullptr;
   tflite::MicroInterpreter *tflInterpreter = nullptr;
   TfLiteTensor *tflInputTensor = nullptr;
@@ -44,7 +47,8 @@ private:
   // Create a static memory buffer for TFLM, the size may need to
   // be adjusted based on the model you are using
   static constexpr int tensorArenaSize = 8 * 1024;
-  byte tensorArena[tensorArenaSize];
+  // alignas(16) byte tensorArena[tensorArenaSize];
+  byte tensorArena[tensorArenaSize] __attribute__((aligned(16)));
 
   // classification variables
   float aX, aY, aZ, gX, gY, gZ;  // acceleration and gravity in x, y, z

@@ -4,5 +4,3 @@
 #include "../TinyTrainable.h"
 
 Input::Input() {}
-
-// Input::~Input() {}

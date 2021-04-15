@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['paramarraylength_272',['paramArrayLength',['../inst0__buzzer_8ino.html#a8c8f80550796eaa32107466e71c26846',1,'inst0_buzzer.ino']]]
+  ['numsamples_369',['numSamples',['../gesture__buzzer_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;gesture_buzzer.ino'],['../gesture__classifier_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;gesture_classifier.ino'],['../gesture__database_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;gesture_database.ino']]]
 ];

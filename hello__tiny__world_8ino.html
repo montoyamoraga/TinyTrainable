@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('hello__tiny__world_8ino.html',''); ini
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -103,6 +104,11 @@ $(document).ready(function(){initNavTree('hello__tiny__world_8ino.html',''); ini
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="_tiny_trainable_8h_source.html">TinyTrainable.h</a>&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a918597ff926f0b9458d71e0811f33989"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a918597ff926f0b9458d71e0811f33989">TINY_OUTPUT</a>&#160;&#160;&#160;NONE</td></tr>
+<tr class="separator:a918597ff926f0b9458d71e0811f33989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
@@ -114,16 +120,29 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a9259a888c3fc1d4b52242d5b87014fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a9259a888c3fc1d4b52242d5b87014fcc">tiny</a></td></tr>
 <tr class="separator:a9259a888c3fc1d4b52242d5b87014fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaecd1d4cb87eea601847f21eee8e7078"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33c">OutputMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#aaecd1d4cb87eea601847f21eee8e7078">outputToTest</a> = <a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33cab3f03ffa283d0a85d3ae1bb3edacb5d7">outputBuzzer</a></td></tr>
+<tr class="memitem:aaecd1d4cb87eea601847f21eee8e7078"><td class="memItemLeft" align="right" valign="top">OutputMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#aaecd1d4cb87eea601847f21eee8e7078">outputToTest</a> = outputServo</td></tr>
 <tr class="separator:aaecd1d4cb87eea601847f21eee8e7078"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34372894b2bb3820036f766b11588371"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a> = 8</td></tr>
+<tr class="memitem:a34372894b2bb3820036f766b11588371"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__tiny__world_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a> = 9</td></tr>
 <tr class="separator:a34372894b2bb3820036f766b11588371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Test output modes. </p>
-<dl class="section author"><dt>Author</dt><dd>montoyamoraga, peter-parque, maxzwang </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>March 2021 </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a918597ff926f0b9458d71e0811f33989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a918597ff926f0b9458d71e0811f33989">&#9670;&nbsp;</a></span>TINY_OUTPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TINY_OUTPUT&#160;&#160;&#160;NONE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&nbsp;</a></span>loop()</h2>
 
@@ -166,7 +185,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const int outputPin = 8</td>
+          <td class="memname">const int outputPin = 9</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -180,7 +199,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33c">OutputMode</a> outputToTest = <a class="el" href="_tiny_trainable_8h.html#a479782c1ca16b739d6a4d4ea5bfea33cab3f03ffa283d0a85d3ae1bb3edacb5d7">outputBuzzer</a></td>
+          <td class="memname">OutputMode outputToTest = outputServo</td>
         </tr>
       </table>
 </div><div class="memdoc">

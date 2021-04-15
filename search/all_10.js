@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['randomparam_110',['randomParam',['../class_tiny_trainable.html#abf98deee9f2d3ec7687ef4fa750e074aab2684bb7dc082b17d8952d61e4e7ea37',1,'TinyTrainable']]],
-  ['rangeparam_111',['rangeParam',['../class_tiny_trainable.html#abf98deee9f2d3ec7687ef4fa750e074aa70200a29fdc040a1c8eb266809685cee',1,'TinyTrainable']]],
-  ['readcolor_112',['readColor',['../class_inst0.html#a1efdfcd673c6d8543870ac458cb320aa',1,'Inst0']]],
-  ['red_113',['red',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967aace9033470c7bfe9523c814271251908',1,'TinyTrainable.h']]]
+  ['randomparam_153',['randomParam',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5ba9079b1aad9dd2190e90f37d554b5485a',1,'OutputBuzzer']]],
+  ['rangeparam_154',['rangeParam',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5baef08f2cc0c9b89dd47b0d109b65b2f8e',1,'OutputBuzzer']]],
+  ['readcolor_155',['readColor',['../class_input_color.html#a6b003d0c90cc42225c1af0d1073ccf8f',1,'InputColor']]],
+  ['red_156',['red',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967aace9033470c7bfe9523c814271251908',1,'TinyTrainable.h']]]
 ];

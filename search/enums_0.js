@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buzzermode_286',['BuzzerMode',['../class_tiny_trainable.html#abf98deee9f2d3ec7687ef4fa750e074a',1,'TinyTrainable']]]
+  ['buzzermode_399',['BuzzerMode',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5b',1,'OutputBuzzer']]]
 ];

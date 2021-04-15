@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['num_5fgestures_307',['NUM_GESTURES',['../inst1__classifier_8ino.html#a265d4fcbf85fd4c1daa0c27269ad56a5',1,'inst1_classifier.ino']]]
+  ['input_5fcolor_412',['INPUT_COLOR',['../color__buzzer_8ino.html#aadb3e24b0191a3b06d8dfc41506a81dd',1,'INPUT_COLOR():&#160;color_buzzer.ino'],['../color__led_8ino.html#aadb3e24b0191a3b06d8dfc41506a81dd',1,'INPUT_COLOR():&#160;color_led.ino'],['../color__midi_8ino.html#aadb3e24b0191a3b06d8dfc41506a81dd',1,'INPUT_COLOR():&#160;color_midi.ino'],['../color__serial_8ino.html#aadb3e24b0191a3b06d8dfc41506a81dd',1,'INPUT_COLOR():&#160;color_serial.ino'],['../color__servo_8ino.html#aadb3e24b0191a3b06d8dfc41506a81dd',1,'INPUT_COLOR():&#160;color_servo.ino']]],
+  ['input_5fgesture_413',['INPUT_GESTURE',['../gesture__buzzer_8ino.html#a415e33144c4b21535d4e4935ae843363',1,'INPUT_GESTURE():&#160;gesture_buzzer.ino'],['../gesture__classifier_8ino.html#a415e33144c4b21535d4e4935ae843363',1,'INPUT_GESTURE():&#160;gesture_classifier.ino'],['../gesture__database_8ino.html#a415e33144c4b21535d4e4935ae843363',1,'INPUT_GESTURE():&#160;gesture_database.ino']]],
+  ['input_5fnone_414',['INPUT_NONE',['../hello__buzzer_8ino.html#a2415dbc707abe01ed8d1b9925681d65c',1,'INPUT_NONE():&#160;hello_buzzer.ino'],['../hello__led_8ino.html#a2415dbc707abe01ed8d1b9925681d65c',1,'INPUT_NONE():&#160;hello_led.ino'],['../hello__none_8ino.html#a2415dbc707abe01ed8d1b9925681d65c',1,'INPUT_NONE():&#160;hello_none.ino'],['../hello__servo_8ino.html#a2415dbc707abe01ed8d1b9925681d65c',1,'INPUT_NONE():&#160;hello_servo.ino']]],
+  ['input_5fspeech_415',['INPUT_SPEECH',['../speech__buzzer_8ino.html#a5dae8c5ee1d3fa472be05dad7f7f988b',1,'speech_buzzer.ino']]]
 ];

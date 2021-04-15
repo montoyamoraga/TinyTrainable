@@ -54,6 +54,12 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold, 
   }
 };
 
+void TinyTrainable::identify() {
+  if (myInput != nullptr) {
+    myInput->identify();
+  }
+}
+
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);
@@ -249,3 +255,23 @@ void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies, int ar
     myOutput->setBuzzerFrequency(object, *arrayFrequencies, arrayFreqCount);
   }
 }
+
+void TinyTrainable::setBuzzerDuration(int object, int duration) {
+if (myOutput != nullptr) {
+  myOutput->setBuzzerDuration(object, duration);
+}
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int durationMin,
+                                 int durationMax) {
+if (myOutput != nullptr) {
+  myOutput->setBuzzerDuration(object, durationMin, durationMax);
+}
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
+                                 int arrayDurationCount) {
+if (myOutput != nullptr) {
+  myOutput->setBuzzerDuration(object, *arrayDurations, arrayDurationCount);
+}
+                                 }

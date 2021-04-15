@@ -20,6 +20,11 @@ class Output {
   virtual void setBuzzerFrequency(int object, int freqMin, int freqMax){}
   virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
                           int arrayFreqCount){}
+  virtual void setBuzzerDuration(int object, int duration){}
+  virtual void setBuzzerDuration(int object, int durationMin,
+                                 int durationMax){}
+  virtual void setBuzzerDuration(int object, int *arrayDurations,
+                                 int arrayDurationCount){}
 
 protected:
   TinyTrainable *tiny = nullptr;

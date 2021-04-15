@@ -103,8 +103,9 @@ public:
 
   // methods for input color
   void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]);
-  
-  virtual void identify(){};
+  void identify();
+
+  void setupLEDs();
 
   // methods for input gesture
 
@@ -118,19 +119,18 @@ public:
 
   // declaration of functions for buzzer
   void setupOutputBuzzer(int outputPin);
+  void getBuzzerParam(int object, int buzzerParamArray[]){};
+  // for frequencies
   void setBuzzerFrequency(int object, int frequency);
   void setBuzzerFrequency(int object, int freqMin, int freqMax);
   void setBuzzerFrequency(int object, int *arrayFrequencies,
                                   int arrayFreqCount);
-
-  virtual void getBuzzerParam(int object, int buzzerParamArray[]){};
-  // for frequencies
   // for durations
-  virtual void setBuzzerDuration(int object, int duration){};
-  virtual void setBuzzerDuration(int object, int durationMin,
-                                 int durationMax){};
-  virtual void setBuzzerDuration(int object, int *arrayDurations,
-                                 int arrayDurationCount){};
+  void setBuzzerDuration(int object, int duration);
+  void setBuzzerDuration(int object, int durationMin,
+                                 int durationMax);
+  void setBuzzerDuration(int object, int *arrayDurations,
+                                 int arrayDurationCount);
 
   // declaration of virtual functions for output LED
   virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
@@ -155,8 +155,6 @@ public:
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
 
-
-  void setupLEDs();
 };
 
 // conditional compilation

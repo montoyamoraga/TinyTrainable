@@ -14,6 +14,7 @@ class Input {
 
   virtual void setupInstrument(bool serialDebugging){}
   virtual void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]){}
+  virtual void identify(){}
 
 protected:
   TinyTrainable *tiny = nullptr;

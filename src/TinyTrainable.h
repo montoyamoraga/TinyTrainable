@@ -116,8 +116,10 @@ public:
   //   void helloOutputs(OutputMode outputToTest);
   virtual void playOutput(int classification){};
 
-  // declaration of virtual functions for buzzer
-  virtual void setupOutputBuzzer(int outputPin){};
+  // declaration of functions for buzzer
+  void setupOutputBuzzer(int outputPin);
+
+  
   virtual void getBuzzerParam(int object, int buzzerParamArray[]){};
   // for frequencies
   virtual void setBuzzerFrequency(int object, int frequency){};

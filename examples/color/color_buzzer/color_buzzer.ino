@@ -47,8 +47,8 @@ void setup() {
 
   // set frequencies, in Hz
   myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
-  //  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
-  //  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
+  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
+  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
   // set durations, in milliseconds
   //  myTiny.setBuzzerDuration(0, 300);
   //  myTiny.setBuzzerDuration(1, 600);

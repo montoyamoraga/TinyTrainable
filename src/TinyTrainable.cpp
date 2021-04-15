@@ -223,3 +223,11 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //     break;
 //   }
 // }
+
+
+// functions for buzzer
+void TinyTrainable::setupOutputBuzzer(int outputPin) {
+     if (myInput != nullptr) {
+     myInput->setupOutputBuzzer(outputPin);
+  }
+}

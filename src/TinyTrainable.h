@@ -118,14 +118,13 @@ public:
 
   // declaration of functions for buzzer
   void setupOutputBuzzer(int outputPin);
+  void setBuzzerFrequency(int object, int frequency);
+  void setBuzzerFrequency(int object, int freqMin, int freqMax);
+  void setBuzzerFrequency(int object, int *arrayFrequencies,
+                                  int arrayFreqCount);
 
-  
   virtual void getBuzzerParam(int object, int buzzerParamArray[]){};
   // for frequencies
-  virtual void setBuzzerFrequency(int object, int frequency){};
-  virtual void setBuzzerFrequency(int object, int freqMin, int freqMax){};
-  virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
-                                  int arrayFreqCount){};
   // for durations
   virtual void setBuzzerDuration(int object, int duration){};
   virtual void setBuzzerDuration(int object, int durationMin,

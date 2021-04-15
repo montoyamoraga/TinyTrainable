@@ -227,7 +227,25 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 
 // functions for buzzer
 void TinyTrainable::setupOutputBuzzer(int outputPin) {
-     if (myInput != nullptr) {
-     myInput->setupOutputBuzzer(outputPin);
+     if (myOutput != nullptr) {
+       myOutput->setupOutputBuzzer(outputPin);
+  }
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerFrequency(object, frequency);
+  }
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerFrequency(object, freqMin, freqMax);
+  }
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies, int arrayFreqCount) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerFrequency(object, *arrayFrequencies, arrayFreqCount);
   }
 }

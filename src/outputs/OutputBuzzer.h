@@ -22,12 +22,14 @@ public:
   // methods for buzzer
   void setupOutputBuzzer(int outputPin);
   void getBuzzerParam(int object, int buzzerParamArray[]);
-
   // for frequencies
   void setBuzzerFrequency(int object, int frequency);
   void setBuzzerFrequency(int object, int freqMin, int freqMax);
   void setBuzzerFrequency(int object, int *arrayFrequencies,
                           int arrayFreqCount);
+
+
+
   // for durations
   void setBuzzerDuration(int object, int duration);
   void setBuzzerDuration(int object, int durationMin, int durationMax);

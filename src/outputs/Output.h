@@ -29,6 +29,13 @@ class Output {
   virtual void setBuzzerDuration(int object, int *arrayDurations,
                                  int arrayDurationCount) {}
 
+  // methods for servo
+  // functions for output servo
+ virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {}
+virtual void setServoTempo(int object, int tempo) {}
+virtual int bpmToMs(int tempo) {}
+virtual void moveServo(int classification) {}
+
 protected:
   TinyTrainable *tiny = nullptr;
 

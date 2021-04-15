@@ -284,3 +284,28 @@ void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
     myOutput->setBuzzerDuration(object, *arrayDurations, arrayDurationCount);
   }
 }
+
+// functions for output servo
+void TinyTrainable::setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+  }
+}
+
+void TinyTrainable::setServoTempo(int object, int tempo) {
+  if (myOutput != nullptr) {
+    myOutput->setServoTempo(object, tempo);
+  }
+}
+
+int TinyTrainable::bpmToMs(int tempo) {
+  if (myOutput != nullptr) {
+    myOutput->bpmToMs(tempo);
+  }
+}
+
+void TinyTrainable::moveServo(int classification) {
+  if (myOutput != nullptr) {
+    myOutput->moveServo(classification);
+  }
+}

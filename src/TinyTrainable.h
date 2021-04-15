@@ -132,22 +132,22 @@ public:
   void setBuzzerDuration(int object, int *arrayDurations,
                          int arrayDurationCount);
 
-  // declaration of virtual functions for output LED
+  // declaration of functions for output LED
   virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
 
-  // declaration of virtual functions for output MIDI
+  // declaration of functions for output MIDI
   virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
   virtual void setMIDINotes(int object, int note){};
 
   // declaration of virtual functions for output serial
   virtual void setupOutputSerial(){};
 
-  // declaration of virtual functions for output servo
-  virtual void setupOutputServo(int outputPin, int servoAngleMin,
-                                int servoAngleMax){};
-  virtual void setServoTempo(int object, int tempo){};
-  virtual int bpmToMs(int tempo) { return 1; };
-  virtual void moveServo(int classification){};
+  // declaration of functions for output servo
+  void setupOutputServo(int outputPin, int servoAngleMin,
+                                int servoAngleMax);
+  void setServoTempo(int object, int tempo);
+  int bpmToMs(int tempo);
+  void moveServo(int classification);
 
   void setStateLEDBuiltIn(bool turnOn);
   void blinkLEDBuiltIn(int blinks);

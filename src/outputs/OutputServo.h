@@ -43,6 +43,7 @@ public:
   void moveServo(int classification);
   //   function to convert from beats per minute to milliseconds
   int bpmToMs(int tempo);
+  
 };
 
 #endif

@@ -103,15 +103,18 @@ $(document).ready(function(){initNavTree('hello__printer_8ino.html',''); initRes
 <p>Example: Test output with thermal printer.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="_tiny_trainable_8h_source.html">TinyTrainable.h</a>&gt;</code><br />
-<code>#include &quot;Adafruit_Thermal.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a918597ff926f0b9458d71e0811f33989"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#a918597ff926f0b9458d71e0811f33989">TINY_OUTPUT</a>&#160;&#160;&#160;PRINTER</td></tr>
-<tr class="separator:a918597ff926f0b9458d71e0811f33989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2415dbc707abe01ed8d1b9925681d65c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#a2415dbc707abe01ed8d1b9925681d65c">INPUT_NONE</a></td></tr>
+<tr class="separator:a2415dbc707abe01ed8d1b9925681d65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f009daaa445fe5aed4c5fd302c4de7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#aa3f009daaa445fe5aed4c5fd302c4de7">OUTPUT_PRINTER</a></td></tr>
+<tr class="separator:aa3f009daaa445fe5aed4c5fd302c4de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6e776be06bdba7cd586aed5a950835df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#a6e776be06bdba7cd586aed5a950835df">myTiny</a> (new <a class="el" href="class_input.html">Input</a>(), new <a class="el" href="class_output_printer.html">OutputPrinter</a>())</td></tr>
+<tr class="separator:a6e776be06bdba7cd586aed5a950835df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
@@ -119,28 +122,38 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a9259a888c3fc1d4b52242d5b87014fcc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#a9259a888c3fc1d4b52242d5b87014fcc">tiny</a></td></tr>
-<tr class="separator:a9259a888c3fc1d4b52242d5b87014fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad85b8020ea96294ab9aaaa2f85a9de2a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#ad85b8020ea96294ab9aaaa2f85a9de2a">placeHolder0</a> = 10</td></tr>
 <tr class="separator:ad85b8020ea96294ab9aaaa2f85a9de2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa08ea5267ebbacaf56962c86c16b38a5"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#aa08ea5267ebbacaf56962c86c16b38a5">placeHolder1</a> = 10</td></tr>
 <tr class="separator:aa08ea5267ebbacaf56962c86c16b38a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd50971eb9a30617a398aec596485592"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#afd50971eb9a30617a398aec596485592">placeHolder2</a> = 10</td></tr>
 <tr class="separator:afd50971eb9a30617a398aec596485592"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93a9a7c6518b00e3a223e083e617f854"><td class="memItemLeft" align="right" valign="top">Adafruit_Thermal printer &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hello__printer_8ino.html#a93a9a7c6518b00e3a223e083e617f854">Serial1</a></td></tr>
-<tr class="separator:a93a9a7c6518b00e3a223e083e617f854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Example: Test output with thermal printer. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a918597ff926f0b9458d71e0811f33989"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a918597ff926f0b9458d71e0811f33989">&#9670;&nbsp;</a></span>TINY_OUTPUT</h2>
+<a id="a2415dbc707abe01ed8d1b9925681d65c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2415dbc707abe01ed8d1b9925681d65c">&#9670;&nbsp;</a></span>INPUT_NONE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TINY_OUTPUT&#160;&#160;&#160;PRINTER</td>
+          <td class="memname">#define INPUT_NONE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa3f009daaa445fe5aed4c5fd302c4de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f009daaa445fe5aed4c5fd302c4de7">&#9670;&nbsp;</a></span>OUTPUT_PRINTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_PRINTER</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -159,6 +172,34 @@ Variables</h2></td></tr>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e776be06bdba7cd586aed5a950835df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e776be06bdba7cd586aed5a950835df">&#9670;&nbsp;</a></span>myTiny()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a> myTiny </td>
+          <td>(</td>
+          <td class="paramtype">new &#160;</td>
+          <td class="paramname"><em>Input</em>(), </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">new &#160;</td>
+          <td class="paramname"><em>OutputPrinter</em>()&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -219,34 +260,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const int placeHolder2 = 10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a93a9a7c6518b00e3a223e083e617f854"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93a9a7c6518b00e3a223e083e617f854">&#9670;&nbsp;</a></span>Serial1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Adafruit_Thermal printer&amp; Serial1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9259a888c3fc1d4b52242d5b87014fcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9259a888c3fc1d4b52242d5b87014fcc">&#9670;&nbsp;</a></span>tiny</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a> tiny</td>
         </tr>
       </table>
 </div><div class="memdoc">

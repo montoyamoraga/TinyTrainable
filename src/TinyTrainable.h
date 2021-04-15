@@ -15,9 +15,9 @@
 #include "outputs/Output.h"
 
 // conditionally include input libraries
-// #ifdef INPUT_COLOR
+#ifdef INPUT_COLOR
 #include "inputs/InputColor.h"
-// #endif
+#endif
 
 #ifdef INPUT_GESTURE
 #include "inputs/InputGesture.h"

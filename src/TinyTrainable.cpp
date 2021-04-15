@@ -11,6 +11,7 @@
 // initialize static variables
 bool TinyTrainable::_serialDebugging = false;
 
+// constructor method
 TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
 
   myInput = newInput;
@@ -28,7 +29,8 @@ TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
   setupLEDs();
 }
 
-// destructor against memory leaks
+// destructor method
+// useful against memory leaks?
 TinyTrainable::~TinyTrainable() {
   if (myInput != nullptr) {
     delete myInput;
@@ -46,6 +48,12 @@ void TinyTrainable::setupInstrument(bool serialDebugging) {
     myInput->setupInstrument(serialDebugging);
   }
 };
+
+void TinyTrainable::playOutput(int classification) {
+  if (myOutput != nullptr) {
+    myOutput->playOutput(classification);
+  }
+}
 
 // methods for input color
 void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,

@@ -116,7 +116,7 @@ public:
   //   void helloOutputsSetup(OutputMode outputToTest);
   //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
   //   void helloOutputs(OutputMode outputToTest);
-  virtual void playOutput(int classification){};
+  void playOutput(int classification);
 
   // declaration of functions for buzzer
   void setupOutputBuzzer(int outputPin);

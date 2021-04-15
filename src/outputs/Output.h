@@ -12,6 +12,9 @@ class Output {
 
   friend class TinyTrainable;
 
+  // methods for output
+  virtual void playOutput(int classification){}
+
   // methods for buzzer
   virtual void setupOutputBuzzer(int outputPin) {}
   virtual void getBuzzerParam(int object, int buzzerParamArray[]) {}

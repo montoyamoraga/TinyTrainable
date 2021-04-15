@@ -34,3 +34,4 @@ jobs:
           - source-path: ./
           - name: Arduino_APDS9960
           - name: Arduino_KNN
+          - name: Arduino_LSM9DS1

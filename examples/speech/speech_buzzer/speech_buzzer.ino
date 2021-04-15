@@ -36,12 +36,12 @@ String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
-tflite::ErrorReporter* error_reporter = nullptr;
-const tflite::Model* model = nullptr;
-tflite::MicroInterpreter* interpreter = nullptr;
-TfLiteTensor* model_input = nullptr;
-FeatureProvider* feature_provider = nullptr;
-RecognizeCommands* recognizer = nullptr;
+tflite::ErrorReporter *error_reporter = nullptr;
+const tflite::Model *model = nullptr;
+tflite::MicroInterpreter *interpreter = nullptr;
+TfLiteTensor *model_input = nullptr;
+FeatureProvider *feature_provider = nullptr;
+RecognizeCommands *recognizer = nullptr;
 int32_t previous_time = 0;
 
 // Create an area of memory to use for input, output, and intermediate arrays.
@@ -50,8 +50,8 @@ int32_t previous_time = 0;
 constexpr int kTensorArenaSize = 10 * 1024;
 uint8_t tensor_arena[kTensorArenaSize];
 int8_t feature_buffer[kFeatureElementCount];
-int8_t* model_input_buffer = nullptr;
-}  // namespace
+int8_t *model_input_buffer = nullptr;
+} // namespace
 
 void setup() {
   // set debugging over serial port
@@ -101,7 +101,7 @@ void setup() {
 
   // Build an interpreter to run the model with.
   static tflite::MicroInterpreter static_interpreter(
-    model, micro_op_resolver, tensor_arena, kTensorArenaSize, error_reporter);
+      model, micro_op_resolver, tensor_arena, kTensorArenaSize, error_reporter);
   interpreter = &static_interpreter;
 
   // Allocate memory from the tensor_arena for the model's tensors.
@@ -127,15 +127,13 @@ void setup() {
   // that will provide the inputs to the neural network.
   // NOLINTNEXTLINE(runtime-global-variables)
   static FeatureProvider static_feature_provider(kFeatureElementCount,
-      feature_buffer);
+                                                 feature_buffer);
   feature_provider = &static_feature_provider;
 
   static RecognizeCommands static_recognizer(error_reporter);
   recognizer = &static_recognizer;
 
   previous_time = 0;
-
-
 }
 
 void loop() {
@@ -143,7 +141,7 @@ void loop() {
   const int32_t current_time = LatestAudioTimestamp();
   int how_many_new_slices = 0;
   TfLiteStatus feature_status = feature_provider->PopulateFeatureData(
-                                  error_reporter, previous_time, current_time, &how_many_new_slices);
+      error_reporter, previous_time, current_time, &how_many_new_slices);
   if (feature_status != kTfLiteOk) {
     TF_LITE_REPORT_ERROR(error_reporter, "Feature generation failed");
     return;
@@ -168,13 +166,13 @@ void loop() {
   }
 
   // Obtain a pointer to the output tensor
-  TfLiteTensor* output = interpreter->output(0);
+  TfLiteTensor *output = interpreter->output(0);
   // Determine whether a command was recognized based on the output of inference
-  const char* found_command = nullptr;
+  const char *found_command = nullptr;
   uint8_t score = 0;
   bool is_new_command = false;
   TfLiteStatus process_status = recognizer->ProcessLatestResults(
-                                  output, current_time, &found_command, &score, &is_new_command);
+      output, current_time, &found_command, &score, &is_new_command);
   if (process_status != kTfLiteOk) {
     TF_LITE_REPORT_ERROR(error_reporter,
                          "RecognizeCommands::ProcessLatestResults() failed");

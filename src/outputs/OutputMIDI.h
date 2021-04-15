@@ -28,9 +28,9 @@ public:
   // TODO: this is public now for testing, later move to protected
   void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
-    void setupOutputMIDI(byte midiChannel, byte midiVelocity);
-    void setMIDINotes(int object, int note);
-    void setupSerialMIDI();
+  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  void setMIDINotes(int object, int note);
+  void setupSerialMIDI();
 };
 
 #endif

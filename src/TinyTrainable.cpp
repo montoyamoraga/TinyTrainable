@@ -41,16 +41,17 @@ TinyTrainable::~TinyTrainable() {
   }
 }
 
-void TinyTrainable::setupInstrument(bool serialDebugging){
+void TinyTrainable::setupInstrument(bool serialDebugging) {
   if (myInput != nullptr) {
     myInput->setupInstrument(serialDebugging);
   }
 };
 
-  // methods for input color
-void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]){
-   if (myInput != nullptr) {
-     myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
+// methods for input color
+void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
+                             String objects[3]) {
+  if (myInput != nullptr) {
+    myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
   }
 };
 
@@ -230,11 +231,10 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //   }
 // }
 
-
 // functions for buzzer
 void TinyTrainable::setupOutputBuzzer(int outputPin) {
-     if (myOutput != nullptr) {
-       myOutput->setupOutputBuzzer(outputPin);
+  if (myOutput != nullptr) {
+    myOutput->setupOutputBuzzer(outputPin);
   }
 }
 
@@ -250,28 +250,29 @@ void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
   }
 }
 
-void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies, int arrayFreqCount) {
+void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies,
+                                       int arrayFreqCount) {
   if (myOutput != nullptr) {
     myOutput->setBuzzerFrequency(object, *arrayFrequencies, arrayFreqCount);
   }
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int duration) {
-if (myOutput != nullptr) {
-  myOutput->setBuzzerDuration(object, duration);
-}
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerDuration(object, duration);
+  }
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int durationMin,
-                                 int durationMax) {
-if (myOutput != nullptr) {
-  myOutput->setBuzzerDuration(object, durationMin, durationMax);
-}
+                                      int durationMax) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerDuration(object, durationMin, durationMax);
+  }
 }
 
 void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
-                                 int arrayDurationCount) {
-if (myOutput != nullptr) {
-  myOutput->setBuzzerDuration(object, *arrayDurations, arrayDurationCount);
+                                      int arrayDurationCount) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerDuration(object, *arrayDurations, arrayDurationCount);
+  }
 }
-                                 }

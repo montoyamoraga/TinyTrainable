@@ -34,5 +34,5 @@ void setup() {
 // loop() runs after setup(), on a loop
 void loop() {
   // identify the input and respond
-    myTiny.identify();
+  myTiny.identify();
 }

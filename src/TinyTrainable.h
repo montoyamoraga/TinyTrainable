@@ -102,7 +102,8 @@ public:
   // methods for input
 
   // methods for input color
-  void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]);
+  void trainKNN(int k, int examplesPerClass, float colorThreshold,
+                String objects[3]);
   void identify();
 
   void setupLEDs();
@@ -124,29 +125,28 @@ public:
   void setBuzzerFrequency(int object, int frequency);
   void setBuzzerFrequency(int object, int freqMin, int freqMax);
   void setBuzzerFrequency(int object, int *arrayFrequencies,
-                                  int arrayFreqCount);
+                          int arrayFreqCount);
   // for durations
   void setBuzzerDuration(int object, int duration);
-  void setBuzzerDuration(int object, int durationMin,
-                                 int durationMax);
+  void setBuzzerDuration(int object, int durationMin, int durationMax);
   void setBuzzerDuration(int object, int *arrayDurations,
-                                 int arrayDurationCount);
+                         int arrayDurationCount);
 
   // declaration of virtual functions for output LED
   virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
 
-    // declaration of virtual functions for output MIDI
+  // declaration of virtual functions for output MIDI
   virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
   virtual void setMIDINotes(int object, int note){};
 
-// declaration of virtual functions for output serial
+  // declaration of virtual functions for output serial
   virtual void setupOutputSerial(){};
 
   // declaration of virtual functions for output servo
   virtual void setupOutputServo(int outputPin, int servoAngleMin,
                                 int servoAngleMax){};
   virtual void setServoTempo(int object, int tempo){};
-  virtual int bpmToMs(int tempo){return 1;};
+  virtual int bpmToMs(int tempo) { return 1; };
   virtual void moveServo(int classification){};
 
   void setStateLEDBuiltIn(bool turnOn);
@@ -154,7 +154,6 @@ public:
   void setStateLEDRGB(bool turnOn, Colors color);
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
-
 };
 
 // conditional compilation

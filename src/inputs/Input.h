@@ -12,9 +12,10 @@ class Input {
   // friend classes can access protected and private members
   friend class TinyTrainable;
 
-  virtual void setupInstrument(bool serialDebugging){}
-  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]){}
-  virtual void identify(){}
+  virtual void setupInstrument(bool serialDebugging) {}
+  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
+                        String objects[3]) {}
+  virtual void identify() {}
 
 protected:
   TinyTrainable *tiny = nullptr;

@@ -28,8 +28,6 @@ public:
   void setBuzzerFrequency(int object, int *arrayFrequencies,
                           int arrayFreqCount);
 
-
-
   // for durations
   void setBuzzerDuration(int object, int duration);
   void setBuzzerDuration(int object, int durationMin, int durationMax);

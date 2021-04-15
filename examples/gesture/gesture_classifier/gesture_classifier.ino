@@ -30,7 +30,6 @@ TinyTrainable myTiny(new InputGesture(), new Output());
 // instance of Inst1
 Inst1 tiny;
 
-
 // threshold of significant in G's
 const float accelerationThreshold = 2.5;
 

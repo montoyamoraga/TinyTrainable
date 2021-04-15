@@ -20,6 +20,12 @@ TinyTrainable myTiny(new InputGesture(), new Output());
 // constant for debugging
 const bool tinyDebugging = true;
 
+// names of gestures
+String gestures[] = {"gesture0", "gesture1", "gesture2"};
+
+// debugging messages over usb serial
+bool serialDebugging = true;
+
 // threshold of significant in G's
 const float accelerationThreshold = 2.5;
 

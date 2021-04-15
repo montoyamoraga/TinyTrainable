@@ -39,8 +39,6 @@ void setup() {
   // setup the instrument
   myTiny.setupInstrument(tinyDebugging);
 
-  myTiny.debugPrint("after");
-
   // set its output
   myTiny.setupOutputBuzzer(outputPin);
 
@@ -48,7 +46,7 @@ void setup() {
   // and duration parameter options
 
   // set frequencies, in Hz
-  //  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
+  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
   //  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
   //  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
   // set durations, in milliseconds

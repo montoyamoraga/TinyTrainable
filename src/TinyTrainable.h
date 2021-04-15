@@ -92,11 +92,7 @@ public:
   // override magic by roy~
   // MAKE THE VIRTUAL FUNCTIONS HERE on this .h file
   // as this setupInstrument one, use this one as a template
-  void setupInstrument(bool serialDebugging){
-    if (myInput != nullptr) {
-      myInput->setupInstrument(serialDebugging);
-    }
-  };
+  void setupInstrument(bool serialDebugging);
 
   // variable for debugging
   // TODO: add explanation about static
@@ -106,11 +102,7 @@ public:
   // methods for input
 
   // methods for input color
-  void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]){
-    if (myInput != nullptr) {
-      myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
-    }
-  };
+  void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]);
   
   virtual void identify(){};
 

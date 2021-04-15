@@ -41,6 +41,19 @@ TinyTrainable::~TinyTrainable() {
   }
 }
 
+void TinyTrainable::setupInstrument(bool serialDebugging){
+  if (myInput != nullptr) {
+    myInput->setupInstrument(serialDebugging);
+  }
+};
+
+  // methods for input color
+void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]){
+   if (myInput != nullptr) {
+     myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
+  }
+};
+
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);

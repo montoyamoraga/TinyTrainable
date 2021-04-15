@@ -10,6 +10,7 @@
 
 // initialize static variables
 bool TinyTrainable::_serialDebugging = false;
+int TinyTrainable::_baudRate = 9600;
 
 // constructor method
 TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {

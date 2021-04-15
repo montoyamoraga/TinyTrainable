@@ -15,7 +15,7 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   tiny->_serialDebugging = serialDebugging;
 
   if (tiny->_serialDebugging) {
-    Serial.begin(9600);
+    Serial.begin(tiny->_baudRate);
     while (!Serial)
       ;
   }

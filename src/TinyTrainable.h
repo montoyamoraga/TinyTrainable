@@ -98,6 +98,7 @@ public:
   // TODO: add explanation about static
   // static makes this property to be global for all the instances of the class
   static bool _serialDebugging;
+  static int _baudRate;
 
   // methods for input
 

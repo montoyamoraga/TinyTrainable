@@ -17,7 +17,7 @@ void InputColor::setupInstrument(bool serialDebugging) {
   Serial.println(tiny->_serialDebugging);
 
   if (tiny->_serialDebugging) {
-    Serial.begin(9600);
+    Serial.begin(tiny->_baudRate);
     while (!Serial) {
       ;
     }

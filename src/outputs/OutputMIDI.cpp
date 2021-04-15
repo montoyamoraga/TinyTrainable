@@ -29,7 +29,7 @@ void OutputMIDI::setMIDINotes(int object, int note) {
 void OutputMIDI::setupSerialMIDI() {
 
   // open serial tranmission on TX pin
-  Serial1.begin(9600);
+  Serial1.begin(tiny->_baudRate);
 
   // desired baudrate for MIDI
   uint32_t baudrate = 0x800000;

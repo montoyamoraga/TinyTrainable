@@ -13,14 +13,14 @@ TinyTrainable myTiny(new Input(), new OutputSerial());
 
 void setup() {
   // setup output
-  // tiny.setupOutputSerialUSB();
-  }
+  // myTiny.setupOutputSerialUSB();
+}
 
 void loop() {
   // the object classification number is the only thing sent over serial
-  tiny.playOutput(0);
-  tiny.playOutput(1);
-  tiny.playOutput(2);
+  //  myTiny.playOutput(0);
+  //  myTiny.playOutput(1);
+  //  myTiny.playOutput(2);
 
   // but you can send other messages directly too
   Serial.println("Hello, Serial!");

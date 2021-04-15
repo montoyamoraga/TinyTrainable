@@ -301,7 +301,7 @@ void TinyTrainable::setServoTempo(int object, int tempo) {
 
 int TinyTrainable::bpmToMs(int tempo) {
   if (myOutput != nullptr) {
-    myOutput->bpmToMs(tempo);
+    return myOutput->bpmToMs(tempo);
   }
 }
 

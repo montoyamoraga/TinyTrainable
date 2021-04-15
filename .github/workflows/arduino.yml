@@ -33,3 +33,4 @@ jobs:
         libraries: |
           - source-path: ./
           - name: Arduino_APDS9960
+          - name: Arduino_KNN

@@ -30,8 +30,8 @@ jobs:
       with:
         fqbn: arduino:mbed_nano:nano33ble
         sketch-paths: |
-          - examples/color/color_buzzer
-          - examples/color/color_servo
+          - examples/hello/
+          - examples/color/
         cli-version: latest
         platforms: |
           - name: arduino:mbed_nano

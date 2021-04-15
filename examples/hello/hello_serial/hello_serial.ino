@@ -1,13 +1,20 @@
 /// @file hello_serial.ino
-/// @brief Example: Test serial USB output
+/// @brief Example: Test output with serial USB
 
+// define input and output
+#define INPUT_NONE
+#define OUTPUT_SERIAL
+
+// include library TinyTrainable
 #include <TinyTrainable.h>
 
-#define TINY_OUTPUT SERIAL
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(new Input(), new OutputSerial());
 
-TinyTrainable tiny;
-
-void setup() { tiny.setupOutputSerialUSB(); }
+void setup() {
+  // setup output
+  // tiny.setupOutputSerialUSB();
+  }
 
 void loop() {
   // the object classification number is the only thing sent over serial

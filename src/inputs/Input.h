@@ -1,3 +1,6 @@
+/// @file Input.h
+/// @brief Base class for each input
+
 #ifndef INPUT_H
 #define INPUT_H
 

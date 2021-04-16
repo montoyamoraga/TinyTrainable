@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['identify_81',['identify',['../class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7',1,'TinyTrainable::identify()'],['../class_input_gesture.html#ac8501aeb68dd5bb1ddef33a611bdf28e',1,'InputGesture::identify()'],['../class_input_color.html#af36cbecbdd14230499eecd9158453be0',1,'InputColor::identify()'],['../class_input.html#a90132889a3e2ef01e864fa496c63c2e7',1,'Input::identify()']]],
+  ['identify_81',['identify',['../class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7',1,'TinyTrainable::identify()'],['../class_input_gesture.html#ac8501aeb68dd5bb1ddef33a611bdf28e',1,'InputGesture::identify()'],['../class_input_color.html#a5185a9b716ad7cd94c303736fce22536',1,'InputColor::identify()'],['../class_input.html#a90132889a3e2ef01e864fa496c63c2e7',1,'Input::identify()']]],
   ['input_82',['Input',['../class_input.html',1,'Input'],['../class_input.html#abae3f379d3f157cf42dc857309832dba',1,'Input::Input()']]],
   ['input_2ecpp_83',['Input.cpp',['../_input_8cpp.html',1,'']]],
   ['input_2eh_84',['Input.h',['../_input_8h.html',1,'']]],

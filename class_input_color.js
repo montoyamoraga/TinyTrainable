@@ -1,7 +1,7 @@
 var class_input_color =
 [
     [ "InputColor", "class_input_color.html#a5280f9e82b0c6fc4119a6efdf006ce18", null ],
-    [ "identify", "class_input_color.html#af36cbecbdd14230499eecd9158453be0", null ],
+    [ "identify", "class_input_color.html#a5185a9b716ad7cd94c303736fce22536", null ],
     [ "readColor", "class_input_color.html#a6b003d0c90cc42225c1af0d1073ccf8f", null ],
     [ "setupInstrument", "class_input_color.html#ac54c8c491cad1988763380f46df2cf39", null ],
     [ "setupSensorAPDS9960", "class_input_color.html#ae0e8af914de127978c178d4daf8aa62b", null ],

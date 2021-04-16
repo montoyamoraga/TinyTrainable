@@ -29,7 +29,9 @@ class Output {
   virtual void setBuzzerDuration(int object, int *arrayDurations,
                                  int arrayDurationCount) {}
 
-  // methods for servo
+  // functions for output serial
+  virtual void setupOutputSerial() {}
+
   // functions for output servo
  virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {}
 virtual void setServoTempo(int object, int tempo) {}

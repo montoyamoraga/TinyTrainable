@@ -117,7 +117,7 @@ public:
   //   void helloOutputs(OutputMode outputToTest);
   void playOutput(int classification);
 
-  // declaration of functions for buzzer
+  // declaration of functions for output buzzer
   void setupOutputBuzzer(int outputPin);
   void getBuzzerParam(int object, int buzzerParamArray[]){};
   // for frequencies
@@ -139,8 +139,8 @@ public:
   virtual void setMIDINotes(int object, int note){};
 
   // declaration of virtual functions for output serial
-  virtual void setupOutputSerial(){};
-
+  void setupOutputSerial();
+  
   // declaration of functions for output servo
   void setupOutputServo(int outputPin, int servoAngleMin,
                                 int servoAngleMax);

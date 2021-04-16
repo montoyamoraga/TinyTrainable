@@ -286,6 +286,13 @@ void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
   }
 }
 
+// functions for output serial
+void TinyTrainable::setupOutputSerial() {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputSerial();
+  }
+}
+
 // functions for output servo
 void TinyTrainable::setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {
   if (myOutput != nullptr) {

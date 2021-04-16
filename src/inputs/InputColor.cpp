@@ -13,15 +13,12 @@ InputColor::InputColor() : _myKNN(3) {
 void InputColor::setupInstrument(bool serialDebugging) {
 
   tiny->_serialDebugging = serialDebugging;
-  Serial.println("tiny");
-  Serial.println(tiny->_serialDebugging);
 
   if (tiny->_serialDebugging) {
     Serial.begin(tiny->_baudRate);
     while (!Serial) {
       ;
     }
-    Serial.println("InputColor setupInstrument");
   }
 
   tiny->setupLEDs();

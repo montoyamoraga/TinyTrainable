@@ -17,7 +17,7 @@ const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
 
 // constants for the hardware
-const int outputPin = 8;
+const int outputPin = 2;
 
 // constant for debugging
 const bool tinyDebugging = true;

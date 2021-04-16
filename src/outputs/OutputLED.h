@@ -17,13 +17,14 @@ public:
   OutputLED();
 
   // methods for TinyTrainable
-  void playOutput(int classification);
+  virtual void playOutput(int classification) override;
 
   // variables
   int _outputPinsLED[3];
 
   // methods for LED
-  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
+  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2) override;
+  
 };
 
 #endif

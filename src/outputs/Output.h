@@ -29,6 +29,13 @@ class Output {
   virtual void setBuzzerDuration(int object, int *arrayDurations,
                                  int arrayDurationCount) {}
 
+  // functions for output LED
+  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {}
+
+  // functions for output MIDI
+  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
+  virtual void setMIDINote(int object, int note){};
+
   // functions for output serial
   virtual void setupOutputSerial() {}
 

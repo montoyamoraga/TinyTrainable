@@ -131,12 +131,12 @@ public:
   void setBuzzerDuration(int object, int *arrayDurations,
                          int arrayDurationCount);
 
-  // declaration of functions for output LED
-  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
+  // functions for output LED
+  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
 
-  // declaration of functions for output MIDI
-  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
-  virtual void setMIDINotes(int object, int note){};
+  // functions for output MIDI
+  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  void setMIDINote(int object, int note);
 
   // declaration of virtual functions for output serial
   void setupOutputSerial();

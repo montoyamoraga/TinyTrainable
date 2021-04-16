@@ -17,22 +17,22 @@ public:
   OutputBuzzer();
 
   // methods for TinyTrainable
-  void playOutput(int classification);
+  virtual void playOutput(int classification) override;
 
   // methods for buzzer
-  void setupOutputBuzzer(int outputPin);
-  void getBuzzerParam(int object, int buzzerParamArray[]);
+  virtual void setupOutputBuzzer(int outputPin) override;
+  virtual void getBuzzerParam(int object, int buzzerParamArray[]) override;
   // for frequencies
-  void setBuzzerFrequency(int object, int frequency);
-  void setBuzzerFrequency(int object, int freqMin, int freqMax);
-  void setBuzzerFrequency(int object, int *arrayFrequencies,
-                          int arrayFreqCount);
+  virtual void setBuzzerFrequency(int object, int frequency) override;
+  virtual void setBuzzerFrequency(int object, int freqMin, int freqMax) override;
+  virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
+                          int arrayFreqCount) override;
 
   // for durations
-  void setBuzzerDuration(int object, int duration);
-  void setBuzzerDuration(int object, int durationMin, int durationMax);
-  void setBuzzerDuration(int object, int *arrayDurations,
-                         int arrayDurationCount);
+  virtual void setBuzzerDuration(int object, int duration) override;
+  virtual void setBuzzerDuration(int object, int durationMin, int durationMax) override;
+  virtual void setBuzzerDuration(int object, int *arrayDurations,
+                         int arrayDurationCount) override;
 
   // methods and variables for outputBuzzer
   int _outputPinBuzzer = -1;

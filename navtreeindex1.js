@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"color__serial_8ino.html#a50e63880d50f6b4566cd328c06dda6d4":[2,0,0,0,3,0,6],
 "color__serial_8ino.html#a76d61e62c09dd82ed30a2cb74bcedf0a":[2,0,0,0,3,0,3],
 "color__serial_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd":[2,0,0,0,3,0,7],
 "color__serial_8ino.html#aadb3e24b0191a3b06d8dfc41506a81dd":[2,0,0,0,3,0,0],
@@ -170,6 +171,7 @@ var NAVTREEINDEX1 =
 "hello__serial_8ino.html#a0e9699bc6872a88c84c63e11a89affdb":[2,0,0,2,5,0,3],
 "hello__serial_8ino.html#a2415dbc707abe01ed8d1b9925681d65c":[2,0,0,2,5,0,0],
 "hello__serial_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,2,5,0,4],
+"hello__serial_8ino.html#ae08d2c382b1bc1b2351974750116c861":[2,0,0,2,5,0,5],
 "hello__serial_8ino.html#af2dc192d0bf6ca0b1c1b0827f3dee4bd":[2,0,0,2,5,0,1],
 "hello__serial_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,2,5,0,2],
 "hello__servo_8ino.html":[2,0,0,2,6,0],

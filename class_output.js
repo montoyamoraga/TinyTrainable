@@ -13,6 +13,7 @@ var class_output =
     [ "setBuzzerFrequency", "class_output.html#a8cb568bee60cda3ba24117a883838431", null ],
     [ "setServoTempo", "class_output.html#aa3b4422eae15e2fcd5acca4b2019bc3d", null ],
     [ "setupOutputBuzzer", "class_output.html#a01a51b0b1e7a886190ad65aca88dd2d6", null ],
+    [ "setupOutputSerial", "class_output.html#a9655bb53001fcb69bda6ae73362b5bf3", null ],
     [ "setupOutputServo", "class_output.html#ac9553ac174eff72503851723867aa9e9", null ],
     [ "TinyTrainable", "class_output.html#ad6e54cfa6f7740c34e19cdf427993854", null ],
     [ "tiny", "class_output.html#a18489dcb8e45d4c199ece137e537f7c1", null ]

@@ -90,8 +90,6 @@ public:
 
   // TODO: this override works, do it for other functions
   // override magic by roy~
-  // MAKE THE VIRTUAL FUNCTIONS HERE on this .h file
-  // as this setupInstrument one, use this one as a template
   void setupInstrument(bool serialDebugging);
 
   // variable for debugging

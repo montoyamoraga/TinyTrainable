@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"color__serial_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0":[2,0,0,0,3,0,9],
+"color__serial_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,0,3,0,4],
 "color__serial_8ino.html#a50e63880d50f6b4566cd328c06dda6d4":[2,0,0,0,3,0,6],
 "color__serial_8ino.html#a76d61e62c09dd82ed30a2cb74bcedf0a":[2,0,0,0,3,0,3],
 "color__serial_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd":[2,0,0,0,3,0,7],

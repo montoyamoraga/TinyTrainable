@@ -141,12 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3c356bf966fffa63fa4c04d202be3a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9016673fc19b3d8f59ee1efb132162e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a9016673fc19b3d8f59ee1efb132162e8">setBuzzerDuration</a> (int object, int *arrayDurations, int arrayDurationCount)</td></tr>
 <tr class="separator:a9016673fc19b3d8f59ee1efb132162e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a426305c9060fd2bfbe20b1610b744c3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a426305c9060fd2bfbe20b1610b744c3b">setupOutputLED</a> (int outputPin0, int outputPin1, int outputPin2)</td></tr>
-<tr class="separator:a426305c9060fd2bfbe20b1610b744c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35e36f53da46d3d9ccbe5148f23b1a2c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a35e36f53da46d3d9ccbe5148f23b1a2c">setupOutputMIDI</a> (byte <a class="el" href="hello__midi_8ino.html#aa7d9728ac8a774a923e79270f3663b14">midiChannel</a>, byte <a class="el" href="hello__midi_8ino.html#a45329bedfdd76f14b24f360555663f54">midiVelocity</a>)</td></tr>
-<tr class="separator:a35e36f53da46d3d9ccbe5148f23b1a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a681bd6827a521e5056d8ea4ae7661fcc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a681bd6827a521e5056d8ea4ae7661fcc">setMIDINotes</a> (int object, int note)</td></tr>
-<tr class="separator:a681bd6827a521e5056d8ea4ae7661fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0691440c21f0eb2dd3fc98a1f8e90d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a0691440c21f0eb2dd3fc98a1f8e90d79">setupOutputLED</a> (int outputPin0, int outputPin1, int outputPin2)</td></tr>
+<tr class="separator:a0691440c21f0eb2dd3fc98a1f8e90d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954bc3a07665dce27ad5f367460e2a63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a954bc3a07665dce27ad5f367460e2a63">setupOutputMIDI</a> (byte <a class="el" href="hello__midi_8ino.html#aa7d9728ac8a774a923e79270f3663b14">midiChannel</a>, byte <a class="el" href="hello__midi_8ino.html#a45329bedfdd76f14b24f360555663f54">midiVelocity</a>)</td></tr>
+<tr class="separator:a954bc3a07665dce27ad5f367460e2a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a2d194e7dc7c0d379ac681edc71c0a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a2a2d194e7dc7c0d379ac681edc71c0a8">setMIDINote</a> (int object, int note)</td></tr>
+<tr class="separator:a2a2d194e7dc7c0d379ac681edc71c0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f204f966081bdb1102f723887a19f87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a4f204f966081bdb1102f723887a19f87">setupOutputSerial</a> ()</td></tr>
 <tr class="separator:a4f204f966081bdb1102f723887a19f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b6959b6c505657edb0983ec53560a90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a9b6959b6c505657edb0983ec53560a90">setupOutputServo</a> (int <a class="el" href="speech__buzzer_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a>, int <a class="el" href="hello__servo_8ino.html#a51e123641c0c2292b255b9829aefe086">servoAngleMin</a>, int <a class="el" href="hello__servo_8ino.html#a300cc282ed738291c8c1aa2abf566561">servoAngleMax</a>)</td></tr>
@@ -574,17 +574,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a681bd6827a521e5056d8ea4ae7661fcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a681bd6827a521e5056d8ea4ae7661fcc">&#9670;&nbsp;</a></span>setMIDINotes()</h2>
+<a id="a2a2d194e7dc7c0d379ac681edc71c0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2d194e7dc7c0d379ac681edc71c0a8">&#9670;&nbsp;</a></span>setMIDINote()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void TinyTrainable::setMIDINotes </td>
+          <td class="memname">void TinyTrainable::setMIDINote </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>object</em>, </td>
@@ -601,11 +598,6 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -737,17 +729,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a426305c9060fd2bfbe20b1610b744c3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a426305c9060fd2bfbe20b1610b744c3b">&#9670;&nbsp;</a></span>setupOutputLED()</h2>
+<a id="a0691440c21f0eb2dd3fc98a1f8e90d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0691440c21f0eb2dd3fc98a1f8e90d79">&#9670;&nbsp;</a></span>setupOutputLED()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void TinyTrainable::setupOutputLED </td>
+          <td class="memname">void TinyTrainable::setupOutputLED </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>outputPin0</em>, </td>
@@ -770,26 +759,18 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a35e36f53da46d3d9ccbe5148f23b1a2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35e36f53da46d3d9ccbe5148f23b1a2c">&#9670;&nbsp;</a></span>setupOutputMIDI()</h2>
+<a id="a954bc3a07665dce27ad5f367460e2a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954bc3a07665dce27ad5f367460e2a63">&#9670;&nbsp;</a></span>setupOutputMIDI()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void TinyTrainable::setupOutputMIDI </td>
+          <td class="memname">void TinyTrainable::setupOutputMIDI </td>
           <td>(</td>
           <td class="paramtype">byte&#160;</td>
           <td class="paramname"><em>midiChannel</em>, </td>
@@ -806,11 +787,6 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>

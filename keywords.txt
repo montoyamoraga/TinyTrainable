@@ -30,6 +30,10 @@ setBuzzerPin		KEYWORD2
 setBuzzerFrequency	KEYWORD2
 setBuzzerDuration	KEYWORD2
 
+# output LED
+setupOutputLED		KEYWORD2
+
+# output servo
 setupOutputServo	KEYWORD2
 setServoTempo		KEYWORD2
 

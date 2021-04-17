@@ -10,7 +10,9 @@
 
 // initialize static variables
 bool TinyTrainable::_serialDebugging = false;
+int TinyTrainable::_baudRate = 9600;
 
+// constructor method
 TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
 
   myInput = newInput;
@@ -28,7 +30,8 @@ TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
   setupLEDs();
 }
 
-// destructor against memory leaks
+// destructor method
+// useful against memory leaks?
 TinyTrainable::~TinyTrainable() {
   if (myInput != nullptr) {
     delete myInput;
@@ -38,6 +41,32 @@ TinyTrainable::~TinyTrainable() {
   if (myOutput != nullptr) {
     delete myOutput;
     myOutput = nullptr;
+  }
+}
+
+void TinyTrainable::setupInstrument(bool serialDebugging) {
+  if (myInput != nullptr) {
+    myInput->setupInstrument(serialDebugging);
+  }
+};
+
+void TinyTrainable::playOutput(int classification) {
+  if (myOutput != nullptr) {
+    myOutput->playOutput(classification);
+  }
+}
+
+// methods for input color
+void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
+                             String objects[3]) {
+  if (myInput != nullptr) {
+    myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
+  }
+};
+
+void TinyTrainable::identify() {
+  if (myInput != nullptr) {
+    myInput->identify();
   }
 }
 
@@ -210,3 +239,100 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //     break;
 //   }
 // }
+
+// functions for buzzer
+void TinyTrainable::setupOutputBuzzer(int outputPin) {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputBuzzer(outputPin);
+  }
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerFrequency(object, frequency);
+  }
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int freqMin, int freqMax) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerFrequency(object, freqMin, freqMax);
+  }
+}
+
+void TinyTrainable::setBuzzerFrequency(int object, int *arrayFrequencies,
+                                       int arrayFreqCount) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerFrequency(object, *arrayFrequencies, arrayFreqCount);
+  }
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int duration) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerDuration(object, duration);
+  }
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int durationMin,
+                                      int durationMax) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerDuration(object, durationMin, durationMax);
+  }
+}
+
+void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
+                                      int arrayDurationCount) {
+  if (myOutput != nullptr) {
+    myOutput->setBuzzerDuration(object, *arrayDurations, arrayDurationCount);
+  }
+}
+
+// functions for output LED
+void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
+  if (myOutput != nullptr) {
+
+  }
+}
+
+// functions for output MIDI
+void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
+    if (myOutput != nullptr) {
+    myOutput->setupOutputMIDI(midiChannel, midiVelocity);
+  }
+}
+void TinyTrainable::setMIDINote(int object, int note){
+    if (myOutput != nullptr) {
+    myOutput->setMIDINote(object, note);
+  }
+}
+
+// functions for output serial
+void TinyTrainable::setupOutputSerial() {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputSerial();
+  }
+}
+
+// functions for output servo
+void TinyTrainable::setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+  }
+}
+
+void TinyTrainable::setServoTempo(int object, int tempo) {
+  if (myOutput != nullptr) {
+    myOutput->setServoTempo(object, tempo);
+  }
+}
+
+int TinyTrainable::bpmToMs(int tempo) {
+  if (myOutput != nullptr) {
+    return myOutput->bpmToMs(tempo);
+  }
+}
+
+void TinyTrainable::moveServo(int classification) {
+  if (myOutput != nullptr) {
+    myOutput->moveServo(classification);
+  }
+}

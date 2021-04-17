@@ -11,20 +11,18 @@ InputColor::InputColor() : _myKNN(3) {
 // // true: instrument outputs debugging messages over USB serial
 // // false: standalone instrument, no debugging message
 void InputColor::setupInstrument(bool serialDebugging) {
-  
+
   tiny->_serialDebugging = serialDebugging;
-  Serial.println("tiny");
-  Serial.println(tiny->_serialDebugging);
 
   if (tiny->_serialDebugging) {
-    Serial.begin(9600);
-    while (!Serial){;}
-    Serial.println("InputColor setupInstrument");
+    Serial.begin(tiny->_baudRate);
+    while (!Serial) {
+      ;
+    }
   }
 
   tiny->setupLEDs();
   setupSensorAPDS9960();
-
 }
 
 // APDS9960 sensor for gestures, color, light intensity, proximity
@@ -138,10 +136,10 @@ void InputColor::readColor(float colorReading[]) {
 
 // // uses the trained KNN algorithm to identify objects the user shows
 void InputColor::identify() {
-  if (!_checkedSetup) {
-    // TODO: finish this check routine
-    // checkInst0Setup();
-  }
+  // if (!_checkedSetup) {
+  // TODO: finish this check routine
+  // checkInst0Setup();
+  // }
 
   // wait for the object to move away again
   while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {

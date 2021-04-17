@@ -15,9 +15,9 @@
 #include "outputs/Output.h"
 
 // conditionally include input libraries
-// #ifdef INPUT_COLOR
+#ifdef INPUT_COLOR
 #include "inputs/InputColor.h"
-// #endif
+#endif
 
 #ifdef INPUT_GESTURE
 #include "inputs/InputGesture.h"
@@ -90,29 +90,22 @@ public:
 
   // TODO: this override works, do it for other functions
   // override magic by roy~
-  // MAKE THE VIRTUAL FUNCTIONS HERE on this .h file
-  // as this setupInstrument one, use this one as a template
-  void setupInstrument(bool serialDebugging){
-    if (myInput != nullptr) {
-      myInput->setupInstrument(serialDebugging);
-    }
-  };
+  void setupInstrument(bool serialDebugging);
 
   // variable for debugging
   // TODO: add explanation about static
   // static makes this property to be global for all the instances of the class
   static bool _serialDebugging;
+  static int _baudRate;
 
   // methods for input
 
   // methods for input color
-  void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]){
-    if (myInput != nullptr) {
-      myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
-    }
-  };
-  
-  virtual void identify(){};
+  void trainKNN(int k, int examplesPerClass, float colorThreshold,
+                String objects[3]);
+  void identify();
+
+  void setupLEDs();
 
   // methods for input gesture
 
@@ -122,48 +115,44 @@ public:
   //   void helloOutputsSetup(OutputMode outputToTest);
   //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
   //   void helloOutputs(OutputMode outputToTest);
-  virtual void playOutput(int classification){};
+  void playOutput(int classification);
 
-  // declaration of virtual functions for buzzer
-  virtual void setupOutputBuzzer(int outputPin){};
-  virtual void getBuzzerParam(int object, int buzzerParamArray[]){};
+  // declaration of functions for output buzzer
+  void setupOutputBuzzer(int outputPin);
+  void getBuzzerParam(int object, int buzzerParamArray[]){};
   // for frequencies
-  virtual void setBuzzerFrequency(int object, int frequency){};
-  virtual void setBuzzerFrequency(int object, int freqMin, int freqMax){};
-  virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
-                                  int arrayFreqCount){};
+  void setBuzzerFrequency(int object, int frequency);
+  void setBuzzerFrequency(int object, int freqMin, int freqMax);
+  void setBuzzerFrequency(int object, int *arrayFrequencies,
+                          int arrayFreqCount);
   // for durations
-  virtual void setBuzzerDuration(int object, int duration){};
-  virtual void setBuzzerDuration(int object, int durationMin,
-                                 int durationMax){};
-  virtual void setBuzzerDuration(int object, int *arrayDurations,
-                                 int arrayDurationCount){};
+  void setBuzzerDuration(int object, int duration);
+  void setBuzzerDuration(int object, int durationMin, int durationMax);
+  void setBuzzerDuration(int object, int *arrayDurations,
+                         int arrayDurationCount);
 
-  // declaration of virtual functions for output LED
-  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2){};
+  // functions for output LED
+  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
 
-    // declaration of virtual functions for output MIDI
-  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
-  virtual void setMIDINotes(int object, int note){};
+  // functions for output MIDI
+  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  void setMIDINote(int object, int note);
 
-// declaration of virtual functions for output serial
-  virtual void setupOutputSerial(){};
-
-  // declaration of virtual functions for output servo
-  virtual void setupOutputServo(int outputPin, int servoAngleMin,
-                                int servoAngleMax){};
-  virtual void setServoTempo(int object, int tempo){};
-  virtual int bpmToMs(int tempo){return 1;};
-  virtual void moveServo(int classification){};
+  // declaration of virtual functions for output serial
+  void setupOutputSerial();
+  
+  // declaration of functions for output servo
+  void setupOutputServo(int outputPin, int servoAngleMin,
+                                int servoAngleMax);
+  void setServoTempo(int object, int tempo);
+  int bpmToMs(int tempo);
+  void moveServo(int classification);
 
   void setStateLEDBuiltIn(bool turnOn);
   void blinkLEDBuiltIn(int blinks);
   void setStateLEDRGB(bool turnOn, Colors color);
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
-
-
-  void setupLEDs();
 };
 
 // conditional compilation

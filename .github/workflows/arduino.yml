@@ -5,8 +5,12 @@ name: Arduino Compile
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  - push
-  - pull_request
+  push:
+    branches:
+      - main
+    paths:
+      - src/**
+      - examples/**
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,12 +28,17 @@ jobs:
     - name: Compile Sketches
       uses: arduino/compile-sketches@v1
       with:
+        fqbn: arduino:mbed_nano:nano33ble
+        sketch-paths: |
+          - examples/hello/
+          - examples/color/
         cli-version: latest
         platforms: |
           - name: arduino:mbed_nano
-        fqbn: arduino:mbed_nano:nano33ble
-        sketch-paths: |
-          - examples/color/color_buzzer
-          - examples/color/color_servo
         libraries: |
-        - source-url: https://github.com/montoyamoraga/TinyTrainable
+          - source-path: ./
+          - name: Arduino_APDS9960
+          - name: Arduino_KNN
+          - name: Arduino_LSM9DS1
+          - name: Servo
+          - name: Adafruit Thermal Printer Library

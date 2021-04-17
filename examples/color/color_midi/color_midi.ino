@@ -23,16 +23,16 @@ void setup() {
 
   myTiny.setupInstrument(true);
 
-  myTiny.setupOutputMIDI(10, 127);
-  myTiny.setMIDINotes(0, 37);
-  myTiny.setMIDINotes(1, 38);
-  myTiny.setMIDINotes(2, 39);
+//  myTiny.setupOutputMIDI(10, 127);
+//  myTiny.setMIDINotes(0, 37);
+//  myTiny.setMIDINotes(1, 38);
+//  myTiny.setMIDINotes(2, 39);
 
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+//  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
   // identify the input and respond
-    myTiny.identify();
+//  myTiny.identify();
 }

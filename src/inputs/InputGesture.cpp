@@ -15,7 +15,7 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   tiny->_serialDebugging = serialDebugging;
 
   if (tiny->_serialDebugging) {
-    Serial.begin(9600);
+    Serial.begin(tiny->_baudRate);
     while (!Serial)
       ;
   }
@@ -118,8 +118,6 @@ void InputGesture::classify() {
   //   }
   // }
 }
-
-
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer

@@ -27,19 +27,19 @@ public:
   InputColor();
 
   void setupSensorAPDS9960();
-  
+
   // TODO: keyword override doesnt work with all compilers
   // override is a help for debugging
   virtual void setupInstrument(bool serialDebugging) override;
-  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
-                String objects[3]) override;
+  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold, String objects[3]) override;
+
+  virtual void identify() override;
 
   KNNClassifier _myKNN;
   String _labels[3];
   int _previousClassification = -1;
 
 
-  void identify();
 
   // private:
   void readColor(float color[]);

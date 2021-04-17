@@ -15,13 +15,11 @@ public:
   // constructor
   OutputSerial();
 
-
   // TinyTrainable methods
   void playOutput(int classification);
 
   // methods for output with serial
   void setupOutputSerial();
-
 };
 
 #endif

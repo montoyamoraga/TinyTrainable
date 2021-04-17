@@ -17,7 +17,7 @@ const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
 
 // constants for the hardware
-const int outputPin = 8;
+const int outputPin = 2;
 
 // constant for debugging
 const bool tinyDebugging = true;
@@ -39,8 +39,6 @@ void setup() {
   // setup the instrument
   myTiny.setupInstrument(tinyDebugging);
 
-  myTiny.debugPrint("after");
-
   // set its output
   myTiny.setupOutputBuzzer(outputPin);
 
@@ -48,28 +46,21 @@ void setup() {
   // and duration parameter options
 
   // set frequencies, in Hz
-  //  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
-  //  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
-  //  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
+  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
+  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
+  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
   // set durations, in milliseconds
-  //  myTiny.setBuzzerDuration(0, 300);
-  //  myTiny.setBuzzerDuration(1, 600);
-  //  myTiny.setBuzzerDuration(2, 900);
+  myTiny.setBuzzerDuration(0, 300);
+  myTiny.setBuzzerDuration(1, 600);
+  myTiny.setBuzzerDuration(2, 900);
 
   // train the instrument's KNN algorithm
-  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
 
-  myTiny.setStateLEDBuiltIn(true);
-  Serial.print("on, ");
-  delay(5000);
-  myTiny.setStateLEDBuiltIn(false);
-  Serial.println("off");
-  delay(5000);
-
   // identify the input and respond
-  //  myTiny.identify();
+  myTiny.identify();
 }

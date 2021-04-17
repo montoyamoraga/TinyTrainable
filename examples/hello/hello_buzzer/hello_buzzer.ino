@@ -32,20 +32,20 @@ void setup() {
 
   // for buzzer output, there are 3 options:
 
-  // 1. each classified item gets a single frequency (in Hz)
+  // 0. each classified item gets a single frequency (in Hz)
 
-  //   myTiny.setBuzzerFrequency(0, 1000);
-  //   myTiny.setBuzzerFrequency(1, 2000);
-  //   myTiny.setBuzzerFrequency(2, 3000);
+  myTiny.setBuzzerFrequency(0, 1000);
+  myTiny.setBuzzerFrequency(1, 2000);
+  myTiny.setBuzzerFrequency(2, 3000);
 
-  // 2. each classified item gets a random frequency within the given range
+  // 1. each classified item gets a random frequency within the given range
   // (the frequency will change each time the item is classified)
 
   // myTiny.setBuzzerFrequency(0, 1000, 2000);
   // myTiny.setBuzzerFrequency(1, 2000, 3000);
   // myTiny.setBuzzerFrequency(2, 3000, 4000);
 
-  // 3. each classified item gets a random frequency from a given array
+  // 2. each classified item gets a random frequency from a given array
   // (the frequency will change each time the item is classified)
   // NOTE: though you call these arrays in setup(), they need to be
   // declared in the global scope so they can be used after setup runs!
@@ -57,19 +57,19 @@ void setup() {
   // the same options also exist for buzzer durations (in milliseconds), in
   // the overloaded function setBuzzerDuration()
 
-  // 1.
+  // 0.
 
   myTiny.setBuzzerDuration(0, 300);
   myTiny.setBuzzerDuration(1, 600);
   myTiny.setBuzzerDuration(2, 900);
 
-  // 2.
+  // 1.
 
   // myTiny.setBuzzerDuration(0, 1000, 2000);
   // myTiny.setBuzzerDuration(1, 2000, 3000);
   // myTiny.setBuzzerDuration(2, 3000, 4000);
 
-  // 3. (using the same arrays as above because the numbers also work in ms!)
+  // 2. (using the same arrays as above because the numbers also work in ms!)
 
   // myTiny.setBuzzerDuration(0, freqArray0, shortParamArrayLength);
   // myTiny.setBuzzerDuration(1, freqArray1, longParamArrayLength);

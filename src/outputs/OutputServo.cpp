@@ -5,7 +5,10 @@
 OutputServo::OutputServo() {}
 
 // methods for TinyTrainable
-void OutputServo::playOutput(int classification) { moveServo(classification); }
+void OutputServo::playOutput(int classification) { 
+  // move the servo
+  moveServo(classification);
+  }
 
 void OutputServo::setupOutputServo(int outputPin, int angleMin, int angleMax) {
 

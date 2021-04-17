@@ -14,7 +14,7 @@ Input myInput;
 OutputLED myOutput;
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(myInput, myOutput);
+TinyTrainable myTiny(new Input(), new OutputLED());
 
 // constants for the hardware
 const int outputPinLED0 = 3;

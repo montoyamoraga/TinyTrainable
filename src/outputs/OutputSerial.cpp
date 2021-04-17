@@ -5,7 +5,8 @@ OutputSerial::OutputSerial() {}
 
 // methods for TinyTrainable
 void OutputSerial::playOutput(int classification) {
-  Serial.println("TODO OutputSerial playOutput");
+  Serial.print("classification: ");
+  Serial.println(classification);
 }
 
 void OutputSerial::setupOutputSerial() {

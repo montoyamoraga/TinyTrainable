@@ -26,11 +26,12 @@ public:
   byte _midiVelocity = 0;
 
   // TODO: this is public now for testing, later move to protected
-  void sendSerialMIDINote(byte channel, byte note, byte velocity);
+  // void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
-    void setupOutputMIDI(byte midiChannel, byte midiVelocity);
-    void setMIDINotes(int object, int note);
-    void setupSerialMIDI();
+  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity) override;
+  virtual void setMIDINote(int object, int note) override;
+  void setupSerialMIDI();
+
 };
 
 #endif

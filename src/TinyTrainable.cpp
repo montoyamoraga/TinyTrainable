@@ -305,6 +305,12 @@ void TinyTrainable::setMIDINote(int object, int note){
   }
 }
 
+void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity){
+  if (myOutput != nullptr) {
+    myOutput->sendSerialMIDINote(channel, note, velocity);
+  }
+}
+
 // functions for output serial
 void TinyTrainable::setupOutputSerial() {
   if (myOutput != nullptr) {

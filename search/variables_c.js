@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['samplesread_375',['samplesRead',['../gesture__buzzer_8ino.html#af72a80a4d2eb835413a2b8bf3535613e',1,'samplesRead():&#160;gesture_buzzer.ino'],['../gesture__database_8ino.html#af72a80a4d2eb835413a2b8bf3535613e',1,'samplesRead():&#160;gesture_database.ino']]],
-  ['serialdebugging_376',['serialDebugging',['../gesture__database_8ino.html#a35df65e6150b37ce45b9a5ff65843be1',1,'gesture_database.ino']]],
-  ['servoanglemax_377',['servoAngleMax',['../color__servo_8ino.html#a300cc282ed738291c8c1aa2abf566561',1,'servoAngleMax():&#160;color_servo.ino'],['../hello__servo_8ino.html#a300cc282ed738291c8c1aa2abf566561',1,'servoAngleMax():&#160;hello_servo.ino']]],
-  ['servoanglemin_378',['servoAngleMin',['../color__servo_8ino.html#a51e123641c0c2292b255b9829aefe086',1,'servoAngleMin():&#160;color_servo.ino'],['../hello__servo_8ino.html#a51e123641c0c2292b255b9829aefe086',1,'servoAngleMin():&#160;hello_servo.ino']]],
-  ['shortparamarraylength_379',['shortParamArrayLength',['../hello__buzzer_8ino.html#ac8ca5e6bee050d58081c9a241dce2125',1,'hello_buzzer.ino']]]
+  ['paramarraylength_406',['paramArrayLength',['../color__buzzer_8ino.html#a8c8f80550796eaa32107466e71c26846',1,'paramArrayLength():&#160;color_buzzer.ino'],['../gesture__buzzer_8ino.html#a8c8f80550796eaa32107466e71c26846',1,'paramArrayLength():&#160;gesture_buzzer.ino']]],
+  ['pausetime_407',['pauseTime',['../hello__buzzer_8ino.html#ae08d2c382b1bc1b2351974750116c861',1,'pauseTime():&#160;hello_buzzer.ino'],['../hello__led_8ino.html#a82b4b9ae33c6bfc64cf9a0cae15e7d5e',1,'pauseTime():&#160;hello_led.ino'],['../hello__midi_8ino.html#ae08d2c382b1bc1b2351974750116c861',1,'pauseTime():&#160;hello_midi.ino'],['../hello__serial_8ino.html#ae08d2c382b1bc1b2351974750116c861',1,'pauseTime():&#160;hello_serial.ino']]],
+  ['placeholder0_408',['placeHolder0',['../hello__printer_8ino.html#ad85b8020ea96294ab9aaaa2f85a9de2a',1,'hello_printer.ino']]],
+  ['placeholder1_409',['placeHolder1',['../hello__printer_8ino.html#aa08ea5267ebbacaf56962c86c16b38a5',1,'hello_printer.ino']]],
+  ['placeholder2_410',['placeHolder2',['../hello__printer_8ino.html#afd50971eb9a30617a398aec596485592',1,'hello_printer.ino']]]
 ];

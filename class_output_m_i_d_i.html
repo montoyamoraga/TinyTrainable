@@ -121,6 +121,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a221ad494539cf8b66eb7a99538341eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e974abc4ee3292a68cdb53bbcbb2b96"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a4e974abc4ee3292a68cdb53bbcbb2b96">setMIDINote</a> (int object, int note) override</td></tr>
 <tr class="separator:a4e974abc4ee3292a68cdb53bbcbb2b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937be7799c4264e23cc85cf2aaa7ba91"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a937be7799c4264e23cc85cf2aaa7ba91">sendSerialMIDINote</a> (byte channel, byte note, byte velocity) override</td></tr>
+<tr class="separator:a937be7799c4264e23cc85cf2aaa7ba91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9e292351d62ca7a88d888a104bb6f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#adc9e292351d62ca7a88d888a104bb6f1">setupSerialMIDI</a> ()</td></tr>
 <tr class="separator:adc9e292351d62ca7a88d888a104bb6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_output"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_output')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_output.html">Output</a></td></tr>
@@ -137,6 +139,46 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a887baeda807202d10e94dfaf8214911e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eed7fdd01bb69a2cbc8f43b93f05f54"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a9eed7fdd01bb69a2cbc8f43b93f05f54">_midiVelocity</a> = 0</td></tr>
 <tr class="separator:a9eed7fdd01bb69a2cbc8f43b93f05f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d240db94c665f85d9c0266cc6ef949"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949">noteBassDrum</a> = 36</td></tr>
+<tr class="separator:ae8d240db94c665f85d9c0266cc6ef949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7efeb94479a110995a326dcc1af544f4"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4">noteSnare</a> = 38</td></tr>
+<tr class="separator:a7efeb94479a110995a326dcc1af544f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac977be9dc58f2d7210426c8cb1216f73"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73">noteClosedHiHat</a> = 42</td></tr>
+<tr class="separator:ac977be9dc58f2d7210426c8cb1216f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d6c02554173c88965e7ae065e49b4f"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f">noteHiTom</a> = 50</td></tr>
+<tr class="separator:a76d6c02554173c88965e7ae065e49b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c399198c8c15349a4cd27301028a7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e">currentStep</a> = 0</td></tr>
+<tr class="separator:a21c399198c8c15349a4cd27301028a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319e0a8d972170d449dea77c91be6556"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556">totalSteps</a> = 16</td></tr>
+<tr class="separator:a319e0a8d972170d449dea77c91be6556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c02eeb962d3557ce37b78b64476c9a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a">currentGenre</a> = 2</td></tr>
+<tr class="separator:a92c02eeb962d3557ce37b78b64476c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259e9053a6cd1cb28f4c52eab1522c9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f">tempoDelay</a> = 100</td></tr>
+<tr class="separator:a259e9053a6cd1cb28f4c52eab1522c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d22ba5645e21c488e916399b306e9c4"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a9d22ba5645e21c488e916399b306e9c4">bossanovaBD</a> []</td></tr>
+<tr class="separator:a9d22ba5645e21c488e916399b306e9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb715c226bf5aa8311162d966f6ef6e"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a8cb715c226bf5aa8311162d966f6ef6e">bossanovaSN</a> []</td></tr>
+<tr class="separator:a8cb715c226bf5aa8311162d966f6ef6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af480eca9fc0631454a98e05a0387c916"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#af480eca9fc0631454a98e05a0387c916">bossanovaCH</a> []</td></tr>
+<tr class="separator:af480eca9fc0631454a98e05a0387c916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa328bedbe3c1a3c1c73581d9a71dbddd"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#aa328bedbe3c1a3c1c73581d9a71dbddd">bossanovaHT</a> []</td></tr>
+<tr class="separator:aa328bedbe3c1a3c1c73581d9a71dbddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c4cbcd5610925724551e0d428000ee"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a18c4cbcd5610925724551e0d428000ee">chachaBD</a> []</td></tr>
+<tr class="separator:a18c4cbcd5610925724551e0d428000ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a240c95db3473199833ea7b260bef76f7"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a240c95db3473199833ea7b260bef76f7">chachaSN</a> []</td></tr>
+<tr class="separator:a240c95db3473199833ea7b260bef76f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197c189357d8335838df62cc5a3f3504"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a197c189357d8335838df62cc5a3f3504">chachaCH</a> []</td></tr>
+<tr class="separator:a197c189357d8335838df62cc5a3f3504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a709ff5b210f096ad6aab58350e4f5077"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a709ff5b210f096ad6aab58350e4f5077">chachaHT</a> []</td></tr>
+<tr class="separator:a709ff5b210f096ad6aab58350e4f5077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9d5f7ab9fd9a485bc17e76804009ab"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a0c9d5f7ab9fd9a485bc17e76804009ab">sambaBD</a> []</td></tr>
+<tr class="separator:a0c9d5f7ab9fd9a485bc17e76804009ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f8871403edaf3301c0b00512cfe82d"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#aa2f8871403edaf3301c0b00512cfe82d">sambaSN</a> []</td></tr>
+<tr class="separator:aa2f8871403edaf3301c0b00512cfe82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c09ab279f777667b72b36970f08c545"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a9c09ab279f777667b72b36970f08c545">sambaCH</a> []</td></tr>
+<tr class="separator:a9c09ab279f777667b72b36970f08c545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27614b014a0c00e96a92fa453bf360ce"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a27614b014a0c00e96a92fa453bf360ce">sambaHT</a> []</td></tr>
+<tr class="separator:a27614b014a0c00e96a92fa453bf360ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -188,6 +230,50 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_output.html#aae2893cf36fe5cf20342211c24b66a03">Output</a>.</p>
+
+</div>
+</div>
+<a id="a937be7799c4264e23cc85cf2aaa7ba91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937be7799c4264e23cc85cf2aaa7ba91">&#9670;&nbsp;</a></span>sendSerialMIDINote()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OutputMIDI::sendSerialMIDINote </td>
+          <td>(</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>note</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_output.html#a684fe0aea0f0c10a71252d2101ae6181">Output</a>.</p>
 
 </div>
 </div>
@@ -335,6 +421,346 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int OutputMIDI::_outputPinMIDI = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d22ba5645e21c488e916399b306e9c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d22ba5645e21c488e916399b306e9c4">&#9670;&nbsp;</a></span>bossanovaBD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::bossanovaBD[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {1, 0, 0, 0,</div>
+<div class="line">                      0, 0, 1, 0,</div>
+<div class="line">                      1, 0, 0, 0,</div>
+<div class="line">                      0, 0, 1, 0</div>
+<div class="line">                     }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af480eca9fc0631454a98e05a0387c916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af480eca9fc0631454a98e05a0387c916">&#9670;&nbsp;</a></span>bossanovaCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::bossanovaCH[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {1, 0, 1, 0,</div>
+<div class="line">                      1, 0, 1, 0,</div>
+<div class="line">                      1, 0, 1, 0,</div>
+<div class="line">                      1, 0, 1, 0</div>
+<div class="line">                     }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa328bedbe3c1a3c1c73581d9a71dbddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa328bedbe3c1a3c1c73581d9a71dbddd">&#9670;&nbsp;</a></span>bossanovaHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::bossanovaHT[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {0, 0, 0, 0,</div>
+<div class="line">                      0, 0, 0, 0,</div>
+<div class="line">                      0, 0, 0, 0,</div>
+<div class="line">                      0, 0, 0, 0</div>
+<div class="line">                     }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8cb715c226bf5aa8311162d966f6ef6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb715c226bf5aa8311162d966f6ef6e">&#9670;&nbsp;</a></span>bossanovaSN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::bossanovaSN[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {1, 0, 0, 0,</div>
+<div class="line">                      0, 0, 1, 0,</div>
+<div class="line">                      0, 0, 0, 0,</div>
+<div class="line">                      1, 0, 0, 0</div>
+<div class="line">                     }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a18c4cbcd5610925724551e0d428000ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18c4cbcd5610925724551e0d428000ee">&#9670;&nbsp;</a></span>chachaBD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::chachaBD[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {1, 0, 0, 0,</div>
+<div class="line">                   0, 0, 1, 0,</div>
+<div class="line">                   1, 0, 0, 0,</div>
+<div class="line">                   0, 0, 1, 0</div>
+<div class="line">                  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a197c189357d8335838df62cc5a3f3504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a197c189357d8335838df62cc5a3f3504">&#9670;&nbsp;</a></span>chachaCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::chachaCH[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {0, 0, 0, 0,</div>
+<div class="line">                   1, 0, 0, 0,</div>
+<div class="line">                   0, 0, 0, 0,</div>
+<div class="line">                   1, 0, 0, 0</div>
+<div class="line">                  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a709ff5b210f096ad6aab58350e4f5077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709ff5b210f096ad6aab58350e4f5077">&#9670;&nbsp;</a></span>chachaHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::chachaHT[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {0, 0, 1, 0,</div>
+<div class="line">                   0, 0, 1, 0,</div>
+<div class="line">                   0, 0, 0, 0,</div>
+<div class="line">                   0, 0, 0, 0</div>
+<div class="line">                  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a240c95db3473199833ea7b260bef76f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a240c95db3473199833ea7b260bef76f7">&#9670;&nbsp;</a></span>chachaSN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::chachaSN[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {0, 0, 0, 0,</div>
+<div class="line">                   0, 0, 0, 0,</div>
+<div class="line">                   0, 0, 0, 0,</div>
+<div class="line">                   1, 0, 1, 0</div>
+<div class="line">                  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a92c02eeb962d3557ce37b78b64476c9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c02eeb962d3557ce37b78b64476c9a">&#9670;&nbsp;</a></span>currentGenre</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OutputMIDI::currentGenre = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21c399198c8c15349a4cd27301028a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c399198c8c15349a4cd27301028a7e">&#9670;&nbsp;</a></span>currentStep</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OutputMIDI::currentStep = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8d240db94c665f85d9c0266cc6ef949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8d240db94c665f85d9c0266cc6ef949">&#9670;&nbsp;</a></span>noteBassDrum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::noteBassDrum = 36</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac977be9dc58f2d7210426c8cb1216f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac977be9dc58f2d7210426c8cb1216f73">&#9670;&nbsp;</a></span>noteClosedHiHat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::noteClosedHiHat = 42</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76d6c02554173c88965e7ae065e49b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d6c02554173c88965e7ae065e49b4f">&#9670;&nbsp;</a></span>noteHiTom</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::noteHiTom = 50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7efeb94479a110995a326dcc1af544f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7efeb94479a110995a326dcc1af544f4">&#9670;&nbsp;</a></span>noteSnare</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::noteSnare = 38</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c9d5f7ab9fd9a485bc17e76804009ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9d5f7ab9fd9a485bc17e76804009ab">&#9670;&nbsp;</a></span>sambaBD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::sambaBD[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {1, 0, 0, 1,</div>
+<div class="line">                  1, 0, 0, 1,</div>
+<div class="line">                  1, 0, 0, 1,</div>
+<div class="line">                  1, 0, 0, 1</div>
+<div class="line">                 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9c09ab279f777667b72b36970f08c545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c09ab279f777667b72b36970f08c545">&#9670;&nbsp;</a></span>sambaCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::sambaCH[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {0, 1, 1, 0,</div>
+<div class="line">                  0, 1, 1, 0,</div>
+<div class="line">                  0, 1, 1, 0,</div>
+<div class="line">                  0, 1, 1, 0</div>
+<div class="line">                 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a27614b014a0c00e96a92fa453bf360ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27614b014a0c00e96a92fa453bf360ce">&#9670;&nbsp;</a></span>sambaHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::sambaHT[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {1, 0, 0, 0,</div>
+<div class="line">                  1, 0, 0, 0,</div>
+<div class="line">                  1, 0, 0, 0,</div>
+<div class="line">                  1, 0, 0, 0</div>
+<div class="line">                 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2f8871403edaf3301c0b00512cfe82d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f8871403edaf3301c0b00512cfe82d">&#9670;&nbsp;</a></span>sambaSN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte OutputMIDI::sambaSN[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {0, 0, 0, 0,</div>
+<div class="line">                  0, 0, 0, 0,</div>
+<div class="line">                  0, 0, 0, 1,</div>
+<div class="line">                  0, 0, 0, 0</div>
+<div class="line">                 }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a259e9053a6cd1cb28f4c52eab1522c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a259e9053a6cd1cb28f4c52eab1522c9f">&#9670;&nbsp;</a></span>tempoDelay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OutputMIDI::tempoDelay = 100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a319e0a8d972170d449dea77c91be6556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319e0a8d972170d449dea77c91be6556">&#9670;&nbsp;</a></span>totalSteps</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OutputMIDI::totalSteps = 16</td>
         </tr>
       </table>
 </div><div class="memdoc">

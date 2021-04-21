@@ -5,6 +5,7 @@ var class_output =
     [ "getBuzzerParam", "class_output.html#abb9889b3390ba99f804768e3beea1f5d", null ],
     [ "moveServo", "class_output.html#aaf73688e9dc1f2ae992441b02a5a2fe5", null ],
     [ "playOutput", "class_output.html#aae2893cf36fe5cf20342211c24b66a03", null ],
+    [ "sendSerialMIDINote", "class_output.html#a684fe0aea0f0c10a71252d2101ae6181", null ],
     [ "setBuzzerDuration", "class_output.html#a07cbc2c64d84ab89d4a2dba565fa8293", null ],
     [ "setBuzzerDuration", "class_output.html#a486730acd09fffd2b819c7ebf7027d6c", null ],
     [ "setBuzzerDuration", "class_output.html#a7ac0ef38e0056243babe01092227702d", null ],

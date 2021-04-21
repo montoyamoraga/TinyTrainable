@@ -9,6 +9,7 @@ var class_tiny_trainable =
     [ "identify", "class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7", null ],
     [ "moveServo", "class_tiny_trainable.html#ae6c8e026d4e10e04a677028d1df96860", null ],
     [ "playOutput", "class_tiny_trainable.html#a6897144d519d0d19c8c3835bf4e27dab", null ],
+    [ "sendSerialMIDINote", "class_tiny_trainable.html#a1bdd09829d33e952b860f226999c87d8", null ],
     [ "setBuzzerDuration", "class_tiny_trainable.html#a9016673fc19b3d8f59ee1efb132162e8", null ],
     [ "setBuzzerDuration", "class_tiny_trainable.html#ab983f752044c901a1615f8049154f138", null ],
     [ "setBuzzerDuration", "class_tiny_trainable.html#a3c356bf966fffa63fa4c04d202be3a5e", null ],

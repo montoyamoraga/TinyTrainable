@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['numsamples_364',['numSamples',['../gesture__buzzer_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;gesture_buzzer.ino'],['../gesture__classifier_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;gesture_classifier.ino'],['../gesture__database_8ino.html#a6e69593c0b3936427c48a2929a462cb2',1,'numSamples():&#160;gesture_database.ino']]]
+  ['midichannel_391',['midiChannel',['../hello__midi_8ino.html#aa7d9728ac8a774a923e79270f3663b14',1,'hello_midi.ino']]],
+  ['midinotes_392',['MIDINotes',['../hello__midi_8ino.html#a1dc4ed62a75287d73d62923f50cbec8c',1,'hello_midi.ino']]],
+  ['midivelocity_393',['midiVelocity',['../hello__midi_8ino.html#a45329bedfdd76f14b24f360555663f54',1,'hello_midi.ino']]],
+  ['myinput_394',['myInput',['../class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f',1,'TinyTrainable']]],
+  ['myoutput_395',['myOutput',['../class_tiny_trainable.html#a888e801d77cd92e11ced14d9e3b259bb',1,'TinyTrainable']]]
 ];

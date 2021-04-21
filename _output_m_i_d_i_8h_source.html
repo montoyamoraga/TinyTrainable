@@ -127,24 +127,146 @@ $(document).ready(function(){initNavTree('_output_m_i_d_i_8h_source.html',''); i
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_m_i_d_i.html#a221ad494539cf8b66eb7a99538341eec">setupOutputMIDI</a>(<span class="keywordtype">byte</span> <a class="code" href="hello__midi_8ino.html#aa7d9728ac8a774a923e79270f3663b14">midiChannel</a>, <span class="keywordtype">byte</span> <a class="code" href="hello__midi_8ino.html#a45329bedfdd76f14b24f360555663f54">midiVelocity</a>) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_m_i_d_i.html#a4e974abc4ee3292a68cdb53bbcbb2b96">setMIDINote</a>(<span class="keywordtype">int</span> <span class="keywordtype">object</span>, <span class="keywordtype">int</span> note) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_output_m_i_d_i.html#adc9e292351d62ca7a88d888a104bb6f1">setupSerialMIDI</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_m_i_d_i.html#a937be7799c4264e23cc85cf2aaa7ba91">sendSerialMIDINote</a>(<span class="keywordtype">byte</span> channel, <span class="keywordtype">byte</span> note, <span class="keywordtype">byte</span> velocity) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_output_m_i_d_i.html#adc9e292351d62ca7a88d888a104bb6f1">setupSerialMIDI</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// TODO: in progress</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// notes for volca beats</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949">   39</a></span>&#160;  <span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949">noteBassDrum</a> = 36;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4">   40</a></span>&#160;  <span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4">noteSnare</a> = 38;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73">   41</a></span>&#160;  <span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73">noteClosedHiHat</a> = 42;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f">   42</a></span>&#160;  <span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f">noteHiTom</a> = 50;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e">   44</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e">currentStep</a> = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556">   45</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556">totalSteps</a> = 16;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// 0 - bossanova, 1 - chacha, 2 - samba</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a">   48</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a">currentGenre</a> = 2;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f">   50</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f">tempoDelay</a> = 100;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// drum patterns</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a9d22ba5645e21c488e916399b306e9c4">   56</a></span>&#160;  <span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a9d22ba5645e21c488e916399b306e9c4">bossanovaBD</a>[] = {1, 0, 0, 0,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                      0, 0, 1, 0,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                      1, 0, 0, 0,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                      0, 0, 1, 0</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                     };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a8cb715c226bf5aa8311162d966f6ef6e">   62</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a8cb715c226bf5aa8311162d966f6ef6e">bossanovaSN</a>[] = {1, 0, 0, 0,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                      0, 0, 1, 0,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                      0, 0, 0, 0,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                      1, 0, 0, 0</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                     };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#af480eca9fc0631454a98e05a0387c916">   68</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#af480eca9fc0631454a98e05a0387c916">bossanovaCH</a>[] = {1, 0, 1, 0,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                      1, 0, 1, 0,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                      1, 0, 1, 0,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                      1, 0, 1, 0</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                     };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#aa328bedbe3c1a3c1c73581d9a71dbddd">   74</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#aa328bedbe3c1a3c1c73581d9a71dbddd">bossanovaHT</a>[] = {0, 0, 0, 0,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                      0, 0, 0, 0,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                      0, 0, 0, 0,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                      0, 0, 0, 0</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                     };</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a18c4cbcd5610925724551e0d428000ee">   80</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a18c4cbcd5610925724551e0d428000ee">chachaBD</a>[] = {1, 0, 0, 0,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                   0, 0, 1, 0,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                   1, 0, 0, 0,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                   0, 0, 1, 0</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                  };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a240c95db3473199833ea7b260bef76f7">   87</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a240c95db3473199833ea7b260bef76f7">chachaSN</a>[] = {0, 0, 0, 0,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                   0, 0, 0, 0,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                   0, 0, 0, 0,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                   1, 0, 1, 0</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                  };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a197c189357d8335838df62cc5a3f3504">   94</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a197c189357d8335838df62cc5a3f3504">chachaCH</a>[] = {0, 0, 0, 0,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                   1, 0, 0, 0,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                   0, 0, 0, 0,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                   1, 0, 0, 0</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                  };</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a709ff5b210f096ad6aab58350e4f5077">  101</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a709ff5b210f096ad6aab58350e4f5077">chachaHT</a>[] = {0, 0, 1, 0,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                   0, 0, 1, 0,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                   0, 0, 0, 0,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                   0, 0, 0, 0</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                  };</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a0c9d5f7ab9fd9a485bc17e76804009ab">  109</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a0c9d5f7ab9fd9a485bc17e76804009ab">sambaBD</a>[] = {1, 0, 0, 1,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                  1, 0, 0, 1,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                  1, 0, 0, 1,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                  1, 0, 0, 1</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                 };</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#aa2f8871403edaf3301c0b00512cfe82d">  116</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#aa2f8871403edaf3301c0b00512cfe82d">sambaSN</a>[] = {0, 0, 0, 0,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                  0, 0, 0, 0,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                  0, 0, 0, 1,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                  0, 0, 0, 0</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                 };</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a9c09ab279f777667b72b36970f08c545">  123</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a9c09ab279f777667b72b36970f08c545">sambaCH</a>[] = {0, 1, 1, 0,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                  0, 1, 1, 0,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                  0, 1, 1, 0,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                  0, 1, 1, 0</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                 };</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="class_output_m_i_d_i.html#a27614b014a0c00e96a92fa453bf360ce">  130</a></span>&#160;<span class="keywordtype">byte</span> <a class="code" href="class_output_m_i_d_i.html#a27614b014a0c00e96a92fa453bf360ce">sambaHT</a>[] = {1, 0, 0, 0,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                  1, 0, 0, 0,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                  1, 0, 0, 0,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                  1, 0, 0, 0</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                 };</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_output_8h_html"><div class="ttname"><a href="_output_8h.html">Output.h</a></div></div>
 <div class="ttc" id="a_tiny_trainable_8h_html"><div class="ttname"><a href="_tiny_trainable_8h.html">TinyTrainable.h</a></div></div>
 <div class="ttc" id="aclass_output_html"><div class="ttname"><a href="class_output.html">Output</a></div><div class="ttdef"><b>Definition:</b> Output.h:11</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html"><div class="ttname"><a href="class_output_m_i_d_i.html">OutputMIDI</a></div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:13</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_a02d256596db93c019d280d5cd4a67720"><div class="ttname"><a href="class_output_m_i_d_i.html#a02d256596db93c019d280d5cd4a67720">OutputMIDI::playOutput</a></div><div class="ttdeci">void playOutput(int classification)</div><div class="ttdef"><b>Definition:</b> OutputMIDI.cpp:7</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a0c9d5f7ab9fd9a485bc17e76804009ab"><div class="ttname"><a href="class_output_m_i_d_i.html#a0c9d5f7ab9fd9a485bc17e76804009ab">OutputMIDI::sambaBD</a></div><div class="ttdeci">byte sambaBD[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:109</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_a1712a387e81e8cf6b46b31e8e7f988ac"><div class="ttname"><a href="class_output_m_i_d_i.html#a1712a387e81e8cf6b46b31e8e7f988ac">OutputMIDI::_midiNotes</a></div><div class="ttdeci">int _midiNotes[3]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:24</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a18c4cbcd5610925724551e0d428000ee"><div class="ttname"><a href="class_output_m_i_d_i.html#a18c4cbcd5610925724551e0d428000ee">OutputMIDI::chachaBD</a></div><div class="ttdeci">byte chachaBD[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:80</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a197c189357d8335838df62cc5a3f3504"><div class="ttname"><a href="class_output_m_i_d_i.html#a197c189357d8335838df62cc5a3f3504">OutputMIDI::chachaCH</a></div><div class="ttdeci">byte chachaCH[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:94</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a21c399198c8c15349a4cd27301028a7e"><div class="ttname"><a href="class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e">OutputMIDI::currentStep</a></div><div class="ttdeci">int currentStep</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:44</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_a221ad494539cf8b66eb7a99538341eec"><div class="ttname"><a href="class_output_m_i_d_i.html#a221ad494539cf8b66eb7a99538341eec">OutputMIDI::setupOutputMIDI</a></div><div class="ttdeci">virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity) override</div><div class="ttdef"><b>Definition:</b> OutputMIDI.cpp:17</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a240c95db3473199833ea7b260bef76f7"><div class="ttname"><a href="class_output_m_i_d_i.html#a240c95db3473199833ea7b260bef76f7">OutputMIDI::chachaSN</a></div><div class="ttdeci">byte chachaSN[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:87</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_a24cc046b95bb94319d888acc18a8d83f"><div class="ttname"><a href="class_output_m_i_d_i.html#a24cc046b95bb94319d888acc18a8d83f">OutputMIDI::OutputMIDI</a></div><div class="ttdeci">OutputMIDI()</div><div class="ttdef"><b>Definition:</b> OutputMIDI.cpp:4</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a259e9053a6cd1cb28f4c52eab1522c9f"><div class="ttname"><a href="class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f">OutputMIDI::tempoDelay</a></div><div class="ttdeci">int tempoDelay</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:50</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a27614b014a0c00e96a92fa453bf360ce"><div class="ttname"><a href="class_output_m_i_d_i.html#a27614b014a0c00e96a92fa453bf360ce">OutputMIDI::sambaHT</a></div><div class="ttdeci">byte sambaHT[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:130</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a319e0a8d972170d449dea77c91be6556"><div class="ttname"><a href="class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556">OutputMIDI::totalSteps</a></div><div class="ttdeci">int totalSteps</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:45</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_a4e974abc4ee3292a68cdb53bbcbb2b96"><div class="ttname"><a href="class_output_m_i_d_i.html#a4e974abc4ee3292a68cdb53bbcbb2b96">OutputMIDI::setMIDINote</a></div><div class="ttdeci">virtual void setMIDINote(int object, int note) override</div><div class="ttdef"><b>Definition:</b> OutputMIDI.cpp:24</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a709ff5b210f096ad6aab58350e4f5077"><div class="ttname"><a href="class_output_m_i_d_i.html#a709ff5b210f096ad6aab58350e4f5077">OutputMIDI::chachaHT</a></div><div class="ttdeci">byte chachaHT[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:101</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a76d6c02554173c88965e7ae065e49b4f"><div class="ttname"><a href="class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f">OutputMIDI::noteHiTom</a></div><div class="ttdeci">byte noteHiTom</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:42</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a7efeb94479a110995a326dcc1af544f4"><div class="ttname"><a href="class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4">OutputMIDI::noteSnare</a></div><div class="ttdeci">byte noteSnare</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:40</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_a887baeda807202d10e94dfaf8214911e"><div class="ttname"><a href="class_output_m_i_d_i.html#a887baeda807202d10e94dfaf8214911e">OutputMIDI::_midiChannel</a></div><div class="ttdeci">byte _midiChannel</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:25</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a8cb715c226bf5aa8311162d966f6ef6e"><div class="ttname"><a href="class_output_m_i_d_i.html#a8cb715c226bf5aa8311162d966f6ef6e">OutputMIDI::bossanovaSN</a></div><div class="ttdeci">byte bossanovaSN[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:62</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a92c02eeb962d3557ce37b78b64476c9a"><div class="ttname"><a href="class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a">OutputMIDI::currentGenre</a></div><div class="ttdeci">int currentGenre</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:48</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a937be7799c4264e23cc85cf2aaa7ba91"><div class="ttname"><a href="class_output_m_i_d_i.html#a937be7799c4264e23cc85cf2aaa7ba91">OutputMIDI::sendSerialMIDINote</a></div><div class="ttdeci">virtual void sendSerialMIDINote(byte channel, byte note, byte velocity) override</div><div class="ttdef"><b>Definition:</b> OutputMIDI.cpp:11</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a9c09ab279f777667b72b36970f08c545"><div class="ttname"><a href="class_output_m_i_d_i.html#a9c09ab279f777667b72b36970f08c545">OutputMIDI::sambaCH</a></div><div class="ttdeci">byte sambaCH[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:123</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_a9d22ba5645e21c488e916399b306e9c4"><div class="ttname"><a href="class_output_m_i_d_i.html#a9d22ba5645e21c488e916399b306e9c4">OutputMIDI::bossanovaBD</a></div><div class="ttdeci">byte bossanovaBD[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:56</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_a9eed7fdd01bb69a2cbc8f43b93f05f54"><div class="ttname"><a href="class_output_m_i_d_i.html#a9eed7fdd01bb69a2cbc8f43b93f05f54">OutputMIDI::_midiVelocity</a></div><div class="ttdeci">byte _midiVelocity</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:26</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_aa2f8871403edaf3301c0b00512cfe82d"><div class="ttname"><a href="class_output_m_i_d_i.html#aa2f8871403edaf3301c0b00512cfe82d">OutputMIDI::sambaSN</a></div><div class="ttdeci">byte sambaSN[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:116</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_aa328bedbe3c1a3c1c73581d9a71dbddd"><div class="ttname"><a href="class_output_m_i_d_i.html#aa328bedbe3c1a3c1c73581d9a71dbddd">OutputMIDI::bossanovaHT</a></div><div class="ttdeci">byte bossanovaHT[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:74</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_ac2ea1dc35b7e3b2acf2b94717711bf5b"><div class="ttname"><a href="class_output_m_i_d_i.html#ac2ea1dc35b7e3b2acf2b94717711bf5b">OutputMIDI::_outputPinMIDI</a></div><div class="ttdeci">int _outputPinMIDI</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:23</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_ac977be9dc58f2d7210426c8cb1216f73"><div class="ttname"><a href="class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73">OutputMIDI::noteClosedHiHat</a></div><div class="ttdeci">byte noteClosedHiHat</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:41</div></div>
 <div class="ttc" id="aclass_output_m_i_d_i_html_adc9e292351d62ca7a88d888a104bb6f1"><div class="ttname"><a href="class_output_m_i_d_i.html#adc9e292351d62ca7a88d888a104bb6f1">OutputMIDI::setupSerialMIDI</a></div><div class="ttdeci">void setupSerialMIDI()</div><div class="ttdef"><b>Definition:</b> OutputMIDI.cpp:29</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_ae8d240db94c665f85d9c0266cc6ef949"><div class="ttname"><a href="class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949">OutputMIDI::noteBassDrum</a></div><div class="ttdeci">byte noteBassDrum</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:39</div></div>
+<div class="ttc" id="aclass_output_m_i_d_i_html_af480eca9fc0631454a98e05a0387c916"><div class="ttname"><a href="class_output_m_i_d_i.html#af480eca9fc0631454a98e05a0387c916">OutputMIDI::bossanovaCH</a></div><div class="ttdeci">byte bossanovaCH[]</div><div class="ttdef"><b>Definition:</b> OutputMIDI.h:68</div></div>
 <div class="ttc" id="ahello__midi_8ino_html_a45329bedfdd76f14b24f360555663f54"><div class="ttname"><a href="hello__midi_8ino.html#a45329bedfdd76f14b24f360555663f54">midiVelocity</a></div><div class="ttdeci">int midiVelocity</div><div class="ttdef"><b>Definition:</b> hello_midi.ino:19</div></div>
 <div class="ttc" id="ahello__midi_8ino_html_aa7d9728ac8a774a923e79270f3663b14"><div class="ttname"><a href="hello__midi_8ino.html#aa7d9728ac8a774a923e79270f3663b14">midiChannel</a></div><div class="ttdeci">int midiChannel</div><div class="ttdef"><b>Definition:</b> hello_midi.ino:18</div></div>
 </div><!-- fragment --></div><!-- contents -->

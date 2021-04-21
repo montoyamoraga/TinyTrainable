@@ -10,6 +10,9 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
+// TODO: include MIDIPatterns.h
+// #include "MIDIPatterns.h"
+
 class OutputMIDI : public Output {
 
 public:
@@ -48,90 +51,6 @@ public:
   int currentGenre = 2;
 
   int tempoDelay = 100;
-
-
-
-
-  // drum patterns
-  byte bossanovaBD[] = {1, 0, 0, 0,
-                      0, 0, 1, 0,
-                      1, 0, 0, 0,
-                      0, 0, 1, 0
-                     };
-
-byte bossanovaSN[] = {1, 0, 0, 0,
-                      0, 0, 1, 0,
-                      0, 0, 0, 0,
-                      1, 0, 0, 0
-                     };
-
-byte bossanovaCH[] = {1, 0, 1, 0,
-                      1, 0, 1, 0,
-                      1, 0, 1, 0,
-                      1, 0, 1, 0
-                     };
-
-byte bossanovaHT[] = {0, 0, 0, 0,
-                      0, 0, 0, 0,
-                      0, 0, 0, 0,
-                      0, 0, 0, 0
-                     };
-
-byte chachaBD[] = {1, 0, 0, 0,
-                   0, 0, 1, 0,
-                   1, 0, 0, 0,
-                   0, 0, 1, 0
-                  };
-
-
-byte chachaSN[] = {0, 0, 0, 0,
-                   0, 0, 0, 0,
-                   0, 0, 0, 0,
-                   1, 0, 1, 0
-                  };
-
-
-byte chachaCH[] = {0, 0, 0, 0,
-                   1, 0, 0, 0,
-                   0, 0, 0, 0,
-                   1, 0, 0, 0
-                  };
-
-
-byte chachaHT[] = {0, 0, 1, 0,
-                   0, 0, 1, 0,
-                   0, 0, 0, 0,
-                   0, 0, 0, 0
-                  };
-
-
-
-byte sambaBD[] = {1, 0, 0, 1,
-                  1, 0, 0, 1,
-                  1, 0, 0, 1,
-                  1, 0, 0, 1
-                 };
-
-
-byte sambaSN[] = {0, 0, 0, 0,
-                  0, 0, 0, 0,
-                  0, 0, 0, 1,
-                  0, 0, 0, 0
-                 };
-
-
-byte sambaCH[] = {0, 1, 1, 0,
-                  0, 1, 1, 0,
-                  0, 1, 1, 0,
-                  0, 1, 1, 0
-                 };
-
-
-byte sambaHT[] = {1, 0, 0, 0,
-                  1, 0, 0, 0,
-                  1, 0, 0, 0,
-                  1, 0, 0, 0
-                 };
 
 };
 

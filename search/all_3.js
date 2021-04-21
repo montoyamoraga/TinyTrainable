@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['chachabd_52',['chachaBD',['../class_output_m_i_d_i.html#a18c4cbcd5610925724551e0d428000ee',1,'OutputMIDI']]],
-  ['chachach_53',['chachaCH',['../class_output_m_i_d_i.html#a197c189357d8335838df62cc5a3f3504',1,'OutputMIDI']]],
-  ['chachaht_54',['chachaHT',['../class_output_m_i_d_i.html#a709ff5b210f096ad6aab58350e4f5077',1,'OutputMIDI']]],
-  ['chachasn_55',['chachaSN',['../class_output_m_i_d_i.html#a240c95db3473199833ea7b260bef76f7',1,'OutputMIDI']]],
+  ['chachabd_52',['chachaBD',['../_m_i_d_i_patterns_8h.html#a37c19fda06cbf6d8b265031b6b511827',1,'MIDIPatterns.h']]],
+  ['chachach_53',['chachaCH',['../_m_i_d_i_patterns_8h.html#a7d2b1cdb0a7feaec3a380cafc9f2899b',1,'MIDIPatterns.h']]],
+  ['chachaht_54',['chachaHT',['../_m_i_d_i_patterns_8h.html#a7d0dc889b8cea7dd80968842209e00f9',1,'MIDIPatterns.h']]],
+  ['chachasn_55',['chachaSN',['../_m_i_d_i_patterns_8h.html#a56b387ace57cc9902943fad825196ae7',1,'MIDIPatterns.h']]],
   ['classify_56',['classify',['../class_input_gesture.html#aa4d9efdef2131610f9478ed225318452',1,'InputGesture']]],
   ['color_5fbuzzer_2eino_57',['color_buzzer.ino',['../color__buzzer_8ino.html',1,'']]],
   ['color_5fled_2eino_58',['color_led.ino',['../color__led_8ino.html',1,'']]],

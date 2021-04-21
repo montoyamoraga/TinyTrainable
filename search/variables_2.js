@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['bossanovabd_368',['bossanovaBD',['../class_output_m_i_d_i.html#a9d22ba5645e21c488e916399b306e9c4',1,'OutputMIDI']]],
-  ['bossanovach_369',['bossanovaCH',['../class_output_m_i_d_i.html#af480eca9fc0631454a98e05a0387c916',1,'OutputMIDI']]],
-  ['bossanovaht_370',['bossanovaHT',['../class_output_m_i_d_i.html#aa328bedbe3c1a3c1c73581d9a71dbddd',1,'OutputMIDI']]],
-  ['bossanovasn_371',['bossanovaSN',['../class_output_m_i_d_i.html#a8cb715c226bf5aa8311162d966f6ef6e',1,'OutputMIDI']]]
+  ['bossanovabd_370',['bossanovaBD',['../_m_i_d_i_patterns_8h.html#a71a3fcfa44b79d164682c9d7ef195714',1,'MIDIPatterns.h']]],
+  ['bossanovach_371',['bossanovaCH',['../_m_i_d_i_patterns_8h.html#aa08d8b1c071b23e0d884b374bb68945a',1,'MIDIPatterns.h']]],
+  ['bossanovaht_372',['bossanovaHT',['../_m_i_d_i_patterns_8h.html#a6bd7d3e00e676c96ed0cba9dcbc8d4ae',1,'MIDIPatterns.h']]],
+  ['bossanovasn_373',['bossanovaSN',['../_m_i_d_i_patterns_8h.html#aac1ee973c16c25701285d711d81120a8',1,'MIDIPatterns.h']]]
 ];

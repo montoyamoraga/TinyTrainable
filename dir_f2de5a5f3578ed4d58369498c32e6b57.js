@@ -1,5 +1,6 @@
 var dir_f2de5a5f3578ed4d58369498c32e6b57 =
 [
+    [ "MIDIPatterns.h", "_m_i_d_i_patterns_8h.html", "_m_i_d_i_patterns_8h" ],
     [ "Output.cpp", "_output_8cpp.html", null ],
     [ "Output.h", "_output_8h.html", [
       [ "Output", "class_output.html", "class_output" ]

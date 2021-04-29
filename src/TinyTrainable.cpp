@@ -289,7 +289,7 @@ void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
 // functions for output LED
 void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
   if (myOutput != nullptr) {
-
+    myOutput->setupOutputLED(outputPin0, outputPin1, outputPin2);
   }
 }
 
@@ -302,6 +302,12 @@ void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
 void TinyTrainable::setMIDINote(int object, int note){
     if (myOutput != nullptr) {
     myOutput->setMIDINote(object, note);
+  }
+}
+
+void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity){
+  if (myOutput != nullptr) {
+    myOutput->sendSerialMIDINote(channel, note, velocity);
   }
 }
 

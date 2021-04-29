@@ -3,6 +3,8 @@
 ################################
 
 TinyTrainable		KEYWORD1
+Input			KEYWORD1
+Output			KEYWORD1
 
 ################################
 # Methods and functions
@@ -28,16 +30,20 @@ setBuzzerPin		KEYWORD2
 setBuzzerFrequency	KEYWORD2
 setBuzzerDuration	KEYWORD2
 
+# output LED
+setupOutputLED		KEYWORD2
+
+# output servo
 setupOutputServo	KEYWORD2
 setServoTempo		KEYWORD2
 
 setupInstrument		KEYWORD2
+
+# color
 trainKNN		KEYWORD2
 identify		KEYWORD2
 setLabels		KEYWORD2
-
 readColor		KEYWORD2
-checkInst0Setup		KEYWORD2
 -myKNN			KEYWORD2
 _previousClassification	KEYWORD2
 _labels			KEYWORD2
@@ -46,19 +52,18 @@ _colorThreshold		KEYWORD2
 _colorReading		KEYWORD2
 _checkedSetup		KEYWORD2
 
-print1			KEYWORD2
-
 ################################
 # Constants
 ################################
 
+# colors
 red			LITERAL1
 green			LITERAL1
 blue			LITERAL1
 yellow			LITERAL1
 magenta			LITERAL1
 cyan			LITERAL1
-OutputMode		LITERAL1
+
 outputBuzzer		LITERAL1
 outputLCD		LITERAL1
 outputLED		LITERAL1
@@ -66,6 +71,8 @@ outputMIDI		LITERAL1
 outputPrinter		LITERAL1
 outputSerialUSB		LITERAL1
 outputServo		LITERAL1
+
+# output servo
 _servo			LITERAL1
 _servoAngles		LITERAL1
 _servoAngleCurrent	LITERAL1

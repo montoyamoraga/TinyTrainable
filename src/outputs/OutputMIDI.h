@@ -10,6 +10,9 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
+// TODO: include MIDIPatterns.h
+// #include "MIDIPatterns.h"
+
 class OutputMIDI : public Output {
 
 public:
@@ -30,7 +33,24 @@ public:
 
   virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity) override;
   virtual void setMIDINote(int object, int note) override;
+  virtual void sendSerialMIDINote(byte channel, byte note, byte velocity) override;
   void setupSerialMIDI();
+
+  // TODO: in progress
+
+  // notes for volca beats
+  byte noteBassDrum = 36;
+  byte noteSnare = 38;
+  byte noteClosedHiHat = 42;
+  byte noteHiTom = 50;
+
+  int currentStep = 0;
+  int totalSteps = 16;
+
+  // 0 - bossanova, 1 - chacha, 2 - samba
+  int currentGenre = 2;
+
+  int tempoDelay = 100;
 
 };
 

@@ -8,13 +8,11 @@
 // include TinyTrainable library
 #include <TinyTrainable.h>
 
-// declare instance of input
-Input myInput;
-// declare instance of output
-OutputLED myOutput;
-
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(new Input(), new OutputLED());
+
+// constant for debugging
+const bool tinyDebugging = true;
 
 // constants for the hardware
 const int outputPinLED0 = 3;
@@ -24,6 +22,9 @@ const int outputPinLED2 = 5;
 const int pauseTime = 2000;
 
 void setup() {
+
+  myTiny.setupInstrument(tinyDebugging);
+  
   myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
 }
 

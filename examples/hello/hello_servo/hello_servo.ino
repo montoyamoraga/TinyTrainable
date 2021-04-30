@@ -30,14 +30,14 @@ void setup() {
   myTiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
 
   // set the tempo (in bpm) for each object
-  //  myTiny.setServoTempo(0, 60);
-  //  myTiny.setServoTempo(1, 90);
-  //  myTiny.setServoTempo(2, 120);
+  myTiny.setServoTempo(0, 60);
+  myTiny.setServoTempo(1, 90);
+  myTiny.setServoTempo(2, 120);
 }
 
 void loop() {
   // to see the different tempos, try each output
-  //  myTiny.playOutput(0);
-  // myTiny.playOutput(1);
-  // myTiny.playOutput(2);
+  myTiny.playOutput(0);
+//  myTiny.playOutput(1);
+//  myTiny.playOutput(2);
 }

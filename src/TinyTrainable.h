@@ -108,6 +108,7 @@ public:
   void setupLEDs();
 
   // methods for input gesture
+  void setupTF(String gestures[3], float accelerationThreshold, int numSamples);
 
   // methods for input speech
 

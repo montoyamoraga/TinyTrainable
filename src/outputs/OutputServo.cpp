@@ -60,7 +60,7 @@ void OutputServo::moveServo(int classification) {
 void OutputServo::servoAttach() {
   if (!_isAttached) {
     _isAttached = true;
-    _servo.servoAttach(_outputPinServo);
+    _servo.attach(_outputPinServo);
     digitalWrite(LED_BUILTIN, HIGH);
   }
 }
@@ -68,7 +68,7 @@ void OutputServo::servoAttach() {
 void OutputServo::servoDetach() {
   if (_isAttached) {
     _isAttached = false;
-    _servo.servoDetach();
+    _servo.attach();
     digitalWrite(LED_BUILTIN, LOW);
   }
 }

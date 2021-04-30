@@ -33,5 +33,5 @@ void loop() {
   // to test the different tempos, try each output
   //  myTiny.playOutput(0);
   myTiny.playOutput(1);
-  //       myTiny.playOutput(2);
+  // myTiny.playOutput(2);
 }

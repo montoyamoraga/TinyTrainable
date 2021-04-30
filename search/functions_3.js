@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['getbuzzerparam_288',['getBuzzerParam',['../class_output.html#abb9889b3390ba99f804768e3beea1f5d',1,'Output::getBuzzerParam()'],['../class_output_buzzer.html#ae6b52d0c46b7c29864b9055925c6b31e',1,'OutputBuzzer::getBuzzerParam()'],['../class_tiny_trainable.html#a741453d6d3a1235b556614f92f406e76',1,'TinyTrainable::getBuzzerParam()']]]
+  ['debugprint_290',['debugPrint',['../class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5',1,'TinyTrainable']]],
+  ['detach_291',['detach',['../class_output_servo.html#a077c14e255054ed28340261cdbb0c609',1,'OutputServo']]]
 ];

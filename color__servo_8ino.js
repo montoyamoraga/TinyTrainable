@@ -10,8 +10,6 @@ var color__servo_8ino =
     [ "K", "color__servo_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd", null ],
     [ "objectNames", "color__servo_8ino.html#adf25b5914c66865f4848a631bb806907", null ],
     [ "outputPin", "color__servo_8ino.html#a34372894b2bb3820036f766b11588371", null ],
-    [ "servoAngleMax", "color__servo_8ino.html#a300cc282ed738291c8c1aa2abf566561", null ],
-    [ "servoAngleMin", "color__servo_8ino.html#a51e123641c0c2292b255b9829aefe086", null ],
     [ "tempo0", "color__servo_8ino.html#acc130dd9d305dd4b07c94d7ea41681e6", null ],
     [ "tempo1", "color__servo_8ino.html#a8186b0f103051e58827c3d196184b741", null ],
     [ "tempo2", "color__servo_8ino.html#ae0eb58e96d058e283d6f8e81f3e46eea", null ],

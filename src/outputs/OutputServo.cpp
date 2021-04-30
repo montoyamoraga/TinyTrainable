@@ -46,29 +46,29 @@ void OutputServo::moveServo(int classification) {
     // update _servoTimePrevious
     _servoTimePrevious = _servoTimeNow;
     if (isPaused) {
-      attach();
+      servoAttach();
     }
     _servo.write(angle);
     _servoAngleCurrent = angle;
   } else {
     if (isPaused && _servoTimeNow - _servoTimePrevious >= _servoMoveDuration) {
-      detach();
+      servoDetach();
     }
   }
 }
 
-void OutputServo::attach() {
+void OutputServo::servoAttach() {
   if (!_isAttached) {
     _isAttached = true;
-    _servo.attach(_outputPinServo);
+    _servo.servoAttach(_outputPinServo);
     digitalWrite(LED_BUILTIN, HIGH);
   }
 }
 
-void OutputServo::detach() {
+void OutputServo::servoDetach() {
   if (_isAttached) {
     _isAttached = false;
-    _servo.detach();
+    _servo.servoDetach();
     digitalWrite(LED_BUILTIN, LOW);
   }
 }

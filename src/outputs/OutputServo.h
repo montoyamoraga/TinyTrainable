@@ -55,8 +55,8 @@ private:
   unsigned long _servoMoveDuration = 150;
 
   bool _isAttached = false;
-  void attach();
-  void detach();
+  void servoAttach();
+  void servoDetach();
 };
 
 #endif

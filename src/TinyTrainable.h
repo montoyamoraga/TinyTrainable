@@ -29,9 +29,9 @@
 
 // conditionally include output libraries
 
-// #ifdef OUTPUT_BUZZER
+#ifdef OUTPUT_BUZZER
 #include "outputs/OutputBuzzer.h"
-// #endif
+#endif
 
 #ifdef OUTPUT_LCD
 #include "outputs/OutputLCD.h"

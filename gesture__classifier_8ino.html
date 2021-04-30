@@ -103,7 +103,6 @@ $(document).ready(function(){initNavTree('gesture__classifier_8ino.html',''); in
 <p>input gesture with output classifier?  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="_tiny_trainable_8h_source.html">TinyTrainable.h</a>&gt;</code><br />
-<code>#include &quot;../assets/modelGesture.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
@@ -114,8 +113,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6a903736b20cca18da3516c1ba667de4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gesture__classifier_8ino.html#a6a903736b20cca18da3516c1ba667de4">myTiny</a> (new <a class="el" href="class_input_gesture.html">InputGesture</a>(), new <a class="el" href="class_output.html">Output</a>())</td></tr>
-<tr class="separator:a6a903736b20cca18da3516c1ba667de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fa0d773a0b88dadaaec4884b171a23f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gesture__classifier_8ino.html#a1fa0d773a0b88dadaaec4884b171a23f">myTiny</a> (new <a class="el" href="class_input_gesture.html">InputGesture</a>(), new <a class="el" href="class_output_serial.html">OutputSerial</a>())</td></tr>
+<tr class="separator:a1fa0d773a0b88dadaaec4884b171a23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gesture__classifier_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gesture__classifier_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
@@ -123,8 +122,6 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a5a7021718dc934bdde5aed1b2503d39a"><td class="memItemLeft" align="right" valign="top">Inst1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gesture__classifier_8ino.html#a5a7021718dc934bdde5aed1b2503d39a">tiny</a></td></tr>
-<tr class="separator:a5a7021718dc934bdde5aed1b2503d39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a128d9c651abe6ce6229d846d4dcb7490"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gesture__classifier_8ino.html#a128d9c651abe6ce6229d846d4dcb7490">accelerationThreshold</a> = 2.5</td></tr>
 <tr class="separator:a128d9c651abe6ce6229d846d4dcb7490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e69593c0b3936427c48a2929a462cb2"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gesture__classifier_8ino.html#a6e69593c0b3936427c48a2929a462cb2">numSamples</a> = 119</td></tr>
@@ -181,8 +178,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6a903736b20cca18da3516c1ba667de4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a903736b20cca18da3516c1ba667de4">&#9670;&nbsp;</a></span>myTiny()</h2>
+<a id="a1fa0d773a0b88dadaaec4884b171a23f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fa0d773a0b88dadaaec4884b171a23f">&#9670;&nbsp;</a></span>myTiny()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +194,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">new &#160;</td>
-          <td class="paramname"><em>Output</em>()&#160;</td>
+          <td class="paramname"><em>OutputSerial</em>()&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -263,20 +260,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const int numSamples = 119</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5a7021718dc934bdde5aed1b2503d39a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a7021718dc934bdde5aed1b2503d39a">&#9670;&nbsp;</a></span>tiny</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Inst1 tiny</td>
         </tr>
       </table>
 </div><div class="memdoc">

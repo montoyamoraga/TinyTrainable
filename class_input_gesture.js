@@ -1,13 +1,27 @@
 var class_input_gesture =
 [
     [ "InputGesture", "class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7", null ],
-    [ "classify", "class_input_gesture.html#aa4d9efdef2131610f9478ed225318452", null ],
     [ "identify", "class_input_gesture.html#ac8501aeb68dd5bb1ddef33a611bdf28e", null ],
-    [ "setupGestures", "class_input_gesture.html#a97ddc7d94851243a1e968b43da982ed3", null ],
     [ "setupInstrument", "class_input_gesture.html#adae4270bd67513d7762b694f9b14d810", null ],
     [ "setupSensorLSM9DS1", "class_input_gesture.html#aba1b7e2869b0ba9fe8dc518eb3542a28", null ],
-    [ "setupTF", "class_input_gesture.html#a44831afa579de58fcf9f5e08d994ed24", null ],
+    [ "setupTF", "class_input_gesture.html#a6042e6ee64305ebe5940336430502c6f", null ],
+    [ "_accelerationThreshold", "class_input_gesture.html#a6063dc3a2d3d65d54dd3cd3da4985e73", null ],
     [ "_gestures", "class_input_gesture.html#a2f37974235dd25693db1b0c838dba32c", null ],
-    [ "_labels", "class_input_gesture.html#a3dc96f14bed2662c87fe05ef953e54ff", null ],
-    [ "_previousClassification", "class_input_gesture.html#aa392859ce88c44d914e5bfdb4de554aa", null ]
+    [ "_numSamples", "class_input_gesture.html#abc5fb59ae372e75d0054fb3377c345cc", null ],
+    [ "_samplesRead", "class_input_gesture.html#ab13afbdffd6ee0fc55d38414a35eee08", null ],
+    [ "aX", "class_input_gesture.html#a9b7ddae31b14cceecfc16faa7d8fe886", null ],
+    [ "aY", "class_input_gesture.html#a84678c7ee168029a8b02a62d9ed78a8b", null ],
+    [ "aZ", "class_input_gesture.html#a155f3ae08c6a7115d28707e22e06fa5b", null ],
+    [ "gX", "class_input_gesture.html#a81fd3293a04eccb974483cbc6d9ebf7d", null ],
+    [ "gY", "class_input_gesture.html#a0582e9889a229f47a8e636e0dc710a54", null ],
+    [ "gZ", "class_input_gesture.html#a44dd96d11b254de4aa1d499337353266", null ],
+    [ "NUM_GESTURES", "class_input_gesture.html#ae790af1be216de1db98c89be507f8324", null ],
+    [ "tensorArena", "class_input_gesture.html#a2aee45ecfbf2f81107698b6da09b09ed", null ],
+    [ "tensorArenaSize", "class_input_gesture.html#a8ab899e4ab366f9d02e325478df93431", null ],
+    [ "tflErrorReporter", "class_input_gesture.html#a96efeb89d29f889bf70a3ab959ed2f4f", null ],
+    [ "tflInputTensor", "class_input_gesture.html#a1ac7fe19592e0b05c4b0c3b78540a6b6", null ],
+    [ "tflInterpreter", "class_input_gesture.html#a5ddc443f28d93808fcbbd0b15acf8d40", null ],
+    [ "tflModel", "class_input_gesture.html#abd5f1afde1dd88c4982702209ce5ed1e", null ],
+    [ "tflOpsResolver", "class_input_gesture.html#adce3b40c42e82a4e878d230d744d5e12", null ],
+    [ "tflOutputTensor", "class_input_gesture.html#ac83068218bb7d60da67c172c9cf9f42d", null ]
 ];

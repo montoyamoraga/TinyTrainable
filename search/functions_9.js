@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['playoutput_308',['playOutput',['../class_output.html#aae2893cf36fe5cf20342211c24b66a03',1,'Output::playOutput()'],['../class_output_buzzer.html#a2f14ce14e7d708de648f2ee6bba43288',1,'OutputBuzzer::playOutput()'],['../class_output_l_c_d.html#a5f4d1d8a2c9ac8ae59446bb690673015',1,'OutputLCD::playOutput()'],['../class_output_l_e_d.html#aef133c10ffb482917535da5a96349699',1,'OutputLED::playOutput()'],['../class_output_m_i_d_i.html#a02d256596db93c019d280d5cd4a67720',1,'OutputMIDI::playOutput()'],['../class_output_printer.html#a3e58596d0b67836df9c6b1bbb9e6d10d',1,'OutputPrinter::playOutput()'],['../class_output_serial.html#a91629948d38d12ddd689e80f1c85b0ed',1,'OutputSerial::playOutput()'],['../class_output_servo.html#a530f50db199a433a191f34abffcc4151',1,'OutputServo::playOutput()'],['../class_tiny_trainable.html#a6897144d519d0d19c8c3835bf4e27dab',1,'TinyTrainable::playOutput()']]]
+  ['readcolor_309',['readColor',['../class_input_color.html#a6b003d0c90cc42225c1af0d1073ccf8f',1,'InputColor']]]
 ];

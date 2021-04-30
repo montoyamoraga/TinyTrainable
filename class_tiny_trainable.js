@@ -31,6 +31,7 @@ var class_tiny_trainable =
     [ "setupOutputMIDI", "class_tiny_trainable.html#a954bc3a07665dce27ad5f367460e2a63", null ],
     [ "setupOutputSerial", "class_tiny_trainable.html#a4f204f966081bdb1102f723887a19f87", null ],
     [ "setupOutputServo", "class_tiny_trainable.html#a52457f3b81acd2e07ff3de3d8b28c404", null ],
+    [ "setupTF", "class_tiny_trainable.html#a8aa95cfcb916043bde79507b1fba89ff", null ],
     [ "trainKNN", "class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f", null ],
     [ "_baudRate", "class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d", null ],
     [ "_outputPinTest", "class_tiny_trainable.html#ab956c2a85c55680e41c0b53aceb62519", null ],

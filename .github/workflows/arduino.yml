@@ -42,3 +42,4 @@ jobs:
           - name: Arduino_LSM9DS1
           - name: Servo
           - name: Adafruit Thermal Printer Library
+          - name: Arduino_TensorFlowLite

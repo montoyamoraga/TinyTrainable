@@ -1,21 +1,14 @@
 /// @file hello_servo.ino
-/// @brief Test output with servo
+/// @brief test output servo
 
 // define input and output
 #define INPUT_NONE
 #define OUTPUT_SERVO
 
-// include TinyTrainable library
+// include library TinyTrainable 
 #include <TinyTrainable.h>
 
-// declare instance of input
-// Input myInput;
-// declare instance of output
-// OutputServo myOutput;
-
 // declare instance of a TinyTrainable instrument
-// TinyTrainable myTiny(myInput, myOutput);
-// polymorphism
 TinyTrainable myTiny(new Input(), new OutputServo());
 
 const int outputPin = 9;

@@ -50,6 +50,12 @@ void TinyTrainable::setupInstrument(bool serialDebugging) {
   }
 };
 
+void TinyTrainable::identify() {
+  if (myInput != nullptr) {
+    myInput->identify();
+  }
+}
+
 void TinyTrainable::playOutput(int classification) {
   if (myOutput != nullptr) {
     myOutput->playOutput(classification);
@@ -64,9 +70,11 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
   }
 };
 
-void TinyTrainable::identify() {
+// methods for input gesture
+void TinyTrainable::setupTF(String gestures[3], float accelerationThreshold,
+                             int numSamples) {
   if (myInput != nullptr) {
-    myInput->identify();
+    myInput->setupTF(gestures, accelerationThreshold, numSamples);
   }
 }
 

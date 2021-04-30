@@ -68,7 +68,7 @@ void OutputServo::servoAttach() {
 void OutputServo::servoDetach() {
   if (_isAttached) {
     _isAttached = false;
-    _servo.attach();
+    _servo.detach();
     digitalWrite(LED_BUILTIN, LOW);
   }
 }

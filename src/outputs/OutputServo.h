@@ -48,7 +48,7 @@ private:
   int _servoAngleMin = 0;
   int _servoAngleMax = 180;
   unsigned long _servoPauses[3];
-  
+
   unsigned long _servoTimePrevious = 0;
   unsigned long _servoTimeNow = 0;
 
@@ -57,7 +57,6 @@ private:
   bool _isAttached = false;
   void attach();
   void detach();
-
 };
 
 #endif

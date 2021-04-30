@@ -24,7 +24,7 @@ const int pauseTime = 2000;
 void setup() {
 
   myTiny.setupInstrument(tinyDebugging);
-  
+
   myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
 }
 

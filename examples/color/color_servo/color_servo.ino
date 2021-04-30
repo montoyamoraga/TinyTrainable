@@ -16,7 +16,7 @@ const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
 const float COLOR_THRESHOLD = 0.5;
 
-//String objectNames[3] = {"Object0", "Object1", "Object2"};
+// String objectNames[3] = {"Object0", "Object1", "Object2"};
 String objectNames[3] = {"avocado", "orange", "towel"};
 
 // our servo moves between the minimum and maximum angles

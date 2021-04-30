@@ -10,7 +10,6 @@ class TinyTrainable;
 
 class Output {
 public:
-
   // methods for output
   virtual void playOutput(int classification) {}
 
@@ -40,18 +39,17 @@ public:
   virtual void setupOutputSerial() {}
 
   // functions for output servo
- virtual void setupOutputServo(int outputPin) {}
-virtual void setServoTempo(int object, int tempo) {}
-virtual int bpmToMs(int tempo) {return 0;}
-virtual  void setServoMaxAngle(int angle) {}
- virtual void setServoMinAngle(int angle) {}
- virtual int getServoMaxAngle() {return 0;}
- virtual int getServoMinAngle() {return 0;}
-virtual void moveServo(int classification) {}
+  virtual void setupOutputServo(int outputPin) {}
+  virtual void setServoTempo(int object, int tempo) {}
+  virtual int bpmToMs(int tempo) { return 0; }
+  virtual void setServoMaxAngle(int angle) {}
+  virtual void setServoMinAngle(int angle) {}
+  virtual int getServoMaxAngle() { return 0; }
+  virtual int getServoMinAngle() { return 0; }
+  virtual void moveServo(int classification) {}
 
-// protected:
+  // protected:
   TinyTrainable *tiny = nullptr;
-
 };
 
 #endif

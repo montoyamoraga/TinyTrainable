@@ -23,8 +23,8 @@ public:
   int _outputPinsLED[3];
 
   // methods for LED
-  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2) override;
-  
+  virtual void setupOutputLED(int outputPin0, int outputPin1,
+                              int outputPin2) override;
 };
 
 #endif

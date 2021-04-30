@@ -146,26 +146,24 @@ void InputColor::identify() {
   // }
 
   if (APDS.proximityAvailable() && APDS.readProximity() != 0) {
-  tiny->debugPrint("Let me guess your object");
+    tiny->debugPrint("Let me guess your object");
 
-  // wait for an object then read its color
-  readColor(_colorReading);
+    // wait for an object then read its color
+    readColor(_colorReading);
 
-  // classify the object
-  int classification = _myKNN.classify(_colorReading, _k);
+    // classify the object
+    int classification = _myKNN.classify(_colorReading, _k);
 
-  tiny->debugPrint("You showed me: " + _labels[classification]);
+    tiny->debugPrint("You showed me: " + _labels[classification]);
 
-  // turn on the corresponding light
-  tiny->setStateLEDRGB(true, Colors(classification));
+    // turn on the corresponding light
+    tiny->setStateLEDRGB(true, Colors(classification));
 
- 
-
-  // update previous classification
-  _previousClassification = classification;
+    // update previous classification
+    _previousClassification = classification;
   }
 
-   tiny->playOutput(_previousClassification);
+  tiny->playOutput(_previousClassification);
 
   // tiny->debugPrint("Let me guess your object");
 

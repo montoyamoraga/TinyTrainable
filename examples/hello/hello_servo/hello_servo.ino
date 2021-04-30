@@ -27,12 +27,11 @@ void setup() {
   myTiny.setServoTempo(0, tempo0);
   myTiny.setServoTempo(1, tempo1);
   myTiny.setServoTempo(2, tempo2);
-
 }
 
 void loop() {
   // to test the different tempos, try each output
-//  myTiny.playOutput(0);
-       myTiny.playOutput(1);
-//       myTiny.playOutput(2);
+  //  myTiny.playOutput(0);
+  myTiny.playOutput(1);
+  //       myTiny.playOutput(2);
 }

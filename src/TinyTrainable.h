@@ -141,7 +141,7 @@ public:
 
   // declaration of virtual functions for output serial
   void setupOutputSerial();
-  
+
   // declaration of functions for output servo
   void setupOutputServo(int outputPin);
   void setServoTempo(int object, int tempo);

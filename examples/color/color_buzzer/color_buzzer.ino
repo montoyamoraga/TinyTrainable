@@ -22,7 +22,7 @@ const int outputPin = 2;
 // constant for debugging
 const bool tinyDebugging = true;
 
-//String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+// String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 String objectNames[3] = {"avocado", "orange", "towel"};
 
 // arrays of frequencies

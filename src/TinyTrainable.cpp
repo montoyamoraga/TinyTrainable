@@ -287,7 +287,8 @@ void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
 }
 
 // functions for output LED
-void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
+void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
+                                   int outputPin2) {
   if (myOutput != nullptr) {
     myOutput->setupOutputLED(outputPin0, outputPin1, outputPin2);
   }
@@ -295,17 +296,17 @@ void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin
 
 // functions for output MIDI
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
-    if (myOutput != nullptr) {
+  if (myOutput != nullptr) {
     myOutput->setupOutputMIDI(midiChannel, midiVelocity);
   }
 }
-void TinyTrainable::setMIDINote(int object, int note){
-    if (myOutput != nullptr) {
+void TinyTrainable::setMIDINote(int object, int note) {
+  if (myOutput != nullptr) {
     myOutput->setMIDINote(object, note);
   }
 }
 
-void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity){
+void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   if (myOutput != nullptr) {
     myOutput->sendSerialMIDINote(channel, note, velocity);
   }
@@ -338,26 +339,25 @@ int TinyTrainable::bpmToMs(int tempo) {
 }
 
 void TinyTrainable::setServoMaxAngle(int angle) {
-   if (myOutput != nullptr) {
+  if (myOutput != nullptr) {
     myOutput->setServoMaxAngle(angle);
   }
 }
 
 void TinyTrainable::setServoMinAngle(int angle) {
-   if (myOutput != nullptr) {
+  if (myOutput != nullptr) {
     myOutput->setServoMinAngle(angle);
   }
 }
 
-
 int TinyTrainable::getServoMaxAngle() {
-   if (myOutput != nullptr) {
+  if (myOutput != nullptr) {
     return myOutput->getServoMaxAngle();
   }
 }
 
 int TinyTrainable::getServoMinAngle() {
-   if (myOutput != nullptr) {
+  if (myOutput != nullptr) {
     return myOutput->getServoMinAngle();
   }
 }

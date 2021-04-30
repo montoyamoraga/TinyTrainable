@@ -24,15 +24,17 @@ public:
   virtual void getBuzzerParam(int object, int buzzerParamArray[]) override;
   // for frequencies
   virtual void setBuzzerFrequency(int object, int frequency) override;
-  virtual void setBuzzerFrequency(int object, int freqMin, int freqMax) override;
+  virtual void setBuzzerFrequency(int object, int freqMin,
+                                  int freqMax) override;
   virtual void setBuzzerFrequency(int object, int *arrayFrequencies,
-                          int arrayFreqCount) override;
+                                  int arrayFreqCount) override;
 
   // for durations
   virtual void setBuzzerDuration(int object, int duration) override;
-  virtual void setBuzzerDuration(int object, int durationMin, int durationMax) override;
+  virtual void setBuzzerDuration(int object, int durationMin,
+                                 int durationMax) override;
   virtual void setBuzzerDuration(int object, int *arrayDurations,
-                         int arrayDurationCount) override;
+                                 int arrayDurationCount) override;
 
   // methods and variables for outputBuzzer
   int _outputPinBuzzer = -1;

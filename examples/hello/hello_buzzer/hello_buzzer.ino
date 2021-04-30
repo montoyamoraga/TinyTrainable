@@ -59,15 +59,15 @@ void setup() {
 
   // 0.
 
-//  myTiny.setBuzzerDuration(0, 300);
-//  myTiny.setBuzzerDuration(1, 600);
-//  myTiny.setBuzzerDuration(2, 900);
+  //  myTiny.setBuzzerDuration(0, 300);
+  //  myTiny.setBuzzerDuration(1, 600);
+  //  myTiny.setBuzzerDuration(2, 900);
 
   // 1.
 
-   myTiny.setBuzzerDuration(0, 1000, 2000);
-   myTiny.setBuzzerDuration(1, 2000, 3000);
-   myTiny.setBuzzerDuration(2, 3000, 4000);
+  myTiny.setBuzzerDuration(0, 1000, 2000);
+  myTiny.setBuzzerDuration(1, 2000, 3000);
+  myTiny.setBuzzerDuration(2, 3000, 4000);
 
   // 2. (using the same arrays as above because the numbers also work in ms!)
 

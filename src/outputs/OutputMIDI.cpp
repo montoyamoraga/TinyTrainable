@@ -5,7 +5,8 @@ OutputMIDI::OutputMIDI() {}
 
 // methods for TinyTrainable
 void OutputMIDI::playOutput(int classification) {
-  // sendSerialMIDINote(_midiChannel, _midiNotes[classification], _midiVelocity);
+  // sendSerialMIDINote(_midiChannel, _midiNotes[classification],
+  // _midiVelocity);
 }
 
 void OutputMIDI::sendSerialMIDINote(byte channel, byte note, byte velocity) {

@@ -5,10 +5,10 @@
 OutputServo::OutputServo() {}
 
 // methods for TinyTrainable
-void OutputServo::playOutput(int classification) { 
+void OutputServo::playOutput(int classification) {
   // move the servo
   moveServo(classification);
-  }
+}
 
 void OutputServo::setupOutputServo(int outputPin) {
 
@@ -26,53 +26,50 @@ void OutputServo::setupOutputServo(int outputPin) {
   for (int i = 0; i < 3; i++) {
     _servoPauses[i] = 1000;
   }
-
 }
 
 void OutputServo::setServoTempo(int object, int tempo) {
-  _servoPauses[object] = bpmToMs(tempo)  - _servoMoveDuration;
+  _servoPauses[object] = bpmToMs(tempo) - _servoMoveDuration;
 }
 
 void OutputServo::moveServo(int classification) {
   unsigned long servoPause = _servoPauses[classification];
 
-      // update current time
+  // update current time
   _servoTimeNow = millis();
 
   bool isPaused = _servoAngleCurrent == _servoAngleMin;
   // if enough time has passed
   if ((isPaused && _servoTimeNow - _servoTimePrevious >= servoPause) ||
-    (!isPaused && _servoTimeNow - _servoTimePrevious >= _servoMoveDuration)
-  ) {
+      (!isPaused && _servoTimeNow - _servoTimePrevious >= _servoMoveDuration)) {
     int angle = isPaused ? _servoAngleMax : _servoAngleMin;
     // update _servoTimePrevious
     _servoTimePrevious = _servoTimeNow;
-    if(isPaused){
+    if (isPaused) {
       attach();
     }
     _servo.write(angle);
     _servoAngleCurrent = angle;
-  }else{
-    if(isPaused && _servoTimeNow - _servoTimePrevious >= _servoMoveDuration){
+  } else {
+    if (isPaused && _servoTimeNow - _servoTimePrevious >= _servoMoveDuration) {
       detach();
     }
   }
- 
 }
 
-void OutputServo::attach(){
-  if(!_isAttached){
+void OutputServo::attach() {
+  if (!_isAttached) {
     _isAttached = true;
     _servo.attach(_outputPinServo);
-     digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(LED_BUILTIN, HIGH);
   }
 }
 
-void OutputServo::detach(){
-  if(_isAttached){
+void OutputServo::detach() {
+  if (_isAttached) {
     _isAttached = false;
     _servo.detach();
-     digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(LED_BUILTIN, LOW);
   }
 }
 
@@ -80,28 +77,19 @@ void OutputServo::detach(){
 int OutputServo::bpmToMs(int tempo) {
   // if tempo is valid, do it
   if (tempo > 0) {
-  int ms = 60000 / tempo;
-  // return result
-  return ms;
+    int ms = 60000 / tempo;
+    // return result
+    return ms;
   }
   // if not valid, make it really slow
   else {
     return 10000;
   }
-
 }
 
-void OutputServo::setServoMaxAngle(int angle) {
- _servoAngleMax = angle;
-}
+void OutputServo::setServoMaxAngle(int angle) { _servoAngleMax = angle; }
 
-void OutputServo::setServoMinAngle(int angle) {
-  _servoAngleMin = angle;
-}
+void OutputServo::setServoMinAngle(int angle) { _servoAngleMin = angle; }
 
-int OutputServo::getServoMaxAngle() {
-  return _servoAngleMax;
-}
-int OutputServo:: getServoMinAngle() {
-  return _servoAngleMin;
-}
+int OutputServo::getServoMaxAngle() { return _servoAngleMax; }
+int OutputServo::getServoMinAngle() { return _servoAngleMin; }

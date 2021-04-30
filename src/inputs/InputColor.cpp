@@ -142,9 +142,10 @@ void InputColor::identify() {
   // }
 
   // wait for the object to move away again
-  while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
-  }
+  // while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
+  // }
 
+  if (APDS.proximityAvailable() && APDS.readProximity() != 0) {
   tiny->debugPrint("Let me guess your object");
 
   // wait for an object then read its color
@@ -158,10 +159,31 @@ void InputColor::identify() {
   // turn on the corresponding light
   tiny->setStateLEDRGB(true, Colors(classification));
 
-  tiny->playOutput(classification);
+ 
 
   // update previous classification
   _previousClassification = classification;
+  }
+
+   tiny->playOutput(_previousClassification);
+
+  // tiny->debugPrint("Let me guess your object");
+
+  // // wait for an object then read its color
+  // readColor(_colorReading);
+
+  // // classify the object
+  // int classification = _myKNN.classify(_colorReading, _k);
+
+  // tiny->debugPrint("You showed me: " + _labels[classification]);
+
+  // // turn on the corresponding light
+  // tiny->setStateLEDRGB(true, Colors(classification));
+
+  // tiny->playOutput(classification);
+
+  // // update previous classification
+  // _previousClassification = classification;
 }
 
 // trains the KNN algorithm with examples provided by the user

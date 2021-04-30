@@ -319,9 +319,9 @@ void TinyTrainable::setupOutputSerial() {
 }
 
 // functions for output servo
-void TinyTrainable::setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {
+void TinyTrainable::setupOutputServo(int outputPin) {
   if (myOutput != nullptr) {
-    myOutput->setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+    myOutput->setupOutputServo(outputPin);
   }
 }
 
@@ -334,6 +334,31 @@ void TinyTrainable::setServoTempo(int object, int tempo) {
 int TinyTrainable::bpmToMs(int tempo) {
   if (myOutput != nullptr) {
     return myOutput->bpmToMs(tempo);
+  }
+}
+
+void TinyTrainable::setServoMaxAngle(int angle) {
+   if (myOutput != nullptr) {
+    myOutput->setServoMaxAngle(angle);
+  }
+}
+
+void TinyTrainable::setServoMinAngle(int angle) {
+   if (myOutput != nullptr) {
+    myOutput->setServoMinAngle(angle);
+  }
+}
+
+
+int TinyTrainable::getServoMaxAngle() {
+   if (myOutput != nullptr) {
+    return myOutput->getServoMaxAngle();
+  }
+}
+
+int TinyTrainable::getServoMinAngle() {
+   if (myOutput != nullptr) {
+    return myOutput->getServoMinAngle();
   }
 }
 

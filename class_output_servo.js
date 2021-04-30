@@ -1,13 +1,13 @@
 var class_output_servo =
 [
     [ "OutputServo", "class_output_servo.html#af975cfb4de7ed886b60f7a1bd86f2a45", null ],
-    [ "attach", "class_output_servo.html#aaa617b8af8fb3fabb9acd64f6e2e8ffc", null ],
     [ "bpmToMs", "class_output_servo.html#a92ceac2c924f28e78b4f9ff536715be6", null ],
-    [ "detach", "class_output_servo.html#a077c14e255054ed28340261cdbb0c609", null ],
     [ "getServoMaxAngle", "class_output_servo.html#a7fb991c760c9ec1eaad8316845185fb9", null ],
     [ "getServoMinAngle", "class_output_servo.html#a02482f61e88c52a3a3704cef6f537cf3", null ],
     [ "moveServo", "class_output_servo.html#a639326a4868f0f4b8781810af87f79ef", null ],
     [ "playOutput", "class_output_servo.html#a530f50db199a433a191f34abffcc4151", null ],
+    [ "servoAttach", "class_output_servo.html#a1d91697ee704b6a4162a86932e93e447", null ],
+    [ "servoDetach", "class_output_servo.html#a9e1e2f95b98189cfb255007542ff059c", null ],
     [ "setServoMaxAngle", "class_output_servo.html#a5231f654f352074c79f88d71b870f2c0", null ],
     [ "setServoMinAngle", "class_output_servo.html#a86b54a6ac78790d1e5946e243b3e3397", null ],
     [ "setServoTempo", "class_output_servo.html#a2712322a2f43d38a0322ef61f9fa8a87", null ],

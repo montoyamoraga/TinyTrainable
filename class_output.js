@@ -19,7 +19,7 @@ var class_output =
     [ "setServoTempo", "class_output.html#aa3b4422eae15e2fcd5acca4b2019bc3d", null ],
     [ "setupOutputBuzzer", "class_output.html#a01a51b0b1e7a886190ad65aca88dd2d6", null ],
     [ "setupOutputLED", "class_output.html#a596e8bec95b014264b6744f7ddd4992b", null ],
-    [ "setupOutputMIDI", "class_output.html#a8dfb248ec32f8a30caa8c40a149e8507", null ],
+    [ "setupOutputMIDI", "class_output.html#a77c6e46c0fe6c5c38a2bddf2122d936d", null ],
     [ "setupOutputSerial", "class_output.html#a9655bb53001fcb69bda6ae73362b5bf3", null ],
     [ "setupOutputServo", "class_output.html#ab8273486424d8569f160ac240c55a0ae", null ],
     [ "tiny", "class_output.html#a18489dcb8e45d4c199ece137e537f7c1", null ]

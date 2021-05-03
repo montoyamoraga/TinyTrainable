@@ -40,10 +40,10 @@ void loop() {
 
   // or directly send a command to your MIDI device!
   // these parameters can be different from those above
-  //  myTiny.sendSerialMIDINote(myChannel, 56, myVelocity);
-  //  delay(pauseTime);
-  //  myTiny.sendSerialMIDINote(myChannel, 49, myVelocity);
-  //  delay(pauseTime);
-  //  myTiny.sendSerialMIDINote(myChannel, 70, myVelocity);
-  //  delay(pauseTime);
+  myTiny.sendMIDINoteOn(myChannel, 56, myVelocity);
+  delay(pauseTime);
+  myTiny.sendMIDINoteOn(myChannel, 49, myVelocity);
+  delay(pauseTime);
+  myTiny.sendMIDINoteOn(myChannel, 70, myVelocity);
+  delay(pauseTime);
 }

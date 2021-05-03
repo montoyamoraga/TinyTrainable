@@ -9,7 +9,7 @@ void OutputMIDI::playOutput(int classification) {
   // _midiVelocity);
 }
 
-void OutputMIDI::sendSerialMIDINote(byte channel, byte note, byte velocity) {
+void OutputMIDI::sendMIDINoteOn(byte channel, byte note, byte velocity) {
   Serial1.write(143 + channel);
   Serial1.write(note);
   Serial1.write(velocity);

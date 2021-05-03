@@ -320,9 +320,9 @@ void TinyTrainable::setMIDINote(int object, int note) {
   }
 }
 
-void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
+void TinyTrainable::sendMIDINoteOn(byte channel, byte note, byte velocity) {
   if (myOutput != nullptr) {
-    myOutput->sendSerialMIDINote(channel, note, velocity);
+    myOutput->sendMIDINoteOn(channel, note, velocity);
   }
 }
 

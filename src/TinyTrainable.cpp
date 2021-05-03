@@ -255,6 +255,12 @@ void TinyTrainable::setupOutputBuzzer(int outputPin) {
   }
 }
 
+void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
+  if (myOutput != nullptr) {
+    myOutput->getBuzzerParam(object, buzzerParamArray);
+  }
+}
+
 void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
   if (myOutput != nullptr) {
     myOutput->setBuzzerFrequency(object, frequency);
@@ -303,9 +309,9 @@ void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
 }
 
 // functions for output MIDI
-void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
+void TinyTrainable::setupOutputMIDI(byte midiChannel) {
   if (myOutput != nullptr) {
-    myOutput->setupOutputMIDI(midiChannel, midiVelocity);
+    myOutput->setupOutputMIDI(midiChannel);
   }
 }
 void TinyTrainable::setMIDINote(int object, int note) {

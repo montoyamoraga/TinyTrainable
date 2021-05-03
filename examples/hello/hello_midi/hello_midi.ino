@@ -11,17 +11,17 @@
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(new Input(), new OutputMIDI());
 
-// MIDI sound numbers
-int MIDINotes[3] = {37, 38, 39};
+// MIDI note numbers
+int myNotes[3] = {37, 38, 39};
 
 // midi channel and velocity in decimal (not hex)
-int midiChannel = 10;
-int midiVelocity = 127;
+int myChannel = 10;
+int myVelocity = 127;
 
 int pauseTime = 1000;
 
 void setup() {
-  //  tiny.setupOutputMIDI(midiChannel, midiVelocity);
+    myTiny.setupOutputMIDI(myChannel);
 
   // set the MIDI note for each object
   //  tiny.setMIDINotes(0, MIDINotes[0]);

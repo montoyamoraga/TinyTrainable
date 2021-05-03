@@ -15,9 +15,11 @@ void OutputMIDI::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   Serial1.write(velocity);
 }
 
-void OutputMIDI::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
+void OutputMIDI::setupOutputMIDI(byte midiChannel) {
+  // setup the MIDI channel
   _midiChannel = midiChannel;
-  _midiVelocity = midiVelocity;
+  // setup the default MIDI velocity
+  _midiVelocity = 127;
 
   setupSerialMIDI();
 }

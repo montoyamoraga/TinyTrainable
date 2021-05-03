@@ -120,7 +120,7 @@ public:
 
   // declaration of functions for output buzzer
   void setupOutputBuzzer(int outputPin);
-  void getBuzzerParam(int object, int buzzerParamArray[]){};
+  void getBuzzerParam(int object, int buzzerParamArray[]);
   // for frequencies
   void setBuzzerFrequency(int object, int frequency);
   void setBuzzerFrequency(int object, int freqMin, int freqMax);
@@ -136,7 +136,7 @@ public:
   void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
 
   // functions for output MIDI
-  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  void setupOutputMIDI(byte midiChannel);
   void setMIDINote(int object, int note);
   void sendSerialMIDINote(byte channel, byte note, byte velocity);
 

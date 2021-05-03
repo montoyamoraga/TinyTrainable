@@ -31,7 +31,7 @@ public:
   // TODO: this is public now for testing, later move to protected
   // void sendSerialMIDINote(byte channel, byte note, byte velocity);
 
-  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity) override;
+  virtual void setupOutputMIDI(byte midiChannel) override;
   virtual void setMIDINote(int object, int note) override;
   virtual void sendSerialMIDINote(byte channel, byte note,
                                   byte velocity) override;

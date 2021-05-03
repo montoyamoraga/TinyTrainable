@@ -18,14 +18,12 @@ void OutputMIDI::sendMIDINoteOn(byte channel, byte note, byte velocity) {
 void OutputMIDI::sendMIDINoteOff(byte channel, byte note) {
   Serial1.write(143 + channel);
   Serial1.write(note);
-  Serial1.write(0);
+  Serial1.write(byte(0));
 }
 
 void OutputMIDI::sendMIDIAllNotesOff(byte channel) {
-  for (int note = 0; note < 128; note++) {
-    Serial1.write(143 + channel);
-    Serial1.write(note);
-    Serial1.write(0);
+  for (byte note = 0; note < 128; note++) {
+    sendMIDINoteOff(channel, note);
   }
 }
 

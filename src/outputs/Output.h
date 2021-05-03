@@ -31,7 +31,7 @@ public:
   virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {}
 
   // functions for output MIDI
-  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
+  virtual void setupOutputMIDI(byte midiChannel){};
   virtual void setMIDINote(int object, int note){};
   virtual void sendSerialMIDINote(byte channel, byte note, byte velocity){};
 

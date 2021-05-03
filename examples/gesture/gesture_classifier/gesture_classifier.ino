@@ -28,6 +28,9 @@ TinyTrainable myTiny(new InputGesture(), new OutputSerial());
 // or include your own
 //#include "myModel.h"
 
+// constant for debugging
+const bool tinyDebugging = true;
+
 // threshold of significant in G's
 const float accelerationThreshold = 2.5;
 
@@ -39,13 +42,13 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
 void setup() {
   // setup instrument
-  myTiny.setupInstrument(true);
-  Serial.println("hello in setup");
+  myTiny.setupInstrument(tinyDebugging);
   myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
 
   myTiny.setupOutputSerial();
 }
 
 void loop() {
+  Serial.println("got to loop");
   myTiny.identify();
 }

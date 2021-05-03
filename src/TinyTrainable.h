@@ -139,6 +139,9 @@ public:
   void setupOutputMIDI(byte midiChannel);
   void setMIDINote(int object, int note);
   void sendMIDINoteOn(byte channel, byte note, byte velocity);
+  void sendMIDINoteOff(byte channel, byte note);
+  void sendMIDIAllNotesOff(byte channel);
+
 
   // declaration of virtual functions for output serial
   void setupOutputSerial();

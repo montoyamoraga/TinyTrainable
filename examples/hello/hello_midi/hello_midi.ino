@@ -15,7 +15,7 @@ TinyTrainable myTiny(new Input(), new OutputMIDI());
 int myNotes[3] = {37, 38, 39};
 
 // midi channel and velocity in decimal (not hex)
-int myChannel = 10;
+int myChannel = 1;
 int myVelocity = 127;
 
 int pauseTime = 1000;

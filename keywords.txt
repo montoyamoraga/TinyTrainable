@@ -33,6 +33,9 @@ setBuzzerDuration	KEYWORD2
 # output LED
 setupOutputLED		KEYWORD2
 
+# output MIDI
+setupOutputMIDI		KEYWORD2
+
 # output servo
 setupOutputServo	KEYWORD2
 setServoTempo		KEYWORD2

@@ -56,7 +56,7 @@ var NAVTREEINDEX =
 [
 "_input_8h.html",
 "class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f",
-"hello__servo_8ino.html#ae0eb58e96d058e283d6f8e81f3e46eea"
+"hello__serial_8ino.html#a0e9699bc6872a88c84c63e11a89affdb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

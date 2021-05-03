@@ -7,11 +7,12 @@ var searchData=
   ['color_5fbuzzer_2eino_61',['color_buzzer.ino',['../color__buzzer_8ino.html',1,'']]],
   ['color_5fled_2eino_62',['color_led.ino',['../color__led_8ino.html',1,'']]],
   ['color_5fmidi_2eino_63',['color_midi.ino',['../color__midi_8ino.html',1,'']]],
-  ['color_5fserial_2eino_64',['color_serial.ino',['../color__serial_8ino.html',1,'']]],
-  ['color_5fservo_2eino_65',['color_servo.ino',['../color__servo_8ino.html',1,'']]],
-  ['color_5fthreshold_66',['COLOR_THRESHOLD',['../color__buzzer_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_buzzer.ino'],['../color__led_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_led.ino'],['../color__midi_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_midi.ino'],['../color__serial_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_serial.ino'],['../color__servo_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_servo.ino']]],
-  ['colors_67',['Colors',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967',1,'TinyTrainable.h']]],
-  ['currentgenre_68',['currentGenre',['../class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a',1,'OutputMIDI']]],
-  ['currentstep_69',['currentStep',['../class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e',1,'OutputMIDI']]],
-  ['cyan_70',['cyan',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967af86e4e7e79173ee87c1976080bb250b7',1,'TinyTrainable.h']]]
+  ['color_5fprinter_2eino_64',['color_printer.ino',['../color__printer_8ino.html',1,'']]],
+  ['color_5fserial_2eino_65',['color_serial.ino',['../color__serial_8ino.html',1,'']]],
+  ['color_5fservo_2eino_66',['color_servo.ino',['../color__servo_8ino.html',1,'']]],
+  ['color_5fthreshold_67',['COLOR_THRESHOLD',['../color__buzzer_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_buzzer.ino'],['../color__led_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_led.ino'],['../color__midi_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_midi.ino'],['../color__printer_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_printer.ino'],['../color__serial_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_serial.ino'],['../color__servo_8ino.html#a21019d9579860a08d869f4dfda8598d8',1,'COLOR_THRESHOLD():&#160;color_servo.ino']]],
+  ['colors_68',['Colors',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967',1,'TinyTrainable.h']]],
+  ['currentgenre_69',['currentGenre',['../class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a',1,'OutputMIDI']]],
+  ['currentstep_70',['currentStep',['../class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e',1,'OutputMIDI']]],
+  ['cyan_71',['cyan',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967af86e4e7e79173ee87c1976080bb250b7',1,'TinyTrainable.h']]]
 ];

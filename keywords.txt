@@ -35,6 +35,7 @@ setupOutputLED		KEYWORD2
 
 # output MIDI
 setupOutputMIDI		KEYWORD2
+setMIDINote		KEYWORD2
 
 # output servo
 setupOutputServo	KEYWORD2

@@ -21,12 +21,12 @@ int myVelocity = 127;
 int pauseTime = 1000;
 
 void setup() {
-    myTiny.setupOutputMIDI(myChannel);
+  myTiny.setupOutputMIDI(myChannel);
 
   // set the MIDI note for each object
-  //  tiny.setMIDINotes(0, MIDINotes[0]);
-  //  tiny.setMIDINotes(1, MIDINotes[1]);
-  //  tiny.setMIDINotes(2, MIDINotes[2]);
+  myTiny.setMIDINote(0, myNotes[0]);
+  myTiny.setMIDINote(1, myNotes[1]);
+  myTiny.setMIDINote(2, myNotes[2]);
 }
 
 void loop() {

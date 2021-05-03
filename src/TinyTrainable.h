@@ -29,9 +29,9 @@
 
 // conditionally include output libraries
 
-// #ifdef OUTPUT_BUZZER
+#ifdef OUTPUT_BUZZER
 #include "outputs/OutputBuzzer.h"
-// #endif
+#endif
 
 #ifdef OUTPUT_LCD
 #include "outputs/OutputLCD.h"
@@ -142,12 +142,15 @@ public:
 
   // declaration of virtual functions for output serial
   void setupOutputSerial();
-  
+
   // declaration of functions for output servo
-  void setupOutputServo(int outputPin, int servoAngleMin,
-                                int servoAngleMax);
+  void setupOutputServo(int outputPin);
   void setServoTempo(int object, int tempo);
   int bpmToMs(int tempo);
+  void setServoMaxAngle(int angle);
+  void setServoMinAngle(int angle);
+  int getServoMaxAngle();
+  int getServoMinAngle();
   void moveServo(int classification);
 
   void setStateLEDBuiltIn(bool turnOn);

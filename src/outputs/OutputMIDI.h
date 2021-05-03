@@ -33,7 +33,8 @@ public:
 
   virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity) override;
   virtual void setMIDINote(int object, int note) override;
-  virtual void sendSerialMIDINote(byte channel, byte note, byte velocity) override;
+  virtual void sendSerialMIDINote(byte channel, byte note,
+                                  byte velocity) override;
   void setupSerialMIDI();
 
   // TODO: in progress
@@ -51,7 +52,6 @@ public:
   int currentGenre = 2;
 
   int tempoDelay = 100;
-
 };
 
 #endif

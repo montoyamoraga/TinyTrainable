@@ -4,16 +4,14 @@
 // include Arduino library
 #include <Arduino.h>
 
-// this is to guard against circular include
-// TODO: research the name of this
+// Forwards declaration of class TinyTrainable
+// this is to avoid a circular include when TinyTrainable includes this class
 class TinyTrainable;
 
 class Output {
-
-  friend class TinyTrainable;
-
+public:
   // methods for output
-  virtual void playOutput(int classification){}
+  virtual void playOutput(int classification) {}
 
   // methods for buzzer
   virtual void setupOutputBuzzer(int outputPin) {}
@@ -41,17 +39,17 @@ class Output {
   virtual void setupOutputSerial() {}
 
   // functions for output servo
- virtual void setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {}
-virtual void setServoTempo(int object, int tempo) {}
-virtual int bpmToMs(int tempo) {return 0;}
-virtual void moveServo(int classification) {}
+  virtual void setupOutputServo(int outputPin) {}
+  virtual void setServoTempo(int object, int tempo) {}
+  virtual int bpmToMs(int tempo) { return 0; }
+  virtual void setServoMaxAngle(int angle) {}
+  virtual void setServoMinAngle(int angle) {}
+  virtual int getServoMaxAngle() { return 0; }
+  virtual int getServoMinAngle() { return 0; }
+  virtual void moveServo(int classification) {}
 
-protected:
+  // protected:
   TinyTrainable *tiny = nullptr;
-
-public:
-  // constructor
-  Output();
 };
 
 #endif

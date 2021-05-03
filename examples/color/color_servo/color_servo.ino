@@ -13,16 +13,17 @@ TinyTrainable myTiny(new InputColor(), new OutputServo());
 
 // constants for the KNN algorithm
 const int K = 5;
-const int EXAMPLES_PER_CLASS = 10;
+const int EXAMPLES_PER_CLASS = 20;
 const float COLOR_THRESHOLD = 0.5;
 
-String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+// String objectNames[3] = {"Object0", "Object1", "Object2"};
+String objectNames[3] = {"avocado", "orange", "towel"};
 
-// for the supplies list servo, these values can be >= 0, <= 180
-// these are the values the servo will move between at the given bpm
-// going right to the limit can sometimes cause the servo to buzz
-const int servoAngleMin = 30;
-const int servoAngleMax = 60;
+// our servo moves between the minimum and maximum angles
+// at a desired tempo measured in beats per minute
+const int tempo0 = 20;
+const int tempo1 = 90;
+const int tempo2 = 200;
 
 // constants for the hardware
 const int outputPin = 9;
@@ -34,14 +35,15 @@ const bool tinyDebugging = true;
 
 // setup() runs once, at the beginning
 void setup() {
+
   myTiny.setupInstrument(tinyDebugging);
 
-  myTiny.setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+  myTiny.setupOutputServo(outputPin);
 
-  // set fixed angles, easy version
-  myTiny.setServoTempo(0, 30);
-  myTiny.setServoTempo(1, 60);
-  myTiny.setServoTempo(2, 90);
+  // set the tempo (in bpm) for each object
+  myTiny.setServoTempo(0, tempo0);
+  myTiny.setServoTempo(1, tempo1);
+  myTiny.setServoTempo(2, tempo2);
 
   // train the KNN algorithm
   myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);

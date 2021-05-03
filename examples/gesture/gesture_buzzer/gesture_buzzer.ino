@@ -17,7 +17,7 @@
 TinyTrainable myTiny(new InputGesture(), new OutputBuzzer());
 
 // constants for the hardware
-const int outputPin = 8;
+const int outputPin = 2;
 
 // constant for debugging
 const bool tinyDebugging = true;

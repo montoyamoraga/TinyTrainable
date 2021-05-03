@@ -295,7 +295,8 @@ void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
 }
 
 // functions for output LED
-void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {
+void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
+                                   int outputPin2) {
   if (myOutput != nullptr) {
     myOutput->setupOutputLED(outputPin0, outputPin1, outputPin2);
   }
@@ -303,17 +304,17 @@ void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1, int outputPin
 
 // functions for output MIDI
 void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
-    if (myOutput != nullptr) {
+  if (myOutput != nullptr) {
     myOutput->setupOutputMIDI(midiChannel, midiVelocity);
   }
 }
-void TinyTrainable::setMIDINote(int object, int note){
-    if (myOutput != nullptr) {
+void TinyTrainable::setMIDINote(int object, int note) {
+  if (myOutput != nullptr) {
     myOutput->setMIDINote(object, note);
   }
 }
 
-void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity){
+void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
   if (myOutput != nullptr) {
     myOutput->sendSerialMIDINote(channel, note, velocity);
   }
@@ -327,9 +328,9 @@ void TinyTrainable::setupOutputSerial() {
 }
 
 // functions for output servo
-void TinyTrainable::setupOutputServo(int outputPin, int servoAngleMin, int servoAngleMax) {
+void TinyTrainable::setupOutputServo(int outputPin) {
   if (myOutput != nullptr) {
-    myOutput->setupOutputServo(outputPin, servoAngleMin, servoAngleMax);
+    myOutput->setupOutputServo(outputPin);
   }
 }
 
@@ -342,6 +343,30 @@ void TinyTrainable::setServoTempo(int object, int tempo) {
 int TinyTrainable::bpmToMs(int tempo) {
   if (myOutput != nullptr) {
     return myOutput->bpmToMs(tempo);
+  }
+}
+
+void TinyTrainable::setServoMaxAngle(int angle) {
+  if (myOutput != nullptr) {
+    myOutput->setServoMaxAngle(angle);
+  }
+}
+
+void TinyTrainable::setServoMinAngle(int angle) {
+  if (myOutput != nullptr) {
+    myOutput->setServoMinAngle(angle);
+  }
+}
+
+int TinyTrainable::getServoMaxAngle() {
+  if (myOutput != nullptr) {
+    return myOutput->getServoMaxAngle();
+  }
+}
+
+int TinyTrainable::getServoMinAngle() {
+  if (myOutput != nullptr) {
+    return myOutput->getServoMinAngle();
   }
 }
 

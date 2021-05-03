@@ -14,7 +14,7 @@ TinyTrainable myTiny(new Input(), new Output());
 // output mode to test, possible values:
 // outputBuzzer, outputLED, outputMIDI, outputSerialUSB, outputServo
 // outputUndefined tests that the arduino is correctly connected
-//OutputMode outputToTest = outputServo;
+// OutputMode outputToTest = outputServo;
 
 // hardware constants
 const int outputPin = 9;

@@ -33,7 +33,7 @@ public:
   // functions for output MIDI
   virtual void setupOutputMIDI(byte midiChannel){};
   virtual void setMIDINote(int object, int note){};
-  virtual void sendSerialMIDINote(byte channel, byte note, byte velocity){};
+  virtual void sendMIDINoteOn(byte channel, byte note, byte velocity){};
 
   // functions for output serial
   virtual void setupOutputSerial() {}

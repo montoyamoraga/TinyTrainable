@@ -5,7 +5,7 @@ OutputMIDI::OutputMIDI() {}
 
 // methods for TinyTrainable
 void OutputMIDI::playOutput(int classification) {
-  // sendSerialMIDINote(_midiChannel, _midiNotes[classification],
+  // sendMIDINoteOn(_midiChannel, _midiNotes[classification],
   // _midiVelocity);
 }
 
@@ -18,8 +18,6 @@ void OutputMIDI::sendMIDINoteOn(byte channel, byte note, byte velocity) {
 void OutputMIDI::setupOutputMIDI(byte midiChannel) {
   // setup the MIDI channel
   _midiChannel = midiChannel;
-  // setup the default MIDI velocity
-  _midiVelocity = 127;
 
   setupSerialMIDI();
 }

@@ -6,8 +6,6 @@
 // include local library
 #include "TinyTrainable.h"
 
-// TinyTrainable::TinyTrainable() {}
-
 // initialize static variables
 bool TinyTrainable::_serialDebugging = false;
 int TinyTrainable::_baudRate = 9600;

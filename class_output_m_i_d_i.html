@@ -121,8 +121,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6630a3bb626407cbc58c4823af057e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e974abc4ee3292a68cdb53bbcbb2b96"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a4e974abc4ee3292a68cdb53bbcbb2b96">setMIDINote</a> (int object, int note) override</td></tr>
 <tr class="separator:a4e974abc4ee3292a68cdb53bbcbb2b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a937be7799c4264e23cc85cf2aaa7ba91"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a937be7799c4264e23cc85cf2aaa7ba91">sendSerialMIDINote</a> (byte channel, byte note, byte velocity) override</td></tr>
-<tr class="separator:a937be7799c4264e23cc85cf2aaa7ba91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b04a79ed1eed9dd1922b1efe544830"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#a43b04a79ed1eed9dd1922b1efe544830">sendMIDINoteOn</a> (byte channel, byte note, byte velocity) override</td></tr>
+<tr class="separator:a43b04a79ed1eed9dd1922b1efe544830"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9e292351d62ca7a88d888a104bb6f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_m_i_d_i.html#adc9e292351d62ca7a88d888a104bb6f1">setupSerialMIDI</a> ()</td></tr>
 <tr class="separator:adc9e292351d62ca7a88d888a104bb6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_output"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_output')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_output.html">Output</a></td></tr>
@@ -144,6 +144,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a07cbc2c64d84ab89d4a2dba565fa8293 inherit pub_methods_class_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a596e8bec95b014264b6744f7ddd4992b inherit pub_methods_class_output"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a596e8bec95b014264b6744f7ddd4992b">setupOutputLED</a> (int outputPin0, int outputPin1, int outputPin2)</td></tr>
 <tr class="separator:a596e8bec95b014264b6744f7ddd4992b inherit pub_methods_class_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a684fe0aea0f0c10a71252d2101ae6181 inherit pub_methods_class_output"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a684fe0aea0f0c10a71252d2101ae6181">sendSerialMIDINote</a> (byte channel, byte note, byte velocity)</td></tr>
+<tr class="separator:a684fe0aea0f0c10a71252d2101ae6181 inherit pub_methods_class_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9655bb53001fcb69bda6ae73362b5bf3 inherit pub_methods_class_output"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a9655bb53001fcb69bda6ae73362b5bf3">setupOutputSerial</a> ()</td></tr>
 <tr class="separator:a9655bb53001fcb69bda6ae73362b5bf3 inherit pub_methods_class_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8273486424d8569f160ac240c55a0ae inherit pub_methods_class_output"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#ab8273486424d8569f160ac240c55a0ae">setupOutputServo</a> (int <a class="el" href="speech__buzzer_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a>)</td></tr>
@@ -240,8 +242,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a937be7799c4264e23cc85cf2aaa7ba91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a937be7799c4264e23cc85cf2aaa7ba91">&#9670;&nbsp;</a></span>sendSerialMIDINote()</h2>
+<a id="a43b04a79ed1eed9dd1922b1efe544830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43b04a79ed1eed9dd1922b1efe544830">&#9670;&nbsp;</a></span>sendMIDINoteOn()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +252,7 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void OutputMIDI::sendSerialMIDINote </td>
+          <td class="memname">void OutputMIDI::sendMIDINoteOn </td>
           <td>(</td>
           <td class="paramtype">byte&#160;</td>
           <td class="paramname"><em>channel</em>, </td>
@@ -279,8 +281,6 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_output.html#a684fe0aea0f0c10a71252d2101ae6181">Output</a>.</p>
 
 </div>
 </div>

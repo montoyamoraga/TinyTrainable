@@ -6,6 +6,8 @@ var class_output =
     [ "getServoMinAngle", "class_output.html#a9a8740d4a679ec672d384f94f4b3046a", null ],
     [ "moveServo", "class_output.html#aaf73688e9dc1f2ae992441b02a5a2fe5", null ],
     [ "playOutput", "class_output.html#aae2893cf36fe5cf20342211c24b66a03", null ],
+    [ "sendMIDIAllNotesOff", "class_output.html#a7ea7a2c8bcbeeeee5dfe5b0428280880", null ],
+    [ "sendMIDINoteOff", "class_output.html#af239d374531c8f0fcc7f82b6af64bef5", null ],
     [ "sendMIDINoteOn", "class_output.html#ad04d4faa376c01f94432ca03da9bb319", null ],
     [ "setBuzzerDuration", "class_output.html#a07cbc2c64d84ab89d4a2dba565fa8293", null ],
     [ "setBuzzerDuration", "class_output.html#a486730acd09fffd2b819c7ebf7027d6c", null ],

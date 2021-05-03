@@ -145,6 +145,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac7b80ff8858f4fe3b8744d1db224224a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad04d4faa376c01f94432ca03da9bb319"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#ad04d4faa376c01f94432ca03da9bb319">sendMIDINoteOn</a> (byte channel, byte note, byte velocity)</td></tr>
 <tr class="separator:ad04d4faa376c01f94432ca03da9bb319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af239d374531c8f0fcc7f82b6af64bef5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#af239d374531c8f0fcc7f82b6af64bef5">sendMIDINoteOff</a> (byte channel, byte note) override</td></tr>
+<tr class="separator:af239d374531c8f0fcc7f82b6af64bef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea7a2c8bcbeeeee5dfe5b0428280880"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a7ea7a2c8bcbeeeee5dfe5b0428280880">sendMIDIAllNotesOff</a> (byte channel) override</td></tr>
+<tr class="separator:a7ea7a2c8bcbeeeee5dfe5b0428280880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9655bb53001fcb69bda6ae73362b5bf3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a9655bb53001fcb69bda6ae73362b5bf3">setupOutputSerial</a> ()</td></tr>
 <tr class="separator:a9655bb53001fcb69bda6ae73362b5bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8273486424d8569f160ac240c55a0ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#ab8273486424d8569f160ac240c55a0ae">setupOutputServo</a> (int <a class="el" href="speech__buzzer_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a>)</td></tr>
@@ -343,6 +347,72 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="class_output_servo.html#a530f50db199a433a191f34abffcc4151">OutputServo</a>, <a class="el" href="class_output_l_e_d.html#aef133c10ffb482917535da5a96349699">OutputLED</a>, <a class="el" href="class_output_buzzer.html#a2f14ce14e7d708de648f2ee6bba43288">OutputBuzzer</a>, <a class="el" href="class_output_serial.html#a91629948d38d12ddd689e80f1c85b0ed">OutputSerial</a>, <a class="el" href="class_output_printer.html#a3e58596d0b67836df9c6b1bbb9e6d10d">OutputPrinter</a>, <a class="el" href="class_output_m_i_d_i.html#a02d256596db93c019d280d5cd4a67720">OutputMIDI</a>, and <a class="el" href="class_output_l_c_d.html#a5f4d1d8a2c9ac8ae59446bb690673015">OutputLCD</a>.</p>
+
+</div>
+</div>
+<a id="a7ea7a2c8bcbeeeee5dfe5b0428280880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea7a2c8bcbeeeee5dfe5b0428280880">&#9670;&nbsp;</a></span>sendMIDIAllNotesOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Output::sendMIDIAllNotesOff </td>
+          <td>(</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_output_m_i_d_i.html#a3f1f8b8cd5ec539d48694ed03edc2b7f">OutputMIDI</a>.</p>
+
+</div>
+</div>
+<a id="af239d374531c8f0fcc7f82b6af64bef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af239d374531c8f0fcc7f82b6af64bef5">&#9670;&nbsp;</a></span>sendMIDINoteOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Output::sendMIDINoteOff </td>
+          <td>(</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>channel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>note</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_output_m_i_d_i.html#af165da797be6315dcacdb4b977537242">OutputMIDI</a>.</p>
 
 </div>
 </div>

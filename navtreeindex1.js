@@ -1,13 +1,19 @@
 var NAVTREEINDEX1 =
 {
-"class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f":[1,0,12,36],
-"class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d":[1,0,12,33],
+"class_tiny_trainable.html#a9016673fc19b3d8f59ee1efb132162e8":[1,0,12,14],
+"class_tiny_trainable.html#aaf2252bfb04b5b41a744d9098259abf4":[1,0,12,18],
+"class_tiny_trainable.html#ab956c2a85c55680e41c0b53aceb62519":[1,0,12,36],
+"class_tiny_trainable.html#ab983f752044c901a1615f8049154f138":[1,0,12,15],
+"class_tiny_trainable.html#ac39c182baaeaa19ab4bc41184d144e22":[1,0,12,24],
+"class_tiny_trainable.html#acdf1a029a6a86032f6202f2dbc1800bd":[1,0,12,6],
+"class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f":[1,0,12,38],
+"class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d":[1,0,12,35],
 "class_tiny_trainable.html#ae0c45125643fa0e389937b0b7423c3de":[1,0,12,0],
 "class_tiny_trainable.html#ae6c8e026d4e10e04a677028d1df96860":[1,0,12,9],
-"class_tiny_trainable.html#aebe80903a65b9565e8e7696178119833":[1,0,12,23],
+"class_tiny_trainable.html#aebe80903a65b9565e8e7696178119833":[1,0,12,25],
 "class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be":[1,0,12,1],
 "class_tiny_trainable.html#af506bc594b0bfa6fb494f1eab9e560ca":[1,0,12,7],
-"class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f":[1,0,12,32],
+"class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f":[1,0,12,34],
 "classes.html":[1,1],
 "color__buzzer_8ino.html":[2,0,0,0,0,0],
 "color__buzzer_8ino.html#a0f1c8e52cdf21a3635f41be2e902f243":[2,0,0,0,0,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX1 =
 "hello__printer_8ino.html":[2,0,0,2,4,0],
 "hello__printer_8ino.html#a2415dbc707abe01ed8d1b9925681d65c":[2,0,0,2,4,0,0],
 "hello__printer_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,2,4,0,4],
-"hello__printer_8ino.html#a6e776be06bdba7cd586aed5a950835df":[2,0,0,2,4,0,3],
-"hello__printer_8ino.html#aa08ea5267ebbacaf56962c86c16b38a5":[2,0,0,2,4,0,6],
-"hello__printer_8ino.html#aa3f009daaa445fe5aed4c5fd302c4de7":[2,0,0,2,4,0,1],
-"hello__printer_8ino.html#ad85b8020ea96294ab9aaaa2f85a9de2a":[2,0,0,2,4,0,5],
-"hello__printer_8ino.html#afd50971eb9a30617a398aec596485592":[2,0,0,2,4,0,7],
-"hello__printer_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,2,4,0,2],
-"hello__serial_8ino.html":[2,0,0,2,5,0]
+"hello__printer_8ino.html#a6e776be06bdba7cd586aed5a950835df":[2,0,0,2,4,0,3]
 };

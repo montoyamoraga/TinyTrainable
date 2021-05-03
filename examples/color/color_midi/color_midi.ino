@@ -23,7 +23,7 @@ void setup() {
 
   myTiny.setupInstrument(true);
 
-  //  myTiny.setupOutputMIDI(10, 127);
+  myTiny.setupOutputMIDI(10);
   //  myTiny.setMIDINotes(0, 37);
   //  myTiny.setMIDINotes(1, 38);
   //  myTiny.setMIDINotes(2, 39);

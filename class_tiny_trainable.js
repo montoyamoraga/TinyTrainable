@@ -28,7 +28,7 @@ var class_tiny_trainable =
     [ "setupLEDs", "class_tiny_trainable.html#a3f44f0c0eed4492ab9de700c937a49e9", null ],
     [ "setupOutputBuzzer", "class_tiny_trainable.html#a3ac8b5f887b7d42a29b2a9bbd1bbb416", null ],
     [ "setupOutputLED", "class_tiny_trainable.html#a0691440c21f0eb2dd3fc98a1f8e90d79", null ],
-    [ "setupOutputMIDI", "class_tiny_trainable.html#a954bc3a07665dce27ad5f367460e2a63", null ],
+    [ "setupOutputMIDI", "class_tiny_trainable.html#a1f9320ffb4a15f7a37d8a40db9825c1c", null ],
     [ "setupOutputSerial", "class_tiny_trainable.html#a4f204f966081bdb1102f723887a19f87", null ],
     [ "setupOutputServo", "class_tiny_trainable.html#a52457f3b81acd2e07ff3de3d8b28c404", null ],
     [ "setupTF", "class_tiny_trainable.html#a8aa95cfcb916043bde79507b1fba89ff", null ],

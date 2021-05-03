@@ -4,7 +4,7 @@ var class_output_m_i_d_i =
     [ "playOutput", "class_output_m_i_d_i.html#a02d256596db93c019d280d5cd4a67720", null ],
     [ "sendSerialMIDINote", "class_output_m_i_d_i.html#a937be7799c4264e23cc85cf2aaa7ba91", null ],
     [ "setMIDINote", "class_output_m_i_d_i.html#a4e974abc4ee3292a68cdb53bbcbb2b96", null ],
-    [ "setupOutputMIDI", "class_output_m_i_d_i.html#a221ad494539cf8b66eb7a99538341eec", null ],
+    [ "setupOutputMIDI", "class_output_m_i_d_i.html#a6630a3bb626407cbc58c4823af057e3b", null ],
     [ "setupSerialMIDI", "class_output_m_i_d_i.html#adc9e292351d62ca7a88d888a104bb6f1", null ],
     [ "_midiChannel", "class_output_m_i_d_i.html#a887baeda807202d10e94dfaf8214911e", null ],
     [ "_midiNotes", "class_output_m_i_d_i.html#a1712a387e81e8cf6b46b31e8e7f988ac", null ],

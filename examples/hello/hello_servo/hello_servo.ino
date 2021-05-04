@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny();
+TinyTrainable myTiny;
 
 // our servo moves between the minimum and maximum angles
 // at a desired tempo measured in beats per minute

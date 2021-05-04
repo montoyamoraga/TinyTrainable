@@ -24,7 +24,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny();
+TinyTrainable myTiny;
 
 // constants for the hardware
 const int outputPin = 8;

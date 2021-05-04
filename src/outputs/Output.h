@@ -29,7 +29,7 @@ public:
                                  int arrayDurationCount) {}
 
   // functions for output LED
-  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {}
+  virtual void setupOutputLED(int object, int outputPin) {}
 
   // functions for output MIDI
   virtual void setupOutputMIDI(byte midiChannel){}

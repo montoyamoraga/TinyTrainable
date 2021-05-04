@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny();
+TinyTrainable myTiny;
 
 // MIDI note numbers
 int myNotes[3] = {37, 38, 39};

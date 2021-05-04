@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny();
+TinyTrainable myTiny;
 
 // constant for debugging
 const bool tinyDebugging = true;
@@ -25,7 +25,9 @@ void setup() {
 
   myTiny.setupInstrument(tinyDebugging);
 
-  myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
+  myTiny.setupOutputLED(0, outputPinLED0);
+  myTiny.setupOutputLED(1, outputPinLED1);
+  myTiny.setupOutputLED(2, outputPinLED2);
 }
 
 void loop() {

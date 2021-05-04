@@ -15,7 +15,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny();
+TinyTrainable myTiny;
 
 // constant for debugging
 const bool tinyDebugging = true;

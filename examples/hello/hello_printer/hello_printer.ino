@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny();
+TinyTrainable myTiny;
 
 // for wiring instructions, refer to docs/
 

@@ -133,7 +133,7 @@ public:
                          int arrayDurationCount);
 
   // methods for output LED
-  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
+  void setupOutputLED(int object, int outputPin);
 
   // methods for output MIDI
   void setupOutputMIDI(byte midiChannel);

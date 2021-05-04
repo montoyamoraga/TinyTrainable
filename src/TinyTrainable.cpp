@@ -325,10 +325,9 @@ void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
 }
 
 // functions for output LED
-void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
-                                   int outputPin2) {
+void TinyTrainable::setupOutputLED(int object, int outputPin) {
   if (myOutput != nullptr) {
-    myOutput->setupOutputLED(outputPin0, outputPin1, outputPin2);
+    myOutput->setupOutputLED(object, outputPin);
   }
 }
 

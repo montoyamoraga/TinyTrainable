@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny();
+TinyTrainable myTiny;
 
 // output mode to test, possible values:
 // outputBuzzer, outputLED, outputMIDI, outputSerialUSB, outputServo

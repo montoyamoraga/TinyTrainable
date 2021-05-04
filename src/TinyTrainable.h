@@ -132,21 +132,23 @@ public:
   void setBuzzerDuration(int object, int *arrayDurations,
                          int arrayDurationCount);
 
-  // functions for output LED
+  // methods for output LED
   void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
 
-  // functions for output MIDI
+  // methods for output MIDI
   void setupOutputMIDI(byte midiChannel);
   void setMIDINote(int object, int note);
   void sendMIDINoteOn(byte channel, byte note, byte velocity);
   void sendMIDINoteOff(byte channel, byte note);
   void sendMIDIAllNotesOff(byte channel);
 
+  // methods for output printer
+  void setupOutputPrinter();
 
-  // declaration of virtual functions for output serial
+  // methods for output serial
   void setupOutputSerial();
 
-  // declaration of functions for output servo
+  // methods for output servo
   void setupOutputServo(int outputPin);
   void setServoTempo(int object, int tempo);
   int bpmToMs(int tempo);

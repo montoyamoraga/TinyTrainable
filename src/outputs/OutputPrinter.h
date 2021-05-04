@@ -19,10 +19,15 @@ public:
   OutputPrinter();
 
   // TinyTrainable methods
-  void playOutput(int classification);
+  virtual void playOutput(int classification) override;
+  virtual void setupOutputPrinter() override;
 
   // TODO: for printer we need several variables
   int _outputPinPrinter = -1;
+
+  private:
+  // instance of Adafruit Thermal Printer, connected to Serial1
+  Adafruit_Thermal _printer;
 };
 
 #endif

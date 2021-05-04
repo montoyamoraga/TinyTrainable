@@ -37,11 +37,13 @@ public:
   virtual void sendMIDINoteOff(byte channel, byte note){}
   virtual void sendMIDIAllNotesOff(byte channel){}
 
+  // methods for output printer
+  virtual void setupOutputPrinter() {}
 
-  // functions for output serial
+  // methods for output serial
   virtual void setupOutputSerial() {}
 
-  // functions for output servo
+  // methods for output servo
   virtual void setupOutputServo(int outputPin) {}
   virtual void setServoTempo(int object, int tempo) {}
   virtual int bpmToMs(int tempo) { return 0; }

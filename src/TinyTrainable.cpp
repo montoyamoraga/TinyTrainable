@@ -306,7 +306,7 @@ void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
   }
 }
 
-// functions for output MIDI
+// methods for output MIDI
 void TinyTrainable::setupOutputMIDI(byte midiChannel) {
   if (myOutput != nullptr) {
     myOutput->setupOutputMIDI(midiChannel);
@@ -336,7 +336,14 @@ void TinyTrainable::sendMIDIAllNotesOff(byte channel) {
   }
 }
 
-// functions for output serial
+// methouds for output printer
+void TinyTrainable::setupOutputPrinter() {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputPrinter();
+  }
+}
+
+// methods for output serial
 void TinyTrainable::setupOutputSerial() {
   if (myOutput != nullptr) {
     myOutput->setupOutputSerial();

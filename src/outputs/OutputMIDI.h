@@ -20,7 +20,7 @@ public:
   OutputMIDI();
 
   // TinyTrainable methods
-  void playOutput(int classification);
+  virtual void playOutput(int classification) override;
 
   int _outputPinMIDI = -1;
   int _midiNotes[3];

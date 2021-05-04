@@ -30,7 +30,9 @@ String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 void setup() {
   myTiny.setupInstrument(tinyDebugging);
 
-  myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
+  myTiny.setupOutputLED(0, outputPinLED0);
+  myTiny.setupOutputLED(1, outputPinLED1);
+  myTiny.setupOutputLED(2, outputPinLED2);
 
   // train the KNN algorithm with your objects
   myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);

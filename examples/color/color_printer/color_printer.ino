@@ -23,10 +23,6 @@ const int placeHolder0 = 10;
 const int placeHolder1 = 10;
 const int placeHolder2 = 10;
 
-// TODO: move this to library
-// instance of Adafruit Thermal Printer, connected to Serial1
-// Adafruit_Thermal printer(&Serial1);
-
 void setup() {
 
   // TODO: baudrate is 19200, or 9600 for some printers, confirm

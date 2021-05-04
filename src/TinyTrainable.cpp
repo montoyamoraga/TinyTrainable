@@ -11,9 +11,9 @@ bool TinyTrainable::_serialDebugging = false;
 int TinyTrainable::_baudRate = 9600;
 
 /// constructor method
-// TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
 TinyTrainable::TinyTrainable() {
 
+/// initialize input
 #if defined(INPUT_COLOR)
   myInput = new InputColor();
 #elif defined(INPUT_GESTURE)
@@ -24,6 +24,8 @@ TinyTrainable::TinyTrainable() {
   myInput = new Input();
 #endif
 
+
+/// initialize output
 #if defined(OUTPUT_BUZZER)
   myOutput = new OutputBuzzer();
 #elif defined(OUTPUT_LCD)
@@ -68,6 +70,8 @@ TinyTrainable::~TinyTrainable() {
   }
 }
 
+/// @param method for initial setup
+/// @param serialDebugging to output or not debug info over serial
 void TinyTrainable::setupInstrument(bool serialDebugging) {
   if (myInput != nullptr) {
     myInput->setupInstrument(serialDebugging);

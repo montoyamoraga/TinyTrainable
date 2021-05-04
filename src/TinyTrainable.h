@@ -7,7 +7,7 @@
 #ifndef TINY_TRAINABLE_H
 #define TINY_TRAINABLE_H
 
-// include Arduino library
+// include library Arduino
 #include <Arduino.h>
 
 // include base libraries for input and output

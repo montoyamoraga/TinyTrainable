@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('class_output_printer.html',''); initRe
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_output_printer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">OutputPrinter Class Reference</div>  </div>
@@ -115,8 +116,10 @@ Inheritance diagram for OutputPrinter:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abbf799e4a04980138e93d633beb5e58b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#abbf799e4a04980138e93d633beb5e58b">OutputPrinter</a> ()</td></tr>
 <tr class="separator:abbf799e4a04980138e93d633beb5e58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e58596d0b67836df9c6b1bbb9e6d10d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#a3e58596d0b67836df9c6b1bbb9e6d10d">playOutput</a> (int classification)</td></tr>
-<tr class="separator:a3e58596d0b67836df9c6b1bbb9e6d10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae425da8bccf042af4d4774fdc41bbae0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#ae425da8bccf042af4d4774fdc41bbae0">playOutput</a> (int classification) override</td></tr>
+<tr class="separator:ae425da8bccf042af4d4774fdc41bbae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751a764c3434bdfae19d6a9526e49e26"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#a751a764c3434bdfae19d6a9526e49e26">setupOutputPrinter</a> () override</td></tr>
+<tr class="separator:a751a764c3434bdfae19d6a9526e49e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_output"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_output')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_output.html">Output</a></td></tr>
 <tr class="memitem:a01a51b0b1e7a886190ad65aca88dd2d6 inherit pub_methods_class_output"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a01a51b0b1e7a886190ad65aca88dd2d6">setupOutputBuzzer</a> (int <a class="el" href="speech__buzzer_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a>)</td></tr>
 <tr class="separator:a01a51b0b1e7a886190ad65aca88dd2d6 inherit pub_methods_class_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,6 +175,11 @@ Public Attributes</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_output"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_output')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_output.html">Output</a></td></tr>
 <tr class="memitem:a18489dcb8e45d4c199ece137e537f7c1 inherit pub_attribs_class_output"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a18489dcb8e45d4c199ece137e537f7c1">tiny</a> = nullptr</td></tr>
 <tr class="separator:a18489dcb8e45d4c199ece137e537f7c1 inherit pub_attribs_class_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac8300a4405d3bc8fbc475d10b1f3c56c"><td class="memItemLeft" align="right" valign="top">Adafruit_Thermal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#ac8300a4405d3bc8fbc475d10b1f3c56c">_printer</a></td></tr>
+<tr class="separator:ac8300a4405d3bc8fbc475d10b1f3c56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abbf799e4a04980138e93d633beb5e58b"></a>
@@ -192,8 +200,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3e58596d0b67836df9c6b1bbb9e6d10d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e58596d0b67836df9c6b1bbb9e6d10d">&#9670;&nbsp;</a></span>playOutput()</h2>
+<a id="ae425da8bccf042af4d4774fdc41bbae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae425da8bccf042af4d4774fdc41bbae0">&#9670;&nbsp;</a></span>playOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,12 +219,39 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_output.html#aae2893cf36fe5cf20342211c24b66a03">Output</a>.</p>
+
+</div>
+</div>
+<a id="a751a764c3434bdfae19d6a9526e49e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a751a764c3434bdfae19d6a9526e49e26">&#9670;&nbsp;</a></span>setupOutputPrinter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OutputPrinter::setupOutputPrinter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_output.html#a70f218dcf8fa5c0a0333441ada6c2915">Output</a>.</p>
 
 </div>
 </div>
@@ -231,6 +266,28 @@ Public Attributes</h2></td></tr>
           <td class="memname">int OutputPrinter::_outputPinPrinter = -1</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8300a4405d3bc8fbc475d10b1f3c56c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8300a4405d3bc8fbc475d10b1f3c56c">&#9670;&nbsp;</a></span>_printer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Adafruit_Thermal OutputPrinter::_printer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

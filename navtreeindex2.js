@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"hello__printer_8ino.html":[2,0,0,2,4,0],
+"hello__printer_8ino.html#a2415dbc707abe01ed8d1b9925681d65c":[2,0,0,2,4,0,0],
+"hello__printer_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,2,4,0,4],
+"hello__printer_8ino.html#a6e776be06bdba7cd586aed5a950835df":[2,0,0,2,4,0,3],
 "hello__printer_8ino.html#aa08ea5267ebbacaf56962c86c16b38a5":[2,0,0,2,4,0,6],
 "hello__printer_8ino.html#aa3f009daaa445fe5aed4c5fd302c4de7":[2,0,0,2,4,0,1],
 "hello__printer_8ino.html#ad85b8020ea96294ab9aaaa2f85a9de2a":[2,0,0,2,4,0,5],

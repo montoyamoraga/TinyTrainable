@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputColor(), new OutputBuzzer());
+TinyTrainable myTiny();
 
 // constants for the KNN algorithm
 const int K = 5;

@@ -14,7 +14,7 @@
 //#include "myModel.h"
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputGesture(), new OutputBuzzer());
+TinyTrainable myTiny();
 
 // constants for the hardware
 const int outputPin = 2;

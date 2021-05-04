@@ -11,10 +11,36 @@ bool TinyTrainable::_serialDebugging = false;
 int TinyTrainable::_baudRate = 9600;
 
 // constructor method
-TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
+// TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
+TinyTrainable::TinyTrainable() {
 
-  myInput = newInput;
-  myOutput = newOutput;
+#if defined(INPUT_COLOR)
+  myInput  = new InputColor();
+#elif defined(INPUT_GESTURE)
+  myInput  = new InputGesture();
+#elif defined(INPUT_SPEECH)
+  myInput  = new InputSpeech();
+#else 
+  myInput = new Input();
+#endif
+
+#if defined(OUTPUT_BUZZER)
+  myOutput = new OutputBuzzer();
+#elif defined(OUTPUT_LCD)
+  myOutput = new OutputLCD();
+#elif defined(OUTPUT_LED)
+  myOutput = new OutputLED();
+#elif defined(OUTPUT_MIDI)
+  myOutput = new OutputMIDI();
+#elif defined(OUTPUT_PRINTER)
+  myOutput = new OutputPrinter();
+#elif defined(OUTPUT_SERIAL)
+  myOutput = new OutputSerial();
+#elif defined(OUTPUT_SERVO)
+  myOutput = new OutputServo();
+#else 
+  myOutput = new Output();
+#endif
 
   // TODO: research the name of this linking way
   if (myInput != nullptr) {
@@ -366,6 +392,8 @@ void TinyTrainable::setServoTempo(int object, int tempo) {
 int TinyTrainable::bpmToMs(int tempo) {
   if (myOutput != nullptr) {
     return myOutput->bpmToMs(tempo);
+  }else {
+    return -1;
   }
 }
 
@@ -384,12 +412,17 @@ void TinyTrainable::setServoMinAngle(int angle) {
 int TinyTrainable::getServoMaxAngle() {
   if (myOutput != nullptr) {
     return myOutput->getServoMaxAngle();
+  } else {
+    return -1;
   }
 }
 
 int TinyTrainable::getServoMinAngle() {
   if (myOutput != nullptr) {
     return myOutput->getServoMinAngle();
+  }
+  else {
+    return -1;
   }
 }
 

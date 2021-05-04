@@ -10,6 +10,7 @@ class TinyTrainable;
 
 class Output {
 public:
+  virtual ~Output(){}
   // methods for output
   virtual void playOutput(int classification) {}
 

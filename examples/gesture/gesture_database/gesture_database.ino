@@ -15,7 +15,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputGesture(), new Output());
+TinyTrainable myTiny();
 
 // constant for debugging
 const bool tinyDebugging = true;

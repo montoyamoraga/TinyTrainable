@@ -20,7 +20,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputGesture(), new OutputSerial());
+TinyTrainable myTiny();
 
 // TODO - see friday 04/30 notes about this
 // include machine learning model

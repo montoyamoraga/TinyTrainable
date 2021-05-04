@@ -75,8 +75,8 @@ protected:
 
 public:
   // constructor
-  TinyTrainable(Input *newInput, Output *newOutput);
-
+  // TinyTrainable(Input *newInput, Output *newOutput);
+  TinyTrainable();
   // destructor
   ~TinyTrainable();
 

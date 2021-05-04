@@ -9,7 +9,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(new Input(), new OutputSerial());
+TinyTrainable myTiny();
 
 int pauseTime = 2000;
 

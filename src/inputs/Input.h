@@ -12,6 +12,7 @@ class TinyTrainable;
 
 class Input {
 public:
+  virtual ~Input(){}
   virtual void setupInstrument(bool serialDebugging) {}
   virtual void identify() {}
   virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,

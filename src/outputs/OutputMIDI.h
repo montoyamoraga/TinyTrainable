@@ -29,8 +29,7 @@ public:
 
   virtual void setupOutputMIDI(byte midiChannel) override;
   virtual void setMIDINote(int object, int note) override;
-  virtual void sendMIDINoteOn(byte channel, byte note,
-                                  byte velocity) override;
+  virtual void sendMIDINoteOn(byte channel, byte note, byte velocity) override;
   virtual void sendMIDINoteOff(byte channel, byte note) override;
   virtual void sendMIDIAllNotesOff(byte channel) override;
   void setupSerialMIDI();

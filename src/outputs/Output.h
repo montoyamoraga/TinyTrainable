@@ -10,7 +10,7 @@ class TinyTrainable;
 
 class Output {
 public:
-  virtual ~Output(){}
+  virtual ~Output() {}
   // methods for output
   virtual void playOutput(int classification) {}
 
@@ -32,11 +32,11 @@ public:
   virtual void setupOutputLED(int object, int outputPin) {}
 
   // functions for output MIDI
-  virtual void setupOutputMIDI(byte midiChannel){}
-  virtual void setMIDINote(int object, int note){}
-  virtual void sendMIDINoteOn(byte channel, byte note, byte velocity){}
-  virtual void sendMIDINoteOff(byte channel, byte note){}
-  virtual void sendMIDIAllNotesOff(byte channel){}
+  virtual void setupOutputMIDI(byte midiChannel) {}
+  virtual void setMIDINote(int object, int note) {}
+  virtual void sendMIDINoteOn(byte channel, byte note, byte velocity) {}
+  virtual void sendMIDINoteOff(byte channel, byte note) {}
+  virtual void sendMIDIAllNotesOff(byte channel) {}
 
   // methods for output printer
   virtual void setupOutputPrinter() {}

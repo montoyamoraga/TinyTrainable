@@ -15,12 +15,12 @@ int TinyTrainable::_baudRate = 9600;
 TinyTrainable::TinyTrainable() {
 
 #if defined(INPUT_COLOR)
-  myInput  = new InputColor();
+  myInput = new InputColor();
 #elif defined(INPUT_GESTURE)
-  myInput  = new InputGesture();
+  myInput = new InputGesture();
 #elif defined(INPUT_SPEECH)
-  myInput  = new InputSpeech();
-#else 
+  myInput = new InputSpeech();
+#else
   myInput = new Input();
 #endif
 
@@ -38,7 +38,7 @@ TinyTrainable::TinyTrainable() {
   myOutput = new OutputSerial();
 #elif defined(OUTPUT_SERVO)
   myOutput = new OutputServo();
-#else 
+#else
   myOutput = new Output();
 #endif
 
@@ -96,7 +96,7 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
 
 // methods for input gesture
 void TinyTrainable::setupTF(String gestures[3], float accelerationThreshold,
-                             int numSamples) {
+                            int numSamples) {
   if (myInput != nullptr) {
     myInput->setupTF(gestures, accelerationThreshold, numSamples);
   }
@@ -391,7 +391,7 @@ void TinyTrainable::setServoTempo(int object, int tempo) {
 int TinyTrainable::bpmToMs(int tempo) {
   if (myOutput != nullptr) {
     return myOutput->bpmToMs(tempo);
-  }else {
+  } else {
     return -1;
   }
 }
@@ -419,8 +419,7 @@ int TinyTrainable::getServoMaxAngle() {
 int TinyTrainable::getServoMinAngle() {
   if (myOutput != nullptr) {
     return myOutput->getServoMinAngle();
-  }
-  else {
+  } else {
     return -1;
   }
 }

@@ -46,6 +46,4 @@ void setup() {
   myTiny.setupOutputSerial();
 }
 
-void loop() {
-  myTiny.identify();
-}
+void loop() { myTiny.identify(); }

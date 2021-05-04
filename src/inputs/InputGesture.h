@@ -61,7 +61,7 @@ private:
   byte tensorArena[tensorArenaSize];
 
   // classification variables
-  float aX, aY, aZ, gX, gY, gZ;  // acceleration and gravity in x, y, z
+  float aX, aY, aZ, gX, gY, gZ; // acceleration and gravity in x, y, z
 };
 
 #endif

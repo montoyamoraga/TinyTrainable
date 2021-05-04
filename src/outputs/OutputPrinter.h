@@ -25,7 +25,7 @@ public:
   // TODO: for printer we need several variables
   int _outputPinPrinter = -1;
 
-  private:
+private:
   // instance of Adafruit Thermal Printer, connected to Serial1
   Adafruit_Thermal _printer;
 };

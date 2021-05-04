@@ -31,7 +31,7 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
     buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
     break;
   case undefParam:
-   // TODO
+    // TODO
     break;
   }
   switch (_buzzerDurationMode) {

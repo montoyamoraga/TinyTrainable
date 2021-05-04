@@ -21,7 +21,7 @@ var class_output =
     [ "setServoMinAngle", "class_output.html#accf084eccf8db99ddbb75e335440dd11", null ],
     [ "setServoTempo", "class_output.html#aa3b4422eae15e2fcd5acca4b2019bc3d", null ],
     [ "setupOutputBuzzer", "class_output.html#a01a51b0b1e7a886190ad65aca88dd2d6", null ],
-    [ "setupOutputLED", "class_output.html#a596e8bec95b014264b6744f7ddd4992b", null ],
+    [ "setupOutputLED", "class_output.html#a66f87c1179099f78ea909e816eb22743", null ],
     [ "setupOutputMIDI", "class_output.html#a77c6e46c0fe6c5c38a2bddf2122d936d", null ],
     [ "setupOutputPrinter", "class_output.html#a70f218dcf8fa5c0a0333441ada6c2915", null ],
     [ "setupOutputSerial", "class_output.html#a9655bb53001fcb69bda6ae73362b5bf3", null ],

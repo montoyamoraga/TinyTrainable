@@ -38,6 +38,11 @@ setupOutputMIDI		KEYWORD2
 setMIDINote		KEYWORD2
 sendMIDINoteOn		KEYWORD2
 
+# output printer
+setupOutputPrinter		KEYWORD2
+setPrinterBaudRate		KEYWORD2
+setPrinterBegin		KEYWORD2
+
 # output servo
 setupOutputServo	KEYWORD2
 setServoTempo		KEYWORD2

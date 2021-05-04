@@ -70,7 +70,7 @@ TinyTrainable::~TinyTrainable() {
   }
 }
 
-/// @param method for initial setup
+/// @brief method for initial setup
 /// @param serialDebugging to output or not debug info over serial
 void TinyTrainable::setupInstrument(bool serialDebugging) {
   if (myInput != nullptr) {
@@ -90,7 +90,7 @@ void TinyTrainable::playOutput(int classification) {
   }
 }
 
-// methods for input color
+/// @brief input color, train KNN algorithm
 void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
                              String objects[3]) {
   if (myInput != nullptr) {
@@ -98,7 +98,7 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
   }
 };
 
-// methods for input gesture
+/// @brief input gesture, setup TensorFlow
 void TinyTrainable::setupTF(String gestures[3], float accelerationThreshold,
                             int numSamples) {
   if (myInput != nullptr) {
@@ -106,6 +106,7 @@ void TinyTrainable::setupTF(String gestures[3], float accelerationThreshold,
   }
 }
 
+/// @brief method for setup internal LEDs of the Arduino
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);
@@ -122,7 +123,7 @@ void TinyTrainable::setupLEDs() {
   digitalWrite(LEDB, HIGH);
 }
 
-// function for turning on and off the built-in LED
+/// @brief method for turning on and off the built-in LED
 void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
   if (turnOn) {
     digitalWrite(LED_BUILTIN, HIGH);

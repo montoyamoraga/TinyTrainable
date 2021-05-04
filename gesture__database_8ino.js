@@ -3,7 +3,7 @@ var gesture__database_8ino =
     [ "INPUT_GESTURE", "gesture__database_8ino.html#a415e33144c4b21535d4e4935ae843363", null ],
     [ "OUTPUT_SERIAL", "gesture__database_8ino.html#af2dc192d0bf6ca0b1c1b0827f3dee4bd", null ],
     [ "loop", "gesture__database_8ino.html#afe461d27b9c48d5921c00d521181f12f", null ],
-    [ "myTiny", "gesture__database_8ino.html#a6a903736b20cca18da3516c1ba667de4", null ],
+    [ "myTiny", "gesture__database_8ino.html#af39d468f854a677961dbde0da200ec10", null ],
     [ "setup", "gesture__database_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
     [ "accelerationThreshold", "gesture__database_8ino.html#a128d9c651abe6ce6229d846d4dcb7490", null ],
     [ "aX", "gesture__database_8ino.html#aa9f27499fb09c5c31ec7281bc79cf972", null ],

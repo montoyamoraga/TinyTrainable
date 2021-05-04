@@ -4,7 +4,7 @@ var gesture__buzzer_8ino =
     [ "NUM_GESTURES", "gesture__buzzer_8ino.html#a265d4fcbf85fd4c1daa0c27269ad56a5", null ],
     [ "OUTPUT_BUZZER", "gesture__buzzer_8ino.html#ad15b4e224a8f4df0e28df391f5b60216", null ],
     [ "loop", "gesture__buzzer_8ino.html#afe461d27b9c48d5921c00d521181f12f", null ],
-    [ "myTiny", "gesture__buzzer_8ino.html#aae4f861f36f17b9b73d12b17d340214e", null ],
+    [ "myTiny", "gesture__buzzer_8ino.html#af39d468f854a677961dbde0da200ec10", null ],
     [ "setup", "gesture__buzzer_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
     [ "accelerationThreshold", "gesture__buzzer_8ino.html#a128d9c651abe6ce6229d846d4dcb7490", null ],
     [ "freqArray0", "gesture__buzzer_8ino.html#acf7fdbb072a2dbc03f5ca9a5affaa8c1", null ],

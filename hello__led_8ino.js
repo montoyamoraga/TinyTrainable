@@ -3,7 +3,7 @@ var hello__led_8ino =
     [ "INPUT_NONE", "hello__led_8ino.html#a2415dbc707abe01ed8d1b9925681d65c", null ],
     [ "OUTPUT_LED", "hello__led_8ino.html#ac4aef6842d40bed2549e819eb83c8e11", null ],
     [ "loop", "hello__led_8ino.html#afe461d27b9c48d5921c00d521181f12f", null ],
-    [ "myTiny", "hello__led_8ino.html#a2d1522aedb1701a2d59785e46b770c9c", null ],
+    [ "myTiny", "hello__led_8ino.html#af39d468f854a677961dbde0da200ec10", null ],
     [ "setup", "hello__led_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
     [ "outputPinLED0", "hello__led_8ino.html#a6a50062bdfa3138b617e2a602c1f05fc", null ],
     [ "outputPinLED1", "hello__led_8ino.html#a659b3275682883828969ebfa5ac2312f", null ],

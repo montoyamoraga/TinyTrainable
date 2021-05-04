@@ -1,5 +1,6 @@
 var class_input =
 [
+    [ "~Input", "class_input.html#a230646fa6e6433b4d9ac3535b7d52087", null ],
     [ "identify", "class_input.html#a90132889a3e2ef01e864fa496c63c2e7", null ],
     [ "setupInstrument", "class_input.html#a6f220870bd53dfd6c68ef398c8644a3e", null ],
     [ "setupTF", "class_input.html#a43cefda3d47d439b901937f2e89a82e7", null ],

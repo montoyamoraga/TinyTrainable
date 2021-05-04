@@ -1,5 +1,6 @@
 var class_output =
 [
+    [ "~Output", "class_output.html#a0162ebdc8e5b13917788692fa9a753a0", null ],
     [ "bpmToMs", "class_output.html#adcc2b5ea9c7b7828ac21c4bd14fce632", null ],
     [ "getBuzzerParam", "class_output.html#abb9889b3390ba99f804768e3beea1f5d", null ],
     [ "getServoMaxAngle", "class_output.html#ac4ee2656e9f2fb8a05b0dd7f96d9fa2e", null ],

@@ -1,6 +1,6 @@
 var class_tiny_trainable =
 [
-    [ "TinyTrainable", "class_tiny_trainable.html#ae0c45125643fa0e389937b0b7423c3de", null ],
+    [ "TinyTrainable", "class_tiny_trainable.html#a088a969dd049b431aad8d24dca2fb3a7", null ],
     [ "~TinyTrainable", "class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be", null ],
     [ "blinkLEDBuiltIn", "class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810", null ],
     [ "bpmToMs", "class_tiny_trainable.html#a221585d11c9f71c6cc9e20ef2ef56acb", null ],

@@ -3,7 +3,7 @@ var color__servo_8ino =
     [ "INPUT_COLOR", "color__servo_8ino.html#aadb3e24b0191a3b06d8dfc41506a81dd", null ],
     [ "OUTPUT_SERVO", "color__servo_8ino.html#aaf8441667cb86606f2371ca8f6a771b0", null ],
     [ "loop", "color__servo_8ino.html#afe461d27b9c48d5921c00d521181f12f", null ],
-    [ "myTiny", "color__servo_8ino.html#a03d5f5fc5442226a0c02154b975d8503", null ],
+    [ "myTiny", "color__servo_8ino.html#af39d468f854a677961dbde0da200ec10", null ],
     [ "setup", "color__servo_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
     [ "COLOR_THRESHOLD", "color__servo_8ino.html#a21019d9579860a08d869f4dfda8598d8", null ],
     [ "EXAMPLES_PER_CLASS", "color__servo_8ino.html#a50e63880d50f6b4566cd328c06dda6d4", null ],

@@ -6,6 +6,7 @@ var class_tiny_trainable =
     [ "bpmToMs", "class_tiny_trainable.html#a221585d11c9f71c6cc9e20ef2ef56acb", null ],
     [ "debugPrint", "class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5", null ],
     [ "gesturePrintHeader", "class_tiny_trainable.html#a38b457cc23cd6a92249b1cdaa5ccbde6", null ],
+    [ "gestureReadData", "class_tiny_trainable.html#a03597cae7efc7e9c2efa11e9f37da41d", null ],
     [ "getBuzzerParam", "class_tiny_trainable.html#a741453d6d3a1235b556614f92f406e76", null ],
     [ "getServoMaxAngle", "class_tiny_trainable.html#acdf1a029a6a86032f6202f2dbc1800bd", null ],
     [ "getServoMinAngle", "class_tiny_trainable.html#af506bc594b0bfa6fb494f1eab9e560ca", null ],

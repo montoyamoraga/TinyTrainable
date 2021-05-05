@@ -2,6 +2,7 @@ var class_input_gesture =
 [
     [ "InputGesture", "class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7", null ],
     [ "gesturePrintHeader", "class_input_gesture.html#a6037400651a903e2e765e35d9ad5dd22", null ],
+    [ "gestureReadData", "class_input_gesture.html#a904a188c89289dc7f366ca05a75d6a32", null ],
     [ "identify", "class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d", null ],
     [ "setupInstrument", "class_input_gesture.html#aff59bf2cf5feaec7827dda87af2f641b", null ],
     [ "setupSensorLSM9DS1", "class_input_gesture.html#aba1b7e2869b0ba9fe8dc518eb3542a28", null ],

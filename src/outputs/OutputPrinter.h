@@ -21,13 +21,16 @@ public:
   // TinyTrainable methods
   virtual void playOutput(int classification) override;
   virtual void setupOutputPrinter() override;
-
-  // TODO: for printer we need several variables
-  int _outputPinPrinter = -1;
+  virtual void setPrinterBaudRate(int rate) override;
+  virtual void setPrinterBegin() override;
+  virtual void setPrinterPause(int pause) override;
+  virtual void setPrinterSleep() override;
+  virtual void setPrinterWake() override;
 
 private:
   // instance of Adafruit Thermal Printer, connected to Serial1
   Adafruit_Thermal _printer;
+  int _defaultRate = 9600;
 };
 
 #endif

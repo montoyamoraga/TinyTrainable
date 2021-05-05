@@ -373,6 +373,36 @@ void TinyTrainable::setupOutputPrinter() {
   }
 }
 
+void TinyTrainable::setPrinterBaudRate(int rate) {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterBaudRate(rate);
+  }
+}
+
+void TinyTrainable::setPrinterBegin() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterBegin();
+  }
+}
+
+void TinyTrainable::setPrinterPause(int pause) {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterPause(pause);
+  }
+}
+
+void TinyTrainable::setPrinterSleep() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterSleep();
+  }
+}
+
+void TinyTrainable::setPrinterWake() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterWake();
+  }
+}
+
 // methods for output serial
 void TinyTrainable::setupOutputSerial() {
   if (myOutput != nullptr) {

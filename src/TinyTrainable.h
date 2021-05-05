@@ -144,6 +144,11 @@ public:
 
   // methods for output printer
   void setupOutputPrinter();
+  void setPrinterBaudRate(int rate);
+  void setPrinterBegin();
+  void setPrinterPause(int pause);
+  void setPrinterSleep();
+  void setPrinterWake();
 
   // methods for output serial
   void setupOutputSerial();

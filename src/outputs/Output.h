@@ -40,6 +40,11 @@ public:
 
   // methods for output printer
   virtual void setupOutputPrinter() {}
+  virtual void setPrinterBaudRate(int rate) {}
+  virtual void setPrinterBegin() {}
+  virtual void setPrinterPause(int pause) {}
+  virtual void setPrinterSleep() {}
+  virtual void setPrinterWake() {}
 
   // methods for output serial
   virtual void setupOutputSerial() {}

@@ -42,6 +42,9 @@ sendMIDINoteOn		KEYWORD2
 setupOutputPrinter		KEYWORD2
 setPrinterBaudRate		KEYWORD2
 setPrinterBegin		KEYWORD2
+setPrinterPause		KEYWORD2
+setPrinterSleep		KEYWORD2
+setPrinterWake		KEYWORD2
 
 # output servo
 setupOutputServo	KEYWORD2

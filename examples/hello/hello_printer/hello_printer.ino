@@ -13,15 +13,12 @@ TinyTrainable myTiny;
 
 // for wiring instructions, refer to docs/
 
-// constants for the hardware
-const int placeHolder0 = 10;
-const int placeHolder1 = 10;
-const int placeHolder2 = 10;
-
 void setup() {
 
-  // TODO: baudrate is 19200, or 9600 for some printers, confirm
-  //  Serial1.begin(19200);
+  myTiny.setupOutputPrinter();
+
+  myTiny.setPrinterBegin();
+
 
   // start printer
   //  printer.begin();

@@ -21,6 +21,7 @@ var class_output =
     [ "setPrinterBegin", "class_output.html#a28216cbfdcb5a2dd362238e90e60b3da", null ],
     [ "setPrinterPause", "class_output.html#a074877794cf51b95665cb8c354825104", null ],
     [ "setPrinterSleep", "class_output.html#a17a348bec61d622199f089e9279486c0", null ],
+    [ "setPrinterTest", "class_output.html#ad3a202cad050b91185d9fcb3ae1747a6", null ],
     [ "setPrinterWake", "class_output.html#a7751a725c8f2cd8ca370234ccdd4a543", null ],
     [ "setServoMaxAngle", "class_output.html#a6d0db2ac1c18020fb4a6b6ab6e30d4b0", null ],
     [ "setServoMinAngle", "class_output.html#accf084eccf8db99ddbb75e335440dd11", null ],

@@ -1,6 +1,6 @@
 var class_tiny_trainable =
 [
-    [ "TinyTrainable", "class_tiny_trainable.html#a088a969dd049b431aad8d24dca2fb3a7", null ],
+    [ "TinyTrainable", "class_tiny_trainable.html#a00e94be6f92af0cd96379e3a8a78122b", null ],
     [ "~TinyTrainable", "class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be", null ],
     [ "blinkLEDBuiltIn", "class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810", null ],
     [ "bpmToMs", "class_tiny_trainable.html#a221585d11c9f71c6cc9e20ef2ef56acb", null ],
@@ -25,6 +25,7 @@ var class_tiny_trainable =
     [ "setPrinterBegin", "class_tiny_trainable.html#a653626a063f0860a58ee60034db04955", null ],
     [ "setPrinterPause", "class_tiny_trainable.html#aeb450e67b799ee4a921cad36a5c59f5c", null ],
     [ "setPrinterSleep", "class_tiny_trainable.html#ab2aa2454c1b3a96bda46d3c9c94b0946", null ],
+    [ "setPrinterTest", "class_tiny_trainable.html#a0983c8228d724b332d895aeb1c68c102", null ],
     [ "setPrinterWake", "class_tiny_trainable.html#a4858ac8bc5fff138ffe59e85818319ff", null ],
     [ "setServoMaxAngle", "class_tiny_trainable.html#a36e03cf7178975f0d962ffe5dee61f8c", null ],
     [ "setServoMinAngle", "class_tiny_trainable.html#a12dfeb1511fe3367bf935f124dbf2823", null ],

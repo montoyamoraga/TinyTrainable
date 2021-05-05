@@ -115,6 +115,8 @@ Inheritance diagram for OutputPrinter:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abbf799e4a04980138e93d633beb5e58b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#abbf799e4a04980138e93d633beb5e58b">OutputPrinter</a> ()</td></tr>
 <tr class="separator:abbf799e4a04980138e93d633beb5e58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08960ba59e64e56537adf5b4e2e2205"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#ab08960ba59e64e56537adf5b4e2e2205">~OutputPrinter</a> ()</td></tr>
+<tr class="separator:ab08960ba59e64e56537adf5b4e2e2205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae425da8bccf042af4d4774fdc41bbae0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#ae425da8bccf042af4d4774fdc41bbae0">playOutput</a> (int classification) override</td></tr>
 <tr class="separator:ae425da8bccf042af4d4774fdc41bbae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a751a764c3434bdfae19d6a9526e49e26"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#a751a764c3434bdfae19d6a9526e49e26">setupOutputPrinter</a> () override</td></tr>
@@ -129,6 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a97c937de3d35ba12beace645389d1a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d2b017577ab3b362c5c412f9b511c3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#a3d2b017577ab3b362c5c412f9b511c3b">setPrinterWake</a> () override</td></tr>
 <tr class="separator:a3d2b017577ab3b362c5c412f9b511c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac059d5276543b755c5d0524102628130"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#ac059d5276543b755c5d0524102628130">setPrinterTest</a> () override</td></tr>
+<tr class="separator:ac059d5276543b755c5d0524102628130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_output"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_output')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_output.html">Output</a></td></tr>
 <tr class="memitem:a0162ebdc8e5b13917788692fa9a753a0 inherit pub_methods_class_output"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output.html#a0162ebdc8e5b13917788692fa9a753a0">~Output</a> ()</td></tr>
 <tr class="separator:a0162ebdc8e5b13917788692fa9a753a0 inherit pub_methods_class_output"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,10 +185,10 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ac8300a4405d3bc8fbc475d10b1f3c56c"><td class="memItemLeft" align="right" valign="top">Adafruit_Thermal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#ac8300a4405d3bc8fbc475d10b1f3c56c">_printer</a></td></tr>
-<tr class="separator:ac8300a4405d3bc8fbc475d10b1f3c56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3b2c41a52f3f61c6226d115ce663074"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#ac3b2c41a52f3f61c6226d115ce663074">_defaultRate</a> = 9600</td></tr>
-<tr class="separator:ac3b2c41a52f3f61c6226d115ce663074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e94813b78d289cece365bfc0e7f3be0"><td class="memItemLeft" align="right" valign="top">Adafruit_Thermal *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#a2e94813b78d289cece365bfc0e7f3be0">_printer</a> = nullptr</td></tr>
+<tr class="separator:a2e94813b78d289cece365bfc0e7f3be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78fe13469e5428dde451aec1dfe19d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_printer.html#af78fe13469e5428dde451aec1dfe19d6">_printerBaudRate</a> = 9600</td></tr>
+<tr class="separator:af78fe13469e5428dde451aec1dfe19d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -201,6 +205,23 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">OutputPrinter::OutputPrinter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab08960ba59e64e56537adf5b4e2e2205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab08960ba59e64e56537adf5b4e2e2205">&#9670;&nbsp;</a></span>~OutputPrinter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">OutputPrinter::~OutputPrinter </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -349,6 +370,33 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ac059d5276543b755c5d0524102628130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac059d5276543b755c5d0524102628130">&#9670;&nbsp;</a></span>setPrinterTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OutputPrinter::setPrinterTest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_output.html#ad3a202cad050b91185d9fcb3ae1747a6">Output</a>.</p>
+
+</div>
+</div>
 <a id="a3d2b017577ab3b362c5c412f9b511c3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d2b017577ab3b362c5c412f9b511c3b">&#9670;&nbsp;</a></span>setPrinterWake()</h2>
 
@@ -404,8 +452,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac3b2c41a52f3f61c6226d115ce663074"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3b2c41a52f3f61c6226d115ce663074">&#9670;&nbsp;</a></span>_defaultRate</h2>
+<a id="a2e94813b78d289cece365bfc0e7f3be0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e94813b78d289cece365bfc0e7f3be0">&#9670;&nbsp;</a></span>_printer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,7 +462,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int OutputPrinter::_defaultRate = 9600</td>
+          <td class="memname">Adafruit_Thermal* OutputPrinter::_printer = nullptr</td>
         </tr>
       </table>
   </td>
@@ -426,8 +474,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac8300a4405d3bc8fbc475d10b1f3c56c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8300a4405d3bc8fbc475d10b1f3c56c">&#9670;&nbsp;</a></span>_printer</h2>
+<a id="af78fe13469e5428dde451aec1dfe19d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78fe13469e5428dde451aec1dfe19d6">&#9670;&nbsp;</a></span>_printerBaudRate</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,7 +484,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Adafruit_Thermal OutputPrinter::_printer</td>
+          <td class="memname">int OutputPrinter::_printerBaudRate = 9600</td>
         </tr>
       </table>
   </td>

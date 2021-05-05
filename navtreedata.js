@@ -55,7 +55,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_input_8h.html",
-"class_output_servo.html#a86b54a6ac78790d1e5946e243b3e3397",
+"class_output_servo.html#a530f50db199a433a191f34abffcc4151",
 "hello__midi_8ino.html#ae08d2c382b1bc1b2351974750116c861"
 ];
 

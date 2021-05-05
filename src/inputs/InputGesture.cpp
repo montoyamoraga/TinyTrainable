@@ -126,28 +126,28 @@ void InputGesture::gestureReadData() {
   //
 //  // while we have read as many samples as wanted for a certain motion
 //  // reset the IMU reader variables
-//  while (samplesRead == numSamples) {
+ while (_samplesRead == _numSamples) {
 //    //
 //    // if there is acceleration data available from the sensor
-//    if (IMU.accelerationAvailable()) {
-//
-//      // read it and store it on variables aX, aY, aZ
-//      IMU.readAcceleration(aX, aY, aZ);
-//
-//      // store the sum of their absolute values in variable aSum
-//      float aSum = fabs(aX) + fabs(aY) + fabs(aZ);
-//
-//      // check if aSum is above the threshold
-//      if (aSum >= accelerationThreshold) {
-//
-//        // reset the sample read count
-//        samplesRead = 0;
-//
-//        // exit the while loop
-//        break;
-//      }
-//    }
-//  }
+   if (IMU.accelerationAvailable()) {
+
+     // read it and store it on variables aX, aY, aZ
+     IMU.readAcceleration(_aX, _aY, _aZ);
+
+     // store the sum of their absolute values in variable aSum
+     float aSum = fabs(_aX) + fabs(_aY) + fabs(_aZ);
+
+     // check if aSum is above the threshold
+     if (aSum >= _accelerationThreshold) {
+
+       // reset the sample read count
+       _samplesRead = 0;
+
+       // exit the while loop
+       break;
+     }
+   }
+ }
 
   // check if the all the required samples have been read since
   // the last time the significant motion was detected

@@ -40,12 +40,22 @@ public:
 private:
   void setupSensorLSM9DS1();
 
+    float _accelerationThreshold = 2.5;
+  int _numSamples = 119;
+  int _samplesRead = _numSamples;
+
+  float _aX;
+  float _aY;
+  float _aZ;
+  float _gX;
+  float _gY;
+  float _gZ;
+
   // tflite setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
-  float _accelerationThreshold = 2.5;
-  int _numSamples = 119;
-  int _samplesRead = _numSamples;
+
+
 
   // tflite variables
   tflite::MicroErrorReporter tflErrorReporter;

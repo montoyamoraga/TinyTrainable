@@ -35,7 +35,7 @@ bool serialDebugging = true;
 //const int floatDecimals = 3;
 
 // variables for reading
-float aX, aY, aZ, gX, gY, gZ;
+//float aX, aY, aZ, gX, gY, gZ;
 
 void setup() {
 

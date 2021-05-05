@@ -41,6 +41,7 @@ _checkedSetup		KEYWORD2
 # input gesture
 setupTF			KEYWORD2
 gesturePrintHeader 	KEYWORD2
+gestureReadData 	KEYWORD2
 
 # output buzzer
 setupOutputBuzzer	KEYWORD2

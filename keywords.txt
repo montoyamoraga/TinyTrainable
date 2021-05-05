@@ -25,7 +25,7 @@ helloOutputsSetup	KEYWORD2
 helloOutputs		KEYWORD2
 playOutput		KEYWORD2
 
-#input color
+# input color
 trainKNN		KEYWORD2
 identify		KEYWORD2
 setLabels		KEYWORD2

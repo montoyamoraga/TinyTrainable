@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['_7einput_236',['~Input',['../class_input.html#a230646fa6e6433b4d9ac3535b7d52087',1,'Input']]],
-  ['_7eoutput_237',['~Output',['../class_output.html#a0162ebdc8e5b13917788692fa9a753a0',1,'Output']]],
-  ['_7etinytrainable_238',['~TinyTrainable',['../class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be',1,'TinyTrainable']]]
+  ['_7einput_241',['~Input',['../class_input.html#a230646fa6e6433b4d9ac3535b7d52087',1,'Input']]],
+  ['_7eoutput_242',['~Output',['../class_output.html#a0162ebdc8e5b13917788692fa9a753a0',1,'Output']]],
+  ['_7etinytrainable_243',['~TinyTrainable',['../class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be',1,'TinyTrainable']]]
 ];

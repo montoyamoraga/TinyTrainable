@@ -26,15 +26,10 @@ void InputGesture::setupInstrument(bool serialDebugging) {
 }
 
 // TODO: copy pasted from Peter's fork
-void InputGesture::setupTF(String gestures[3], float accelerationThreshold,
-                           int numSamples) {
+void InputGesture::setupTF(String gestures[3]) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];
-
-  _accelerationThreshold = accelerationThreshold;
-  _numSamples = numSamples;
-  _samplesRead = numSamples;
 
   // get the TFL representation of the model byte array
   tflModel = tflite::GetModel(model);
@@ -120,6 +115,10 @@ void InputGesture::identify() {
       }
     }
   }
+}
+
+void InputGesture::gesturePrintHeader() {
+  Serial.println(_gestureHeader);
 }
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)

@@ -31,10 +31,10 @@ public:
   // constructor
   InputGesture();
 
-  // TODO: add virtual void declarations in TinyTrainable.h
-  void setupInstrument(bool serialDebugging);
-  void setupTF(String gestures[3], float accelerationThreshold, int numSamples);
-  void identify();
+  virtual void setupInstrument(bool serialDebugging) override;
+  virtual void setupTF(String gestures[3]) override;
+  virtual void identify() override;
+  virtual void gesturePrintHeader() override;
 
 private:
   void setupSensorLSM9DS1();
@@ -42,9 +42,9 @@ private:
   // tflite setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
-  float _accelerationThreshold = -1;
-  int _numSamples = -1;
-  int _samplesRead = -1;
+  float _accelerationThreshold = 2.5;
+  int _numSamples = 119;
+  int _samplesRead = _numSamples;
 
   // tflite variables
   tflite::MicroErrorReporter tflErrorReporter;
@@ -62,6 +62,8 @@ private:
 
   // classification variables
   float aX, aY, aZ, gX, gY, gZ; // acceleration and gravity in x, y, z
+
+  const String _gestureHeader = "aX,aY,aZ,gX,gY,gZ";
 };
 
 #endif

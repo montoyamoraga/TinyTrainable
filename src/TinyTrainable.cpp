@@ -127,6 +127,12 @@ void TinyTrainable::gesturePrintHeader() {
   }
 }
 
+void TinyTrainable::gestureReadData() {
+  if (myInput != nullptr) {
+    myInput->gestureReadData();
+  }
+}
+
 /// @brief method for setup internal LEDs of the Arduino
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED

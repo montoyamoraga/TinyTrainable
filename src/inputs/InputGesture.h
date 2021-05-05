@@ -35,6 +35,7 @@ public:
   virtual void setupTF(String gestures[3]) override;
   virtual void identify() override;
   virtual void gesturePrintHeader() override;
+  virtual void gestureReadData() override;
 
 private:
   void setupSensorLSM9DS1();

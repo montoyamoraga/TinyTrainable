@@ -88,6 +88,7 @@ public:
   // methods for input gesture
   void setupTF(String gestures[3]);
   void gesturePrintHeader();
+  void gestureReadData();
 
   // methods for input speech
 

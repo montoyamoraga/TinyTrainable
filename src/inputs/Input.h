@@ -23,6 +23,7 @@ public:
   // gesture
   virtual void setupTF(String gestures[3]) {}
   virtual void gesturePrintHeader() {}
+  virtual void gestureReadData() {}
 
   TinyTrainable *tiny = nullptr;
 };

@@ -56,26 +56,41 @@ setMIDINote		KEYWORD2
 sendMIDINoteOn		KEYWORD2
 
 # output printer
-setupOutputPrinter		KEYWORD2
-setPrinterBaudRate		KEYWORD2
+setupOutputPrinter	KEYWORD2
+setPrinterBaudRate	KEYWORD2
 setPrinterBegin		KEYWORD2
 setPrinterPause		KEYWORD2
 setPrinterSleep		KEYWORD2
 setPrinterWake		KEYWORD2
 
+# output serial
+setupOutputSerial	KEYWORD2
+
 # output servo
 setupOutputServo	KEYWORD2
 setServoTempo		KEYWORD2
 
-# output serial
-setupOutputSerial
-
 setupInstrument		KEYWORD2
-
 
 ################################
 # Constants
 ################################
+
+# inputs
+INPUT_NONE		LITERAL1
+INPUT_COLOR		LITERAL1
+INPUT_GESTURE		LITERAL1
+INPUT_SPEECH		LITERAL1
+
+# outputs
+OUTPUT_NONE		LITERAL1
+OUTPUT_BUZZER		LITERAL1
+OUTPUT_LCD		LITERAL1
+OUTPUT_LED		LITERAL1
+OUTPUT_MIDI		LITERAL1
+OUTPUT_PRINTER		LITERAL1
+OUTPUT_SERIAL		LITERAL1
+OUTPUT_SERVO		LITERAL1
 
 # colors
 red			LITERAL1

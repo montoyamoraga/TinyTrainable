@@ -1,5 +1,5 @@
 /// @file gesture_database.ino
-/// @brief sketch to build database for gesture input
+/// @brief build database for input gesture
 
 // this sketch is adapted from the public domain GestureToEmoji example
 // from the repository ArduinoTensorFlowLiteTutorials by Arduino
@@ -12,9 +12,6 @@
 
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
-
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny;
 
 // constant for debugging
 const bool tinyDebugging = true;

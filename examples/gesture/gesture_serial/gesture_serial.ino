@@ -1,5 +1,5 @@
-/// @file gesture_classifier.ino
-/// @brief input gesture with output classifier?
+/// @file gesture_serial.ino
+/// @brief input gesture with output serial
 
 // this sketch is adapted from the GestureToEmoji example
 // from the repository ArduinoTensorFlowLiteTutorials by Arduino
@@ -21,15 +21,9 @@ TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 
 // TODO - see friday 04/30 notes about this
 // include machine learning model
-// #include "../assets/modelGesture.h"
+#include "../assets/modelGesture.h"
 // or include your own
 //#include "myModel.h"
-
-// threshold of significant in G's
-const float accelerationThreshold = 2.5;
-
-// number of samples per gesture
-const int numSamples = 119;
 
 // array to map gesture index to a name
 String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
@@ -38,9 +32,12 @@ void setup() {
   // setup instrument
   myTiny.setupInstrument(true);
   Serial.println("hello in setup");
-  myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
+  myTiny.setupTF(GESTURES);
 
   myTiny.setupOutputSerial();
 }
 
-void loop() { myTiny.identify(); }
+void loop() {
+  // run the classification
+  myTiny.identify();
+}

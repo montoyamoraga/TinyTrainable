@@ -6,43 +6,59 @@
 // include local library
 #include "TinyTrainable.h"
 
+#include "inputs/InputColor.h"
+#include "inputs/InputGesture.h"
+#include "inputs/InputSpeech.h"
+#include "outputs/OutputBuzzer.h"
+#include "outputs/OutputLCD.h"
+#include "outputs/OutputLED.h"
+#include "outputs/OutputMIDI.h"
+#include "outputs/OutputPrinter.h"
+#include "outputs/OutputSerial.h"
+#include "outputs/OutputServo.h"
+
 /// initialize static variables
 bool TinyTrainable::_serialDebugging = false;
 int TinyTrainable::_baudRate = 9600;
 
 /// constructor method
-TinyTrainable::TinyTrainable() {
+TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
 
-/// initialize input
-#if defined(INPUT_COLOR)
+if(inputType == INPUT_COLOR){
   myInput = new InputColor();
-#elif defined(INPUT_GESTURE)
+}
+else if(inputType == INPUT_GESTURE){
   myInput = new InputGesture();
-#elif defined(INPUT_SPEECH)
+}
+else if(inputType == INPUT_SPEECH){
   myInput = new InputSpeech();
-#else
+}else{
   myInput = new Input();
-#endif
+}
 
 
 /// initialize output
-#if defined(OUTPUT_BUZZER)
-  myOutput = new OutputBuzzer();
-#elif defined(OUTPUT_LCD)
-  myOutput = new OutputLCD();
-#elif defined(OUTPUT_LED)
-  myOutput = new OutputLED();
-#elif defined(OUTPUT_MIDI)
-  myOutput = new OutputMIDI();
-#elif defined(OUTPUT_PRINTER)
+ if (outputType == OUTPUT_BUZZER){
+   myOutput = new OutputBuzzer(); 
+} else if (outputType == OUTPUT_LCD){
+   myOutput = new OutputLCD();
+} else if (outputType == OUTPUT_LED){
+   myOutput = new OutputLED();
+} else if (outputType == OUTPUT_MIDI){
+   myOutput = new OutputMIDI();
+}
+ else if (outputType == OUTPUT_PRINTER){
   myOutput = new OutputPrinter();
-#elif defined(OUTPUT_SERIAL)
-  myOutput = new OutputSerial();
-#elif defined(OUTPUT_SERVO)
-  myOutput = new OutputServo();
-#else
-  myOutput = new Output();
-#endif
+}
+ else if (outputType == OUTPUT_SERIAL){
+   myOutput = new OutputSerial();
+}
+ else if (outputType == OUTPUT_SERVO){
+   myOutput = new OutputServo();
+}
+else{
+   myOutput = new Output();
+}
 
   // TODO: research the name of this linking way
   if (myInput != nullptr) {
@@ -400,6 +416,12 @@ void TinyTrainable::setPrinterSleep() {
 void TinyTrainable::setPrinterWake() {
   if (myOutput != nullptr) {
     myOutput->setPrinterWake();
+  }
+}
+
+void TinyTrainable::setPrinterTest() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterTest();
   }
 }
 

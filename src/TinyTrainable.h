@@ -14,48 +14,22 @@
 #include "inputs/Input.h"
 #include "outputs/Output.h"
 
-// conditionally include input libraries
-#ifdef INPUT_COLOR
-#include "inputs/InputColor.h"
-#endif
-
-#ifdef INPUT_GESTURE
-#include "inputs/InputGesture.h"
-#endif
-
-#ifdef INPUT_SPEECH
-#include "inputs/InputSpeech.h"
-#endif
-
-// conditionally include output libraries
-
-#ifdef OUTPUT_BUZZER
-#include "outputs/OutputBuzzer.h"
-#endif
-
-#ifdef OUTPUT_LCD
-#include "outputs/OutputLCD.h"
-#endif
-
-#ifdef OUTPUT_LED
-#include "outputs/OutputLED.h"
-#endif
-
-#ifdef OUTPUT_MIDI
-#include "outputs/OutputMIDI.h"
-#endif
-
-#ifdef OUTPUT_PRINTER
-#include "outputs/OutputPrinter.h"
-#endif
-
-#ifdef OUTPUT_SERIAL
-#include "outputs/OutputSerial.h"
-#endif
-
-#ifdef OUTPUT_SERVO
-#include "outputs/OutputServo.h"
-#endif
+enum InputType {
+	INPUT_NONE = 0,
+	INPUT_COLOR,
+	INPUT_GESTURE,
+	INPUT_SPEECH
+};
+enum OutputType {
+	OUTPUT_NONE = 0,
+	OUTPUT_BUZZER,
+	OUTPUT_LCD,
+	OUTPUT_LED,
+	OUTPUT_MIDI,
+	OUTPUT_PRINTER,
+	OUTPUT_SERIAL,
+	OUTPUT_SERVO
+};
 
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
@@ -76,16 +50,20 @@ protected:
 public:
   // constructor
   // TinyTrainable(Input *newInput, Output *newOutput);
-  TinyTrainable();
+  TinyTrainable(InputType inputType, OutputType outputType);
   // destructor
   ~TinyTrainable();
 
   // template datatypes allows any datatype as an argument
+  
+  
   template <typename T> void debugPrint(T message) {
+    #ifdef DEBUG_TINY
     if (this->_serialDebugging) {
       Serial.print("debug - ");
       Serial.println(message);
     }
+    #endif
   };
 
   // TODO: this override works, do it for other functions
@@ -149,6 +127,7 @@ public:
   void setPrinterPause(int pause);
   void setPrinterSleep();
   void setPrinterWake();
+  void setPrinterTest();
 
   // methods for output serial
   void setupOutputSerial();

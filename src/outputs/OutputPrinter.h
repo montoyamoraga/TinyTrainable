@@ -18,6 +18,9 @@ public:
   // constructor
   OutputPrinter();
 
+  // destructor
+  ~OutputPrinter();
+
   // TinyTrainable methods
   virtual void playOutput(int classification) override;
   virtual void setupOutputPrinter() override;
@@ -26,11 +29,13 @@ public:
   virtual void setPrinterPause(int pause) override;
   virtual void setPrinterSleep() override;
   virtual void setPrinterWake() override;
+  virtual void setPrinterTest() override;
+
 
 private:
   // instance of Adafruit Thermal Printer, connected to Serial1
-  Adafruit_Thermal _printer;
-  int _defaultRate = 9600;
+  Adafruit_Thermal *_printer = nullptr;
+  int _printerBaudRate = 9600;
 };
 
 #endif

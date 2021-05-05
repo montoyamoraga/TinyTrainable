@@ -45,6 +45,7 @@ public:
   virtual void setPrinterPause(int pause) {}
   virtual void setPrinterSleep() {}
   virtual void setPrinterWake() {}
+  virtual void setPrinterTest() {}
 
   // methods for output serial
   virtual void setupOutputSerial() {}

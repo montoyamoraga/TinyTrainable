@@ -13,14 +13,11 @@
 // and still without comments about what most lines mean
 // and without optimization
 
-#define INPUT_GESTURE
-#define OUTPUT_SERIAL
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny;
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 
 // TODO - see friday 04/30 notes about this
 // include machine learning model

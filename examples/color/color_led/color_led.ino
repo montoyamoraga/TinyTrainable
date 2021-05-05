@@ -1,15 +1,11 @@
 /// @file color_led.ino
 /// @brief input color with output LED
 
-// define input and output
-#define INPUT_COLOR
-#define OUTPUT_LED
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny;
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_COLOR, OUTPUT_LED);
 
 // constants for the hardware
 const int outputPinLED0 = 3;

@@ -3,15 +3,11 @@
 /// this code is based on the Blink example
 /// http://www.arduino.cc/en/Tutorial/Blink
 
-// define input and output
-#define INPUT_NONE
-#define OUTPUT_NONE
-
-// include TinyTrainable library
+// include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny;
+TinyTrainable myTiny(INPUT_NONE, OUTPUT_NONE);
 
 // constants for time LEDs are on and off
 // measured in milliseconds

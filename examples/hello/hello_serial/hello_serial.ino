@@ -1,15 +1,11 @@
 /// @file hello_serial.ino
 /// @brief Example: Test output with serial USB
 
-// define input and output
-#define INPUT_NONE
-#define OUTPUT_SERIAL
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny;
+TinyTrainable myTiny(INPUT_NONE, OUTPUT_SERIAL);
 
 int pauseTime = 2000;
 

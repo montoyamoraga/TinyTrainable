@@ -1,15 +1,11 @@
 /// @file hello_servo.ino
 /// @brief test output servo
 
-// define input and output
-#define INPUT_NONE
-#define OUTPUT_SERVO
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny;
+TinyTrainable myTiny(INPUT_NONE, OUTPUT_SERVO);
 
 // our servo moves between the minimum and maximum angles
 // at a desired tempo measured in beats per minute

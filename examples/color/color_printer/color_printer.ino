@@ -1,15 +1,11 @@
 /// @file color_printer.ino
 /// @brief input color with output thermal printer
 
-// define input and output
-#define INPUT_COLOR
-#define OUTPUT_PRINTER
-
-// include TinyTrainable library
+// include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny;
+TinyTrainable myTiny(INPUT_COLOR, OUTPUT_PRINTER);
 
 // constants for the KNN algorithm
 const int K = 5;

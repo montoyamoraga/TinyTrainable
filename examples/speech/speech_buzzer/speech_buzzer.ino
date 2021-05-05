@@ -13,18 +13,14 @@
   limitations under the License.
   ==============================================================================*/
 
-/// @file gesture_buzzer.ino
-/// @brief input gesture with output buzzer
-
-// define input and output
-#define INPUT_SPEECH
-#define OUTPUT_BUZZER
+/// @file speech_buzzer.ino
+/// @brief input speech with output buzzer
 
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny;
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_SPEECH, OUTPUT_BUZZER);
 
 // constants for the hardware
 const int outputPin = 8;

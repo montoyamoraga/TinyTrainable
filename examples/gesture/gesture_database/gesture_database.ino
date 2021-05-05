@@ -7,12 +7,11 @@
 // and as of April 2021 available at
 // https://github.com/arduino/ArduinoTensorFlowLiteTutorials/blob/master/GestureToEmoji/ArduinoSketches/IMU_Capture/IMU_Capture.ino
 
-// define input and output
-#define INPUT_GESTURE
-#define OUTPUT_SERIAL
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
+
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 
 // declare instance of the TinyTrainable instrument
 TinyTrainable myTiny;

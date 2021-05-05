@@ -25,6 +25,23 @@ helloOutputsSetup	KEYWORD2
 helloOutputs		KEYWORD2
 playOutput		KEYWORD2
 
+#input color
+trainKNN		KEYWORD2
+identify		KEYWORD2
+setLabels		KEYWORD2
+readColor		KEYWORD2
+-myKNN			KEYWORD2
+_previousClassification	KEYWORD2
+_labels			KEYWORD2
+_k			KEYWORD2
+_colorThreshold		KEYWORD2
+_colorReading		KEYWORD2
+_checkedSetup		KEYWORD2
+
+# input gesture
+setupTF		KEYWORD2
+
+# output buzzer
 setupOutputBuzzer	KEYWORD2
 setBuzzerPin		KEYWORD2
 setBuzzerFrequency	KEYWORD2
@@ -50,20 +67,11 @@ setPrinterWake		KEYWORD2
 setupOutputServo	KEYWORD2
 setServoTempo		KEYWORD2
 
+# output serial
+setupOutputSerial
+
 setupInstrument		KEYWORD2
 
-# color
-trainKNN		KEYWORD2
-identify		KEYWORD2
-setLabels		KEYWORD2
-readColor		KEYWORD2
--myKNN			KEYWORD2
-_previousClassification	KEYWORD2
-_labels			KEYWORD2
-_k			KEYWORD2
-_colorThreshold		KEYWORD2
-_colorReading		KEYWORD2
-_checkedSetup		KEYWORD2
 
 ################################
 # Constants

@@ -1,8 +1,6 @@
 var gesture__buzzer_8ino =
 [
-    [ "INPUT_GESTURE", "gesture__buzzer_8ino.html#a415e33144c4b21535d4e4935ae843363", null ],
     [ "NUM_GESTURES", "gesture__buzzer_8ino.html#a265d4fcbf85fd4c1daa0c27269ad56a5", null ],
-    [ "OUTPUT_BUZZER", "gesture__buzzer_8ino.html#ad15b4e224a8f4df0e28df391f5b60216", null ],
     [ "loop", "gesture__buzzer_8ino.html#afe461d27b9c48d5921c00d521181f12f", null ],
     [ "setup", "gesture__buzzer_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
     [ "accelerationThreshold", "gesture__buzzer_8ino.html#a128d9c651abe6ce6229d846d4dcb7490", null ],
@@ -10,7 +8,7 @@ var gesture__buzzer_8ino =
     [ "freqArray1", "gesture__buzzer_8ino.html#a12f31326b2f1fc9d63d7d710179f849a", null ],
     [ "freqArray2", "gesture__buzzer_8ino.html#a8758e9fd814c52d8369db042e7cdd843", null ],
     [ "GESTURES", "gesture__buzzer_8ino.html#aa25f0c18bf7cb36bee1683d9c4044741", null ],
-    [ "myTiny", "gesture__buzzer_8ino.html#abf5e8af837b90635f51b2de72c46bc76", null ],
+    [ "myTiny", "gesture__buzzer_8ino.html#ad1dbdab80a13b364923c59ff9c6ee959", null ],
     [ "numSamples", "gesture__buzzer_8ino.html#a6e69593c0b3936427c48a2929a462cb2", null ],
     [ "objectNames", "gesture__buzzer_8ino.html#adf25b5914c66865f4848a631bb806907", null ],
     [ "outputPin", "gesture__buzzer_8ino.html#a34372894b2bb3820036f766b11588371", null ],

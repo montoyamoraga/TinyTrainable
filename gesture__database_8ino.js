@@ -11,7 +11,7 @@ var gesture__database_8ino =
     [ "gX", "gesture__database_8ino.html#a7924dddbfb2c0f4c5974d78fd919f4c5", null ],
     [ "gY", "gesture__database_8ino.html#ab857a2882123103c01a787c041f23e66", null ],
     [ "gZ", "gesture__database_8ino.html#aa8eaf0dab9163e9e69478f9c29038728", null ],
-    [ "myTiny", "gesture__database_8ino.html#a4647282928129669aa82ce749de5c81e", null ],
+    [ "myTiny", "gesture__database_8ino.html#a849e308e864de4e3bd41a465d08baf13", null ],
     [ "numSamples", "gesture__database_8ino.html#a6e69593c0b3936427c48a2929a462cb2", null ],
     [ "samplesRead", "gesture__database_8ino.html#af72a80a4d2eb835413a2b8bf3535613e", null ],
     [ "serialDebugging", "gesture__database_8ino.html#a35df65e6150b37ce45b9a5ff65843be1", null ],

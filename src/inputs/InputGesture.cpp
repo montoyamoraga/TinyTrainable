@@ -25,14 +25,13 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   }
 }
 
-void InputGesture::setupTF(String gestures[3]) {
+void InputGesture::setupTF(String gestures[3], const unsigned char* model) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];
 
-  // get the TFL representation of the model byte array
-//   tflModel = tflite::GetModel(_modelGestureName);
-  tflModel = tflite::GetModel(modelGestureDefault);
+  // load either the default or the custom one
+  tflModel = tflite::GetModel((model == nullptr)?modelGestureDefault:model);
 
   if (tflModel->version() != TFLITE_SCHEMA_VERSION) {
     Serial.println("Model schema mismatch!");
@@ -97,7 +96,7 @@ void InputGesture::identify() {
       _samplesRead++;
 
       if (_samplesRead == _numSamples) {
-        Serial.println("got samples");
+
         // Run inferencing
         TfLiteStatus invokeStatus = tflInterpreter->Invoke();
         if (invokeStatus != kTfLiteOk) {
@@ -117,9 +116,10 @@ void InputGesture::identify() {
             maxVal = tflOutputTensor->data.f[i];
           }
           if (tiny->_serialDebugging) {
-            Serial.print(_gestures[i]);
-            Serial.print(": ");
-            Serial.println(tflOutputTensor->data.f[i], 6);
+		  
+        //     Serial.print(_gestures[i]);
+        //     Serial.print(": ");
+        //     Serial.println(tflOutputTensor->data.f[i], 6);
           }
         }
         tiny->playOutput(maxIndex);
@@ -200,12 +200,6 @@ void InputGesture::gestureReadData() {
   //    }
   //  }
 }
-
-void InputGesture::gestureLoadModel(String myModel) {
-  _modelGestureName = myModel;
-  // TODO aaron
-}
-
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer

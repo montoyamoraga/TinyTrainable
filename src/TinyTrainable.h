@@ -86,10 +86,9 @@ public:
   void setupLEDs();
 
   // methods for input gesture
-  void setupTF(String gestures[3]);
+  void setupTF(String gestures[3], const unsigned char* model = nullptr);
   void gesturePrintHeader();
   void gestureReadData();
-  void gestureLoadModel(String myModel);
 
   // methods for input speech
 

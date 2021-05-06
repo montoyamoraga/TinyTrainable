@@ -13,22 +13,17 @@
 // and still without comments about what most lines mean
 // and without optimization
 
+// include gesture model
+#include "myGestureModel.h"
+
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 
-// TODO - see friday 04/30 notes about this
-// include machine learning model
-// #include "../assets/modelGesture.h"
-// or include your own
-//#include "myModel.h"
-
 // constant for debugging
 const bool tinyDebugging = true;
-
-#include "myGestureModel.h"
 
 // array to map gesture index to a name
 String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
@@ -36,8 +31,11 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 void setup() {
   // setup instrument
   myTiny.setupInstrument(tinyDebugging);
-  myTiny.setupInstrument(true);
+
+  // use this line to include the default model
   myTiny.setupTF(GESTURES);
+  // or use this line to include your own model
+//   myTiny.setupTF(GESTURES, myGestureModel);
 
   myTiny.setupOutputSerial();
 }

@@ -32,16 +32,13 @@ public:
   InputGesture();
 
   virtual void setupInstrument(bool serialDebugging) override;
-  virtual void setupTF(String gestures[3]) override;
+  virtual void setupTF(String gestures[3], const unsigned char* model = nullptr) override;
   virtual void identify() override;
   virtual void gesturePrintHeader() override;
   virtual void gestureReadData() override;
-  virtual void gestureLoadModel(String myModel) override;
 
 private:
   void setupSensorLSM9DS1();
-
-  String _modelGestureName = "modelGestureDefault";
 
 // threshold of significance measured in G's
   float _accelerationThreshold = 2.5;
@@ -66,7 +63,6 @@ private:
   // tflite setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
-
 
   // tflite variables
   tflite::MicroErrorReporter tflErrorReporter;

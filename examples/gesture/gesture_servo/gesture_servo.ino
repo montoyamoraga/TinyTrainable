@@ -8,11 +8,19 @@
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_BUZZER);
+TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERVO);
+
+// String objectNames[3] = {"Object0", "Object1", "Object2"};
+String objectNames[3] = {"avocado", "orange", "towel"};
+
+// our servo moves between the minimum and maximum angles
+// at a desired tempo measured in beats per minute
+const int tempo0 = 20;
+const int tempo1 = 90;
+const int tempo2 = 200;
 
 // constants for the hardware
-const int outputPin = 2;
-
+const int outputPin = 9;
 // constant for debugging
 const bool tinyDebugging = true;
 
@@ -31,24 +39,21 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 // setup() runs once, at the beginning
 void setup() {
   // set debugging over serial port
+
   myTiny.setupInstrument(tinyDebugging);
 
-    // use this line to include the default model
+  myTiny.setupOutputServo(outputPin);
+
+  // set the tempo (in bpm) for each object
+  myTiny.setServoTempo(0, tempo0);
+  myTiny.setServoTempo(1, tempo1);
+  myTiny.setServoTempo(2, tempo2);
+
+  // use this line to include the default model
   myTiny.setupTF(GESTURES);
   // or use this line to include your own model
-//   myTiny.setupTF(GESTURES, myGestureModel);
+  //   myTiny.setupTF(GESTURES, myGestureModel);
 
-  // set its output (see buzzer examples for more buzzer options)
-  myTiny.setupOutputBuzzer(outputPin);
-
-  // set frequencies, in Hz
-  myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
-  myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
-  myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
-  // set durations, in milliseconds
-  myTiny.setBuzzerDuration(0, 300);
-  myTiny.setBuzzerDuration(1, 600);
-  myTiny.setBuzzerDuration(2, 900);
 }
 
 void loop() {

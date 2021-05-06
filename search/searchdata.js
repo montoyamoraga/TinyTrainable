@@ -6,8 +6,7 @@ var indexSectionsWithContent =
   3: "bdgilmoprst~",
   4: "_abcefgklmnopst",
   5: "bcio",
-  6: "bcgimorsuy",
-  7: "n"
+  6: "bcgimorsuy"
 };
 
 var indexSectionNames =
@@ -18,8 +17,7 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "enums",
-  6: "enumvalues",
-  7: "defines"
+  6: "enumvalues"
 };
 
 var indexSectionLabels =
@@ -30,7 +28,6 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Enumerations",
-  6: "Enumerator",
-  7: "Macros"
+  6: "Enumerator"
 };
 

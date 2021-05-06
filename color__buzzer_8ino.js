@@ -8,7 +8,7 @@ var color__buzzer_8ino =
     [ "freqArray1", "color__buzzer_8ino.html#a12f31326b2f1fc9d63d7d710179f849a", null ],
     [ "freqArray2", "color__buzzer_8ino.html#a8758e9fd814c52d8369db042e7cdd843", null ],
     [ "K", "color__buzzer_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd", null ],
-    [ "myTiny", "color__buzzer_8ino.html#a8b2fe4cd893496d611dfb077c818308d", null ],
+    [ "myTiny", "color__buzzer_8ino.html#a8ca8648e57cab248561cf2961d2fb622", null ],
     [ "objectNames", "color__buzzer_8ino.html#adf25b5914c66865f4848a631bb806907", null ],
     [ "outputPin", "color__buzzer_8ino.html#a34372894b2bb3820036f766b11588371", null ],
     [ "paramArrayLength", "color__buzzer_8ino.html#a8c8f80550796eaa32107466e71c26846", null ],

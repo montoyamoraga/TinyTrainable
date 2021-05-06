@@ -24,6 +24,7 @@ public:
   virtual void setupTF(String gestures[3]) {}
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
+  virtual void gestureLoadModel(String myModel) {}
 
   TinyTrainable *tiny = nullptr;
 };

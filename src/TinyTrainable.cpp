@@ -133,6 +133,12 @@ void TinyTrainable::gestureReadData() {
   }
 }
 
+void TinyTrainable::gestureLoadModel(String myModel) {
+  if (myInput != nullptr) {
+    myInput->gestureLoadModel(myModel);
+  }
+}
+
 /// @brief method for setup internal LEDs of the Arduino
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED

@@ -89,6 +89,7 @@ public:
   void setupTF(String gestures[3]);
   void gesturePrintHeader();
   void gestureReadData();
+  void gestureLoadModel(String myModel);
 
   // methods for input speech
 

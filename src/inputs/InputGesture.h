@@ -36,6 +36,7 @@ public:
   virtual void identify() override;
   virtual void gesturePrintHeader() override;
   virtual void gestureReadData() override;
+  virtual void gestureLoadModel(String myModel) override;
 
 private:
   void setupSensorLSM9DS1();

@@ -97,6 +97,7 @@ void InputGesture::identify() {
       _samplesRead++;
 
       if (_samplesRead == _numSamples) {
+        Serial.println("got samples");
         // Run inferencing
         TfLiteStatus invokeStatus = tflInterpreter->Invoke();
         if (invokeStatus != kTfLiteOk) {
@@ -106,13 +107,22 @@ void InputGesture::identify() {
           return;
         }
 
+        int maxIndex = -1;
+        float maxVal = -1;
+
         // loop through the output tensor values from the model
         for (int i = 0; i < NUM_GESTURES; i++) {
-          Serial.print(_gestures[i]);
-          Serial.print(": ");
-          Serial.println(tflOutputTensor->data.f[i], 6);
+          if (tflOutputTensor->data.f[i] > maxVal) {
+            maxIndex = i;
+            maxVal = tflOutputTensor->data.f[i];
+          }
+          if (tiny->_serialDebugging) {
+            Serial.print(_gestures[i]);
+            Serial.print(": ");
+            Serial.println(tflOutputTensor->data.f[i], 6);
+          }
         }
-        Serial.println();
+        tiny->playOutput(maxIndex);
       }
     }
   }

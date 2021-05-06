@@ -32,7 +32,7 @@ void setup() {
   // setup instrument
   myTiny.setupInstrument(true);
   Serial.println("hello in setup");
-  myTiny.setupTF(GESTURES);
+  myTiny.setupTF(GESTURES, myGestureModel);
 
   myTiny.setupOutputSerial();
 }

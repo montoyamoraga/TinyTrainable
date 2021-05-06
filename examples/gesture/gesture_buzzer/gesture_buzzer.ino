@@ -12,9 +12,6 @@ TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_BUZZER);
 // or include your own
 #include "myGestureModel.h"
 
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny;
-
 // constants for the hardware
 const int outputPin = 2;
 

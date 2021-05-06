@@ -40,7 +40,9 @@ public:
 private:
   void setupSensorLSM9DS1();
 
-    float _accelerationThreshold = 2.5;
+  String _modelGestureName = "modelGestureDefault";
+
+  float _accelerationThreshold = 2.5;
   int _numSamples = 119;
   int _samplesRead = _numSamples;
 
@@ -54,7 +56,6 @@ private:
   // tflite setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
-
 
 
   // tflite variables

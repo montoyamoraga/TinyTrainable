@@ -1,16 +1,14 @@
 /// @file gesture_buzzer.ino
 /// @brief input gesture with output buzzer
 
+// include gesture model
+#include "myGestureModel.h"
+
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_BUZZER);
-
-// include machine learning model
-// #include "../assets/modelGesture.h"
-// or include your own
-#include "myGestureModel.h"
 
 // constants for the hardware
 const int outputPin = 2;
@@ -40,10 +38,11 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 void setup() {
   // set debugging over serial port
   myTiny.setupInstrument(tinyDebugging);
-  myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
 
-  // setup input (tensorflow gesture recognition)
-  myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
+    // use this line to include the default model
+  myTiny.setupTF(GESTURES);
+  // or use this line to include your own model
+//   myTiny.setupTF(GESTURES, myGestureModel);
 
   // set its output (see buzzer examples for more buzzer options)
   myTiny.setupOutputBuzzer(outputPin);

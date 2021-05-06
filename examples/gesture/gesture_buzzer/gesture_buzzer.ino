@@ -60,13 +60,10 @@ void setup() {
   myTiny.setBuzzerDuration(0, 300);
   myTiny.setBuzzerDuration(1, 600);
   myTiny.setBuzzerDuration(2, 900);
-
-  // train the algorithm
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
-
   // identify the input and respond
-   myTiny.identify();
+  myTiny.identify();
 }

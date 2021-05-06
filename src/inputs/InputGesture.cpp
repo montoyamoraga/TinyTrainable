@@ -97,6 +97,7 @@ void InputGesture::identify() {
       _samplesRead++;
 
       if (_samplesRead == _numSamples) {
+        Serial.println("got samples");
         // Run inferencing
         TfLiteStatus invokeStatus = tflInterpreter->Invoke();
         if (invokeStatus != kTfLiteOk) {

@@ -25,7 +25,6 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   }
 }
 
-// TODO: copy pasted from Peter's fork
 void InputGesture::setupTF(String gestures[3]) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];

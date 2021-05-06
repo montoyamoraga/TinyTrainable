@@ -25,6 +25,8 @@
 // #include "../tensorflow/micro_features_model.h"
 // #include "../tensorflow/recognize_commands.h"
 
+/// @class InputSpeech
+/// @brief InputSpeech inherits from Input
 class InputSpeech : public Input {
 public:
 };

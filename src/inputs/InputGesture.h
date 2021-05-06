@@ -26,6 +26,8 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
+/// @class InputGesture
+/// @brief InputGesture inherits from Input
 class InputGesture : public Input {
 public:
   // constructor

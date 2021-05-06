@@ -2,7 +2,6 @@
 #include "InputGesture.h"
 
 // include machine learning model
-// TODO - temporary, see friday 04/30 notes
 #include "../assets/modelGestureDefault.h"
 
 // constructor
@@ -132,11 +131,10 @@ void InputGesture::gesturePrintHeader() {
   Serial.println(_gestureHeader);
 }
 
-// TODO PETER?
 void InputGesture::gestureReadData() {
-  //
-//  // while we have read as many samples as wanted for a certain motion
-//  // reset the IMU reader variables
+  
+ // while we have read as many samples as wanted for a certain motion
+ // reset the IMU reader variables
  while (_samplesRead == _numSamples) {
 //    //
 //    // if there is acceleration data available from the sensor
@@ -162,43 +160,43 @@ void InputGesture::gestureReadData() {
 
   // check if the all the required samples have been read since
   // the last time the significant motion was detected
-  //  while (samplesRead < numSamples) {
-  //
-  //    // check if both new acceleration and gyroscope data is
-  //    // available
-  //    if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
-  //
-  //      // read accelation data and store in variables aX, aY, aZ
-  //      IMU.readAcceleration(aX, aY, aZ);
-  //
-  //      // read gyroscope data and store in variables gX, gY, gZ
-  //      IMU.readGyroscope(gX, gY, gZ);
-  //
-  //      // signal one more sample read
-  //      samplesRead++;
-  //
+   while (samplesRead < numSamples) {
+  
+     // check if both new acceleration and gyroscope data is
+     // available
+     if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
+  
+       // read accelation data and store in variables aX, aY, aZ
+       IMU.readAcceleration(_aX, _aY, _aZ);
+  
+       // read gyroscope data and store in variables gX, gY, gZ
+       IMU.readGyroscope(_gX, _gY, _gZ);
+  
+       // signal one more sample read
+       _samplesRead++;
+  
   //      // print the data on the console in CSV format
-  //      Serial.print(aX, floatDecimals);
-  //      Serial.print(',');
-  //      Serial.print(aY, floatDecimals);
-  //      Serial.print(',');
-  //      Serial.print(aZ, floatDecimals);
-  //      Serial.print(',');
-  //      Serial.print(gX, floatDecimals);
-  //      Serial.print(',');
-  //      Serial.print(gY, floatDecimals);
-  //      Serial.print(',');
-  //      Serial.print(gZ, floatDecimals);
-  //      Serial.println();
-  //
-  //      // check if it is the last sample
-  //      if (samplesRead == numSamples) {
-  //
-  //        // add an empty line
-  //        Serial.println();
-  //      }
-  //    }
-  //  }
+       Serial.print(_aX, _floatDecimals);
+       Serial.print(',');
+       Serial.print(_aY, _floatDecimals);
+       Serial.print(',');
+       Serial.print(_aZ, _floatDecimals);
+       Serial.print(',');
+       Serial.print(_gX, _floatDecimals);
+       Serial.print(',');
+       Serial.print(_gY, _floatDecimals);
+       Serial.print(',');
+       Serial.print(_gZ, _floatDecimals);
+       Serial.println();
+  
+       // check if it is the last sample
+       if (_samplesRead == _numSamples) {
+  
+         // add an empty line
+         Serial.println();
+       }
+     }
+   }
 }
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)

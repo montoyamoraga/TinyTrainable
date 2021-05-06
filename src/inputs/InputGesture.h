@@ -40,7 +40,7 @@ public:
 private:
   void setupSensorLSM9DS1();
 
-// threshold of significance measured in G's
+/// @brief threshold of significance measured in G's
   float _accelerationThreshold = 2.5;
 
 // number of samples per motion
@@ -82,6 +82,7 @@ private:
   float aX, aY, aZ, gX, gY, gZ; // acceleration and gravity in x, y, z
 
   const String _gestureHeader = "aX,aY,aZ,gX,gY,gZ";
+  const int _floatDecimals = 3;
 };
 
 #endif

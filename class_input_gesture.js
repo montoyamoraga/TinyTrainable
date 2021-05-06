@@ -16,6 +16,7 @@ var class_input_gesture =
     [ "_gX", "class_input_gesture.html#a32bcff98b3deadf863b1a8131aea940c", null ],
     [ "_gY", "class_input_gesture.html#a86885f42f210edc9660c11380826f489", null ],
     [ "_gZ", "class_input_gesture.html#a6089d93cb775b44743c4856627128f8b", null ],
+    [ "_modelGestureName", "class_input_gesture.html#a4dd824056239a6e00b1fca61d9e00be7", null ],
     [ "_numSamples", "class_input_gesture.html#abc5fb59ae372e75d0054fb3377c345cc", null ],
     [ "_samplesRead", "class_input_gesture.html#ab13afbdffd6ee0fc55d38414a35eee08", null ],
     [ "aX", "class_input_gesture.html#a9b7ddae31b14cceecfc16faa7d8fe886", null ],

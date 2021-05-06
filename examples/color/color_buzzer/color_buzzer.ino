@@ -1,15 +1,11 @@
 /// @file color_buzzer.ino
 /// @brief input color with output buzzer
 
-// define input and output
-#define INPUT_COLOR
-#define OUTPUT_BUZZER
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputColor(), new OutputBuzzer());
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_COLOR, OUTPUT_BUZZER);
 
 // constants for the KNN algorithm
 const int K = 5;

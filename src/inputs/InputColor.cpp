@@ -14,12 +14,12 @@ void InputColor::setupInstrument(bool serialDebugging) {
 
   tiny->_serialDebugging = serialDebugging;
 
-  if (tiny->_serialDebugging) {
-    Serial.begin(tiny->_baudRate);
-    while (!Serial) {
-      ;
-    }
-  }
+  // if (tiny->_serialDebugging) {
+    // Serial.begin(tiny->_baudRate);
+    // while (!Serial) {
+    //   ;
+    // }
+  // }
 
   tiny->setupLEDs();
   setupSensorAPDS9960();
@@ -31,7 +31,7 @@ void InputColor::setupSensorAPDS9960() {
     while (1)
       ;
     if (tiny->_serialDebugging) {
-      Serial.println("InputColor setupSensorAPDS9960");
+      // Serial.println("InputColor setupSensorAPDS9960");
     }
   }
 }
@@ -211,8 +211,9 @@ void InputColor::trainKNN(int k, int examplesPerClass, float colorThreshold,
     for (int currentExample = 0; currentExample < examplesPerClass;
          currentExample++) {
 
+    
       tiny->debugPrint("Show me an example of: " + _labels[currentClass]);
-
+    
       // wait for an object then read its color
       readColor(_colorReading);
 

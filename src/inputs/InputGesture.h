@@ -31,20 +31,42 @@ public:
   // constructor
   InputGesture();
 
-  // TODO: add virtual void declarations in TinyTrainable.h
-  void setupInstrument(bool serialDebugging);
-  void setupTF(String gestures[3], float accelerationThreshold, int numSamples);
-  void identify();
+  virtual void setupInstrument(bool serialDebugging) override;
+  virtual void setupTF(String gestures[3]) override;
+  virtual void identify() override;
+  virtual void gesturePrintHeader() override;
+  virtual void gestureReadData() override;
+  virtual void gestureLoadModel(String myModel) override;
 
 private:
   void setupSensorLSM9DS1();
 
+  String _modelGestureName = "modelGestureDefault";
+
+// threshold of significance measured in G's
+  float _accelerationThreshold = 2.5;
+
+// number of samples per motion
+  int _numSamples = 119;
+
+// number of decimals for floating point numbers
+//const int floatDecimals = 3;
+
+  // initialize as if sampling has already been done
+  int _samplesRead = _numSamples;
+
+  // variables for reading
+  float _aX;
+  float _aY;
+  float _aZ;
+  float _gX;
+  float _gY;
+  float _gZ;
+
   // tflite setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
-  float _accelerationThreshold = -1;
-  int _numSamples = -1;
-  int _samplesRead = -1;
+
 
   // tflite variables
   tflite::MicroErrorReporter tflErrorReporter;
@@ -61,7 +83,9 @@ private:
   byte tensorArena[tensorArenaSize];
 
   // classification variables
-  float aX, aY, aZ, gX, gY, gZ;  // acceleration and gravity in x, y, z
+  float aX, aY, aZ, gX, gY, gZ; // acceleration and gravity in x, y, z
+
+  const String _gestureHeader = "aX,aY,aZ,gX,gY,gZ";
 };
 
 #endif

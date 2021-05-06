@@ -41,7 +41,6 @@ public:
   int getServoMinAngle();
 
 private:
-  // variables for servo
   Servo _servo;
   int _outputPinServo = -1;
   int _servoAngleCurrent = 0;

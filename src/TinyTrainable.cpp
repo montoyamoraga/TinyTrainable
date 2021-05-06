@@ -6,17 +6,59 @@
 // include local library
 #include "TinyTrainable.h"
 
-// TinyTrainable::TinyTrainable() {}
+#include "inputs/InputColor.h"
+#include "inputs/InputGesture.h"
+#include "inputs/InputSpeech.h"
+#include "outputs/OutputBuzzer.h"
+#include "outputs/OutputLCD.h"
+#include "outputs/OutputLED.h"
+#include "outputs/OutputMIDI.h"
+#include "outputs/OutputPrinter.h"
+#include "outputs/OutputSerial.h"
+#include "outputs/OutputServo.h"
 
-// initialize static variables
+/// initialize static variables
 bool TinyTrainable::_serialDebugging = false;
 int TinyTrainable::_baudRate = 9600;
 
-// constructor method
-TinyTrainable::TinyTrainable(Input *newInput, Output *newOutput) {
+/// constructor method
+TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
 
-  myInput = newInput;
-  myOutput = newOutput;
+if(inputType == INPUT_COLOR){
+  myInput = new InputColor();
+}
+else if(inputType == INPUT_GESTURE){
+  myInput = new InputGesture();
+}
+else if(inputType == INPUT_SPEECH){
+  myInput = new InputSpeech();
+}else{
+  myInput = new Input();
+}
+
+
+/// initialize output
+ if (outputType == OUTPUT_BUZZER){
+   myOutput = new OutputBuzzer(); 
+} else if (outputType == OUTPUT_LCD){
+   myOutput = new OutputLCD();
+} else if (outputType == OUTPUT_LED){
+   myOutput = new OutputLED();
+} else if (outputType == OUTPUT_MIDI){
+   myOutput = new OutputMIDI();
+}
+ else if (outputType == OUTPUT_PRINTER){
+  myOutput = new OutputPrinter();
+}
+ else if (outputType == OUTPUT_SERIAL){
+   myOutput = new OutputSerial();
+}
+ else if (outputType == OUTPUT_SERVO){
+   myOutput = new OutputServo();
+}
+else{
+   myOutput = new Output();
+}
 
   // TODO: research the name of this linking way
   if (myInput != nullptr) {
@@ -44,6 +86,8 @@ TinyTrainable::~TinyTrainable() {
   }
 }
 
+/// @brief method for initial setup
+/// @param serialDebugging to output or not debug info over serial
 void TinyTrainable::setupInstrument(bool serialDebugging) {
   if (myInput != nullptr) {
     myInput->setupInstrument(serialDebugging);
@@ -62,7 +106,7 @@ void TinyTrainable::playOutput(int classification) {
   }
 }
 
-// methods for input color
+/// @brief input color, train KNN algorithm
 void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
                              String objects[3]) {
   if (myInput != nullptr) {
@@ -70,14 +114,32 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
   }
 };
 
-// methods for input gesture
-void TinyTrainable::setupTF(String gestures[3], float accelerationThreshold,
-                             int numSamples) {
+/// @brief input gesture, setup TensorFlow
+void TinyTrainable::setupTF(String gestures[3]) {
   if (myInput != nullptr) {
-    myInput->setupTF(gestures, accelerationThreshold, numSamples);
+    myInput->setupTF(gestures);
   }
 }
 
+void TinyTrainable::gesturePrintHeader() {
+  if (myInput != nullptr) {
+    myInput->gesturePrintHeader();
+  }
+}
+
+void TinyTrainable::gestureReadData() {
+  if (myInput != nullptr) {
+    myInput->gestureReadData();
+  }
+}
+
+void TinyTrainable::gestureLoadModel(String myModel) {
+  if (myInput != nullptr) {
+    myInput->gestureLoadModel(myModel);
+  }
+}
+
+/// @brief method for setup internal LEDs of the Arduino
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);
@@ -94,7 +156,7 @@ void TinyTrainable::setupLEDs() {
   digitalWrite(LEDB, HIGH);
 }
 
-// function for turning on and off the built-in LED
+/// @brief method for turning on and off the built-in LED
 void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
   if (turnOn) {
     digitalWrite(LED_BUILTIN, HIGH);
@@ -255,6 +317,12 @@ void TinyTrainable::setupOutputBuzzer(int outputPin) {
   }
 }
 
+void TinyTrainable::getBuzzerParam(int object, int buzzerParamArray[]) {
+  if (myOutput != nullptr) {
+    myOutput->getBuzzerParam(object, buzzerParamArray);
+  }
+}
+
 void TinyTrainable::setBuzzerFrequency(int object, int frequency) {
   if (myOutput != nullptr) {
     myOutput->setBuzzerFrequency(object, frequency);
@@ -295,17 +363,16 @@ void TinyTrainable::setBuzzerDuration(int object, int *arrayDurations,
 }
 
 // functions for output LED
-void TinyTrainable::setupOutputLED(int outputPin0, int outputPin1,
-                                   int outputPin2) {
+void TinyTrainable::setupOutputLED(int object, int outputPin) {
   if (myOutput != nullptr) {
-    myOutput->setupOutputLED(outputPin0, outputPin1, outputPin2);
+    myOutput->setupOutputLED(object, outputPin);
   }
 }
 
-// functions for output MIDI
-void TinyTrainable::setupOutputMIDI(byte midiChannel, byte midiVelocity) {
+// methods for output MIDI
+void TinyTrainable::setupOutputMIDI(byte midiChannel) {
   if (myOutput != nullptr) {
-    myOutput->setupOutputMIDI(midiChannel, midiVelocity);
+    myOutput->setupOutputMIDI(midiChannel);
   }
 }
 void TinyTrainable::setMIDINote(int object, int note) {
@@ -314,13 +381,68 @@ void TinyTrainable::setMIDINote(int object, int note) {
   }
 }
 
-void TinyTrainable::sendSerialMIDINote(byte channel, byte note, byte velocity) {
+void TinyTrainable::sendMIDINoteOn(byte channel, byte note, byte velocity) {
   if (myOutput != nullptr) {
-    myOutput->sendSerialMIDINote(channel, note, velocity);
+    myOutput->sendMIDINoteOn(channel, note, velocity);
   }
 }
 
-// functions for output serial
+void TinyTrainable::sendMIDINoteOff(byte channel, byte note) {
+  if (myOutput != nullptr) {
+    myOutput->sendMIDINoteOff(channel, note);
+  }
+}
+
+void TinyTrainable::sendMIDIAllNotesOff(byte channel) {
+  if (myOutput != nullptr) {
+    myOutput->sendMIDIAllNotesOff(channel);
+  }
+}
+
+// methouds for output printer
+void TinyTrainable::setupOutputPrinter() {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputPrinter();
+  }
+}
+
+void TinyTrainable::setPrinterBaudRate(int rate) {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterBaudRate(rate);
+  }
+}
+
+void TinyTrainable::setPrinterBegin() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterBegin();
+  }
+}
+
+void TinyTrainable::setPrinterPause(int pause) {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterPause(pause);
+  }
+}
+
+void TinyTrainable::setPrinterSleep() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterSleep();
+  }
+}
+
+void TinyTrainable::setPrinterWake() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterWake();
+  }
+}
+
+void TinyTrainable::setPrinterTest() {
+  if (myOutput != nullptr) {
+    myOutput->setPrinterTest();
+  }
+}
+
+// methods for output serial
 void TinyTrainable::setupOutputSerial() {
   if (myOutput != nullptr) {
     myOutput->setupOutputSerial();
@@ -343,6 +465,8 @@ void TinyTrainable::setServoTempo(int object, int tempo) {
 int TinyTrainable::bpmToMs(int tempo) {
   if (myOutput != nullptr) {
     return myOutput->bpmToMs(tempo);
+  } else {
+    return -1;
   }
 }
 
@@ -361,12 +485,16 @@ void TinyTrainable::setServoMinAngle(int angle) {
 int TinyTrainable::getServoMaxAngle() {
   if (myOutput != nullptr) {
     return myOutput->getServoMaxAngle();
+  } else {
+    return -1;
   }
 }
 
 int TinyTrainable::getServoMinAngle() {
   if (myOutput != nullptr) {
     return myOutput->getServoMinAngle();
+  } else {
+    return -1;
   }
 }
 

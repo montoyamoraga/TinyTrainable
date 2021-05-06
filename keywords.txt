@@ -25,21 +25,7 @@ helloOutputsSetup	KEYWORD2
 helloOutputs		KEYWORD2
 playOutput		KEYWORD2
 
-setupOutputBuzzer	KEYWORD2
-setBuzzerPin		KEYWORD2
-setBuzzerFrequency	KEYWORD2
-setBuzzerDuration	KEYWORD2
-
-# output LED
-setupOutputLED		KEYWORD2
-
-# output servo
-setupOutputServo	KEYWORD2
-setServoTempo		KEYWORD2
-
-setupInstrument		KEYWORD2
-
-# color
+# input color
 trainKNN		KEYWORD2
 identify		KEYWORD2
 setLabels		KEYWORD2
@@ -52,9 +38,61 @@ _colorThreshold		KEYWORD2
 _colorReading		KEYWORD2
 _checkedSetup		KEYWORD2
 
+# input gesture
+setupTF			KEYWORD2
+gesturePrintHeader 	KEYWORD2
+gestureReadData 	KEYWORD2
+
+# output buzzer
+setupOutputBuzzer	KEYWORD2
+setBuzzerPin		KEYWORD2
+setBuzzerFrequency	KEYWORD2
+setBuzzerDuration	KEYWORD2
+
+# output LED
+setupOutputLED		KEYWORD2
+
+# output MIDI
+setupOutputMIDI		KEYWORD2
+setMIDINote		KEYWORD2
+sendMIDINoteOn		KEYWORD2
+
+# output printer
+setupOutputPrinter	KEYWORD2
+setPrinterBaudRate	KEYWORD2
+setPrinterBegin		KEYWORD2
+setPrinterPause		KEYWORD2
+setPrinterSleep		KEYWORD2
+setPrinterWake		KEYWORD2
+
+# output serial
+setupOutputSerial	KEYWORD2
+
+# output servo
+setupOutputServo	KEYWORD2
+setServoTempo		KEYWORD2
+
+setupInstrument		KEYWORD2
+
 ################################
 # Constants
 ################################
+
+# inputs
+INPUT_NONE		LITERAL1
+INPUT_COLOR		LITERAL1
+INPUT_GESTURE		LITERAL1
+INPUT_SPEECH		LITERAL1
+
+# outputs
+OUTPUT_NONE		LITERAL1
+OUTPUT_BUZZER		LITERAL1
+OUTPUT_LCD		LITERAL1
+OUTPUT_LED		LITERAL1
+OUTPUT_MIDI		LITERAL1
+OUTPUT_PRINTER		LITERAL1
+OUTPUT_SERIAL		LITERAL1
+OUTPUT_SERVO		LITERAL1
 
 # colors
 red			LITERAL1

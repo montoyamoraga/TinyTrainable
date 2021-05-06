@@ -12,11 +12,19 @@ class TinyTrainable;
 
 class Input {
 public:
+  virtual ~Input() {}
   virtual void setupInstrument(bool serialDebugging) {}
   virtual void identify() {}
+
+  // color
   virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
                         String objects[3]) {}
-  virtual void setupTF(String gestures[3], float accelerationThreshold, int numSamples) {}
+
+  // gesture
+  virtual void setupTF(String gestures[3]) {}
+  virtual void gesturePrintHeader() {}
+  virtual void gestureReadData() {}
+  virtual void gestureLoadModel(String myModel) {}
 
   TinyTrainable *tiny = nullptr;
 };

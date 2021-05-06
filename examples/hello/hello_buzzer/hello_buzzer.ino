@@ -1,15 +1,11 @@
 /// @file hello_buzzer.ino
 /// @brief Test output with buzzer
 
-// define input and output
-#define INPUT_NONE
-#define OUTPUT_BUZZER
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(new Input(), new OutputBuzzer());
+TinyTrainable myTiny(INPUT_NONE, OUTPUT_BUZZER);
 
 // constants for the hardware
 const int outputPin = 2;

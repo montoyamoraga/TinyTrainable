@@ -10,6 +10,7 @@ class TinyTrainable;
 
 class Output {
 public:
+  virtual ~Output() {}
   // methods for output
   virtual void playOutput(int classification) {}
 
@@ -28,17 +29,28 @@ public:
                                  int arrayDurationCount) {}
 
   // functions for output LED
-  virtual void setupOutputLED(int outputPin0, int outputPin1, int outputPin2) {}
+  virtual void setupOutputLED(int object, int outputPin) {}
 
   // functions for output MIDI
-  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity){};
-  virtual void setMIDINote(int object, int note){};
-  virtual void sendSerialMIDINote(byte channel, byte note, byte velocity){};
+  virtual void setupOutputMIDI(byte midiChannel) {}
+  virtual void setMIDINote(int object, int note) {}
+  virtual void sendMIDINoteOn(byte channel, byte note, byte velocity) {}
+  virtual void sendMIDINoteOff(byte channel, byte note) {}
+  virtual void sendMIDIAllNotesOff(byte channel) {}
 
-  // functions for output serial
+  // methods for output printer
+  virtual void setupOutputPrinter() {}
+  virtual void setPrinterBaudRate(int rate) {}
+  virtual void setPrinterBegin() {}
+  virtual void setPrinterPause(int pause) {}
+  virtual void setPrinterSleep() {}
+  virtual void setPrinterWake() {}
+  virtual void setPrinterTest() {}
+
+  // methods for output serial
   virtual void setupOutputSerial() {}
 
-  // functions for output servo
+  // methods for output servo
   virtual void setupOutputServo(int outputPin) {}
   virtual void setServoTempo(int object, int tempo) {}
   virtual int bpmToMs(int tempo) { return 0; }

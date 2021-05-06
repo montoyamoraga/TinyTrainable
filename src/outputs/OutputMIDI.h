@@ -20,21 +20,18 @@ public:
   OutputMIDI();
 
   // TinyTrainable methods
-  void playOutput(int classification);
+  virtual void playOutput(int classification) override;
 
-  //   void setupSerialMIDI();
   int _outputPinMIDI = -1;
   int _midiNotes[3];
   byte _midiChannel = 16;
-  byte _midiVelocity = 0;
+  byte _midiVelocity = 127;
 
-  // TODO: this is public now for testing, later move to protected
-  // void sendSerialMIDINote(byte channel, byte note, byte velocity);
-
-  virtual void setupOutputMIDI(byte midiChannel, byte midiVelocity) override;
+  virtual void setupOutputMIDI(byte midiChannel) override;
   virtual void setMIDINote(int object, int note) override;
-  virtual void sendSerialMIDINote(byte channel, byte note,
-                                  byte velocity) override;
+  virtual void sendMIDINoteOn(byte channel, byte note, byte velocity) override;
+  virtual void sendMIDINoteOff(byte channel, byte note) override;
+  virtual void sendMIDIAllNotesOff(byte channel) override;
   void setupSerialMIDI();
 
   // TODO: in progress

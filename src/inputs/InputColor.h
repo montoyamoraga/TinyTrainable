@@ -17,7 +17,7 @@
 // https://www.arduino.cc/en/Reference/ArduinoAPDS9960
 #include <Arduino_APDS9960.h>
 
-// import Arduino KNN library
+/// @brief import Arduino KNN library
 #include <Arduino_KNN.h>
 
 class InputColor : public Input {

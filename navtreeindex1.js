@@ -186,6 +186,9 @@ var NAVTREEINDEX1 =
 "functions_u.html":[1,3,0,14],
 "functions_vars.html":[1,3,2],
 "functions_~.html":[1,3,0,15],
+"gesture__buzzer_2my_gesture_model_8h.html":[2,0,0,1,0,1],
+"gesture__buzzer_2my_gesture_model_8h.html#ad99607024f2d47404e8aa1c47eabba06":[2,0,0,1,0,1,0],
+"gesture__buzzer_2my_gesture_model_8h_source.html":[2,0,0,1,0,1],
 "gesture__buzzer_8ino.html":[2,0,0,1,0,0],
 "gesture__buzzer_8ino.html#a0127371319b96dd6713ba8014b544b7a":[2,0,0,1,0,0,21],
 "gesture__buzzer_8ino.html#a128d9c651abe6ce6229d846d4dcb7490":[2,0,0,1,0,0,3],
@@ -217,6 +220,9 @@ var NAVTREEINDEX1 =
 "gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044":[2,0,0,1,1,0,2],
 "gesture__database_8ino.html#a849e308e864de4e3bd41a465d08baf13":[2,0,0,1,1,0,3],
 "gesture__database_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,1,1,0,0],
+"gesture__serial_2my_gesture_model_8h.html":[2,0,0,1,2,1],
+"gesture__serial_2my_gesture_model_8h.html#ad99607024f2d47404e8aa1c47eabba06":[2,0,0,1,2,1,0],
+"gesture__serial_2my_gesture_model_8h_source.html":[2,0,0,1,2,1],
 "gesture__serial_8ino.html":[2,0,0,1,2,0],
 "gesture__serial_8ino.html#a0ff1f172284277a4b3e8948b63409e5c":[2,0,0,1,2,0,2],
 "gesture__serial_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,1,2,0,1],
@@ -243,11 +249,5 @@ var NAVTREEINDEX1 =
 "hello__led_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0":[2,0,0,2,1,0,7],
 "hello__led_8ino.html#a2658fbbde3e4b728539d3ec60797c982":[2,0,0,2,1,0,5],
 "hello__led_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,2,1,0,1],
-"hello__led_8ino.html#a659b3275682883828969ebfa5ac2312f":[2,0,0,2,1,0,4],
-"hello__led_8ino.html#a664397ca9544b2479a0b553f42d12168":[2,0,0,2,1,0,2],
-"hello__led_8ino.html#a6a50062bdfa3138b617e2a602c1f05fc":[2,0,0,2,1,0,3],
-"hello__led_8ino.html#a82b4b9ae33c6bfc64cf9a0cae15e7d5e":[2,0,0,2,1,0,6],
-"hello__led_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,2,1,0,0],
-"hello__midi_8ino.html":[2,0,0,2,2,0],
-"hello__midi_8ino.html#a12ce6a8e011b5c18a3c3bb5f86848ecb":[2,0,0,2,2,0,5]
+"hello__led_8ino.html#a659b3275682883828969ebfa5ac2312f":[2,0,0,2,1,0,4]
 };

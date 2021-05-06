@@ -1,5 +1,11 @@
 var NAVTREEINDEX2 =
 {
+"hello__led_8ino.html#a664397ca9544b2479a0b553f42d12168":[2,0,0,2,1,0,2],
+"hello__led_8ino.html#a6a50062bdfa3138b617e2a602c1f05fc":[2,0,0,2,1,0,3],
+"hello__led_8ino.html#a82b4b9ae33c6bfc64cf9a0cae15e7d5e":[2,0,0,2,1,0,6],
+"hello__led_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,2,1,0,0],
+"hello__midi_8ino.html":[2,0,0,2,2,0],
+"hello__midi_8ino.html#a12ce6a8e011b5c18a3c3bb5f86848ecb":[2,0,0,2,2,0,5],
 "hello__midi_8ino.html#a146e68d71b7ff326c04ef003367645bd":[2,0,0,2,2,0,4],
 "hello__midi_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,2,2,0,1],
 "hello__midi_8ino.html#ac3ba32427a8b0dcc49484d127dfde9a5":[2,0,0,2,2,0,3],

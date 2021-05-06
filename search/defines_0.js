@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['num_5fgestures_528',['NUM_GESTURES',['../gesture__buzzer_8ino.html#a265d4fcbf85fd4c1daa0c27269ad56a5',1,'gesture_buzzer.ino']]]
+  ['num_5fgestures_532',['NUM_GESTURES',['../gesture__buzzer_8ino.html#a265d4fcbf85fd4c1daa0c27269ad56a5',1,'gesture_buzzer.ino']]]
 ];

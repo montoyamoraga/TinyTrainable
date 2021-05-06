@@ -25,12 +25,6 @@ int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 // int freqArrayLength = sizeof(freqArray0)/sizeof(*freqArray0);
 int paramArrayLength = 6;
 
-// threshold of significant in G's
-const float accelerationThreshold = 2.5;
-
-// number of samples per gesture
-const int numSamples = 119;
-
 // array to map gesture index to a name
 String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 

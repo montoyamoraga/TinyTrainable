@@ -1,15 +1,11 @@
 /// @file color_led.ino
 /// @brief input color with output LED
 
-// define input and output
-#define INPUT_COLOR
-#define OUTPUT_LED
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputColor(), new OutputLED());
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_COLOR, OUTPUT_LED);
 
 // constants for the hardware
 const int outputPinLED0 = 3;
@@ -30,7 +26,9 @@ String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 void setup() {
   myTiny.setupInstrument(tinyDebugging);
 
-  myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
+  myTiny.setupOutputLED(0, outputPinLED0);
+  myTiny.setupOutputLED(1, outputPinLED1);
+  myTiny.setupOutputLED(2, outputPinLED2);
 
   // train the KNN algorithm with your objects
   myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);

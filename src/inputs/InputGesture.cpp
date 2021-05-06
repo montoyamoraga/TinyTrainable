@@ -3,7 +3,7 @@
 
 // include machine learning model
 // TODO - temporary, see friday 04/30 notes
-#include "../assets/modelGesture.h"
+#include "../assets/modelGestureDefault.h"
 
 // constructor
 InputGesture::InputGesture() {
@@ -25,18 +25,15 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   }
 }
 
-// TODO: copy pasted from Peter's fork
-void InputGesture::setupTF(String gestures[3], float accelerationThreshold, int numSamples) {
+void InputGesture::setupTF(String gestures[3]) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];
 
-  _accelerationThreshold = accelerationThreshold;
-  _numSamples = numSamples;
-  _samplesRead = numSamples;
-
   // get the TFL representation of the model byte array
-  tflModel = tflite::GetModel(model);
+//   tflModel = tflite::GetModel(_modelGestureName);
+  tflModel = tflite::GetModel(modelGestureDefault);
+
   if (tflModel->version() != TFLITE_SCHEMA_VERSION) {
     Serial.println("Model schema mismatch!");
     while (1)
@@ -129,6 +126,85 @@ void InputGesture::identify() {
     }
   }
 }
+
+void InputGesture::gesturePrintHeader() {
+  Serial.println(_gestureHeader);
+}
+
+// TODO PETER?
+void InputGesture::gestureReadData() {
+  //
+//  // while we have read as many samples as wanted for a certain motion
+//  // reset the IMU reader variables
+ while (_samplesRead == _numSamples) {
+//    //
+//    // if there is acceleration data available from the sensor
+   if (IMU.accelerationAvailable()) {
+
+     // read it and store it on variables aX, aY, aZ
+     IMU.readAcceleration(_aX, _aY, _aZ);
+
+     // store the sum of their absolute values in variable aSum
+     float aSum = fabs(_aX) + fabs(_aY) + fabs(_aZ);
+
+     // check if aSum is above the threshold
+     if (aSum >= _accelerationThreshold) {
+
+       // reset the sample read count
+       _samplesRead = 0;
+
+       // exit the while loop
+       break;
+     }
+   }
+ }
+
+  // check if the all the required samples have been read since
+  // the last time the significant motion was detected
+  //  while (samplesRead < numSamples) {
+  //
+  //    // check if both new acceleration and gyroscope data is
+  //    // available
+  //    if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
+  //
+  //      // read accelation data and store in variables aX, aY, aZ
+  //      IMU.readAcceleration(aX, aY, aZ);
+  //
+  //      // read gyroscope data and store in variables gX, gY, gZ
+  //      IMU.readGyroscope(gX, gY, gZ);
+  //
+  //      // signal one more sample read
+  //      samplesRead++;
+  //
+  //      // print the data on the console in CSV format
+  //      Serial.print(aX, floatDecimals);
+  //      Serial.print(',');
+  //      Serial.print(aY, floatDecimals);
+  //      Serial.print(',');
+  //      Serial.print(aZ, floatDecimals);
+  //      Serial.print(',');
+  //      Serial.print(gX, floatDecimals);
+  //      Serial.print(',');
+  //      Serial.print(gY, floatDecimals);
+  //      Serial.print(',');
+  //      Serial.print(gZ, floatDecimals);
+  //      Serial.println();
+  //
+  //      // check if it is the last sample
+  //      if (samplesRead == numSamples) {
+  //
+  //        // add an empty line
+  //        Serial.println();
+  //      }
+  //    }
+  //  }
+}
+
+void InputGesture::gestureLoadModel(String myModel) {
+  _modelGestureName = myModel;
+  // TODO aaron
+}
+
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer

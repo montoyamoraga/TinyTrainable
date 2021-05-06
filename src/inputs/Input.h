@@ -7,25 +7,26 @@
 // include Arduino library
 #include <Arduino.h>
 
-// declare class
+// forwards declare class
 class TinyTrainable;
 
 class Input {
-
-  // friend classes can access protected and private members
-  friend class TinyTrainable;
-
+public:
+  virtual ~Input() {}
   virtual void setupInstrument(bool serialDebugging) {}
   virtual void identify() {}
+
+  // color
   virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
                         String objects[3]) {}
-  virtual void setupTF(String gestures[3], float accelerationThreshold, int numSamples) {}
 
-protected:
+  // gesture
+  virtual void setupTF(String gestures[3]) {}
+  virtual void gesturePrintHeader() {}
+  virtual void gestureReadData() {}
+  virtual void gestureLoadModel(String myModel) {}
+
   TinyTrainable *tiny = nullptr;
-
-public:
-  Input();
 };
 
 #endif

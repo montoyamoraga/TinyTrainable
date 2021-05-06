@@ -1,15 +1,11 @@
 /// @file color_midi.ino
 /// @brief input color with output MIDI
 
-// define input and output
-#define INPUT_COLOR
-#define OUTPUT_MIDI
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
-// declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputColor(), new OutputMIDI());
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_COLOR, OUTPUT_MIDI);
 
 // constants for the KNN algorithm
 const int K = 5;
@@ -23,16 +19,16 @@ void setup() {
 
   myTiny.setupInstrument(true);
 
-//  myTiny.setupOutputMIDI(10, 127);
-//  myTiny.setMIDINotes(0, 37);
-//  myTiny.setMIDINotes(1, 38);
-//  myTiny.setMIDINotes(2, 39);
+  myTiny.setupOutputMIDI(10);
+  //  myTiny.setMIDINotes(0, 37);
+  //  myTiny.setMIDINotes(1, 38);
+  //  myTiny.setMIDINotes(2, 39);
 
-//  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
 }
 
 // loop() runs after setup(), on a loop
 void loop() {
   // identify the input and respond
-//  myTiny.identify();
+  //  myTiny.identify();
 }

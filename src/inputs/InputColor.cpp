@@ -14,12 +14,12 @@ void InputColor::setupInstrument(bool serialDebugging) {
 
   tiny->_serialDebugging = serialDebugging;
 
-  if (tiny->_serialDebugging) {
-    Serial.begin(tiny->_baudRate);
-    while (!Serial) {
-      ;
-    }
-  }
+  // if (tiny->_serialDebugging) {
+    // Serial.begin(tiny->_baudRate);
+    // while (!Serial) {
+    //   ;
+    // }
+  // }
 
   tiny->setupLEDs();
   setupSensorAPDS9960();
@@ -31,7 +31,7 @@ void InputColor::setupSensorAPDS9960() {
     while (1)
       ;
     if (tiny->_serialDebugging) {
-      Serial.println("InputColor setupSensorAPDS9960");
+      // Serial.println("InputColor setupSensorAPDS9960");
     }
   }
 }
@@ -142,26 +142,46 @@ void InputColor::identify() {
   // }
 
   // wait for the object to move away again
-  while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
+  // while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {
+  // }
+
+  if (APDS.proximityAvailable() && APDS.readProximity() != 0) {
+    tiny->debugPrint("Let me guess your object");
+
+    // wait for an object then read its color
+    readColor(_colorReading);
+
+    // classify the object
+    int classification = _myKNN.classify(_colorReading, _k);
+
+    tiny->debugPrint("You showed me: " + _labels[classification]);
+
+    // turn on the corresponding light
+    tiny->setStateLEDRGB(true, Colors(classification));
+
+    // update previous classification
+    _previousClassification = classification;
   }
 
-  tiny->debugPrint("Let me guess your object");
+  tiny->playOutput(_previousClassification);
 
-  // wait for an object then read its color
-  readColor(_colorReading);
+  // tiny->debugPrint("Let me guess your object");
 
-  // classify the object
-  int classification = _myKNN.classify(_colorReading, _k);
+  // // wait for an object then read its color
+  // readColor(_colorReading);
 
-  tiny->debugPrint("You showed me: " + _labels[classification]);
+  // // classify the object
+  // int classification = _myKNN.classify(_colorReading, _k);
 
-  // turn on the corresponding light
-  tiny->setStateLEDRGB(true, Colors(classification));
+  // tiny->debugPrint("You showed me: " + _labels[classification]);
 
-  tiny->playOutput(classification);
+  // // turn on the corresponding light
+  // tiny->setStateLEDRGB(true, Colors(classification));
 
-  // update previous classification
-  _previousClassification = classification;
+  // tiny->playOutput(classification);
+
+  // // update previous classification
+  // _previousClassification = classification;
 }
 
 // trains the KNN algorithm with examples provided by the user
@@ -191,8 +211,9 @@ void InputColor::trainKNN(int k, int examplesPerClass, float colorThreshold,
     for (int currentExample = 0; currentExample < examplesPerClass;
          currentExample++) {
 
+    
       tiny->debugPrint("Show me an example of: " + _labels[currentClass]);
-
+    
       // wait for an object then read its color
       readColor(_colorReading);
 

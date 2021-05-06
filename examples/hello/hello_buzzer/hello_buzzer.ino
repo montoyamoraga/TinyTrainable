@@ -1,15 +1,11 @@
 /// @file hello_buzzer.ino
 /// @brief Test output with buzzer
 
-// define input and output
-#define INPUT_NONE
-#define OUTPUT_BUZZER
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(new Input(), new OutputBuzzer());
+TinyTrainable myTiny(INPUT_NONE, OUTPUT_BUZZER);
 
 // constants for the hardware
 const int outputPin = 2;
@@ -59,15 +55,15 @@ void setup() {
 
   // 0.
 
-  myTiny.setBuzzerDuration(0, 300);
-  myTiny.setBuzzerDuration(1, 600);
-  myTiny.setBuzzerDuration(2, 900);
+  //  myTiny.setBuzzerDuration(0, 300);
+  //  myTiny.setBuzzerDuration(1, 600);
+  //  myTiny.setBuzzerDuration(2, 900);
 
   // 1.
 
-  // myTiny.setBuzzerDuration(0, 1000, 2000);
-  // myTiny.setBuzzerDuration(1, 2000, 3000);
-  // myTiny.setBuzzerDuration(2, 3000, 4000);
+  myTiny.setBuzzerDuration(0, 1000, 2000);
+  myTiny.setBuzzerDuration(1, 2000, 3000);
+  myTiny.setBuzzerDuration(2, 3000, 4000);
 
   // 2. (using the same arrays as above because the numbers also work in ms!)
 

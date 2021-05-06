@@ -1,20 +1,19 @@
 /// @file gesture_buzzer.ino
 /// @brief input gesture with output buzzer
 
-// define input and output
-#define INPUT_GESTURE
-#define OUTPUT_BUZZER
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
+
+// declare instance of a TinyTrainable instrument
+TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_BUZZER);
 
 // include machine learning model
 // #include "../assets/modelGesture.h"
 // or include your own
-//#include "myModel.h"
+#include "myGestureModel.h"
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny(new InputGesture(), new OutputBuzzer());
+TinyTrainable myTiny;
 
 // constants for the hardware
 const int outputPin = 2;

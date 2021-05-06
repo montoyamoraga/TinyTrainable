@@ -7,55 +7,29 @@
 #ifndef TINY_TRAINABLE_H
 #define TINY_TRAINABLE_H
 
-// include Arduino library
+// include library Arduino
 #include <Arduino.h>
 
 // include base libraries for input and output
 #include "inputs/Input.h"
 #include "outputs/Output.h"
 
-// conditionally include input libraries
-#ifdef INPUT_COLOR
-#include "inputs/InputColor.h"
-#endif
-
-#ifdef INPUT_GESTURE
-#include "inputs/InputGesture.h"
-#endif
-
-#ifdef INPUT_SPEECH
-#include "inputs/InputSpeech.h"
-#endif
-
-// conditionally include output libraries
-
-// #ifdef OUTPUT_BUZZER
-#include "outputs/OutputBuzzer.h"
-// #endif
-
-#ifdef OUTPUT_LCD
-#include "outputs/OutputLCD.h"
-#endif
-
-#ifdef OUTPUT_LED
-#include "outputs/OutputLED.h"
-#endif
-
-#ifdef OUTPUT_MIDI
-#include "outputs/OutputMIDI.h"
-#endif
-
-#ifdef OUTPUT_PRINTER
-#include "outputs/OutputPrinter.h"
-#endif
-
-#ifdef OUTPUT_SERIAL
-#include "outputs/OutputSerial.h"
-#endif
-
-#ifdef OUTPUT_SERVO
-#include "outputs/OutputServo.h"
-#endif
+enum InputType {
+	INPUT_NONE = 0,
+	INPUT_COLOR,
+	INPUT_GESTURE,
+	INPUT_SPEECH
+};
+enum OutputType {
+	OUTPUT_NONE = 0,
+	OUTPUT_BUZZER,
+	OUTPUT_LCD,
+	OUTPUT_LED,
+	OUTPUT_MIDI,
+	OUTPUT_PRINTER,
+	OUTPUT_SERIAL,
+	OUTPUT_SERVO
+};
 
 // colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
@@ -75,17 +49,21 @@ protected:
 
 public:
   // constructor
-  TinyTrainable(Input *newInput, Output *newOutput);
-
+  // TinyTrainable(Input *newInput, Output *newOutput);
+  TinyTrainable(InputType inputType, OutputType outputType);
   // destructor
   ~TinyTrainable();
 
   // template datatypes allows any datatype as an argument
+  
+  
   template <typename T> void debugPrint(T message) {
+    #ifdef DEBUG_TINY
     if (this->_serialDebugging) {
       Serial.print("debug - ");
       Serial.println(message);
     }
+    #endif
   };
 
   // TODO: this override works, do it for other functions
@@ -108,7 +86,10 @@ public:
   void setupLEDs();
 
   // methods for input gesture
-  void setupTF(String gestures[3], float accelerationThreshold, int numSamples);
+  void setupTF(String gestures[3]);
+  void gesturePrintHeader();
+  void gestureReadData();
+  void gestureLoadModel(String myModel);
 
   // methods for input speech
 
@@ -120,7 +101,7 @@ public:
 
   // declaration of functions for output buzzer
   void setupOutputBuzzer(int outputPin);
-  void getBuzzerParam(int object, int buzzerParamArray[]){};
+  void getBuzzerParam(int object, int buzzerParamArray[]);
   // for frequencies
   void setBuzzerFrequency(int object, int frequency);
   void setBuzzerFrequency(int object, int freqMin, int freqMax);
@@ -132,22 +113,36 @@ public:
   void setBuzzerDuration(int object, int *arrayDurations,
                          int arrayDurationCount);
 
-  // functions for output LED
-  void setupOutputLED(int outputPin0, int outputPin1, int outputPin2);
+  // methods for output LED
+  void setupOutputLED(int object, int outputPin);
 
-  // functions for output MIDI
-  void setupOutputMIDI(byte midiChannel, byte midiVelocity);
+  // methods for output MIDI
+  void setupOutputMIDI(byte midiChannel);
   void setMIDINote(int object, int note);
-  void sendSerialMIDINote(byte channel, byte note, byte velocity);
+  void sendMIDINoteOn(byte channel, byte note, byte velocity);
+  void sendMIDINoteOff(byte channel, byte note);
+  void sendMIDIAllNotesOff(byte channel);
 
-  // declaration of virtual functions for output serial
+  // methods for output printer
+  void setupOutputPrinter();
+  void setPrinterBaudRate(int rate);
+  void setPrinterBegin();
+  void setPrinterPause(int pause);
+  void setPrinterSleep();
+  void setPrinterWake();
+  void setPrinterTest();
+
+  // methods for output serial
   void setupOutputSerial();
-  
-  // declaration of functions for output servo
-  void setupOutputServo(int outputPin, int servoAngleMin,
-                                int servoAngleMax);
+
+  // methods for output servo
+  void setupOutputServo(int outputPin);
   void setServoTempo(int object, int tempo);
   int bpmToMs(int tempo);
+  void setServoMaxAngle(int angle);
+  void setServoMinAngle(int angle);
+  int getServoMaxAngle();
+  int getServoMinAngle();
   void moveServo(int classification);
 
   void setStateLEDBuiltIn(bool turnOn);

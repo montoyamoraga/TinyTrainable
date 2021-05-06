@@ -1,15 +1,11 @@
 /// @file hello_led.ino
 /// @brief Test output with LED
 
-// define input and output
-#define INPUT_NONE
-#define OUTPUT_LED
-
-// include TinyTrainable library
+// include library TinyTrainable
 #include <TinyTrainable.h>
 
 // declare instance of a TinyTrainable instrument
-TinyTrainable myTiny(new Input(), new OutputLED());
+TinyTrainable myTiny(INPUT_NONE, OUTPUT_LED);
 
 // constant for debugging
 const bool tinyDebugging = true;
@@ -24,8 +20,10 @@ const int pauseTime = 2000;
 void setup() {
 
   myTiny.setupInstrument(tinyDebugging);
-  
-  myTiny.setupOutputLED(outputPinLED0, outputPinLED1, outputPinLED2);
+
+  myTiny.setupOutputLED(0, outputPinLED0);
+  myTiny.setupOutputLED(1, outputPinLED1);
+  myTiny.setupOutputLED(2, outputPinLED2);
 }
 
 void loop() {

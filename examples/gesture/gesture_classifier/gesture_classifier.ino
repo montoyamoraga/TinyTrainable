@@ -40,7 +40,6 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 void setup() {
   // setup instrument
   myTiny.setupInstrument(true);
-  Serial.println("hello in setup");
   myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
 
   myTiny.setupOutputSerial();

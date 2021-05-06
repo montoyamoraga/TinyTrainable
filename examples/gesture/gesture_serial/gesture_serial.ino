@@ -23,6 +23,11 @@ TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 // include machine learning model
 // #include "../assets/modelGesture.h"
 // or include your own
+//#include "myModel.h"
+
+// constant for debugging
+const bool tinyDebugging = true;
+
 #include "myGestureModel.h"
 
 // array to map gesture index to a name
@@ -30,6 +35,7 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
 void setup() {
   // setup instrument
+  myTiny.setupInstrument(tinyDebugging);
   myTiny.setupInstrument(true);
   Serial.println("hello in setup");
   myTiny.setupTF(GESTURES, myGestureModel);

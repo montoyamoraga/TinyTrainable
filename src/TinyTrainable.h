@@ -7,14 +7,19 @@
 #ifndef TINY_TRAINABLE_H
 #define TINY_TRAINABLE_H
 
-// include library Arduino
+/// @include library Arduino
 #include <Arduino.h>
 
-// include base libraries for input and output
+/// @include base library input
 #include "inputs/Input.h"
+
+/// @include base library input
 #include "outputs/Output.h"
 
+/// @enum to set the input type
 enum InputType { INPUT_NONE = 0, INPUT_COLOR, INPUT_GESTURE, INPUT_SPEECH };
+
+/// @enum to set the output type
 enum OutputType {
   OUTPUT_NONE = 0,
   OUTPUT_BUZZER,
@@ -26,42 +31,43 @@ enum OutputType {
   OUTPUT_SERVO
 };
 
-// colors for setting the RGB LED
+/// @enum colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
 
-/// \class TinyTrainable
-/// \brief TinyTrainable base class
+/// @class TinyTrainable
+/// @brief TinyTrainable base class
 class TinyTrainable {
 
 protected:
-  // input and output
-  // asterisks are pointers
+
+  /// @brief Input pointer
   Input *myInput = nullptr;
+
+  /// @brief Output pointer
   Output *myOutput = nullptr;
 
   // variables for outputs
   int _outputPinTest = -1;
 
 public:
-  // constructor
-  // TinyTrainable(Input *newInput, Output *newOutput);
+  /// @brief TinyTrainable constructor
+  /// @param InputType
+  /// @param OutputType
   TinyTrainable(InputType inputType, OutputType outputType);
-  // destructor
+
+  /// @brief TinyTrainable destructor
   ~TinyTrainable();
 
   // template datatypes allows any datatype as an argument
-
   template <typename T> void debugPrint(T message) {
-#ifdef DEBUG_TINY
     if (this->_serialDebugging) {
       Serial.print("debug - ");
       Serial.println(message);
     }
-#endif
   };
-
-  // TODO: this override works, do it for other functions
-  // override magic by roy~
+  
+  /// @brief setup debugging
+  /// @param serialDebugging to toggle serial debugging on/off
   void setupInstrument(bool serialDebugging);
 
   // variable for debugging

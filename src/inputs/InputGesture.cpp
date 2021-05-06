@@ -3,7 +3,7 @@
 
 // include machine learning model
 // TODO - temporary, see friday 04/30 notes
-#include "../assets/modelGesture.h"
+#include "../assets/modelGestureDefault.h"
 
 // constructor
 InputGesture::InputGesture() {

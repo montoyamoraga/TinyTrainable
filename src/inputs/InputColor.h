@@ -23,9 +23,10 @@
 class InputColor : public Input {
 
 public:
-  // constructor
+  /// @brief constructor
   InputColor();
 
+  /// @brief setup color and proximity sensor
   void setupSensorAPDS9960();
 
   virtual void setupInstrument(bool serialDebugging) override;
@@ -33,15 +34,16 @@ public:
                         String objects[3]) override;
   virtual void identify() override;
 
+  // @brief instance of K-nearest neighbors algorithm
   KNNClassifier _myKNN;
   String _labels[3];
   int _previousClassification = -1;
 
-  // private:
   void readColor(float color[]);
-  //   void checkInst0Setup();
 
+  /// @brief parameter for K-nearest neighbors algorithm
   int _k = -1;
+
   float _colorThreshold;
   float _colorReading[3];
   bool _checkedSetup = false;

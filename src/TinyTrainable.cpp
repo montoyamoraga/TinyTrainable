@@ -24,41 +24,34 @@ int TinyTrainable::_baudRate = 9600;
 /// constructor method
 TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
 
-if(inputType == INPUT_COLOR){
-  myInput = new InputColor();
-}
-else if(inputType == INPUT_GESTURE){
-  myInput = new InputGesture();
-}
-else if(inputType == INPUT_SPEECH){
-  myInput = new InputSpeech();
-}else{
-  myInput = new Input();
-}
+  if (inputType == INPUT_COLOR) {
+    myInput = new InputColor();
+  } else if (inputType == INPUT_GESTURE) {
+    myInput = new InputGesture();
+  } else if (inputType == INPUT_SPEECH) {
+    myInput = new InputSpeech();
+  } else {
+    myInput = new Input();
+  }
 
-
-/// initialize output
- if (outputType == OUTPUT_BUZZER){
-   myOutput = new OutputBuzzer(); 
-} else if (outputType == OUTPUT_LCD){
-   myOutput = new OutputLCD();
-} else if (outputType == OUTPUT_LED){
-   myOutput = new OutputLED();
-} else if (outputType == OUTPUT_MIDI){
-   myOutput = new OutputMIDI();
-}
- else if (outputType == OUTPUT_PRINTER){
-  myOutput = new OutputPrinter();
-}
- else if (outputType == OUTPUT_SERIAL){
-   myOutput = new OutputSerial();
-}
- else if (outputType == OUTPUT_SERVO){
-   myOutput = new OutputServo();
-}
-else{
-   myOutput = new Output();
-}
+  /// initialize output
+  if (outputType == OUTPUT_BUZZER) {
+    myOutput = new OutputBuzzer();
+  } else if (outputType == OUTPUT_LCD) {
+    myOutput = new OutputLCD();
+  } else if (outputType == OUTPUT_LED) {
+    myOutput = new OutputLED();
+  } else if (outputType == OUTPUT_MIDI) {
+    myOutput = new OutputMIDI();
+  } else if (outputType == OUTPUT_PRINTER) {
+    myOutput = new OutputPrinter();
+  } else if (outputType == OUTPUT_SERIAL) {
+    myOutput = new OutputSerial();
+  } else if (outputType == OUTPUT_SERVO) {
+    myOutput = new OutputServo();
+  } else {
+    myOutput = new Output();
+  }
 
   // TODO: research the name of this linking way
   if (myInput != nullptr) {
@@ -115,7 +108,7 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
 };
 
 /// @brief input gesture, setup TensorFlow
-void TinyTrainable::setupTF(String gestures[3], const unsigned char* model) {
+void TinyTrainable::setupTF(String gestures[3], const unsigned char *model) {
   if (myInput != nullptr) {
     myInput->setupTF(gestures, model);
   }

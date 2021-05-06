@@ -15,7 +15,6 @@ void setup() {
   myTiny.setupOutputPrinter();
   myTiny.setPrinterBegin();
   myTiny.setPrinterTest();
-
 }
 
 void loop() {}

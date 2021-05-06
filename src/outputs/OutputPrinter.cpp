@@ -1,8 +1,7 @@
 // include header file
 #include "OutputPrinter.h"
 
-OutputPrinter::OutputPrinter() {
-}
+OutputPrinter::OutputPrinter() {}
 
 // destructor
 OutputPrinter::~OutputPrinter() {
@@ -13,15 +12,13 @@ OutputPrinter::~OutputPrinter() {
 }
 
 void OutputPrinter::setupOutputPrinter() {
-  if(!_printer){
-    _printer = new Adafruit_Thermal(&Serial1); 
+  if (!_printer) {
+    _printer = new Adafruit_Thermal(&Serial1);
   }
   Serial1.begin(_printerBaudRate);
 }
 
-void OutputPrinter::setPrinterBaudRate(int rate) {
-  _printerBaudRate = rate;
-}
+void OutputPrinter::setPrinterBaudRate(int rate) { _printerBaudRate = rate; }
 
 void OutputPrinter::setPrinterBegin() {
   _printer->setDefault();
@@ -34,16 +31,12 @@ void OutputPrinter::setPrinterPause(int pause) {
   setPrinterWake();
 }
 
-void OutputPrinter::setPrinterSleep() {
-  _printer->sleep();
-}
+void OutputPrinter::setPrinterSleep() { _printer->sleep(); }
 
-void OutputPrinter::setPrinterWake() {
-  _printer->wake();
-}
+void OutputPrinter::setPrinterWake() { _printer->wake(); }
 
 void OutputPrinter::setPrinterTest() {
-  
+
   _printer->setFont('B');
   _printer->justify('C');
   _printer->setLineHeight(50);

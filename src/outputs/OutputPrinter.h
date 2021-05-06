@@ -31,7 +31,6 @@ public:
   virtual void setPrinterWake() override;
   virtual void setPrinterTest() override;
 
-
 private:
   // instance of Adafruit Thermal Printer, connected to Serial1
   Adafruit_Thermal *_printer = nullptr;

@@ -53,7 +53,6 @@ void setup() {
   myTiny.setupTF(GESTURES);
   // or use this line to include your own model
   //   myTiny.setupTF(GESTURES, myGestureModel);
-
 }
 
 void loop() {

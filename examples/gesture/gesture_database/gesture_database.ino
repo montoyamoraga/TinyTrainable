@@ -29,11 +29,9 @@ void setup() {
 
   // print over serial "aX,aY,aZ,gX,gY,gZ"
   myTiny.gesturePrintHeader();
-  
 }
 
 void loop() {
   // TODO: right now it is commented out in the source code
   myTiny.gestureReadData();
-
 }

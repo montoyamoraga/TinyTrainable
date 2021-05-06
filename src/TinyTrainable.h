@@ -14,21 +14,16 @@
 #include "inputs/Input.h"
 #include "outputs/Output.h"
 
-enum InputType {
-	INPUT_NONE = 0,
-	INPUT_COLOR,
-	INPUT_GESTURE,
-	INPUT_SPEECH
-};
+enum InputType { INPUT_NONE = 0, INPUT_COLOR, INPUT_GESTURE, INPUT_SPEECH };
 enum OutputType {
-	OUTPUT_NONE = 0,
-	OUTPUT_BUZZER,
-	OUTPUT_LCD,
-	OUTPUT_LED,
-	OUTPUT_MIDI,
-	OUTPUT_PRINTER,
-	OUTPUT_SERIAL,
-	OUTPUT_SERVO
+  OUTPUT_NONE = 0,
+  OUTPUT_BUZZER,
+  OUTPUT_LCD,
+  OUTPUT_LED,
+  OUTPUT_MIDI,
+  OUTPUT_PRINTER,
+  OUTPUT_SERIAL,
+  OUTPUT_SERVO
 };
 
 // colors for setting the RGB LED
@@ -55,15 +50,14 @@ public:
   ~TinyTrainable();
 
   // template datatypes allows any datatype as an argument
-  
-  
+
   template <typename T> void debugPrint(T message) {
-    #ifdef DEBUG_TINY
+#ifdef DEBUG_TINY
     if (this->_serialDebugging) {
       Serial.print("debug - ");
       Serial.println(message);
     }
-    #endif
+#endif
   };
 
   // TODO: this override works, do it for other functions
@@ -86,7 +80,7 @@ public:
   void setupLEDs();
 
   // methods for input gesture
-  void setupTF(String gestures[3], const unsigned char* model = nullptr);
+  void setupTF(String gestures[3], const unsigned char *model = nullptr);
   void gesturePrintHeader();
   void gestureReadData();
 

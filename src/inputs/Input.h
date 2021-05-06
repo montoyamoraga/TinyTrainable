@@ -21,7 +21,8 @@ public:
                         String objects[3]) {}
 
   // gesture
-  virtual void setupTF(String gestures[3], const unsigned char* model = nullptr) {}
+  virtual void setupTF(String gestures[3],
+                       const unsigned char *model = nullptr) {}
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
 

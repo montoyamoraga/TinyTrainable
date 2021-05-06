@@ -39,10 +39,10 @@ void setup() {
   // set debugging over serial port
   myTiny.setupInstrument(tinyDebugging);
 
-    // use this line to include the default model
+  // use this line to include the default model
   myTiny.setupTF(GESTURES);
   // or use this line to include your own model
-//   myTiny.setupTF(GESTURES, myGestureModel);
+  //   myTiny.setupTF(GESTURES, myGestureModel);
 
   // set its output (see buzzer examples for more buzzer options)
   myTiny.setupOutputBuzzer(outputPin);

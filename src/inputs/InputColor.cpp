@@ -15,10 +15,10 @@ void InputColor::setupInstrument(bool serialDebugging) {
   tiny->_serialDebugging = serialDebugging;
 
   // if (tiny->_serialDebugging) {
-    // Serial.begin(tiny->_baudRate);
-    // while (!Serial) {
-    //   ;
-    // }
+  // Serial.begin(tiny->_baudRate);
+  // while (!Serial) {
+  //   ;
+  // }
   // }
 
   tiny->setupLEDs();
@@ -211,9 +211,8 @@ void InputColor::trainKNN(int k, int examplesPerClass, float colorThreshold,
     for (int currentExample = 0; currentExample < examplesPerClass;
          currentExample++) {
 
-    
       tiny->debugPrint("Show me an example of: " + _labels[currentClass]);
-    
+
       // wait for an object then read its color
       readColor(_colorReading);
 

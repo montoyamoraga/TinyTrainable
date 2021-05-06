@@ -32,7 +32,8 @@ public:
   InputGesture();
 
   virtual void setupInstrument(bool serialDebugging) override;
-  virtual void setupTF(String gestures[3], const unsigned char* model = nullptr) override;
+  virtual void setupTF(String gestures[3],
+                       const unsigned char *model = nullptr) override;
   virtual void identify() override;
   virtual void gesturePrintHeader() override;
   virtual void gestureReadData() override;
@@ -40,14 +41,14 @@ public:
 private:
   void setupSensorLSM9DS1();
 
-/// @brief threshold of significance measured in G's
+  /// @brief threshold of significance measured in G's
   float _accelerationThreshold = 2.5;
 
-// number of samples per motion
+  // number of samples per motion
   int _numSamples = 119;
 
-// number of decimals for floating point numbers
-//const int floatDecimals = 3;
+  // number of decimals for floating point numbers
+  // const int floatDecimals = 3;
 
   // initialize as if sampling has already been done
   int _samplesRead = _numSamples;

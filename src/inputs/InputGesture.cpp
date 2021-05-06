@@ -24,13 +24,13 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   }
 }
 
-void InputGesture::setupTF(String gestures[3], const unsigned char* model) {
+void InputGesture::setupTF(String gestures[3], const unsigned char *model) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];
 
   // load either the default or the custom one
-  tflModel = tflite::GetModel((model == nullptr)?modelGestureDefault:model);
+  tflModel = tflite::GetModel((model == nullptr) ? modelGestureDefault : model);
 
   if (tflModel->version() != TFLITE_SCHEMA_VERSION) {
     Serial.println("Model schema mismatch!");
@@ -115,10 +115,10 @@ void InputGesture::identify() {
             maxVal = tflOutputTensor->data.f[i];
           }
           if (tiny->_serialDebugging) {
-		  
-        //     Serial.print(_gestures[i]);
-        //     Serial.print(": ");
-        //     Serial.println(tflOutputTensor->data.f[i], 6);
+
+            //     Serial.print(_gestures[i]);
+            //     Serial.print(": ");
+            //     Serial.println(tflOutputTensor->data.f[i], 6);
           }
         }
         tiny->playOutput(maxIndex);
@@ -127,76 +127,74 @@ void InputGesture::identify() {
   }
 }
 
-void InputGesture::gesturePrintHeader() {
-  Serial.println(_gestureHeader);
-}
+void InputGesture::gesturePrintHeader() { Serial.println(_gestureHeader); }
 
 void InputGesture::gestureReadData() {
-  
- // while we have read as many samples as wanted for a certain motion
- // reset the IMU reader variables
- while (_samplesRead == _numSamples) {
-//    //
-//    // if there is acceleration data available from the sensor
-   if (IMU.accelerationAvailable()) {
 
-     // read it and store it on variables aX, aY, aZ
-     IMU.readAcceleration(_aX, _aY, _aZ);
+  // while we have read as many samples as wanted for a certain motion
+  // reset the IMU reader variables
+  while (_samplesRead == _numSamples) {
+    //    //
+    //    // if there is acceleration data available from the sensor
+    if (IMU.accelerationAvailable()) {
 
-     // store the sum of their absolute values in variable aSum
-     float aSum = fabs(_aX) + fabs(_aY) + fabs(_aZ);
+      // read it and store it on variables aX, aY, aZ
+      IMU.readAcceleration(_aX, _aY, _aZ);
 
-     // check if aSum is above the threshold
-     if (aSum >= _accelerationThreshold) {
+      // store the sum of their absolute values in variable aSum
+      float aSum = fabs(_aX) + fabs(_aY) + fabs(_aZ);
 
-       // reset the sample read count
-       _samplesRead = 0;
+      // check if aSum is above the threshold
+      if (aSum >= _accelerationThreshold) {
 
-       // exit the while loop
-       break;
-     }
-   }
- }
+        // reset the sample read count
+        _samplesRead = 0;
+
+        // exit the while loop
+        break;
+      }
+    }
+  }
 
   // check if the all the required samples have been read since
   // the last time the significant motion was detected
-   while (samplesRead < numSamples) {
-  
-     // check if both new acceleration and gyroscope data is
-     // available
-     if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
-  
-       // read accelation data and store in variables aX, aY, aZ
-       IMU.readAcceleration(_aX, _aY, _aZ);
-  
-       // read gyroscope data and store in variables gX, gY, gZ
-       IMU.readGyroscope(_gX, _gY, _gZ);
-  
-       // signal one more sample read
-       _samplesRead++;
-  
-  //      // print the data on the console in CSV format
-       Serial.print(_aX, _floatDecimals);
-       Serial.print(',');
-       Serial.print(_aY, _floatDecimals);
-       Serial.print(',');
-       Serial.print(_aZ, _floatDecimals);
-       Serial.print(',');
-       Serial.print(_gX, _floatDecimals);
-       Serial.print(',');
-       Serial.print(_gY, _floatDecimals);
-       Serial.print(',');
-       Serial.print(_gZ, _floatDecimals);
-       Serial.println();
-  
-       // check if it is the last sample
-       if (_samplesRead == _numSamples) {
-  
-         // add an empty line
-         Serial.println();
-       }
-     }
-   }
+  while (samplesRead < numSamples) {
+
+    // check if both new acceleration and gyroscope data is
+    // available
+    if (IMU.accelerationAvailable() && IMU.gyroscopeAvailable()) {
+
+      // read accelation data and store in variables aX, aY, aZ
+      IMU.readAcceleration(_aX, _aY, _aZ);
+
+      // read gyroscope data and store in variables gX, gY, gZ
+      IMU.readGyroscope(_gX, _gY, _gZ);
+
+      // signal one more sample read
+      _samplesRead++;
+
+      //      // print the data on the console in CSV format
+      Serial.print(_aX, _floatDecimals);
+      Serial.print(',');
+      Serial.print(_aY, _floatDecimals);
+      Serial.print(',');
+      Serial.print(_aZ, _floatDecimals);
+      Serial.print(',');
+      Serial.print(_gX, _floatDecimals);
+      Serial.print(',');
+      Serial.print(_gY, _floatDecimals);
+      Serial.print(',');
+      Serial.print(_gZ, _floatDecimals);
+      Serial.println();
+
+      // check if it is the last sample
+      if (_samplesRead == _numSamples) {
+
+        // add an empty line
+        Serial.println();
+      }
+    }
+  }
 }
 
 // LSM9DS1 sensor for IMU (inertial measurement unit)

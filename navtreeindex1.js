@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_output_servo.html#a5231f654f352074c79f88d71b870f2c0":[1,0,11,8],
 "class_output_servo.html#a530f50db199a433a191f34abffcc4151":[1,0,11,5],
 "class_output_servo.html#a5b81312b7ef4f294faaccf5246b7dafd":[1,0,11,11],
 "class_output_servo.html#a5d3f44bed338d819373e46c677df1688":[1,0,11,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "hello__buzzer_8ino.html#acf7fdbb072a2dbc03f5ca9a5affaa8c1":[2,0,0,2,0,0,2],
 "hello__buzzer_8ino.html#ae08d2c382b1bc1b2351974750116c861":[2,0,0,2,0,0,8],
 "hello__buzzer_8ino.html#afbf234f68cab4163a47d3c998d483f68":[2,0,0,2,0,0,6],
-"hello__buzzer_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,2,0,0,0],
-"hello__led_8ino.html":[2,0,0,2,1,0]
+"hello__buzzer_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,2,0,0,0]
 };

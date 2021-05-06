@@ -11,6 +11,7 @@ var class_input_gesture =
     [ "_aX", "class_input_gesture.html#a28e890fb6d61cae1798f36a3a15c1748", null ],
     [ "_aY", "class_input_gesture.html#ac6d79f1fe7a715ff4f099683e69f61cc", null ],
     [ "_aZ", "class_input_gesture.html#a808bb9093b25804fd0acb9028488a49a", null ],
+    [ "_floatDecimals", "class_input_gesture.html#aad3bfbb7a6072acdba25c815c93c53be", null ],
     [ "_gestureHeader", "class_input_gesture.html#a6826e16e43299877d6393ba9c36a0574", null ],
     [ "_gestures", "class_input_gesture.html#a2f37974235dd25693db1b0c838dba32c", null ],
     [ "_gX", "class_input_gesture.html#a32bcff98b3deadf863b1a8131aea940c", null ],

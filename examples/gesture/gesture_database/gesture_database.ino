@@ -22,21 +22,6 @@ String gestures[] = {"gesture0", "gesture1", "gesture2"};
 // debugging messages over usb serial
 bool serialDebugging = true;
 
-// threshold of significant in G's
-//const float accelerationThreshold = 2.5;
-
-// number of samples per motion
-//const int numSamples = 119;
-
-// initialize as if sampling has already been done
-//int samplesRead = numSamples;
-
-// number of decimals for floating point numbers
-//const int floatDecimals = 3;
-
-// variables for reading
-//float aX, aY, aZ, gX, gY, gZ;
-
 void setup() {
 
   myTiny.setupInstrument(tinyDebugging);

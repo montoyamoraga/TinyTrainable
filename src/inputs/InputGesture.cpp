@@ -31,7 +31,9 @@ void InputGesture::setupTF(String gestures[3]) {
   _gestures[2] = gestures[2];
 
   // get the TFL representation of the model byte array
-  tflModel = tflite::GetModel(_modelGestureName);
+//   tflModel = tflite::GetModel(_modelGestureName);
+  tflModel = tflite::GetModel(modelGestureDefault);
+
   if (tflModel->version() != TFLITE_SCHEMA_VERSION) {
     Serial.println("Model schema mismatch!");
     while (1)

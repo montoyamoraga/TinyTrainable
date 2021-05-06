@@ -21,9 +21,9 @@ TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 
 // TODO - see friday 04/30 notes about this
 // include machine learning model
-#include "../assets/modelGesture.h"
+// #include "../assets/modelGesture.h"
 // or include your own
-//#include "myModel.h"
+#include "myGestureModel.h"
 
 // array to map gesture index to a name
 String GESTURES[] = {"gesture0", "gesture1", "gesture2"};

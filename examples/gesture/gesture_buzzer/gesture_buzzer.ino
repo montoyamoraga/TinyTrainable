@@ -8,9 +8,9 @@
 TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_BUZZER);
 
 // include machine learning model
-#include "../assets/modelGesture.h"
+// #include "../assets/modelGesture.h"
 // or include your own
-//#include "myModel.h"
+#include "myGestureModel.h"
 
 // declare instance of the TinyTrainable instrument
 TinyTrainable myTiny;

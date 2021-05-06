@@ -1,6 +1,7 @@
 var class_input_gesture =
 [
     [ "InputGesture", "class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7", null ],
+    [ "gestureLoadModel", "class_input_gesture.html#a624a5c718733990b785b192e33505d2d", null ],
     [ "gesturePrintHeader", "class_input_gesture.html#a6037400651a903e2e765e35d9ad5dd22", null ],
     [ "gestureReadData", "class_input_gesture.html#a904a188c89289dc7f366ca05a75d6a32", null ],
     [ "identify", "class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d", null ],

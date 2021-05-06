@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"hello__midi_8ino.html#a146e68d71b7ff326c04ef003367645bd":[2,0,0,2,2,0,4],
+"hello__midi_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[2,0,0,2,2,0,1],
+"hello__midi_8ino.html#ac3ba32427a8b0dcc49484d127dfde9a5":[2,0,0,2,2,0,3],
 "hello__midi_8ino.html#acaf28e342a32ed236448988bcedf3572":[2,0,0,2,2,0,2],
 "hello__midi_8ino.html#ae08d2c382b1bc1b2351974750116c861":[2,0,0,2,2,0,6],
 "hello__midi_8ino.html#afe461d27b9c48d5921c00d521181f12f":[2,0,0,2,2,0,0],

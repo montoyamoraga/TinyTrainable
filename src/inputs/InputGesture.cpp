@@ -158,7 +158,7 @@ void InputGesture::gestureReadData() {
 
   // check if the all the required samples have been read since
   // the last time the significant motion was detected
-  while (samplesRead < numSamples) {
+  while (_samplesRead < _numSamples) {
 
     // check if both new acceleration and gyroscope data is
     // available

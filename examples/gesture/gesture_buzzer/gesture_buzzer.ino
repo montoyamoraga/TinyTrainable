@@ -35,6 +35,7 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 void setup() {
   // set debugging over serial port
   myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
 
   // setup input (tensorflow gesture recognition)
   myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);

@@ -5,7 +5,7 @@
 #include <TinyTrainable.h>
 
 // declare instance of the TinyTrainable instrument
-TinyTrainable myTiny;
+TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_BUZZER);
 
 // constants for the hardware
 const int outputPin = 2;
@@ -22,12 +22,6 @@ int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 // int freqArrayLength = sizeof(freqArray0)/sizeof(*freqArray0);
 int paramArrayLength = 6;
 
-// threshold of significant in G's
-const float accelerationThreshold = 2.5;
-
-// number of samples per gesture
-const int numSamples = 119;
-
 // array to map gesture index to a name
 String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
@@ -35,10 +29,7 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 void setup() {
   // set debugging over serial port
   myTiny.setupInstrument(tinyDebugging);
-  myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
-
-  // setup input (tensorflow gesture recognition)
-  myTiny.setupTF(GESTURES, accelerationThreshold, numSamples);
+  myTiny.setupTF(GESTURES);
 
   // set its output (see buzzer examples for more buzzer options)
   myTiny.setupOutputBuzzer(outputPin);

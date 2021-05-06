@@ -127,15 +127,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f44f0c0eed4492ab9de700c937a49e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a3f44f0c0eed4492ab9de700c937a49e9">setupLEDs</a> ()</td></tr>
 <tr class="memdesc:a3f44f0c0eed4492ab9de700c937a49e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">method for setup internal LEDs of the Arduino  <a href="class_tiny_trainable.html#a3f44f0c0eed4492ab9de700c937a49e9">More...</a><br /></td></tr>
 <tr class="separator:a3f44f0c0eed4492ab9de700c937a49e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af457f31f6c1d4fc724de06d1c817595e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#af457f31f6c1d4fc724de06d1c817595e">setupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3])</td></tr>
-<tr class="memdesc:af457f31f6c1d4fc724de06d1c817595e"><td class="mdescLeft">&#160;</td><td class="mdescRight">input gesture, setup TensorFlow  <a href="class_tiny_trainable.html#af457f31f6c1d4fc724de06d1c817595e">More...</a><br /></td></tr>
-<tr class="separator:af457f31f6c1d4fc724de06d1c817595e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4f071d1931d721ac47496dde726eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#aaa4f071d1931d721ac47496dde726eb4">setupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3], const unsigned char *model=nullptr)</td></tr>
+<tr class="memdesc:aaa4f071d1931d721ac47496dde726eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">input gesture, setup TensorFlow  <a href="class_tiny_trainable.html#aaa4f071d1931d721ac47496dde726eb4">More...</a><br /></td></tr>
+<tr class="separator:aaa4f071d1931d721ac47496dde726eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b457cc23cd6a92249b1cdaa5ccbde6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a38b457cc23cd6a92249b1cdaa5ccbde6">gesturePrintHeader</a> ()</td></tr>
 <tr class="separator:a38b457cc23cd6a92249b1cdaa5ccbde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03597cae7efc7e9c2efa11e9f37da41d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a03597cae7efc7e9c2efa11e9f37da41d">gestureReadData</a> ()</td></tr>
 <tr class="separator:a03597cae7efc7e9c2efa11e9f37da41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac767ce04f7f4573d29a4471b30822e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#ac767ce04f7f4573d29a4471b30822e4a">gestureLoadModel</a> (String myModel)</td></tr>
-<tr class="separator:ac767ce04f7f4573d29a4471b30822e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6897144d519d0d19c8c3835bf4e27dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a6897144d519d0d19c8c3835bf4e27dab">playOutput</a> (int classification)</td></tr>
 <tr class="separator:a6897144d519d0d19c8c3835bf4e27dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ac8b5f887b7d42a29b2a9bbd1bbb416"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a3ac8b5f887b7d42a29b2a9bbd1bbb416">setupOutputBuzzer</a> (int <a class="el" href="speech__buzzer_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a>)</td></tr>
@@ -335,24 +333,6 @@ template&lt;typename T &gt; </div>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac767ce04f7f4573d29a4471b30822e4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac767ce04f7f4573d29a4471b30822e4a">&#9670;&nbsp;</a></span>gestureLoadModel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TinyTrainable::gestureLoadModel </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>myModel</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
@@ -1183,8 +1163,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="af457f31f6c1d4fc724de06d1c817595e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af457f31f6c1d4fc724de06d1c817595e">&#9670;&nbsp;</a></span>setupTF()</h2>
+<a id="aaa4f071d1931d721ac47496dde726eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4f071d1931d721ac47496dde726eb4">&#9670;&nbsp;</a></span>setupTF()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1193,8 +1173,18 @@ template&lt;typename T &gt; </div>
           <td class="memname">void TinyTrainable::setupTF </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>gestures</em>[3]</td><td>)</td>
+          <td class="paramname"><em>gestures</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

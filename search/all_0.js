@@ -32,7 +32,7 @@ var searchData=
   ['_5fmidichannel_29',['_midiChannel',['../class_output_m_i_d_i.html#a887baeda807202d10e94dfaf8214911e',1,'OutputMIDI']]],
   ['_5fmidinotes_30',['_midiNotes',['../class_output_m_i_d_i.html#a1712a387e81e8cf6b46b31e8e7f988ac',1,'OutputMIDI']]],
   ['_5fmidivelocity_31',['_midiVelocity',['../class_output_m_i_d_i.html#a9eed7fdd01bb69a2cbc8f43b93f05f54',1,'OutputMIDI']]],
-  ['_5fmodelgesturename_32',['_modelGestureName',['../class_input_gesture.html#a4dd824056239a6e00b1fca61d9e00be7',1,'InputGesture']]],
+  ['_5fmodelgesturename_32',['_modelGestureName',['../class_input_gesture.html#ac38626a132bd0622300d1aa06692cebe',1,'InputGesture']]],
   ['_5fmyknn_33',['_myKNN',['../class_input_color.html#a7c4915388a215c5821ca96674a894efa',1,'InputColor']]],
   ['_5fnumsamples_34',['_numSamples',['../class_input_gesture.html#abc5fb59ae372e75d0054fb3377c345cc',1,'InputGesture']]],
   ['_5foutputpinbuzzer_35',['_outputPinBuzzer',['../class_output_buzzer.html#ad49af0fecf4de9d47fe1aa1ba7b160b0',1,'OutputBuzzer']]],

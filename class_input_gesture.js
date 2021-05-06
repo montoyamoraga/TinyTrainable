@@ -1,13 +1,12 @@
 var class_input_gesture =
 [
     [ "InputGesture", "class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7", null ],
-    [ "gestureLoadModel", "class_input_gesture.html#a624a5c718733990b785b192e33505d2d", null ],
     [ "gesturePrintHeader", "class_input_gesture.html#a6037400651a903e2e765e35d9ad5dd22", null ],
     [ "gestureReadData", "class_input_gesture.html#a904a188c89289dc7f366ca05a75d6a32", null ],
     [ "identify", "class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d", null ],
     [ "setupInstrument", "class_input_gesture.html#aff59bf2cf5feaec7827dda87af2f641b", null ],
     [ "setupSensorLSM9DS1", "class_input_gesture.html#aba1b7e2869b0ba9fe8dc518eb3542a28", null ],
-    [ "setupTF", "class_input_gesture.html#a4cda823dad56db8e6bd63f5dd1f0e6d3", null ],
+    [ "setupTF", "class_input_gesture.html#a60fdd3193d92c829c2dbdccc3f19bf64", null ],
     [ "_accelerationThreshold", "class_input_gesture.html#a6063dc3a2d3d65d54dd3cd3da4985e73", null ],
     [ "_aX", "class_input_gesture.html#a28e890fb6d61cae1798f36a3a15c1748", null ],
     [ "_aY", "class_input_gesture.html#ac6d79f1fe7a715ff4f099683e69f61cc", null ],
@@ -17,7 +16,7 @@ var class_input_gesture =
     [ "_gX", "class_input_gesture.html#a32bcff98b3deadf863b1a8131aea940c", null ],
     [ "_gY", "class_input_gesture.html#a86885f42f210edc9660c11380826f489", null ],
     [ "_gZ", "class_input_gesture.html#a6089d93cb775b44743c4856627128f8b", null ],
-    [ "_modelGestureName", "class_input_gesture.html#a4dd824056239a6e00b1fca61d9e00be7", null ],
+    [ "_modelGestureName", "class_input_gesture.html#ac38626a132bd0622300d1aa06692cebe", null ],
     [ "_numSamples", "class_input_gesture.html#abc5fb59ae372e75d0054fb3377c345cc", null ],
     [ "_samplesRead", "class_input_gesture.html#ab13afbdffd6ee0fc55d38414a35eee08", null ],
     [ "aX", "class_input_gesture.html#a9b7ddae31b14cceecfc16faa7d8fe886", null ],

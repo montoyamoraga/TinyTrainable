@@ -40,8 +40,6 @@ public:
 private:
   void setupSensorLSM9DS1();
 
-//   String _modelGestureName = "modelGestureDefault";
-
 // threshold of significance measured in G's
   float _accelerationThreshold = 2.5;
 
@@ -65,9 +63,6 @@ private:
   // tflite setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
-
-  
-  String *_modelGestureName = nullptr;
 
   // tflite variables
   tflite::MicroErrorReporter tflErrorReporter;

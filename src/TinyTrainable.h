@@ -106,11 +106,14 @@ public:
   void trainKNN(int k, int examplesPerClass, float colorThreshold,
                 String objects[3]);
 
-
-
   // methods for input gesture
   void setupTF(String gestures[3], const unsigned char *model = nullptr);
+
+
+  /// @brief input gesture, print header for database
   void gesturePrintHeader();
+
+  /// @brief input gesture, read data for database
   void gestureReadData();
 
   // methods for input speech

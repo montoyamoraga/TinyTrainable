@@ -77,7 +77,11 @@ public:
 
   // methods for input
 
-  // methods for input color
+  /// @brief input color, train KNN algorithm
+  /// @param k int, for KNN
+  /// @param examplesPerClass int, examples per class
+  /// @param colorThreshold float, threshold of color for algorithm
+  /// @param objects[] String array, names of classes
   void trainKNN(int k, int examplesPerClass, float colorThreshold,
                 String objects[3]);
   void identify();

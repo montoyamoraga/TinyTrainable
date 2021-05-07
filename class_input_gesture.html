@@ -122,8 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae7ffb81212b0b4eae8d74eb8731548c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff59bf2cf5feaec7827dda87af2f641b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#aff59bf2cf5feaec7827dda87af2f641b">setupInstrument</a> (bool <a class="el" href="gesture__database_8ino.html#a35df65e6150b37ce45b9a5ff65843be1">serialDebugging</a>) override</td></tr>
 <tr class="separator:aff59bf2cf5feaec7827dda87af2f641b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60fdd3193d92c829c2dbdccc3f19bf64"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a60fdd3193d92c829c2dbdccc3f19bf64">setupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3], const unsigned char *model=nullptr) override</td></tr>
-<tr class="separator:a60fdd3193d92c829c2dbdccc3f19bf64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06516cc7e9f464faf4230019acd6c6ee"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a06516cc7e9f464faf4230019acd6c6ee">gestureSetupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3], const unsigned char *model=nullptr) override</td></tr>
+<tr class="separator:a06516cc7e9f464faf4230019acd6c6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cffc85df3a1b25fcd2b73962614513d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d">identify</a> () override</td></tr>
 <tr class="separator:a8cffc85df3a1b25fcd2b73962614513d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6037400651a903e2e765e35d9ad5dd22"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a6037400651a903e2e765e35d9ad5dd22">gesturePrintHeader</a> () override</td></tr>
@@ -284,6 +284,44 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a06516cc7e9f464faf4230019acd6c6ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06516cc7e9f464faf4230019acd6c6ee">&#9670;&nbsp;</a></span>gestureSetupTF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputGesture::gestureSetupTF </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>gestures</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_input.html#a1fb01af872f15e6d0b8d21838d39c760">Input</a>.</p>
+
+</div>
+</div>
 <a id="a8cffc85df3a1b25fcd2b73962614513d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8cffc85df3a1b25fcd2b73962614513d">&#9670;&nbsp;</a></span>identify()</h2>
 
@@ -363,44 +401,6 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>function for setup of sensor LSM9DS1 </p>
-
-</div>
-</div>
-<a id="a60fdd3193d92c829c2dbdccc3f19bf64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60fdd3193d92c829c2dbdccc3f19bf64">&#9670;&nbsp;</a></span>setupTF()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void InputGesture::setupTF </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>gestures</em>[3], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned char *&#160;</td>
-          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_input.html#ae11b1c2e750a3075b9b95aecf963d08d">Input</a>.</p>
 
 </div>
 </div>

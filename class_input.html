@@ -123,8 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a90132889a3e2ef01e864fa496c63c2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ddaa7f2974b49cb5ba74d83dc069bcd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd">trainKNN</a> (int k, int examplesPerClass, float colorThreshold, String objects[3])</td></tr>
 <tr class="separator:a3ddaa7f2974b49cb5ba74d83dc069bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae11b1c2e750a3075b9b95aecf963d08d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#ae11b1c2e750a3075b9b95aecf963d08d">setupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3], const unsigned char *model=nullptr)</td></tr>
-<tr class="separator:ae11b1c2e750a3075b9b95aecf963d08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb01af872f15e6d0b8d21838d39c760"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a1fb01af872f15e6d0b8d21838d39c760">gestureSetupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3], const unsigned char *model=nullptr)</td></tr>
+<tr class="separator:a1fb01af872f15e6d0b8d21838d39c760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a205ab859966e4373e9a8242345d68a63"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a205ab859966e4373e9a8242345d68a63">gesturePrintHeader</a> ()</td></tr>
 <tr class="separator:a205ab859966e4373e9a8242345d68a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d990222b6073894c179e45a3f276a3e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a0d990222b6073894c179e45a3f276a3e">gestureReadData</a> ()</td></tr>
@@ -216,6 +216,44 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a1fb01af872f15e6d0b8d21838d39c760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb01af872f15e6d0b8d21838d39c760">&#9670;&nbsp;</a></span>gestureSetupTF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Input::gestureSetupTF </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>gestures</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_input_gesture.html#a06516cc7e9f464faf4230019acd6c6ee">InputGesture</a>.</p>
+
+</div>
+</div>
 <a id="a90132889a3e2ef01e864fa496c63c2e7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90132889a3e2ef01e864fa496c63c2e7">&#9670;&nbsp;</a></span>identify()</h2>
 
@@ -268,44 +306,6 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="class_input_gesture.html#aff59bf2cf5feaec7827dda87af2f641b">InputGesture</a>, and <a class="el" href="class_input_color.html#ac54c8c491cad1988763380f46df2cf39">InputColor</a>.</p>
-
-</div>
-</div>
-<a id="ae11b1c2e750a3075b9b95aecf963d08d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae11b1c2e750a3075b9b95aecf963d08d">&#9670;&nbsp;</a></span>setupTF()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Input::setupTF </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>gestures</em>[3], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned char *&#160;</td>
-          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_input_gesture.html#a60fdd3193d92c829c2dbdccc3f19bf64">InputGesture</a>.</p>
 
 </div>
 </div>

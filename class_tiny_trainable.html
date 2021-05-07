@@ -138,9 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af50ed6282fcd82a8ef745847c0eaad5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f">trainKNN</a> (int k, int examplesPerClass, float colorThreshold, String objects[3])</td></tr>
 <tr class="memdesc:af50ed6282fcd82a8ef745847c0eaad5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">input color, train KNN algorithm  <a href="class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f">More...</a><br /></td></tr>
 <tr class="separator:af50ed6282fcd82a8ef745847c0eaad5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa4f071d1931d721ac47496dde726eb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#aaa4f071d1931d721ac47496dde726eb4">setupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3], const unsigned char *model=nullptr)</td></tr>
-<tr class="memdesc:aaa4f071d1931d721ac47496dde726eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">input gesture, setup TensorFlow  <a href="class_tiny_trainable.html#aaa4f071d1931d721ac47496dde726eb4">More...</a><br /></td></tr>
-<tr class="separator:aaa4f071d1931d721ac47496dde726eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3db4d10749f97a59797892d81b661d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#aa3db4d10749f97a59797892d81b661d2">gestureSetupTF</a> (String <a class="el" href="gesture__database_8ino.html#a7dd6d3ffe2015b4125bf307870ae5044">gestures</a>[3], const unsigned char *model=nullptr)</td></tr>
+<tr class="memdesc:aa3db4d10749f97a59797892d81b661d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">input gesture, setup TensorFlow model  <a href="class_tiny_trainable.html#aa3db4d10749f97a59797892d81b661d2">More...</a><br /></td></tr>
+<tr class="separator:aa3db4d10749f97a59797892d81b661d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b457cc23cd6a92249b1cdaa5ccbde6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a38b457cc23cd6a92249b1cdaa5ccbde6">gesturePrintHeader</a> ()</td></tr>
 <tr class="memdesc:a38b457cc23cd6a92249b1cdaa5ccbde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">input gesture, print header for database  <a href="class_tiny_trainable.html#a38b457cc23cd6a92249b1cdaa5ccbde6">More...</a><br /></td></tr>
 <tr class="separator:a38b457cc23cd6a92249b1cdaa5ccbde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -399,6 +399,37 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>input gesture, read data for database </p>
+
+</div>
+</div>
+<a id="aa3db4d10749f97a59797892d81b661d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3db4d10749f97a59797892d81b661d2">&#9670;&nbsp;</a></span>gestureSetupTF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TinyTrainable::gestureSetupTF </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>gestures</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>input gesture, setup TensorFlow model </p>
+<p>input gesture, setup TensorFlow </p>
 
 </div>
 </div>
@@ -1212,36 +1243,6 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaa4f071d1931d721ac47496dde726eb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa4f071d1931d721ac47496dde726eb4">&#9670;&nbsp;</a></span>setupTF()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TinyTrainable::setupTF </td>
-          <td>(</td>
-          <td class="paramtype">String&#160;</td>
-          <td class="paramname"><em>gestures</em>[3], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const unsigned char *&#160;</td>
-          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>input gesture, setup TensorFlow </p>
 
 </div>
 </div>

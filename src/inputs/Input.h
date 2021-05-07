@@ -1,10 +1,10 @@
 /// @file Input.h
-/// @brief Base class for input
+/// @brief Base class for Input
 
 #ifndef INPUT_H
 #define INPUT_H
 
-// include Arduino library
+/// @include library Arduino
 #include <Arduino.h>
 
 // forwards declare class
@@ -12,6 +12,7 @@ class TinyTrainable;
 
 class Input {
 public:
+/// @brief Input destructor
   virtual ~Input() {}
   virtual void setupInstrument(bool serialDebugging) {}
   virtual void identify() {}
@@ -26,6 +27,7 @@ public:
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
 
+ /// @brief pointer to a TinyTrainable instance
   TinyTrainable *tiny = nullptr;
 };
 

@@ -27,6 +27,9 @@ public:
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
 
+  // speech
+  virtual void speechSetupTF(String sounds[3], const unsigned char *model = nullptr) {}
+
  /// @brief pointer to a TinyTrainable instance
   TinyTrainable *tiny = nullptr;
 };

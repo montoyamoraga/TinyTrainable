@@ -109,7 +109,6 @@ public:
   /// @brief input gesture, setup TensorFlow model
   void gestureSetupTF(String gestures[3], const unsigned char *model = nullptr);
 
-
   /// @brief input gesture, print header for database
   void gesturePrintHeader();
 
@@ -117,6 +116,8 @@ public:
   void gestureReadData();
 
   // methods for input speech
+  /// @brief input speech, setup TensorFlow model
+  void speechSetupTF(String sounds[3], const unsigned char *model = nullptr);
 
   // methods for outputs
   //   void helloOutputsSetup(OutputMode outputToTest);

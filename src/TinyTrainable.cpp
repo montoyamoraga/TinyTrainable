@@ -126,7 +126,12 @@ void TinyTrainable::gestureReadData() {
   }
 }
 
-/// @brief method for setup internal LEDs of the Arduino
+void TinyTrainable:: speechSetupTF(String sounds[3], const unsigned char *model = nullptr) {
+  if (myInput != nullptr) {
+    myInput->speechSetupTF(sounds, model);
+  }
+}
+
 void TinyTrainable::setupLEDs() {
   // setting up orange built-in LED
   pinMode(LED_BUILTIN, OUTPUT);
@@ -143,7 +148,6 @@ void TinyTrainable::setupLEDs() {
   digitalWrite(LEDB, HIGH);
 }
 
-/// @brief method for turning on and off the built-in LED
 void TinyTrainable::setStateLEDBuiltIn(bool turnOn) {
   if (turnOn) {
     digitalWrite(LED_BUILTIN, HIGH);

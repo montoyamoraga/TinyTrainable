@@ -49,6 +49,13 @@ protected:
   int _outputPinTest = -1;
 
 public:
+
+  /// @brief static boolean, toggles debugging over serial port
+  static bool _serialDebugging;
+
+  /// @brief static integer, baud rate for serial communication
+  static int _baudRate;
+
   /// @brief TinyTrainable constructor
   /// @param InputType
   /// @param OutputType
@@ -69,13 +76,27 @@ public:
   /// @param serialDebugging to toggle serial debugging on/off
   void setupInstrument(bool serialDebugging);
 
-  /// @brief static boolean, toggles debugging over serial port
-  static bool _serialDebugging;
+  /// @brief initialize LEDs of Arduino
+  void setupLEDs();
 
-/// @brief static integer, baud rate for serial communication
-  static int _baudRate;
+/// @brief set state of LED built-in
+/// @param turnOn boolean, on/off
+  void setStateLEDBuiltIn(bool turnOn);
 
-  // methods for input
+  /// @brief set state of LED RGB
+  /// @param turnOn boolean, on/off
+  /// @param color, Color
+  void setStateLEDRGB(bool turnOn, Colors color);
+
+  /// @brief blink LED built-in
+  /// @param blinks integer, number of blinks
+  void blinkLEDBuiltIn(int blinks);
+
+  // TODO: maybe change name, still thinking about it
+  //   void errorBlink(Colors color, int blinkNum);
+
+  /// @brief input, identify class
+  void identify();
 
   /// @brief input color, train KNN algorithm
   /// @param k int, for KNN
@@ -84,9 +105,8 @@ public:
   /// @param objects[] String array, names of classes
   void trainKNN(int k, int examplesPerClass, float colorThreshold,
                 String objects[3]);
-  void identify();
 
-  void setupLEDs();
+
 
   // methods for input gesture
   void setupTF(String gestures[3], const unsigned char *model = nullptr);
@@ -147,11 +167,6 @@ public:
   int getServoMinAngle();
   void moveServo(int classification);
 
-  void setStateLEDBuiltIn(bool turnOn);
-  void blinkLEDBuiltIn(int blinks);
-  void setStateLEDRGB(bool turnOn, Colors color);
-  // TODO: maybe change name, still thinking about it
-  //   void errorBlink(Colors color, int blinkNum);
 };
 
 // conditional compilation

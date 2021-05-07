@@ -126,7 +126,7 @@ void TinyTrainable::gestureReadData() {
   }
 }
 
-void TinyTrainable:: speechSetupTF(String sounds[3], const unsigned char *model = nullptr) {
+void TinyTrainable::speechSetupTF(String sounds[3], const unsigned char *model = nullptr) {
   if (myInput != nullptr) {
     myInput->speechSetupTF(sounds, model);
   }

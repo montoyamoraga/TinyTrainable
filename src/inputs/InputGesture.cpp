@@ -24,7 +24,7 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   }
 }
 
-void InputGesture::setupTF(String gestures[3], const unsigned char *model) {
+void InputGesture::gestureSetupTF(String gestures[3], const unsigned char *model) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];

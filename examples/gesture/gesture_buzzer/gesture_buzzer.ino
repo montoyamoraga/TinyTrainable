@@ -34,9 +34,9 @@ void setup() {
   myTiny.setupInstrument(tinyDebugging);
 
   // use this line to include the default model
-  myTiny.setupTF(GESTURES);
+  myTiny.gestureSetupTF(GESTURES);
   // or use this line to include your own model
-  //   myTiny.setupTF(GESTURES, myGestureModel);
+  //   myTiny.gestureSetupTF(GESTURES, myGestureModel);
 
   // set its output (see buzzer examples for more buzzer options)
   myTiny.setupOutputBuzzer(outputPin);

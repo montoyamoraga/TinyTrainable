@@ -106,8 +106,8 @@ public:
   void trainKNN(int k, int examplesPerClass, float colorThreshold,
                 String objects[3]);
 
-  // methods for input gesture
-  void setupTF(String gestures[3], const unsigned char *model = nullptr);
+  /// @brief input gesture, setup TensorFlow model
+  void gestureSetupTF(String gestures[3], const unsigned char *model = nullptr);
 
 
   /// @brief input gesture, print header for database

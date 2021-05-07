@@ -13,6 +13,6 @@ var dir_b5728e92c563a1182250a9f2f177d804 =
     ] ],
     [ "InputSpeech.cpp", "_input_speech_8cpp.html", null ],
     [ "InputSpeech.h", "_input_speech_8h.html", [
-      [ "InputSpeech", "class_input_speech.html", null ]
+      [ "InputSpeech", "class_input_speech.html", "class_input_speech" ]
     ] ]
 ];

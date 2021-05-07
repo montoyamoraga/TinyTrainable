@@ -43,6 +43,7 @@ var class_tiny_trainable =
     [ "setupOutputPrinter", "class_tiny_trainable.html#a88048955a6f7747f4fd1004163f766b0", null ],
     [ "setupOutputSerial", "class_tiny_trainable.html#a4f204f966081bdb1102f723887a19f87", null ],
     [ "setupOutputServo", "class_tiny_trainable.html#a52457f3b81acd2e07ff3de3d8b28c404", null ],
+    [ "speechSetupTF", "class_tiny_trainable.html#a1d4d0eb72b7f95995a5fb18339879916", null ],
     [ "trainKNN", "class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f", null ],
     [ "_baudRate", "class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d", null ],
     [ "_outputPinTest", "class_tiny_trainable.html#ab956c2a85c55680e41c0b53aceb62519", null ],

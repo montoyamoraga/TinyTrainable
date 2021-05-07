@@ -147,6 +147,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03597cae7efc7e9c2efa11e9f37da41d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a03597cae7efc7e9c2efa11e9f37da41d">gestureReadData</a> ()</td></tr>
 <tr class="memdesc:a03597cae7efc7e9c2efa11e9f37da41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">input gesture, read data for database  <a href="class_tiny_trainable.html#a03597cae7efc7e9c2efa11e9f37da41d">More...</a><br /></td></tr>
 <tr class="separator:a03597cae7efc7e9c2efa11e9f37da41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4d0eb72b7f95995a5fb18339879916"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a1d4d0eb72b7f95995a5fb18339879916">speechSetupTF</a> (String sounds[3], const unsigned char *model=nullptr)</td></tr>
+<tr class="memdesc:a1d4d0eb72b7f95995a5fb18339879916"><td class="mdescLeft">&#160;</td><td class="mdescRight">input speech, setup TensorFlow model  <a href="class_tiny_trainable.html#a1d4d0eb72b7f95995a5fb18339879916">More...</a><br /></td></tr>
+<tr class="separator:a1d4d0eb72b7f95995a5fb18339879916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6897144d519d0d19c8c3835bf4e27dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a6897144d519d0d19c8c3835bf4e27dab">playOutput</a> (int classification)</td></tr>
 <tr class="separator:a6897144d519d0d19c8c3835bf4e27dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ac8b5f887b7d42a29b2a9bbd1bbb416"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a3ac8b5f887b7d42a29b2a9bbd1bbb416">setupOutputBuzzer</a> (int <a class="el" href="speech__buzzer_8ino.html#a34372894b2bb3820036f766b11588371">outputPin</a>)</td></tr>
@@ -1035,7 +1038,6 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>set state of LED built-in </p>
-<p>method for turning on and off the built-in LED</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">turnOn</td><td>boolean, on/off </td></tr>
@@ -1126,7 +1128,6 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>initialize LEDs of Arduino </p>
-<p>method for setup internal LEDs of the Arduino </p>
 
 </div>
 </div>
@@ -1243,6 +1244,36 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d4d0eb72b7f95995a5fb18339879916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4d0eb72b7f95995a5fb18339879916">&#9670;&nbsp;</a></span>speechSetupTF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TinyTrainable::speechSetupTF </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>sounds</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *&#160;</td>
+          <td class="paramname"><em>model</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>input speech, setup TensorFlow model </p>
 
 </div>
 </div>

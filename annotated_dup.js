@@ -3,7 +3,7 @@ var annotated_dup =
     [ "Input", "class_input.html", "class_input" ],
     [ "InputColor", "class_input_color.html", "class_input_color" ],
     [ "InputGesture", "class_input_gesture.html", "class_input_gesture" ],
-    [ "InputSpeech", "class_input_speech.html", null ],
+    [ "InputSpeech", "class_input_speech.html", "class_input_speech" ],
     [ "Output", "class_output.html", "class_output" ],
     [ "OutputBuzzer", "class_output_buzzer.html", "class_output_buzzer" ],
     [ "OutputLCD", "class_output_l_c_d.html", "class_output_l_c_d" ],

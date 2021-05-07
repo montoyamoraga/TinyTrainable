@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "TinyTrainable", "index.html", [
-    [ "TinyTrainable.h", "_tiny_trainable_8h.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -54,8 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_input_8h.html",
-"class_output_servo.html#a5231f654f352074c79f88d71b870f2c0",
-"hello__led_8ino.html#a2658fbbde3e4b728539d3ec60797c982"
+"class_output_servo.html#a530f50db199a433a191f34abffcc4151",
+"hello__led_8ino.html#a4fc01d736fe50cf5b977f755b675f11d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

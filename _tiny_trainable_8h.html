@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyTrainable: $title</title>
+<title>TinyTrainable: src/TinyTrainable.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,15 +90,138 @@ $(document).ready(function(){initNavTree('_tiny_trainable_8h.html',''); initResi
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="contents">
-<div class="textblock"><p>Arduino library for Tiny Trainable Instruments</p>
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle">
+<div class="title">TinyTrainable.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arduino library for Tiny Trainable Instruments.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_input_8h_source.html">inputs/Input.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_output_8h_source.html">outputs/Output.h</a>&quot;</code><br />
+</div>
+<p><a href="_tiny_trainable_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html">TinyTrainable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_tiny_trainable.html" title="TinyTrainable base class.">TinyTrainable</a> base class.  <a href="class_tiny_trainable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a5fc772c800c3d40d2b95564e8a839bab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839bab">InputType</a> { <a class="el" href="_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babad635d6b1496fa2fba6f87068d4193246">INPUT_NONE</a> = 0
+, <a class="el" href="_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babac0b7de0e40528a558b2aab4f5dfc883c">INPUT_COLOR</a>
+, <a class="el" href="_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babaf5213e018a099537d9997af185165366">INPUT_GESTURE</a>
+, <a class="el" href="_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babaa35c5c357a4d484056a6f4d9fd2a2f5f">INPUT_SPEECH</a>
+ }</td></tr>
+<tr class="separator:a5fc772c800c3d40d2b95564e8a839bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0517338e6c4a31a2addafc06d4f3a3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3">OutputType</a> { <br />
+&#160;&#160;<a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3a5732b65abdc02e9e3669da91b50c199c">OUTPUT_NONE</a> = 0
+, <a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3afccf8940ad823ef8a31e4a8729145454">OUTPUT_BUZZER</a>
+, <a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3a5fd4a6f3203a33458c63a80a8dd97f07">OUTPUT_LCD</a>
+, <a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3ac2742da598899559fde45fd3d10dc151">OUTPUT_LED</a>
+, <br />
+&#160;&#160;<a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3a3df8feb2859c221028ec91dfe89b7ff0">OUTPUT_MIDI</a>
+, <a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3aa0deefae5f4f5d941e6fa0849bc7c75f">OUTPUT_PRINTER</a>
+, <a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3a3f10977a217bb15720432082f68e1cc7">OUTPUT_SERIAL</a>
+, <a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3adf8ad952d568c1ec5852cf987496610e">OUTPUT_SERVO</a>
+<br />
+ }</td></tr>
+<tr class="separator:a4e0517338e6c4a31a2addafc06d4f3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ecd4f2ec2ebfe8d5b0163e4ac2a967"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967">Colors</a> { <br />
+&#160;&#160;<a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967aace9033470c7bfe9523c814271251908">red</a> = 0
+, <a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a6aa25890c44e0aac424e56338abe47ca">green</a> = 1
+, <a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a8f5fa6b484ac7e2a97943d915cf224e2">blue</a> = 2
+, <a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967ab31edea3fab8c488c7a8f78545e7f5a9">yellow</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a997d39850948cc1baf6bd0cfd791d95d">magenta</a> = 4
+, <a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967af86e4e7e79173ee87c1976080bb250b7">cyan</a> = 5
+<br />
+ }</td></tr>
+<tr class="separator:a55ecd4f2ec2ebfe8d5b0163e4ac2a967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Arduino library for Tiny Trainable Instruments. </p>
 <dl class="section author"><dt>Author</dt><dd>montoyamoraga, peter-parque, maxzwang </dd></dl>
-</div></div><!-- contents -->
-</div><!-- PageDoc -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a55ecd4f2ec2ebfe8d5b0163e4ac2a967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ecd4f2ec2ebfe8d5b0163e4ac2a967">&#9670;&nbsp;</a></span>Colors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967">Colors</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a55ecd4f2ec2ebfe8d5b0163e4ac2a967aace9033470c7bfe9523c814271251908"></a>red&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a55ecd4f2ec2ebfe8d5b0163e4ac2a967a6aa25890c44e0aac424e56338abe47ca"></a>green&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a55ecd4f2ec2ebfe8d5b0163e4ac2a967a8f5fa6b484ac7e2a97943d915cf224e2"></a>blue&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a55ecd4f2ec2ebfe8d5b0163e4ac2a967ab31edea3fab8c488c7a8f78545e7f5a9"></a>yellow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a55ecd4f2ec2ebfe8d5b0163e4ac2a967a997d39850948cc1baf6bd0cfd791d95d"></a>magenta&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a55ecd4f2ec2ebfe8d5b0163e4ac2a967af86e4e7e79173ee87c1976080bb250b7"></a>cyan&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a5fc772c800c3d40d2b95564e8a839bab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fc772c800c3d40d2b95564e8a839bab">&#9670;&nbsp;</a></span>InputType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839bab">InputType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5fc772c800c3d40d2b95564e8a839babad635d6b1496fa2fba6f87068d4193246"></a>INPUT_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5fc772c800c3d40d2b95564e8a839babac0b7de0e40528a558b2aab4f5dfc883c"></a>INPUT_COLOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5fc772c800c3d40d2b95564e8a839babaf5213e018a099537d9997af185165366"></a>INPUT_GESTURE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5fc772c800c3d40d2b95564e8a839babaa35c5c357a4d484056a6f4d9fd2a2f5f"></a>INPUT_SPEECH&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a4e0517338e6c4a31a2addafc06d4f3a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e0517338e6c4a31a2addafc06d4f3a3">&#9670;&nbsp;</a></span>OutputType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_tiny_trainable_8h.html#a4e0517338e6c4a31a2addafc06d4f3a3">OutputType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3a5732b65abdc02e9e3669da91b50c199c"></a>OUTPUT_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3afccf8940ad823ef8a31e4a8729145454"></a>OUTPUT_BUZZER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3a5fd4a6f3203a33458c63a80a8dd97f07"></a>OUTPUT_LCD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3ac2742da598899559fde45fd3d10dc151"></a>OUTPUT_LED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3a3df8feb2859c221028ec91dfe89b7ff0"></a>OUTPUT_MIDI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3aa0deefae5f4f5d941e6fa0849bc7c75f"></a>OUTPUT_PRINTER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3a3f10977a217bb15720432082f68e1cc7"></a>OUTPUT_SERIAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4e0517338e6c4a31a2addafc06d4f3a3adf8ad952d568c1ec5852cf987496610e"></a>OUTPUT_SERVO&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_tiny_trainable_8h.html">TinyTrainable.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

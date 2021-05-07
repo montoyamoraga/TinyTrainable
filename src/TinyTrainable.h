@@ -69,10 +69,10 @@ public:
   /// @param serialDebugging to toggle serial debugging on/off
   void setupInstrument(bool serialDebugging);
 
-  // variable for debugging
-  // TODO: add explanation about static
-  // static makes this property to be global for all the instances of the class
+  /// @brief static boolean, toggles debugging over serial port
   static bool _serialDebugging;
+
+/// @brief static integer, baud rate for serial communication
   static int _baudRate;
 
   // methods for input

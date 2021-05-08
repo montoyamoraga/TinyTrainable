@@ -15,12 +15,12 @@ const int timeOff = 250;
 // constant for debugging
 // true: the instrument needs to be connected to serial port
 // false: the instrument is standalone
-const bool tinyDebugging = false;
+const bool debugOn = false;
 
 // setup() runs once, at the beginning
 void setup() {
   // initialize instrument
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 }
 
 // loop() runs in a loop, after setup()

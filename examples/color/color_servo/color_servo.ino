@@ -4,6 +4,9 @@
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(INPUT_COLOR, OUTPUT_SERVO);
 
+// constant for debugging
+const bool debugOn = true;
+
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
@@ -21,15 +24,12 @@ const int tempo2 = 200;
 // constants for the hardware
 const int outputPin = 9;
 
-// constant for debugging
-// true: the instrument needs to be connected to serial port
-// false: the instrument is standalone
-const bool tinyDebugging = true;
+
 
 // setup() runs once, at the beginning
 void setup() {
 
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   myTiny.setupOutputServo(outputPin);
 

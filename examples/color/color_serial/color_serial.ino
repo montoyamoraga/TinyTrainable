@@ -10,13 +10,13 @@ const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
 
 // constant for debugging
-const bool tinyDebugging = true;
+const bool debugOn = true;
 
 String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
 // setup() runs once, at the beginning
 void setup() {
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   myTiny.setupOutputSerial();
 

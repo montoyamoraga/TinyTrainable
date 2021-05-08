@@ -5,7 +5,7 @@
 TinyTrainable myTiny(INPUT_NONE, OUTPUT_LED);
 
 // constant for debugging
-const bool tinyDebugging = true;
+const bool debugOn = true;
 
 // constants for the hardware
 const int outputPinLED0 = 3;
@@ -16,7 +16,7 @@ const int pauseTime = 2000;
 
 void setup() {
 
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   myTiny.setupOutputLED(0, outputPinLED0);
   myTiny.setupOutputLED(1, outputPinLED1);

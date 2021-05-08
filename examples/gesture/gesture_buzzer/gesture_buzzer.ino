@@ -11,7 +11,7 @@ TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_BUZZER);
 const int outputPin = 2;
 
 // constant for debugging
-const bool tinyDebugging = true;
+const bool debugOn = true;
 
 // arrays of frequencies
 int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
@@ -28,7 +28,7 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 // setup() runs once, at the beginning
 void setup() {
   // set debugging over serial port
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   // use this line to include the default model
   myTiny.gestureSetupTF(GESTURES);

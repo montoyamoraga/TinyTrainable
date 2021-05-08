@@ -11,7 +11,7 @@
 TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 
 // constant for debugging
-const bool tinyDebugging = true;
+const bool debugOn = true;
 
 // names of gestures
 String gestures[] = {"gesture0", "gesture1", "gesture2"};
@@ -21,7 +21,7 @@ bool serialDebugging = true;
 
 void setup() {
 
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
   myTiny.setupOutputSerial();
 
   // print over serial "aX,aY,aZ,gX,gY,gZ"

@@ -4,17 +4,19 @@
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(INPUT_SPEECH, OUTPUT_SERVO);
 
+// constant for debugging
+const bool debugOn = true;
+
 // constants for the hardware
 // const int outputPin = 8;
 
-// constant for debugging
-const bool tinyDebugging = true;
+
 
 String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 
 void setup() {
   // set debugging over serial port
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   // set its output
   //  myTiny.setupOutputBuzzer(outputPin);

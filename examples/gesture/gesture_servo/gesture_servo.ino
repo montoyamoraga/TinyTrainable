@@ -19,7 +19,7 @@ const int tempo2 = 200;
 // constants for the hardware
 const int outputPin = 9;
 // constant for debugging
-const bool tinyDebugging = true;
+const bool debugOn = true;
 
 // arrays of frequencies
 int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
@@ -37,7 +37,7 @@ String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 void setup() {
   // set debugging over serial port
 
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   myTiny.setupOutputServo(outputPin);
 

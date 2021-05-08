@@ -20,14 +20,14 @@
 TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERIAL);
 
 // constant for debugging
-const bool tinyDebugging = true;
+const bool debugOn = true;
 
 // array to map gesture index to a name
 String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
 void setup() {
   // setup instrument
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   // use this line to include the default model
   myTiny.gestureSetupTF(GESTURES);

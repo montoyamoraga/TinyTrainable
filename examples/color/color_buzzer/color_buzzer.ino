@@ -13,7 +13,7 @@ const float COLOR_THRESHOLD = 0.5;
 const int outputPin = 2;
 
 // constant for debugging
-const bool tinyDebugging = true;
+const bool debugOn = true;
 
 // String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
 String objectNames[3] = {"avocado", "orange", "towel"};
@@ -31,7 +31,7 @@ int paramArrayLength = 6;
 void setup() {
 
   // setup the instrument
-  myTiny.setupInstrument(tinyDebugging);
+  myTiny.setupInstrument(debugOn);
 
   // set its output
   myTiny.setupOutputBuzzer(outputPin);

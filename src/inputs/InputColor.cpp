@@ -1,3 +1,6 @@
+/// @file InputColor.cpp
+/// @brief K-nearest neighbors algorithm + input color
+
 // include header file
 #include "InputColor.h"
 

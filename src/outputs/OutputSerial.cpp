@@ -1,3 +1,6 @@
+/// @file OutputSerial.cpp
+/// @brief Output serial
+
 // include header file
 #include "OutputSerial.h"
 

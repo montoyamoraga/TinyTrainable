@@ -1,3 +1,6 @@
+/// @file OutputBuzzer.h
+/// @brief Output buzzer
+
 // include header file
 #include "OutputBuzzer.h"
 

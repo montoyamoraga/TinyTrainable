@@ -1,5 +1,5 @@
 /// @file Input.h
-/// @brief Base class for Input
+/// @brief Input base class
 
 #ifndef INPUT_H
 #define INPUT_H

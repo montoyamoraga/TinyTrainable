@@ -1,3 +1,6 @@
+/// @file InputGesture.cpp
+/// @brief TensorFlow model + input gesture
+
 // include header file
 #include "InputGesture.h"
 

@@ -1,3 +1,6 @@
+/// @file OutputPrinter.cpp
+/// @brief Output printer
+
 // include header file
 #include "OutputPrinter.h"
 

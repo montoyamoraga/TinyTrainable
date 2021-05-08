@@ -1,3 +1,6 @@
+/// @file OutputSerial.h
+/// @brief Output serial
+
 #ifndef OUTPUT_SERIAL_H
 #define OUTPUT_SERIAL_H
 

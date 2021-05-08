@@ -1,3 +1,6 @@
+/// @file InputSpeech.cpp
+/// @brief TensorFlow model + input speech
+
 // include header file
 #include "InputSpeech.h"
 

@@ -1,3 +1,6 @@
+/// @file OutputLCD.cpp
+/// @brief Output LCD
+
 // include header file
 #include "OutputLCD.h"
 

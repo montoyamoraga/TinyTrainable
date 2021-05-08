@@ -1,3 +1,6 @@
+/// @file Output.h
+/// @brief Output base class
+
 #ifndef OUTPUT_H
 #define OUTPUT_H
 

@@ -1,3 +1,6 @@
+/// @file OutputLED.h
+/// @brief Output LED
+
 #ifndef OUTPUT_LED_H
 #define OUTPUT_LED_H
 

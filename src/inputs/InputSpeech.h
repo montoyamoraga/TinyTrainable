@@ -1,3 +1,6 @@
+/// @file InputSpeech.h
+/// @brief TensorFlow model + input speech
+
 #ifndef INPUT_SPEECH_H
 #define INPUT_SPEECH_H
 

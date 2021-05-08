@@ -1,3 +1,6 @@
+/// @file OutputLED.cpp
+/// @brief Output LED
+
 // include header file
 #include "OutputLED.h"
 

@@ -1,3 +1,6 @@
+/// @file OutputMIDI.cpp
+/// @brief Output MIDI
+
 // include header file
 #include "OutputMIDI.h"
 

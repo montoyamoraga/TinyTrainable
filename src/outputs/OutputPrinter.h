@@ -1,3 +1,6 @@
+/// @file OutputPrinter.h
+/// @brief Output printer
+
 #ifndef OUTPUT_PRINTER_H
 #define OUTPUT_PRINTER_H
 

@@ -1,3 +1,6 @@
+/// @file OutputLCD.h
+/// @brief Output LCD
+
 #ifndef OUTPUT_LCD_H
 #define OUTPUT_LCD_H
 

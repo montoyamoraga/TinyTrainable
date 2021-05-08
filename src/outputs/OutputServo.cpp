@@ -1,3 +1,6 @@
+/// @file OutputServo.cpp
+/// @brief Output servo
+
 // include header file
 #include "OutputServo.h"
 

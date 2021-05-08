@@ -1,3 +1,6 @@
+/// @file OutputServo.h
+/// @brief Output servo
+
 #ifndef OUTPUT_SERVO_H
 #define OUTPUT_SERVO_H
 

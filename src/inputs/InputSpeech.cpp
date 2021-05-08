@@ -8,7 +8,7 @@
 #include "../assets/modelSpeechDefault.h"
 
 // constructor
-void InputSpeech::InputSpeech() {
+InputSpeech::InputSpeech() {
   _sounds[0] = "";
   _sounds[1] = "";
   _sounds[2] = "";

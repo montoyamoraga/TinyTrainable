@@ -33,7 +33,7 @@ jobs:
           - examples/hello/
           - examples/color/
           - examples/gesture/
-          # - examples/speech/
+          - examples/speech/
         cli-version: latest
         platforms: |
           - name: arduino:mbed_nano

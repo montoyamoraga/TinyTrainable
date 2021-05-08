@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('class_input_speech.html',''); initResi
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_input_speech-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">InputSpeech Class Reference</div>  </div>
@@ -117,6 +118,8 @@ Inheritance diagram for InputSpeech:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad46ef08fbb32e39d9d46583403292102"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ad46ef08fbb32e39d9d46583403292102">InputSpeech</a> ()</td></tr>
 <tr class="separator:ad46ef08fbb32e39d9d46583403292102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d049091f9f97ecd01902ac2a625700"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ad5d049091f9f97ecd01902ac2a625700">setupInstrument</a> (bool serialDebugging) override</td></tr>
+<tr class="separator:ad5d049091f9f97ecd01902ac2a625700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5d2d4ee9cfe4023c3ab5cce17d84ba5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5">speechSetupTF</a> (String sounds[3], const unsigned char *model=nullptr) override</td></tr>
 <tr class="separator:af5d2d4ee9cfe4023c3ab5cce17d84ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa615ea9e707a1bd0f56aaaf1b46250ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">identify</a> () override</td></tr>
@@ -125,8 +128,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a230646fa6e6433b4d9ac3535b7d52087 inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a230646fa6e6433b4d9ac3535b7d52087">~Input</a> ()</td></tr>
 <tr class="memdesc:a230646fa6e6433b4d9ac3535b7d52087 inherit pub_methods_class_input"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_input.html" title="Input base class.">Input</a> destructor.  <a href="class_input.html#a230646fa6e6433b4d9ac3535b7d52087">More...</a><br /></td></tr>
 <tr class="separator:a230646fa6e6433b4d9ac3535b7d52087 inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f220870bd53dfd6c68ef398c8644a3e inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a6f220870bd53dfd6c68ef398c8644a3e">setupInstrument</a> (bool serialDebugging)</td></tr>
-<tr class="separator:a6f220870bd53dfd6c68ef398c8644a3e inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ddaa7f2974b49cb5ba74d83dc069bcd inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd">trainKNN</a> (int k, int examplesPerClass, float colorThreshold, String objects[3])</td></tr>
 <tr class="separator:a3ddaa7f2974b49cb5ba74d83dc069bcd inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fb01af872f15e6d0b8d21838d39c760 inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a1fb01af872f15e6d0b8d21838d39c760">gestureSetupTF</a> (String gestures[3], const unsigned char *model=nullptr)</td></tr>
@@ -135,6 +136,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a205ab859966e4373e9a8242345d68a63 inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d990222b6073894c179e45a3f276a3e inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a0d990222b6073894c179e45a3f276a3e">gestureReadData</a> ()</td></tr>
 <tr class="separator:a0d990222b6073894c179e45a3f276a3e inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a64b9d0ab5d638469803da89b5531a65d"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d">NUM_SOUNDS</a> = 3</td></tr>
+<tr class="separator:a64b9d0ab5d638469803da89b5531a65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844d5c921e94de023949357bba00c584"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a844d5c921e94de023949357bba00c584">_sounds</a> [3]</td></tr>
+<tr class="separator:a844d5c921e94de023949357bba00c584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -192,6 +200,34 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ad5d049091f9f97ecd01902ac2a625700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d049091f9f97ecd01902ac2a625700">&#9670;&nbsp;</a></span>setupInstrument()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSpeech::setupInstrument </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>serialDebugging</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_input.html#a6f220870bd53dfd6c68ef398c8644a3e">Input</a>.</p>
+
+</div>
+</div>
 <a id="af5d2d4ee9cfe4023c3ab5cce17d84ba5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5d2d4ee9cfe4023c3ab5cce17d84ba5">&#9670;&nbsp;</a></span>speechSetupTF()</h2>
 
@@ -227,6 +263,51 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_input.html#a2356fe0c4c6f00120bab2674dafa2854">Input</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a844d5c921e94de023949357bba00c584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844d5c921e94de023949357bba00c584">&#9670;&nbsp;</a></span>_sounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String InputSpeech::_sounds[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64b9d0ab5d638469803da89b5531a65d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64b9d0ab5d638469803da89b5531a65d">&#9670;&nbsp;</a></span>NUM_SOUNDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int InputSpeech::NUM_SOUNDS = 3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

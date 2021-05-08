@@ -133,9 +133,12 @@ var NAVTREEINDEX0 =
 "class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7":[0,0,2,0],
 "class_input_gesture.html#aff59bf2cf5feaec7827dda87af2f641b":[0,0,2,5],
 "class_input_speech.html":[0,0,3],
+"class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d":[0,0,3,5],
+"class_input_speech.html#a844d5c921e94de023949357bba00c584":[0,0,3,4],
 "class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed":[0,0,3,1],
 "class_input_speech.html#ad46ef08fbb32e39d9d46583403292102":[0,0,3,0],
-"class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5":[0,0,3,2],
+"class_input_speech.html#ad5d049091f9f97ecd01902ac2a625700":[0,0,3,2],
+"class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5":[0,0,3,3],
 "class_output.html":[0,0,4],
 "class_output.html#a0162ebdc8e5b13917788692fa9a753a0":[0,0,4,0],
 "class_output.html#a01a51b0b1e7a886190ad65aca88dd2d6":[0,0,4,26],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "class_output_printer.html#aae3eaab3b2019a3c665f81360542de14":[0,0,9,5],
 "class_output_printer.html#ab08960ba59e64e56537adf5b4e2e2205":[0,0,9,1],
 "class_output_printer.html#abbf799e4a04980138e93d633beb5e58b":[0,0,9,0],
-"class_output_printer.html#ac059d5276543b755c5d0524102628130":[0,0,9,7],
-"class_output_printer.html#ae425da8bccf042af4d4774fdc41bbae0":[0,0,9,2],
-"class_output_printer.html#af78fe13469e5428dde451aec1dfe19d6":[0,0,9,12],
-"class_output_serial.html":[0,0,10]
+"class_output_printer.html#ac059d5276543b755c5d0524102628130":[0,0,9,7]
 };

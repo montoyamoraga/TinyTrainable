@@ -53,5 +53,6 @@ var searchData=
   ['_5fservopauses_50',['_servoPauses',['../class_output_servo.html#a11303e678e673cf1bb8376965c75ad97',1,'OutputServo']]],
   ['_5fservotimenow_51',['_servoTimeNow',['../class_output_servo.html#ab1c5dd4a701d8955a0310cb6b7d2b49d',1,'OutputServo']]],
   ['_5fservotimeprevious_52',['_servoTimePrevious',['../class_output_servo.html#adebbabd47787cc5e3170b1bcfc1c7c6b',1,'OutputServo']]],
-  ['_5ftimeblinkled_53',['_timeBlinkLED',['../class_tiny_trainable.html#ac804391437425a1fb714c690777353d9',1,'TinyTrainable']]]
+  ['_5fsounds_53',['_sounds',['../class_input_speech.html#a844d5c921e94de023949357bba00c584',1,'InputSpeech']]],
+  ['_5ftimeblinkled_54',['_timeBlinkLED',['../class_tiny_trainable.html#ac804391437425a1fb714c690777353d9',1,'TinyTrainable']]]
 ];

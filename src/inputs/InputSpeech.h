@@ -37,6 +37,9 @@ public:
 
   virtual void speechSetupTF(String sounds[3], const unsigned char *model = nullptr) override;
 
+  virtual void identify() override;
+
+
 };
 
 #endif

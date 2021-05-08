@@ -54,7 +54,6 @@ void InputGesture::gestureSetupTF(String gestures[3], const unsigned char *model
   tflOutputTensor = tflInterpreter->output(0);
 }
 
-// TODO: copy pasted from Peter's fork
 void InputGesture::identify() {
   while (_samplesRead == _numSamples) {
     // wait for significant motion

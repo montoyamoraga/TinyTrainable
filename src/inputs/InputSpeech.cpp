@@ -9,3 +9,6 @@
 
 void InputSpeech::speechSetupTF(String sounds[3], const unsigned char *model) {
 }
+
+void InputSpeech::identify() {
+}

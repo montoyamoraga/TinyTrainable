@@ -9,7 +9,7 @@ const int K = 5;
 const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
 
-String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+String myItems[3] = {"item0", "item1", "item2"};
 
 // setup() runs once, at the beginning
 void setup() {
@@ -21,7 +21,7 @@ void setup() {
   //  myTiny.setMIDINotes(1, 38);
   //  myTiny.setMIDINotes(2, 39);
 
-  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myItems);
 }
 
 // loop() runs after setup(), on a loop

@@ -15,8 +15,8 @@ const int outputPin = 2;
 // constant for debugging
 const bool debugOn = true;
 
-// String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
-String objectNames[3] = {"avocado", "orange", "towel"};
+// String myItems[3] = {"item0", "item1", "item2"};
+String myItems[3] = {"avocado", "orange", "towel"};
 
 // arrays of frequencies
 int freqArray0[] = {1100, 1200, 1300, 1400, 1500, 1600};
@@ -53,7 +53,7 @@ void setup() {
   myTiny.setBuzzerDuration(2, 2500, 3000);
 
   // train the instrument's KNN algorithm
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myItems);
 }
 
 // loop() runs after setup(), on a loop

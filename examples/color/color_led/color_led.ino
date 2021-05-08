@@ -17,7 +17,7 @@ const float COLOR_THRESHOLD = 0.5;
 // constant for debugging
 const bool debugOn = true;
 
-String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+String myItems[3] = {"item0", "item1", "item2"};
 
 // setup() runs once, at the beginning
 void setup() {
@@ -28,7 +28,7 @@ void setup() {
   myTiny.setupOutputLED(2, outputPinLED2);
 
   // train the KNN algorithm with your objects
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myItems);
 }
 
 // loop() runs after setup(), on a loop

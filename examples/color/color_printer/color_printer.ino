@@ -9,7 +9,7 @@ const int K = 5;
 const int EXAMPLES_PER_CLASS = 10;
 const float COLOR_THRESHOLD = 0.5;
 
-String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+String myItems[3] = {"item0", "item1", "item2"};
 
 // constants for the hardware
 const int placeHolder0 = 10;

@@ -12,8 +12,8 @@ const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
 const float COLOR_THRESHOLD = 0.5;
 
-// String objectNames[3] = {"Object0", "Object1", "Object2"};
-String objectNames[3] = {"avocado", "orange", "towel"};
+// String myItems[3] = {"item0", "item1", "item2"};
+String myItems[3] = {"avocado", "orange", "towel"};
 
 // our servo moves between the minimum and maximum angles
 // at a desired tempo measured in beats per minute
@@ -39,7 +39,7 @@ void setup() {
   myTiny.setServoTempo(2, tempo2);
 
   // train the KNN algorithm
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, objectNames);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myItems);
 }
 
 // loop() runs after setup(), on a loop

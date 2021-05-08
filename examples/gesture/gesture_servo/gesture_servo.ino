@@ -7,8 +7,8 @@
 // declare instance of a TinyTrainable instrument
 TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_SERVO);
 
-// String objectNames[3] = {"Object0", "Object1", "Object2"};
-String objectNames[3] = {"avocado", "orange", "towel"};
+// String myItems[3] = {"item0", "item1", "item2"};
+String myItems[3] = {"avocado", "orange", "towel"};
 
 // our servo moves between the minimum and maximum angles
 // at a desired tempo measured in beats per minute

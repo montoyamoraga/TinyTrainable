@@ -10,7 +10,7 @@ const int outputPin = 8;
 // constant for debugging
 const bool debugOn = true;
 
-String objectNames[3] = {"Object 0", "Object 1", "Object 2"};
+String myItems[3] = {"item0", "item1", "item2"};
 
 void setup() {
   // set debugging over serial port

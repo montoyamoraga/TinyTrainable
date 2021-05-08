@@ -3,7 +3,11 @@
 
 OutputLCD::OutputLCD() {}
 
-// methods for TinyTrainable
+void OutputLCD::setupOutputTest() {
+  
+}
+
+
 void OutputLCD::playOutput(int classification) {
   // Serial.println("TODO OutputLCD playOutput");
 }

@@ -4,6 +4,10 @@
 // constructor
 OutputServo::OutputServo() {}
 
+void OutputServo::setupOutputTest() {
+  
+}
+
 // methods for TinyTrainable
 void OutputServo::playOutput(int classification) {
   // move the servo

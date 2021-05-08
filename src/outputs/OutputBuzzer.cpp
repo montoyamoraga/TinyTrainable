@@ -3,7 +3,10 @@
 
 OutputBuzzer::OutputBuzzer() {}
 
-// methods for TinyTrainable
+void OutputBuzzer::setupOutputTest() {
+  
+}
+
 void OutputBuzzer::playOutput(int classification) {
   getBuzzerParam(classification, _buzzerParams);
   tone(_outputPinBuzzer, _buzzerParams[0], _buzzerParams[1]);

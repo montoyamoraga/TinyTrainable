@@ -16,10 +16,11 @@ public:
   OutputSerial();
 
   // TinyTrainable methods
-  void playOutput(int classification);
+  virtual void setupOutputTest() override;
+  virtual void playOutput(int classification) override;
 
   // methods for output with serial
-  void setupOutputSerial();
+  virtual void setupOutputSerial() override;
 };
 
 #endif

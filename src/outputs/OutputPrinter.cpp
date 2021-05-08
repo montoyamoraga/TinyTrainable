@@ -3,7 +3,6 @@
 
 OutputPrinter::OutputPrinter() {}
 
-// destructor
 OutputPrinter::~OutputPrinter() {
   if (_printer != nullptr) {
     delete _printer;
@@ -46,7 +45,10 @@ void OutputPrinter::setPrinterTest() {
   _printer->feed(2);
 }
 
-// methods for TinyTrainable
+void OutputPrinter::setupOutputTest() {
+  
+}
+
 void OutputPrinter::playOutput(int classification) {
   // Serial.println("TODO OutputPrinter playOutput");
 }

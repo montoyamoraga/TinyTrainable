@@ -3,7 +3,10 @@
 
 OutputMIDI::OutputMIDI() {}
 
-// methods for TinyTrainable
+void OutputMIDI::setupOutputTest() {
+  
+}
+
 void OutputMIDI::playOutput(int classification) {
   // sendMIDINoteOn(_midiChannel, _midiNotes[classification],
   // _midiVelocity);

@@ -17,6 +17,7 @@ public:
   OutputLED();
 
   // methods for TinyTrainable
+  virtual void setupOutputTest() override;
   virtual void playOutput(int classification) override;
 
   // variables

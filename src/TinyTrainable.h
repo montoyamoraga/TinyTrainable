@@ -120,6 +120,10 @@ public:
   void speechSetupTF(String sounds[3], const unsigned char *model = nullptr);
 
   // methods for outputs
+
+  /// @brief output, test if it is working
+  void setupOutputTest();
+
   //   void helloOutputsSetup(OutputMode outputToTest);
   //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
   //   void helloOutputs(OutputMode outputToTest);

@@ -15,13 +15,14 @@
 
 class OutputPrinter : public Output {
 public:
-  // constructor
+  /// @brief constructor
   OutputPrinter();
 
-  // destructor
+  /// @brief destructor
   ~OutputPrinter();
 
   // TinyTrainable methods
+  virtual void setupOutputTest() override;
   virtual void playOutput(int classification) override;
   virtual void setupOutputPrinter() override;
   virtual void setPrinterBaudRate(int rate) override;

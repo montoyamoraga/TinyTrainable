@@ -16,7 +16,7 @@ public:
   // constructor
   OutputBuzzer();
 
-  // methods for TinyTrainable
+  virtual void setupOutputTest() override;
   virtual void playOutput(int classification) override;
 
   // methods for buzzer

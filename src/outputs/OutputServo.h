@@ -22,6 +22,7 @@ public:
 
   // TinyTrainable methods
   // void playOutput(int classification);
+  virtual void setupOutputTest() override;
   virtual void playOutput(int classification) override;
 
   // methods for servo

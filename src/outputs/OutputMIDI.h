@@ -20,6 +20,7 @@ public:
   OutputMIDI();
 
   // TinyTrainable methods
+  virtual void setupOutputTest() override;
   virtual void playOutput(int classification) override;
 
   int _outputPinMIDI = -1;
@@ -33,8 +34,6 @@ public:
   virtual void sendMIDINoteOff(byte channel, byte note) override;
   virtual void sendMIDIAllNotesOff(byte channel) override;
   void setupSerialMIDI();
-
-  // TODO: in progress
 
   // notes for volca beats
   byte noteBassDrum = 36;

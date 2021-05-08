@@ -3,7 +3,10 @@
 
 OutputLED::OutputLED() {}
 
-// methods for TinyTrainable
+void OutputLED::setupOutputTest() {
+  
+}
+
 void OutputLED::playOutput(int classification) {
   digitalWrite(_outputPinsLED[0], LOW);
   digitalWrite(_outputPinsLED[1], LOW);

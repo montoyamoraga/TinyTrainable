@@ -10,8 +10,12 @@ class TinyTrainable;
 
 class Output {
 public:
+
+  /// @brief Output destructor
   virtual ~Output() {}
-  // methods for output
+
+  virtual void setupOutputTest() {}
+
   virtual void playOutput(int classification) {}
 
   // methods for buzzer
@@ -60,7 +64,7 @@ public:
   virtual int getServoMinAngle() { return 0; }
   virtual void moveServo(int classification) {}
 
-  // protected:
+  /// @brief pointer to the TinyTrainalbe instance
   TinyTrainable *tiny = nullptr;
 };
 

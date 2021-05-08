@@ -231,10 +231,6 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //     while (!Serial)
 //       ;
 //     break;
-//   case outputUndefined:
-//     pinMode(LED_BUILTIN, OUTPUT);
-//     digitalWrite(LED_BUILTIN, LOW);
-//     break;
 //   }
 // }
 
@@ -301,7 +297,12 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //   }
 // }
 
-// functions for buzzer
+void TinyTrainable::setupOutputTest() {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputTest();
+  }
+}
+
 void TinyTrainable::setupOutputBuzzer(int outputPin) {
   if (myOutput != nullptr) {
     myOutput->setupOutputBuzzer(outputPin);

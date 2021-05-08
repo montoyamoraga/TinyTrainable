@@ -99,19 +99,15 @@ $(document).ready(function(){initNavTree('_output_buzzer_8h_source.html',''); in
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef OUTPUT_BUZZER_H</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define OUTPUT_BUZZER_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// include Arduino library</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// include Output library</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_output_8h.html">Output.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// include library TinyTrainable</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_tiny_trainable_8h.html">TinyTrainable.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_output_buzzer.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_output_buzzer.html">OutputBuzzer</a> : <span class="keyword">public</span> <a class="code" href="class_output.html">Output</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">// constructor</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_output_buzzer.html#aba7e6b5adb9d5ba7c5783ea35b2b613b">OutputBuzzer</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_buzzer.html#a13ff3a86b59ff4db4dd84933e6e2f3e3">setupOutputTest</a>() <span class="keyword">override</span>;</div>
@@ -179,7 +175,7 @@ $(document).ready(function(){initNavTree('_output_buzzer_8h_source.html',''); in
 <div class="ttc" id="aclass_output_buzzer_html_a8ac7fa9161a34d9d8b1e3a80c52df443"><div class="ttname"><a href="class_output_buzzer.html#a8ac7fa9161a34d9d8b1e3a80c52df443">OutputBuzzer::_buzzerDurationsMax</a></div><div class="ttdeci">int _buzzerDurationsMax[3]</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.h:57</div></div>
 <div class="ttc" id="aclass_output_buzzer_html_aa46c40121ab5f0f2b6e8fd2ecfdab121"><div class="ttname"><a href="class_output_buzzer.html#aa46c40121ab5f0f2b6e8fd2ecfdab121">OutputBuzzer::_buzzerFrequenciesMin</a></div><div class="ttdeci">int _buzzerFrequenciesMin[3]</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.h:54</div></div>
 <div class="ttc" id="aclass_output_buzzer_html_aae1fae98978c5c449bf4a0607aa71a78"><div class="ttname"><a href="class_output_buzzer.html#aae1fae98978c5c449bf4a0607aa71a78">OutputBuzzer::_buzzerDurations</a></div><div class="ttdeci">int _buzzerDurations[3]</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.h:52</div></div>
-<div class="ttc" id="aclass_output_buzzer_html_aba7e6b5adb9d5ba7c5783ea35b2b613b"><div class="ttname"><a href="class_output_buzzer.html#aba7e6b5adb9d5ba7c5783ea35b2b613b">OutputBuzzer::OutputBuzzer</a></div><div class="ttdeci">OutputBuzzer()</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.cpp:7</div></div>
+<div class="ttc" id="aclass_output_buzzer_html_aba7e6b5adb9d5ba7c5783ea35b2b613b"><div class="ttname"><a href="class_output_buzzer.html#aba7e6b5adb9d5ba7c5783ea35b2b613b">OutputBuzzer::OutputBuzzer</a></div><div class="ttdeci">OutputBuzzer()</div><div class="ttdoc">constructor</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.cpp:7</div></div>
 <div class="ttc" id="aclass_output_buzzer_html_ad2fd165d4d553f43be7c8f7ebbf90c9b"><div class="ttname"><a href="class_output_buzzer.html#ad2fd165d4d553f43be7c8f7ebbf90c9b">OutputBuzzer::setBuzzerFrequency</a></div><div class="ttdeci">virtual void setBuzzerFrequency(int object, int frequency) override</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.cpp:69</div></div>
 <div class="ttc" id="aclass_output_buzzer_html_ad49af0fecf4de9d47fe1aa1ba7b160b0"><div class="ttname"><a href="class_output_buzzer.html#ad49af0fecf4de9d47fe1aa1ba7b160b0">OutputBuzzer::_outputPinBuzzer</a></div><div class="ttdeci">int _outputPinBuzzer</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.h:45</div></div>
 <div class="ttc" id="aclass_output_buzzer_html_ae4e8009d8c9fb8c12f41f1b1927822e9"><div class="ttname"><a href="class_output_buzzer.html#ae4e8009d8c9fb8c12f41f1b1927822e9">OutputBuzzer::_buzzerDurationsArraysSizes</a></div><div class="ttdeci">int _buzzerDurationsArraysSizes[3]</div><div class="ttdef"><b>Definition:</b> OutputBuzzer.h:62</div></div>

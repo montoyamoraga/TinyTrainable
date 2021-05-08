@@ -32,6 +32,8 @@
 /// @brief InputSpeech inherits from Input
 class InputSpeech : public Input {
 public:
+  // constructor
+  InputSpeech();
 
   virtual void speechSetupTF(String sounds[3], const unsigned char *model = nullptr) override;
 

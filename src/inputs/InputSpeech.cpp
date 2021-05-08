@@ -7,6 +7,11 @@
 // TODO: include machine learning model
 // #include "../assets/modelSpeechDefault.h"
 
+// constructor
+void InputSpeech::InputSpeech() {
+  
+}
+
 void InputSpeech::speechSetupTF(String sounds[3], const unsigned char *model) {
 }
 

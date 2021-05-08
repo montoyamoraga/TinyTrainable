@@ -9,10 +9,10 @@
 /// @include library Arduino
 #include <Arduino.h>
 
-/// @include base library input
+/// @include base library iIput
 #include "inputs/Input.h"
 
-/// @include base library input
+/// @include base library Output
 #include "outputs/Output.h"
 
 /// @enum to set the input type

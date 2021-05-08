@@ -4,16 +4,16 @@
 #ifndef OUTPUT_SERVO_H
 #define OUTPUT_SERVO_H
 
-// include Arduino library
+/// @include libraryArduino 
 #include <Arduino.h>
 
-// include Output library
+/// @include library Output 
 #include "Output.h"
 
-// include TinyTrainable library
+/// @include TinyTrainable library
 #include "TinyTrainable.h"
 
-// include library for output with servo motors
+/// @include library Servo for servo motors
 #include <Servo.h>
 
 /// @class OutputServo
@@ -22,11 +22,9 @@ class OutputServo : public Output {
 
   // variables for outputServo
 public:
-  // constructor
+  /// @brief constructor
   OutputServo();
 
-  // TinyTrainable methods
-  // void playOutput(int classification);
   virtual void setupOutputTest() override;
   virtual void playOutput(int classification) override;
 
@@ -47,7 +45,10 @@ public:
   int getServoMinAngle();
 
 private:
+  
+  /// @brief Servo instance
   Servo _servo;
+
   int _outputPinServo = -1;
   int _servoAngleCurrent = 0;
   int _servoAngleMin = 0;

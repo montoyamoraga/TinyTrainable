@@ -33,6 +33,9 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
     int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
     buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
     break;
+  default:
+    // TODO: placeholder
+    buzzerParamArray[0] = 100;
   }
   switch (_buzzerDurationMode) {
   case singleParam:
@@ -47,6 +50,9 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
     buzzerParamArray[1] =
         *(_buzzerDurationsArrays[object] + randomDurationIndex);
     break;
+  default:
+  // TODO: placeholder
+  buzzerParamArray[1] = 100;
   }
 }
 

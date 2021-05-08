@@ -117,14 +117,14 @@ Inheritance diagram for InputSpeech:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af5d2d4ee9cfe4023c3ab5cce17d84ba5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5">speechSetupTF</a> (String sounds[3], const unsigned char *model=nullptr) override</td></tr>
 <tr class="separator:af5d2d4ee9cfe4023c3ab5cce17d84ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa615ea9e707a1bd0f56aaaf1b46250ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">identify</a> () override</td></tr>
+<tr class="separator:aa615ea9e707a1bd0f56aaaf1b46250ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_input"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_input')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_input.html">Input</a></td></tr>
 <tr class="memitem:a230646fa6e6433b4d9ac3535b7d52087 inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a230646fa6e6433b4d9ac3535b7d52087">~Input</a> ()</td></tr>
 <tr class="memdesc:a230646fa6e6433b4d9ac3535b7d52087 inherit pub_methods_class_input"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_input.html" title="Input base class.">Input</a> destructor.  <a href="class_input.html#a230646fa6e6433b4d9ac3535b7d52087">More...</a><br /></td></tr>
 <tr class="separator:a230646fa6e6433b4d9ac3535b7d52087 inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f220870bd53dfd6c68ef398c8644a3e inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a6f220870bd53dfd6c68ef398c8644a3e">setupInstrument</a> (bool serialDebugging)</td></tr>
 <tr class="separator:a6f220870bd53dfd6c68ef398c8644a3e inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90132889a3e2ef01e864fa496c63c2e7 inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a90132889a3e2ef01e864fa496c63c2e7">identify</a> ()</td></tr>
-<tr class="separator:a90132889a3e2ef01e864fa496c63c2e7 inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ddaa7f2974b49cb5ba74d83dc069bcd inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd">trainKNN</a> (int k, int examplesPerClass, float colorThreshold, String objects[3])</td></tr>
 <tr class="separator:a3ddaa7f2974b49cb5ba74d83dc069bcd inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fb01af872f15e6d0b8d21838d39c760 inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a1fb01af872f15e6d0b8d21838d39c760">gestureSetupTF</a> (String gestures[3], const unsigned char *model=nullptr)</td></tr>
@@ -145,6 +145,33 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p><a class="el" href="class_input_speech.html" title="InputSpeech inherits from Input.">InputSpeech</a> inherits from <a class="el" href="class_input.html" title="Input base class.">Input</a>. </p>
 <div class="fragment"></div><!-- fragment --><p> Arduino</p><div class="fragment"></div><!-- fragment --><p> library</p><div class="fragment"></div><!-- fragment --><p> <a class="el" href="class_input.html" title="Input base class.">Input</a> </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa615ea9e707a1bd0f56aaaf1b46250ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa615ea9e707a1bd0f56aaaf1b46250ed">&#9670;&nbsp;</a></span>identify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputSpeech::identify </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_input.html#a90132889a3e2ef01e864fa496c63c2e7">Input</a>.</p>
+
+</div>
+</div>
 <a id="af5d2d4ee9cfe4023c3ab5cce17d84ba5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5d2d4ee9cfe4023c3ab5cce17d84ba5">&#9670;&nbsp;</a></span>speechSetupTF()</h2>
 

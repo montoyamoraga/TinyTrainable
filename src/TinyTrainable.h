@@ -95,6 +95,10 @@ public:
   /// @param blinks integer, number of blinks
   void blinkLEDBuiltIn(int blinks);
 
+    /// @brief blink LED RGB
+  /// @param blinks integer, number of blinks
+  void blinkLEDRGB(int blinks, Colors color);
+
   // TODO: maybe change name, still thinking about it
   //   void errorBlink(Colors color, int blinkNum);
 

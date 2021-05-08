@@ -176,6 +176,16 @@ void TinyTrainable::blinkLEDBuiltIn(int blinks) {
   }
 }
 
+void TinyTrainable::blinkLEDRGB(int blinks, Colors color) {
+  setStateLEDRGB(false, color);
+  for (int i = 0; i < blinks; i++) {
+    setStateLEDRGB(true, color);
+    delay(_timeBlinkLED);
+    setStateLEDRGB(false,color);
+    delay(_timeBlinkLED);
+  }
+}
+
 // function for turning on and off the RGB LED
 void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 
@@ -212,18 +222,11 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
   }
 }
 
-/// @brief infinite loop with LED RGB blinking
-void TinyTrainable::errorBlink(Colors color, int blinkNum) {
+/// @brief infinite loop, blinking of LED RGB and LED built-in
+void TinyTrainable::errorBlink(Colors color) {
   while (true) {
-//     for (int i = 0; i <= blinkNum; i++) {
-//       // turn on with the color
-//       setStateLEDRGB(true, color);
-//       delay(1000);
-//       // turn off
-//       setStateLEDRGB(false, color);
-//       delay(1000);
-//     }
-//     blinkLEDBuiltIn(1);
+    blinkLEDRGB(1, color);
+    blinkLEDBuiltIn(1);
   }
 }
 

@@ -8,7 +8,7 @@ This library is being written between December 2020 and August 2021, with help f
 
 ## Distribution
 
-This Arduino library is available on this repository [https://github.com/montoyamoraga/TinyTrainable], and can also be installed on the Arduino IDE.
+This Arduino library is available on this repository [https://github.com/montoyamoraga/TinyTrainable](https://github.com/montoyamoraga/TinyTrainable), and can also be installed on the Arduino IDE.
 
 ## Branches
 

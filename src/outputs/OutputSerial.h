@@ -4,20 +4,22 @@
 #ifndef OUTPUT_SERIAL_H
 #define OUTPUT_SERIAL_H
 
-// include Arduino library
+/// @include Arduino library
 #include <Arduino.h>
 
-// include Output library
+/// @include library Output
 #include "Output.h"
 
-// include library TinyTrainable
+/// @include library TinyTrainable
 #include "TinyTrainable.h"
 
 /// @class OutputSerial
 /// @brief OutputSerial inherits from Output
+
 class OutputSerial : public Output {
 public:
-  // constructor
+
+  /// @brief constructor
   OutputSerial();
 
   // TinyTrainable methods

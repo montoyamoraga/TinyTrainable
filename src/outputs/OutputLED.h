@@ -4,13 +4,13 @@
 #ifndef OUTPUT_LED_H
 #define OUTPUT_LED_H
 
-// include Arduino library
+/// @include library Arduino
 #include <Arduino.h>
 
-// include Output library
+/// @include library Output
 #include "Output.h"
 
-// include library TinyTrainable
+/// @include library TinyTrainable
 #include "TinyTrainable.h"
 
 /// @class OutputLED
@@ -18,7 +18,8 @@
 class OutputLED : public Output {
 
 public:
-  // constructor
+
+  /// @brief constructor
   OutputLED();
 
   // methods for TinyTrainable

@@ -4,13 +4,13 @@
 #ifndef OUTPUT_BUZZER_H
 #define OUTPUT_BUZZER_H
 
-// include Arduino library
+/// @include library Arduino 
 #include <Arduino.h>
 
-// include Output library
+/// @include library Output
 #include "Output.h"
 
-// include library TinyTrainable
+/// @include library TinyTrainable
 #include "TinyTrainable.h"
 
 /// @class OutputBuzzer
@@ -18,7 +18,7 @@
 class OutputBuzzer : public Output {
 
 public:
-  // constructor
+  /// @brief constructor
   OutputBuzzer();
 
   virtual void setupOutputTest() override;

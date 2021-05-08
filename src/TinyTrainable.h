@@ -124,9 +124,7 @@ public:
   /// @brief output, test if it is working
   void setupOutputTest();
 
-  //   void helloOutputsSetup(OutputMode outputToTest);
-  //   void helloOutputsSetup(OutputMode outputToTest, int outputPin);
-  //   void helloOutputs(OutputMode outputToTest);
+  /// @brief output, react to classification
   void playOutput(int classification);
 
   // declaration of functions for output buzzer

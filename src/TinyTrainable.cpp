@@ -230,40 +230,6 @@ void TinyTrainable::errorBlink(Colors color) {
   }
 }
 
-// void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
-//   switch (outputToTest) {
-//   case outputMIDI:
-//     setupOutputMIDI(10, 127);
-//     break;
-//   case outputSerialUSB:
-//     Serial.begin(9600);
-//     while (!Serial)
-//       ;
-//     break;
-//   }
-// }
-
-// TODO
-// void TinyTrainable::helloOutputsSetup(OutputMode outputToTest, int outputPin)
-// {
-//   switch (outputToTest) {
-//   case outputBuzzer:
-//     // update internal variable
-//     _outputPinTest = outputPin;
-//     // setup pin
-//     pinMode(_outputPinTest, OUTPUT);
-//     break;
-//   case outputLED:
-//     _outputPinTest = outputPin;
-//     pinMode(outputPin, OUTPUT);
-//     break;
-//   case outputServo:
-//     setupOutputServo(outputPin, 0, 180);
-//     setServoTempo(0, 20);
-//     break;
-//   }
-// }
-
 void TinyTrainable::setupOutputTest() {
   if (myOutput != nullptr) {
     myOutput->setupOutputTest();

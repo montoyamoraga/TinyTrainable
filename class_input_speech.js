@@ -1,6 +1,6 @@
 var class_input_speech =
 [
-    [ "InputSpeech", "class_input_speech.html#ad46ef08fbb32e39d9d46583403292102", null ],
+    [ "InputSpeech", "class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2", null ],
     [ "identify", "class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed", null ],
     [ "setupInstrument", "class_input_speech.html#ad5d049091f9f97ecd01902ac2a625700", null ],
     [ "speechSetupTF", "class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5", null ],

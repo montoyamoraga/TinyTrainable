@@ -63,11 +63,11 @@ private:
   float _gY;
   float _gZ;
 
-  // TFLITE setup
+  // TFLite setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
 
-  // tflite variables
+  // TFLite variables
   tflite::MicroErrorReporter tflErrorReporter;
   tflite::AllOpsResolver tflOpsResolver;
   const tflite::Model *tflModel = nullptr;

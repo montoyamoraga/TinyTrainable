@@ -41,9 +41,18 @@ public:
 
   private:
 
-  // TFLITE setup
+  // TFLite setup
   const int NUM_SOUNDS = 3;
   String _sounds[3];
+
+  // TFLite variables
+//   tflite::MicroErrorReporter tflErrorReporter;
+//   tflite::AllOpsResolver tflOpsResolver;
+  const tflite::Model *tflModel = nullptr;
+//   tflite::MicroInterpreter *tflInterpreter = nullptr;
+//   TfLiteTensor *tflInputTensor = nullptr;
+//   TfLiteTensor *tflOutputTensor = nullptr;
+
 
 
 };

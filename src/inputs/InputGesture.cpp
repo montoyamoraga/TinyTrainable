@@ -32,7 +32,7 @@ void InputGesture::gestureSetupTF(String gestures[3], const unsigned char *model
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];
 
-  // load either the default or the custom one
+  // load the default model or the custom model
   tflModel = tflite::GetModel((model == nullptr) ? modelGestureDefault : model);
 
   if (tflModel->version() != TFLITE_SCHEMA_VERSION) {

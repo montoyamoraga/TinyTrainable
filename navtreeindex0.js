@@ -133,8 +133,9 @@ var NAVTREEINDEX0 =
 "class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7":[0,0,2,0],
 "class_input_gesture.html#aff59bf2cf5feaec7827dda87af2f641b":[0,0,2,5],
 "class_input_speech.html":[0,0,3],
-"class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed":[0,0,3,0],
-"class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5":[0,0,3,1],
+"class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed":[0,0,3,1],
+"class_input_speech.html#ad46ef08fbb32e39d9d46583403292102":[0,0,3,0],
+"class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5":[0,0,3,2],
 "class_output.html":[0,0,4],
 "class_output.html#a0162ebdc8e5b13917788692fa9a753a0":[0,0,4,0],
 "class_output.html#a01a51b0b1e7a886190ad65aca88dd2d6":[0,0,4,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "class_output_printer.html#ac059d5276543b755c5d0524102628130":[0,0,9,7],
 "class_output_printer.html#ae425da8bccf042af4d4774fdc41bbae0":[0,0,9,2],
 "class_output_printer.html#af78fe13469e5428dde451aec1dfe19d6":[0,0,9,12],
-"class_output_serial.html":[0,0,10],
-"class_output_serial.html#a348ab34f1963a0957eba82c5c41cba72":[0,0,10,2]
+"class_output_serial.html":[0,0,10]
 };

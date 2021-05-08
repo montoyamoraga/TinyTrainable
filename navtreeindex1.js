@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_output_serial.html#a348ab34f1963a0957eba82c5c41cba72":[0,0,10,2],
 "class_output_serial.html#a79efd11be8ebf36ae9ecd69c29bb108b":[0,0,10,0],
 "class_output_serial.html#a8319bc7b90af0dfd99153142d859c6b6":[0,0,10,1],
 "class_output_serial.html#a8836ebea98cf9b3735a7ca17de5d58e8":[0,0,10,3],
@@ -85,8 +86,8 @@ var NAVTREEINDEX1 =
 "dir_b5728e92c563a1182250a9f2f177d804.html":[1,0,0,0],
 "dir_f2de5a5f3578ed4d58369498c32e6b57.html":[1,0,0,1],
 "files.html":[1,0],
-"functions.html":[0,2,0,0],
 "functions.html":[0,2,0],
+"functions.html":[0,2,0,0],
 "functions_a.html":[0,2,0,1],
 "functions_b.html":[0,2,0,2],
 "functions_c.html":[0,2,0,3],

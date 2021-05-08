@@ -13,6 +13,10 @@
 /// @include library Input
 #include "Input.h"
 
+/// @include library for microphone
+// https://www.arduino.cc/en/Reference/PDM/
+#include <PDM.h>
+
 // include libraries for speech recognition
 #include <TensorFlowLite.h>
 #include <tensorflow/lite/micro/micro_error_reporter.h>

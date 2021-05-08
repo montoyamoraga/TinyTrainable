@@ -4,7 +4,16 @@
 
 TinyTrainable		KEYWORD1
 Input			KEYWORD1
+InputColor		KEYWORD1
+InputSpeech		KEYWORD1
 Output			KEYWORD1
+OutputBuzzer		KEYWORD1
+OutputLCD		KEYWORD1
+OutputLED		KEYWORD1
+OutputMIDI		KEYWORD1
+OutputPrinter		KEYWORD1
+OutputSerial		KEYWORD1
+OutputServo		KEYWORD1
 
 ################################
 # Methods and functions

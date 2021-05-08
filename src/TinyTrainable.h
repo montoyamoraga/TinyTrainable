@@ -99,8 +99,8 @@ public:
   /// @param blinks integer, number of blinks
   void blinkLEDRGB(int blinks, Colors color);
 
-  // TODO: maybe change name, still thinking about it
-  //   void errorBlink(Colors color, int blinkNum);
+  /// @brief blink LEDs
+  void errorBlink(Colors color)
 
   /// @brief input, identify class
   void identify();

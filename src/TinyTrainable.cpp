@@ -141,16 +141,16 @@ void TinyTrainable::speechSetupTF(String sounds[3], const unsigned char *model) 
 }
 
 void TinyTrainable::setupLEDs() {
-  // setting up orange built-in LED
+  // setup orange LED built-in
   pinMode(LED_BUILTIN, OUTPUT);
-  // initial state off is HIGH for on
+  // initial state, HIGH is off, LOW is on
   digitalWrite(LED_BUILTIN, HIGH);
 
-  // setting up RGB LED
+  // setup LED RGB
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
   pinMode(LEDB, OUTPUT);
-  // default state off is HIGH
+  // initial state, HIGH is off, LOW is on
   digitalWrite(LEDR, HIGH);
   digitalWrite(LEDG, HIGH);
   digitalWrite(LEDB, HIGH);
@@ -230,7 +230,6 @@ void TinyTrainable::errorBlink(Colors color) {
   }
 }
 
-// TODO
 // void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {
 //   switch (outputToTest) {
 //   case outputMIDI:

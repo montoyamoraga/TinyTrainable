@@ -16,19 +16,12 @@
 #include "outputs/Output.h"
 
 /// @enum to set the input type
-enum InputType { INPUT_NONE = 0, INPUT_COLOR, INPUT_GESTURE, INPUT_SPEECH };
+enum InputType { INPUT_NONE = 0, INPUT_COLOR = 1, INPUT_GESTURE = 2, INPUT_SPEECH = 3};
 
 /// @enum to set the output type
 enum OutputType {
-  OUTPUT_NONE = 0,
-  OUTPUT_BUZZER,
-  OUTPUT_LCD,
-  OUTPUT_LED,
-  OUTPUT_MIDI,
-  OUTPUT_PRINTER,
-  OUTPUT_SERIAL,
-  OUTPUT_SERVO
-};
+  OUTPUT_NONE = 0, OUTPUT_BUZZER = 1, OUTPUT_LCD = 2, OUTPUT_LED = 3,
+  OUTPUT_MIDI = 4, OUTPUT_PRINTER = 5, OUTPUT_SERIAL = 6, OUTPUT_SERVO = 7};
 
 /// @enum colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
@@ -45,8 +38,8 @@ protected:
   /// @brief Output pointer
   Output *myOutput = nullptr;
 
-  // variables for outputs
-  int _outputPinTest = -1;
+  /// @brief pin for output
+//   int _outputPinTest = -1;
 
 public:
 
@@ -88,19 +81,20 @@ public:
 
   /// @brief set state of LED RGB
   /// @param turnOn boolean, on/off
-  /// @param color, Color
+  /// @param color Color
   void setStateLEDRGB(bool turnOn, Colors color);
 
   /// @brief blink LED built-in
   /// @param blinks integer, number of blinks
   void blinkLEDBuiltIn(int blinks);
 
-    /// @brief blink LED RGB
+  /// @brief blink LED RGB
   /// @param blinks integer, number of blinks
   void blinkLEDRGB(int blinks, Colors color);
 
   /// @brief blink LEDs
-  void errorBlink(Colors color)
+  /// @param color Color
+  void errorBlink(Colors color);
 
   /// @brief input, identify class
   void identify();

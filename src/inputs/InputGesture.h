@@ -63,7 +63,7 @@ private:
   float _gY;
   float _gZ;
 
-  // tflite setup
+  // TFLITE setup
   const int NUM_GESTURES = 3;
   String _gestures[3];
 

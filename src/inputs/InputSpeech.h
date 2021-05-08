@@ -35,9 +35,15 @@ public:
   // constructor
   InputSpeech();
 
+  virtual void setupInstrument(bool serialDebugging) override;
   virtual void speechSetupTF(String sounds[3], const unsigned char *model = nullptr) override;
-
   virtual void identify() override;
+
+  private:
+
+  // TFLITE setup
+  const int NUM_SOUNDS = 3;
+  String _sounds[3];
 
 
 };

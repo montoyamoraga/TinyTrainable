@@ -1,10 +1,4 @@
 var searchData=
 [
-  ['outputbuzzer_260',['OutputBuzzer',['../class_output_buzzer.html#aba7e6b5adb9d5ba7c5783ea35b2b613b',1,'OutputBuzzer']]],
-  ['outputlcd_261',['OutputLCD',['../class_output_l_c_d.html#a7beb955c9668682a3bed16a55620f96d',1,'OutputLCD']]],
-  ['outputled_262',['OutputLED',['../class_output_l_e_d.html#a1fc4a6ee4b4ee8806f77ed7b301ff1c3',1,'OutputLED']]],
-  ['outputmidi_263',['OutputMIDI',['../class_output_m_i_d_i.html#a24cc046b95bb94319d888acc18a8d83f',1,'OutputMIDI']]],
-  ['outputprinter_264',['OutputPrinter',['../class_output_printer.html#abbf799e4a04980138e93d633beb5e58b',1,'OutputPrinter']]],
-  ['outputserial_265',['OutputSerial',['../class_output_serial.html#a79efd11be8ebf36ae9ecd69c29bb108b',1,'OutputSerial']]],
-  ['outputservo_266',['OutputServo',['../class_output_servo.html#af975cfb4de7ed886b60f7a1bd86f2a45',1,'OutputServo']]]
+  ['moveservo_261',['moveServo',['../class_output.html#aaf73688e9dc1f2ae992441b02a5a2fe5',1,'Output::moveServo()'],['../class_output_servo.html#a639326a4868f0f4b8781810af87f79ef',1,'OutputServo::moveServo()'],['../class_tiny_trainable.html#ae6c8e026d4e10e04a677028d1df96860',1,'TinyTrainable::moveServo()']]]
 ];

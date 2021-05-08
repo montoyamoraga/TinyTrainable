@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['_7einput_204',['~Input',['../class_input.html#a230646fa6e6433b4d9ac3535b7d52087',1,'Input']]],
-  ['_7eoutput_205',['~Output',['../class_output.html#a0162ebdc8e5b13917788692fa9a753a0',1,'Output']]],
-  ['_7eoutputprinter_206',['~OutputPrinter',['../class_output_printer.html#ab08960ba59e64e56537adf5b4e2e2205',1,'OutputPrinter']]],
-  ['_7etinytrainable_207',['~TinyTrainable',['../class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be',1,'TinyTrainable']]]
+  ['yellow_204',['yellow',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967ab31edea3fab8c488c7a8f78545e7f5a9',1,'TinyTrainable.h']]]
 ];

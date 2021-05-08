@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['moveservo_259',['moveServo',['../class_output.html#aaf73688e9dc1f2ae992441b02a5a2fe5',1,'Output::moveServo()'],['../class_output_servo.html#a639326a4868f0f4b8781810af87f79ef',1,'OutputServo::moveServo()'],['../class_tiny_trainable.html#ae6c8e026d4e10e04a677028d1df96860',1,'TinyTrainable::moveServo()']]]
+  ['identify_258',['identify',['../class_input.html#a90132889a3e2ef01e864fa496c63c2e7',1,'Input::identify()'],['../class_input_color.html#a5185a9b716ad7cd94c303736fce22536',1,'InputColor::identify()'],['../class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d',1,'InputGesture::identify()']]],
+  ['inputcolor_259',['InputColor',['../class_input_color.html#a5280f9e82b0c6fc4119a6efdf006ce18',1,'InputColor']]],
+  ['inputgesture_260',['InputGesture',['../class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7',1,'InputGesture']]]
 ];

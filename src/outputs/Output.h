@@ -69,7 +69,7 @@ public:
   virtual int getServoMinAngle() { return 0; }
   virtual void moveServo(int classification) {}
 
-  /// @brief pointer to the TinyTrainalbe instance
+  /// @brief pointer to the TinyTrainable instance
   TinyTrainable *tiny = nullptr;
 };
 

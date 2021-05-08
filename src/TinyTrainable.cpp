@@ -30,6 +30,7 @@ int TinyTrainable::_baudRate = 9600;
 /// @param OutputType
 TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
 
+  // initialize input
   if (inputType == INPUT_COLOR) {
     myInput = new InputColor();
   } else if (inputType == INPUT_GESTURE) {
@@ -40,7 +41,7 @@ TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
     myInput = new Input();
   }
 
-  /// initialize output
+  // initialize output
   if (outputType == OUTPUT_BUZZER) {
     myOutput = new OutputBuzzer();
   } else if (outputType == OUTPUT_LCD) {
@@ -59,11 +60,12 @@ TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
     myOutput = new Output();
   }
 
-  // TODO: research the name of this linking way
+  // update pointer to input
   if (myInput != nullptr) {
     myInput->tiny = this;
   }
 
+  // update pointer to output
   if (myOutput != nullptr) {
     myOutput->tiny = this;
   }
@@ -71,8 +73,7 @@ TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
   setupLEDs();
 }
 
-// destructor method
-// useful against memory leaks?
+/// @brief destructor
 TinyTrainable::~TinyTrainable() {
   if (myInput != nullptr) {
     delete myInput;

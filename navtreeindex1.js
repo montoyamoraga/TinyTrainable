@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_output_printer.html#ac059d5276543b755c5d0524102628130":[0,0,9,7],
 "class_output_printer.html#ae425da8bccf042af4d4774fdc41bbae0":[0,0,9,2],
 "class_output_printer.html#af78fe13469e5428dde451aec1dfe19d6":[0,0,9,12],
 "class_output_serial.html":[0,0,10],

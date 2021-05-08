@@ -13,15 +13,13 @@
 /// @include library Input
 #include "Input.h"
 
-
-
 // include libraries for speech recognition
-// #include <TensorFlowLite.h>
-// #include <tensorflow/lite/micro/all_ops_resolver.h>
-// #include <tensorflow/lite/micro/micro_error_reporter.h>
-// #include <tensorflow/lite/micro/micro_interpreter.h>
-// #include <tensorflow/lite/schema/schema_generated.h>
-// #include <tensorflow/lite/version.h>
+#include <TensorFlowLite.h>
+#include <tensorflow/lite/micro/micro_error_reporter.h>
+#include <tensorflow/lite/micro/micro_interpreter.h>
+#include <tensorflow/lite/micro/micro_mutable_op_resolver.h>
+#include <tensorflow/lite/schema/schema_generated.h>
+#include <tensorflow/lite/version.h>
 
 // #include "../tensorflow/main_functions.h"
 // #include "../tensorflow/command_responder.h"

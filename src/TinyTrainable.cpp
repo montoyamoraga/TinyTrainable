@@ -3,12 +3,15 @@
 /// @author montoyamoraga, peter-parque, maxzwang
 /// @date November 2020
 
-// include local library
+/// @include library TinyTrainable
 #include "TinyTrainable.h"
 
+/// @include library for each input
 #include "inputs/InputColor.h"
 #include "inputs/InputGesture.h"
 #include "inputs/InputSpeech.h"
+
+/// @include library for each output
 #include "outputs/OutputBuzzer.h"
 #include "outputs/OutputLCD.h"
 #include "outputs/OutputLED.h"
@@ -17,11 +20,14 @@
 #include "outputs/OutputSerial.h"
 #include "outputs/OutputServo.h"
 
-/// initialize static variables
+/// @brief static variable, boolean, serial debugging
 bool TinyTrainable::_serialDebugging = false;
+/// @brief static variable, integer, baud rate
 int TinyTrainable::_baudRate = 9600;
 
-/// constructor method
+/// @brief constructor
+/// @param InputType
+/// @param OutputType
 TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
 
   if (inputType == INPUT_COLOR) {

@@ -7,7 +7,7 @@
 OutputSerial::OutputSerial() {}
 
 void OutputSerial::setupOutputTest() {
-  
+  //     Serial.println("hello world!");
 }
 
 void OutputSerial::playOutput(int classification) {

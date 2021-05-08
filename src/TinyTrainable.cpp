@@ -264,48 +264,6 @@ void TinyTrainable::errorBlink(Colors color) {
 //   }
 // }
 
-// TODO
-// void TinyTrainable::helloOutputs(OutputMode outputToTest) {
-//   int timeDelay = 3000;
-//   switch (outputToTest) {
-//   case outputBuzzer:
-//     tone(_outputPinTest, 260, timeDelay);
-//     delay(timeDelay);
-//     tone(_outputPinTest, 330, timeDelay);
-//     delay(timeDelay);
-//     tone(_outputPinTest, 392, timeDelay);
-//     delay(timeDelay);
-//     tone(_outputPinTest, 523, timeDelay);
-//     delay(timeDelay);
-//     break;
-//   case outputLED:
-//     digitalWrite(_outputPinTest, LOW);
-//     delay(timeDelay);
-//     digitalWrite(_outputPinTest, HIGH);
-//     delay(timeDelay);
-//     break;
-//   case outputMIDI:
-//     sendSerialMIDINote(_midiChannel, 37, _midiVelocity);
-//     delay(timeDelay);
-//     sendSerialMIDINote(_midiChannel, 38, _midiVelocity);
-//     delay(timeDelay);
-//     sendSerialMIDINote(_midiChannel, 39, _midiVelocity);
-//     delay(timeDelay);
-//     break;
-//   case outputSerialUSB:
-//     Serial.println("hello world!");
-//     delay(timeDelay);
-//     break;
-//   case outputServo:
-//     moveServo(0);
-//     break;
-//   case outputUndefined:
-//     blinkLEDBuiltIn(3);
-//     delay(timeDelay);
-//     break;
-//   }
-// }
-
 void TinyTrainable::setupOutputTest() {
   if (myOutput != nullptr) {
     myOutput->setupOutputTest();

@@ -116,7 +116,6 @@ public:
   /// @brief input gesture, read data for database
   void gestureReadData();
 
-  // methods for input speech
   /// @brief input speech, setup TensorFlow model
   void speechSetupTF(String sounds[3], const unsigned char *model = nullptr);
 

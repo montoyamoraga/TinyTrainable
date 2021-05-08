@@ -7,7 +7,10 @@
 OutputBuzzer::OutputBuzzer() {}
 
 void OutputBuzzer::setupOutputTest() {
-  
+  tone(_outputPinTest, 260, timeDelay);
+//     delay(timeDelay);
+//     tone(_outputPinTest, 330, timeDelay);
+//     delay(timeDelay);
 }
 
 void OutputBuzzer::playOutput(int classification) {

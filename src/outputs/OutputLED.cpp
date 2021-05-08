@@ -7,7 +7,11 @@
 OutputLED::OutputLED() {}
 
 void OutputLED::setupOutputTest() {
-  
+  //     digitalWrite(_outputPinTest, LOW);
+//     delay(timeDelay);
+//     digitalWrite(_outputPinTest, HIGH);
+//     delay(timeDelay);
+//     break;
 }
 
 void OutputLED::playOutput(int classification) {

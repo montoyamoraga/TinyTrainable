@@ -7,7 +7,7 @@
 OutputMIDI::OutputMIDI() {}
 
 void OutputMIDI::setupOutputTest() {
-  
+  // sendMIDINoteOn();
 }
 
 void OutputMIDI::playOutput(int classification) {

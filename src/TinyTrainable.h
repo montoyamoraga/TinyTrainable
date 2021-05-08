@@ -56,6 +56,9 @@ public:
   /// @brief static integer, baud rate for serial communication
   static int _baudRate;
 
+  /// @brief static integer, time for blinking LED
+  static int _timeBlinkLED;
+
   /// @brief TinyTrainable constructor
   /// @param InputType
   /// @param OutputType

@@ -24,6 +24,7 @@
 bool TinyTrainable::_serialDebugging = false;
 /// @brief static variable, integer, baud rate
 int TinyTrainable::_baudRate = 9600;
+int TinyTrainable::_timeBlinkLED = 500;
 
 /// @brief constructor
 /// @param InputType
@@ -169,9 +170,9 @@ void TinyTrainable::blinkLEDBuiltIn(int blinks) {
 
   for (int i = 0; i < blinks; i++) {
     setStateLEDBuiltIn(true);
-    delay(500);
+    delay(_timeBlinkLED);
     setStateLEDBuiltIn(false);
-    delay(500);
+    delay(_timeBlinkLED);
   }
 }
 
@@ -211,10 +212,9 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
   }
 }
 
-// traps the arduino in an infinite loop with RGB LED blinking, to signal
-// some setup missing. explanations in docs by instrument.
-// void TinyTrainable::errorBlink(Colors color, int blinkNum) {
-//   while (true) {
+/// @brief infinite loop with LED RGB blinking
+void TinyTrainable::errorBlink(Colors color, int blinkNum) {
+  while (true) {
 //     for (int i = 0; i <= blinkNum; i++) {
 //       // turn on with the color
 //       setStateLEDRGB(true, color);
@@ -224,8 +224,8 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
 //       delay(1000);
 //     }
 //     blinkLEDBuiltIn(1);
-//   }
-// }
+  }
+}
 
 // TODO
 // void TinyTrainable::helloOutputsSetup(OutputMode outputToTest) {

@@ -1,4 +1,4 @@
-/// @file OutputBuzzer.h
+/// @file OutputBuzzer.cpp
 /// @brief Output buzzer
 
 // include header file

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['freqarray0_449',['freqArray0',['../color__buzzer_8ino.html#acf7fdbb072a2dbc03f5ca9a5affaa8c1',1,'freqArray0():&#160;color_buzzer.ino'],['../gesture__buzzer_8ino.html#acf7fdbb072a2dbc03f5ca9a5affaa8c1',1,'freqArray0():&#160;gesture_buzzer.ino'],['../gesture__servo_8ino.html#acf7fdbb072a2dbc03f5ca9a5affaa8c1',1,'freqArray0():&#160;gesture_servo.ino'],['../hello__buzzer_8ino.html#acf7fdbb072a2dbc03f5ca9a5affaa8c1',1,'freqArray0():&#160;hello_buzzer.ino']]],
-  ['freqarray1_450',['freqArray1',['../color__buzzer_8ino.html#a12f31326b2f1fc9d63d7d710179f849a',1,'freqArray1():&#160;color_buzzer.ino'],['../gesture__buzzer_8ino.html#a12f31326b2f1fc9d63d7d710179f849a',1,'freqArray1():&#160;gesture_buzzer.ino'],['../gesture__servo_8ino.html#a12f31326b2f1fc9d63d7d710179f849a',1,'freqArray1():&#160;gesture_servo.ino'],['../hello__buzzer_8ino.html#a12f31326b2f1fc9d63d7d710179f849a',1,'freqArray1():&#160;hello_buzzer.ino']]],
-  ['freqarray2_451',['freqArray2',['../color__buzzer_8ino.html#a8758e9fd814c52d8369db042e7cdd843',1,'freqArray2():&#160;color_buzzer.ino'],['../gesture__buzzer_8ino.html#a8758e9fd814c52d8369db042e7cdd843',1,'freqArray2():&#160;gesture_buzzer.ino'],['../gesture__servo_8ino.html#a8758e9fd814c52d8369db042e7cdd843',1,'freqArray2():&#160;gesture_servo.ino'],['../hello__buzzer_8ino.html#a8758e9fd814c52d8369db042e7cdd843',1,'freqArray2():&#160;hello_buzzer.ino']]]
+  ['myinput_374',['myInput',['../class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f',1,'TinyTrainable']]],
+  ['myoutput_375',['myOutput',['../class_tiny_trainable.html#a888e801d77cd92e11ced14d9e3b259bb',1,'TinyTrainable']]]
 ];

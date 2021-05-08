@@ -1,8 +1,18 @@
 var searchData=
 [
-  ['notebassdrum_140',['noteBassDrum',['../class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949',1,'OutputMIDI']]],
-  ['noteclosedhihat_141',['noteClosedHiHat',['../class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73',1,'OutputMIDI']]],
-  ['notehitom_142',['noteHiTom',['../class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f',1,'OutputMIDI']]],
-  ['notesnare_143',['noteSnare',['../class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4',1,'OutputMIDI']]],
-  ['num_5fgestures_144',['NUM_GESTURES',['../class_input_gesture.html#ae790af1be216de1db98c89be507f8324',1,'InputGesture']]]
+  ['tempodelay_185',['tempoDelay',['../class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f',1,'OutputMIDI']]],
+  ['tensorarena_186',['tensorArena',['../class_input_gesture.html#a2aee45ecfbf2f81107698b6da09b09ed',1,'InputGesture']]],
+  ['tensorarenasize_187',['tensorArenaSize',['../class_input_gesture.html#a8ab899e4ab366f9d02e325478df93431',1,'InputGesture']]],
+  ['tflerrorreporter_188',['tflErrorReporter',['../class_input_gesture.html#a96efeb89d29f889bf70a3ab959ed2f4f',1,'InputGesture']]],
+  ['tflinputtensor_189',['tflInputTensor',['../class_input_gesture.html#a1ac7fe19592e0b05c4b0c3b78540a6b6',1,'InputGesture']]],
+  ['tflinterpreter_190',['tflInterpreter',['../class_input_gesture.html#a5ddc443f28d93808fcbbd0b15acf8d40',1,'InputGesture']]],
+  ['tflmodel_191',['tflModel',['../class_input_gesture.html#abd5f1afde1dd88c4982702209ce5ed1e',1,'InputGesture']]],
+  ['tflopsresolver_192',['tflOpsResolver',['../class_input_gesture.html#adce3b40c42e82a4e878d230d744d5e12',1,'InputGesture']]],
+  ['tfloutputtensor_193',['tflOutputTensor',['../class_input_gesture.html#ac83068218bb7d60da67c172c9cf9f42d',1,'InputGesture']]],
+  ['tiny_194',['tiny',['../class_input.html#ab56185d2fbad06c2acb0b84dc11e5199',1,'Input::tiny()'],['../class_output.html#a18489dcb8e45d4c199ece137e537f7c1',1,'Output::tiny()']]],
+  ['tinytrainable_195',['TinyTrainable',['../class_tiny_trainable.html',1,'TinyTrainable'],['../class_tiny_trainable.html#a00e94be6f92af0cd96379e3a8a78122b',1,'TinyTrainable::TinyTrainable()']]],
+  ['tinytrainable_2ecpp_196',['TinyTrainable.cpp',['../_tiny_trainable_8cpp.html',1,'']]],
+  ['tinytrainable_2eh_197',['TinyTrainable.h',['../_tiny_trainable_8h.html',1,'']]],
+  ['totalsteps_198',['totalSteps',['../class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556',1,'OutputMIDI']]],
+  ['trainknn_199',['trainKNN',['../class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd',1,'Input::trainKNN()'],['../class_input_color.html#adb585ff663d1720c862534009fe647a8',1,'InputColor::trainKNN()'],['../class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f',1,'TinyTrainable::trainKNN()']]]
 ];

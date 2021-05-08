@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['tinytrainable_374',['TinyTrainable',['../class_tiny_trainable.html#a00e94be6f92af0cd96379e3a8a78122b',1,'TinyTrainable']]],
-  ['trainknn_375',['trainKNN',['../class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd',1,'Input::trainKNN()'],['../class_input_color.html#adb585ff663d1720c862534009fe647a8',1,'InputColor::trainKNN()'],['../class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f',1,'TinyTrainable::trainKNN()']]]
+  ['_7einput_300',['~Input',['../class_input.html#a230646fa6e6433b4d9ac3535b7d52087',1,'Input']]],
+  ['_7eoutput_301',['~Output',['../class_output.html#a0162ebdc8e5b13917788692fa9a753a0',1,'Output']]],
+  ['_7eoutputprinter_302',['~OutputPrinter',['../class_output_printer.html#ab08960ba59e64e56537adf5b4e2e2205',1,'OutputPrinter']]],
+  ['_7etinytrainable_303',['~TinyTrainable',['../class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be',1,'TinyTrainable']]]
 ];

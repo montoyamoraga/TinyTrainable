@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['randomparam_188',['randomParam',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5ba9079b1aad9dd2190e90f37d554b5485a',1,'OutputBuzzer']]],
-  ['rangeparam_189',['rangeParam',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5baef08f2cc0c9b89dd47b0d109b65b2f8e',1,'OutputBuzzer']]],
-  ['readcolor_190',['readColor',['../class_input_color.html#a6b003d0c90cc42225c1af0d1073ccf8f',1,'InputColor']]],
-  ['red_191',['red',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967aace9033470c7bfe9523c814271251908',1,'TinyTrainable.h']]]
+  ['_7einput_202',['~Input',['../class_input.html#a230646fa6e6433b4d9ac3535b7d52087',1,'Input']]],
+  ['_7eoutput_203',['~Output',['../class_output.html#a0162ebdc8e5b13917788692fa9a753a0',1,'Output']]],
+  ['_7eoutputprinter_204',['~OutputPrinter',['../class_output_printer.html#ab08960ba59e64e56537adf5b4e2e2205',1,'OutputPrinter']]],
+  ['_7etinytrainable_205',['~TinyTrainable',['../class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be',1,'TinyTrainable']]]
 ];

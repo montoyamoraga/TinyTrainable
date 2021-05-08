@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['k_457',['K',['../color__buzzer_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;color_buzzer.ino'],['../color__led_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;color_led.ino'],['../color__midi_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;color_midi.ino'],['../color__printer_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;color_printer.ino'],['../color__serial_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;color_serial.ino'],['../color__servo_8ino.html#a7b63ccc35ac484b9f41e37ccd0cb31bd',1,'K():&#160;color_servo.ino']]]
+  ['sambabd_381',['sambaBD',['../_m_i_d_i_patterns_8h.html#a2c40baff52f9931754bdf56ad4619ed9',1,'MIDIPatterns.h']]],
+  ['sambach_382',['sambaCH',['../_m_i_d_i_patterns_8h.html#a2e3855abae70e712eb517a108ff29e2b',1,'MIDIPatterns.h']]],
+  ['sambaht_383',['sambaHT',['../_m_i_d_i_patterns_8h.html#a072110d1166edfb69354491d4c5eebf6',1,'MIDIPatterns.h']]],
+  ['sambasn_384',['sambaSN',['../_m_i_d_i_patterns_8h.html#a8b0ee17549a4c69149b25001fe28b5a5',1,'MIDIPatterns.h']]]
 ];

@@ -4,16 +4,16 @@
 #ifndef INPUT_GESTURE_H
 #define INPUT_GESTURE_H
 
-// include Arduino library
+/// @include library Arduino
 #include <Arduino.h>
 
-// include library Input
-#include "Input.h"
-
-// include library TinyTrainable
+/// @include TinyTrainable library
 #include "TinyTrainable.h"
 
-// include library for IMU sensor
+/// @include library Input
+#include "Input.h"
+
+/// @include library for IMU sensor
 // 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>

@@ -4,14 +4,16 @@
 #ifndef INPUT_SPEECH_H
 #define INPUT_SPEECH_H
 
-// include Arduino library
+/// @include library Arduino
 #include <Arduino.h>
 
-// include Input library
+/// @include TinyTrainable library
+#include "TinyTrainable.h"
+
+/// @include library Input
 #include "Input.h"
 
-// include TinyTrainable library
-#include "TinyTrainable.h"
+
 
 // include libraries for speech recognition
 // #include <TensorFlowLite.h>

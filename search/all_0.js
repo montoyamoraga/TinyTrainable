@@ -53,5 +53,6 @@ var searchData=
   ['_5fservomoveduration_50',['_servoMoveDuration',['../class_output_servo.html#a781bf7b7b1086e579d31b30310d95a2e',1,'OutputServo']]],
   ['_5fservopauses_51',['_servoPauses',['../class_output_servo.html#a11303e678e673cf1bb8376965c75ad97',1,'OutputServo']]],
   ['_5fservotimenow_52',['_servoTimeNow',['../class_output_servo.html#ab1c5dd4a701d8955a0310cb6b7d2b49d',1,'OutputServo']]],
-  ['_5fservotimeprevious_53',['_servoTimePrevious',['../class_output_servo.html#adebbabd47787cc5e3170b1bcfc1c7c6b',1,'OutputServo']]]
+  ['_5fservotimeprevious_53',['_servoTimePrevious',['../class_output_servo.html#adebbabd47787cc5e3170b1bcfc1c7c6b',1,'OutputServo']]],
+  ['_5ftimeblinkled_54',['_timeBlinkLED',['../class_tiny_trainable.html#ac804391437425a1fb714c690777353d9',1,'TinyTrainable']]]
 ];

@@ -3,6 +3,7 @@ var class_tiny_trainable =
     [ "TinyTrainable", "class_tiny_trainable.html#a00e94be6f92af0cd96379e3a8a78122b", null ],
     [ "~TinyTrainable", "class_tiny_trainable.html#af2cde6e26bf6ba42d7809932591698be", null ],
     [ "blinkLEDBuiltIn", "class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810", null ],
+    [ "blinkLEDRGB", "class_tiny_trainable.html#a391c42653d32a7438cab824bac75ca84", null ],
     [ "bpmToMs", "class_tiny_trainable.html#a221585d11c9f71c6cc9e20ef2ef56acb", null ],
     [ "debugPrint", "class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5", null ],
     [ "gesturePrintHeader", "class_tiny_trainable.html#a38b457cc23cd6a92249b1cdaa5ccbde6", null ],
@@ -49,6 +50,7 @@ var class_tiny_trainable =
     [ "_baudRate", "class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d", null ],
     [ "_outputPinTest", "class_tiny_trainable.html#ab956c2a85c55680e41c0b53aceb62519", null ],
     [ "_serialDebugging", "class_tiny_trainable.html#a548b35b4479d8aff4d7e29104333d093", null ],
+    [ "_timeBlinkLED", "class_tiny_trainable.html#ac804391437425a1fb714c690777353d9", null ],
     [ "myInput", "class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f", null ],
     [ "myOutput", "class_tiny_trainable.html#a888e801d77cd92e11ced14d9e3b259bb", null ]
 ];

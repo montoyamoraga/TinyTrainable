@@ -132,6 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b44b24e2f4881f612a80c0aa4c7e810"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810">blinkLEDBuiltIn</a> (int blinks)</td></tr>
 <tr class="memdesc:a6b44b24e2f4881f612a80c0aa4c7e810"><td class="mdescLeft">&#160;</td><td class="mdescRight">blink LED built-in  <a href="class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810">More...</a><br /></td></tr>
 <tr class="separator:a6b44b24e2f4881f612a80c0aa4c7e810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a391c42653d32a7438cab824bac75ca84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a391c42653d32a7438cab824bac75ca84">blinkLEDRGB</a> (int blinks, <a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967">Colors</a> color)</td></tr>
+<tr class="memdesc:a391c42653d32a7438cab824bac75ca84"><td class="mdescLeft">&#160;</td><td class="mdescRight">blink LED RGB  <a href="class_tiny_trainable.html#a391c42653d32a7438cab824bac75ca84">More...</a><br /></td></tr>
+<tr class="separator:a391c42653d32a7438cab824bac75ca84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c5f808708a89d61c5a5bbdcad585eb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7">identify</a> ()</td></tr>
 <tr class="memdesc:a1c5f808708a89d61c5a5bbdcad585eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">input, identify class  <a href="class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7">More...</a><br /></td></tr>
 <tr class="separator:a1c5f808708a89d61c5a5bbdcad585eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,6 +227,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:ada2a91c7e2d8782092b96055ffdafb1d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d">_baudRate</a> = 9600</td></tr>
 <tr class="memdesc:ada2a91c7e2d8782092b96055ffdafb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">static integer, baud rate for serial communication  <a href="class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d">More...</a><br /></td></tr>
 <tr class="separator:ada2a91c7e2d8782092b96055ffdafb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac804391437425a1fb714c690777353d9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tiny_trainable.html#ac804391437425a1fb714c690777353d9">_timeBlinkLED</a> = 500</td></tr>
+<tr class="memdesc:ac804391437425a1fb714c690777353d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">static integer, time for blinking LED  <a href="class_tiny_trainable.html#ac804391437425a1fb714c690777353d9">More...</a><br /></td></tr>
+<tr class="separator:ac804391437425a1fb714c690777353d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -315,6 +321,42 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>blink LED built-in </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blinks</td><td>integer, number of blinks </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a391c42653d32a7438cab824bac75ca84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391c42653d32a7438cab824bac75ca84">&#9670;&nbsp;</a></span>blinkLEDRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TinyTrainable::blinkLEDRGB </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>blinks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967">Colors</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>blink LED RGB </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">blinks</td><td>integer, number of blinks </td></tr>
@@ -1421,6 +1463,30 @@ template&lt;typename T &gt; </div>
 <p>static boolean, toggles debugging over serial port </p>
 <p>static variable, boolean, serial debugging</p>
 <div class="fragment"></div><!-- fragment --><p> <a class="el" href="class_tiny_trainable.html" title="TinyTrainable base class.">TinyTrainable</a></p><div class="fragment"></div><!-- fragment --><p> for each input</p><div class="fragment"></div><!-- fragment --><p> for each output </p>
+
+</div>
+</div>
+<a id="ac804391437425a1fb714c690777353d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac804391437425a1fb714c690777353d9">&#9670;&nbsp;</a></span>_timeBlinkLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TinyTrainable::_timeBlinkLED = 500</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>static integer, time for blinking LED </p>
 
 </div>
 </div>

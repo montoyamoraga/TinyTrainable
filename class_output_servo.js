@@ -12,6 +12,7 @@ var class_output_servo =
     [ "setServoMinAngle", "class_output_servo.html#a86b54a6ac78790d1e5946e243b3e3397", null ],
     [ "setServoTempo", "class_output_servo.html#a2712322a2f43d38a0322ef61f9fa8a87", null ],
     [ "setupOutputServo", "class_output_servo.html#a5b81312b7ef4f294faaccf5246b7dafd", null ],
+    [ "setupOutputTest", "class_output_servo.html#aab2ee21466e7cbfe2f713f9b34f77f77", null ],
     [ "_isAttached", "class_output_servo.html#a3a2ce5ec87454f6258568f5ced668720", null ],
     [ "_outputPinServo", "class_output_servo.html#a5d3f44bed338d819373e46c677df1688", null ],
     [ "_servo", "class_output_servo.html#afeaaf9b55f66e9ee409ae5b1624a3d6e", null ],

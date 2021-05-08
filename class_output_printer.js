@@ -10,6 +10,7 @@ var class_output_printer =
     [ "setPrinterTest", "class_output_printer.html#ac059d5276543b755c5d0524102628130", null ],
     [ "setPrinterWake", "class_output_printer.html#a3d2b017577ab3b362c5c412f9b511c3b", null ],
     [ "setupOutputPrinter", "class_output_printer.html#a751a764c3434bdfae19d6a9526e49e26", null ],
+    [ "setupOutputTest", "class_output_printer.html#a2ad609bf6040ecc8a2f894e2959d27c4", null ],
     [ "_printer", "class_output_printer.html#a2e94813b78d289cece365bfc0e7f3be0", null ],
     [ "_printerBaudRate", "class_output_printer.html#af78fe13469e5428dde451aec1dfe19d6", null ]
 ];

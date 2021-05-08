@@ -16,6 +16,7 @@ var class_output_buzzer =
     [ "setBuzzerFrequency", "class_output_buzzer.html#aafe2e0faa2ea7ca1da61eb34e3bde009", null ],
     [ "setBuzzerFrequency", "class_output_buzzer.html#ad2fd165d4d553f43be7c8f7ebbf90c9b", null ],
     [ "setupOutputBuzzer", "class_output_buzzer.html#a5a99e0f5d585184e80266753e96cb0c8", null ],
+    [ "setupOutputTest", "class_output_buzzer.html#a13ff3a86b59ff4db4dd84933e6e2f3e3", null ],
     [ "_buzzerDurationMode", "class_output_buzzer.html#a86cfdc5e3635629a93bc53de75ac870f", null ],
     [ "_buzzerDurations", "class_output_buzzer.html#aae1fae98978c5c449bf4a0607aa71a78", null ],
     [ "_buzzerDurationsArrays", "class_output_buzzer.html#a7f4f8e10e258134f7d98fb3a8f4ac821", null ],

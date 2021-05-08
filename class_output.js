@@ -32,5 +32,6 @@ var class_output =
     [ "setupOutputPrinter", "class_output.html#a70f218dcf8fa5c0a0333441ada6c2915", null ],
     [ "setupOutputSerial", "class_output.html#a9655bb53001fcb69bda6ae73362b5bf3", null ],
     [ "setupOutputServo", "class_output.html#ab8273486424d8569f160ac240c55a0ae", null ],
+    [ "setupOutputTest", "class_output.html#adae48c35656c20645209dbcd27916a20", null ],
     [ "tiny", "class_output.html#a18489dcb8e45d4c199ece137e537f7c1", null ]
 ];

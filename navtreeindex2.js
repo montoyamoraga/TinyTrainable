@@ -1,5 +1,14 @@
 var NAVTREEINDEX2 =
 {
+"hello__buzzer_8ino.html#a1f142058e976c6dbaf6ec038f6efec73":[1,0,0,2,0,0,5],
+"hello__buzzer_8ino.html#a34372894b2bb3820036f766b11588371":[1,0,0,2,0,0,7],
+"hello__buzzer_8ino.html#a4fc01d736fe50cf5b977f755b675f11d":[1,0,0,2,0,0,1],
+"hello__buzzer_8ino.html#a8758e9fd814c52d8369db042e7cdd843":[1,0,0,2,0,0,4],
+"hello__buzzer_8ino.html#ac8ca5e6bee050d58081c9a241dce2125":[1,0,0,2,0,0,9],
+"hello__buzzer_8ino.html#acf7fdbb072a2dbc03f5ca9a5affaa8c1":[1,0,0,2,0,0,2],
+"hello__buzzer_8ino.html#ae08d2c382b1bc1b2351974750116c861":[1,0,0,2,0,0,8],
+"hello__buzzer_8ino.html#afbf234f68cab4163a47d3c998d483f68":[1,0,0,2,0,0,6],
+"hello__buzzer_8ino.html#afe461d27b9c48d5921c00d521181f12f":[1,0,0,2,0,0,0],
 "hello__led_8ino.html":[1,0,0,2,1,0],
 "hello__led_8ino.html#a24c8f6b6eb712c7c2c219723c7b05ef0":[1,0,0,2,1,0,7],
 "hello__led_8ino.html#a2658fbbde3e4b728539d3ec60797c982":[1,0,0,2,1,0,5],

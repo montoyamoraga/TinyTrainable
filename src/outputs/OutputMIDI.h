@@ -13,6 +13,8 @@
 // TODO: include MIDIPatterns.h
 // #include "MIDIPatterns.h"
 
+/// @class OutputMIDI
+/// @brief OutputMIDI inherits from Output
 class OutputMIDI : public Output {
 
 public:

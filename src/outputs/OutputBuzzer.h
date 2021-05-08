@@ -10,6 +10,8 @@
 // include library TinyTrainable
 #include "TinyTrainable.h"
 
+/// @class OutputBuzzer
+/// @brief OutputBuzzer inherits from Output
 class OutputBuzzer : public Output {
 
 public:

@@ -10,6 +10,8 @@
 // include library TinyTrainable
 #include "TinyTrainable.h"
 
+/// @class OutputSerial
+/// @brief OutputSerial inherits from Output
 class OutputSerial : public Output {
 public:
   // constructor

@@ -13,6 +13,8 @@
 // include library for output with Adafruit thermal printer
 #include <Adafruit_Thermal.h>
 
+/// @class OutputPrinter
+/// @brief OutputPrinter inherits from Output
 class OutputPrinter : public Output {
 public:
   /// @brief constructor

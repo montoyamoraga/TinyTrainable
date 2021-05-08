@@ -8,6 +8,8 @@
 // this is to avoid a circular include when TinyTrainable includes this class
 class TinyTrainable;
 
+/// @class Output
+/// @brief Output base class
 class Output {
 public:
 

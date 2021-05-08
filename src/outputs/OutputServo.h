@@ -13,6 +13,8 @@
 // include library for output with servo motors
 #include <Servo.h>
 
+/// @class OutputServo
+/// @brief OutputServo inherits from Output
 class OutputServo : public Output {
 
   // variables for outputServo

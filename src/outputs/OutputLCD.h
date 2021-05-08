@@ -10,6 +10,8 @@
 // include TinyTrainable library
 #include "TinyTrainable.h"
 
+/// @class OutputLCD
+/// @brief OutputLCD inherits from Output
 class OutputLCD : public Output {
 
 public:

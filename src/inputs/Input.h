@@ -10,6 +10,8 @@
 // forwards declare class
 class TinyTrainable;
 
+/// @class Input
+/// @brief Input base class
 class Input {
 public:
 /// @brief Input destructor

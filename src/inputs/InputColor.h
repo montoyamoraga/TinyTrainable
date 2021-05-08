@@ -21,7 +21,7 @@
 #include <Arduino_KNN.h>
 
 /// @class InputColor
-/// @brief Inputcolor inherits from Input
+/// @brief InputColor inherits from Input
 class InputColor : public Input {
 
 public:

@@ -1,6 +1,3 @@
-/// @file color_printer.ino
-/// @brief input color with output thermal printer
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

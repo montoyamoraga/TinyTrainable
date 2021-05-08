@@ -1,6 +1,3 @@
-/// @file gesture_database.ino
-/// @brief build database for input gesture
-
 // this sketch is adapted from the public domain GestureToEmoji example
 // from the repository ArduinoTensorFlowLiteTutorials by Arduino
 // https://github.com/arduino/ArduinoTensorFlowLiteTutorials

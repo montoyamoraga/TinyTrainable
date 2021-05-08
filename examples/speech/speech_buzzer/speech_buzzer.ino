@@ -13,9 +13,6 @@
   limitations under the License.
   ==============================================================================*/
 
-/// @file speech_buzzer.ino
-/// @brief input speech with output buzzer
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

@@ -1,6 +1,3 @@
-/// @file gesture_buzzer.ino
-/// @brief input gesture with output buzzer
-
 // include gesture model
 #include "myGestureModel.h"
 

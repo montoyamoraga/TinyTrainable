@@ -1,7 +1,5 @@
-/// @file hello_none.ino
-/// @brief Test output with internal LEDs
-/// this code is based on the Blink example
-/// http://www.arduino.cc/en/Tutorial/Blink
+// this code is based on the Blink example
+// http://www.arduino.cc/en/Tutorial/Blink
 
 // include library TinyTrainable
 #include <TinyTrainable.h>

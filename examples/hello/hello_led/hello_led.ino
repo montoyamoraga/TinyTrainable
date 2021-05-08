@@ -1,6 +1,3 @@
-/// @file hello_led.ino
-/// @brief Test output with LED
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

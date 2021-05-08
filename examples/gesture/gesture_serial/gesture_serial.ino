@@ -1,6 +1,3 @@
-/// @file gesture_serial.ino
-/// @brief input gesture with output serial
-
 // this sketch is adapted from the GestureToEmoji example
 // from the repository ArduinoTensorFlowLiteTutorials by Arduino
 // https://github.com/arduino/ArduinoTensorFlowLiteTutorials

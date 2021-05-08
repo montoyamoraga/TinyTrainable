@@ -1,6 +1,3 @@
-/// @file hello_tiny_world.ino
-/// @brief Test output modes
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

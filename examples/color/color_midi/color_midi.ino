@@ -1,6 +1,3 @@
-/// @file color_midi.ino
-/// @brief input color with output MIDI
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

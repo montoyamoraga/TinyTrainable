@@ -1,6 +1,3 @@
-/// @file hello_servo.ino
-/// @brief test output servo
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

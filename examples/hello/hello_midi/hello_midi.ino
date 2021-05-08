@@ -1,6 +1,3 @@
-/// @file hello_midi.ino
-/// @brief Test output with MIDI
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

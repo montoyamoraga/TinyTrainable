@@ -1,6 +1,3 @@
-/// @file hello_serial.ino
-/// @brief Example: Test output with serial USB
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

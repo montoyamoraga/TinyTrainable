@@ -1,6 +1,3 @@
-/// @file color_led.ino
-/// @brief input color with output LED
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

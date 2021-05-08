@@ -1,6 +1,3 @@
-/// @file color_buzzer.ino
-/// @brief input color with output buzzer
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

@@ -1,6 +1,3 @@
-/// @file color_servo.ino
-/// @brief input color with output servo
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

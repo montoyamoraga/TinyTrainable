@@ -1,6 +1,3 @@
-/// @file hello_buzzer.ino
-/// @brief Test output with buzzer
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

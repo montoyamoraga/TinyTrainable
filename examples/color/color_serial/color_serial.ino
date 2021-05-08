@@ -1,6 +1,3 @@
-/// @file color_serial.ino
-/// @brief input color with output serial
-
 // include library TinyTrainable
 #include <TinyTrainable.h>
 

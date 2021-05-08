@@ -12,7 +12,7 @@ This Arduino library is available on this repository [https://github.com/montoya
 
 ## Branches
 
-* main: 
+* main: the source code and examples
 * gh-pages: documentation generated with Doxygen, also available at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable)
 
 ## Dependencies

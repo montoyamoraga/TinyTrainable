@@ -20,8 +20,8 @@ enum InputType { INPUT_NONE = 0, INPUT_COLOR = 1, INPUT_GESTURE = 2, INPUT_SPEEC
 
 /// @enum to set the output type
 enum OutputType {
-  OUTPUT_NONE = 0, OUTPUT_BUZZER = 1, OUTPUT_LCD = 2, OUTPUT_LED = 3,
-  OUTPUT_MIDI = 4, OUTPUT_PRINTER = 5, OUTPUT_SERIAL = 6, OUTPUT_SERVO = 7};
+  OUTPUT_NONE = 0, OUTPUT_BUZZER = 1, OUTPUT_LED = 2, OUTPUT_MIDI = 3,
+  OUTPUT_PRINTER = 4, OUTPUT_SCREEN = 5, OUTPUT_SERIAL = 6, OUTPUT_SERVO = 7};
 
 /// @enum colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };

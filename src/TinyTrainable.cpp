@@ -13,10 +13,10 @@
 
 /// @include library for each output
 #include "outputs/OutputBuzzer.h"
-#include "outputs/OutputLCD.h"
 #include "outputs/OutputLED.h"
 #include "outputs/OutputMIDI.h"
 #include "outputs/OutputPrinter.h"
+#include "outputs/OutputScreen.h"
 #include "outputs/OutputSerial.h"
 #include "outputs/OutputServo.h"
 
@@ -45,14 +45,14 @@ TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
   // initialize output
   if (outputType == OUTPUT_BUZZER) {
     myOutput = new OutputBuzzer();
-  } else if (outputType == OUTPUT_LCD) {
-    myOutput = new OutputLCD();
   } else if (outputType == OUTPUT_LED) {
     myOutput = new OutputLED();
   } else if (outputType == OUTPUT_MIDI) {
     myOutput = new OutputMIDI();
   } else if (outputType == OUTPUT_PRINTER) {
     myOutput = new OutputPrinter();
+  } else if (outputType == OUTPUT_SCREEN) {
+    myOutput = new OutputScreen();
   } else if (outputType == OUTPUT_SERIAL) {
     myOutput = new OutputSerial();
   } else if (outputType == OUTPUT_SERVO) {

@@ -1,8 +1,8 @@
-/// @file OutputLCD.h
-/// @brief Output LCD
+/// @file OutputScreen.h
+/// @brief Output screen
 
-#ifndef OUTPUT_LCD_H
-#define OUTPUT_LCD_H
+#ifndef OUTPUT_SCREEN_H
+#define OUTPUT_SCREEN_H
 
 /// @include library Arduino
 #include <Arduino.h>
@@ -13,20 +13,20 @@
 /// @include library TinyTrainable
 #include "TinyTrainable.h"
 
-/// @class OutputLCD
-/// @brief OutputLCD inherits from Output
-class OutputLCD : public Output {
+/// @class OutputScreen
+/// @brief OutputScreen inherits from Output
+class OutputScreen : public Output {
 
 public:
   /// @brief constructor
-  OutputLCD();
+  OutputScreen();
 
   // TinyTrainable methods
   virtual void setupOutputTest() override;
   virtual void playOutput(int classification) override;
 
   // variables
-  int _outputPinLCD = -1;
+  int _outputPinScreen = -1;
 };
 
 #endif

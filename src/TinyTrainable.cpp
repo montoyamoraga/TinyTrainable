@@ -102,6 +102,7 @@ void TinyTrainable::identify() {
 }
 
 void TinyTrainable::playOutput(int classification) {
+  debugPrint(classification);
   if (myOutput != nullptr) {
     myOutput->playOutput(classification);
   }

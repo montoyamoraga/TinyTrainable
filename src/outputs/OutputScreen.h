@@ -39,6 +39,9 @@ public:
 
   // variables
   int _outputPinScreen = -1;
+
+  int _screenWidth = 128;
+  int _screenHeight = 32;
 };
 
 #endif

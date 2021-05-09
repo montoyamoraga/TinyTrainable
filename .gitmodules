@@ -16,3 +16,9 @@
 [submodule "libraries/Adafruit-Thermal-Printer-Library"]
 	path = libraries/Adafruit-Thermal-Printer-Library
 	url = https://github.com/adafruit/Adafruit-Thermal-Printer-Library.git
+[submodule "libraries/Adafruit_SSD1306"]
+	path = libraries/Adafruit_SSD1306
+	url = https://github.com/adafruit/Adafruit_SSD1306.git
+[submodule "libraries/Adafruit-GFX-Library"]
+	path = libraries/Adafruit-GFX-Library
+	url = https://github.com/adafruit/Adafruit-GFX-Library.git

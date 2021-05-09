@@ -40,25 +40,22 @@ public:
   InputSpeech();
 
   virtual void setupInstrument(bool serialDebugging) override;
-  virtual void speechSetupTF(String sounds[3], const unsigned char *model = nullptr) override;
+  virtual void speechSetupTF(String sounds[3],
+                             const unsigned char *model = nullptr) override;
   virtual void identify() override;
 
-  private:
-
+private:
   // TFLite setup
   const int NUM_SOUNDS = 3;
   String _sounds[3];
 
   // TFLite variables
-//   tflite::MicroErrorReporter tflErrorReporter;
-//   tflite::AllOpsResolver tflOpsResolver;
+  //   tflite::MicroErrorReporter tflErrorReporter;
+  //   tflite::AllOpsResolver tflOpsResolver;
   const tflite::Model *tflModel = nullptr;
-//   tflite::MicroInterpreter *tflInterpreter = nullptr;
-//   TfLiteTensor *tflInputTensor = nullptr;
-//   TfLiteTensor *tflOutputTensor = nullptr;
-
-
-
+  //   tflite::MicroInterpreter *tflInterpreter = nullptr;
+  //   TfLiteTensor *tflInputTensor = nullptr;
+  //   TfLiteTensor *tflOutputTensor = nullptr;
 };
 
 #endif

@@ -4,10 +4,10 @@
 #ifndef OUTPUT_SERVO_H
 #define OUTPUT_SERVO_H
 
-/// @include libraryArduino 
+/// @include libraryArduino
 #include <Arduino.h>
 
-/// @include library Output 
+/// @include library Output
 #include "Output.h"
 
 /// @include TinyTrainable library
@@ -45,7 +45,6 @@ public:
   int getServoMinAngle();
 
 private:
-  
   /// @brief Servo instance
   Servo _servo;
 

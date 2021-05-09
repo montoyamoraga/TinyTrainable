@@ -7,10 +7,10 @@
 OutputBuzzer::OutputBuzzer() {}
 
 void OutputBuzzer::setupOutputTest() {
-//   tone(_outputPinTest, 260, timeDelay);
-//     delay(timeDelay);
-//     tone(_outputPinTest, 330, timeDelay);
-//     delay(timeDelay);
+  //   tone(_outputPinTest, 260, timeDelay);
+  //     delay(timeDelay);
+  //     tone(_outputPinTest, 330, timeDelay);
+  //     delay(timeDelay);
 }
 
 void OutputBuzzer::playOutput(int classification) {
@@ -35,7 +35,7 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
     buzzerParamArray[0] =
         random(_buzzerFrequenciesMin[object], _buzzerFrequenciesMax[object]);
     break;
-    }
+  }
   case randomParam: {
     int randomFreqIndex = rand() % _buzzerFrequenciesArraysSizes[object];
     buzzerParamArray[0] = *(_buzzerFrequenciesArrays[object] + randomFreqIndex);
@@ -44,28 +44,28 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
   case undefParam: {
     // TODO: placeholder
     buzzerParamArray[0] = 100;
-    }
+  }
   }
   switch (_buzzerDurationMode) {
   case singleParam: {
     buzzerParamArray[1] = _buzzerDurations[object];
     break;
-    }
+  }
   case rangeParam: {
     buzzerParamArray[1] =
         random(_buzzerDurationsMin[object], _buzzerFrequenciesMax[object]);
     break;
-    }
+  }
   case randomParam: {
     int randomDurationIndex = rand() % _buzzerDurationsArraysSizes[object];
     buzzerParamArray[1] =
         *(_buzzerDurationsArrays[object] + randomDurationIndex);
     break;
-    }
+  }
   case undefParam: {
     // TODO: placeholder
     buzzerParamArray[1] = 100;
-    }
+  }
   }
 }
 

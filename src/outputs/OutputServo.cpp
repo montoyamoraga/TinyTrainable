@@ -8,7 +8,7 @@
 OutputServo::OutputServo() {}
 
 void OutputServo::setupOutputTest() {
-//   moveServo(0);
+  //   moveServo(0);
 }
 
 // methods for TinyTrainable

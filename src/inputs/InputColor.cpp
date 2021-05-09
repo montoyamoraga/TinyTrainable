@@ -108,7 +108,7 @@ void InputColor::readColor(float colorReading[]) {
 //       errorBlink(yellow, 2);
 //     }
 //     break;
-//   case outputLCD:
+//   case outputtScreen:
 //     Serial.println("TODO");
 //     break;
 //   case outputLED:
@@ -165,7 +165,7 @@ void InputColor::identify() {
     tiny->playOutput(classification);
 
     // update previous classification
-    _previousClassification = classification;    
+    _previousClassification = classification;
   }
 }
 

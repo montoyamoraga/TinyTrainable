@@ -18,7 +18,6 @@
 class OutputLED : public Output {
 
 public:
-
   /// @brief constructor
   OutputLED();
 

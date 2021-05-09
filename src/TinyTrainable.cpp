@@ -13,10 +13,10 @@
 
 /// @include library for each output
 #include "outputs/OutputBuzzer.h"
-#include "outputs/OutputLCD.h"
 #include "outputs/OutputLED.h"
 #include "outputs/OutputMIDI.h"
 #include "outputs/OutputPrinter.h"
+#include "outputs/OutputScreen.h"
 #include "outputs/OutputSerial.h"
 #include "outputs/OutputServo.h"
 
@@ -45,14 +45,14 @@ TinyTrainable::TinyTrainable(InputType inputType, OutputType outputType) {
   // initialize output
   if (outputType == OUTPUT_BUZZER) {
     myOutput = new OutputBuzzer();
-  } else if (outputType == OUTPUT_LCD) {
-    myOutput = new OutputLCD();
   } else if (outputType == OUTPUT_LED) {
     myOutput = new OutputLED();
   } else if (outputType == OUTPUT_MIDI) {
     myOutput = new OutputMIDI();
   } else if (outputType == OUTPUT_PRINTER) {
     myOutput = new OutputPrinter();
+  } else if (outputType == OUTPUT_SCREEN) {
+    myOutput = new OutputScreen();
   } else if (outputType == OUTPUT_SERIAL) {
     myOutput = new OutputSerial();
   } else if (outputType == OUTPUT_SERVO) {
@@ -117,7 +117,8 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
 };
 
 /// @brief input gesture, setup TensorFlow
-void TinyTrainable::gestureSetupTF(String gestures[3], const unsigned char *model) {
+void TinyTrainable::gestureSetupTF(String gestures[3],
+                                   const unsigned char *model) {
   if (myInput != nullptr) {
     myInput->gestureSetupTF(gestures, model);
   }
@@ -135,7 +136,8 @@ void TinyTrainable::gestureReadData() {
   }
 }
 
-void TinyTrainable::speechSetupTF(String sounds[3], const unsigned char *model) {
+void TinyTrainable::speechSetupTF(String sounds[3],
+                                  const unsigned char *model) {
   if (myInput != nullptr) {
     myInput->speechSetupTF(sounds, model);
   }
@@ -182,7 +184,7 @@ void TinyTrainable::blinkLEDRGB(int blinks, Colors color) {
   for (int i = 0; i < blinks; i++) {
     setStateLEDRGB(true, color);
     delay(_timeBlinkLED);
-    setStateLEDRGB(false,color);
+    setStateLEDRGB(false, color);
     delay(_timeBlinkLED);
   }
 }
@@ -325,7 +327,7 @@ void TinyTrainable::sendMIDIAllNotesOff(byte channel) {
   }
 }
 
-// methouds for output printer
+// methods for output printer
 void TinyTrainable::setupOutputPrinter() {
   if (myOutput != nullptr) {
     myOutput->setupOutputPrinter();
@@ -365,6 +367,19 @@ void TinyTrainable::setPrinterWake() {
 void TinyTrainable::setPrinterTest() {
   if (myOutput != nullptr) {
     myOutput->setPrinterTest();
+  }
+}
+
+// methods for output screen
+void TinyTrainable::setupOutputScreen() {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputScreen();
+  }
+}
+
+void TinyTrainable::screenDrawWelcome() {
+  if (myOutput != nullptr) {
+    myOutput->screenDrawWelcome();
   }
 }
 

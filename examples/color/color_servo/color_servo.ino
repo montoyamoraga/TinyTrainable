@@ -24,8 +24,6 @@ const int tempo2 = 200;
 // constants for the hardware
 const int outputPin = 9;
 
-
-
 // setup() runs once, at the beginning
 void setup() {
 

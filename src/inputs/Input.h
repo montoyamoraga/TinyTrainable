@@ -14,7 +14,7 @@ class TinyTrainable;
 /// @brief Input base class
 class Input {
 public:
-/// @brief Input destructor
+  /// @brief Input destructor
   virtual ~Input() {}
   virtual void setupInstrument(bool serialDebugging) {}
   virtual void identify() {}
@@ -25,14 +25,15 @@ public:
 
   // gesture
   virtual void gestureSetupTF(String gestures[3],
-                       const unsigned char *model = nullptr) {}
+                              const unsigned char *model = nullptr) {}
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
 
   // speech
-  virtual void speechSetupTF(String sounds[3], const unsigned char *model = nullptr) {}
+  virtual void speechSetupTF(String sounds[3],
+                             const unsigned char *model = nullptr) {}
 
- /// @brief pointer to a TinyTrainable instance
+  /// @brief pointer to a TinyTrainable instance
   TinyTrainable *tiny = nullptr;
 };
 

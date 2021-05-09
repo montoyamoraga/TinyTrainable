@@ -15,7 +15,6 @@ class TinyTrainable;
 /// @brief Output base class
 class Output {
 public:
-
   /// @brief Output destructor
   virtual ~Output() {}
 
@@ -55,6 +54,10 @@ public:
   virtual void setPrinterSleep() {}
   virtual void setPrinterWake() {}
   virtual void setPrinterTest() {}
+
+  // methods for output screen
+  virtual void setupOutputScreen() {}
+  virtual void screenDrawWelcome() {}
 
   // methods for output serial
   virtual void setupOutputSerial() {}

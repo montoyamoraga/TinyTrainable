@@ -45,3 +45,5 @@ jobs:
           - name: Servo
           - name: Adafruit Thermal Printer Library
           - name: Arduino_TensorFlowLite
+          - name: Adafruit_SSD1306
+          - name: Adafruit_GFX

@@ -28,6 +28,8 @@ public:
                               const unsigned char *model = nullptr) {}
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
+  virtual void setAccelerationThreshold(float newVal) {}
+  virtual void setNumSamples(int newVal) {}
 
   // speech
   virtual void speechSetupTF(String sounds[3],

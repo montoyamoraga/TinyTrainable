@@ -136,6 +136,18 @@ void TinyTrainable::gestureReadData() {
   }
 }
 
+void TinyTrainable::setAccelerationThreshold(float newVal) {
+  if (myInput != nullptr) {
+    myInput->setAccelerationThreshold(newVal);
+  }
+}
+
+void TinyTrainable::setNumSamples(int newVal) {
+  if (myInput != nullptr) {
+    myInput->setNumSamples(newVal);
+  }
+}
+
 void TinyTrainable::speechSetupTF(String sounds[3],
                                   const unsigned char *model) {
   if (myInput != nullptr) {

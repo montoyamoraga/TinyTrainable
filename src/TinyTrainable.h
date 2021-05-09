@@ -126,6 +126,12 @@ public:
   /// @brief input gesture, read data for database
   void gestureReadData();
 
+  /// @brief input gesture, sets custom acceleration threshold
+  void setAccelerationThreshold(float newVal);
+
+  /// @brief input gesture, sets custom number of samples
+  void setNumSamples(int newVal);
+
   /// @brief input speech, setup TensorFlow model
   void speechSetupTF(String sounds[3], const unsigned char *model = nullptr);
 

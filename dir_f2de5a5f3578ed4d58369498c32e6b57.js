@@ -21,9 +21,7 @@ var dir_f2de5a5f3578ed4d58369498c32e6b57 =
       [ "OutputPrinter", "class_output_printer.html", "class_output_printer" ]
     ] ],
     [ "OutputScreen.cpp", "_output_screen_8cpp.html", null ],
-    [ "OutputScreen.h", "_output_screen_8h.html", [
-      [ "OutputScreen", "class_output_screen.html", "class_output_screen" ]
-    ] ],
+    [ "OutputScreen.h", "_output_screen_8h.html", "_output_screen_8h" ],
     [ "OutputSerial.cpp", "_output_serial_8cpp.html", null ],
     [ "OutputSerial.h", "_output_serial_8h.html", [
       [ "OutputSerial", "class_output_serial.html", "class_output_serial" ]

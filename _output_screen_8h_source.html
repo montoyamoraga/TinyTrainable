@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyTrainable: src/outputs/OutputLCD.h Source File</title>
+<title>TinyTrainable: src/outputs/OutputScreen.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_output_l_c_d_8h_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('_output_screen_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -92,12 +92,12 @@ $(document).ready(function(){initNavTree('_output_l_c_d_8h_source.html',''); ini
 
 <div class="header">
   <div class="headertitle">
-<div class="title">OutputLCD.h</div>  </div>
+<div class="title">OutputScreen.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_output_l_c_d_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef OUTPUT_LCD_H</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define OUTPUT_LCD_H</span></div>
+<a href="_output_screen_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef OUTPUT_SCREEN_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define OUTPUT_SCREEN_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
@@ -105,34 +105,34 @@ $(document).ready(function(){initNavTree('_output_l_c_d_8h_source.html',''); ini
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_tiny_trainable_8h.html">TinyTrainable.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_output_l_c_d.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_output_l_c_d.html">OutputLCD</a> : <span class="keyword">public</span> <a class="code" href="class_output.html">Output</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_output_screen.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_output_screen.html">OutputScreen</a> : <span class="keyword">public</span> <a class="code" href="class_output.html">Output</a> {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_output_l_c_d.html#a7beb955c9668682a3bed16a55620f96d">OutputLCD</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="class_output_screen.html#a682c0efc10289cda3b4767be2df66a47">OutputScreen</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="comment">// TinyTrainable methods</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_l_c_d.html#ae485e3d3eaec7548a4b160714fd9da56">setupOutputTest</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_l_c_d.html#ac63bf85fff05e823cd0bbcd5f06e58d3">playOutput</a>(<span class="keywordtype">int</span> classification) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_screen.html#a0f6e5c8fd5afed638c2556906a3953fc">setupOutputTest</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_output_screen.html#a298e9379d3e736a42ee095b917c10c4d">playOutput</a>(<span class="keywordtype">int</span> classification) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">// variables</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_output_l_c_d.html#a593b7f8d181815919c8fa628a37d886d">   29</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_output_l_c_d.html#a593b7f8d181815919c8fa628a37d886d">_outputPinLCD</a> = -1;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_output_screen.html#aaea2ee11d5c777c3a231702eb6443a68">   29</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="class_output_screen.html#aaea2ee11d5c777c3a231702eb6443a68">_outputPinScreen</a> = -1;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_output_8h_html"><div class="ttname"><a href="_output_8h.html">Output.h</a></div><div class="ttdoc">Output base class.</div></div>
 <div class="ttc" id="a_tiny_trainable_8h_html"><div class="ttname"><a href="_tiny_trainable_8h.html">TinyTrainable.h</a></div><div class="ttdoc">Arduino library for Tiny Trainable Instruments.</div></div>
 <div class="ttc" id="aclass_output_html"><div class="ttname"><a href="class_output.html">Output</a></div><div class="ttdoc">Output base class.</div><div class="ttdef"><b>Definition:</b> Output.h:16</div></div>
-<div class="ttc" id="aclass_output_l_c_d_html"><div class="ttname"><a href="class_output_l_c_d.html">OutputLCD</a></div><div class="ttdoc">OutputLCD inherits from Output.</div><div class="ttdef"><b>Definition:</b> OutputLCD.h:18</div></div>
-<div class="ttc" id="aclass_output_l_c_d_html_a593b7f8d181815919c8fa628a37d886d"><div class="ttname"><a href="class_output_l_c_d.html#a593b7f8d181815919c8fa628a37d886d">OutputLCD::_outputPinLCD</a></div><div class="ttdeci">int _outputPinLCD</div><div class="ttdef"><b>Definition:</b> OutputLCD.h:29</div></div>
-<div class="ttc" id="aclass_output_l_c_d_html_a7beb955c9668682a3bed16a55620f96d"><div class="ttname"><a href="class_output_l_c_d.html#a7beb955c9668682a3bed16a55620f96d">OutputLCD::OutputLCD</a></div><div class="ttdeci">OutputLCD()</div><div class="ttdoc">constructor</div><div class="ttdef"><b>Definition:</b> OutputLCD.cpp:7</div></div>
-<div class="ttc" id="aclass_output_l_c_d_html_ac63bf85fff05e823cd0bbcd5f06e58d3"><div class="ttname"><a href="class_output_l_c_d.html#ac63bf85fff05e823cd0bbcd5f06e58d3">OutputLCD::playOutput</a></div><div class="ttdeci">virtual void playOutput(int classification) override</div><div class="ttdef"><b>Definition:</b> OutputLCD.cpp:14</div></div>
-<div class="ttc" id="aclass_output_l_c_d_html_ae485e3d3eaec7548a4b160714fd9da56"><div class="ttname"><a href="class_output_l_c_d.html#ae485e3d3eaec7548a4b160714fd9da56">OutputLCD::setupOutputTest</a></div><div class="ttdeci">virtual void setupOutputTest() override</div><div class="ttdef"><b>Definition:</b> OutputLCD.cpp:9</div></div>
+<div class="ttc" id="aclass_output_screen_html"><div class="ttname"><a href="class_output_screen.html">OutputScreen</a></div><div class="ttdoc">OutputScreen inherits from Output.</div><div class="ttdef"><b>Definition:</b> OutputScreen.h:18</div></div>
+<div class="ttc" id="aclass_output_screen_html_a0f6e5c8fd5afed638c2556906a3953fc"><div class="ttname"><a href="class_output_screen.html#a0f6e5c8fd5afed638c2556906a3953fc">OutputScreen::setupOutputTest</a></div><div class="ttdeci">virtual void setupOutputTest() override</div><div class="ttdef"><b>Definition:</b> OutputScreen.cpp:9</div></div>
+<div class="ttc" id="aclass_output_screen_html_a298e9379d3e736a42ee095b917c10c4d"><div class="ttname"><a href="class_output_screen.html#a298e9379d3e736a42ee095b917c10c4d">OutputScreen::playOutput</a></div><div class="ttdeci">virtual void playOutput(int classification) override</div><div class="ttdef"><b>Definition:</b> OutputScreen.cpp:14</div></div>
+<div class="ttc" id="aclass_output_screen_html_a682c0efc10289cda3b4767be2df66a47"><div class="ttname"><a href="class_output_screen.html#a682c0efc10289cda3b4767be2df66a47">OutputScreen::OutputScreen</a></div><div class="ttdeci">OutputScreen()</div><div class="ttdoc">constructor</div><div class="ttdef"><b>Definition:</b> OutputScreen.cpp:7</div></div>
+<div class="ttc" id="aclass_output_screen_html_aaea2ee11d5c777c3a231702eb6443a68"><div class="ttname"><a href="class_output_screen.html#aaea2ee11d5c777c3a231702eb6443a68">OutputScreen::_outputPinScreen</a></div><div class="ttdeci">int _outputPinScreen</div><div class="ttdef"><b>Definition:</b> OutputScreen.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f2de5a5f3578ed4d58369498c32e6b57.html">outputs</a></li><li class="navelem"><a class="el" href="_output_l_c_d_8h.html">OutputLCD.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f2de5a5f3578ed4d58369498c32e6b57.html">outputs</a></li><li class="navelem"><a class="el" href="_output_screen_8h.html">OutputScreen.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

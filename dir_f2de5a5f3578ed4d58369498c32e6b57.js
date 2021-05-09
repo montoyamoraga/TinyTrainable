@@ -8,10 +8,6 @@ var dir_f2de5a5f3578ed4d58369498c32e6b57 =
     [ "OutputBuzzer.h", "_output_buzzer_8h.html", [
       [ "OutputBuzzer", "class_output_buzzer.html", "class_output_buzzer" ]
     ] ],
-    [ "OutputLCD.cpp", "_output_l_c_d_8cpp.html", null ],
-    [ "OutputLCD.h", "_output_l_c_d_8h.html", [
-      [ "OutputLCD", "class_output_l_c_d.html", "class_output_l_c_d" ]
-    ] ],
     [ "OutputLED.cpp", "_output_l_e_d_8cpp.html", null ],
     [ "OutputLED.h", "_output_l_e_d_8h.html", [
       [ "OutputLED", "class_output_l_e_d.html", "class_output_l_e_d" ]
@@ -23,6 +19,10 @@ var dir_f2de5a5f3578ed4d58369498c32e6b57 =
     [ "OutputPrinter.cpp", "_output_printer_8cpp.html", null ],
     [ "OutputPrinter.h", "_output_printer_8h.html", [
       [ "OutputPrinter", "class_output_printer.html", "class_output_printer" ]
+    ] ],
+    [ "OutputScreen.cpp", "_output_screen_8cpp.html", null ],
+    [ "OutputScreen.h", "_output_screen_8h.html", [
+      [ "OutputScreen", "class_output_screen.html", "class_output_screen" ]
     ] ],
     [ "OutputSerial.cpp", "_output_serial_8cpp.html", null ],
     [ "OutputSerial.h", "_output_serial_8h.html", [

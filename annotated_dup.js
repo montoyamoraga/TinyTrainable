@@ -6,10 +6,10 @@ var annotated_dup =
     [ "InputSpeech", "class_input_speech.html", "class_input_speech" ],
     [ "Output", "class_output.html", "class_output" ],
     [ "OutputBuzzer", "class_output_buzzer.html", "class_output_buzzer" ],
-    [ "OutputLCD", "class_output_l_c_d.html", "class_output_l_c_d" ],
     [ "OutputLED", "class_output_l_e_d.html", "class_output_l_e_d" ],
     [ "OutputMIDI", "class_output_m_i_d_i.html", "class_output_m_i_d_i" ],
     [ "OutputPrinter", "class_output_printer.html", "class_output_printer" ],
+    [ "OutputScreen", "class_output_screen.html", "class_output_screen" ],
     [ "OutputSerial", "class_output_serial.html", "class_output_serial" ],
     [ "OutputServo", "class_output_servo.html", "class_output_servo" ],
     [ "TinyTrainable", "class_tiny_trainable.html", "class_tiny_trainable" ]

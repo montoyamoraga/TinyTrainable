@@ -7,10 +7,10 @@ var hierarchy =
     ] ],
     [ "Output", "class_output.html", [
       [ "OutputBuzzer", "class_output_buzzer.html", null ],
-      [ "OutputLCD", "class_output_l_c_d.html", null ],
       [ "OutputLED", "class_output_l_e_d.html", null ],
       [ "OutputMIDI", "class_output_m_i_d_i.html", null ],
       [ "OutputPrinter", "class_output_printer.html", null ],
+      [ "OutputScreen", "class_output_screen.html", null ],
       [ "OutputSerial", "class_output_serial.html", null ],
       [ "OutputServo", "class_output_servo.html", null ]
     ] ],

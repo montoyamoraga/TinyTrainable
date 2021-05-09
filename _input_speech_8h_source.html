@@ -129,28 +129,25 @@ $(document).ready(function(){initNavTree('_input_speech_8h_source.html',''); ini
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2">InputSpeech</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_input_speech.html#ad5d049091f9f97ecd01902ac2a625700">setupInstrument</a>(<span class="keywordtype">bool</span> serialDebugging) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5">speechSetupTF</a>(String sounds[3], <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *model = <span class="keyword">nullptr</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">identify</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5">speechSetupTF</a>(String sounds[3],</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *model = <span class="keyword">nullptr</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">identify</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// TFLite setup</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d">   49</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d">NUM_SOUNDS</a> = 3;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_input_speech.html#a844d5c921e94de023949357bba00c584">   50</a></span>&#160;  String <a class="code" href="class_input_speech.html#a844d5c921e94de023949357bba00c584">_sounds</a>[3];</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// TFLite variables</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//   tflite::MicroErrorReporter tflErrorReporter;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//   tflite::AllOpsResolver tflOpsResolver;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">//   tflite::MicroErrorReporter tflErrorReporter;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">//   tflite::AllOpsResolver tflOpsResolver;</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_input_speech.html#ace167e5e4e635b99e2c1d872e1197922">   55</a></span>&#160;  <span class="keyword">const</span> tflite::Model *<a class="code" href="class_input_speech.html#ace167e5e4e635b99e2c1d872e1197922">tflModel</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//   tflite::MicroInterpreter *tflInterpreter = nullptr;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//   TfLiteTensor *tflInputTensor = nullptr;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//   TfLiteTensor *tflOutputTensor = nullptr;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">//   tflite::MicroInterpreter *tflInterpreter = nullptr;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">//   TfLiteTensor *tflInputTensor = nullptr;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">//   TfLiteTensor *tflOutputTensor = nullptr;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_input_8h_html"><div class="ttname"><a href="_input_8h.html">Input.h</a></div><div class="ttdoc">Input base class.</div></div>
 <div class="ttc" id="a_tiny_trainable_8h_html"><div class="ttname"><a href="_tiny_trainable_8h.html">TinyTrainable.h</a></div><div class="ttdoc">Arduino library for Tiny Trainable Instruments.</div></div>
 <div class="ttc" id="aclass_input_html"><div class="ttname"><a href="class_input.html">Input</a></div><div class="ttdoc">Input base class.</div><div class="ttdef"><b>Definition:</b> Input.h:15</div></div>
@@ -158,7 +155,7 @@ $(document).ready(function(){initNavTree('_input_speech_8h_source.html',''); ini
 <div class="ttc" id="aclass_input_speech_html_a2caa937542364f4c6f7381539a42c0c2"><div class="ttname"><a href="class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2">InputSpeech::InputSpeech</a></div><div class="ttdeci">InputSpeech()</div><div class="ttdef"><b>Definition:</b> InputSpeech.cpp:11</div></div>
 <div class="ttc" id="aclass_input_speech_html_a64b9d0ab5d638469803da89b5531a65d"><div class="ttname"><a href="class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d">InputSpeech::NUM_SOUNDS</a></div><div class="ttdeci">const int NUM_SOUNDS</div><div class="ttdef"><b>Definition:</b> InputSpeech.h:49</div></div>
 <div class="ttc" id="aclass_input_speech_html_a844d5c921e94de023949357bba00c584"><div class="ttname"><a href="class_input_speech.html#a844d5c921e94de023949357bba00c584">InputSpeech::_sounds</a></div><div class="ttdeci">String _sounds[3]</div><div class="ttdef"><b>Definition:</b> InputSpeech.h:50</div></div>
-<div class="ttc" id="aclass_input_speech_html_aa615ea9e707a1bd0f56aaaf1b46250ed"><div class="ttname"><a href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">InputSpeech::identify</a></div><div class="ttdeci">virtual void identify() override</div><div class="ttdef"><b>Definition:</b> InputSpeech.cpp:39</div></div>
+<div class="ttc" id="aclass_input_speech_html_aa615ea9e707a1bd0f56aaaf1b46250ed"><div class="ttname"><a href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">InputSpeech::identify</a></div><div class="ttdeci">virtual void identify() override</div><div class="ttdef"><b>Definition:</b> InputSpeech.cpp:38</div></div>
 <div class="ttc" id="aclass_input_speech_html_ace167e5e4e635b99e2c1d872e1197922"><div class="ttname"><a href="class_input_speech.html#ace167e5e4e635b99e2c1d872e1197922">InputSpeech::tflModel</a></div><div class="ttdeci">const tflite::Model * tflModel</div><div class="ttdef"><b>Definition:</b> InputSpeech.h:55</div></div>
 <div class="ttc" id="aclass_input_speech_html_ad5d049091f9f97ecd01902ac2a625700"><div class="ttname"><a href="class_input_speech.html#ad5d049091f9f97ecd01902ac2a625700">InputSpeech::setupInstrument</a></div><div class="ttdeci">virtual void setupInstrument(bool serialDebugging) override</div><div class="ttdef"><b>Definition:</b> InputSpeech.cpp:17</div></div>
 <div class="ttc" id="aclass_input_speech_html_af5d2d4ee9cfe4023c3ab5cce17d84ba5"><div class="ttname"><a href="class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5">InputSpeech::speechSetupTF</a></div><div class="ttdeci">virtual void speechSetupTF(String sounds[3], const unsigned char *model=nullptr) override</div><div class="ttdef"><b>Definition:</b> InputSpeech.cpp:29</div></div>

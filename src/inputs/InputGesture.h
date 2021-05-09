@@ -35,7 +35,7 @@ public:
 
   virtual void setupInstrument(bool serialDebugging) override;
   virtual void gestureSetupTF(String gestures[3],
-                       const unsigned char *model = nullptr) override;
+                              const unsigned char *model = nullptr) override;
   virtual void identify() override;
   virtual void gesturePrintHeader() override;
   virtual void gestureReadData() override;

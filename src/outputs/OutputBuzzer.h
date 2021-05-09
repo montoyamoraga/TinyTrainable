@@ -4,7 +4,7 @@
 #ifndef OUTPUT_BUZZER_H
 #define OUTPUT_BUZZER_H
 
-/// @include library Arduino 
+/// @include library Arduino
 #include <Arduino.h>
 
 /// @include library Output

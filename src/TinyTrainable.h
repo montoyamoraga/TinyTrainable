@@ -16,12 +16,24 @@
 #include "outputs/Output.h"
 
 /// @enum to set the input type
-enum InputType { INPUT_NONE = 0, INPUT_COLOR = 1, INPUT_GESTURE = 2, INPUT_SPEECH = 3};
+enum InputType {
+  INPUT_NONE = 0,
+  INPUT_COLOR = 1,
+  INPUT_GESTURE = 2,
+  INPUT_SPEECH = 3
+};
 
 /// @enum to set the output type
 enum OutputType {
-  OUTPUT_NONE = 0, OUTPUT_BUZZER = 1, OUTPUT_LED = 2, OUTPUT_MIDI = 3,
-  OUTPUT_PRINTER = 4, OUTPUT_SCREEN = 5, OUTPUT_SERIAL = 6, OUTPUT_SERVO = 7};
+  OUTPUT_NONE = 0,
+  OUTPUT_BUZZER = 1,
+  OUTPUT_LED = 2,
+  OUTPUT_MIDI = 3,
+  OUTPUT_PRINTER = 4,
+  OUTPUT_SCREEN = 5,
+  OUTPUT_SERIAL = 6,
+  OUTPUT_SERVO = 7
+};
 
 /// @enum colors for setting the RGB LED
 enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
@@ -31,7 +43,6 @@ enum Colors { red = 0, green = 1, blue = 2, yellow = 3, magenta = 4, cyan = 5 };
 class TinyTrainable {
 
 protected:
-
   /// @brief Input pointer
   Input *myInput = nullptr;
 
@@ -39,10 +50,9 @@ protected:
   Output *myOutput = nullptr;
 
   /// @brief pin for output
-//   int _outputPinTest = -1;
+  //   int _outputPinTest = -1;
 
 public:
-
   /// @brief static boolean, toggles debugging over serial port
   static bool _serialDebugging;
 
@@ -67,7 +77,7 @@ public:
       Serial.println(message);
     }
   };
-  
+
   /// @brief setup debugging
   /// @param serialDebugging to toggle serial debugging on/off
   void setupInstrument(bool serialDebugging);
@@ -75,8 +85,8 @@ public:
   /// @brief initialize LEDs of Arduino
   void setupLEDs();
 
-/// @brief set state of LED built-in
-/// @param turnOn boolean, on/off
+  /// @brief set state of LED built-in
+  /// @param turnOn boolean, on/off
   void setStateLEDBuiltIn(bool turnOn);
 
   /// @brief set state of LED RGB
@@ -176,7 +186,6 @@ public:
   int getServoMaxAngle();
   int getServoMinAngle();
   void moveServo(int classification);
-
 };
 
 // conditional compilation

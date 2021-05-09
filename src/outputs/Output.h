@@ -15,7 +15,6 @@ class TinyTrainable;
 /// @brief Output base class
 class Output {
 public:
-
   /// @brief Output destructor
   virtual ~Output() {}
 

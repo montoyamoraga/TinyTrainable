@@ -17,8 +17,7 @@ void setup() {
   myTiny.setupInstrument(debugOn);
 
   // set its output
-//   myTiny.setupOutputBuzzer(outputPin);
+  //   myTiny.setupOutputBuzzer(outputPin);
 }
 
-void loop() {
-}
+void loop() {}

@@ -48,9 +48,7 @@ void OutputPrinter::setPrinterTest() {
   _printer->feed(2);
 }
 
-void OutputPrinter::setupOutputTest() {
-  
-}
+void OutputPrinter::setupOutputTest() {}
 
 void OutputPrinter::playOutput(int classification) {
   // Serial.println("TODO OutputPrinter playOutput");

@@ -21,8 +21,8 @@ void InputSpeech::setupInstrument(bool serialDebugging) {
 
   if (tiny->_serialDebugging) {
     Serial.begin(tiny->_baudRate);
-    while(!Serial)
-    ;
+    while (!Serial)
+      ;
   }
 }
 
@@ -33,8 +33,6 @@ void InputSpeech::speechSetupTF(String sounds[3], const unsigned char *model) {
 
   // load the default model or the custom model
   tflModel = tflite::GetModel((model == nullptr) ? modelSpeechDefault : model);
-
 }
 
-void InputSpeech::identify() {
-}
+void InputSpeech::identify() {}

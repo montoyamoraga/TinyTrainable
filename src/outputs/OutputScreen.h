@@ -25,8 +25,9 @@
 /// @include library Adafruit_SSD1306 for screen
 #include <Adafruit_SSD1306.h>
 
-#define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
-#define SCREEN_ADDRESS 0x3C ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
+#define OLED_RESET 4 // Reset pin # (or -1 if sharing Arduino reset pin)
+#define SCREEN_ADDRESS                                                         \
+  0x3C ///< See datasheet for Address; 0x3D for 128x64, 0x3C for 128x32
 
 /// @class OutputScreen
 /// @brief OutputScreen inherits from Output
@@ -55,7 +56,6 @@ public:
 
   // instance of Adafruit_SSD1306
   Adafruit_SSD1306 *_screen = nullptr;
-
 };
 
 #endif

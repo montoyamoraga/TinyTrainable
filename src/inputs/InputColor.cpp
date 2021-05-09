@@ -165,7 +165,7 @@ void InputColor::identify() {
     tiny->playOutput(classification);
 
     // update previous classification
-    _previousClassification = classification;    
+    _previousClassification = classification;
   }
 }
 

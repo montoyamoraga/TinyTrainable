@@ -14,26 +14,25 @@ OutputScreen::~OutputScreen() {
   }
 }
 
-void OutputScreen::setupOutputTest() {
-  
-}
+void OutputScreen::setupOutputTest() {}
 
 void OutputScreen::setupOutputScreen() {
 
-//   Serial.begin(9600);
+  //   Serial.begin(9600);
 
   if (!_screen) {
-    _screen = new Adafruit_SSD1306(_screenWidth, _screenHeight, &Wire, _oledReset);
+    _screen =
+        new Adafruit_SSD1306(_screenWidth, _screenHeight, &Wire, _oledReset);
   }
-    if (!_screen->begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
+  if (!_screen->begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     Serial.println(F("SSD1306 allocation failed"));
-    for (;;); // Don't proceed, loop forever
+    for (;;)
+      ; // Don't proceed, loop forever
   }
 
   _screen->clearDisplay();
   _screen->display();
   delay(2000);
-
 }
 
 void OutputScreen::screenDrawWelcome() {
@@ -45,10 +44,7 @@ void OutputScreen::screenDrawWelcome() {
   _screen->println(F("instruments"));
   _screen->display();
   delay(2000);
-
-
 }
-
 
 void OutputScreen::playOutput(int classification) {
   // Serial.println("TODO OutputScreen playOutput");

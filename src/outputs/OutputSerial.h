@@ -18,7 +18,6 @@
 
 class OutputSerial : public Output {
 public:
-
   /// @brief constructor
   OutputSerial();
 

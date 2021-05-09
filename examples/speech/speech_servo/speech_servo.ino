@@ -20,5 +20,4 @@ void setup() {
   //  myTiny.setupOutputBuzzer(outputPin);
 }
 
-void loop() {
-}
+void loop() {}

@@ -116,7 +116,8 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
 };
 
 /// @brief input gesture, setup TensorFlow
-void TinyTrainable::gestureSetupTF(String gestures[3], const unsigned char *model) {
+void TinyTrainable::gestureSetupTF(String gestures[3],
+                                   const unsigned char *model) {
   if (myInput != nullptr) {
     myInput->gestureSetupTF(gestures, model);
   }
@@ -134,7 +135,8 @@ void TinyTrainable::gestureReadData() {
   }
 }
 
-void TinyTrainable::speechSetupTF(String sounds[3], const unsigned char *model) {
+void TinyTrainable::speechSetupTF(String sounds[3],
+                                  const unsigned char *model) {
   if (myInput != nullptr) {
     myInput->speechSetupTF(sounds, model);
   }
@@ -181,7 +183,7 @@ void TinyTrainable::blinkLEDRGB(int blinks, Colors color) {
   for (int i = 0; i < blinks; i++) {
     setStateLEDRGB(true, color);
     delay(_timeBlinkLED);
-    setStateLEDRGB(false,color);
+    setStateLEDRGB(false, color);
     delay(_timeBlinkLED);
   }
 }
@@ -367,7 +369,7 @@ void TinyTrainable::setPrinterTest() {
   }
 }
 
-  // methods for output screen
+// methods for output screen
 void TinyTrainable::setupOutputScreen() {
   if (myOutput != nullptr) {
     myOutput->setupOutputScreen();
@@ -377,7 +379,7 @@ void TinyTrainable::setupOutputScreen() {
 void TinyTrainable::screenDrawWelcome() {
   if (myOutput != nullptr) {
     myOutput->screenDrawWelcome();
-  }	
+  }
 }
 
 // methods for output serial

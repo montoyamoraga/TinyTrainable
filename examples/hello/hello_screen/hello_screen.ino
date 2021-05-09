@@ -5,13 +5,12 @@
 TinyTrainable myTiny(INPUT_NONE, OUTPUT_SCREEN);
 
 // constants for the hardware
-//const int outputPin = 9;
+// const int outputPin = 9;
 
 void setup() {
 
   myTiny.setupOutputScreen();
   myTiny.screenDrawWelcome();
-
 }
 
 void loop() {

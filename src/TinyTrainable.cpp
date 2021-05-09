@@ -324,7 +324,7 @@ void TinyTrainable::sendMIDIAllNotesOff(byte channel) {
   }
 }
 
-// methouds for output printer
+// methods for output printer
 void TinyTrainable::setupOutputPrinter() {
   if (myOutput != nullptr) {
     myOutput->setupOutputPrinter();
@@ -365,6 +365,19 @@ void TinyTrainable::setPrinterTest() {
   if (myOutput != nullptr) {
     myOutput->setPrinterTest();
   }
+}
+
+  // methods for output screen
+void TinyTrainable::setupOutputScreen() {
+  if (myOutput != nullptr) {
+    myOutput->setupOutputScreen();
+  }
+}
+
+void TinyTrainable::screenDrawWelcome() {
+  if (myOutput != nullptr) {
+    myOutput->screenDrawWelcome();
+  }	
 }
 
 // methods for output serial

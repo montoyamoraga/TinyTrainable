@@ -160,6 +160,10 @@ public:
   void setPrinterWake();
   void setPrinterTest();
 
+  // methods for output screen
+  void setupOutputScreen();
+  void screenDrawWelcome();
+
   // methods for output serial
   void setupOutputSerial();
 

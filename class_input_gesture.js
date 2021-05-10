@@ -5,6 +5,8 @@ var class_input_gesture =
     [ "gestureReadData", "class_input_gesture.html#a904a188c89289dc7f366ca05a75d6a32", null ],
     [ "gestureSetupTF", "class_input_gesture.html#a06516cc7e9f464faf4230019acd6c6ee", null ],
     [ "identify", "class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d", null ],
+    [ "setAccelerationThreshold", "class_input_gesture.html#a4650c9fcf78b117fcd252ae2e87a6579", null ],
+    [ "setNumSamples", "class_input_gesture.html#ac86c785c45542cde2a4f3c5e20720c04", null ],
     [ "setupInstrument", "class_input_gesture.html#aff59bf2cf5feaec7827dda87af2f641b", null ],
     [ "setupSensorLSM9DS1", "class_input_gesture.html#aba1b7e2869b0ba9fe8dc518eb3542a28", null ],
     [ "_accelerationThreshold", "class_input_gesture.html#a6063dc3a2d3d65d54dd3cd3da4985e73", null ],

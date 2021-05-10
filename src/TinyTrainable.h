@@ -102,10 +102,6 @@ public:
   /// @param blinks integer, number of blinks
   void blinkLEDRGB(int blinks, Colors color);
 
-  /// @brief blink LEDs
-  /// @param color Color
-  void errorBlink(Colors color);
-
   /// @brief input, identify class
   void identify();
 

@@ -237,14 +237,6 @@ void TinyTrainable::setStateLEDRGB(bool turnOn, Colors color) {
   }
 }
 
-/// @brief infinite loop, blinking of LED RGB and LED built-in
-void TinyTrainable::errorBlink(Colors color) {
-  while (true) {
-    blinkLEDRGB(1, color);
-    blinkLEDBuiltIn(1);
-  }
-}
-
 void TinyTrainable::setupOutputTest() {
   if (myOutput != nullptr) {
     myOutput->setupOutputTest();

@@ -102,6 +102,7 @@ void TinyTrainable::identify() {
 }
 
 void TinyTrainable::playOutput(int classification) {
+  debugPrint(classification);
   if (myOutput != nullptr) {
     myOutput->playOutput(classification);
   }
@@ -132,6 +133,18 @@ void TinyTrainable::gesturePrintHeader() {
 void TinyTrainable::gestureReadData() {
   if (myInput != nullptr) {
     myInput->gestureReadData();
+  }
+}
+
+void TinyTrainable::setAccelerationThreshold(float newVal) {
+  if (myInput != nullptr) {
+    myInput->setAccelerationThreshold(newVal);
+  }
+}
+
+void TinyTrainable::setNumSamples(int newVal) {
+  if (myInput != nullptr) {
+    myInput->setNumSamples(newVal);
   }
 }
 

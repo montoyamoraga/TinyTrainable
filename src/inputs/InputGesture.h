@@ -39,6 +39,8 @@ public:
   virtual void identify() override;
   virtual void gesturePrintHeader() override;
   virtual void gestureReadData() override;
+  virtual void setAccelerationThreshold(float newVal) override;
+  virtual void setNumSamples(int newVal) override;
 
 private:
   void setupSensorLSM9DS1();

@@ -200,6 +200,14 @@ void InputGesture::gestureReadData() {
   }
 }
 
+void InputGesture::setAccelerationThreshold(float newVal) {
+  _accelerationThreshold = newVal;
+}
+
+void InputGesture::setNumSamples(int newVal) {
+  _numSamples = newVal;
+}
+
 /// @brief function for setup of sensor LSM9DS1
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer

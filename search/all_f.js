@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['undefparam_214',['undefParam',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5baa86f350939ebc936e38fdc42b9e394ff',1,'OutputBuzzer']]]
+  ['yellow_214',['yellow',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967ab31edea3fab8c488c7a8f78545e7f5a9',1,'TinyTrainable.h']]]
 ];

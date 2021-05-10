@@ -6,7 +6,6 @@ var class_tiny_trainable =
     [ "blinkLEDRGB", "class_tiny_trainable.html#a391c42653d32a7438cab824bac75ca84", null ],
     [ "bpmToMs", "class_tiny_trainable.html#a221585d11c9f71c6cc9e20ef2ef56acb", null ],
     [ "debugPrint", "class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5", null ],
-    [ "errorBlink", "class_tiny_trainable.html#a0a1c7dea3fa8c865878c20777d9869f3", null ],
     [ "gesturePrintHeader", "class_tiny_trainable.html#a38b457cc23cd6a92249b1cdaa5ccbde6", null ],
     [ "gestureReadData", "class_tiny_trainable.html#a03597cae7efc7e9c2efa11e9f37da41d", null ],
     [ "gestureSetupTF", "class_tiny_trainable.html#aa3db4d10749f97a59797892d81b661d2", null ],

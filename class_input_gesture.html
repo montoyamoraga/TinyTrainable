@@ -141,8 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a230646fa6e6433b4d9ac3535b7d52087 inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ddaa7f2974b49cb5ba74d83dc069bcd inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd">trainKNN</a> (int k, int examplesPerClass, float colorThreshold, String objects[3])</td></tr>
 <tr class="separator:a3ddaa7f2974b49cb5ba74d83dc069bcd inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2356fe0c4c6f00120bab2674dafa2854 inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#a2356fe0c4c6f00120bab2674dafa2854">speechSetupTF</a> (String sounds[3], const unsigned char *model=nullptr)</td></tr>
-<tr class="separator:a2356fe0c4c6f00120bab2674dafa2854 inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0c044cacf39917b34df4869f637eaf inherit pub_methods_class_input"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input.html#ace0c044cacf39917b34df4869f637eaf">setupSpeechModel</a> (String sounds[3], const unsigned char *model=nullptr)</td></tr>
+<tr class="separator:ace0c044cacf39917b34df4869f637eaf inherit pub_methods_class_input"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -156,6 +156,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a6063dc3a2d3d65d54dd3cd3da4985e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">threshold of significance measured in G's  <a href="class_input_gesture.html#a6063dc3a2d3d65d54dd3cd3da4985e73">More...</a><br /></td></tr>
 <tr class="separator:a6063dc3a2d3d65d54dd3cd3da4985e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc5fb59ae372e75d0054fb3377c345cc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#abc5fb59ae372e75d0054fb3377c345cc">_numSamples</a> = 119</td></tr>
+<tr class="memdesc:abc5fb59ae372e75d0054fb3377c345cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of samples per motion  <a href="class_input_gesture.html#abc5fb59ae372e75d0054fb3377c345cc">More...</a><br /></td></tr>
 <tr class="separator:abc5fb59ae372e75d0054fb3377c345cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab13afbdffd6ee0fc55d38414a35eee08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#ab13afbdffd6ee0fc55d38414a35eee08">_samplesRead</a> = <a class="el" href="class_input_gesture.html#abc5fb59ae372e75d0054fb3377c345cc">_numSamples</a></td></tr>
 <tr class="separator:ab13afbdffd6ee0fc55d38414a35eee08"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,20 +191,24 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a2aee45ecfbf2f81107698b6da09b09ed"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a2aee45ecfbf2f81107698b6da09b09ed">tensorArena</a> [<a class="el" href="class_input_gesture.html#a8ab899e4ab366f9d02e325478df93431">tensorArenaSize</a>]</td></tr>
 <tr class="separator:a2aee45ecfbf2f81107698b6da09b09ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b7ddae31b14cceecfc16faa7d8fe886"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a9b7ddae31b14cceecfc16faa7d8fe886">aX</a></td></tr>
+<tr class="memdesc:a9b7ddae31b14cceecfc16faa7d8fe886"><td class="mdescLeft">&#160;</td><td class="mdescRight">acceleration in x, y, z  <a href="class_input_gesture.html#a9b7ddae31b14cceecfc16faa7d8fe886">More...</a><br /></td></tr>
 <tr class="separator:a9b7ddae31b14cceecfc16faa7d8fe886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84678c7ee168029a8b02a62d9ed78a8b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a84678c7ee168029a8b02a62d9ed78a8b">aY</a></td></tr>
 <tr class="separator:a84678c7ee168029a8b02a62d9ed78a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a155f3ae08c6a7115d28707e22e06fa5b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a155f3ae08c6a7115d28707e22e06fa5b">aZ</a></td></tr>
 <tr class="separator:a155f3ae08c6a7115d28707e22e06fa5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81fd3293a04eccb974483cbc6d9ebf7d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a81fd3293a04eccb974483cbc6d9ebf7d">gX</a></td></tr>
+<tr class="memdesc:a81fd3293a04eccb974483cbc6d9ebf7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">gravity in x, y, z  <a href="class_input_gesture.html#a81fd3293a04eccb974483cbc6d9ebf7d">More...</a><br /></td></tr>
 <tr class="separator:a81fd3293a04eccb974483cbc6d9ebf7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0582e9889a229f47a8e636e0dc710a54"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a0582e9889a229f47a8e636e0dc710a54">gY</a></td></tr>
 <tr class="separator:a0582e9889a229f47a8e636e0dc710a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44dd96d11b254de4aa1d499337353266"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a44dd96d11b254de4aa1d499337353266">gZ</a></td></tr>
 <tr class="separator:a44dd96d11b254de4aa1d499337353266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6826e16e43299877d6393ba9c36a0574"><td class="memItemLeft" align="right" valign="top">const String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#a6826e16e43299877d6393ba9c36a0574">_gestureHeader</a> = &quot;aX,<a class="el" href="class_input_gesture.html#a84678c7ee168029a8b02a62d9ed78a8b">aY</a>,<a class="el" href="class_input_gesture.html#a155f3ae08c6a7115d28707e22e06fa5b">aZ</a>,<a class="el" href="class_input_gesture.html#a81fd3293a04eccb974483cbc6d9ebf7d">gX</a>,<a class="el" href="class_input_gesture.html#a0582e9889a229f47a8e636e0dc710a54">gY</a>,<a class="el" href="class_input_gesture.html#a44dd96d11b254de4aa1d499337353266">gZ</a>&quot;</td></tr>
+<tr class="memdesc:a6826e16e43299877d6393ba9c36a0574"><td class="mdescLeft">&#160;</td><td class="mdescRight">header for gesture database  <a href="class_input_gesture.html#a6826e16e43299877d6393ba9c36a0574">More...</a><br /></td></tr>
 <tr class="separator:a6826e16e43299877d6393ba9c36a0574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad3bfbb7a6072acdba25c815c93c53be"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_gesture.html#aad3bfbb7a6072acdba25c815c93c53be">_floatDecimals</a> = 3</td></tr>
+<tr class="memdesc:aad3bfbb7a6072acdba25c815c93c53be"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of decimals for floating point numbers  <a href="class_input_gesture.html#aad3bfbb7a6072acdba25c815c93c53be">More...</a><br /></td></tr>
 <tr class="separator:aad3bfbb7a6072acdba25c815c93c53be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
@@ -583,6 +588,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>number of decimals for floating point numbers </p>
+
 </div>
 </div>
 <a id="a6826e16e43299877d6393ba9c36a0574"></a>
@@ -604,6 +611,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>header for gesture database </p>
 
 </div>
 </div>
@@ -715,6 +724,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>number of samples per motion </p>
+
 </div>
 </div>
 <a id="ab13afbdffd6ee0fc55d38414a35eee08"></a>
@@ -758,6 +769,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>acceleration in x, y, z </p>
 
 </div>
 </div>
@@ -824,6 +837,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>gravity in x, y, z </p>
 
 </div>
 </div>

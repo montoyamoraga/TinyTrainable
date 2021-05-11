@@ -117,11 +117,12 @@ Inheritance diagram for InputSpeech:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2caa937542364f4c6f7381539a42c0c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2">InputSpeech</a> ()</td></tr>
+<tr class="memdesc:a2caa937542364f4c6f7381539a42c0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2">More...</a><br /></td></tr>
 <tr class="separator:a2caa937542364f4c6f7381539a42c0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d049091f9f97ecd01902ac2a625700"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ad5d049091f9f97ecd01902ac2a625700">setupInstrument</a> (bool serialDebugging) override</td></tr>
 <tr class="separator:ad5d049091f9f97ecd01902ac2a625700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5d2d4ee9cfe4023c3ab5cce17d84ba5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5">speechSetupTF</a> (String sounds[3], const unsigned char *model=nullptr) override</td></tr>
-<tr class="separator:af5d2d4ee9cfe4023c3ab5cce17d84ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ba3ec94dd881d848b7d3c2d0f123cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ae6ba3ec94dd881d848b7d3c2d0f123cc">setupSpeechModel</a> (String sounds[3], const unsigned char *model=nullptr) override</td></tr>
+<tr class="separator:ae6ba3ec94dd881d848b7d3c2d0f123cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa615ea9e707a1bd0f56aaaf1b46250ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">identify</a> () override</td></tr>
 <tr class="separator:aa615ea9e707a1bd0f56aaaf1b46250ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_input"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_input')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_input.html">Input</a></td></tr>
@@ -159,7 +160,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_input_speech.html" title="InputSpeech inherits from Input.">InputSpeech</a> inherits from <a class="el" href="class_input.html" title="Input base class.">Input</a>. </p>
-<div class="fragment"></div><!-- fragment --><p> Arduino</p><div class="fragment"></div><!-- fragment --><p> <a class="el" href="class_tiny_trainable.html" title="TinyTrainable base class.">TinyTrainable</a></p><div class="fragment"></div><!-- fragment --><p> <a class="el" href="class_input.html" title="Input base class.">Input</a></p><div class="fragment"></div><!-- fragment --><p> for input microphone</p><div class="fragment"></div><!-- fragment --><p> for machine learning </p>
+<div class="fragment"></div><!-- fragment --><p> Arduino</p><div class="fragment"></div><!-- fragment --><p> <a class="el" href="class_tiny_trainable.html" title="TinyTrainable base class.">TinyTrainable</a></p><div class="fragment"></div><!-- fragment --><p> <a class="el" href="class_input.html" title="Input base class.">Input</a></p><div class="fragment"></div><!-- fragment --><p> for input microphone</p><div class="fragment"></div><!-- fragment --><p> for machine learning</p><div class="fragment"></div><!-- fragment --><p> from TinyML micro_speech </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2caa937542364f4c6f7381539a42c0c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2caa937542364f4c6f7381539a42c0c2">&#9670;&nbsp;</a></span>InputSpeech()</h2>
@@ -175,6 +176,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>constructor </p>
 
 </div>
 </div>
@@ -234,8 +237,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af5d2d4ee9cfe4023c3ab5cce17d84ba5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5d2d4ee9cfe4023c3ab5cce17d84ba5">&#9670;&nbsp;</a></span>speechSetupTF()</h2>
+<a id="ae6ba3ec94dd881d848b7d3c2d0f123cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ba3ec94dd881d848b7d3c2d0f123cc">&#9670;&nbsp;</a></span>setupSpeechModel()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,7 +247,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void InputSpeech::speechSetupTF </td>
+          <td class="memname">void InputSpeech::setupSpeechModel </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
           <td class="paramname"><em>sounds</em>[3], </td>
@@ -268,7 +271,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_input.html#a2356fe0c4c6f00120bab2674dafa2854">Input</a>.</p>
+<p>Reimplemented from <a class="el" href="class_input.html#ace0c044cacf39917b34df4869f637eaf">Input</a>.</p>
 
 </div>
 </div>

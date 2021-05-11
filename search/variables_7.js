@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['sambabd_408',['sambaBD',['../_m_i_d_i_patterns_8h.html#a2c40baff52f9931754bdf56ad4619ed9',1,'MIDIPatterns.h']]],
-  ['sambach_409',['sambaCH',['../_m_i_d_i_patterns_8h.html#a2e3855abae70e712eb517a108ff29e2b',1,'MIDIPatterns.h']]],
-  ['sambaht_410',['sambaHT',['../_m_i_d_i_patterns_8h.html#a072110d1166edfb69354491d4c5eebf6',1,'MIDIPatterns.h']]],
-  ['sambasn_411',['sambaSN',['../_m_i_d_i_patterns_8h.html#a8b0ee17549a4c69149b25001fe28b5a5',1,'MIDIPatterns.h']]]
+  ['gx_444',['gX',['../class_input_gesture.html#a81fd3293a04eccb974483cbc6d9ebf7d',1,'InputGesture']]],
+  ['gy_445',['gY',['../class_input_gesture.html#a0582e9889a229f47a8e636e0dc710a54',1,'InputGesture']]],
+  ['gz_446',['gZ',['../class_input_gesture.html#a44dd96d11b254de4aa1d499337353266',1,'InputGesture']]]
 ];

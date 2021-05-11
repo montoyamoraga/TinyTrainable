@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['randomparam_153',['randomParam',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5ba9079b1aad9dd2190e90f37d554b5485a',1,'OutputBuzzer']]],
-  ['rangeparam_154',['rangeParam',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5baef08f2cc0c9b89dd47b0d109b65b2f8e',1,'OutputBuzzer']]],
-  ['readcolor_155',['readColor',['../class_input_color.html#a6b003d0c90cc42225c1af0d1073ccf8f',1,'InputColor']]],
-  ['red_156',['red',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967aace9033470c7bfe9523c814271251908',1,'TinyTrainable.h']]]
+  ['notebassdrum_123',['noteBassDrum',['../class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949',1,'OutputMIDI']]],
+  ['noteclosedhihat_124',['noteClosedHiHat',['../class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73',1,'OutputMIDI']]],
+  ['notehitom_125',['noteHiTom',['../class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f',1,'OutputMIDI']]],
+  ['notesnare_126',['noteSnare',['../class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4',1,'OutputMIDI']]],
+  ['num_5fgestures_127',['NUM_GESTURES',['../class_input_gesture.html#ae790af1be216de1db98c89be507f8324',1,'InputGesture']]],
+  ['num_5fsounds_128',['NUM_SOUNDS',['../class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d',1,'InputSpeech']]]
 ];

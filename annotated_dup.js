@@ -12,5 +12,7 @@ var annotated_dup =
     [ "OutputScreen", "class_output_screen.html", "class_output_screen" ],
     [ "OutputSerial", "class_output_serial.html", "class_output_serial" ],
     [ "OutputServo", "class_output_servo.html", "class_output_servo" ],
+    [ "PreviousResultsQueue", "class_previous_results_queue.html", "class_previous_results_queue" ],
+    [ "RecognizeCommands", "class_recognize_commands.html", "class_recognize_commands" ],
     [ "TinyTrainable", "class_tiny_trainable.html", "class_tiny_trainable" ]
 ];

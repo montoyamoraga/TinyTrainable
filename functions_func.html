@@ -94,6 +94,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 &#160;
 
 <h3><a id="index_b"></a>- b -</h3><ul>
+<li>back()
+: <a class="el" href="class_previous_results_queue.html#a2ca304c1c3a6c894e12942b830a04c79">PreviousResultsQueue</a>
+</li>
 <li>blinkLEDBuiltIn()
 : <a class="el" href="class_tiny_trainable.html#a6b44b24e2f4881f612a80c0aa4c7e810">TinyTrainable</a>
 </li>
@@ -111,6 +114,23 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>debugPrint()
 : <a class="el" href="class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5">TinyTrainable</a>
+</li>
+</ul>
+
+
+<h3><a id="index_e"></a>- e -</h3><ul>
+<li>empty()
+: <a class="el" href="class_previous_results_queue.html#ae34d117907dbc79598e55cbf30c314ff">PreviousResultsQueue</a>
+</li>
+</ul>
+
+
+<h3><a id="index_f"></a>- f -</h3><ul>
+<li>from_front()
+: <a class="el" href="class_previous_results_queue.html#aaf9f2f03ff7e88c2756023429ec69dbc">PreviousResultsQueue</a>
+</li>
+<li>front()
+: <a class="el" href="class_previous_results_queue.html#a840807db906debc5c3324e50f56bf144">PreviousResultsQueue</a>
 </li>
 </ul>
 
@@ -220,12 +240,30 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="class_output_servo.html#a530f50db199a433a191f34abffcc4151">OutputServo</a>
 , <a class="el" href="class_tiny_trainable.html#a6897144d519d0d19c8c3835bf4e27dab">TinyTrainable</a>
 </li>
+<li>pop_front()
+: <a class="el" href="class_previous_results_queue.html#acf8062d9a7baee0122899e61b716f445">PreviousResultsQueue</a>
+</li>
+<li>PreviousResultsQueue()
+: <a class="el" href="class_previous_results_queue.html#a7a3e99d8996610bffdc50b9f1119e686">PreviousResultsQueue</a>
+</li>
+<li>ProcessLatestResults()
+: <a class="el" href="class_recognize_commands.html#a176a0991f61867a05f5fabb5b11c61fb">RecognizeCommands</a>
+</li>
+<li>push_back()
+: <a class="el" href="class_previous_results_queue.html#a6b20cd834e20d93d4fd8773de9e2e1e7">PreviousResultsQueue</a>
+</li>
 </ul>
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>readColor()
 : <a class="el" href="class_input_color.html#a6b003d0c90cc42225c1af0d1073ccf8f">InputColor</a>
+</li>
+<li>RecognizeCommands()
+: <a class="el" href="class_recognize_commands.html#a429d31622f23761730ebab01b2040ea8">RecognizeCommands</a>
+</li>
+<li>Result()
+: <a class="el" href="struct_previous_results_queue_1_1_result.html#a087550e24006ca62faee791ac6f7a942">PreviousResultsQueue::Result</a>
 </li>
 </ul>
 
@@ -258,13 +296,13 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="class_output_servo.html#a9e1e2f95b98189cfb255007542ff059c">OutputServo</a>
 </li>
 <li>setBuzzerDuration()
-: <a class="el" href="class_output.html#a7ac0ef38e0056243babe01092227702d">Output</a>
+: <a class="el" href="class_output.html#a07cbc2c64d84ab89d4a2dba565fa8293">Output</a>
 , <a class="el" href="class_output_buzzer.html#a49586062c8562f23ee0d9001db545725">OutputBuzzer</a>
 , <a class="el" href="class_tiny_trainable.html#ab983f752044c901a1615f8049154f138">TinyTrainable</a>
 </li>
 <li>setBuzzerFrequency()
 : <a class="el" href="class_output.html#a8cb568bee60cda3ba24117a883838431">Output</a>
-, <a class="el" href="class_output_buzzer.html#a2572c4d0a0ff35dc2b1e469ed083b08f">OutputBuzzer</a>
+, <a class="el" href="class_output_buzzer.html#ad2fd165d4d553f43be7c8f7ebbf90c9b">OutputBuzzer</a>
 , <a class="el" href="class_tiny_trainable.html#a4df6443e8b4583c29c21955d1a4ce62c">TinyTrainable</a>
 </li>
 <li>setMIDINote()
@@ -393,10 +431,13 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>setupSerialMIDI()
 : <a class="el" href="class_output_m_i_d_i.html#adc9e292351d62ca7a88d888a104bb6f1">OutputMIDI</a>
 </li>
-<li>speechSetupTF()
-: <a class="el" href="class_input.html#a2356fe0c4c6f00120bab2674dafa2854">Input</a>
-, <a class="el" href="class_input_speech.html#af5d2d4ee9cfe4023c3ab5cce17d84ba5">InputSpeech</a>
-, <a class="el" href="class_tiny_trainable.html#a1d4d0eb72b7f95995a5fb18339879916">TinyTrainable</a>
+<li>setupSpeechModel()
+: <a class="el" href="class_input.html#ace0c044cacf39917b34df4869f637eaf">Input</a>
+, <a class="el" href="class_input_speech.html#ae6ba3ec94dd881d848b7d3c2d0f123cc">InputSpeech</a>
+, <a class="el" href="class_tiny_trainable.html#a3165623090fb41db36afcb163778e0c5">TinyTrainable</a>
+</li>
+<li>size()
+: <a class="el" href="class_previous_results_queue.html#a2bd7e3922881405fc010081209655434">PreviousResultsQueue</a>
 </li>
 </ul>
 

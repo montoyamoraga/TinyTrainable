@@ -1,20 +1,6 @@
 var searchData=
 [
-  ['identify_91',['identify',['../class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7',1,'TinyTrainable::identify()'],['../class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed',1,'InputSpeech::identify()'],['../class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d',1,'InputGesture::identify()'],['../class_input.html#a90132889a3e2ef01e864fa496c63c2e7',1,'Input::identify()'],['../class_input_color.html#a5185a9b716ad7cd94c303736fce22536',1,'InputColor::identify()']]],
-  ['input_92',['Input',['../class_input.html',1,'']]],
-  ['input_2eh_93',['Input.h',['../_input_8h.html',1,'']]],
-  ['input_5fcolor_94',['INPUT_COLOR',['../_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babac0b7de0e40528a558b2aab4f5dfc883c',1,'TinyTrainable.h']]],
-  ['input_5fgesture_95',['INPUT_GESTURE',['../_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babaf5213e018a099537d9997af185165366',1,'TinyTrainable.h']]],
-  ['input_5fnone_96',['INPUT_NONE',['../_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babad635d6b1496fa2fba6f87068d4193246',1,'TinyTrainable.h']]],
-  ['input_5fspeech_97',['INPUT_SPEECH',['../_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babaa35c5c357a4d484056a6f4d9fd2a2f5f',1,'TinyTrainable.h']]],
-  ['inputcolor_98',['InputColor',['../class_input_color.html',1,'InputColor'],['../class_input_color.html#a5280f9e82b0c6fc4119a6efdf006ce18',1,'InputColor::InputColor()']]],
-  ['inputcolor_2ecpp_99',['InputColor.cpp',['../_input_color_8cpp.html',1,'']]],
-  ['inputcolor_2eh_100',['InputColor.h',['../_input_color_8h.html',1,'']]],
-  ['inputgesture_101',['InputGesture',['../class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7',1,'InputGesture::InputGesture()'],['../class_input_gesture.html',1,'InputGesture']]],
-  ['inputgesture_2ecpp_102',['InputGesture.cpp',['../_input_gesture_8cpp.html',1,'']]],
-  ['inputgesture_2eh_103',['InputGesture.h',['../_input_gesture_8h.html',1,'']]],
-  ['inputspeech_104',['InputSpeech',['../class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2',1,'InputSpeech::InputSpeech()'],['../class_input_speech.html',1,'InputSpeech']]],
-  ['inputspeech_2ecpp_105',['InputSpeech.cpp',['../_input_speech_8cpp.html',1,'']]],
-  ['inputspeech_2eh_106',['InputSpeech.h',['../_input_speech_8h.html',1,'']]],
-  ['inputtype_107',['InputType',['../_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839bab',1,'TinyTrainable.h']]]
+  ['from_5ffront_85',['from_front',['../class_previous_results_queue.html#aaf9f2f03ff7e88c2756023429ec69dbc',1,'PreviousResultsQueue']]],
+  ['front_86',['front',['../class_previous_results_queue.html#a840807db906debc5c3324e50f56bf144',1,'PreviousResultsQueue']]],
+  ['front_5findex_5f_87',['front_index_',['../class_previous_results_queue.html#abacb5e01ed9b21874ca4c7d9b4e65032',1,'PreviousResultsQueue']]]
 ];

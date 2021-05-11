@@ -14,5 +14,8 @@ var hierarchy =
       [ "OutputSerial", "class_output_serial.html", null ],
       [ "OutputServo", "class_output_servo.html", null ]
     ] ],
+    [ "PreviousResultsQueue", "class_previous_results_queue.html", null ],
+    [ "RecognizeCommands", "class_recognize_commands.html", null ],
+    [ "PreviousResultsQueue::Result", "struct_previous_results_queue_1_1_result.html", null ],
     [ "TinyTrainable", "class_tiny_trainable.html", null ]
 ];

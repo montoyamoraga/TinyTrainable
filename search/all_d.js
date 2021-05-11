@@ -1,18 +1,11 @@
 var searchData=
 [
-  ['tempodelay_198',['tempoDelay',['../class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f',1,'OutputMIDI']]],
-  ['tensorarena_199',['tensorArena',['../class_input_gesture.html#a2aee45ecfbf2f81107698b6da09b09ed',1,'InputGesture']]],
-  ['tensorarenasize_200',['tensorArenaSize',['../class_input_gesture.html#a8ab899e4ab366f9d02e325478df93431',1,'InputGesture']]],
-  ['tflerrorreporter_201',['tflErrorReporter',['../class_input_gesture.html#a96efeb89d29f889bf70a3ab959ed2f4f',1,'InputGesture']]],
-  ['tflinputtensor_202',['tflInputTensor',['../class_input_gesture.html#a1ac7fe19592e0b05c4b0c3b78540a6b6',1,'InputGesture']]],
-  ['tflinterpreter_203',['tflInterpreter',['../class_input_gesture.html#a5ddc443f28d93808fcbbd0b15acf8d40',1,'InputGesture']]],
-  ['tflmodel_204',['tflModel',['../class_input_gesture.html#abd5f1afde1dd88c4982702209ce5ed1e',1,'InputGesture::tflModel()'],['../class_input_speech.html#ace167e5e4e635b99e2c1d872e1197922',1,'InputSpeech::tflModel()']]],
-  ['tflopsresolver_205',['tflOpsResolver',['../class_input_gesture.html#adce3b40c42e82a4e878d230d744d5e12',1,'InputGesture']]],
-  ['tfloutputtensor_206',['tflOutputTensor',['../class_input_gesture.html#ac83068218bb7d60da67c172c9cf9f42d',1,'InputGesture']]],
-  ['tiny_207',['tiny',['../class_input.html#ab56185d2fbad06c2acb0b84dc11e5199',1,'Input::tiny()'],['../class_output.html#a18489dcb8e45d4c199ece137e537f7c1',1,'Output::tiny()']]],
-  ['tinytrainable_208',['TinyTrainable',['../class_tiny_trainable.html',1,'TinyTrainable'],['../class_tiny_trainable.html#a00e94be6f92af0cd96379e3a8a78122b',1,'TinyTrainable::TinyTrainable()']]],
-  ['tinytrainable_2ecpp_209',['TinyTrainable.cpp',['../_tiny_trainable_8cpp.html',1,'']]],
-  ['tinytrainable_2eh_210',['TinyTrainable.h',['../_tiny_trainable_8h.html',1,'']]],
-  ['totalsteps_211',['totalSteps',['../class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556',1,'OutputMIDI']]],
-  ['trainknn_212',['trainKNN',['../class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd',1,'Input::trainKNN()'],['../class_input_color.html#adb585ff663d1720c862534009fe647a8',1,'InputColor::trainKNN()'],['../class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f',1,'TinyTrainable::trainKNN()']]]
+  ['playoutput_162',['playOutput',['../class_output.html#aae2893cf36fe5cf20342211c24b66a03',1,'Output::playOutput()'],['../class_tiny_trainable.html#a6897144d519d0d19c8c3835bf4e27dab',1,'TinyTrainable::playOutput()'],['../class_output_servo.html#a530f50db199a433a191f34abffcc4151',1,'OutputServo::playOutput()'],['../class_output_serial.html#a8319bc7b90af0dfd99153142d859c6b6',1,'OutputSerial::playOutput()'],['../class_output_screen.html#a298e9379d3e736a42ee095b917c10c4d',1,'OutputScreen::playOutput()'],['../class_output_printer.html#ae425da8bccf042af4d4774fdc41bbae0',1,'OutputPrinter::playOutput()'],['../class_output_m_i_d_i.html#a1bad40fd470139f89c2f36a84d3b86ee',1,'OutputMIDI::playOutput()'],['../class_output_l_e_d.html#aef133c10ffb482917535da5a96349699',1,'OutputLED::playOutput()'],['../class_output_buzzer.html#a2f14ce14e7d708de648f2ee6bba43288',1,'OutputBuzzer::playOutput()']]],
+  ['pop_5ffront_163',['pop_front',['../class_previous_results_queue.html#acf8062d9a7baee0122899e61b716f445',1,'PreviousResultsQueue']]],
+  ['previous_5fresults_5f_164',['previous_results_',['../class_recognize_commands.html#a0d6b0b726100f6dba09038b8310b940f',1,'RecognizeCommands']]],
+  ['previous_5ftop_5flabel_5f_165',['previous_top_label_',['../class_recognize_commands.html#a3bb7c61558fd5b69834558bea504b1d7',1,'RecognizeCommands']]],
+  ['previous_5ftop_5flabel_5ftime_5f_166',['previous_top_label_time_',['../class_recognize_commands.html#aeaab4a312d6cabcab871d17cc80ac6b0',1,'RecognizeCommands']]],
+  ['previousresultsqueue_167',['PreviousResultsQueue',['../class_previous_results_queue.html',1,'PreviousResultsQueue'],['../class_previous_results_queue.html#a7a3e99d8996610bffdc50b9f1119e686',1,'PreviousResultsQueue::PreviousResultsQueue()']]],
+  ['processlatestresults_168',['ProcessLatestResults',['../class_recognize_commands.html#a176a0991f61867a05f5fabb5b11c61fb',1,'RecognizeCommands']]],
+  ['push_5fback_169',['push_back',['../class_previous_results_queue.html#a6b20cd834e20d93d4fd8773de9e2e1e7',1,'PreviousResultsQueue']]]
 ];

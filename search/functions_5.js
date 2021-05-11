@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['outputbuzzer_274',['OutputBuzzer',['../class_output_buzzer.html#aba7e6b5adb9d5ba7c5783ea35b2b613b',1,'OutputBuzzer']]],
-  ['outputled_275',['OutputLED',['../class_output_l_e_d.html#a1fc4a6ee4b4ee8806f77ed7b301ff1c3',1,'OutputLED']]],
-  ['outputmidi_276',['OutputMIDI',['../class_output_m_i_d_i.html#a24cc046b95bb94319d888acc18a8d83f',1,'OutputMIDI']]],
-  ['outputprinter_277',['OutputPrinter',['../class_output_printer.html#abbf799e4a04980138e93d633beb5e58b',1,'OutputPrinter']]],
-  ['outputscreen_278',['OutputScreen',['../class_output_screen.html#a682c0efc10289cda3b4767be2df66a47',1,'OutputScreen']]],
-  ['outputserial_279',['OutputSerial',['../class_output_serial.html#a79efd11be8ebf36ae9ecd69c29bb108b',1,'OutputSerial']]],
-  ['outputservo_280',['OutputServo',['../class_output_servo.html#af975cfb4de7ed886b60f7a1bd86f2a45',1,'OutputServo']]]
+  ['identify_305',['identify',['../class_input.html#a90132889a3e2ef01e864fa496c63c2e7',1,'Input::identify()'],['../class_input_color.html#a5185a9b716ad7cd94c303736fce22536',1,'InputColor::identify()'],['../class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d',1,'InputGesture::identify()'],['../class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed',1,'InputSpeech::identify()'],['../class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7',1,'TinyTrainable::identify()']]],
+  ['inputcolor_306',['InputColor',['../class_input_color.html#a5280f9e82b0c6fc4119a6efdf006ce18',1,'InputColor']]],
+  ['inputgesture_307',['InputGesture',['../class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7',1,'InputGesture']]],
+  ['inputspeech_308',['InputSpeech',['../class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2',1,'InputSpeech']]]
 ];

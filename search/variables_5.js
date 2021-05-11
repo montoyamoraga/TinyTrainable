@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['myinput_400',['myInput',['../class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f',1,'TinyTrainable']]],
-  ['myoutput_401',['myOutput',['../class_tiny_trainable.html#a888e801d77cd92e11ced14d9e3b259bb',1,'TinyTrainable']]]
+  ['error_5freporter_5f_442',['error_reporter_',['../class_previous_results_queue.html#aa661063bdb107906bffcbff7e1713822',1,'PreviousResultsQueue::error_reporter_()'],['../class_recognize_commands.html#a67de24f7fb22759283bc74517b12b310',1,'RecognizeCommands::error_reporter_()']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['identify_269',['identify',['../class_input.html#a90132889a3e2ef01e864fa496c63c2e7',1,'Input::identify()'],['../class_input_color.html#a5185a9b716ad7cd94c303736fce22536',1,'InputColor::identify()'],['../class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d',1,'InputGesture::identify()'],['../class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed',1,'InputSpeech::identify()'],['../class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7',1,'TinyTrainable::identify()']]],
-  ['inputcolor_270',['InputColor',['../class_input_color.html#a5280f9e82b0c6fc4119a6efdf006ce18',1,'InputColor']]],
-  ['inputgesture_271',['InputGesture',['../class_input_gesture.html#ae7ffb81212b0b4eae8d74eb8731548c7',1,'InputGesture']]],
-  ['inputspeech_272',['InputSpeech',['../class_input_speech.html#a2caa937542364f4c6f7381539a42c0c2',1,'InputSpeech']]]
+  ['from_5ffront_296',['from_front',['../class_previous_results_queue.html#aaf9f2f03ff7e88c2756023429ec69dbc',1,'PreviousResultsQueue']]],
+  ['front_297',['front',['../class_previous_results_queue.html#a840807db906debc5c3324e50f56bf144',1,'PreviousResultsQueue']]]
 ];

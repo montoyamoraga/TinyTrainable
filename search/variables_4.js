@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['gx_397',['gX',['../class_input_gesture.html#a81fd3293a04eccb974483cbc6d9ebf7d',1,'InputGesture']]],
-  ['gy_398',['gY',['../class_input_gesture.html#a0582e9889a229f47a8e636e0dc710a54',1,'InputGesture']]],
-  ['gz_399',['gZ',['../class_input_gesture.html#a44dd96d11b254de4aa1d499337353266',1,'InputGesture']]]
+  ['detection_5fthreshold_5f_441',['detection_threshold_',['../class_recognize_commands.html#a638e1b40cf92c24e4de2089d7a37fc2d',1,'RecognizeCommands']]]
 ];

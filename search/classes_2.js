@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tinytrainable_232',['TinyTrainable',['../class_tiny_trainable.html',1,'']]]
+  ['previousresultsqueue_259',['PreviousResultsQueue',['../class_previous_results_queue.html',1,'']]]
 ];

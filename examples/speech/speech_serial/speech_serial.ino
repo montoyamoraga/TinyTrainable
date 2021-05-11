@@ -9,9 +9,17 @@ const bool debugOn = true;
 
 String myItems[3] = {"item0", "item1", "item2"};
 
+// setup() runs once, at the beginning
 void setup() {
+
   // set debugging over serial port
   myTiny.setupInstrument(debugOn);
+
+  // setup the serial output
+  myTiny.setupOutputSerial();
 }
 
-void loop() {}
+void loop() {
+  // identify the item and respond
+  myTiny.identify();
+}

@@ -16,6 +16,7 @@ String myItems[3] = {"item0", "item1", "item2"};
 
 // setup() runs once, at the beginning
 void setup() {
+  // set debugging over serial port
   myTiny.setupInstrument(debugOn);
 
   myTiny.setupOutputSerial();

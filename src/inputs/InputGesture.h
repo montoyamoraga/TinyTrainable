@@ -7,18 +7,17 @@
 /// @include library Arduino
 #include <Arduino.h>
 
-/// @include TinyTrainable library
+/// @include library TinyTrainable
 #include "TinyTrainable.h"
 
 /// @include library Input
 #include "Input.h"
 
-/// @include library for IMU sensor
-// 3-axis accelerometer, 3-axis gyroscope, 3-axis magnetometer
+/// @include library for input sensor
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
 
-// include libraries for gesture recognition
+/// @include library for machine learning
 #include <TensorFlowLite.h>
 #include <tensorflow/lite/micro/all_ops_resolver.h>
 #include <tensorflow/lite/micro/micro_error_reporter.h>
@@ -30,20 +29,23 @@
 /// @brief InputGesture inherits from Input
 class InputGesture : public Input {
 public:
-  // constructor
+
+  /// @brief constructor
   InputGesture();
 
   virtual void setupInstrument(bool serialDebugging) override;
-  virtual void gestureSetupTF(String gestures[3],
+  virtual void setupGestureModel(String gestures[3],
                               const unsigned char *model = nullptr) override;
-  virtual void identify() override;
+
   virtual void gesturePrintHeader() override;
   virtual void gestureReadData() override;
-  virtual void setAccelerationThreshold(float newVal) override;
-  virtual void setNumSamples(int newVal) override;
+  virtual void gestureSetAcceleration(float newVal) override;
+  virtual void gestureSetNumberSamples(int newVal) override;
+
+    virtual void identify() override;
 
 private:
-  void setupSensorLSM9DS1();
+  void setupGestureSensor();
 
   /// @brief threshold of significance measured in G's
   float _accelerationThreshold = 2.5;

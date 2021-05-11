@@ -117,10 +117,10 @@ void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
 };
 
 /// @brief input gesture, setup TensorFlow
-void TinyTrainable::gestureSetupTF(String gestures[3],
+void TinyTrainable::setupGestureModel(String gestures[3],
                                    const unsigned char *model) {
   if (myInput != nullptr) {
-    myInput->gestureSetupTF(gestures, model);
+    myInput->setupGestureModel(gestures, model);
   }
 }
 
@@ -136,15 +136,15 @@ void TinyTrainable::gestureReadData() {
   }
 }
 
-void TinyTrainable::setAccelerationThreshold(float newVal) {
+void TinyTrainable::gestureSetAcceleration(float newVal) {
   if (myInput != nullptr) {
-    myInput->setAccelerationThreshold(newVal);
+    myInput->gestureSetAcceleration(newVal);
   }
 }
 
-void TinyTrainable::setNumSamples(int newVal) {
+void TinyTrainable::gestureSetNumberSamples(int newVal) {
   if (myInput != nullptr) {
-    myInput->setNumSamples(newVal);
+    myInput->gestureSetNumberSamples(newVal);
   }
 }
 

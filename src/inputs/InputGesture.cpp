@@ -16,7 +16,7 @@ InputGesture::InputGesture() {
 
 void InputGesture::setupInstrument(bool serialDebugging) {
   tiny->setupLEDs();
-  setupSensorLSM9DS1();
+  setupGestureSensor();
 
   tiny->_serialDebugging = serialDebugging;
 
@@ -27,7 +27,7 @@ void InputGesture::setupInstrument(bool serialDebugging) {
   }
 }
 
-void InputGesture::gestureSetupTF(String gestures[3],
+void InputGesture::setupGestureModel(String gestures[3],
                                   const unsigned char *model) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
@@ -200,18 +200,18 @@ void InputGesture::gestureReadData() {
   }
 }
 
-void InputGesture::setAccelerationThreshold(float newVal) {
+void InputGesture::gestureSetAcceleration(float newVal) {
   _accelerationThreshold = newVal;
 }
 
-void InputGesture::setNumSamples(int newVal) {
+void InputGesture::gestureSetNumberSamples(int newVal) {
   _numSamples = newVal;
 }
 
 /// @brief function for setup of sensor LSM9DS1
 // LSM9DS1 sensor for IMU (inertial measurement unit)
 //  3-axis accelerometer, gyroscope, magnetometer
-void InputGesture::setupSensorLSM9DS1() {
+void InputGesture::setupGestureSensor() {
   if (!IMU.begin()) {
     while (1)
       ;

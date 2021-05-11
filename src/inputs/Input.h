@@ -24,12 +24,12 @@ public:
                         String objects[3]) {}
 
   // gesture
-  virtual void gestureSetupTF(String gestures[3],
+  virtual void setupGestureModel(String gestures[3],
                               const unsigned char *model = nullptr) {}
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
-  virtual void setAccelerationThreshold(float newVal) {}
-  virtual void setNumSamples(int newVal) {}
+  virtual void gestureSetAcceleration(float newVal) {}
+  virtual void gestureSetNumberSamples(int newVal) {}
 
   // speech
   virtual void speechSetupTF(String sounds[3],

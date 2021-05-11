@@ -27,7 +27,7 @@ setStateLEDBuiltIn	KEYWORD2
 setStateLEDRGB		KEYWORD2
 setSerialDebugging	KEYWORD2
 setupSensorAPDS9960	KEYWORD2
-setupSensorLSM9DS1	KEYWORD2
+setupGestureSensor	KEYWORD2
 setOutputMode		KEYWORD2
 
 playOutput		KEYWORD2
@@ -46,7 +46,7 @@ _colorReading		KEYWORD2
 _checkedSetup		KEYWORD2
 
 # input gesture
-gestureSetupTF		KEYWORD2
+setupGestureModel		KEYWORD2
 gesturePrintHeader 	KEYWORD2
 gestureReadData 	KEYWORD2
 

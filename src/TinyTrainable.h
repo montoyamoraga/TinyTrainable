@@ -114,7 +114,7 @@ public:
                 String objects[3]);
 
   /// @brief input gesture, setup TensorFlow model
-  void gestureSetupTF(String gestures[3], const unsigned char *model = nullptr);
+  void setupGestureModel(String gestures[3], const unsigned char *model = nullptr);
 
   /// @brief input gesture, print header for database
   void gesturePrintHeader();
@@ -123,10 +123,10 @@ public:
   void gestureReadData();
 
   /// @brief input gesture, sets custom acceleration threshold
-  void setAccelerationThreshold(float newVal);
+  void gestureSetAcceleration(float newVal);
 
   /// @brief input gesture, sets custom number of samples
-  void setNumSamples(int newVal);
+  void gestureSetNumberSamples(int newVal);
 
   /// @brief input speech, setup TensorFlow model
   void speechSetupTF(String sounds[3], const unsigned char *model = nullptr);

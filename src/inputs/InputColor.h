@@ -4,20 +4,20 @@
 #ifndef INPUT_COLOR_H
 #define INPUT_COLOR_H
 
-// include Arduino library
+/// @include library Arduino
 #include <Arduino.h>
 
-// include Input library
-#include "Input.h"
-
-// include TinyTrainable library
+/// @include library TinyTrainable
 #include "TinyTrainable.h"
 
-// include library for proximity and light sensor
+/// @include library Input 
+#include "Input.h"
+
+/// @include library Arduino_APDS9960 for color and distance input
 // https://www.arduino.cc/en/Reference/ArduinoAPDS9960
 #include <Arduino_APDS9960.h>
 
-// import Arduino KNN library
+/// @include library Arduino KNN for machine learning
 #include <Arduino_KNN.h>
 
 /// @class InputColor

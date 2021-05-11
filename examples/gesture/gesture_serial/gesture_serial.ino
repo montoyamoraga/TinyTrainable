@@ -30,9 +30,9 @@ void setup() {
   myTiny.setupInstrument(debugOn);
 
   // use this line to include the default model
-  myTiny.gestureSetupTF(GESTURES);
+  myTiny.setupGestureModel(GESTURES);
   // or use this line to include your own model
-  //   myTiny.gestureSetupTF(GESTURES, myGestureModel);
+  //   myTiny.setupGestureModel(GESTURES, myGestureModel);
 
   myTiny.setupOutputSerial();
 }

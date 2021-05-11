@@ -7,17 +7,17 @@
 /// @include library Arduino
 #include <Arduino.h>
 
-/// @include TinyTrainable library
+/// @include library TinyTrainable
 #include "TinyTrainable.h"
 
-/// @include library Input
+/// @include library Input 
 #include "Input.h"
 
-/// @include library for microphone
+/// @include library for input microphone
 // https://www.arduino.cc/en/Reference/PDM/
 #include <PDM.h>
 
-// include libraries for speech recognition
+/// @include library for machine learning
 #include <TensorFlowLite.h>
 #include <tensorflow/lite/micro/micro_error_reporter.h>
 #include <tensorflow/lite/micro/micro_interpreter.h>

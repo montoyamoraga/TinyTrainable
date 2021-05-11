@@ -17,6 +17,9 @@ void setup() {
 
   // setup the serial output
   myTiny.setupOutputSerial();
+
+  // setup the model for speech recognition
+  myTiny.setupSpeechModel(myItems);
 }
 
 // loop() runs after setup(), on a loop

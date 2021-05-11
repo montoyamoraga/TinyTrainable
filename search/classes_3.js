@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['previousresultsqueue_306',['PreviousResultsQueue',['../class_previous_results_queue.html',1,'']]]
+  ['previousresultsqueue_317',['PreviousResultsQueue',['../class_previous_results_queue.html',1,'']]]
 ];

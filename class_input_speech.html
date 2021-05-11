@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('class_input_speech.html',''); initResi
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_input_speech-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">InputSpeech Class Reference</div>  </div>
@@ -121,7 +122,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2caa937542364f4c6f7381539a42c0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d049091f9f97ecd01902ac2a625700"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ad5d049091f9f97ecd01902ac2a625700">setupInstrument</a> (bool serialDebugging) override</td></tr>
 <tr class="separator:ad5d049091f9f97ecd01902ac2a625700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6ba3ec94dd881d848b7d3c2d0f123cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ae6ba3ec94dd881d848b7d3c2d0f123cc">setupSpeechModel</a> (String sounds[3], const unsigned char *model=nullptr) override</td></tr>
+<tr class="memitem:ae6ba3ec94dd881d848b7d3c2d0f123cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ae6ba3ec94dd881d848b7d3c2d0f123cc">setupSpeechModel</a> (String sounds[3], const unsigned char *<a class="el" href="class_input_speech.html#a3a8d71afe38ef2617fd076a4344c1bd3">model</a>=nullptr) override</td></tr>
 <tr class="separator:ae6ba3ec94dd881d848b7d3c2d0f123cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa615ea9e707a1bd0f56aaaf1b46250ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed">identify</a> () override</td></tr>
 <tr class="separator:aa615ea9e707a1bd0f56aaaf1b46250ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,8 +149,31 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a64b9d0ab5d638469803da89b5531a65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a844d5c921e94de023949357bba00c584"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a844d5c921e94de023949357bba00c584">_sounds</a> [3]</td></tr>
 <tr class="separator:a844d5c921e94de023949357bba00c584"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace167e5e4e635b99e2c1d872e1197922"><td class="memItemLeft" align="right" valign="top">const tflite::Model *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ace167e5e4e635b99e2c1d872e1197922">tflModel</a> = nullptr</td></tr>
-<tr class="separator:ace167e5e4e635b99e2c1d872e1197922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d9e0f3a9c3577243ef13abf243a996"><td class="memItemLeft" align="right" valign="top">tflite::ErrorReporter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a17d9e0f3a9c3577243ef13abf243a996">error_reporter</a> = nullptr</td></tr>
+<tr class="separator:a17d9e0f3a9c3577243ef13abf243a996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8d71afe38ef2617fd076a4344c1bd3"><td class="memItemLeft" align="right" valign="top">const tflite::Model *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a3a8d71afe38ef2617fd076a4344c1bd3">model</a> = nullptr</td></tr>
+<tr class="separator:a3a8d71afe38ef2617fd076a4344c1bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea2b786312b9d780266de19a0953c30"><td class="memItemLeft" align="right" valign="top">tflite::MicroInterpreter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a1ea2b786312b9d780266de19a0953c30">interpreter</a> = nullptr</td></tr>
+<tr class="separator:a1ea2b786312b9d780266de19a0953c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf39e01745833f959d9af710540148a3"><td class="memItemLeft" align="right" valign="top">TfLiteTensor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#acf39e01745833f959d9af710540148a3">model_input</a> = nullptr</td></tr>
+<tr class="separator:acf39e01745833f959d9af710540148a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3bcaeae564734661252764b425a6e11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_feature_provider.html">FeatureProvider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#ab3bcaeae564734661252764b425a6e11">feature_provider</a> = nullptr</td></tr>
+<tr class="separator:ab3bcaeae564734661252764b425a6e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d899aa36e167130d10da1efa5e95f20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_recognize_commands.html">RecognizeCommands</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a4d899aa36e167130d10da1efa5e95f20">recognizer</a> = nullptr</td></tr>
+<tr class="separator:a4d899aa36e167130d10da1efa5e95f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156caa5e7661d68a0aa6e635ca3c88b3"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a156caa5e7661d68a0aa6e635ca3c88b3">previous_time</a> = 0</td></tr>
+<tr class="separator:a156caa5e7661d68a0aa6e635ca3c88b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b95e45e00462fb9c301c8c2fd4d73a8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a4b95e45e00462fb9c301c8c2fd4d73a8">tensor_arena</a> [<a class="el" href="class_input_speech.html#a45c47f0b632c088367b666478beb712d">kTensorArenaSize</a>]</td></tr>
+<tr class="separator:a4b95e45e00462fb9c301c8c2fd4d73a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa1ac7f07a5a0640f07a5580ad715f2"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#adaa1ac7f07a5a0640f07a5580ad715f2">feature_buffer</a> [<a class="el" href="micro__features__micro__model__settings_8h.html#afc9e60b44cfbb4e4c5795aabdef7fcb9">kFeatureElementCount</a>]</td></tr>
+<tr class="separator:adaa1ac7f07a5a0640f07a5580ad715f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056b5c73f56091226d32e53be67e9bcf"><td class="memItemLeft" align="right" valign="top">int8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a056b5c73f56091226d32e53be67e9bcf">model_input_buffer</a> = nullptr</td></tr>
+<tr class="separator:a056b5c73f56091226d32e53be67e9bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a45c47f0b632c088367b666478beb712d"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_input_speech.html#a45c47f0b632c088367b666478beb712d">kTensorArenaSize</a> = 10 * 1024</td></tr>
+<tr class="separator:a45c47f0b632c088367b666478beb712d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -299,6 +323,182 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a17d9e0f3a9c3577243ef13abf243a996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17d9e0f3a9c3577243ef13abf243a996">&#9670;&nbsp;</a></span>error_reporter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tflite::ErrorReporter* InputSpeech::error_reporter = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adaa1ac7f07a5a0640f07a5580ad715f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaa1ac7f07a5a0640f07a5580ad715f2">&#9670;&nbsp;</a></span>feature_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t InputSpeech::feature_buffer[<a class="el" href="micro__features__micro__model__settings_8h.html#afc9e60b44cfbb4e4c5795aabdef7fcb9">kFeatureElementCount</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3bcaeae564734661252764b425a6e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3bcaeae564734661252764b425a6e11">&#9670;&nbsp;</a></span>feature_provider</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_feature_provider.html">FeatureProvider</a>* InputSpeech::feature_provider = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ea2b786312b9d780266de19a0953c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea2b786312b9d780266de19a0953c30">&#9670;&nbsp;</a></span>interpreter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tflite::MicroInterpreter* InputSpeech::interpreter = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45c47f0b632c088367b666478beb712d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c47f0b632c088367b666478beb712d">&#9670;&nbsp;</a></span>kTensorArenaSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int InputSpeech::kTensorArenaSize = 10 * 1024</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a8d71afe38ef2617fd076a4344c1bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8d71afe38ef2617fd076a4344c1bd3">&#9670;&nbsp;</a></span>model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const tflite::Model* InputSpeech::model = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf39e01745833f959d9af710540148a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf39e01745833f959d9af710540148a3">&#9670;&nbsp;</a></span>model_input</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TfLiteTensor* InputSpeech::model_input = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a056b5c73f56091226d32e53be67e9bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056b5c73f56091226d32e53be67e9bcf">&#9670;&nbsp;</a></span>model_input_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t* InputSpeech::model_input_buffer = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a64b9d0ab5d638469803da89b5531a65d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64b9d0ab5d638469803da89b5531a65d">&#9670;&nbsp;</a></span>NUM_SOUNDS</h2>
 
@@ -321,8 +521,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ace167e5e4e635b99e2c1d872e1197922"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace167e5e4e635b99e2c1d872e1197922">&#9670;&nbsp;</a></span>tflModel</h2>
+<a id="a156caa5e7661d68a0aa6e635ca3c88b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a156caa5e7661d68a0aa6e635ca3c88b3">&#9670;&nbsp;</a></span>previous_time</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +531,51 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const tflite::Model* InputSpeech::tflModel = nullptr</td>
+          <td class="memname">int32_t InputSpeech::previous_time = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d899aa36e167130d10da1efa5e95f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d899aa36e167130d10da1efa5e95f20">&#9670;&nbsp;</a></span>recognizer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_recognize_commands.html">RecognizeCommands</a>* InputSpeech::recognizer = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b95e45e00462fb9c301c8c2fd4d73a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b95e45e00462fb9c301c8c2fd4d73a8">&#9670;&nbsp;</a></span>tensor_arena</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t InputSpeech::tensor_arena[<a class="el" href="class_input_speech.html#a45c47f0b632c088367b666478beb712d">kTensorArenaSize</a>]</td>
         </tr>
       </table>
   </td>

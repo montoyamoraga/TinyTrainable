@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tinytrainable_262',['TinyTrainable',['../class_tiny_trainable.html',1,'']]]
+  ['tinytrainable_275',['TinyTrainable',['../class_tiny_trainable.html',1,'']]]
 ];

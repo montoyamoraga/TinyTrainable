@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TinyTrainable: src/tensorflow_speech/recognize_commands.h File Reference</title>
+<title>TinyTrainable: src/tensorflow_speech/micro_features_micro_model_settings.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('recognize__commands_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('micro__features__micro__model__settings_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -92,33 +92,46 @@ $(document).ready(function(){initNavTree('recognize__commands_8h.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">recognize_commands.h File Reference</div>  </div>
+<div class="title">micro_features_micro_model_settings.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
-<code>#include &quot;tensorflow/lite/c/common.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="micro__features__micro__model__settings_8h_source.html">micro_features_micro_model_settings.h</a>&quot;</code><br />
-<code>#include &quot;tensorflow/lite/micro/micro_error_reporter.h&quot;</code><br />
-</div>
-<p><a href="recognize__commands_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_previous_results_queue.html">PreviousResultsQueue</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_previous_results_queue_1_1_result.html">PreviousResultsQueue::Result</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_recognize_commands.html">RecognizeCommands</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &quot;<a class="el" href="micro__features__micro__model__settings_8h_source.html">micro_features_micro_model_settings.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a82462d649987192b43a32bc0b64cd778"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="micro__features__micro__model__settings_8cpp.html#a82462d649987192b43a32bc0b64cd778">kCategoryLabels</a> [<a class="el" href="micro__features__micro__model__settings_8h.html#ad02d553c1a70e5443b673e59b7d5fc25">kCategoryCount</a>]</td></tr>
+<tr class="separator:a82462d649987192b43a32bc0b64cd778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a82462d649987192b43a32bc0b64cd778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82462d649987192b43a32bc0b64cd778">&#9670;&nbsp;</a></span>kCategoryLabels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* kCategoryLabels[<a class="el" href="micro__features__micro__model__settings_8h.html#ad02d553c1a70e5443b673e59b7d5fc25">kCategoryCount</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="stringliteral">&quot;silence&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;unknown&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;yes&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;no&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;up&quot;</span>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3c85e5586209fb8502fa5e199bd2875f.html">tensorflow_speech</a></li><li class="navelem"><a class="el" href="recognize__commands_8h.html">recognize_commands.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3c85e5586209fb8502fa5e199bd2875f.html">tensorflow_speech</a></li><li class="navelem"><a class="el" href="micro__features__micro__model__settings_8cpp.html">micro_features_micro_model_settings.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

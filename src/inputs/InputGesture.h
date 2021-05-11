@@ -68,7 +68,7 @@ private:
   const int NUM_GESTURES = 3;
   String _gestures[3];
 
-  // TFLite variables
+  // variables for TensorFlow Lite
   tflite::MicroErrorReporter tflErrorReporter;
   tflite::AllOpsResolver tflOpsResolver;
   const tflite::Model *tflModel = nullptr;

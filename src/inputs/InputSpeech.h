@@ -54,12 +54,19 @@ private:
   String _sounds[3];
 
   // variables for TensorFlow Lite
-//   tflite::MicroErrorReporter tflErrorReporter;
-//   tflite::AllOpsResolver tflOpsResolver;
-  const tflite::Model *tflModel = nullptr;
-//   tflite::MicroInterpreter *tflInterpreter = nullptr;
-//   TfLiteTensor *tflInputTensor = nullptr;
-//     TfLiteTensor *tflOutputTensor = nullptr;
+tflite::ErrorReporter* error_reporter = nullptr;
+const tflite::Model* model = nullptr;
+tflite::MicroInterpreter* interpreter = nullptr;
+TfLiteTensor* model_input = nullptr;
+FeatureProvider* feature_provider = nullptr;
+RecognizeCommands* recognizer = nullptr;
+int32_t previous_time = 0;
+
+// area memory for input, output, and intermediate arrays
+static constexpr int kTensorArenaSize = 10 * 1024;
+uint8_t tensor_arena[kTensorArenaSize];
+int8_t feature_buffer[kFeatureElementCount];
+int8_t* model_input_buffer = nullptr;
 };
 
 #endif

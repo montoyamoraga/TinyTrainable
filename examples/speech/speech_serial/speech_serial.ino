@@ -19,6 +19,7 @@ void setup() {
   myTiny.setupOutputSerial();
 }
 
+// loop() runs after setup(), on a loop
 void loop() {
   // identify the item and respond
   myTiny.identify();

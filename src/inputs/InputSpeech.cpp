@@ -25,13 +25,14 @@ void InputSpeech::setupInstrument(bool serialDebugging) {
   }
 }
 
-void InputSpeech::setupSpeechModel(String sounds[3], const unsigned char *model) {
+void InputSpeech::setupSpeechModel(String sounds[3], const unsigned char *newModel) {
   _sounds[0] = sounds[0];
   _sounds[1] = sounds[1];
   _sounds[2] = sounds[2];
 
   // load the default model or the custom model
-  tflModel = tflite::GetModel((model == nullptr) ? modelSpeechDefault : model);
+  model = tflite::GetModel((newModel == nullptr) ? modelSpeechDefault : newModel);
+
 }
 
 void InputSpeech::identify() {}

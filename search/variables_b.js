@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['previous_5fresults_5f_483',['previous_results_',['../class_recognize_commands.html#a0d6b0b726100f6dba09038b8310b940f',1,'RecognizeCommands']]],
-  ['previous_5ftop_5flabel_5f_484',['previous_top_label_',['../class_recognize_commands.html#a3bb7c61558fd5b69834558bea504b1d7',1,'RecognizeCommands']]],
-  ['previous_5ftop_5flabel_5ftime_5f_485',['previous_top_label_time_',['../class_recognize_commands.html#aeaab4a312d6cabcab871d17cc80ac6b0',1,'RecognizeCommands']]]
+  ['notebassdrum_542',['noteBassDrum',['../class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949',1,'OutputMIDI']]],
+  ['noteclosedhihat_543',['noteClosedHiHat',['../class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73',1,'OutputMIDI']]],
+  ['notehitom_544',['noteHiTom',['../class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f',1,'OutputMIDI']]],
+  ['notesnare_545',['noteSnare',['../class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4',1,'OutputMIDI']]],
+  ['num_5fgestures_546',['NUM_GESTURES',['../class_input_gesture.html#ae790af1be216de1db98c89be507f8324',1,'InputGesture']]],
+  ['num_5fsounds_547',['NUM_SOUNDS',['../class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d',1,'InputSpeech']]]
 ];

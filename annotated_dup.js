@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "FeatureProvider", "class_feature_provider.html", "class_feature_provider" ],
     [ "Input", "class_input.html", "class_input" ],
     [ "InputColor", "class_input_color.html", "class_input_color" ],
     [ "InputGesture", "class_input_gesture.html", "class_input_gesture" ],

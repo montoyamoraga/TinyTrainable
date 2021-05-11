@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['empty_310',['empty',['../class_previous_results_queue.html#ae34d117907dbc79598e55cbf30c314ff',1,'PreviousResultsQueue']]]
+  ['debugprint_356',['debugPrint',['../class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5',1,'TinyTrainable']]]
 ];

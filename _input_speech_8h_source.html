@@ -109,20 +109,20 @@ $(document).ready(function(){initNavTree('_input_speech_8h_source.html',''); ini
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;PDM.h&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;TensorFlowLite.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/micro/micro_error_reporter.h&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/micro/micro_interpreter.h&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/micro/micro_mutable_op_resolver.h&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/schema/schema_generated.h&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/version.h&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/recognize_commands.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// #include &quot;../tensorflow/main_functions.h&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// #include &quot;../tensorflow/command_responder.h&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// #include &quot;../tensorflow/feature_provider.h&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// #include &quot;../tensorflow/micro_features_micro_model_settings.h&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// #include &quot;../tensorflow/micro_features_model.h&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// #include &quot;../tensorflow/recognize_commands.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/micro/micro_error_reporter.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/micro/micro_interpreter.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/micro/micro_mutable_op_resolver.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/schema/schema_generated.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;tensorflow/lite/version.h&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/main_functions.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/audio_provider.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/command_responder.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/feature_provider.h&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/recognize_commands.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/micro_features_micro_model_settings.h&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;../tensorflow_speech/micro_features_model.h&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_input_speech.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_input_speech.html">InputSpeech</a> : <span class="keyword">public</span> <a class="code" href="class_input.html">Input</a> {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
@@ -139,13 +139,13 @@ $(document).ready(function(){initNavTree('_input_speech_8h_source.html',''); ini
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d">   53</a></span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d">NUM_SOUNDS</a> = 3;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_input_speech.html#a844d5c921e94de023949357bba00c584">   54</a></span>&#160;  String <a class="code" href="class_input_speech.html#a844d5c921e94de023949357bba00c584">_sounds</a>[3];</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// TFLite variables</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">//   tflite::MicroErrorReporter tflErrorReporter;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">//   tflite::AllOpsResolver tflOpsResolver;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// variables for TensorFlow Lite</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//   tflite::MicroErrorReporter tflErrorReporter;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//   tflite::AllOpsResolver tflOpsResolver;</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_input_speech.html#ace167e5e4e635b99e2c1d872e1197922">   59</a></span>&#160;  <span class="keyword">const</span> tflite::Model *<a class="code" href="class_input_speech.html#ace167e5e4e635b99e2c1d872e1197922">tflModel</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">//   tflite::MicroInterpreter *tflInterpreter = nullptr;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">//   TfLiteTensor *tflInputTensor = nullptr;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">//   TfLiteTensor *tflOutputTensor = nullptr;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//   tflite::MicroInterpreter *tflInterpreter = nullptr;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//   TfLiteTensor *tflInputTensor = nullptr;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//     TfLiteTensor *tflOutputTensor = nullptr;</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>

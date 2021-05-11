@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debugprint_309',['debugPrint',['../class_tiny_trainable.html#a66f82583fa2d31b5000f73b6b73f01c5',1,'TinyTrainable']]]
+  ['capturesamples_355',['CaptureSamples',['../arduino__audio__provider_8cpp.html#ac438f5c620f94bf1e62aea4c612a8325',1,'arduino_audio_provider.cpp']]]
 ];

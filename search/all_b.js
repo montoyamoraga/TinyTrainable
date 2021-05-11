@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['notebassdrum_136',['noteBassDrum',['../class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949',1,'OutputMIDI']]],
-  ['noteclosedhihat_137',['noteClosedHiHat',['../class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73',1,'OutputMIDI']]],
-  ['notehitom_138',['noteHiTom',['../class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f',1,'OutputMIDI']]],
-  ['notesnare_139',['noteSnare',['../class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4',1,'OutputMIDI']]],
-  ['num_5fgestures_140',['NUM_GESTURES',['../class_input_gesture.html#ae790af1be216de1db98c89be507f8324',1,'InputGesture']]],
-  ['num_5fsounds_141',['NUM_SOUNDS',['../class_input_speech.html#a64b9d0ab5d638469803da89b5531a65d',1,'InputSpeech']]]
+  ['latestaudiotimestamp_149',['LatestAudioTimestamp',['../arduino__audio__provider_8cpp.html#ad949a62dec8d1ed5f3f4ef3bc4afd762',1,'LatestAudioTimestamp():&#160;arduino_audio_provider.cpp'],['../audio__provider_8h.html#ad949a62dec8d1ed5f3f4ef3bc4afd762',1,'LatestAudioTimestamp():&#160;arduino_audio_provider.cpp']]],
+  ['loop_150',['loop',['../main__functions_8h.html#afe461d27b9c48d5921c00d521181f12f',1,'main_functions.h']]]
 ];

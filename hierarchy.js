@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "FeatureProvider", "class_feature_provider.html", null ],
     [ "Input", "class_input.html", [
       [ "InputColor", "class_input_color.html", null ],
       [ "InputGesture", "class_input_gesture.html", null ],

@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['magenta_128',['magenta',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967a997d39850948cc1baf6bd0cfd791d95d',1,'TinyTrainable.h']]],
-  ['micro_5ffeatures_5fmicro_5fmodel_5fsettings_2ecpp_129',['micro_features_micro_model_settings.cpp',['../micro__features__micro__model__settings_8cpp.html',1,'']]],
-  ['micro_5ffeatures_5fmicro_5fmodel_5fsettings_2eh_130',['micro_features_micro_model_settings.h',['../micro__features__micro__model__settings_8h.html',1,'']]],
-  ['midipatterns_2eh_131',['MIDIPatterns.h',['../_m_i_d_i_patterns_8h.html',1,'']]],
-  ['minimum_5fcount_5f_132',['minimum_count_',['../class_recognize_commands.html#a3dba619bd131fb95754ddf4fbf3aabb4',1,'RecognizeCommands']]],
-  ['moveservo_133',['moveServo',['../class_output.html#aaf73688e9dc1f2ae992441b02a5a2fe5',1,'Output::moveServo()'],['../class_output_servo.html#a639326a4868f0f4b8781810af87f79ef',1,'OutputServo::moveServo()'],['../class_tiny_trainable.html#ae6c8e026d4e10e04a677028d1df96860',1,'TinyTrainable::moveServo(int classification)']]],
-  ['myinput_134',['myInput',['../class_tiny_trainable.html#ad101269929091012fe3f21eb1105e17f',1,'TinyTrainable']]],
-  ['myoutput_135',['myOutput',['../class_tiny_trainable.html#a888e801d77cd92e11ced14d9e3b259bb',1,'TinyTrainable']]]
+  ['kaudiosamplefrequency_137',['kAudioSampleFrequency',['../micro__features__micro__model__settings_8h.html#ab76a31c4a3272c0ac84c83d1bc9ea793',1,'micro_features_micro_model_settings.h']]],
+  ['kcategorycount_138',['kCategoryCount',['../micro__features__micro__model__settings_8h.html#ad02d553c1a70e5443b673e59b7d5fc25',1,'micro_features_micro_model_settings.h']]],
+  ['kcategorylabels_139',['kCategoryLabels',['../micro__features__micro__model__settings_8cpp.html#a82462d649987192b43a32bc0b64cd778',1,'kCategoryLabels():&#160;micro_features_micro_model_settings.cpp'],['../micro__features__micro__model__settings_8h.html#a82462d649987192b43a32bc0b64cd778',1,'kCategoryLabels():&#160;micro_features_micro_model_settings.cpp']]],
+  ['kfeatureelementcount_140',['kFeatureElementCount',['../micro__features__micro__model__settings_8h.html#afc9e60b44cfbb4e4c5795aabdef7fcb9',1,'micro_features_micro_model_settings.h']]],
+  ['kfeatureslicecount_141',['kFeatureSliceCount',['../micro__features__micro__model__settings_8h.html#a69731a9f0f9fa636c96fcbcf97fdb4e8',1,'micro_features_micro_model_settings.h']]],
+  ['kfeatureslicedurationms_142',['kFeatureSliceDurationMs',['../micro__features__micro__model__settings_8h.html#aa5691f12c2df14508a87b559d7a75905',1,'micro_features_micro_model_settings.h']]],
+  ['kfeatureslicesize_143',['kFeatureSliceSize',['../micro__features__micro__model__settings_8h.html#aa9a84445726d829c45dd5d54ade01203',1,'micro_features_micro_model_settings.h']]],
+  ['kfeatureslicestridems_144',['kFeatureSliceStrideMs',['../micro__features__micro__model__settings_8h.html#a78e27dc9ec4a1372344375448affb5ce',1,'micro_features_micro_model_settings.h']]],
+  ['kmaxaudiosamplesize_145',['kMaxAudioSampleSize',['../micro__features__micro__model__settings_8h.html#a499c87fbfb8cb2542b46f02c9955dbb1',1,'micro_features_micro_model_settings.h']]],
+  ['kmaxresults_146',['kMaxResults',['../class_previous_results_queue.html#a59054f3fd8aa65205b7a52b68bfc53e8',1,'PreviousResultsQueue']]],
+  ['ksilenceindex_147',['kSilenceIndex',['../micro__features__micro__model__settings_8h.html#a46b073410d5bc3e628996a8bff857ff0',1,'micro_features_micro_model_settings.h']]],
+  ['kunknownindex_148',['kUnknownIndex',['../micro__features__micro__model__settings_8h.html#a7c080aeaf54fe24d24ba258af8979d72',1,'micro_features_micro_model_settings.h']]]
 ];

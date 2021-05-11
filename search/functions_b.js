@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['tinytrainable_376',['TinyTrainable',['../class_tiny_trainable.html#a00e94be6f92af0cd96379e3a8a78122b',1,'TinyTrainable']]],
-  ['trainknn_377',['trainKNN',['../class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd',1,'Input::trainKNN()'],['../class_input_color.html#adb585ff663d1720c862534009fe647a8',1,'InputColor::trainKNN()'],['../class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f',1,'TinyTrainable::trainKNN()']]]
+  ['readcolor_392',['readColor',['../class_input_color.html#a6b003d0c90cc42225c1af0d1073ccf8f',1,'InputColor']]],
+  ['recognizecommands_393',['RecognizeCommands',['../class_recognize_commands.html#a429d31622f23761730ebab01b2040ea8',1,'RecognizeCommands']]],
+  ['respondtocommand_394',['RespondToCommand',['../arduino__command__responder_8cpp.html#aa091801d3ef1630c44e4b7397984f3f0',1,'RespondToCommand(tflite::ErrorReporter *error_reporter, int32_t current_time, const char *found_command, uint8_t score, bool is_new_command):&#160;arduino_command_responder.cpp'],['../command__responder_8h.html#aa091801d3ef1630c44e4b7397984f3f0',1,'RespondToCommand(tflite::ErrorReporter *error_reporter, int32_t current_time, const char *found_command, uint8_t score, bool is_new_command):&#160;arduino_command_responder.cpp']]],
+  ['result_395',['Result',['../struct_previous_results_queue_1_1_result.html#a087550e24006ca62faee791ac6f7a942',1,'PreviousResultsQueue::Result::Result()'],['../struct_previous_results_queue_1_1_result.html#a8f53ba1045de2b17677815554a87737d',1,'PreviousResultsQueue::Result::Result(int32_t time, int8_t *input_scores)']]]
 ];

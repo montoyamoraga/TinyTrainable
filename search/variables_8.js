@@ -1,15 +1,4 @@
 var searchData=
 [
-  ['kaudiosamplefrequency_462',['kAudioSampleFrequency',['../micro__features__micro__model__settings_8h.html#ab76a31c4a3272c0ac84c83d1bc9ea793',1,'micro_features_micro_model_settings.h']]],
-  ['kcategorycount_463',['kCategoryCount',['../micro__features__micro__model__settings_8h.html#ad02d553c1a70e5443b673e59b7d5fc25',1,'micro_features_micro_model_settings.h']]],
-  ['kcategorylabels_464',['kCategoryLabels',['../micro__features__micro__model__settings_8cpp.html#a82462d649987192b43a32bc0b64cd778',1,'kCategoryLabels():&#160;micro_features_micro_model_settings.cpp'],['../micro__features__micro__model__settings_8h.html#a82462d649987192b43a32bc0b64cd778',1,'kCategoryLabels():&#160;micro_features_micro_model_settings.cpp']]],
-  ['kfeatureelementcount_465',['kFeatureElementCount',['../micro__features__micro__model__settings_8h.html#afc9e60b44cfbb4e4c5795aabdef7fcb9',1,'micro_features_micro_model_settings.h']]],
-  ['kfeatureslicecount_466',['kFeatureSliceCount',['../micro__features__micro__model__settings_8h.html#a69731a9f0f9fa636c96fcbcf97fdb4e8',1,'micro_features_micro_model_settings.h']]],
-  ['kfeatureslicedurationms_467',['kFeatureSliceDurationMs',['../micro__features__micro__model__settings_8h.html#aa5691f12c2df14508a87b559d7a75905',1,'micro_features_micro_model_settings.h']]],
-  ['kfeatureslicesize_468',['kFeatureSliceSize',['../micro__features__micro__model__settings_8h.html#aa9a84445726d829c45dd5d54ade01203',1,'micro_features_micro_model_settings.h']]],
-  ['kfeatureslicestridems_469',['kFeatureSliceStrideMs',['../micro__features__micro__model__settings_8h.html#a78e27dc9ec4a1372344375448affb5ce',1,'micro_features_micro_model_settings.h']]],
-  ['kmaxaudiosamplesize_470',['kMaxAudioSampleSize',['../micro__features__micro__model__settings_8h.html#a499c87fbfb8cb2542b46f02c9955dbb1',1,'micro_features_micro_model_settings.h']]],
-  ['kmaxresults_471',['kMaxResults',['../class_previous_results_queue.html#a59054f3fd8aa65205b7a52b68bfc53e8',1,'PreviousResultsQueue']]],
-  ['ksilenceindex_472',['kSilenceIndex',['../micro__features__micro__model__settings_8h.html#a46b073410d5bc3e628996a8bff857ff0',1,'micro_features_micro_model_settings.h']]],
-  ['kunknownindex_473',['kUnknownIndex',['../micro__features__micro__model__settings_8h.html#a7c080aeaf54fe24d24ba258af8979d72',1,'micro_features_micro_model_settings.h']]]
+  ['is_5ffirst_5frun_5f_526',['is_first_run_',['../class_feature_provider.html#a6a1b69309205a0a8c2b8ad7d60bea8ec',1,'FeatureProvider']]]
 ];

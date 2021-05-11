@@ -1,13 +1,12 @@
 /// @file InputSpeech.cpp
 /// @brief TensorFlow model + input speech
 
-// include header file
+/// @include header file
 #include "InputSpeech.h"
 
-// TODO: include machine learning model
+/// @include machine learning model
 #include "../assets/modelSpeechDefault.h"
 
-// constructor
 InputSpeech::InputSpeech() {
   _sounds[0] = "";
   _sounds[1] = "";

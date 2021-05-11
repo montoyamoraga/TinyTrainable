@@ -19,6 +19,7 @@
 
 /// @include library for machine learning
 #include <TensorFlowLite.h>
+
 #include <tensorflow/lite/micro/micro_error_reporter.h>
 #include <tensorflow/lite/micro/micro_interpreter.h>
 #include <tensorflow/lite/micro/micro_mutable_op_resolver.h>
@@ -26,14 +27,13 @@
 #include <tensorflow/lite/version.h>
 
 /// @include files from TinyML micro_speech
+#include "../tensorflow_speech/main_functions.h"
+#include "../tensorflow_speech/audio_provider.h"
+#include "../tensorflow_speech/command_responder.h"
+#include "../tensorflow_speech/feature_provider.h"
 #include "../tensorflow_speech/recognize_commands.h"
-
-// #include "../tensorflow/main_functions.h"
-// #include "../tensorflow/command_responder.h"
-// #include "../tensorflow/feature_provider.h"
-// #include "../tensorflow/micro_features_micro_model_settings.h"
-// #include "../tensorflow/micro_features_model.h"
-// #include "../tensorflow/recognize_commands.h"
+#include "../tensorflow_speech/micro_features_micro_model_settings.h"
+#include "../tensorflow_speech/micro_features_model.h"
 
 /// @class InputSpeech
 /// @brief InputSpeech inherits from Input
@@ -53,13 +53,13 @@ private:
   const int NUM_SOUNDS = 3;
   String _sounds[3];
 
-  // TFLite variables
-  //   tflite::MicroErrorReporter tflErrorReporter;
-  //   tflite::AllOpsResolver tflOpsResolver;
+  // variables for TensorFlow Lite
+//   tflite::MicroErrorReporter tflErrorReporter;
+//   tflite::AllOpsResolver tflOpsResolver;
   const tflite::Model *tflModel = nullptr;
-  //   tflite::MicroInterpreter *tflInterpreter = nullptr;
-  //   TfLiteTensor *tflInputTensor = nullptr;
-  //   TfLiteTensor *tflOutputTensor = nullptr;
+//   tflite::MicroInterpreter *tflInterpreter = nullptr;
+//   TfLiteTensor *tflInputTensor = nullptr;
+//     TfLiteTensor *tflOutputTensor = nullptr;
 };
 
 #endif

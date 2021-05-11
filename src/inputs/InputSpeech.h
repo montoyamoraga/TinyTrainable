@@ -25,6 +25,9 @@
 #include <tensorflow/lite/schema/schema_generated.h>
 #include <tensorflow/lite/version.h>
 
+/// @include files from TinyML micro_speech
+#include "../tensorflow_speech/recognize_commands.h"
+
 // #include "../tensorflow/main_functions.h"
 // #include "../tensorflow/command_responder.h"
 // #include "../tensorflow/feature_provider.h"
@@ -36,11 +39,12 @@
 /// @brief InputSpeech inherits from Input
 class InputSpeech : public Input {
 public:
-  // constructor
+
+  /// @brief constructor
   InputSpeech();
 
   virtual void setupInstrument(bool serialDebugging) override;
-  virtual void speechSetupTF(String sounds[3],
+  virtual void setupSpeechModel(String sounds[3],
                              const unsigned char *model = nullptr) override;
   virtual void identify() override;
 

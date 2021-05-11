@@ -148,10 +148,10 @@ void TinyTrainable::gestureSetNumberSamples(int newVal) {
   }
 }
 
-void TinyTrainable::speechSetupTF(String sounds[3],
+void TinyTrainable::setupSpeechModel(String sounds[3],
                                   const unsigned char *model) {
   if (myInput != nullptr) {
-    myInput->speechSetupTF(sounds, model);
+    myInput->setupSpeechModel(sounds, model);
   }
 }
 

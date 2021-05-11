@@ -26,7 +26,7 @@ void InputSpeech::setupInstrument(bool serialDebugging) {
   }
 }
 
-void InputSpeech::speechSetupTF(String sounds[3], const unsigned char *model) {
+void InputSpeech::setupSpeechModel(String sounds[3], const unsigned char *model) {
   _sounds[0] = sounds[0];
   _sounds[1] = sounds[1];
   _sounds[2] = sounds[2];

@@ -129,7 +129,7 @@ public:
   void gestureSetNumberSamples(int newVal);
 
   /// @brief input speech, setup TensorFlow model
-  void speechSetupTF(String sounds[3], const unsigned char *model = nullptr);
+  void setupSpeechModel(String sounds[3], const unsigned char *model = nullptr);
 
   // methods for outputs
 

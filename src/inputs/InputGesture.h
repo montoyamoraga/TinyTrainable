@@ -50,11 +50,8 @@ private:
   /// @brief threshold of significance measured in G's
   float _accelerationThreshold = 2.5;
 
-  // number of samples per motion
+  /// @brief number of samples per motion
   int _numSamples = 119;
-
-  // number of decimals for floating point numbers
-  // const int floatDecimals = 3;
 
   // initialize as if sampling has already been done
   int _samplesRead = _numSamples;
@@ -85,10 +82,15 @@ private:
   static constexpr int tensorArenaSize = 8 * 1024;
   byte tensorArena[tensorArenaSize];
 
-  // classification variables
-  float aX, aY, aZ, gX, gY, gZ; // acceleration and gravity in x, y, z
+  /// @brief acceleration in x, y, z 
+  float aX, aY, aZ;
+  /// @brief gravity in x, y, z
+  float gX, gY, gZ; 
 
+  /// @brief header for gesture database
   const String _gestureHeader = "aX,aY,aZ,gX,gY,gZ";
+
+  /// @brief  number of decimals for floating point numbers
   const int _floatDecimals = 3;
 };
 

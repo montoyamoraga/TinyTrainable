@@ -32,7 +32,7 @@ public:
   virtual void gestureSetNumberSamples(int newVal) {}
 
   // speech
-  virtual void speechSetupTF(String sounds[3],
+  virtual void setupSpeechModel(String sounds[3],
                              const unsigned char *model = nullptr) {}
 
   /// @brief pointer to a TinyTrainable instance

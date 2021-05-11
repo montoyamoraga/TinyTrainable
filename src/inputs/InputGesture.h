@@ -29,20 +29,19 @@
 /// @brief InputGesture inherits from Input
 class InputGesture : public Input {
 public:
-
   /// @brief constructor
   InputGesture();
 
   virtual void setupInstrument(bool serialDebugging) override;
   virtual void setupGestureModel(String gestures[3],
-                              const unsigned char *model = nullptr) override;
+                                 const unsigned char *model = nullptr) override;
 
   virtual void gesturePrintHeader() override;
   virtual void gestureReadData() override;
   virtual void gestureSetAcceleration(float newVal) override;
   virtual void gestureSetNumberSamples(int newVal) override;
 
-    virtual void identify() override;
+  virtual void identify() override;
 
 private:
   void setupGestureSensor();
@@ -82,11 +81,11 @@ private:
   static constexpr int tensorArenaSize = 8 * 1024;
   byte tensorArena[tensorArenaSize];
 
-  /// @brief acceleration in x, y, z 
+  /// @brief acceleration in x, y, z
   float aX, aY, aZ;
-  
+
   /// @brief gravity in x, y, z
-  float gX, gY, gZ; 
+  float gX, gY, gZ;
 
   /// @brief header for gesture database
   const String _gestureHeader = "aX,aY,aZ,gX,gY,gZ";

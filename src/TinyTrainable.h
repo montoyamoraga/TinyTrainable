@@ -114,7 +114,8 @@ public:
                 String objects[3]);
 
   /// @brief input gesture, setup TensorFlow model
-  void setupGestureModel(String gestures[3], const unsigned char *model = nullptr);
+  void setupGestureModel(String gestures[3],
+                         const unsigned char *model = nullptr);
 
   /// @brief input gesture, print header for database
   void gesturePrintHeader();

@@ -28,7 +28,7 @@ void InputGesture::setupInstrument(bool serialDebugging) {
 }
 
 void InputGesture::setupGestureModel(String gestures[3],
-                                  const unsigned char *model) {
+                                     const unsigned char *model) {
   _gestures[0] = gestures[0];
   _gestures[1] = gestures[1];
   _gestures[2] = gestures[2];
@@ -204,9 +204,7 @@ void InputGesture::gestureSetAcceleration(float newVal) {
   _accelerationThreshold = newVal;
 }
 
-void InputGesture::gestureSetNumberSamples(int newVal) {
-  _numSamples = newVal;
-}
+void InputGesture::gestureSetNumberSamples(int newVal) { _numSamples = newVal; }
 
 /// @brief function for setup of sensor LSM9DS1
 // LSM9DS1 sensor for IMU (inertial measurement unit)

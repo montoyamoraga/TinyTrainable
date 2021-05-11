@@ -25,7 +25,7 @@ public:
 
   // gesture
   virtual void setupGestureModel(String gestures[3],
-                              const unsigned char *model = nullptr) {}
+                                 const unsigned char *model = nullptr) {}
   virtual void gesturePrintHeader() {}
   virtual void gestureReadData() {}
   virtual void gestureSetAcceleration(float newVal) {}
@@ -33,7 +33,7 @@ public:
 
   // speech
   virtual void setupSpeechModel(String sounds[3],
-                             const unsigned char *model = nullptr) {}
+                                const unsigned char *model = nullptr) {}
 
   /// @brief pointer to a TinyTrainable instance
   TinyTrainable *tiny = nullptr;

@@ -1,2 +1,1 @@
-const unsigned char mySpeechModel[] = {
- };
+const unsigned char mySpeechModel[] = {};

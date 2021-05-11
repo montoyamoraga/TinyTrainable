@@ -15,7 +15,7 @@
 
 #if defined(ARDUINO) && !defined(ARDUINO_ARDUINO_NANO33BLE)
 #define ARDUINO_EXCLUDE_CODE
-#endif  // defined(ARDUINO) && !defined(ARDUINO_ARDUINO_NANO33BLE)
+#endif // defined(ARDUINO) && !defined(ARDUINO_ARDUINO_NANO33BLE)
 
 #ifndef ARDUINO_EXCLUDE_CODE
 
@@ -25,8 +25,8 @@
 
 // Toggles the built-in LED every inference, and lights a colored LED depending
 // on which word was detected.
-void RespondToCommand(tflite::ErrorReporter* error_reporter,
-                      int32_t current_time, const char* found_command,
+void RespondToCommand(tflite::ErrorReporter *error_reporter,
+                      int32_t current_time, const char *found_command,
                       uint8_t score, bool is_new_command) {
   static bool is_initialized = false;
   if (!is_initialized) {
@@ -53,12 +53,12 @@ void RespondToCommand(tflite::ErrorReporter* error_reporter,
     // If we hear a command, light up the appropriate LED
     if (found_command[0] == 'y') {
       last_command_time = current_time;
-      digitalWrite(LEDG, LOW);  // Green for yes
+      digitalWrite(LEDG, LOW); // Green for yes
     }
 
     if (found_command[0] == 'n') {
       last_command_time = current_time;
-      digitalWrite(LEDR, LOW);  // Red for no
+      digitalWrite(LEDR, LOW); // Red for no
       digitalWrite(LEDG, HIGH);
       digitalWrite(LEDB, HIGH);
     }
@@ -68,13 +68,13 @@ void RespondToCommand(tflite::ErrorReporter* error_reporter,
       last_command_time = current_time;
       digitalWrite(LEDR, HIGH);
       digitalWrite(LEDG, HIGH);
-      digitalWrite(LEDB, LOW);  // Blue for up
+      digitalWrite(LEDB, LOW); // Blue for up
     }
 
     //    if (found_command[0] == 'u') {
     if (found_command[1] == 'n') {
       last_command_time = current_time;
-      digitalWrite(LEDR, LOW);  // white for unkown
+      digitalWrite(LEDR, LOW); // white for unkown
       digitalWrite(LEDG, LOW);
       digitalWrite(LEDB, LOW);
     }
@@ -103,4 +103,4 @@ void RespondToCommand(tflite::ErrorReporter* error_reporter,
   }
 }
 
-#endif  // ARDUINO_EXCLUDE_CODE
+#endif // ARDUINO_EXCLUDE_CODE

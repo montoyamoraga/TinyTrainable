@@ -10,7 +10,7 @@
 /// @include library TinyTrainable
 #include "TinyTrainable.h"
 
-/// @include library Input 
+/// @include library Input
 #include "Input.h"
 
 /// @include library Arduino_APDS9960 for color and distance input

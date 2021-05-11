@@ -2,18 +2,13 @@
 
 ## About
 
-TinyTrainable is an Arduino library, part of the project Tiny Trainable Instruments [https://github.com/montoyamoraga/tiny-trainable-instruments](https://github.com/montoyamoraga/tiny-trainable-instruments), created by Aarón Montoya-Moraga.
+TinyTrainable is an Arduino library, part of the project Tiny Trainable Instruments [https://github.com/montoyamoraga/tiny-trainable-instruments](https://github.com/montoyamoraga/tiny-trainable-instruments), created by Aarón Montoya-Moraga, a research assistant at MIT Media Lab's Opera of the Future and Future Sketches research groups.
 
 This library is being written between December 2020 and August 2021, with help from undergrad researchers Peter Tone and Maxwell Wang.
 
 ## Distribution
 
 This Arduino library is available on this repository [https://github.com/montoyamoraga/TinyTrainable](https://github.com/montoyamoraga/TinyTrainable), and can also be installed on the Arduino IDE.
-
-## Branches
-
-* main: the source code and examples
-* gh-pages: documentation generated with Doxygen, also available at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable)
 
 ## Dependencies
 
@@ -28,10 +23,14 @@ The dependencies of this library are specified on the [library.properties](libra
 * [Arduino_TensorFlowLite](https://www.arduino.cc/reference/en/libraries/arduino_tensorflowlite/): for machine learning with TensorFlow.
 * [Servo](https://github.com/arduino-libraries/Servo): output with servo motors.
 
+## Branches
+
+* main: the source code and examples.
+* gh-pages: documentation generated with Doxygen, also available at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
 
 ## Hardware
 
-This library runs on the Arduino Nano 33 BLE Sense.
+This library is intended to be used with the microcontroller Arduino Nano 33 BLE Sense.
 
 ## License
 

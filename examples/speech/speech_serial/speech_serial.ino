@@ -6,6 +6,7 @@ TinyTrainable myTiny(INPUT_SPEECH, OUTPUT_SERIAL);
 
 // constant for debugging
 const bool debugOn = true;
+// const bool debugOn = false;
 
 String myItems[3] = {"item0", "item1", "item2"};
 

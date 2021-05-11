@@ -84,6 +84,7 @@ private:
 
   /// @brief acceleration in x, y, z 
   float aX, aY, aZ;
+  
   /// @brief gravity in x, y, z
   float gX, gY, gZ; 
 

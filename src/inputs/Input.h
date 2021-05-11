@@ -14,7 +14,7 @@ class TinyTrainable;
 /// @brief Input base class
 class Input {
 public:
-  /// @brief Input destructor
+  /// @brief destructor
   virtual ~Input() {}
   virtual void setupInstrument(bool serialDebugging) {}
   virtual void identify() {}

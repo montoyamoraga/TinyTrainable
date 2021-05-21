@@ -1,15 +1,6 @@
-[submodule "libraries/Arduino_KNN"]
-	path = libraries/Arduino_KNN
-	url = https://github.com/arduino-libraries/Arduino_KNN.git
 [submodule "libraries/Servo"]
 	path = libraries/Servo
 	url = https://github.com/arduino-libraries/Servo
 [submodule "Arduino_APDS9960"]
 	path = Arduino_APDS9960
 	url = https://github.com/arduino-libraries/Arduino_APDS9960.git
-[submodule "libraries/Arduino_APDS9960"]
-	path = libraries/Arduino_APDS9960
-	url = https://github.com/arduino-libraries/Arduino_APDS9960.git
-[submodule "libraries/Arduino_LSM9DS1"]
-	path = libraries/Arduino_LSM9DS1
-	url = https://github.com/arduino-libraries/Arduino_LSM9DS1

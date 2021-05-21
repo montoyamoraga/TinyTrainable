@@ -12,7 +12,7 @@ This Arduino library is available on this repository [https://github.com/montoya
 
 ## Dependencies
 
-The dependencies of this library are specified on the [library.properties](library.properties) file and, and also included as Git submodules on [libraries/](libraries/)
+The dependencies of this library are specified on the [library.properties](library.properties) file, which include:
 
 * [Adafruit GFX Library](https://github.com/adafruit/Adafruit-GFX-Library): for output with screen.
 * [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306): for output with screen.

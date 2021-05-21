@@ -23,16 +23,16 @@ TinyTrainable myTiny(INPUT_GESTURE, OUTPUT_PRINTER);
 const bool debugOn = true;
 
 // array to map gesture index to a name
-String GESTURES[] = {"gesture0", "gesture1", "gesture2"};
+String MY_GESTURES[] = {"gesture0", "gesture1", "gesture2"};
 
 void setup() {
   // setup instrument
   myTiny.setupInstrument(debugOn);
 
   // use this line to include the default model
-  myTiny.setupGestureModel(GESTURES);
+  myTiny.setupGestureModel(MY_GESTURES);
   // or use this line to include your own model
-  //   myTiny.setupGestureModel(GESTURES, myGestureModel);
+  //   myTiny.setupGestureModel(MY_GESTURES, myGestureModel);
 
   //  myTiny.setupOutputSerial();
 }

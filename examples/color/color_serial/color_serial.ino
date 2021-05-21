@@ -16,12 +16,13 @@ String myItems[3] = {"item0", "item1", "item2"};
 
 // setup() runs once, at the beginning
 void setup() {
+
   // set debugging over serial port
   myTiny.setupInstrument(debugOn);
 
   myTiny.setupOutputSerial();
 
-  // train the KNN algorithm with your objects
+  // train the KNN algorithm
   myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myItems);
 }
 

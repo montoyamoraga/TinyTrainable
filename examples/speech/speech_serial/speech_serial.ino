@@ -1,3 +1,6 @@
+// include speech model
+#include "mySpeechModel.h"
+
 // include library TinyTrainable
 #include <TinyTrainable.h>
 
@@ -6,9 +9,8 @@ TinyTrainable myTiny(INPUT_SPEECH, OUTPUT_SERIAL);
 
 // constant for debugging
 const bool debugOn = true;
-// const bool debugOn = false;
 
-String myItems[3] = {"item0", "item1", "item2"};
+String MY_WORDS[3] = {"word0", "word1", "word2"};
 
 // setup() runs once, at the beginning
 void setup() {
@@ -19,8 +21,11 @@ void setup() {
   // setup the serial output
   myTiny.setupOutputSerial();
 
-  // setup the model for speech recognition
-  myTiny.setupSpeechModel(myItems);
+  // use the default model for speech recognition
+  myTiny.setupSpeechModel(MY_WORDS);
+    // or use this line to include your own model
+  // myTiny.setupSpeechModel(MY_WORDS, mySpeechModel);
+
 }
 
 // loop() runs after setup(), on a loop

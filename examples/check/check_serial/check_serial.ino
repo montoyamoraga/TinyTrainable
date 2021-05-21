@@ -12,7 +12,10 @@ void setup() {
 }
 
 void loop() {
-  // lets send the classification number over serial
+
+
+
+  // print the classification number over serial
   myTiny.playOutput(0);
   delay(pauseTime);
   myTiny.playOutput(1);
@@ -20,17 +23,17 @@ void loop() {
   myTiny.playOutput(2);
   delay(pauseTime);
 
-  // you can send other messages too
+  // you can also send your own messages over Serial
   Serial.println("hi! :)");
   delay(pauseTime);
 
-  // and turn on and off the orange built-in LED
+  // turn on and off the orange built-in LED
   myTiny.setStateLEDBuiltIn(true);
   delay(pauseTime);
   myTiny.setStateLEDBuiltIn(false);
   delay(pauseTime);
 
-  // and cycle through the 6 colors of the RGB LED
+  // cycle through the 6 colors of the RGB LED
   myTiny.setStateLEDRGB(true, red);
   delay(pauseTime);
   myTiny.setStateLEDRGB(true, green);

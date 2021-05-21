@@ -56,19 +56,19 @@ void RespondToCommand(tflite::ErrorReporter *error_reporter,
     // Green for one
     if (found_command[0] == 'o') {
       last_command_time = current_time;
-      digitalWrite(LEDG, LOW); 
+      digitalWrite(LEDG, LOW);
     }
 
     // Red for two
     if (found_command[1] == 'w') {
       last_command_time = current_time;
-      digitalWrite(LEDR, LOW); 
+      digitalWrite(LEDR, LOW);
     }
 
     // Blue for three
     if (found_command[1] == 'h') {
       last_command_time = current_time;
-      digitalWrite(LEDB, LOW); 
+      digitalWrite(LEDB, LOW);
     }
 
     if (found_command[0] == 'u') {

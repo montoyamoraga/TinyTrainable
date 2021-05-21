@@ -35,8 +35,7 @@ void InputSpeech::setupSpeechModel(String sounds[3],
   error_reporter = &micro_error_reporter;
 
   // load the default model or the custom model
-  model =
-      tflite::GetModel((newModel == nullptr) ? g_model : newModel);
+  model = tflite::GetModel((newModel == nullptr) ? g_model : newModel);
 
   if (model->version() != TFLITE_SCHEMA_VERSION) {
     TF_LITE_REPORT_ERROR(error_reporter,

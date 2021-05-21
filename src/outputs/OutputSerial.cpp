@@ -20,7 +20,7 @@ void OutputSerial::setupOutputSerial() {
   Serial.begin(9600);
   while (!Serial)
     ;
-    if (tiny->_serialDebugging) {
-  tiny->debugPrint("setupOutputSerial");
-    }
+  if (tiny->_serialDebugging) {
+    tiny->debugPrint("setupOutputSerial");
+  }
 }

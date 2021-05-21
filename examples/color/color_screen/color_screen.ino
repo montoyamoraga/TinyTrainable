@@ -10,14 +10,13 @@ const int EXAMPLES_PER_CLASS = 20;
 const float COLOR_THRESHOLD = 0.5;
 
 // constants for the hardware
-//const int outputPin = 2;
+// const int outputPin = 2;
 
 // constant for debugging
 const bool debugOn = true;
 
 // String myItems[3] = {"item0", "item1", "item2"};
 String myItems[3] = {"avocado", "orange", "towel"};
-
 
 // setup() runs once, at the beginning
 void setup() {
@@ -27,7 +26,6 @@ void setup() {
 
   // set its output
   //  myTiny.setupOutputBuzzer(outputPin);
-
 
   // train the instrument's KNN algorithm
   myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myItems);

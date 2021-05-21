@@ -30,7 +30,7 @@ jobs:
       with:
         fqbn: arduino:mbed_nano:nano33ble
         sketch-paths: |
-          - examples/hello/
+          - examples/check/
           - examples/color/
           - examples/gesture/
           - examples/speech/

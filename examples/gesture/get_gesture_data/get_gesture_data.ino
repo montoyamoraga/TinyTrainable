@@ -16,15 +16,12 @@ const bool debugOn = true;
 // names of gestures
 String gestures[] = {"gesture0", "gesture1", "gesture2"};
 
-// debugging messages over usb serial
-bool serialDebugging = true;
-
 void setup() {
 
   myTiny.setupInstrument(debugOn);
   myTiny.setupOutputSerial();
 
-  // print over serial "aX,aY,aZ,gX,gY,gZ"
+  // print "aX,aY,aZ,gX,gY,gZ"
   myTiny.gesturePrintHeader();
 }
 

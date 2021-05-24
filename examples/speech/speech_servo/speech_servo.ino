@@ -13,6 +13,7 @@ const bool debugOn = true;
 String MY_WORDS[3] = {"word0", "word1", "word2"};
 
 void setup() {
+
   // set debugging over serial port
   myTiny.setupInstrument(debugOn);
 

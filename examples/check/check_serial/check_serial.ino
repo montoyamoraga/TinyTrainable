@@ -13,8 +13,6 @@ void setup() {
 
 void loop() {
 
-
-
   // print the classification number over serial
   myTiny.playOutput(0);
   delay(pauseTime);

@@ -23,7 +23,7 @@ void setup() {
 
   // use the default model for speech recognition
   myTiny.setupSpeechModel(MY_WORDS);
-    // or use this line to include your own model
+  // or use this line to include your own model
   // myTiny.setupSpeechModel(MY_WORDS, mySpeechModel);
 
 }

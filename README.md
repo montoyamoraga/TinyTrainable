@@ -29,8 +29,15 @@ This repository is distributed in two branches:
 
 1. main: source code, code examples, and Ardiuino files for distribution.
 
-* placeholder
-* placeholder
+* [assets/](./assets/)
+* [examples/](./examples/)
+* [.gitignore](./.gitignore)
+* [Doxyfile](./Doxyfile)
+* [keywords.txt](./keywords.txt)
+* [library.properties](./library.properties)
+* [LICENSE](./LICENSE)
+* [README.md](./README.md)
+* [README.pdf](./README.pdf)
 
 2. gh-pages: static website documentation generated with Doxygen, deployed at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
 

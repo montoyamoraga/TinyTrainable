@@ -10,7 +10,7 @@ TinyTrainable myTiny(INPUT_SPEECH, OUTPUT_SERIAL);
 // constant for debugging
 const bool debugOn = true;
 
-String MY_WORDS[3] = {"word0", "word1", "word2"};
+String MY_WORDS[3] = {"agua", "burbuja", "cielo"};
 
 // setup() runs once, at the beginning
 void setup() {

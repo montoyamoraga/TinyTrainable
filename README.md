@@ -30,7 +30,13 @@ The dependencies of this library are specified on the [library.properties](libra
 
 ## Hardware
 
-This library is intended to be used with the microcontroller Arduino Nano 33 BLE Sense.
+This library is intended to be used with the microcontroller Arduino Nano 33 BLE Sense, and the bill of materials available at [https://github.com/montoyamoraga/tiny-trainable-instruments/blob/main/docs/0-bill-of-materials.md](https://github.com/montoyamoraga/tiny-trainable-instruments/blob/main/docs/0-bill-of-materials.md)
+
+## Releases
+
+* [v0.0.1](https://github.com/montoyamoraga/TinyTrainable/releases/tag/v0.0.1): 2020 December 07, placeholder alpha release, for testing the Arduino library ecosystem.
+* [v0.1.0](https://github.com/montoyamoraga/TinyTrainable/releases/tag/v0.1.0): 2021 January 12, alpha release with first draft versions of each class, and some examples.
+* v0.2.0: in progress.
 
 ## License
 

@@ -23,10 +23,18 @@ The dependencies of this library are specified on the [library.properties](libra
 * [Arduino_TensorFlowLite](https://www.arduino.cc/reference/en/libraries/arduino_tensorflowlite/): for machine learning with TensorFlow.
 * [Servo](https://github.com/arduino-libraries/Servo): output with servo motors.
 
-## Branches
+## Contents
 
-* main: the source code and examples.
-* gh-pages: documentation generated with Doxygen, also available at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
+This repository is distributed in two branches:
+
+1. main: source code, code examples, and Ardiuino files for distribution.
+
+* placeholder
+* placeholder
+
+2. gh-pages: static website documentation generated with Doxygen, deployed at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
+
+
 
 ## Hardware
 

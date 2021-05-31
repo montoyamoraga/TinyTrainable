@@ -29,9 +29,12 @@ This repository is distributed in two branches:
 
 1. main: source code, code examples, and Ardiuino files for distribution.
 
-* [assets/](./assets/)
-* [examples/](./examples/)
+* [assets/](./assets/): additional assets for the library, including machine learning trained models
+* [examples/](./examples/): code 
+* [src/](./src/)
 * [.gitignore](./.gitignore)
+* [./CODE_OF_CONDUCT.md](././CODE_OF_CONDUCT.md)
+* [CONTRIBUTING.md](./CONTRIBUTING.md)
 * [Doxyfile](./Doxyfile)
 * [keywords.txt](./keywords.txt)
 * [library.properties](./library.properties)
@@ -41,7 +44,11 @@ This repository is distributed in two branches:
 
 2. gh-pages: static website documentation generated with Doxygen, deployed at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
 
+### Source code
 
+
+
+### Examples
 
 ## Hardware
 

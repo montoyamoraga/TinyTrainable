@@ -46,9 +46,33 @@ This repository is distributed in two branches:
 
 ### Source code
 
+The source code is distributed in the following files and folders:
 
+* TinyTrainable.h and TinyTrainable.cpp: base classes for the library.
+* inputs/: base classes for each input.
+* outputs/: base classes for each output.
+* tensorflow_speech: additional code for speech recognition, authored by the TensorFlow team.
 
 ### Examples
+
+The examples are distributed in 4 folders, ordered alphabetically and in terms of complexity:
+
+* check: no input, intended to check the wiring of the instruments.
+* color: color input.
+* gesture: gesture input.
+* speech: speech input.
+
+Each of these folders contains one example for each of the available outputs:
+
+* buzzer
+* led
+* midi
+* printer
+* screen
+* serial
+* servo
+
+There is one additional helper example called get_gesture_data, for capturing gesture data for creating your own gesture database.
 
 ## Hardware
 

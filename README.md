@@ -82,7 +82,7 @@ This library is intended to be used with the microcontroller Arduino Nano 33 BLE
 
 * [v0.0.1](https://github.com/montoyamoraga/TinyTrainable/releases/tag/v0.0.1): 2020 December 07, placeholder alpha release, for testing the Arduino library ecosystem.
 * [v0.1.0](https://github.com/montoyamoraga/TinyTrainable/releases/tag/v0.1.0): 2021 January 12, alpha release with first draft versions of each class, and some examples.
-* v0.2.0: in progress.
+* [v0.2.0](https://github.com/montoyamoraga/TinyTrainable/releases/tag/v0.2.0): 2021 Sunday June 20, beta release for workshops.
 
 ## License
 

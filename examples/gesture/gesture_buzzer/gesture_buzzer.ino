@@ -30,7 +30,7 @@ void setup() {
   // set debugging over serial port
   myTiny.setupInstrument(debugOn);
 
-    // set its output (see buzzer examples for more buzzer options)
+  // set its output (see buzzer examples for more buzzer options)
   myTiny.setupOutputBuzzer(outputPin);
 
   // use this line to include the default model
@@ -42,7 +42,7 @@ void setup() {
   myTiny.setBuzzerFrequency(0, freqArray0, paramArrayLength);
   myTiny.setBuzzerFrequency(1, freqArray1, paramArrayLength);
   myTiny.setBuzzerFrequency(2, freqArray2, paramArrayLength);
-  
+
   // set durations, in milliseconds
   myTiny.setBuzzerDuration(0, 300);
   myTiny.setBuzzerDuration(1, 600);

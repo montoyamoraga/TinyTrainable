@@ -25,7 +25,6 @@ void setup() {
   myTiny.setupSpeechModel(MY_WORDS);
   // or use this line to include your own model
   // myTiny.setupSpeechModel(MY_WORDS, mySpeechModel);
-
 }
 
 // loop() runs after setup(), on a loop

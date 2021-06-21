@@ -16,6 +16,7 @@ int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 int shortParamArrayLength = 3;
 int longParamArrayLength = 6;
 
+// time between sounds
 int pauseTime = 2000;
 
 void setup() {
@@ -52,15 +53,15 @@ void setup() {
 
   // 0.
 
-  //  myTiny.setBuzzerDuration(0, 300);
-  //  myTiny.setBuzzerDuration(1, 600);
-  //  myTiny.setBuzzerDuration(2, 900);
+   myTiny.setBuzzerDuration(0, 300);
+   myTiny.setBuzzerDuration(1, 600);
+   myTiny.setBuzzerDuration(2, 900);
 
   // 1.
 
-  myTiny.setBuzzerDuration(0, 1000, 2000);
-  myTiny.setBuzzerDuration(1, 2000, 3000);
-  myTiny.setBuzzerDuration(2, 3000, 4000);
+  //   myTiny.setBuzzerDuration(0, 1000, 2000);
+  //   myTiny.setBuzzerDuration(1, 2000, 3000);
+  //   myTiny.setBuzzerDuration(2, 3000, 4000);
 
   // 2. (using the same arrays as above because the numbers also work in ms!)
 

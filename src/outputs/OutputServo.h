@@ -49,7 +49,7 @@ private:
   Servo _servo;
 
   int _outputPinServo = -1;
-  int _servoAngleCurrent = 0;
+  int _servoAngleCurrent = 10;
   int _servoAngleMin = 0;
   int _servoAngleMax = 180;
   unsigned long _servoPauses[3];

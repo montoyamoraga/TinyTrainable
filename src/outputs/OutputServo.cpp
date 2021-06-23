@@ -30,6 +30,10 @@ void OutputServo::setupOutputServo(int outputPin) {
   // pinMode is an Arduino function
   pinMode(_outputPinServo, OUTPUT);
 
+  // move to initial position
+  _servo.write(_servoAngleCurrent);
+
+  // initialize servo pauses
   for (int i = 0; i < 3; i++) {
     _servoPauses[i] = 1000;
   }

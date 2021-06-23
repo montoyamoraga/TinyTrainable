@@ -139,10 +139,6 @@ void InputColor::readColor(float colorReading[]) {
 
 // // uses the trained KNN algorithm to identify objects the user shows
 void InputColor::identify() {
-  // if (!_checkedSetup) {
-  // TODO: finish this check routine
-  // checkInst0Setup();
-  // }
 
   // wait for the object to move away again
   // while (!APDS.proximityAvailable() || APDS.readProximity() == 0) {

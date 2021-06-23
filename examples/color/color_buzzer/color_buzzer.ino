@@ -10,7 +10,7 @@ const int EXAMPLES_PER_CLASS = 20;
 const float COLOR_THRESHOLD = 0.5;
 
 // constants for the hardware
-const int outputPin = 2;
+const int signalPin = 2;
 
 // constant for debugging
 const bool debugOn = true;
@@ -33,7 +33,7 @@ void setup() {
   myTiny.setupInstrument(debugOn);
 
   // set its output
-  myTiny.setupOutputBuzzer(outputPin);
+  myTiny.setupOutputBuzzer(signalPin);
 
   // see the hello_buzzer example for more frequency
   // and duration parameter options

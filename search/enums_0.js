@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buzzermode_593',['BuzzerMode',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5b',1,'OutputBuzzer']]]
+  ['buzzermode_599',['BuzzerMode',['../class_output_buzzer.html#a333030745f97d4ed7e5cbc6f35714f5b',1,'OutputBuzzer']]]
 ];

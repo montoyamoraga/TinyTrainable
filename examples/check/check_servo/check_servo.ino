@@ -17,11 +17,11 @@ const int tempo2 = 200;
 
 // constants for the hardware
 // connect servo signal pin to D9 on the Arduino
-const int signalPin = 9;
+const int outputPin = 9;
 
 void setup() {
 
-  myTiny.setupOutputServo(signalPin);
+  myTiny.setupOutputServo(outputPin);
 
   // set the tempo (in bpm) for each object
   myTiny.setServoTempo(0, tempo0);

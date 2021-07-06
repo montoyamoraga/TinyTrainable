@@ -21,14 +21,14 @@ const int tempo1 = 90;
 const int tempo2 = 200;
 
 // constants for the hardware
-const int signalPin = 9;
+const int outputPin = 9;
 
 // setup() runs once, at the beginning
 void setup() {
 
   myTiny.setupInstrument(debugOn);
 
-  myTiny.setupOutputServo(signalPin);
+  myTiny.setupOutputServo(outputPin);
 
   // set the tempo (in bpm) for each object
   myTiny.setServoTempo(0, tempo0);

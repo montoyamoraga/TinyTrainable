@@ -5,7 +5,7 @@
 TinyTrainable myTiny(INPUT_NONE, OUTPUT_BUZZER);
 
 // constants for the hardware
-const int signalPin = 2;
+const int outputPin = 2;
 
 // arrays of frequencies
 int freqArray0[] = {1200, 1400, 1600};
@@ -22,7 +22,7 @@ int pauseTime = 2000;
 void setup() {
 
   // initialize output
-  myTiny.setupOutputBuzzer(signalPin);
+  myTiny.setupOutputBuzzer(outputPin);
 
   // for buzzer output, there are 3 options:
 

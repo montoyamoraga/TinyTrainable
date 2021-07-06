@@ -15,13 +15,6 @@ var class_output_m_i_d_i =
     [ "_outputPinMIDI", "class_output_m_i_d_i.html#ac2ea1dc35b7e3b2acf2b94717711bf5b", null ],
     [ "currentGenre", "class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a", null ],
     [ "currentStep", "class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e", null ],
-    [ "noteBassDrum", "class_output_m_i_d_i.html#ae8d240db94c665f85d9c0266cc6ef949", null ],
-    [ "noteClap", "class_output_m_i_d_i.html#a56d2b297e1e3310a60db343d2177ca61", null ],
-    [ "noteClosedHiHat", "class_output_m_i_d_i.html#ac977be9dc58f2d7210426c8cb1216f73", null ],
-    [ "noteHiTom", "class_output_m_i_d_i.html#a76d6c02554173c88965e7ae065e49b4f", null ],
-    [ "noteLowTom", "class_output_m_i_d_i.html#a70a1b53ff15816e0beb832f42755d949", null ],
-    [ "noteOpenHiHat", "class_output_m_i_d_i.html#ad2bf531e162c931237c48be17b5b65a9", null ],
-    [ "noteSnare", "class_output_m_i_d_i.html#a7efeb94479a110995a326dcc1af544f4", null ],
     [ "tempoDelay", "class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f", null ],
     [ "totalSteps", "class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556", null ]
 ];

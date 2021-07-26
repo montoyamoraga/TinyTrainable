@@ -1,8 +1,6 @@
 #ifndef MIDI_PATTERNS_H
 #define MIDI_PATTERNS_H
 
-// TODO: in progress
-
 // drum patterns
 byte bossanovaBD[] = {1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0};
 

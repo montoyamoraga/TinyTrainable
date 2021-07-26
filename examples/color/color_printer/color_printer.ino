@@ -18,15 +18,15 @@ const int placeHolder2 = 10;
 
 void setup() {
 
-  // TODO: baudrate is 19200, or 9600 for some printers, confirm
+  // baudrate is 19200, or 9600 for some printers
   //  Serial1.begin(19200);
 
   // start printer
   //  printer.begin();
 
-  // text justification
-  // TODO: what is F()?
+  //  text justification
   //  printer.justify('R');
+  //  F() is an advanced function for casting strings
   //  printer.println(F("Right justified"));
   //  printer.justify('C');
   //  printer.println(F("Center justified"));
@@ -35,7 +35,7 @@ void setup() {
 
   // make printer sleep for 5 seconds
   //  printer.sleep();
-  // TODO: what is L?
+  //  L stands for long integer
   //  delay(5000L);
   // wake up the printer
   //  printer.wake();

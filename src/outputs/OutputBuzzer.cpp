@@ -42,7 +42,6 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
     break;
   }
   case undefParam: {
-    // TODO: placeholder
     buzzerParamArray[0] = 100;
   }
   }
@@ -63,7 +62,6 @@ void OutputBuzzer::getBuzzerParam(int object, int buzzerParamArray[]) {
     break;
   }
   case undefParam: {
-    // TODO: placeholder
     buzzerParamArray[1] = 100;
   }
   }

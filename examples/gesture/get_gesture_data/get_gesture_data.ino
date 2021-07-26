@@ -26,6 +26,5 @@ void setup() {
 }
 
 void loop() {
-  // TODO: right now it is commented out in the source code
   myTiny.gestureReadData();
 }

@@ -96,47 +96,6 @@ void InputColor::readColor(float colorReading[]) {
 //     errorBlink(red, 3);
 //   }
 
-//   // checking output-specific setup
-//   switch (_outputMode) {
-//   case outputBuzzer:
-//     if (_outputPinBuzzer == -1 || _buzzerDurations[0] == 0 ||
-//         _buzzerDurations[1] == 0 || _buzzerDurations[2] == 0) {
-//       errorBlink(yellow, 1);
-//     }
-//     if (_buzzerFrequencies[0] == -1 || _buzzerFrequencies[1] == -1 ||
-//         _buzzerFrequencies[2] == -1) {
-//       errorBlink(yellow, 2);
-//     }
-//     break;
-//   case outputtScreen:
-//     Serial.println("TODO");
-//     break;
-//   case outputLED:
-//     Serial.println("TODO");
-//     break;
-//   case outputMIDI:
-//     if (_midiChannel > 15 || _midiVelocity == 0) {
-//       errorBlink(blue, 1);
-//     }
-//     if (_midiNotes[0] == -1 || _midiNotes[1] == -1 || _midiNotes[2] == -1) {
-//       errorBlink(blue, 2);
-//     }
-//     break;
-//   case outputPrinter:
-//     Serial.println("TODO");
-//     break;
-//   case outputSerialUSB:
-//     Serial.println("TODO");
-//     break;
-//   case outputServo:
-//     Serial.println("TODO");
-//     break;
-//   case outputUndefined:
-//     Serial.println("TODO");
-//     break;
-//   }
-// }
-
 // // uses the trained KNN algorithm to identify objects the user shows
 void InputColor::identify() {
 
@@ -213,7 +172,6 @@ void InputColor::trainKNN(int k, int examplesPerClass, float colorThreshold,
     }
 
     // delay so the object readings don't overlap
-    // TODO: add to markdown documentation
     // TODO: maybe instead of hardcoded its a variable for advanced users
     delay(1000);
 

@@ -27,7 +27,7 @@ void OutputScreen::setupOutputScreen() {
   if (!_screen->begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
     Serial.println(F("SSD1306 allocation failed"));
     for (;;)
-      ; // Don't proceed, loop forever
+      ; // loop forever
   }
 
   _screen->clearDisplay();
@@ -47,5 +47,5 @@ void OutputScreen::screenDrawWelcome() {
 }
 
 void OutputScreen::playOutput(int classification) {
-  // Serial.println("TODO OutputScreen playOutput");
+  Serial.println("this is OutputScreen playOutput");
 }

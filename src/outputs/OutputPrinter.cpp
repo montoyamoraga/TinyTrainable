@@ -51,5 +51,5 @@ void OutputPrinter::setPrinterTest() {
 void OutputPrinter::setupOutputTest() {}
 
 void OutputPrinter::playOutput(int classification) {
-  // Serial.println("TODO OutputPrinter playOutput");
+  Serial.println("this is OutputPrinter playOutput");
 }

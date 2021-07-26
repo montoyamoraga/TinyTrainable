@@ -2,14 +2,6 @@
 // from the repository ArduinoTensorFlowLiteTutorials by Arduino
 // https://github.com/arduino/ArduinoTensorFlowLiteTutorials
 
-// TODO: rewrite this placeholder code
-// at this stage, this code is a placeholder,
-// copied from the following file
-// https://github.com/arduino/ArduinoTensorFlowLiteTutorials/blob/master/GestureToEmoji/ArduinoSketches/IMU_Classifier/IMU_Classifier.ino
-// with only little modifications
-// and still without comments about what most lines mean
-// and without optimization
-
 // include gesture model
 #include "myGestureModel.h"
 

@@ -68,34 +68,6 @@ void InputColor::readColor(float colorReading[]) {
   }
 }
 
-// // TODO: docstring, call this at the beginning of identify() once
-// // red is general missing setup
-// //    1 blink - setupInstrument() not called
-// //    2 blinks - setLabels() not called
-// //    3 blinks - trainKNN() not called
-// // green is usb output missing setup
-// //    none
-// // blue is midi output missing setup
-// //    1 blink - setSerialMIDIChannel() or setSerialMIDIVelocity not called
-// //    2 blinks - setFrequencies() not called
-// // yellow is buzzer output missing setup
-// //    1 blink - setupPin() not called
-// //    2 blinks - setFrequencies() not called
-// void InputColor::checkInst0Setup() {
-//   if (_outputMode == outputUndefined) {
-//     errorBlink(red, 1);
-//   }
-
-//   // checking setLabels()
-//   if (_labels[0] == "" || _labels[1] == "" || _labels[2] == "") {
-//     errorBlink(red, 2);
-//   }
-
-//   // checking trainKNN()
-//   if (_k == -1) {
-//     errorBlink(red, 3);
-//   }
-
 // // uses the trained KNN algorithm to identify objects the user shows
 void InputColor::identify() {
 
@@ -162,7 +134,8 @@ void InputColor::trainKNN(int k, int examplesPerClass, float colorThreshold,
 
     // only show for objects 0 and 1
     if (currentClass < 2) {
-      // TODO - maybe move to after LED change, since Serial doesn't always work
+      // TODO - maybe move to after LED change,
+      // since Serial doesn't always work
       // and won't always be used
       tiny->debugPrint("Prepare next object");
     }

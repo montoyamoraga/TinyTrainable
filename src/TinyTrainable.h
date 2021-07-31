@@ -1,5 +1,5 @@
 /// @file TinyTrainable.h
-/// @brief Arduino library for Tiny Trainable Instruments
+/// @brief Arduino library for Tiny trainable instruments
 /// @author montoyamoraga, peter-parque, maxzwang
 
 // conditional compilation

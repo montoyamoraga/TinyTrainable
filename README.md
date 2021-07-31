@@ -2,7 +2,7 @@
 
 ## About
 
-TinyTrainable is an Arduino library, part of the project Tiny Trainable Instruments [https://github.com/montoyamoraga/tiny-trainable-instruments](https://github.com/montoyamoraga/tiny-trainable-instruments), created by Aarón Montoya-Moraga, a research assistant at MIT Media Lab's Opera of the Future and Future Sketches research groups.
+TinyTrainable is an Arduino library, part of the project Tiny trainable instruments [https://github.com/montoyamoraga/tiny-trainable-instruments](https://github.com/montoyamoraga/tiny-trainable-instruments), created by Aarón Montoya-Moraga, a research assistant at MIT Media Lab's Opera of the Future and Future Sketches research groups.
 
 This library is being written between December 2020 and August 2021, with help from undergrad researchers Peter Tone and Maxwell Wang.
 
@@ -27,10 +27,13 @@ The dependencies of this library are specified on the [library.properties](libra
 
 This repository is distributed in two branches:
 
-1. main: source code, code examples, and Ardiuino files for distribution.
+* gh-pages: static website documentation generated with Doxygen, deployed at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
+* main: source code, code examples, and Ardiuino files for distribution.
+
+The contents of the main branch are:
 
 * [assets/](./assets/): additional assets for the library, including machine learning trained models
-* [examples/](./examples/): code 
+* [examples/](./examples/): code
 * [src/](./src/)
 * [.gitignore](./.gitignore)
 * [./CODE_OF_CONDUCT.md](././CODE_OF_CONDUCT.md)
@@ -41,8 +44,6 @@ This repository is distributed in two branches:
 * [LICENSE](./LICENSE)
 * [README.md](./README.md)
 * [README.pdf](./README.pdf)
-
-2. gh-pages: static website documentation generated with Doxygen, deployed at [https://montoyamoraga.github.io/TinyTrainable](https://montoyamoraga.github.io/TinyTrainable).
 
 ### Source code
 

@@ -50,7 +50,7 @@ var class_tiny_trainable =
     [ "setupOutputServo", "class_tiny_trainable.html#a52457f3b81acd2e07ff3de3d8b28c404", null ],
     [ "setupOutputTest", "class_tiny_trainable.html#a296ba539857015c9c86d9686153213f0", null ],
     [ "setupSpeechModel", "class_tiny_trainable.html#a3165623090fb41db36afcb163778e0c5", null ],
-    [ "trainKNN", "class_tiny_trainable.html#af50ed6282fcd82a8ef745847c0eaad5f", null ],
+    [ "trainKNN", "class_tiny_trainable.html#a3db93483f21333c1976f2b5f1a487d9e", null ],
     [ "_baudRate", "class_tiny_trainable.html#ada2a91c7e2d8782092b96055ffdafb1d", null ],
     [ "_serialDebugging", "class_tiny_trainable.html#a548b35b4479d8aff4d7e29104333d093", null ],
     [ "_timeBlinkLED", "class_tiny_trainable.html#ac804391437425a1fb714c690777353d9", null ],

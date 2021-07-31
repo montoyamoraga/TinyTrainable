@@ -9,6 +9,6 @@ var class_input =
     [ "setupGestureModel", "class_input.html#a1bf6d9f7e5beadfa10a9c8ae5972b8c7", null ],
     [ "setupInstrument", "class_input.html#a6f220870bd53dfd6c68ef398c8644a3e", null ],
     [ "setupSpeechModel", "class_input.html#ace0c044cacf39917b34df4869f637eaf", null ],
-    [ "trainKNN", "class_input.html#a3ddaa7f2974b49cb5ba74d83dc069bcd", null ],
+    [ "trainKNN", "class_input.html#a434792b3a8109cb0c786880a097dcace", null ],
     [ "tiny", "class_input.html#ab56185d2fbad06c2acb0b84dc11e5199", null ]
 ];

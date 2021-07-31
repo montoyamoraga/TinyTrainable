@@ -7,6 +7,9 @@ TinyTrainable myTiny(INPUT_COLOR, OUTPUT_SERVO);
 // constant for debugging
 const bool debugOn = true;
 
+// constants for the hardware
+const int outputPin = 9;
+
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
@@ -18,9 +21,6 @@ String myColors[3] = {"color0", "color1", "color2"};
 const int tempo0 = 20;
 const int tempo1 = 90;
 const int tempo2 = 200;
-
-// constants for the hardware
-const int outputPin = 9;
 
 // setup() runs once, at the beginning
 void setup() {

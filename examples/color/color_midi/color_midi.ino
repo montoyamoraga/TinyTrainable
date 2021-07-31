@@ -7,7 +7,6 @@ TinyTrainable myTiny(INPUT_COLOR, OUTPUT_MIDI);
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
-const float COLOR_THRESHOLD = 0.5;
 
 String myColors[3] = {"color0", "color1", "color2"};
 
@@ -21,7 +20,7 @@ void setup() {
   //  myTiny.setMIDINotes(1, 38);
   //  myTiny.setMIDINotes(2, 39);
 
-  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myColors);
+  //  myTiny.trainKNN(K, EXAMPLES_PER_CLASS , myColors);
 }
 
 // loop() runs after setup(), on a loop

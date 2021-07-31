@@ -10,7 +10,6 @@ const bool debugOn = true;
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
-const float COLOR_THRESHOLD = 0.5;
 
 String myColors[3] = {"color0", "color1", "color2"};
 
@@ -36,7 +35,7 @@ void setup() {
   myTiny.setServoTempo(2, tempo2);
 
   // train the KNN algorithm
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myColors);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, myColors);
 }
 
 // loop() runs after setup(), on a loop

@@ -7,7 +7,6 @@ TinyTrainable myTiny(INPUT_COLOR, OUTPUT_SCREEN);
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
-const float COLOR_THRESHOLD = 0.5;
 
 // constants for the hardware
 // const int outputPin = 2;
@@ -27,7 +26,7 @@ void setup() {
   //  myTiny.setupOutputBuzzer(outputPin);
 
   // train the instrument's KNN algorithm
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myColors);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, myColors);
 }
 
 // loop() runs after setup(), on a loop

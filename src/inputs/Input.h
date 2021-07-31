@@ -20,8 +20,7 @@ public:
   virtual void identify() {}
 
   // color
-  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
-                        String objects[3]) {}
+  virtual void trainKNN(int k, int examplesPerClass, String objects[3]) {}
 
   // gesture
   virtual void setupGestureModel(String gestures[3],

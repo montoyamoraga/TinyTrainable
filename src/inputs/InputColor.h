@@ -32,8 +32,7 @@ public:
   void setupSensorAPDS9960();
 
   virtual void setupInstrument(bool serialDebugging) override;
-  virtual void trainKNN(int k, int examplesPerClass, float colorThreshold,
-                        String objects[3]) override;
+  virtual void trainKNN(int k, int examplesPerClass, String objects[3]) override;
   virtual void identify() override;
 
   // @brief instance of K-nearest neighbors algorithm
@@ -46,7 +45,7 @@ public:
   /// @brief parameter for K-nearest neighbors algorithm
   int _k = -1;
 
-  float _colorThreshold;
+  float _colorThreshold = 0.5;
   float _colorReading[3];
   bool _checkedSetup = false;
 };

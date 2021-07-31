@@ -12,7 +12,6 @@ const int outputPinLED2 = 5;
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 10;
-const float COLOR_THRESHOLD = 0.5;
 
 // constant for debugging
 const bool debugOn = true;
@@ -28,7 +27,7 @@ void setup() {
   myTiny.setupOutputLED(2, outputPinLED2);
 
   // train the KNN algorithm with your objects
-  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, COLOR_THRESHOLD, myColors);
+  myTiny.trainKNN(K, EXAMPLES_PER_CLASS, myColors);
 }
 
 // loop() runs after setup(), on a loop

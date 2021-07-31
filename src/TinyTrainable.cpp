@@ -109,10 +109,9 @@ void TinyTrainable::playOutput(int classification) {
 }
 
 /// @brief input color, train KNN algorithm
-void TinyTrainable::trainKNN(int k, int examplesPerClass, float colorThreshold,
-                             String objects[3]) {
+void TinyTrainable::trainKNN(int k, int examplesPerClass, String objects[3]) {
   if (myInput != nullptr) {
-    myInput->trainKNN(k, examplesPerClass, colorThreshold, objects);
+    myInput->trainKNN(k, examplesPerClass, objects);
   }
 };
 

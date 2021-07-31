@@ -7,7 +7,6 @@ TinyTrainable myTiny(INPUT_COLOR, OUTPUT_PRINTER);
 // constants for the KNN algorithm
 const int K = 5;
 const int EXAMPLES_PER_CLASS = 20;
-const float COLOR_THRESHOLD = 0.5;
 
 String myColors[3] = {"color0", "color1", "color2"};
 

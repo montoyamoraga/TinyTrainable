@@ -12,7 +12,7 @@ int freqArray0[] = {1200, 1400, 1600};
 int freqArray1[] = {2100, 2200, 2300, 2400, 2500, 2600};
 int freqArray2[] = {3100, 3200, 3300, 3400, 3500, 3600};
 
-// length of above arrays (can be of varying lengths)
+// length of above arrays (can be of different lengths)
 int shortParamArrayLength = 3;
 int longParamArrayLength = 6;
 
@@ -53,9 +53,9 @@ void setup() {
 
   // 0.
 
-   myTiny.setBuzzerDuration(0, 300);
-   myTiny.setBuzzerDuration(1, 600);
-   myTiny.setBuzzerDuration(2, 900);
+  myTiny.setBuzzerDuration(0,  100);
+  myTiny.setBuzzerDuration(1,  500);
+  myTiny.setBuzzerDuration(2, 1000);
 
   // 1.
 

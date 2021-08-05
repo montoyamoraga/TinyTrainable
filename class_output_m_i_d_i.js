@@ -13,7 +13,6 @@ var class_output_m_i_d_i =
     [ "_midiNotes", "class_output_m_i_d_i.html#a1712a387e81e8cf6b46b31e8e7f988ac", null ],
     [ "_midiVelocity", "class_output_m_i_d_i.html#a9eed7fdd01bb69a2cbc8f43b93f05f54", null ],
     [ "_outputPinMIDI", "class_output_m_i_d_i.html#ac2ea1dc35b7e3b2acf2b94717711bf5b", null ],
-    [ "currentGenre", "class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a", null ],
     [ "currentStep", "class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e", null ],
     [ "tempoDelay", "class_output_m_i_d_i.html#a259e9053a6cd1cb28f4c52eab1522c9f", null ],
     [ "totalSteps", "class_output_m_i_d_i.html#a319e0a8d972170d449dea77c91be6556", null ]

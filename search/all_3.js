@@ -7,7 +7,6 @@ var searchData=
   ['chachasn_81',['chachaSN',['../_m_i_d_i_patterns_8h.html#a56b387ace57cc9902943fad825196ae7',1,'MIDIPatterns.h']]],
   ['colors_82',['Colors',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967',1,'TinyTrainable.h']]],
   ['command_5fresponder_2eh_83',['command_responder.h',['../command__responder_8h.html',1,'']]],
-  ['currentgenre_84',['currentGenre',['../class_output_m_i_d_i.html#a92c02eeb962d3557ce37b78b64476c9a',1,'OutputMIDI']]],
-  ['currentstep_85',['currentStep',['../class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e',1,'OutputMIDI']]],
-  ['cyan_86',['cyan',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967af86e4e7e79173ee87c1976080bb250b7',1,'TinyTrainable.h']]]
+  ['currentstep_84',['currentStep',['../class_output_m_i_d_i.html#a21c399198c8c15349a4cd27301028a7e',1,'OutputMIDI']]],
+  ['cyan_85',['cyan',['../_tiny_trainable_8h.html#a55ecd4f2ec2ebfe8d5b0163e4ac2a967af86e4e7e79173ee87c1976080bb250b7',1,'TinyTrainable.h']]]
 ];

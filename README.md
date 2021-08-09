@@ -2,7 +2,7 @@
 
 ## About
 
-TinyTrainable is an Arduino library, part of the project Tiny trainable instruments [https://github.com/montoyamoraga/tiny-trainable-instruments](https://github.com/montoyamoraga/tiny-trainable-instruments), created by Aarón Montoya-Moraga, a research assistant at MIT Media Lab's Opera of the Future and Future Sketches research groups.
+TinyTrainable is an Arduino library, part of the project Tiny Trainable Instruments [https://github.com/montoyamoraga/tiny-trainable-instruments](https://github.com/montoyamoraga/tiny-trainable-instruments), created by Aarón Montoya-Moraga, a research assistant at MIT Media Lab's Opera of the Future and Future Sketches research groups.
 
 This library is being written between December 2020 and August 2021, with help from undergrad researchers Peter Tone and Maxwell Wang.
 

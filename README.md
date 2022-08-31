@@ -20,8 +20,11 @@ The dependencies of this library are specified on the [library.properties](libra
 * [Arduino_APDS9960](https://github.com/arduino-libraries/Arduino_APDS9960): APDS9960 sensor, to read gestures, color, proximity.
 * [Arduino_KNN](https://github.com/arduino-libraries/Arduino_KNN): for machine learning with K-Nearest Neighbors algorithm.
 * [Arduino_LSM9DS1](https://github.com/arduino-libraries/Arduino_LSM9DS1): LSM9DS1 IMU sensor, to read accelerometer, magnetometer, gyroscope.
-* [Arduino_TensorFlowLite](https://www.arduino.cc/reference/en/libraries/arduino_tensorflowlite/): for machine learning with TensorFlow.
 * [Servo](https://github.com/arduino-libraries/Servo): output with servo motors.
+
+There is an additional dependency that must be installed manually:
+
+* [Arduino_TensorFlowLite](https://github.com/tensorflow/tflite-micro-arduino-examples): for machine learning with TensorFlow.
 
 ## Contents
 

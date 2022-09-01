@@ -44,6 +44,7 @@ jobs:
           - name: Arduino_LSM9DS1
           - name: Servo
           - name: Adafruit Thermal Printer Library
-          - name: Arduino_TensorFlowLite
+          - source-url: https://github.com/tensorflow/tflite-micro-arduino-examples.git
+            destination-name: Arduino_TensorFlowLite
           - name: Adafruit SSD1306
           - name: Adafruit GFX Library

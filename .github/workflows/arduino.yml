@@ -2,7 +2,7 @@
 
 name: Arduino Compile
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -21,30 +21,30 @@ jobs:
 
     # Steps represent a sequence of tasks that will be run as part of the job
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Compile Sketches
-      uses: arduino/compile-sketches@v1
-      with:
-        fqbn: arduino:mbed_nano:nano33ble
-        sketch-paths: |
-          - examples/check/
-          - examples/color/
-          - examples/gesture/
-          - examples/speech/
-        cli-version: latest
-        platforms: |
-          - name: arduino:mbed_nano
-        libraries: |
-          - source-path: ./
-          - name: Arduino_APDS9960
-          - name: Arduino_KNN
-          - name: Arduino_LSM9DS1
-          - name: Servo
-          - name: Adafruit Thermal Printer Library
-          - source-url: https://github.com/tensorflow/tflite-micro-arduino-examples.git
-            destination-name: Arduino_TensorFlowLite
-          - name: Adafruit SSD1306
-          - name: Adafruit GFX Library
+      - name: Compile Sketches
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: arduino:mbed_nano:nano33ble
+          sketch-paths: |
+            - examples/check/
+            - examples/color/
+            - examples/gesture/
+            - examples/speech/
+          cli-version: latest
+          platforms: |
+            - name: arduino:mbed_nano
+          libraries: |
+            - source-path: ./
+            - name: Arduino_APDS9960
+            - name: Arduino_KNN
+            - name: Arduino_LSM9DS1
+            - name: Arduino_BMI270_BMM150
+            - name: Servo
+            - name: Adafruit Thermal Printer Library
+            - source-url: https://github.com/tensorflow/tflite-micro-arduino-examples.git
+              destination-name: Arduino_TensorFlowLite
+            - name: Adafruit SSD1306
+            - name: Adafruit GFX Library

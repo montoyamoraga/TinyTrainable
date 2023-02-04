@@ -16,6 +16,7 @@
 /// @include library for input sensor
 // https://www.arduino.cc/en/Reference/ArduinoLSM9DS1/
 #include <Arduino_LSM9DS1.h>
+#include <Arduino_BMI270_BMM150.h>
 
 /// @include library for machine learning
 #include <TensorFlowLite.h>

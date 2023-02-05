@@ -107,15 +107,13 @@ $(document).ready(function(){initNavTree('class_recognize_commands.html',''); in
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a429d31622f23761730ebab01b2040ea8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_recognize_commands.html#a429d31622f23761730ebab01b2040ea8">RecognizeCommands</a> (tflite::ErrorReporter *error_reporter, int32_t average_window_duration_ms=1000, uint8_t detection_threshold=200, int32_t suppression_ms=1500, int32_t minimum_count=3)</td></tr>
-<tr class="separator:a429d31622f23761730ebab01b2040ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87bdd50c43d03e996518ee35fa386b30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_recognize_commands.html#a87bdd50c43d03e996518ee35fa386b30">RecognizeCommands</a> (int32_t average_window_duration_ms=1000, uint8_t detection_threshold=200, int32_t suppression_ms=1500, int32_t minimum_count=3)</td></tr>
+<tr class="separator:a87bdd50c43d03e996518ee35fa386b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a176a0991f61867a05f5fabb5b11c61fb"><td class="memItemLeft" align="right" valign="top">TfLiteStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_recognize_commands.html#a176a0991f61867a05f5fabb5b11c61fb">ProcessLatestResults</a> (const TfLiteTensor *latest_results, const int32_t current_time_ms, const char **found_command, uint8_t *score, bool *is_new_command)</td></tr>
 <tr class="separator:a176a0991f61867a05f5fabb5b11c61fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a67de24f7fb22759283bc74517b12b310"><td class="memItemLeft" align="right" valign="top">tflite::ErrorReporter *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_recognize_commands.html#a67de24f7fb22759283bc74517b12b310">error_reporter_</a></td></tr>
-<tr class="separator:a67de24f7fb22759283bc74517b12b310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b42a419d8399198bcbd3e6df032d5c4"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_recognize_commands.html#a5b42a419d8399198bcbd3e6df032d5c4">average_window_duration_ms_</a></td></tr>
 <tr class="separator:a5b42a419d8399198bcbd3e6df032d5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a638e1b40cf92c24e4de2089d7a37fc2d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_recognize_commands.html#a638e1b40cf92c24e4de2089d7a37fc2d">detection_threshold_</a></td></tr>
@@ -132,8 +130,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aeaab4a312d6cabcab871d17cc80ac6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a429d31622f23761730ebab01b2040ea8" name="a429d31622f23761730ebab01b2040ea8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a429d31622f23761730ebab01b2040ea8">&#9670;&#160;</a></span>RecognizeCommands()</h2>
+<a id="a87bdd50c43d03e996518ee35fa386b30" name="a87bdd50c43d03e996518ee35fa386b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87bdd50c43d03e996518ee35fa386b30">&#9670;&#160;</a></span>RecognizeCommands()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,12 +142,6 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">RecognizeCommands::RecognizeCommands </td>
           <td>(</td>
-          <td class="paramtype">tflite::ErrorReporter *&#160;</td>
-          <td class="paramname"><em>error_reporter</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>average_window_duration_ms</em> = <code>1000</code>, </td>
         </tr>
@@ -267,28 +259,6 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">uint8_t RecognizeCommands::detection_threshold_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a67de24f7fb22759283bc74517b12b310" name="a67de24f7fb22759283bc74517b12b310"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67de24f7fb22759283bc74517b12b310">&#9670;&#160;</a></span>error_reporter_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">tflite::ErrorReporter* RecognizeCommands::error_reporter_</td>
         </tr>
       </table>
   </td>

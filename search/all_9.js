@@ -1,8 +1,8 @@
 var searchData=
 [
   ['identify_0',['identify',['../class_input.html#a90132889a3e2ef01e864fa496c63c2e7',1,'Input::identify()'],['../class_input_color.html#a5185a9b716ad7cd94c303736fce22536',1,'InputColor::identify()'],['../class_input_gesture.html#a8cffc85df3a1b25fcd2b73962614513d',1,'InputGesture::identify()'],['../class_input_speech.html#aa615ea9e707a1bd0f56aaaf1b46250ed',1,'InputSpeech::identify()'],['../class_tiny_trainable.html#a1c5f808708a89d61c5a5bbdcad585eb7',1,'TinyTrainable::identify()']]],
-  ['initaudiorecording_1',['InitAudioRecording',['../arduino__audio__provider_8cpp.html#a00babc44c6b2270273c8b307a6554470',1,'arduino_audio_provider.cpp']]],
-  ['initializemicrofeatures_2',['InitializeMicroFeatures',['../micro__features__micro__features__generator_8h.html#a23d1f4c8d3782d3cb620f7f7febfb27d',1,'InitializeMicroFeatures(tflite::ErrorReporter *error_reporter):&#160;micro_features_micro_features_generator.cpp'],['../micro__features__micro__features__generator_8cpp.html#a23d1f4c8d3782d3cb620f7f7febfb27d',1,'InitializeMicroFeatures(tflite::ErrorReporter *error_reporter):&#160;micro_features_micro_features_generator.cpp']]],
+  ['initaudiorecording_1',['InitAudioRecording',['../audio__provider_8h.html#ab422670e5f327309d7dc2121ed5c0972',1,'InitAudioRecording():&#160;arduino_audio_provider.cpp'],['../arduino__audio__provider_8cpp.html#ab422670e5f327309d7dc2121ed5c0972',1,'InitAudioRecording():&#160;arduino_audio_provider.cpp']]],
+  ['initializemicrofeatures_2',['InitializeMicroFeatures',['../micro__features__micro__features__generator_8h.html#ae33fdf2f166f4596175740e7ac435362',1,'InitializeMicroFeatures():&#160;micro_features_micro_features_generator.cpp'],['../micro__features__micro__features__generator_8cpp.html#ae33fdf2f166f4596175740e7ac435362',1,'InitializeMicroFeatures():&#160;micro_features_micro_features_generator.cpp']]],
   ['input_3',['Input',['../class_input.html',1,'']]],
   ['input_2eh_4',['Input.h',['../_input_8h.html',1,'']]],
   ['input_5fcolor_5',['INPUT_COLOR',['../_tiny_trainable_8h.html#a5fc772c800c3d40d2b95564e8a839babac0b7de0e40528a558b2aab4f5dfc883c',1,'TinyTrainable.h']]],

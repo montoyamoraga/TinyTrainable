@@ -1,7 +1,7 @@
 var arduino__audio__provider_8cpp =
 [
     [ "CaptureSamples", "arduino__audio__provider_8cpp.html#ac438f5c620f94bf1e62aea4c612a8325", null ],
-    [ "GetAudioSamples", "arduino__audio__provider_8cpp.html#a278ee5572a14ae09f3dd9f2ff11a6b03", null ],
-    [ "InitAudioRecording", "arduino__audio__provider_8cpp.html#a00babc44c6b2270273c8b307a6554470", null ],
+    [ "GetAudioSamples", "arduino__audio__provider_8cpp.html#aba550b765fe9aaf6ef0a20a5a565d12c", null ],
+    [ "InitAudioRecording", "arduino__audio__provider_8cpp.html#ab422670e5f327309d7dc2121ed5c0972", null ],
     [ "LatestAudioTimestamp", "arduino__audio__provider_8cpp.html#ad949a62dec8d1ed5f3f4ef3bc4afd762", null ]
 ];

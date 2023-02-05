@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('feature__provider_8h_source.html','');
   <div class="headertitle"><div class="title">feature_provider.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="feature__provider_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Copyright 2018 The TensorFlow Authors. All Rights Reserved.</span></div>
+<a href="feature__provider_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Copyright 2022 The TensorFlow Authors. All Rights Reserved.</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">you may not use this file except in compliance with the License.</span></div>
@@ -117,45 +117,43 @@ $(document).ready(function(){initNavTree('feature__provider_8h_source.html','');
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_FEATURE_PROVIDER_H_</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;tensorflow/lite/c/common.h&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;tensorflow/lite/micro/micro_error_reporter.h&quot;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Binds itself to an area of memory intended to hold the input features for an</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// audio-recognition neural network model, and fills that data area with the</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// features representing the current audio input, for example from a microphone.</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// The audio features themselves are a two-dimensional array, made up of</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// horizontal slices representing the frequencies at one point in time, stacked</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// on top of each other to form a spectrogram showing how those frequencies</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// changed over time.</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_feature_provider.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_feature_provider.html">FeatureProvider</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">// Create the provider, and bind it to an area of memory. This memory should</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">// remain accessible for the lifetime of the provider object, since subsequent</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="comment">// calls will fill it with feature data. The provider does no memory</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="comment">// management of this data.</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="class_feature_provider.html">FeatureProvider</a>(<span class="keywordtype">int</span> feature_size, int8_t *feature_data);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_function" href="class_feature_provider.html#acd7a669a74d213662e9961fcb8c4599c">~FeatureProvider</a>();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="comment">// Fills the feature data with information from audio inputs, and returns how</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="comment">// many feature slices were updated.</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  TfLiteStatus <a class="code hl_function" href="class_feature_provider.html#aa2560fff304f21859ceccadd972d2b84">PopulateFeatureData</a>(tflite::ErrorReporter *error_reporter,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                                   int32_t last_time_in_ms, int32_t time_in_ms,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                                   <span class="keywordtype">int</span> *how_many_new_slices);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_feature_provider.html#a6289fd78322d20b69ca45b2666b0049e">   45</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="class_feature_provider.html#a6289fd78322d20b69ca45b2666b0049e">feature_size_</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_feature_provider.html#ab428ced8b3737b716ea1bebf4d19b4ac">   46</a></span>  int8_t *<a class="code hl_variable" href="class_feature_provider.html#ab428ced8b3737b716ea1bebf4d19b4ac">feature_data_</a>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="comment">// Make sure we don&#39;t try to use cached information if this is the first call</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">// into the provider.</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_feature_provider.html#a6a1b69309205a0a8c2b8ad7d60bea8ec">   49</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_feature_provider.html#a6a1b69309205a0a8c2b8ad7d60bea8ec">is_first_run_</a>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">// TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_FEATURE_PROVIDER_H_</span></div>
-<div class="ttc" id="aclass_feature_provider_html"><div class="ttname"><a href="class_feature_provider.html">FeatureProvider</a></div><div class="ttdef"><b>Definition:</b> feature_provider.h:29</div></div>
-<div class="ttc" id="aclass_feature_provider_html_a6289fd78322d20b69ca45b2666b0049e"><div class="ttname"><a href="class_feature_provider.html#a6289fd78322d20b69ca45b2666b0049e">FeatureProvider::feature_size_</a></div><div class="ttdeci">int feature_size_</div><div class="ttdef"><b>Definition:</b> feature_provider.h:45</div></div>
-<div class="ttc" id="aclass_feature_provider_html_a6a1b69309205a0a8c2b8ad7d60bea8ec"><div class="ttname"><a href="class_feature_provider.html#a6a1b69309205a0a8c2b8ad7d60bea8ec">FeatureProvider::is_first_run_</a></div><div class="ttdeci">bool is_first_run_</div><div class="ttdef"><b>Definition:</b> feature_provider.h:49</div></div>
-<div class="ttc" id="aclass_feature_provider_html_aa2560fff304f21859ceccadd972d2b84"><div class="ttname"><a href="class_feature_provider.html#aa2560fff304f21859ceccadd972d2b84">FeatureProvider::PopulateFeatureData</a></div><div class="ttdeci">TfLiteStatus PopulateFeatureData(tflite::ErrorReporter *error_reporter, int32_t last_time_in_ms, int32_t time_in_ms, int *how_many_new_slices)</div><div class="ttdef"><b>Definition:</b> feature_provider.cpp:33</div></div>
-<div class="ttc" id="aclass_feature_provider_html_ab428ced8b3737b716ea1bebf4d19b4ac"><div class="ttname"><a href="class_feature_provider.html#ab428ced8b3737b716ea1bebf4d19b4ac">FeatureProvider::feature_data_</a></div><div class="ttdeci">int8_t * feature_data_</div><div class="ttdef"><b>Definition:</b> feature_provider.h:46</div></div>
-<div class="ttc" id="aclass_feature_provider_html_acd7a669a74d213662e9961fcb8c4599c"><div class="ttname"><a href="class_feature_provider.html#acd7a669a74d213662e9961fcb8c4599c">FeatureProvider::~FeatureProvider</a></div><div class="ttdeci">~FeatureProvider()</div><div class="ttdef"><b>Definition:</b> feature_provider.cpp:31</div></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Binds itself to an area of memory intended to hold the input features for an</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// audio-recognition neural network model, and fills that data area with the</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// features representing the current audio input, for example from a microphone.</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// The audio features themselves are a two-dimensional array, made up of</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// horizontal slices representing the frequencies at one point in time, stacked</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// on top of each other to form a spectrogram showing how those frequencies</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// changed over time.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_feature_provider.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="class_feature_provider.html">FeatureProvider</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="comment">// Create the provider, and bind it to an area of memory. This memory should</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">// remain accessible for the lifetime of the provider object, since subsequent</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">// calls will fill it with feature data. The provider does no memory</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="comment">// management of this data.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="class_feature_provider.html">FeatureProvider</a>(<span class="keywordtype">int</span> feature_size, int8_t* feature_data);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_function" href="class_feature_provider.html#acd7a669a74d213662e9961fcb8c4599c">~FeatureProvider</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="comment">// Fills the feature data with information from audio inputs, and returns how</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="comment">// many feature slices were updated.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  TfLiteStatus <a class="code hl_function" href="class_feature_provider.html#a2dd60ee80a8e91b7eb1ed4c5658354ee">PopulateFeatureData</a>(int32_t last_time_in_ms, int32_t time_in_ms,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                                   <span class="keywordtype">int</span>* how_many_new_slices);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_feature_provider.html#a6289fd78322d20b69ca45b2666b0049e">   43</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="class_feature_provider.html#a6289fd78322d20b69ca45b2666b0049e">feature_size_</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_feature_provider.html#ab428ced8b3737b716ea1bebf4d19b4ac">   44</a></span>  int8_t* <a class="code hl_variable" href="class_feature_provider.html#ab428ced8b3737b716ea1bebf4d19b4ac">feature_data_</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">// Make sure we don&#39;t try to use cached information if this is the first call</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// into the provider.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_feature_provider.html#a6a1b69309205a0a8c2b8ad7d60bea8ec">   47</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_feature_provider.html#a6a1b69309205a0a8c2b8ad7d60bea8ec">is_first_run_</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif  </span><span class="comment">// TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_FEATURE_PROVIDER_H_</span></div>
+<div class="ttc" id="aclass_feature_provider_html"><div class="ttname"><a href="class_feature_provider.html">FeatureProvider</a></div><div class="ttdef"><b>Definition:</b> feature_provider.h:28</div></div>
+<div class="ttc" id="aclass_feature_provider_html_a2dd60ee80a8e91b7eb1ed4c5658354ee"><div class="ttname"><a href="class_feature_provider.html#a2dd60ee80a8e91b7eb1ed4c5658354ee">FeatureProvider::PopulateFeatureData</a></div><div class="ttdeci">TfLiteStatus PopulateFeatureData(int32_t last_time_in_ms, int32_t time_in_ms, int *how_many_new_slices)</div><div class="ttdef"><b>Definition:</b> feature_provider.cpp:35</div></div>
+<div class="ttc" id="aclass_feature_provider_html_a6289fd78322d20b69ca45b2666b0049e"><div class="ttname"><a href="class_feature_provider.html#a6289fd78322d20b69ca45b2666b0049e">FeatureProvider::feature_size_</a></div><div class="ttdeci">int feature_size_</div><div class="ttdef"><b>Definition:</b> feature_provider.h:43</div></div>
+<div class="ttc" id="aclass_feature_provider_html_a6a1b69309205a0a8c2b8ad7d60bea8ec"><div class="ttname"><a href="class_feature_provider.html#a6a1b69309205a0a8c2b8ad7d60bea8ec">FeatureProvider::is_first_run_</a></div><div class="ttdeci">bool is_first_run_</div><div class="ttdef"><b>Definition:</b> feature_provider.h:47</div></div>
+<div class="ttc" id="aclass_feature_provider_html_ab428ced8b3737b716ea1bebf4d19b4ac"><div class="ttname"><a href="class_feature_provider.html#ab428ced8b3737b716ea1bebf4d19b4ac">FeatureProvider::feature_data_</a></div><div class="ttdeci">int8_t * feature_data_</div><div class="ttdef"><b>Definition:</b> feature_provider.h:44</div></div>
+<div class="ttc" id="aclass_feature_provider_html_acd7a669a74d213662e9961fcb8c4599c"><div class="ttname"><a href="class_feature_provider.html#acd7a669a74d213662e9961fcb8c4599c">FeatureProvider::~FeatureProvider</a></div><div class="ttdeci">~FeatureProvider()</div><div class="ttdef"><b>Definition:</b> feature_provider.cpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

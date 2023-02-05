@@ -101,20 +101,21 @@ $(document).ready(function(){initNavTree('audio__provider_8h.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;tensorflow/lite/c/common.h&quot;</code><br />
-<code>#include &quot;tensorflow/lite/micro/micro_error_reporter.h&quot;</code><br />
 </div>
 <p><a href="audio__provider_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a278ee5572a14ae09f3dd9f2ff11a6b03"><td class="memItemLeft" align="right" valign="top">TfLiteStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="audio__provider_8h.html#a278ee5572a14ae09f3dd9f2ff11a6b03">GetAudioSamples</a> (tflite::ErrorReporter *error_reporter, int start_ms, int duration_ms, int *audio_samples_size, int16_t **audio_samples)</td></tr>
-<tr class="separator:a278ee5572a14ae09f3dd9f2ff11a6b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba550b765fe9aaf6ef0a20a5a565d12c"><td class="memItemLeft" align="right" valign="top">TfLiteStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="audio__provider_8h.html#aba550b765fe9aaf6ef0a20a5a565d12c">GetAudioSamples</a> (int start_ms, int duration_ms, int *audio_samples_size, int16_t **audio_samples)</td></tr>
+<tr class="separator:aba550b765fe9aaf6ef0a20a5a565d12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad949a62dec8d1ed5f3f4ef3bc4afd762"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="audio__provider_8h.html#ad949a62dec8d1ed5f3f4ef3bc4afd762">LatestAudioTimestamp</a> ()</td></tr>
 <tr class="separator:ad949a62dec8d1ed5f3f4ef3bc4afd762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab422670e5f327309d7dc2121ed5c0972"><td class="memItemLeft" align="right" valign="top">TfLiteStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="audio__provider_8h.html#ab422670e5f327309d7dc2121ed5c0972">InitAudioRecording</a> ()</td></tr>
+<tr class="separator:ab422670e5f327309d7dc2121ed5c0972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a278ee5572a14ae09f3dd9f2ff11a6b03" name="a278ee5572a14ae09f3dd9f2ff11a6b03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a278ee5572a14ae09f3dd9f2ff11a6b03">&#9670;&#160;</a></span>GetAudioSamples()</h2>
+<a id="aba550b765fe9aaf6ef0a20a5a565d12c" name="aba550b765fe9aaf6ef0a20a5a565d12c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba550b765fe9aaf6ef0a20a5a565d12c">&#9670;&#160;</a></span>GetAudioSamples()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -122,12 +123,6 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">TfLiteStatus GetAudioSamples </td>
           <td>(</td>
-          <td class="paramtype">tflite::ErrorReporter *&#160;</td>
-          <td class="paramname"><em>error_reporter</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>start_ms</em>, </td>
         </tr>
@@ -153,6 +148,23 @@ Functions</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab422670e5f327309d7dc2121ed5c0972" name="ab422670e5f327309d7dc2121ed5c0972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab422670e5f327309d7dc2121ed5c0972">&#9670;&#160;</a></span>InitAudioRecording()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TfLiteStatus InitAudioRecording </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">

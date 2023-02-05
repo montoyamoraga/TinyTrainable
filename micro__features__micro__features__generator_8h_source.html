@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('micro__features__micro__features__gene
   <div class="headertitle"><div class="title">micro_features_micro_features_generator.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="micro__features__micro__features__generator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Copyright 2019 The TensorFlow Authors. All Rights Reserved.</span></div>
+<a href="micro__features__micro__features__generator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Copyright 2022 The TensorFlow Authors. All Rights Reserved.</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"></span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">you may not use this file except in compliance with the License.</span></div>
@@ -117,21 +117,19 @@ $(document).ready(function(){initNavTree('micro__features__micro__features__gene
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_MICRO_FEATURES_GENERATOR_H_</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;tensorflow/lite/c/common.h&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;tensorflow/lite/micro/micro_error_reporter.h&quot;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Sets up any resources needed for the feature generation pipeline.</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>TfLiteStatus <a class="code hl_function" href="micro__features__micro__features__generator_8h.html#a23d1f4c8d3782d3cb620f7f7febfb27d">InitializeMicroFeatures</a>(tflite::ErrorReporter *error_reporter);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Converts audio sample data into a more compact form that&#39;s appropriate for</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// feeding into a neural network.</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>TfLiteStatus <a class="code hl_function" href="micro__features__micro__features__generator_8h.html#af90e1e5f107de66695bb7f1b911d49ef">GenerateMicroFeatures</a>(tflite::ErrorReporter *error_reporter,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                                   <span class="keyword">const</span> int16_t *input, <span class="keywordtype">int</span> input_size,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                                   <span class="keywordtype">int</span> output_size, int8_t *output,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                                   <span class="keywordtype">size_t</span> *num_samples_read);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">// TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_MICRO_FEATURES_GENERATOR_H_</span></div>
-<div class="ttc" id="amicro__features__micro__features__generator_8h_html_a23d1f4c8d3782d3cb620f7f7febfb27d"><div class="ttname"><a href="micro__features__micro__features__generator_8h.html#a23d1f4c8d3782d3cb620f7f7febfb27d">InitializeMicroFeatures</a></div><div class="ttdeci">TfLiteStatus InitializeMicroFeatures(tflite::ErrorReporter *error_reporter)</div><div class="ttdef"><b>Definition:</b> micro_features_micro_features_generator.cpp:35</div></div>
-<div class="ttc" id="amicro__features__micro__features__generator_8h_html_af90e1e5f107de66695bb7f1b911d49ef"><div class="ttname"><a href="micro__features__micro__features__generator_8h.html#af90e1e5f107de66695bb7f1b911d49ef">GenerateMicroFeatures</a></div><div class="ttdeci">TfLiteStatus GenerateMicroFeatures(tflite::ErrorReporter *error_reporter, const int16_t *input, int input_size, int output_size, int8_t *output, size_t *num_samples_read)</div><div class="ttdef"><b>Definition:</b> micro_features_micro_features_generator.cpp:70</div></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Sets up any resources needed for the feature generation pipeline.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>TfLiteStatus <a class="code hl_function" href="micro__features__micro__features__generator_8h.html#ae33fdf2f166f4596175740e7ac435362">InitializeMicroFeatures</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// Converts audio sample data into a more compact form that&#39;s appropriate for</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// feeding into a neural network.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>TfLiteStatus <a class="code hl_function" href="micro__features__micro__features__generator_8h.html#a99d3c0f994ff546b0ca8d7c8bae6d73f">GenerateMicroFeatures</a>(<span class="keyword">const</span> int16_t* input, <span class="keywordtype">int</span> input_size,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                                   <span class="keywordtype">int</span> output_size, int8_t* output,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                                   <span class="keywordtype">size_t</span>* num_samples_read);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif  </span><span class="comment">// TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_MICRO_FEATURES_GENERATOR_H_</span></div>
+<div class="ttc" id="amicro__features__micro__features__generator_8h_html_a99d3c0f994ff546b0ca8d7c8bae6d73f"><div class="ttname"><a href="micro__features__micro__features__generator_8h.html#a99d3c0f994ff546b0ca8d7c8bae6d73f">GenerateMicroFeatures</a></div><div class="ttdeci">TfLiteStatus GenerateMicroFeatures(const int16_t *input, int input_size, int output_size, int8_t *output, size_t *num_samples_read)</div><div class="ttdef"><b>Definition:</b> micro_features_micro_features_generator.cpp:71</div></div>
+<div class="ttc" id="amicro__features__micro__features__generator_8h_html_ae33fdf2f166f4596175740e7ac435362"><div class="ttname"><a href="micro__features__micro__features__generator_8h.html#ae33fdf2f166f4596175740e7ac435362">InitializeMicroFeatures</a></div><div class="ttdeci">TfLiteStatus InitializeMicroFeatures()</div><div class="ttdef"><b>Definition:</b> micro_features_micro_features_generator.cpp:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

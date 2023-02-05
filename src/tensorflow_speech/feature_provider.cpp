@@ -1,4 +1,4 @@
-/* Copyright 2018 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2022 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,9 +18,11 @@ limitations under the License.
 #include "audio_provider.h"
 #include "micro_features_micro_features_generator.h"
 #include "micro_features_micro_model_settings.h"
+#include "tensorflow/lite/micro/micro_log.h"
 
-FeatureProvider::FeatureProvider(int feature_size, int8_t *feature_data)
-    : feature_size_(feature_size), feature_data_(feature_data),
+FeatureProvider::FeatureProvider(int feature_size, int8_t* feature_data)
+    : feature_size_(feature_size),
+      feature_data_(feature_data),
       is_first_run_(true) {
   // Initialize the feature data to default values.
   for (int n = 0; n < feature_size_; ++n) {
@@ -30,33 +32,39 @@ FeatureProvider::FeatureProvider(int feature_size, int8_t *feature_data)
 
 FeatureProvider::~FeatureProvider() {}
 
-TfLiteStatus FeatureProvider::PopulateFeatureData(
-    tflite::ErrorReporter *error_reporter, int32_t last_time_in_ms,
-    int32_t time_in_ms, int *how_many_new_slices) {
+TfLiteStatus FeatureProvider::PopulateFeatureData(int32_t last_time_in_ms,
+                                                  int32_t time_in_ms,
+                                                  int* how_many_new_slices) {
   if (feature_size_ != kFeatureElementCount) {
-    TF_LITE_REPORT_ERROR(error_reporter,
-                         "Requested feature_data_ size %d doesn't match %d",
-                         feature_size_, kFeatureElementCount);
+    MicroPrintf("Requested feature_data_ size %d doesn't match %d",
+                feature_size_, kFeatureElementCount);
     return kTfLiteError;
   }
 
   // Quantize the time into steps as long as each window stride, so we can
   // figure out which audio data we need to fetch.
   const int last_step = (last_time_in_ms / kFeatureSliceStrideMs);
-  const int current_step = (time_in_ms / kFeatureSliceStrideMs);
-
-  int slices_needed = current_step - last_step;
+  // Number of new 20ms slices from which we can take 30ms samples
+  int slices_needed =
+      ((((time_in_ms - last_time_in_ms) - kFeatureSliceDurationMs) *
+        kFeatureSliceStrideMs) /
+           kFeatureSliceStrideMs +
+       kFeatureSliceStrideMs) /
+      kFeatureSliceStrideMs;
   // If this is the first call, make sure we don't use any cached information.
   if (is_first_run_) {
-    TfLiteStatus init_status = InitializeMicroFeatures(error_reporter);
+    TfLiteStatus init_status = InitializeMicroFeatures();
     if (init_status != kTfLiteOk) {
       return init_status;
     }
     is_first_run_ = false;
-    slices_needed = kFeatureSliceCount;
+    return kTfLiteOk;
   }
   if (slices_needed > kFeatureSliceCount) {
     slices_needed = kFeatureSliceCount;
+  }
+  if (slices_needed == 0) {
+    return kTfLiteOk;
   }
   *how_many_new_slices = slices_needed;
 
@@ -76,10 +84,10 @@ TfLiteStatus FeatureProvider::PopulateFeatureData(
   // +-----------+             +-----------+
   if (slices_to_keep > 0) {
     for (int dest_slice = 0; dest_slice < slices_to_keep; ++dest_slice) {
-      int8_t *dest_slice_data =
+      int8_t* dest_slice_data =
           feature_data_ + (dest_slice * kFeatureSliceSize);
       const int src_slice = dest_slice + slices_to_drop;
-      const int8_t *src_slice_data =
+      const int8_t* src_slice_data =
           feature_data_ + (src_slice * kFeatureSliceSize);
       for (int i = 0; i < kFeatureSliceSize; ++i) {
         dest_slice_data[i] = src_slice_data[i];
@@ -91,25 +99,24 @@ TfLiteStatus FeatureProvider::PopulateFeatureData(
   if (slices_needed > 0) {
     for (int new_slice = slices_to_keep; new_slice < kFeatureSliceCount;
          ++new_slice) {
-      const int new_step = (current_step - kFeatureSliceCount + 1) + new_slice;
+      const int new_step = last_step + (new_slice - slices_to_keep);
       const int32_t slice_start_ms = (new_step * kFeatureSliceStrideMs);
-      int16_t *audio_samples = nullptr;
+      int16_t* audio_samples = nullptr;
       int audio_samples_size = 0;
-      // TODO(petewarden): Fix bug that leads to non-zero slice_start_ms
-      GetAudioSamples(error_reporter, (slice_start_ms > 0 ? slice_start_ms : 0),
-                      kFeatureSliceDurationMs, &audio_samples_size,
-                      &audio_samples);
-      if (audio_samples_size < kMaxAudioSampleSize) {
-        TF_LITE_REPORT_ERROR(error_reporter,
-                             "Audio data size %d too small, want %d",
-                             audio_samples_size, kMaxAudioSampleSize);
+      GetAudioSamples(slice_start_ms, kFeatureSliceDurationMs,
+                      &audio_samples_size, &audio_samples);
+      constexpr int wanted =
+          kFeatureSliceDurationMs * (kAudioSampleFrequency / 1000);
+      if (audio_samples_size != wanted) {
+        MicroPrintf("Audio data size %d too small, want %d", audio_samples_size,
+                    wanted);
         return kTfLiteError;
       }
-      int8_t *new_slice_data = feature_data_ + (new_slice * kFeatureSliceSize);
+      int8_t* new_slice_data = feature_data_ + (new_slice * kFeatureSliceSize);
       size_t num_samples_read;
       TfLiteStatus generate_status = GenerateMicroFeatures(
-          error_reporter, audio_samples, audio_samples_size, kFeatureSliceSize,
-          new_slice_data, &num_samples_read);
+          audio_samples, audio_samples_size, kFeatureSliceSize, new_slice_data,
+          &num_samples_read);
       if (generate_status != kTfLiteOk) {
         return generate_status;
       }

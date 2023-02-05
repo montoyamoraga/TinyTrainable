@@ -1,4 +1,4 @@
-/* Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2022 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,14 +19,13 @@ limitations under the License.
 
 #ifndef ARDUINO_EXCLUDE_CODE
 
-#include "command_responder.h"
-
 #include "Arduino.h"
+#include "command_responder.h"
+#include "tensorflow/lite/micro/micro_log.h"
 
 // Toggles the built-in LED every inference, and lights a colored LED depending
 // on which word was detected.
-void RespondToCommand(tflite::ErrorReporter* error_reporter,
-                      int32_t current_time, const char* found_command,
+void RespondToCommand(int32_t current_time, const char* found_command,
                       uint8_t score, bool is_new_command) {
   static bool is_initialized = false;
   if (!is_initialized) {
@@ -45,68 +44,36 @@ void RespondToCommand(tflite::ErrorReporter* error_reporter,
   }
   static int32_t last_command_time = 0;
   static int count = 0;
-  static int certainty = 220;
 
-// begin original code
-//   if (is_new_command) {
-//     TF_LITE_REPORT_ERROR(error_reporter, "Heard %s (%d) @%dms", found_command,
-//                          score, current_time);
-//     // If we hear a command, light up the appropriate LED
-//     if (found_command[0] == 'y') {
-//       last_command_time = current_time;
-//       digitalWrite(LEDG, LOW);  // Green for yes
-//     }
-
-//     if (found_command[0] == 'n') {
-//       last_command_time = current_time;
-//       digitalWrite(LEDR, LOW);  // Red for no
-//     }
-
-//     if (found_command[0] == 'u') {
-//       last_command_time = current_time;
-//       digitalWrite(LEDB, LOW);  // Blue for unknown
-//     }
-//   }
-// end original code
-
-// begin modified code
   if (is_new_command) {
-    TF_LITE_REPORT_ERROR(error_reporter, "Heard %s (%d) @%dms", found_command,
-                         score, current_time);
+    MicroPrintf("Heard %s (%d) @%dms", found_command, score, current_time);
+    // If we hear a command, light up the appropriate LED
+    digitalWrite(LEDR, HIGH);
+    digitalWrite(LEDG, HIGH);
+    digitalWrite(LEDB, HIGH);
 
-    // detect word0 "agua"
-    if (found_command[0] == 'a' && found_command[1] == 'g') {
-      last_command_time = current_time;
+    if (found_command[0] == 'y') {
       digitalWrite(LEDG, LOW);  // Green for yes
-    }
-
-    // detect word1 "burbuja"
-    if (found_command[0] == 'b' && found_command[1] == 'u') {
-      last_command_time = current_time;
+    } else if (found_command[0] == 'n') {
       digitalWrite(LEDR, LOW);  // Red for no
+    } else if (found_command[0] == 'u') {
+      digitalWrite(LEDB, LOW);  // Blue for unknown
+    } else {
+      // silence
     }
 
-    // detect word2 "cielo"
-    if (found_command[0] == 'c' && found_command[1] == 'i') {
-      last_command_time = current_time;
-      digitalWrite(LEDB, LOW);
-    }
+    last_command_time = current_time;
   }
-// end modified code
-
 
   // If last_command_time is non-zero but was >3 seconds ago, zero it
   // and switch off the LED.
   if (last_command_time != 0) {
     if (last_command_time < (current_time - 3000)) {
       last_command_time = 0;
-      digitalWrite(LED_BUILTIN, LOW);
       digitalWrite(LEDR, HIGH);
       digitalWrite(LEDG, HIGH);
       digitalWrite(LEDB, HIGH);
     }
-    // If it is non-zero but <3 seconds ago, do nothing.
-    return;
   }
 
   // Otherwise, toggle the LED every time an inference is performed.

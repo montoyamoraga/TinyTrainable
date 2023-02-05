@@ -1,4 +1,4 @@
-/* Copyright 2017 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2022 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ limitations under the License.
 
 #include "micro_features_micro_model_settings.h"
 #include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/micro_error_reporter.h"
+#include "tensorflow/lite/micro/micro_log.h"
 
 // Partial implementation of std::dequeue, just providing the functionality
 // that's needed to keep a record of previous neural network results over a
@@ -29,15 +29,14 @@ limitations under the License.
 // so it's a better fit for microcontroller applications, but this does mean
 // there are hard limits on the number of results it can store.
 class PreviousResultsQueue {
-public:
-  PreviousResultsQueue(tflite::ErrorReporter *error_reporter)
-      : error_reporter_(error_reporter), front_index_(0), size_(0) {}
+ public:
+  PreviousResultsQueue() : front_index_(0), size_(0) {}
 
   // Data structure that holds an inference result, and the time when it
   // was recorded.
   struct Result {
     Result() : time_(0), scores() {}
-    Result(int32_t time, int8_t *input_scores) : time_(time) {
+    Result(int32_t time, int8_t* input_scores) : time_(time) {
       for (int i = 0; i < kCategoryCount; ++i) {
         scores[i] = input_scores[i];
       }
@@ -48,8 +47,8 @@ public:
 
   int size() { return size_; }
   bool empty() { return size_ == 0; }
-  Result &front() { return results_[front_index_]; }
-  Result &back() {
+  Result& front() { return results_[front_index_]; }
+  Result& back() {
     int back_index = front_index_ + (size_ - 1);
     if (back_index >= kMaxResults) {
       back_index -= kMaxResults;
@@ -57,11 +56,9 @@ public:
     return results_[back_index];
   }
 
-  void push_back(const Result &entry) {
+  void push_back(const Result& entry) {
     if (size() >= kMaxResults) {
-      TF_LITE_REPORT_ERROR(
-          error_reporter_,
-          "Couldn't push_back latest result, too many already!");
+      MicroPrintf("Couldn't push_back latest result, too many already!");
       return;
     }
     size_ += 1;
@@ -70,8 +67,7 @@ public:
 
   Result pop_front() {
     if (size() <= 0) {
-      TF_LITE_REPORT_ERROR(error_reporter_,
-                           "Couldn't pop_front result, none present!");
+      MicroPrintf("Couldn't pop_front result, none present!");
       return Result();
     }
     Result result = front();
@@ -86,10 +82,9 @@ public:
   // Most of the functions are duplicates of dequeue containers, but this
   // is a helper that makes it easy to iterate through the contents of the
   // queue.
-  Result &from_front(int offset) {
+  Result& from_front(int offset) {
     if ((offset < 0) || (offset >= size_)) {
-      TF_LITE_REPORT_ERROR(error_reporter_,
-                           "Attempt to read beyond the end of the queue!");
+      MicroPrintf("Attempt to read beyond the end of the queue!");
       offset = size_ - 1;
     }
     int index = front_index_ + offset;
@@ -99,8 +94,7 @@ public:
     return results_[index];
   }
 
-private:
-  tflite::ErrorReporter *error_reporter_;
+ private:
   static constexpr int kMaxResults = 50;
   Result results_[kMaxResults];
 
@@ -119,7 +113,7 @@ private:
 // increasing from the previous, since the class is designed to process a stream
 // of data over time.
 class RecognizeCommands {
-public:
+ public:
   // labels should be a list of the strings associated with each one-hot score.
   // The window duration controls the smoothing. Longer durations will give a
   // higher confidence that the results are correct, but may miss some commands.
@@ -130,21 +124,19 @@ public:
   // initially being populated for example. The suppression argument disables
   // further recognitions for a set time after one has been triggered, which can
   // help reduce spurious recognitions.
-  explicit RecognizeCommands(tflite::ErrorReporter *error_reporter,
-                             int32_t average_window_duration_ms = 1000,
+  explicit RecognizeCommands(int32_t average_window_duration_ms = 1000,
                              uint8_t detection_threshold = 200,
                              int32_t suppression_ms = 1500,
                              int32_t minimum_count = 3);
 
   // Call this with the results of running a model on sample data.
-  TfLiteStatus ProcessLatestResults(const TfLiteTensor *latest_results,
+  TfLiteStatus ProcessLatestResults(const TfLiteTensor* latest_results,
                                     const int32_t current_time_ms,
-                                    const char **found_command, uint8_t *score,
-                                    bool *is_new_command);
+                                    const char** found_command, uint8_t* score,
+                                    bool* is_new_command);
 
-private:
+ private:
   // Configuration
-  tflite::ErrorReporter *error_reporter_;
   int32_t average_window_duration_ms_;
   uint8_t detection_threshold_;
   int32_t suppression_ms_;
@@ -152,8 +144,8 @@ private:
 
   // Working variables
   PreviousResultsQueue previous_results_;
-  const char *previous_top_label_;
+  const char* previous_top_label_;
   int32_t previous_top_label_time_;
 };
 
-#endif // TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_RECOGNIZE_COMMANDS_H_
+#endif  // TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_RECOGNIZE_COMMANDS_H_

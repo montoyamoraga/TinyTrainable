@@ -24,4 +24,4 @@ limitations under the License.
 extern const unsigned char g_model[];
 extern const int g_model_len;
 
-#endif // TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_MODEL_H_
+#endif  // TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_MICRO_FEATURES_MODEL_H_

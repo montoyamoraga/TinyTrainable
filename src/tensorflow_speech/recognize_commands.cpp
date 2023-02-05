@@ -1,4 +1,4 @@
-/* Copyright 2017 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2022 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,28 +17,28 @@ limitations under the License.
 
 #include <limits>
 
-RecognizeCommands::RecognizeCommands(tflite::ErrorReporter *error_reporter,
-                                     int32_t average_window_duration_ms,
+#undef DEBUG_MICRO_SPEECH
+
+RecognizeCommands::RecognizeCommands(int32_t average_window_duration_ms,
                                      uint8_t detection_threshold,
                                      int32_t suppression_ms,
                                      int32_t minimum_count)
-    : error_reporter_(error_reporter),
-      average_window_duration_ms_(average_window_duration_ms),
+    : average_window_duration_ms_(average_window_duration_ms),
       detection_threshold_(detection_threshold),
-      suppression_ms_(suppression_ms), minimum_count_(minimum_count),
-      previous_results_(error_reporter) {
-  previous_top_label_ = "silence";
+      suppression_ms_(suppression_ms),
+      minimum_count_(minimum_count),
+      previous_results_() {
+  previous_top_label_ = kCategoryLabels[0];  // silence
   previous_top_label_time_ = std::numeric_limits<int32_t>::min();
 }
 
 TfLiteStatus RecognizeCommands::ProcessLatestResults(
-    const TfLiteTensor *latest_results, const int32_t current_time_ms,
-    const char **found_command, uint8_t *score, bool *is_new_command) {
+    const TfLiteTensor* latest_results, const int32_t current_time_ms,
+    const char** found_command, uint8_t* score, bool* is_new_command) {
   if ((latest_results->dims->size != 2) ||
       (latest_results->dims->data[0] != 1) ||
       (latest_results->dims->data[1] != kCategoryCount)) {
-    TF_LITE_REPORT_ERROR(
-        error_reporter_,
+    MicroPrintf(
         "The results for recognition should contain %d elements, but there are "
         "%d in an %d-dimensional shape",
         kCategoryCount, latest_results->dims->data[1],
@@ -47,8 +47,7 @@ TfLiteStatus RecognizeCommands::ProcessLatestResults(
   }
 
   if (latest_results->type != kTfLiteInt8) {
-    TF_LITE_REPORT_ERROR(
-        error_reporter_,
+    MicroPrintf(
         "The results for recognition should be int8_t elements, but are %d",
         latest_results->type);
     return kTfLiteError;
@@ -56,16 +55,12 @@ TfLiteStatus RecognizeCommands::ProcessLatestResults(
 
   if ((!previous_results_.empty()) &&
       (current_time_ms < previous_results_.front().time_)) {
-    TF_LITE_REPORT_ERROR(
-        error_reporter_,
+    MicroPrintf(
         "Results must be fed in increasing time order, but received a "
         "timestamp of %d that was earlier than the previous one of %d",
         current_time_ms, previous_results_.front().time_);
     return kTfLiteError;
   }
-
-  // Add the latest results to the head of the queue.
-  previous_results_.push_back({current_time_ms, latest_results->data.int8});
 
   // Prune any earlier results that are too old for the averaging window.
   const int64_t time_limit = current_time_ms - average_window_duration_ms_;
@@ -73,6 +68,9 @@ TfLiteStatus RecognizeCommands::ProcessLatestResults(
          previous_results_.front().time_ < time_limit) {
     previous_results_.pop_front();
   }
+
+  // Add the latest results to the head of the queue.
+  previous_results_.push_back({current_time_ms, latest_results->data.int8});
 
   // If there are too few results, assume the result will be unreliable and
   // bail.
@@ -92,7 +90,7 @@ TfLiteStatus RecognizeCommands::ProcessLatestResults(
   for (int offset = 0; offset < previous_results_.size(); ++offset) {
     PreviousResultsQueue::Result previous_result =
         previous_results_.from_front(offset);
-    const int8_t *scores = previous_result.scores;
+    const int8_t* scores = previous_result.scores;
     for (int i = 0; i < kCategoryCount; ++i) {
       if (offset == 0) {
         average_scores[i] = scores[i] + 128;
@@ -114,7 +112,7 @@ TfLiteStatus RecognizeCommands::ProcessLatestResults(
       current_top_index = i;
     }
   }
-  const char *current_top_label = kCategoryLabels[current_top_index];
+  const char* current_top_label = kCategoryLabels[current_top_index];
 
   // If we've recently had another label trigger, assume one that occurs too
   // soon afterwards is a bad result.
@@ -128,10 +126,23 @@ TfLiteStatus RecognizeCommands::ProcessLatestResults(
   if ((current_top_score > detection_threshold_) &&
       ((current_top_label != previous_top_label_) ||
        (time_since_last_top > suppression_ms_))) {
+#ifdef DEBUG_MICRO_SPEECH
+    MicroPrintf("Scores: s %d u %d y %d n %d  %s -> %s", average_scores[0],
+                average_scores[1], average_scores[2], average_scores[3],
+                previous_top_label_, current_top_label);
+#endif  // DEBUG_MICRO_SPEECH
     previous_top_label_ = current_top_label;
     previous_top_label_time_ = current_time_ms;
     *is_new_command = true;
   } else {
+#ifdef DEBUG_MICRO_SPEECH
+    if (current_top_label != previous_top_label_) {
+      MicroPrintf("#Scores: s %d u %d y %d n %d  %s -> %s", average_scores[0],
+                  average_scores[1], average_scores[2], average_scores[3],
+                  previous_top_label_, current_top_label);
+      previous_top_label_ = current_top_label;
+    }
+#endif  // DEBUG_MICRO_SPEECH
     *is_new_command = false;
   }
   *found_command = current_top_label;

@@ -1,4 +1,4 @@
-/* Copyright 2019 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2022 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ limitations under the License.
 #include "micro_features_micro_model_settings.h"
 #include "tensorflow/lite/experimental/microfrontend/lib/frontend.h"
 #include "tensorflow/lite/experimental/microfrontend/lib/frontend_util.h"
+#include "tensorflow/lite/micro/micro_log.h"
 
 // Configure FFT to output 16 bit fixed point.
 #define FIXED_POINT 16
@@ -30,9 +31,9 @@ namespace {
 FrontendState g_micro_features_state;
 bool g_is_first_time = true;
 
-} // namespace
+}  // namespace
 
-TfLiteStatus InitializeMicroFeatures(tflite::ErrorReporter *error_reporter) {
+TfLiteStatus InitializeMicroFeatures() {
   FrontendConfig config;
   config.window.size_ms = kFeatureSliceDurationMs;
   config.window.step_size_ms = kFeatureSliceStrideMs;
@@ -52,7 +53,7 @@ TfLiteStatus InitializeMicroFeatures(tflite::ErrorReporter *error_reporter) {
   config.log_scale.scale_shift = 6;
   if (!FrontendPopulateState(&config, &g_micro_features_state,
                              kAudioSampleFrequency)) {
-    TF_LITE_REPORT_ERROR(error_reporter, "FrontendPopulateState() failed");
+    MicroPrintf("FrontendPopulateState() failed");
     return kTfLiteError;
   }
   g_is_first_time = true;
@@ -61,22 +62,21 @@ TfLiteStatus InitializeMicroFeatures(tflite::ErrorReporter *error_reporter) {
 
 // This is not exposed in any header, and is only used for testing, to ensure
 // that the state is correctly set up before generating results.
-void SetMicroFeaturesNoiseEstimates(const uint32_t *estimate_presets) {
+void SetMicroFeaturesNoiseEstimates(const uint32_t* estimate_presets) {
   for (int i = 0; i < g_micro_features_state.filterbank.num_channels; ++i) {
     g_micro_features_state.noise_reduction.estimate[i] = estimate_presets[i];
   }
 }
 
-TfLiteStatus GenerateMicroFeatures(tflite::ErrorReporter *error_reporter,
-                                   const int16_t *input, int input_size,
-                                   int output_size, int8_t *output,
-                                   size_t *num_samples_read) {
-  const int16_t *frontend_input;
+TfLiteStatus GenerateMicroFeatures(const int16_t* input, int input_size,
+                                   int output_size, int8_t* output,
+                                   size_t* num_samples_read) {
+  const int16_t* frontend_input;
   if (g_is_first_time) {
     frontend_input = input;
     g_is_first_time = false;
   } else {
-    frontend_input = input + 160;
+    frontend_input = input;
   }
   FrontendOutput frontend_output = FrontendProcessSamples(
       &g_micro_features_state, frontend_input, input_size, num_samples_read);
